@@ -1,0 +1,68 @@
+2026-09-29T17:17:36+08:00
+6.18.33.2-microsoft-standard-WSL2
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+Tue Sep 29 17:17:36 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.04              Driver Version: 576.52         CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4070 Ti     On  |   00000000:01:00.0  On |                  N/A |
+|  0%   52C    P8             13W /  285W |     816MiB /  12282MiB |     37%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+--- nvcc ---
+/usr/local/cuda-12.8/bin/nvcc
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
+
+--- python3 ---
+/usr/bin/python3
+Python 3.12.3
+
+--- uv ---
+uv: NOT_ON_PATH
+
+--- git ---
+/usr/bin/git
+git version 2.43.0
+
+--- ncu ---
+/usr/local/cuda-12.8/bin/ncu
+NVIDIA (R) Nsight Compute Command Line Profiler
+Copyright (c) 2018-2025 NVIDIA Corporation
+Version 2025.1.1.0 (build 35528883) (public-release)
+
+--- nsys ---
+/usr/local/cuda-12.8/bin/nsys
+NVIDIA Nsight Systems version 2024.6.2.225-246235244400v0
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G   11G  945G   2% /
+C:\             301G  139G  162G  47% /mnt/c
+9a91cfafe754aa85daee49998176275667eb58f2	refs/heads/main

@@ -1,0 +1,3 @@
+tests/kernel/test_store.py::test_store_cache
+
+1 test collected in 1.96s

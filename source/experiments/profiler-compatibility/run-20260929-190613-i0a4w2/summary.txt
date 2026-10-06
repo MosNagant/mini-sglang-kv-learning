@@ -1,0 +1,8 @@
+EXIT_CODE=0
+LAST_STAGE=COMPLETE
+NCU_MINIMAL=DRIVER_RESOURCE_OR_PERMISSION_UNAVAILABLE
+NSYS_PROBE=REPORT_HAS_NO_CUDA_KERNEL_DATA
+SCOPE=vector_add profiler capability checks; not KV benchmark data
+WINDOWS_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/profiler-compatibility-run-20260929-190613-i0a4w2
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/profiler-compatibility/run-20260929-190613-i0a4w2
+2026-09-29T19:09:03+08:00

@@ -1,0 +1,21 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/real-store/run-20260930-182741-8kevyxeq
+SCOPE=existing CUDA store observation; NOT a benchmark or a correctness suite
+GPU=NVIDIA GeForce RTX 4070 Ti
+K_CACHE shape=(8, 128) stride=(256, 1) dtype=torch.float16 device=cuda:0
+K_INPUT shape=(2, 128) stride=(128, 1)
+BYTES_PER_SCALAR=2
+INDICES=[5, 1]
+BEFORE: all K/V cache entries are -1
+INPUT 0: K[:4]=[10.0, 11.0, 12.0, 13.0] V[:4]=[1010.0, 1011.0, 1012.0, 1013.0]
+INPUT 1: K[:4]=[138.0, 139.0, 140.0, 141.0] V[:4]=[1138.0, 1139.0, 1140.0, 1141.0]
+CALLING: store_cache(k_cache, v_cache, indices, k, v)
+CACHE 0: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 1: K[:4]=[138.0, 139.0, 140.0, 141.0] V[:4]=[1138.0, 1139.0, 1140.0, 1141.0]
+CACHE 2: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 3: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 4: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 5: K[:4]=[10.0, 11.0, 12.0, 13.0] V[:4]=[1010.0, 1011.0, 1012.0, 1013.0]
+CACHE 6: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 7: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+REAL_STORE_OBSERVATION_COMPLETE: inspect the result; no correctness PASS is claimed
+Console shows 4 elements per row; result.json contains all 128 elements per row

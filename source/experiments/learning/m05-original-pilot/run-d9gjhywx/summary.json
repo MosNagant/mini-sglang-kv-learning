@@ -1,0 +1,181 @@
+{
+  "status": "PILOT_COLLECTION_COMPLETE",
+  "plan": {
+    "cases": [
+      {
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "batch": 256,
+        "width": 128
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "indices": "0..batch-1",
+    "layout": "interleaved",
+    "input_seed": 20261004,
+    "order_seed": 104,
+    "rounds": 3,
+    "pairs_per_case": 30,
+    "calls_per_interval": 100,
+    "primary": "graph",
+    "reference": "eager",
+    "policy": "same reused tensors; 100 captured calls per graph; fresh process per case/round",
+    "kv_pool_bytes_at_max_width": 524288,
+    "kv_inputs_bytes_at_max_case": 131072,
+    "allocation_note": "payload counts exclude expected snapshots, graph resources and runtime",
+    "limits": "pilot only; no cold-cache/DRAM, Triton, model or optimization result"
+  },
+  "summary": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "round_medians_us": [
+          0.8761600032448769,
+          1.0751999914646149,
+          1.074719987809658
+        ],
+        "median_of_round_medians_us": 1.074719987809658,
+        "round_median_span_pct": 18.52017181009103
+      },
+      "eager": {
+        "round_medians_us": [
+          10.634879767894745,
+          8.760319948196411,
+          8.5521599650383
+        ],
+        "median_of_round_medians_us": 8.760319948196411,
+        "round_median_span_pct": 23.77447188199147
+      }
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "graph": {
+        "round_medians_us": [
+          0.8801599964499474,
+          1.2134400010108948,
+          0.8881599828600883
+        ],
+        "median_of_round_medians_us": 0.8881599828600883,
+        "round_median_span_pct": 37.52477154934473
+      },
+      "eager": {
+        "round_medians_us": [
+          8.206560015678404,
+          18.968160152435303,
+          8.591199815273285
+        ],
+        "median_of_round_medians_us": 8.591199815273285,
+        "round_median_span_pct": 125.26306416043442
+      }
+    },
+    {
+      "batch": 16,
+      "width": 64,
+      "graph": {
+        "round_medians_us": [
+          1.0734399780631065,
+          0.8780799806118011,
+          1.2185600027441976
+        ],
+        "median_of_round_medians_us": 1.0734399780631065,
+        "round_median_span_pct": 31.718589682746096
+      },
+      "eager": {
+        "round_medians_us": [
+          8.812159895896912,
+          8.481760025024414,
+          20.452959537506104
+        ],
+        "median_of_round_medians_us": 8.812159895896912,
+        "round_median_span_pct": 135.84864158054688
+      }
+    },
+    {
+      "batch": 16,
+      "width": 128,
+      "graph": {
+        "round_medians_us": [
+          0.8940800279378891,
+          1.1084799841046333,
+          1.2132799997925758
+        ],
+        "median_of_round_medians_us": 1.1084799841046333,
+        "round_median_span_pct": 28.79618725028384
+      },
+      "eager": {
+        "round_medians_us": [
+          8.065440058708191,
+          8.740479946136475,
+          19.231839776039124
+        ],
+        "median_of_round_medians_us": 8.740479946136475,
+        "round_median_span_pct": 127.75499499048424
+      }
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "graph": {
+        "round_medians_us": [
+          0.9614400193095207,
+          1.0785599797964096,
+          0.95551997423172
+        ],
+        "median_of_round_medians_us": 0.9614400193095207,
+        "round_median_span_pct": 12.797470782738326
+      },
+      "eager": {
+        "round_medians_us": [
+          7.926560044288634,
+          8.824799954891205,
+          8.182560205459595
+        ],
+        "median_of_round_medians_us": 8.182560205459595,
+        "round_median_span_pct": 10.97749222796117
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "round_medians_us": [
+          1.1764800176024437,
+          1.1668800190091133,
+          0.9937600046396254
+        ],
+        "median_of_round_medians_us": 1.1668800190091133,
+        "round_median_span_pct": 15.658851808772914
+      },
+      "eager": {
+        "round_medians_us": [
+          12.352319955825806,
+          9.497439861297607,
+          8.471840023994446
+        ],
+        "median_of_round_medians_us": 9.497439861297607,
+        "round_median_span_pct": 40.858167974766005
+      }
+    }
+  ]
+}

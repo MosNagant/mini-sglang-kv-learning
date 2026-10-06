@@ -1,0 +1,5 @@
+==PROF== Connected to process 2262 (/home/weltlaw/projects/cuda-starter/build/vector_add)
+==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device 0. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM
+GPU: NVIDIA GeForce RTX 4070 Ti | Compute capability: 8.9
+PASS: all 1048589 GPU results match the CPU reference.
+==PROF== Disconnected from process 2262

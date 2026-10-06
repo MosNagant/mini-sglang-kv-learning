@@ -1,0 +1,10 @@
+{
+  "config_path": "/home/weltlaw/.config/NVIDIA Corporation/nsys-config.ini",
+  "existed_before": false,
+  "changed": true,
+  "previous_values": [],
+  "setting": "CuptiUseRawGpuTimestamps=false",
+  "backup": null,
+  "timing_limitation": "CUPTI timestamp conversion workaround; lower precision than the normal mechanism",
+  "reference": "https://forums.developer.nvidia.com/t/nsys-doesnt-show-cuda-kernel-and-memory-data/315536"
+}

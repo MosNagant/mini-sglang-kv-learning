@@ -1,0 +1,24 @@
+{
+  "width": 64,
+  "layout": "separate",
+  "gap": 64,
+  "batch": 3,
+  "capacity": 32,
+  "rows": [
+    31,
+    0,
+    1
+  ],
+  "input_stride": [
+    128,
+    1
+  ],
+  "cache_stride": [
+    64,
+    1
+  ],
+  "dtype": "float16",
+  "index_dtype": "int32",
+  "original_calls": 1,
+  "status": "PASS"
+}

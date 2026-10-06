@@ -1,0 +1,16 @@
+Installing only Nsight Systems 2025.1.3.140-1. Enter your Linux password if prompted.
+Hit:1 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Hit:3 https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64  InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists...
+E: Version '2025.1.3.140-1' for 'nsight-systems-2025.1.3' was not found
+EXIT_CODE=100
+LAST_STAGE=INSTALL_SYSTEMS_2025_1_3
+NCU_MINIMAL=NOT_RUN
+NSYS_PROBE=NOT_RUN
+SCOPE=vector_add profiler capability checks; not KV benchmark data
+WINDOWS_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/profiler-compatibility-run-20260929-190206-cEaAVQ
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/profiler-compatibility/run-20260929-190206-cEaAVQ
+2026-09-29T19:02:13+08:00

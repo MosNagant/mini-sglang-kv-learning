@@ -1,0 +1,11 @@
+EXIT_CODE=0
+LAST_STAGE=COMPLETE
+PYTHON_HEADERS=PASS
+UPSTREAM_TEST=PASS
+NSYS_PROBE=REPORT_GENERATED_PENDING_REVIEW
+NCU_PROBE=GPU_COUNTER_PERMISSION_DENIED
+PROFILER_SCOPE=existing cuda-starter vector_add; not KV performance evidence
+COUNTER_VALUES=report content must be reviewed before claiming availability
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP
+WINDOWS_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/away-run-20260929-181102-OHBHvP
+2026-09-29T18:11:38+08:00

@@ -1,0 +1,7 @@
+GPU: NVIDIA GeForce RTX 4070 Ti | Compute capability: 8.9
+PASS: all 1048589 GPU results match the CPU reference.
+Collecting data...
+Generating '/tmp/nsys-report-8ed6.qdstrm'
+[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [===22%                      ] nsys-vector-add.nsys-rep[1/1] [===========50%              ] nsys-vector-add.nsys-rep[1/1] [==================77%       ] nsys-vector-add.nsys-rep[1/1] [===================79%      ] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep
+Generated:
+    /home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP/nsys-vector-add.nsys-rep

@@ -1,0 +1,30 @@
+{
+  "snapshot_utc": "2026-10-06T13:14:51Z",
+  "source": "/home/weltlaw/projects/mini-sglang-kv",
+  "upstream_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "tracked_status": "",
+  "export_archive": "wsl-project-20261006T131451Z.zip",
+  "export_archive_sha256": "49b3af56900e2ca2226f03593d8476607f6f711cc58a9812fe4511173e41ce65",
+  "export_regular_files": 1029,
+  "published_export_regular_files": 1027,
+  "published_original_export_manifest": true,
+  "publish_exclusions": [
+    {
+      "path": ".vs/slnx.sqlite",
+      "reason": "Rebuildable empty editor cache"
+    },
+    {
+      "path": ".lab-tools/uvx",
+      "reason": "Installed tool binary; install dependencies separately"
+    }
+  ],
+  "symlinks_restored": [
+    {
+      "path": ".dockerignore",
+      "target": ".gitignore"
+    }
+  ],
+  "git_history_imported": false,
+  "gpu_tests_run_during_sync": false,
+  "m05_status": "Pilot raw evidence uploaded; M05 acceptance remains a separate review"
+}

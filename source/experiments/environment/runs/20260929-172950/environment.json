@@ -1,0 +1,40 @@
+{
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "python_executable": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "os_release": {
+    "NAME": "Ubuntu",
+    "ID": "ubuntu",
+    "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+    "VERSION_ID": "24.04",
+    "VERSION": "24.04.5 LTS (Noble Numbat)",
+    "VERSION_CODENAME": "noble",
+    "ID_LIKE": "debian",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "UBUNTU_CODENAME": "noble",
+    "LOGO": "ubuntu-logo"
+  },
+  "torch": "2.9.1+cu128",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "compute_capability": [
+    8,
+    9
+  ],
+  "total_memory_bytes": 12878086144,
+  "store_source": "/home/weltlaw/projects/mini-sglang-kv/python/minisgl/kernel/store.py",
+  "packages": {
+    "apache-tvm-ffi": "0.1.4",
+    "transformers": "4.57.3",
+    "triton": "3.5.1",
+    "pytest": "9.1.1",
+    "pyzmq": "27.2.0",
+    "msgpack": "1.2.3"
+  },
+  "scope": "kernel-study dependencies only; full inference stack and counters not verified",
+  "kv_kernel_execution": "not yet tested"
+}

@@ -1,0 +1,9 @@
+EXIT_CODE=0
+NSYS_WSL_TRACE=GPU_KERNEL_EVENTS_PRESENT
+TIMESTAMP_SETTING=CuptiUseRawGpuTimestamps_false
+TIMESTAMP_PRECISION=the false setting uses a less precise conversion mechanism
+NCU_STATUS=unresolved; not retested in this step
+SCOPE=vector_add capability probe; not KV performance evidence
+WINDOWS_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/nsys-wsl-timestamps-run-20260929-191618-eHnaZP
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP
+2026-09-29T19:16:20+08:00

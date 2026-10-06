@@ -1,0 +1,362 @@
+[
+  {
+    "round": 1,
+    "batch": 256,
+    "width": 128,
+    "method": "graph",
+    "median_us": 1.1764800176024437,
+    "min_us": 0.9398400038480759,
+    "max_us": 1.5248000621795654,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B256-D128/run-n1uhugig/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 256,
+    "width": 128,
+    "method": "eager",
+    "median_us": 12.352319955825806,
+    "min_us": 7.620800137519836,
+    "max_us": 22.81183958053589,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B256-D128/run-n1uhugig/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 16,
+    "width": 64,
+    "method": "graph",
+    "median_us": 1.0734399780631065,
+    "min_us": 0.8601599931716919,
+    "max_us": 1.5827199816703796,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D64/run-_a1eulr6/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 16,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.812159895896912,
+    "min_us": 7.5174397230148315,
+    "max_us": 23.287360668182373,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D64/run-_a1eulr6/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 16,
+    "width": 128,
+    "method": "graph",
+    "median_us": 0.8940800279378891,
+    "min_us": 0.8601599931716919,
+    "max_us": 1.4480000734329224,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D128/run-4gvl0egb/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 16,
+    "width": 128,
+    "method": "eager",
+    "median_us": 8.065440058708191,
+    "min_us": 7.178239822387695,
+    "max_us": 11.427199840545654,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D128/run-4gvl0egb/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 256,
+    "width": 64,
+    "method": "graph",
+    "median_us": 0.9614400193095207,
+    "min_us": 0.9318400174379349,
+    "max_us": 2.1913599967956543,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B256-D64/run-1m3gf67b/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 256,
+    "width": 64,
+    "method": "eager",
+    "median_us": 7.926560044288634,
+    "min_us": 7.141119837760925,
+    "max_us": 19.886080026626587,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B256-D64/run-1m3gf67b/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 1,
+    "width": 128,
+    "method": "graph",
+    "median_us": 0.8801599964499474,
+    "min_us": 0.8499199897050858,
+    "max_us": 1.9174399971961975,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B1-D128/run-1aa1ieum/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 1,
+    "width": 128,
+    "method": "eager",
+    "median_us": 8.206560015678404,
+    "min_us": 7.017920017242432,
+    "max_us": 27.773120403289795,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B1-D128/run-1aa1ieum/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 1,
+    "width": 64,
+    "method": "graph",
+    "median_us": 0.8761600032448769,
+    "min_us": 0.8499199897050858,
+    "max_us": 1.7100800573825836,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B1-D64/run-5uji2j1t/result.json"
+  },
+  {
+    "round": 1,
+    "batch": 1,
+    "width": 64,
+    "method": "eager",
+    "median_us": 10.634879767894745,
+    "min_us": 8.245440125465393,
+    "max_us": 23.51072072982788,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B1-D64/run-5uji2j1t/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 256,
+    "width": 64,
+    "method": "graph",
+    "median_us": 1.0785599797964096,
+    "min_us": 0.9318400174379349,
+    "max_us": 1.2697599828243256,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B256-D64/run-tmu3x93u/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 256,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.824799954891205,
+    "min_us": 7.154560089111328,
+    "max_us": 19.84320044517517,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B256-D64/run-tmu3x93u/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 16,
+    "width": 64,
+    "method": "graph",
+    "median_us": 0.8780799806118011,
+    "min_us": 0.8601599931716919,
+    "max_us": 1.1343999952077866,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B16-D64/run-d12mar2y/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 16,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.481760025024414,
+    "min_us": 7.130879759788513,
+    "max_us": 16.33695960044861,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B16-D64/run-d12mar2y/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 16,
+    "width": 128,
+    "method": "graph",
+    "median_us": 1.1084799841046333,
+    "min_us": 0.8806400001049042,
+    "max_us": 1.3107199966907501,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B16-D128/run-aak0652k/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 16,
+    "width": 128,
+    "method": "eager",
+    "median_us": 8.740479946136475,
+    "min_us": 7.345280051231384,
+    "max_us": 22.706239223480225,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B16-D128/run-aak0652k/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 256,
+    "width": 128,
+    "method": "graph",
+    "median_us": 1.1668800190091133,
+    "min_us": 0.9625600278377533,
+    "max_us": 1.831360012292862,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B256-D128/run-jo_a0paq/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 256,
+    "width": 128,
+    "method": "eager",
+    "median_us": 9.497439861297607,
+    "min_us": 8.249279856681824,
+    "max_us": 22.32095956802368,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B256-D128/run-jo_a0paq/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 1,
+    "width": 128,
+    "method": "graph",
+    "median_us": 1.2134400010108948,
+    "min_us": 0.8806400001049042,
+    "max_us": 1.3094399869441986,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B1-D128/run-dcb_1815/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 1,
+    "width": 128,
+    "method": "eager",
+    "median_us": 18.968160152435303,
+    "min_us": 7.605119943618774,
+    "max_us": 23.74624013900757,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B1-D128/run-dcb_1815/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 1,
+    "width": 64,
+    "method": "graph",
+    "median_us": 1.0751999914646149,
+    "min_us": 0.8499199897050858,
+    "max_us": 1.748799979686737,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B1-D64/run-7n9h21u0/result.json"
+  },
+  {
+    "round": 2,
+    "batch": 1,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.760319948196411,
+    "min_us": 8.343679904937744,
+    "max_us": 30.22495985031128,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-2/B1-D64/run-7n9h21u0/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 16,
+    "width": 128,
+    "method": "graph",
+    "median_us": 1.2132799997925758,
+    "min_us": 0.8873599767684937,
+    "max_us": 1.740799993276596,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B16-D128/run-a824k026/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 16,
+    "width": 128,
+    "method": "eager",
+    "median_us": 19.231839776039124,
+    "min_us": 8.4169602394104,
+    "max_us": 22.860159873962402,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B16-D128/run-a824k026/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 256,
+    "width": 128,
+    "method": "graph",
+    "median_us": 0.9937600046396254,
+    "min_us": 0.9504000097513199,
+    "max_us": 1.8009600043296814,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B256-D128/run-auddrmu8/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 256,
+    "width": 128,
+    "method": "eager",
+    "median_us": 8.471840023994446,
+    "min_us": 7.280640006065369,
+    "max_us": 22.835519313812256,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B256-D128/run-auddrmu8/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 16,
+    "width": 64,
+    "method": "graph",
+    "median_us": 1.2185600027441976,
+    "min_us": 0.8601599931716919,
+    "max_us": 1.5481600165367126,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B16-D64/run-aynny5v9/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 16,
+    "width": 64,
+    "method": "eager",
+    "median_us": 20.452959537506104,
+    "min_us": 8.711360096931458,
+    "max_us": 22.82047986984253,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B16-D64/run-aynny5v9/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 256,
+    "width": 64,
+    "method": "graph",
+    "median_us": 0.95551997423172,
+    "min_us": 0.9318400174379349,
+    "max_us": 1.356160044670105,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B256-D64/run-9eptx_fg/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 256,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.182560205459595,
+    "min_us": 6.646400094032288,
+    "max_us": 22.42784023284912,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B256-D64/run-9eptx_fg/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 1,
+    "width": 64,
+    "method": "graph",
+    "median_us": 1.074719987809658,
+    "min_us": 0.8499199897050858,
+    "max_us": 1.2268800288438797,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B1-D64/run-wr_ebhtt/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 1,
+    "width": 64,
+    "method": "eager",
+    "median_us": 8.5521599650383,
+    "min_us": 7.427840232849121,
+    "max_us": 11.233279705047607,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B1-D64/run-wr_ebhtt/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 1,
+    "width": 128,
+    "method": "graph",
+    "median_us": 0.8881599828600883,
+    "min_us": 0.8579199761152267,
+    "max_us": 1.2591999769210815,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B1-D128/run-suae9pyh/result.json"
+  },
+  {
+    "round": 3,
+    "batch": 1,
+    "width": 128,
+    "method": "eager",
+    "median_us": 8.591199815273285,
+    "min_us": 7.184640169143677,
+    "max_us": 22.853760719299316,
+    "result_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-3/B1-D128/run-suae9pyh/result.json"
+  }
+]

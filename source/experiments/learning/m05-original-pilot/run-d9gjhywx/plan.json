@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "batch": 256,
+      "width": 128
+    }
+  ],
+  "capacity": 1024,
+  "dtype": "float16",
+  "indices": "0..batch-1",
+  "layout": "interleaved",
+  "input_seed": 20261004,
+  "order_seed": 104,
+  "rounds": 3,
+  "pairs_per_case": 30,
+  "calls_per_interval": 100,
+  "primary": "graph",
+  "reference": "eager",
+  "policy": "same reused tensors; 100 captured calls per graph; fresh process per case/round",
+  "kv_pool_bytes_at_max_width": 524288,
+  "kv_inputs_bytes_at_max_case": 131072,
+  "allocation_note": "payload counts exclude expected snapshots, graph resources and runtime",
+  "limits": "pilot only; no cold-cache/DRAM, Triton, model or optimization result"
+}

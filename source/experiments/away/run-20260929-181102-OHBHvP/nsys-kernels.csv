@@ -1,0 +1,4 @@
+Generating SQLite file /home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP/nsys-vector-add.sqlite from /home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP/nsys-vector-add.nsys-rep
+Processing [/home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP/nsys-vector-add.sqlite] with [/opt/nvidia/nsight-systems/2024.6.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+SKIPPED: /home/weltlaw/projects/mini-sglang-kv/experiments/away/run-20260929-181102-OHBHvP/nsys-vector-add.sqlite does not contain CUDA kernel data.
+

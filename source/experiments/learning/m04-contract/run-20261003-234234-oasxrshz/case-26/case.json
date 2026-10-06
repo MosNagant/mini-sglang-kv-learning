@@ -1,0 +1,22 @@
+{
+  "width": 128,
+  "layout": "interleaved",
+  "gap": 0,
+  "batch": 1,
+  "capacity": 32,
+  "rows": [
+    31
+  ],
+  "input_stride": [
+    128,
+    1
+  ],
+  "cache_stride": [
+    256,
+    1
+  ],
+  "dtype": "float16",
+  "index_dtype": "int32",
+  "original_calls": 1,
+  "status": "PASS"
+}

@@ -1,0 +1,6 @@
+nsight-systems-2025.1.3:
+  Installed: (none)
+  Candidate: 2025.1.3.140-251335620677v0
+  Version table:
+     2025.1.3.140-251335620677v0 600
+        600 https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64  Packages

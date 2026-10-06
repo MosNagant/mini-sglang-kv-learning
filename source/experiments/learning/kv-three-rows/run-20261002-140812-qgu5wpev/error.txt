@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 252, in main
+    state["kernel_layout_preflight"] = validate_kernel(kernel_source, width)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 176, in validate_kernel
+    raise RuntimeError(
+RuntimeError: KERNEL_LAYOUT_MISMATCH: --width 128 expects cols = tl.arange(0, 128); saved source has tl.arange(0, 64). No GPU kernel was launched. Match --width to the saved fixed-width kernel (64/64/128 or 128/128/256). Parameterized kernels need their corresponding adapter.

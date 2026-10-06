@@ -1,0 +1,9 @@
+{
+  "status": "FAILED",
+  "scope": "two implementations, indices=[7,0,3]; FP16 batch=3 width=128 capacity=8; interleaved cache; no timing",
+  "width": 128,
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "passed_cases": [],
+  "error_type": "RuntimeError",
+  "error": "KERNEL_LAYOUT_MISMATCH: --width 128 expects cols = tl.arange(0, 128); saved source has tl.arange(0, 64). No GPU kernel was launched. Match --width to the saved fixed-width kernel (64/64/128 or 128/128/256). Parameterized kernels need their corresponding adapter."
+}

@@ -1,0 +1,20 @@
+{
+  "width": 128,
+  "layout": "interleaved",
+  "gap": 0,
+  "batch": 0,
+  "capacity": 32,
+  "rows": [],
+  "input_stride": [
+    0,
+    0
+  ],
+  "cache_stride": [
+    256,
+    1
+  ],
+  "dtype": "float16",
+  "index_dtype": "int32",
+  "original_calls": 0,
+  "status": "EMPTY_ADAPTER_PASS"
+}

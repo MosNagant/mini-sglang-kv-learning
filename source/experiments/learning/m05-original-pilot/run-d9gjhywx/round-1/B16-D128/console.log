@@ -1,0 +1,6 @@
+RUN_DIRECTORY: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D128/run-4gvl0egb
+REPLAY_CORRECTNESS_OK: targets, untouched storage and inputs
+EAGER_US_PER_CALL: {'median': 8.065440058708191, 'min': 7.178239822387695, 'max': 11.427199840545654}
+GRAPH_US_PER_CALL: {'median': 0.8940800279378891, 'min': 0.8601599931716919, 'max': 1.4480000734329224}
+SAVED: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx/round-1/B16-D128/run-4gvl0egb/result.json
+DIAGNOSTIC_COMPLETE: compare execution policies; no final baseline PASS.

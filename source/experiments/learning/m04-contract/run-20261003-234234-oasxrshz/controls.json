@@ -1,0 +1,23 @@
+{
+  "positive": "PASS",
+  "rejected_corruptions": [
+    "wrong_row",
+    "missing_K_last",
+    "missing_V_last",
+    "swap_KV",
+    "untouched_K",
+    "untouched_V",
+    "input_K",
+    "input_V_padding",
+    "indices"
+  ],
+  "rejected_contracts": [
+    "negative_index",
+    "upper_bound",
+    "duplicate",
+    "count",
+    "capacity",
+    "unsupported_width"
+  ],
+  "invalid_cases_submitted_to_GPU": false
+}
