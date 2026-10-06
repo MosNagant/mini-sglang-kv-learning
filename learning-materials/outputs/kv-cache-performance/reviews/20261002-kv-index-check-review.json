@@ -1,0 +1,25 @@
+{
+  "review_date": "2026-10-02",
+  "scope": "Independent CPU recheck of saved GPU results; no GPU rerun or timing",
+  "source_hashes_verified": 22,
+  "cases_verified": [
+    "original_cuda-5-1",
+    "original_cuda-7-3",
+    "original_cuda-7-0",
+    "learner_triton-5-1",
+    "learner_triton-7-3",
+    "learner_triton-7-0"
+  ],
+  "all_target_untouched_and_input_values": "PASS",
+  "checker_controls_recorded": {
+    "positive_control": "PASS",
+    "negative_controls": [
+      "K input 0: last column corruption detected",
+      "K input 1: last column corruption detected",
+      "V input 0: last column corruption detected",
+      "V input 1: last column corruption detected",
+      "swapped destination mapping detected"
+    ]
+  },
+  "limits": "FP16 batch=2 width=128 capacity=8; three unique index pairs only"
+}

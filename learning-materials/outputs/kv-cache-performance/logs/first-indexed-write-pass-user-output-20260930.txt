@@ -1,0 +1,16 @@
+Source: user-pasted PowerShell output, 2026-09-30; whitespace normalized.
+User ran the Ubuntu project Python interpreter on
+/home/weltlaw/projects/mini-sglang-kv/experiments/first_kv.py.
+The assistant did not execute this WSL command.
+
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+K: [99, 11, 12, 13]
+V: [20, 21, 22, 23]
+K cache: [[0, 0, 0, 0], [0, 0, 0, 0], [99, 11, 12, 13], [0, 0, 0, 0]]
+PS C:\Users\Administrator>
+
+Assessment: the printed result satisfies this single CPU-list example:
+row 2 matches K; rows 0, 1 and 3 remain zero.
+The one-line assignment was provided by the coach after the user's attempt.
+Independent understanding is pending; no CUDA execution, formal correctness
+suite, benchmark, or performance claim is supported by this exercise.

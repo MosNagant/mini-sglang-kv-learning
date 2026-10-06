@@ -1,0 +1,22 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-212733-7tqax13i
+SCOPE=learner-written first K row check; not a full suite or benchmark
+SAVED_CHECK_CODE_BEGIN
+  1: """Your first check of a result produced by the real CUDA store kernel.
+  2: 
+  3: The coach's runner prepares the inputs and calls the original kernel.
+  4: You write the check below. Row numbers start at 0.
+  5: """
+  6: 
+  7: import torch
+  8: 
+  9: 
+ 10: def check_first_k(k_cache, k):
+ 11: 
+ 12:     assert torch.equal(k_cache[5], k[0])
+SAVED_CHECK_CODE_END
+GPU=NVIDIA GeForce RTX 4070 Ti
+RAW_RESULT_SAVED=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-212733-7tqax13i/result.json
+CALLING_LEARNER_CHECK=check_first_k(k_cache, k)
+LEARNER_CHECK_RETURNED: no exception; submit your assertion and this output for review.
+COVERAGE_LIMIT: other K row, V, untouched rows and boundary cases are not verified here.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/first-store-check-20260930-212733-UCLXuw.log

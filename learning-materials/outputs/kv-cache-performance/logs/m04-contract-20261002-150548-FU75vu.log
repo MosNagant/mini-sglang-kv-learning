@@ -1,0 +1,58 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m04-contract/run-20261002-150548-_gy98gbd
+CONTROLS_PASS: learner K/V checks; 9 suite corruptions; 6 invalid configurations rejected before GPU
+PASS B=1 D=64 layout=interleaved gap=0
+PASS B=2 D=64 layout=interleaved gap=0
+PASS B=3 D=64 layout=interleaved gap=0
+PASS B=4 D=64 layout=interleaved gap=0
+PASS B=5 D=64 layout=interleaved gap=0
+PASS B=17 D=64 layout=interleaved gap=0
+PASS B=1 D=64 layout=interleaved gap=64
+PASS B=2 D=64 layout=interleaved gap=64
+PASS B=3 D=64 layout=interleaved gap=64
+PASS B=4 D=64 layout=interleaved gap=64
+PASS B=5 D=64 layout=interleaved gap=64
+PASS B=17 D=64 layout=interleaved gap=64
+EMPTY_ADAPTER_PASS B=0 D=64 layout=interleaved gap=0
+PASS B=1 D=64 layout=separate gap=0
+PASS B=2 D=64 layout=separate gap=0
+PASS B=3 D=64 layout=separate gap=0
+PASS B=4 D=64 layout=separate gap=0
+PASS B=5 D=64 layout=separate gap=0
+PASS B=17 D=64 layout=separate gap=0
+PASS B=1 D=64 layout=separate gap=64
+PASS B=2 D=64 layout=separate gap=64
+PASS B=3 D=64 layout=separate gap=64
+PASS B=4 D=64 layout=separate gap=64
+PASS B=5 D=64 layout=separate gap=64
+PASS B=17 D=64 layout=separate gap=64
+EMPTY_ADAPTER_PASS B=0 D=64 layout=separate gap=0
+PASS B=1 D=128 layout=interleaved gap=0
+PASS B=2 D=128 layout=interleaved gap=0
+PASS B=3 D=128 layout=interleaved gap=0
+PASS B=4 D=128 layout=interleaved gap=0
+PASS B=5 D=128 layout=interleaved gap=0
+PASS B=17 D=128 layout=interleaved gap=0
+PASS B=1 D=128 layout=interleaved gap=64
+PASS B=2 D=128 layout=interleaved gap=64
+PASS B=3 D=128 layout=interleaved gap=64
+PASS B=4 D=128 layout=interleaved gap=64
+PASS B=5 D=128 layout=interleaved gap=64
+PASS B=17 D=128 layout=interleaved gap=64
+EMPTY_ADAPTER_PASS B=0 D=128 layout=interleaved gap=0
+PASS B=1 D=128 layout=separate gap=0
+PASS B=2 D=128 layout=separate gap=0
+PASS B=3 D=128 layout=separate gap=0
+PASS B=4 D=128 layout=separate gap=0
+PASS B=5 D=128 layout=separate gap=0
+PASS B=17 D=128 layout=separate gap=0
+PASS B=1 D=128 layout=separate gap=64
+PASS B=2 D=128 layout=separate gap=64
+PASS B=3 D=128 layout=separate gap=64
+PASS B=4 D=128 layout=separate gap=64
+PASS B=5 D=128 layout=separate gap=64
+PASS B=17 D=128 layout=separate gap=64
+EMPTY_ADAPTER_PASS B=0 D=128 layout=separate gap=0
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m04-contract-results/run-20261002-150548-_gy98gbd
+M04_ORIGINAL_PASS: 48 GPU cases + 4 empty adapter cases; all values and backing storage checked.
+LIMIT: FP16, int32 unique valid indices, width64/128, two layouts, selected strides. No timing. Triton not tested.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m04-contract-20261002-150548-FU75vu.log

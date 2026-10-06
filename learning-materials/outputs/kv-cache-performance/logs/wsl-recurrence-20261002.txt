@@ -1,0 +1,29 @@
+Observed on 2026-10-02, Asia/Shanghai. Read-only checks from the Windows workspace.
+
+User-reported command:
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /bin/echo WSL_OK
+User-reported result:
+系统找不到指定的路径。
+Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND
+
+sc.exe query storvsp:
+STATE: 1 STOPPED
+WIN32_EXIT_CODE: 1077 (0x435)
+SERVICE_EXIT_CODE: 0
+
+Test-Path Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\ROOT\STORVSP\0000:
+False
+Test-Path C:/Windows/System32/drivers/storvsp.sys:
+True
+
+C:/Windows/INF/setupapi.dev.log, verified excerpt with original line numbers:
+32098: >>>  [Delete Device - ROOT\STORVSP\0000]
+32099: >>>  Section start 2026/10/01 22:40:12.045
+32100:       cmd: "C:\DevManView.exe" /uninstall *Disk* /use_wildcard
+32101:      dvi: Query-and-Remove succeeded
+32102: <<<  Section end 2026/10/01 22:40:12.047
+
+Deletion happened on the prior evening; do not describe it as a verified October 2 boot action.
+The parent launcher of DevManView remains unidentified. No startup item changed.
+Repair-WSL-Storage.ps1 was read and its existing -SkipSetup recovery path retained.
+No repair or GPU command executed by the assistant; user administrator execution and WSL_OK confirmation pending.

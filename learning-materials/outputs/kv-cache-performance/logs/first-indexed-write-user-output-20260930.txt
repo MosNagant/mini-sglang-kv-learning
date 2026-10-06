@@ -1,0 +1,17 @@
+Source: User-pasted PowerShell output, 2026-09-30; whitespace normalized.
+The user ran Ubuntu project Python on:
+/home/weltlaw/projects/mini-sglang-kv/experiments/first_kv.py
+This is not an assistant-executed WSL command.
+
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+K: [99, 11, 12, 13]
+V: [20, 21, 22, 23]
+K cache: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
+PS C:\Users\Administrator>
+
+Interpretation: program execution and cache scaffold output confirmed.
+Target row did not contain K when printed. L01a has not passed.
+The user's assignment and its position in the source have not been shown.
+Do not infer whether assignment is missing, unsaved, misplaced, or incorrect
+solely from this output. Next step: inspect the user's source around slot = 2
+through the cache print before deciding on a correction.

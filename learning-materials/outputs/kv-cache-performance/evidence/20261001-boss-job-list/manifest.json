@@ -1,0 +1,38 @@
+[
+  {
+    "image": 1,
+    "file": "screenshot-01.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-10397601-43bc-4f40-b138-c85174d88f11.jpg",
+    "sha256": "6D75D309F993353EDB458122F55B43B3F644EDD8DD296378E5168191DD5B042E"
+  },
+  {
+    "image": 2,
+    "file": "screenshot-02.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-f74693ef-cb62-45cf-ad3b-7f8158b64b3e.jpg",
+    "sha256": "B5FAF9D9C5D138FDBB82333925DF19BC38E21F50CA769940B0B44EFB6E7C5D79"
+  },
+  {
+    "image": 3,
+    "file": "screenshot-03.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-f8325082-5b05-4d1c-9ea5-8d6bdb80480b.jpg",
+    "sha256": "5DC28C71646A0C2BB478361D731607A21DEAB75039442B95A8F64DAE5A53CEF2"
+  },
+  {
+    "image": 4,
+    "file": "screenshot-04.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-e620bf93-7f61-4acf-85e9-4f3f87285d41.jpg",
+    "sha256": "BACD141B03AEE859A5F03974792702899A46B6A0A3561B05AA751BB5296C6529"
+  },
+  {
+    "image": 5,
+    "file": "screenshot-05.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-8c2825a8-c849-4821-9a6e-9eb1004850c1.jpg",
+    "sha256": "EE624A6C94F5E770E5CCDA71E05F22CDD18ECE0D70EF3F2CB985DCEF3E10637C"
+  },
+  {
+    "image": 6,
+    "file": "screenshot-06.jpg",
+    "source": "C:\\Users\\Administrator\\AppData\\Local\\Temp\\codex-clipboard-7e699218-294f-4346-9179-d66e7dcc4a53.jpg",
+    "sha256": "0935BDFCB8D71C6F9547CD33DFBBD5DB67946759021D84B4AFD807C51EF9B43C"
+  }
+]

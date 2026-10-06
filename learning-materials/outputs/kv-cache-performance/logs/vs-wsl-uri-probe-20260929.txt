@@ -1,0 +1,24 @@
+Scope: local Windows PowerShell System.Uri parsing only. No WSL filesystem read or write was attempted by the assistant.
+User evidence: codex-clipboard-848c2ac0-9ed7-4351-bffd-2affd686169d.png shows VS Save As listing the experiments directory, a wsl$-prefixed filename, and error "无效的 URI: 未能分析主机名。"
+Previous screenshot shows k = [99, 11, 12, 13] in an unsaved first_kv.py tab. User has attempted saving; this is not merely a missing Ctrl+S instruction.
+
+Method: [System.Uri]::new(path, [System.UriKind]::Absolute)
+
+Path: \\wsl$\CUDA-Ubuntu-24.04\home\weltlaw\projects\mini-sglang-kv\experiments\first_kv.py
+Status: PARSE_FAILED
+Error: Exception calling ".ctor" with "2" argument(s): "Invalid URI: The hostname could not be parsed."
+
+Path: \\wsl.localhost\CUDA-Ubuntu-24.04\home\weltlaw\projects\mini-sglang-kv\experiments\first_kv.py
+Status: PARSE_OK
+HostName: wsl.localhost
+Uri: file://wsl.localhost/CUDA-Ubuntu-24.04/home/weltlaw/projects/mini-sglang-kv/experiments/first_kv.py
+
+Interpretation: reproducible URI parsing failure consistent with the user's VS error; this does not inspect the VS call stack or prove a successful save via the alternative path.
+Next: user keeps the edited buffer and replaces the Save As filename with the full wsl.localhost path, including .py. If overwrite confirmation names this exact practice file, replace it with the user's edited buffer. Verify by rerunning the same WSL Python command, expecting K[0] = 99 and V unchanged.
+
+Primary references consulted:
+https://github.com/dotnet/runtime/issues/36595
+https://github.com/microsoft/WSL/issues/4308
+https://learn.microsoft.com/en-us/windows/dev-environment/wsl-interop
+
+FOLLOW-UP: User screenshot codex-clipboard-4ca52840-e4b8-48e2-bee2-ceefb30d68e1.png shows the full wsl.localhost target in Save As and the same VS URI error. The alias workaround FAILED in actual VS use. The earlier PARSE_OK remains valid only as a string-parser result, not evidence of successful saving or a complete root cause. Pause alias changes; use Notepad on the already-readable wsl$ target as a temporary save/run check. Notepad outcome not yet available.

@@ -1,0 +1,7 @@
+{
+  "status": "FAILED",
+  "scope": "one fixed case",
+  "commit": "scaffold-validation-only",
+  "error_type": "RuntimeError",
+  "error": "LEARNER_CODE_PENDING: replace pass with your four read/write lines. No GPU kernel was launched."
+}

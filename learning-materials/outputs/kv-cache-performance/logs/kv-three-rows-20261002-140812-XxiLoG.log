@@ -1,0 +1,62 @@
+EXISTING_CHECK_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/check_kv_targets.py
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/kv-three-rows/run-20261002-140812-qgu5wpev
+SCOPE=two implementations, indices=[7,0,3]; FP16 batch=3 width=128 capacity=8; interleaved cache; no timing
+SAVED_CHECK_BEGIN
+"""Learner's reviewed 2026-10-02 submission, formatted as a callable check.
+
+The coach adds only this function wrapper/import. The caller supplies CPU
+snapshots of results and independent pre-launch expected inputs.
+"""
+
+import torch
+
+
+def check_kv_targets(k_cache, v_cache, expected_k, expected_v, target_rows):
+    for pid, pos in enumerate(target_rows):
+        assert torch.equal(k_cache[pos], expected_k[pid])
+        assert torch.equal(v_cache[pos], expected_v[pid])
+SAVED_CHECK_END
+SAVED_KERNEL_BEGIN
+"""First Triton KV store: one fixed learning case, not a general operator.
+
+Contract: FP16 k/v shape (2, 128), stride (128, 1); cache K/V views
+shape (8, 128), stride (256, 1); unique int32 indices [5, 1].
+Launch exactly two programs. Columns 0..127 are all valid in this case.
+The coach supplies the previously discussed address formulas and harness.
+The learner writes the four read/write lines below. No timing is measured.
+"""
+
+import triton
+import triton.language as tl
+
+
+@triton.jit
+def store_kv_first(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr):
+    pid = tl.program_id(0)
+    cols = tl.arange(0,64)
+    pos = tl.load(indices_ptr + pid)
+
+    src_offsets = pid * 64 + cols
+    dst_offsets = pos * 128 + cols
+
+    k_values = tl.load(k_ptr + src_offsets)
+    tl.store(k_cache_ptr + dst_offsets, k_values)
+
+    v_values = tl.load(v_ptr + src_offsets)
+    tl.store(v_cache_ptr + dst_offsets, v_values)
+
+
+if __name__ == "__main__":
+    print("This file defines the kernel. Use 11-triton-store.sh to run its checks.")
+SAVED_KERNEL_END
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-three-rows-results/run-20261002-140812-qgu5wpev
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 300, in <module>
+    main()
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 252, in main
+    state["kernel_layout_preflight"] = validate_kernel(kernel_source, width)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 176, in validate_kernel
+    raise RuntimeError(
+RuntimeError: KERNEL_LAYOUT_MISMATCH: --width 128 expects cols = tl.arange(0, 128); saved source has tl.arange(0, 64). No GPU kernel was launched. Match --width to the saved fixed-width kernel (64/64/128 or 128/128/256). Parameterized kernels need their corresponding adapter.
+THREE_ROWS_CHECK_STOPPED: preserve the first error. Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-three-rows-20261002-140812-XxiLoG.log

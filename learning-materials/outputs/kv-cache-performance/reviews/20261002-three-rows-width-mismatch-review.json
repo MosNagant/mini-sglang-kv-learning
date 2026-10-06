@@ -1,0 +1,35 @@
+{
+  "run": "run-20261002-133837-ejkyunfq",
+  "scope": "Offline review of saved source and all result values; no GPU rerun",
+  "diagnosis": "Kernel constants 64/64/128 disagree with runner width 128, source stride 128, cache stride 256",
+  "original_cuda_all_values_match_independent_expected": true,
+  "learner_all_values_match_wrong_stride_address_simulation": true,
+  "inputs_unchanged_both_implementations": true,
+  "first_failed_comparison": {
+    "pid": 0,
+    "pos": 7,
+    "expected_first4": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "actual_first4": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ]
+  },
+  "unexpected_changed_rows": {
+    "K": [
+      2,
+      4
+    ],
+    "V": [
+      1
+    ]
+  },
+  "saved_kernel_sha256": "8da99276bde3008b9922f4cf19226e33cbae11435ca7293153bd48d2aa76605a",
+  "repair": "For the existing fixed-width 13 runner, restore arange 128, source row stride 128, cache row stride 256. Re-run required; repair not executed."
+}

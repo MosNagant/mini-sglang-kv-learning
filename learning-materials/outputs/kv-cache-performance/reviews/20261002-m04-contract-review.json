@@ -1,0 +1,34 @@
+{
+  "status": "OFFLINE_REVIEW_PASS",
+  "run": "run-20261002-150548-_gy98gbd",
+  "nonempty_GPU_cases": 48,
+  "empty_adapter_cases": 4,
+  "source_hashes_checked": 23,
+  "full_arrays_independently_reconstructed": true,
+  "controls": {
+    "positive": "PASS",
+    "rejected_corruptions": [
+      "wrong_row",
+      "missing_K_last",
+      "missing_V_last",
+      "swap_KV",
+      "untouched_K",
+      "untouched_V",
+      "input_K",
+      "input_V_padding",
+      "indices"
+    ],
+    "rejected_contracts": [
+      "negative_index",
+      "upper_bound",
+      "duplicate",
+      "count",
+      "capacity",
+      "unsupported_width"
+    ],
+    "invalid_cases_submitted_to_GPU": false
+  },
+  "GPU_rerun": false,
+  "Triton_tested": false,
+  "timing": false
+}

@@ -1,0 +1,188 @@
+/usr/bin/git
+/usr/bin/curl
+/usr/bin/python3
+/usr/bin/g++
+/usr/bin/ninja
+Installing the kernel-study environment. No model download or benchmark in this step.
+
+[1/5] Check out the verified upstream commit
+Cloning into '/home/weltlaw/projects/mini-sglang-kv'...
+Switched to a new branch 'kv-cache-study'
+PINNED_COMMIT=9a91cfafe754aa85daee49998176275667eb58f2
+
+[2/5] Install uv in a project-local tools directory
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   167    0   167    0     0   5401      0 --:--:-- --:--:-- --:--:--  5566
+100 71308  100 71308    0     0   652k      0 --:--:-- --:--:-- --:--:--  652k
+downloading uv 0.12.20 x86_64-unknown-linux-gnu
+installing to /home/weltlaw/projects/mini-sglang-kv/.lab-tools
+  uv
+  uvx
+everything's installed!
+uv 0.12.20 (x86_64-unknown-linux-gnu)
+
+[3/5] Create an isolated Python 3.12 environment and lock dependencies
+Using CPython 3.12.3 interpreter at: /usr/bin/python3
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 50 packages in 3.26s
+8f0b13b46aa7ea48b2d592784b3e4418ef380c88e23f89f9844ab3c5bc02c815  /home/weltlaw/projects/mini-sglang-kv/experiments/environment/requirements.lock
+Dependency lock saved. Installing packages; this may download several GB.
+Resolved 50 packages in 5ms
+Downloading torch (859.1MiB)
+Downloading sympy (6.0MiB)
+Downloading hf-xet (4.3MiB)
+Downloading networkx (2.0MiB)
+Downloading triton (162.6MiB)
+Downloading transformers (11.4MiB)
+Downloading pygments (1.2MiB)
+Downloading apache-tvm-ffi (1.9MiB)
+Downloading nvidia-cudnn-cu12 (674.0MiB)
+Downloading numpy (15.9MiB)
+Downloading nvidia-cusparse-cu12 (274.9MiB)
+Downloading nvidia-nvjitlink-cu12 (37.4MiB)
+Downloading nvidia-curand-cu12 (60.7MiB)
+Downloading nvidia-nvshmem-cu12 (118.9MiB)
+Downloading nvidia-cublas-cu12 (566.8MiB)
+Downloading nvidia-cufft-cu12 (184.2MiB)
+Downloading nvidia-cufile-cu12 (1.1MiB)
+Downloading nvidia-cuda-cupti-cu12 (9.8MiB)
+Downloading tokenizers (3.1MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (84.0MiB)
+Downloading nvidia-nccl-cu12 (307.4MiB)
+Downloading nvidia-cusolver-cu12 (255.1MiB)
+Downloading nvidia-cusparselt-cu12 (273.9MiB)
+ Downloaded pygments
+ Downloaded nvidia-cufile-cu12
+ Downloaded apache-tvm-ffi
+ Downloaded networkx
+ Downloaded tokenizers
+ Downloaded hf-xet
+ Downloaded sympy
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded transformers
+ Downloaded numpy
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded nvidia-curand-cu12
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded nvidia-nvshmem-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cusparselt-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+ Downloaded triton
+ Downloaded torch
+Prepared 50 packages in 30m 21s
+Installed 50 packages in 127ms
+ + apache-tvm-ffi==0.1.4
+ + certifi==2026.7.22
+ + charset-normalizer==3.5.1
+ + coverage==7.16.2
+ + filelock==4.0.6
+ + fsspec==2026.9.0
+ + hf-xet==1.6.0
+ + huggingface-hub==0.36.2
+ + idna==3.20
+ + iniconfig==2.3.0
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + msgpack==1.2.3
+ + networkx==3.7
+ + numpy==2.5.3
+ + nvidia-cublas-cu12==12.8.4.1
+ + nvidia-cuda-cupti-cu12==12.8.90
+ + nvidia-cuda-nvrtc-cu12==12.8.93
+ + nvidia-cuda-runtime-cu12==12.8.90
+ + nvidia-cudnn-cu12==9.10.2.21
+ + nvidia-cufft-cu12==11.3.3.83
+ + nvidia-cufile-cu12==1.13.1.3
+ + nvidia-curand-cu12==10.3.9.90
+ + nvidia-cusolver-cu12==11.7.3.90
+ + nvidia-cusparse-cu12==12.5.8.93
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.27.5
+ + nvidia-nvjitlink-cu12==12.8.93
+ + nvidia-nvshmem-cu12==3.3.20
+ + nvidia-nvtx-cu12==12.8.90
+ + packaging==26.3
+ + pluggy==1.6.0
+ + pygments==2.21.0
+ + pytest==9.1.1
+ + pytest-cov==7.1.0
+ + pyyaml==6.0.3
+ + pyzmq==27.2.0
+ + regex==2026.9.29
+ + requests==2.34.2
+ + safetensors==0.8.0
+ + setuptools==84.0.0
+ + sympy==1.14.0
+ + tokenizers==0.22.2
+ + torch==2.9.1+cu128
+ + tqdm==4.70.1
+ + transformers==4.57.3
+ + triton==3.5.1
+ + typing-extensions==4.16.0
+ + urllib3==2.8.0
+Checked 50 packages in 0.56ms
+All installed packages are compatible
+
+[4/5] Configure this shell to use the original source checkout
+
+[5/5] Validate imports, GPU access, and upstream test collection
+/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:161: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+We recommend installing via `pip install torch-c-dlpack-ext`
+  warnings.warn(
+{
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "python_executable": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "kernel": "6.18.33.2-microsoft-standard-WSL2",
+  "os_release": {
+    "NAME": "Ubuntu",
+    "ID": "ubuntu",
+    "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+    "VERSION_ID": "24.04",
+    "VERSION": "24.04.5 LTS (Noble Numbat)",
+    "VERSION_CODENAME": "noble",
+    "ID_LIKE": "debian",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "UBUNTU_CODENAME": "noble",
+    "LOGO": "ubuntu-logo"
+  },
+  "torch": "2.9.1+cu128",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "compute_capability": [
+    8,
+    9
+  ],
+  "total_memory_bytes": 12878086144,
+  "store_source": "/home/weltlaw/projects/mini-sglang-kv/python/minisgl/kernel/store.py",
+  "packages": {
+    "apache-tvm-ffi": "0.1.4",
+    "transformers": "4.57.3",
+    "triton": "3.5.1",
+    "pytest": "9.1.1",
+    "pyzmq": "27.2.0",
+    "msgpack": "1.2.3"
+  },
+  "scope": "kernel-study dependencies only; full inference stack and counters not verified",
+  "kv_kernel_execution": "not yet tested"
+}
+ENV_IMPORT_PASS
+tests/kernel/test_store.py::test_store_cache
+
+1 test collected in 1.96s
+SETUP_PASS: original source imports, GPU access works, upstream store test is collected.
+Not yet a KV-kernel correctness result or a performance baseline.
+Project: /home/weltlaw/projects/mini-sglang-kv
+Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/setup-kernel-env-20260929-172950.log
+Next session: source ~/projects/mini-sglang-kv/experiments/activate.sh

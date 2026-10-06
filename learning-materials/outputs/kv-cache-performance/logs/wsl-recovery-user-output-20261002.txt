@@ -1,0 +1,20 @@
+Source: user-provided output on 2026-10-02, Asia/Shanghai.
+Markdown escaping normalized for command underscores; no new execution claimed.
+
+STORAGE DEVICE OK.
+PS C:\Users\Administrator> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /bin/echo WSL_OK
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+WSL_OK
+PS C:\Users\Administrator>
+
+Corroborating repair log read by the assistant:
+outputs/logs/repair-storage-20261002-122833.log
+Started: 2026-10-02 12:28:33; ended: 12:28:35.
+Create missing device registration: True
+PNPDeviceID: ROOT\STORVSP\0000
+Present: True
+ConfigManagerErrorCode: 0
+storvsp State: Running
+
+Confirms recovery of this WSL launch. No project-file or GPU validation performed in this step.
+The process that launches DevManView and long-term reboot stability remain unresolved.

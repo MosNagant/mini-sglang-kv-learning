@@ -1,0 +1,12 @@
+{
+  "run": "run-20261002-135746-9uoe5ife",
+  "scope": "Offline saved-source and full-result review; no GPU rerun",
+  "diagnosis": "Fixed64 kernel used with width128 fixtures; same address mismatch as 13:38",
+  "kernel_ast_matches_previous_failed64": true,
+  "original_all_values_correct": true,
+  "learner_all_values_match_wrong_stride_simulation": true,
+  "inputs_unchanged": true,
+  "next_command_option": "13-check-kv-three-rows.sh --width 64",
+  "new_width64_gpu_result": "NOT_RUN",
+  "new_runner_sha256": "e8017d77cec59e366843b55cd20741094891d237ccfd371e91fe9bbeb834cf49"
+}

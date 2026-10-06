@@ -1,0 +1,109 @@
+WSL startup recurrence — 2026-10-01
+Scope: read-only Windows storage-device checks; no WSL launched from sandbox; no repair performed.
+
+User-reported command:
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --cd /home/weltlaw/projects/mini-sglang-kv
+User-reported result:
+系统找不到指定的路径。
+错误代码: Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND
+
+storage-status
+
+SERVICE_NAME: storvsp 
+        TYPE               : 1  KERNEL_DRIVER  
+        STATE              : 1  STOPPED 
+        WIN32_EXIT_CODE    : 1077  (0x435)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+
+RootRegistrationExists : False
+Device0000Exists       : False
+DriverExists           : True
+InfExists              : True
+
+
+
+device-history
+31559-     dvi:           Searching for hardware ID(s):
+--
+31588-     sto:      {Setup Import Driver Package - exit (0x00000000)} 21:27:28.042
+31589-     dvi:      Searching for hardware ID(s):
+31590-     dvi:           root\storvsp
+31591-     dvi:      Class GUID of device changed to: {4d36e97d-e325-11ce-bfc1-08002be10318}.
+31592:     ump:      {Plug and Play Service: Device Install for ROOT\STORVSP\0000}
+31593-     dvi:           {Core Device Install} 21:27:28.084
+31594:     dvi:                {Configure Device - ROOT\STORVSP\0000} 21:27:28.084
+31595-     dvi:                     Device Status: 0x01802001
+31596-     dvi:                     Parent Device: HTREE\ROOT\0
+31597-     sto:                     {Configure Driver Package: C:\Windows\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_274327807fae3289\wstorvsp.inf}
+31598-     sto:                          Source Filter  = root\storvsp
+--
+31627-     dvi:                     Install Device: Configuring device. 21:27:28.091
+31628-     dvi:                          Configuration: wstorvsp.inf:root\storvsp,Storage_VSP
+31629-     dvi:                     Install Device: Configuring device completed. 21:27:28.092
+31630-     dvi:                     Device Status: 0x01802001
+31631:     dvi:                     Install Device: Starting device 'ROOT\STORVSP\0000'. 21:27:28.092
+31632-     dvi:                     Install Device: Starting device completed. 21:27:28.097
+31633-     dvi:                {Configure Device - exit(0x00000000)} 21:27:28.098
+31634-     dvi:           {Core Device Install - exit(0x00000000)} 21:27:28.099
+31635-     ump:      {Plug and Play Service: Device Install exit(00000000)}
+--
+31677-<<<  Section end 2026/09/30 17:41:44.455
+31678-<<<  [Exit status: SUCCESS]
+31679-
+31680-
+31681:>>>  [Delete Device - ROOT\STORVSP\0000]
+31682->>>  Section start 2026/09/30 17:41:44.455
+31683-      cmd: "C:\DevManView.exe" /uninstall *Disk* /use_wildcard
+31684-     dvi: Query-and-Remove succeeded
+31685-<<<  Section end 2026/09/30 17:41:44.455
+--
+31756->>>  Section start 2026/09/30 17:59:08.243
+31757-      cmd: "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File C:\Users\Administrator\Documents\Codex\2026-09-27\cuda-wsl-wsl-2\outputs\Repair-WSL-Storage.ps1 -SkipSetup
+31758-     ndv: INF path: C:\Windows\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_274327807fae3289\wstorvsp.inf
+31759-     ndv: Install flags: 0x00000001
+31760:     ndv: {Update Device Driver - ROOT\STORVSP\0000}
+31761-     ndv:      Search options: 0x00000080
+31762-     ndv:      Searching single INF 'C:\Windows\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_274327807fae3289\wstorvsp.inf'
+31763-     dvi:      {Build Driver List} 17:59:08.252
+31764-     dvi:           Searching for hardware ID(s):
+--
+31793-     sto:      {Setup Import Driver Package - exit (0x00000000)} 17:59:08.273
+31794-     dvi:      Searching for hardware ID(s):
+31795-     dvi:           root\storvsp
+31796-     dvi:      Class GUID of device changed to: {4d36e97d-e325-11ce-bfc1-08002be10318}.
+31797:     ump:      {Plug and Play Service: Device Install for ROOT\STORVSP\0000}
+31798-     dvi:           {Core Device Install} 17:59:08.307
+31799:     dvi:                {Configure Device - ROOT\STORVSP\0000} 17:59:08.308
+31800-     dvi:                     Device Status: 0x01802001
+31801-     dvi:                     Parent Device: HTREE\ROOT\0
+31802-     sto:                     {Configure Driver Package: C:\Windows\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_274327807fae3289\wstorvsp.inf}
+31803-     sto:                          Source Filter  = root\storvsp
+--
+31832-     dvi:                     Install Device: Configuring device. 17:59:08.316
+31833-     dvi:                          Configuration: wstorvsp.inf:root\storvsp,Storage_VSP
+31834-     dvi:                     Install Device: Configuring device completed. 17:59:08.317
+31835-     dvi:                     Device Status: 0x01802001
+31836:     dvi:                     Install Device: Starting device 'ROOT\STORVSP\0000'. 17:59:08.317
+31837-     dvi:                     Install Device: Starting device completed. 17:59:08.323
+31838-     dvi:                {Configure Device - exit(0x00000000)} 17:59:08.323
+31839-     dvi:           {Core Device Install - exit(0x00000000)} 17:59:08.323
+31840-     ump:      {Plug and Play Service: Device Install exit(00000000)}
+--
+31882-<<<  Section end 2026/10/01 12:52:11.685
+31883-<<<  [Exit status: SUCCESS]
+31884-
+31885-
+31886:>>>  [Delete Device - ROOT\STORVSP\0000]
+31887->>>  Section start 2026/10/01 12:52:11.685
+31888-      cmd: "C:\DevManView.exe" /uninstall *Disk* /use_wildcard
+31889-     dvi: Query-and-Remove succeeded
+31890-<<<  Section end 2026/10/01 12:52:11.695
+
+
+Conclusion: required storage device registration is absent, service stopped, Microsoft driver/INF files remain.
+setupapi.dev.log records ROOT\STORVSP\0000 deletion at 2026/10/01 12:52:11.685 by C:\DevManView.exe /uninstall *Disk* /use_wildcard.
+The parent launcher and relationship to Windows boot are not established by these checks.
+Next: user runs existing Repair-WSL-Storage.ps1 -SkipSetup in their elevated PowerShell; verify WSL_OK afterward.
+Current project file integrity and GPU operation have not been rechecked in this incident.

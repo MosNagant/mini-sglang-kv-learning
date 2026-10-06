@@ -1,0 +1,12 @@
+{
+  "config_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\validation\\06-timestamps\\already-false\\home\\NVIDIA Corporation\\nsys-config.ini",
+  "existed_before": true,
+  "changed": false,
+  "previous_values": [
+    "false"
+  ],
+  "setting": "CuptiUseRawGpuTimestamps=false",
+  "backup": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\validation\\06-timestamps\\already-false\\run\\nsys-config.before.ini",
+  "timing_limitation": "CUPTI timestamp conversion workaround; lower precision than the normal mechanism",
+  "reference": "https://forums.developer.nvidia.com/t/nsys-doesnt-show-cuda-kernel-and-memory-data/315536"
+}

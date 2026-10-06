@@ -1,0 +1,8 @@
+# Minimal dependencies for the pinned upstream store test, not the full server.
+torch==2.9.1+cu128
+apache-tvm-ffi==0.1.4
+transformers==4.57.3
+msgpack
+pyzmq
+pytest
+pytest-cov

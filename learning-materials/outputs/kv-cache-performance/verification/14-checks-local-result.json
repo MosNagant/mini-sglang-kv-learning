@@ -1,0 +1,21 @@
+{
+  "scope": "NumPy stand-ins test harness organization only, not PyTorch/Triton or GPU execution",
+  "syntax_and_LF": "PASS",
+  "width_fixture_and_launch_pairs": [
+    [
+      3,
+      64
+    ],
+    [
+      3,
+      128
+    ]
+  ],
+  "checker_deliberate_errors_rejected": 14,
+  "fixed64_on_width128_rejected_and_raw_result_preserved": true,
+  "incomplete_template_and_missing_constexpr_rejected": true,
+  "existing_learner_file_preserved": true,
+  "unsupported_width_and_wrong_cache_layout_rejected": true,
+  "bash_execution": "NOT_RUN",
+  "gpu_execution": "NOT_RUN"
+}

@@ -1,0 +1,24 @@
+{
+  "run": "run-20261002-140817-qyuxk3bo",
+  "scope": "Offline full-result and source review; no GPU rerun",
+  "outcome": "First actual width64 run passes both original CUDA and learner fixed-width Triton",
+  "cases_verified": [
+    "original_cuda-7-0-3",
+    "learner_triton-7-0-3"
+  ],
+  "all_targets_and_untouched_values_verified": true,
+  "inputs_unchanged": true,
+  "source_hashes_verified": 22,
+  "runner_and_entry_match": true,
+  "kernel_ast_unchanged_from_135746_failed_run": true,
+  "repair_explanation": "Runner now creates width64 data/expectations/cache and checks their strides; learner kernel unchanged",
+  "checker_negative_controls_recorded": 7,
+  "coverage": "FP16 B=3 D=64 C=8, interleaved cache stride128, contiguous input stride64, indices[7,0,3]",
+  "docstring_caveat": "Historical header still says B2 D128; actual body and run metadata are B3 D64",
+  "not_established": [
+    "same kernel source supports widths64 and128",
+    "arbitrary strides/layouts",
+    "benchmark",
+    "model integration"
+  ]
+}

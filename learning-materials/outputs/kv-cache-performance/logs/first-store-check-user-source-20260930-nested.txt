@@ -1,0 +1,21 @@
+User-provided output of nl -ba on the actual WSL learner file.
+Recorded from chat on 2026-09-30; source text below normalized to plain underscores.
+Not read directly from WSL by the assistant. No new execution result supplied.
+Path: /home/weltlaw/projects/mini-sglang-kv/experiments/check_real_store.py
+
+1  """Your first check of a result produced by the real CUDA store kernel.
+2
+3  The coach's runner prepares the inputs and calls the original kernel.
+4  You write the check below. Row numbers start at 0.
+5  """
+6
+7  import torch
+8
+9
+10 def check_first_k(k_cache, k):
+11     # k has 2 rows; k_cache has 8 rows. Each row has 128 numbers.
+12     # The CUDA call used indices = [5, 1].
+13     # Task: check the destination of input K row 0, comparing the WHOLE row.
+14     # Replace the next line with your own assert statement.
+15     def check_first_k(k_cache, k):
+16         assert torch.equal(k_cache[5], k[0])

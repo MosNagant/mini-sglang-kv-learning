@@ -1,0 +1,14 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-211954-yn024jnx
+SCOPE=learner-written first K row check; not a full suite or benchmark
+GPU=NVIDIA GeForce RTX 4070 Ti
+RAW_RESULT_SAVED=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-211954-yn024jnx/result.json
+CALLING_LEARNER_CHECK=check_first_k(k_cache, k)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/09-check-real-store.py", line 124, in <module>
+    main()
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/09-check-real-store.py", line 118, in main
+    checker(k_cache, k)
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-211954-yn024jnx/check_real_store.py", line 15, in check_first_k
+    raise NotImplementedError("TODO: write the first K row assertion")
+NotImplementedError: TODO: write the first K row assertion
+CHECK_STOPPED: preserve the first error above. Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/first-store-check-20260930-211954-AtaWvi.log

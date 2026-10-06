@@ -1,0 +1,126 @@
+PS C:\Users\Administrator> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /usr/bin/nl -ba /home/weltlaw/projects/mini-sglang-kv/python/minisgl/kernel/csrc/jit/store.cu
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+     1  #include <minisgl/tensor.h>
+     2  #include <minisgl/utils.cuh>
+     3  #include <minisgl/utils.h>
+     4  #include <minisgl/warp.cuh>
+     5
+     6  #include <tvm/ffi/container/tensor.h>
+     7
+     8  #include <concepts>
+     9  #include <cstddef>
+    10  #include <cstdint>
+    11
+    12  namespace {
+    13
+    14  struct StoreKernelParams {
+    15    void *__restrict__ k_cache;
+    16    void *__restrict__ v_cache;
+    17    const void *__restrict__ indices;
+    18    const void *__restrict__ k;
+    19    const void *__restrict__ v;
+    20    std::size_t kv_cache_stride;
+    21    std::size_t kv_input_stride;
+    22    std::size_t length;
+    23  };
+    24
+    25  template <std::size_t kNumThreads, std::size_t kMaxOccupancy, bool kUsePDL,
+    26            std::size_t kElementSize, std::integral T>
+    27  __global__ __launch_bounds__(kNumThreads, kMaxOccupancy) void //
+    28      store_kv_cache(const __grid_constant__ StoreKernelParams params) {
+    29    using namespace device;
+    30
+    31    constexpr auto kWarpPerBlock =
+    32        static_cast<unsigned>(kNumThreads / kWarpThreads);
+    33    static_assert(kNumThreads % kWarpThreads == 0);
+    34
+    35    const auto &[k_cache, v_cache, indices, k, v, kv_cache_stride,
+    36                 kv_input_stride, length] = params;
+    37    const auto warp_id =
+    38        (threadIdx.x / kWarpThreads) + blockIdx.x * kWarpPerBlock;
+    39    PDL::wait<kUsePDL>();
+    40
+    41    // each warp handles one element
+    42    if (warp_id < length) {
+    43      const auto pos = static_cast<const T *>(indices)[warp_id];
+    44      const auto dst_k = pointer::offset(k_cache, pos * kv_cache_stride);
+    45      const auto src_k = pointer::offset(k, warp_id * kv_input_stride);
+    46      warp::copy<kElementSize>(dst_k, src_k);
+    47      const auto dst_v = pointer::offset(v_cache, pos * kv_cache_stride);
+    48      const auto src_v = pointer::offset(v, warp_id * kv_input_stride);
+    49      warp::copy<kElementSize>(dst_v, src_v);
+    50    }
+    51
+    52    PDL::launch<kUsePDL>();
+    53  }
+    54
+    55  template <std::size_t element_size, // depends on data type and embedding dim
+    56            std::size_t num_threads = 128,   // number of threads per block
+    57            std::size_t max_concurrency = 1, // max blocks per SM
+    58            bool use_pdl = false>
+    59  struct StoreKernel {
+    60    static void run(const tvm::ffi::TensorView k_cache,
+    61                    const tvm::ffi::TensorView v_cache,
+    62                    const tvm::ffi::TensorView indices,
+    63                    const tvm::ffi::TensorView k, const tvm::ffi::TensorView v) {
+    64      using namespace host;
+    65      auto D = SymbolicSize{"D"}; // element size
+    66      auto L = SymbolicSize{"L"}; // length
+    67      auto X = SymbolicSize{"X"}; // stride kv cache
+    68      auto Y = SymbolicSize{"Y"}; // stride kv input
+    69      auto indices_dtype_ = SymbolicDType{};
+    70      auto dtype_ = SymbolicDType{};
+    71      auto device_ = SymbolicDevice{};
+    72
+    73      TensorMatcher({-1, D}) //
+    74          .with_strides({X, 1})
+    75          .with_device<kDLCUDA>(device_)
+    76          .with_dtype(dtype_)
+    77          .verify(k_cache)
+    78          .verify(v_cache);
+    79      TensorMatcher({L, D}) //
+    80          .with_strides({Y, 1})
+    81          .with_device<kDLCUDA>(device_)
+    82          .with_dtype(dtype_)
+    83          .verify(k)
+    84          .verify(v);
+    85      TensorMatcher({L}) //
+    86          .with_device<kDLCUDA>(device_)
+    87          .with_dtype<int32_t, int64_t>(indices_dtype_)
+    88          .verify(indices);
+    89
+    90      const auto dtype_size = dtype_bytes(dtype_.unwrap());
+    91      RuntimeCheck(element_size == dtype_size * D.unwrap());
+    92
+    93      const auto device = device_.unwrap();
+    94      const auto use_int32 = indices_dtype_.unwrap().bits == 32;
+    95      const auto length = static_cast<std::size_t>(L.unwrap());
+    96      const auto kv_cache_stride = X.unwrap() * dtype_size;
+    97      const auto kv_input_stride = Y.unwrap() * dtype_size;
+    98
+    99      const auto params = StoreKernelParams{
+   100          .k_cache = k_cache.data_ptr(),
+   101          .v_cache = v_cache.data_ptr(),
+   102          .indices = indices.data_ptr(),
+   103          .k = k.data_ptr(),
+   104          .v = v.data_ptr(),
+   105          .kv_cache_stride = kv_cache_stride,
+   106          .kv_input_stride = kv_input_stride,
+   107          .length = length,
+   108      };
+   109
+   110      constexpr auto kWarpPerBlock = num_threads / 32;
+   111      static_assert(num_threads % 32 == 0);
+   112      const auto num_blocks = div_ceil(length, kWarpPerBlock);
+   113      const auto kernel = use_int32
+   114                              ? store_kv_cache<num_threads, max_concurrency,
+   115                                               use_pdl, element_size, int32_t>
+   116                              : store_kv_cache<num_threads, max_concurrency,
+   117                                               use_pdl, element_size, int64_t>;
+   118      LaunchKernel(num_blocks, num_threads, device)
+   119          .with_attr(use_pdl)(kernel, params);
+   120    }
+   121  };
+   122
+   123  } // namespace
+PS C:\Users\Administrator>

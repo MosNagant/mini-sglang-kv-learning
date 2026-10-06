@@ -1,0 +1,17 @@
+batch,torch_compile_display_ms_rounded,torch_compile_logical_write_GBps_display,upstream_cuda_display_ms_rounded,upstream_cuda_logical_write_GBps_display,scope,source_log
+1,0.011,0.046,0.006,0.084,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+2,0.002,0.629,0.001,0.990,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+4,0.002,1.036,0.001,1.923,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+8,0.003,1.444,0.002,2.105,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+16,0.002,4.908,0.002,4.001,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+32,0.002,9.581,0.001,11.940,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+64,0.003,9.581,0.002,18.217,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+128,0.002,31.527,0.002,40.339,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+256,0.002,60.664,0.001,134.737,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+512,0.002,119.626,0.002,172.973,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+1024,0.003,192.481,0.002,295.954,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+2048,0.004,286.034,0.002,691.892,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+4096,0.005,382.804,0.004,581.612,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+8192,0.009,460.742,0.004,1098.123,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+16384,0.016,513.605,0.006,1310.720,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log
+32768,0.031,539.657,0.015,1118.362,single upstream exploratory run; not project baseline,upstream-run-20260929-181115-pFBvSx.log

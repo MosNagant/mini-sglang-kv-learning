@@ -1,0 +1,37 @@
+EXISTING_CHECK_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/check_kv_targets.py
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/kv-three-rows/run-20261002-134759-1b6gj9ip
+SCOPE=two implementations, indices=[7,0,3]; FP16 batch=3 width=128 capacity=8; no timing
+SAVED_CHECK_BEGIN
+"""Learner's reviewed 2026-10-02 submission, formatted as a callable check.
+
+The coach adds only this function wrapper/import. The caller supplies CPU
+snapshots of results and independent pre-launch expected inputs.
+"""
+
+import torch
+
+
+def check_kv_targets(k_cache, v_cache, expected_k, expected_v, target_rows):
+    for pid, pos in enumerate(target_rows):
+        assert torch.equal(k_cache[pos], expected_k[pid])
+        assert torch.equal(v_cache[pos], expected_v[pid])
+SAVED_CHECK_END
+CHECKER_CONTROLS_PASS: correct three-row fixture accepted; seven deliberate errors rejected on CPU
+GPU=NVIDIA GeForce RTX 4070 Ti TORCH=2.9.1+cu128 TRITON=3.5.1
+CASE_SETUP implementation=original_cuda input_shape=(3, 128) indices=[7, 0, 3]
+CASE_PASS implementation=original_cuda indices=[7, 0, 3]
+CASE_SETUP implementation=learner_triton input_shape=(3, 128) indices=[7, 0, 3]
+TRITON_LAUNCH grid=(3,) pid=0..2
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-three-rows-results/run-20261002-134759-1b6gj9ip
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 254, in <module>
+    main()
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 230, in main
+    run_case(torch, launcher, checker, rows, run / name, implementation)
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 128, in run_case
+    checker(actual_k_cache, actual_v_cache, expected_k, expected_v, rows)
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/kv-three-rows/run-20261002-134759-1b6gj9ip/check_kv_targets.py", line 12, in check_kv_targets
+    assert torch.equal(k_cache[pos], expected_k[pid])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+THREE_ROWS_CHECK_STOPPED: preserve the first error. Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-three-rows-20261002-134759-U6pnQ2.log

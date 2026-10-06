@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/13-check-kv-three-rows.py", line 128, in run_case
+    checker(actual_k_cache, actual_v_cache, expected_k, expected_v, rows)
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/kv-three-rows/run-20261002-134759-1b6gj9ip/check_kv_targets.py", line 12, in check_kv_targets
+    assert torch.equal(k_cache[pos], expected_k[pid])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,29 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-213229-8tipnlv8
+SCOPE=learner-written first K row check; not a full suite or benchmark
+SAVED_CHECK_CODE_BEGIN
+  1: """Your first check of a result produced by the real CUDA store kernel.
+  2: 
+  3: The coach's runner prepares the inputs and calls the original kernel.
+  4: You write the check below. Row numbers start at 0.
+  5: """
+  6: 
+  7: import torch
+  8: 
+  9: 
+ 10: def check_first_k(k_cache, k):
+ 11: 
+ 12:     assert torch.equal(k_cache[1], k[0])
+SAVED_CHECK_CODE_END
+GPU=NVIDIA GeForce RTX 4070 Ti
+RAW_RESULT_SAVED=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-213229-8tipnlv8/result.json
+CALLING_LEARNER_CHECK=check_first_k(k_cache, k)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/09-check-real-store.py", line 130, in <module>
+    main()
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/09-check-real-store.py", line 124, in main
+    checker(k_cache, k)
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/first-store-check/run-20260930-213229-8tipnlv8/check_real_store.py", line 12, in check_first_k
+    assert torch.equal(k_cache[1], k[0])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+CHECK_STOPPED: preserve the first error above. Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/first-store-check-20260930-213229-ZijqII.log

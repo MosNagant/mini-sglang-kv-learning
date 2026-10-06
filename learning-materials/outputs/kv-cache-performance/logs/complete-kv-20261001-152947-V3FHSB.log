@@ -1,0 +1,95 @@
+EXISTING_FILE_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/kv_write_lab.py
+PROJECT_COMMIT=9a91cfafe754aa85daee49998176275667eb58f2
+SCOPE=complete small learning experiment; not a benchmark or a full correctness suite
+SAVED_SOURCE_BEGIN
+     1	"""Complete, visible learning experiment; uses the existing CUDA kernel.
+     2	
+     3	The coach supplies input preparation, observation and recording.
+     4	The learner adds correctness checks at the end. This is not a benchmark.
+     5	"""
+     6	
+     7	import json
+     8	import shutil
+     9	import tempfile
+    10	from datetime import datetime
+    11	from pathlib import Path
+    12	
+    13	import torch
+    14	from minisgl.kernel import store_cache
+    15	
+    16	# A. Prepare the destination and inputs on the GPU.
+    17	capacity, batch, width = 8, 2, 128
+    18	kv_cache = torch.full((capacity, 2, width), -1, dtype=torch.float16, device="cuda")
+    19	k_cache = kv_cache[:, 0, :]
+    20	v_cache = kv_cache[:, 1, :]
+    21	
+    22	k = torch.arange(batch * width, dtype=torch.float16, device="cuda").reshape(batch, width) + 10
+    23	v = k + 1000
+    24	indices = torch.tensor([5, 1], dtype=torch.int32, device="cuda")
+    25	
+    26	print("CACHE:", tuple(kv_cache.shape), kv_cache.dtype, kv_cache.device)
+    27	print("K VIEW:", tuple(k_cache.shape), "stride:", k_cache.stride())
+    28	print("INPUT K:", tuple(k.shape), "stride:", k.stride())
+    29	print("INDICES:", indices.cpu().tolist())
+    30	print("BEFORE: K/V cache values were initialized to -1.")
+    31	
+    32	# B. Call mini-sglang's existing CUDA kernel, then wait for GPU completion.
+    33	store_cache(k_cache, v_cache, indices, k, v)
+    34	torch.cuda.synchronize()
+    35	
+    36	# C. Display a small part of every destination row.
+    37	for row in range(capacity):
+    38	    print(f"CACHE {row}: K[:4]={k_cache[row, :4].cpu().tolist()} V[:4]={v_cache[row, :4].cpu().tolist()}")
+    39	
+    40	# D. Coach's record keeping: preserve this source and ALL values before checks.
+    41	record_parent = Path(__file__).resolve().parent / "learning" / "complete-kv"
+    42	record_parent.mkdir(parents=True, exist_ok=True)
+    43	record_dir = Path(tempfile.mkdtemp(prefix=datetime.now().strftime("run-%Y%m%d-%H%M%S-"), dir=record_parent))
+    44	shutil.copyfile(__file__, record_dir / "kv_write_lab.py")
+    45	record = {
+    46	    "scope": "learning observation and learner checks; not a benchmark",
+    47	    "torch_version": torch.__version__,
+    48	    "torch_cuda_version": torch.version.cuda,
+    49	    "gpu": torch.cuda.get_device_name(0),
+    50	    "cache_initial_value": -1,
+    51	    "cache_shape": list(kv_cache.shape),
+    52	    "k_input_stride": list(k.stride()),
+    53	    "k_cache_stride": list(k_cache.stride()),
+    54	    "dtype": str(k.dtype),
+    55	    "indices": indices.cpu().tolist(),
+    56	    "k": k.cpu().tolist(),
+    57	    "v": v.cpu().tolist(),
+    58	    "k_cache": k_cache.cpu().tolist(),
+    59	    "v_cache": v_cache.cpu().tolist(),
+    60	}
+    61	(record_dir / "result.json").write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+    62	print("RAW_RESULT_SAVED:", record_dir / "result.json")
+    63	
+    64	# E. Learner's check area. Write checks here after understanding A-C.
+    65	# Observation output alone does not establish correctness.
+    66	# Keep this area at the top level; no extra function definition is needed.
+    67	assert torch.equal(k_cache[5], k[0])
+    68	assert torch.equal(v_cache[5], v[0])
+    69	assert torch.equal(k_cache[1], k[1])
+    70	assert torch.equal(v_cache[1], v[1])
+    71	for row in [0, 2, 3, 4, 6, 7]:
+    72	    assert torch.all(k_cache[row] == -1).item()
+    73	    assert torch.all(v_cache[row] == -1).item()
+    74	print("RUN_FINISHED: review the saved code for check coverage; no full-suite or timing PASS is claimed.")
+SAVED_SOURCE_END
+CACHE: (8, 2, 128) torch.float16 cuda:0
+K VIEW: (8, 128) stride: (256, 1)
+INPUT K: (2, 128) stride: (128, 1)
+INDICES: [5, 1]
+BEFORE: K/V cache values were initialized to -1.
+CACHE 0: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 1: K[:4]=[138.0, 139.0, 140.0, 141.0] V[:4]=[1138.0, 1139.0, 1140.0, 1141.0]
+CACHE 2: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 3: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 4: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 5: K[:4]=[10.0, 11.0, 12.0, 13.0] V[:4]=[1010.0, 1011.0, 1012.0, 1013.0]
+CACHE 6: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+CACHE 7: K[:4]=[-1.0, -1.0, -1.0, -1.0] V[:4]=[-1.0, -1.0, -1.0, -1.0]
+RAW_RESULT_SAVED: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/complete-kv/run-20261001-152949-aoikoudo/result.json
+RUN_FINISHED: review the saved code for check coverage; no full-suite or timing PASS is claimed.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/complete-kv-20261001-152947-V3FHSB.log

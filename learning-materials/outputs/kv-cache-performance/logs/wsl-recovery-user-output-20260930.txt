@@ -1,0 +1,22 @@
+Source: User-pasted PowerShell output in this conversation, 2026-09-30.
+Formatting normalized from the pasted block. WSL command was run by the user, not the assistant.
+
+Name      : storvsp
+State     : Running
+StartMode : Manual
+PathName  : C:\Windows\system32\drivers\storvsp.sys
+STORAGE DEVICE OK.
+
+PS C:\Users\Administrator> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /bin/echo WSL_OK
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+WSL_OK
+PS C:\Users\Administrator>
+
+Corroborating local repair transcript read by the assistant:
+outputs/logs/repair-storage-20260930-175907.log
+Repair ran with -SkipSetup, ended at 17:59:09, device Present=True,
+ConfigManagerErrorCode=0, storvsp Running.
+
+Scope: device restoration and user WSL launch confirmed. Today's editor access,
+project execution, GPU operation, and L01a are not yet verified.
+The process responsible for launching DevManView remains unidentified.

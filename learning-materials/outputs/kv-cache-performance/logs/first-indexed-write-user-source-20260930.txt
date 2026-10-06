@@ -1,0 +1,25 @@
+Source: user-pasted first_kv.py, 2026-09-30.
+Markdown escapes in underscores normalized; list formatting retained.
+This was supplied in chat, not read directly from the user's WSL disk.
+
+k = [99, 11, 12, 13]
+v = [20, 21, 22, 23]
+print("K:", k)
+print("V:", v)
+k_cache = [
+[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0],
+[0, 0, 0, 0],
+]
+slot = 2
+
+# 在这里补一行：把 k 的副本放进指定行
+
+print("K cache:", k_cache)
+
+Finding: no assignment copies k into a cache row between initialization
+and the cache print. This explains the previously posted all-zero output.
+Next coaching step: provide a single local assignment example after the
+user's run and source attempt; user types, saves, and runs it.
+This does not establish independent implementation or a passing result.

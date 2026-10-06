@@ -1,0 +1,28 @@
+{
+  "run": "run-20261002-135009-xhfsj8ry",
+  "review_scope": "Offline saved-artifact review; no GPU rerun",
+  "outcome": "Restored width128 fixed-layout case passes; preceding width mismatch resolved in this run",
+  "cases": [
+    {
+      "case": "original_cuda-7-0-3",
+      "all_target_and_untouched_values": "PASS",
+      "inputs_unchanged": "PASS"
+    },
+    {
+      "case": "learner_triton-7-0-3",
+      "all_target_and_untouched_values": "PASS",
+      "inputs_unchanged": "PASS"
+    }
+  ],
+  "source_hashes_verified": 22,
+  "runner_and_entry_match": true,
+  "kernel_ast_matches_previous_130631_pass": true,
+  "negative_controls_recorded": 7,
+  "coverage": "FP16 batch3 width128 capacity8, input stride128, interleaved cache stride256, unique indices[7,0,3]",
+  "not_established": [
+    "parameterized widths/strides",
+    "formal benchmark",
+    "model integration"
+  ],
+  "previous_failure_review": "20261002-three-rows-width-mismatch-review.json"
+}

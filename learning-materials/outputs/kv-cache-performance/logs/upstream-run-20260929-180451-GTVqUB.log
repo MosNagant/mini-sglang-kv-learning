@@ -1,0 +1,291 @@
+Commit: 9a91cfafe754aa85daee49998176275667eb58f2
+Random seed: 0
+Scope: upstream correctness and exploratory timing; NOT the project performance baseline.
+Existing compiler/JIT caches are retained; their initial contents are not controlled.
+Tue Sep 29 18:04:51 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.04              Driver Version: 576.52         CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4070 Ti     On  |   00000000:01:00.0  On |                  N/A |
+|  0%   55C    P8             14W /  285W |     922MiB /  12282MiB |     34%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "python_executable": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "torch": "2.9.1+cu128",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "seed": 0,
+  "cuda_launch_blocking": null,
+  "scope": "unmodified upstream test; exploratory timing only",
+  "jit_cache_state": "existing caches retained; initial contents uncontrolled"
+}
+/tmp/tmp4tpc107o/cuda_utils.c:6:10: fatal error: Python.h: No such file or directory
+    6 | #include <Python.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+F
+=================================== FAILURES ===================================
+_______________________________ test_store_cache _______________________________
+
+    @call_if_main(__name__)
+    def test_store_cache():
+        HEAD_SIZE = 128
+        NUM_TOKENS = 1048576  # 1M
+        stream = torch.cuda.Stream()
+        torch.cuda.set_stream(stream)
+        kv_cache = torch.randn((NUM_TOKENS, 2, HEAD_SIZE), device="cuda", dtype=torch.float16)
+        k_cache = kv_cache[:, 0, :]
+        v_cache = kv_cache[:, 1, :]
+    
+        for bs in [2**n for n in range(0, 16)]:
+            # NOTE: we cannot tolerate duplicate indices in this test
+            indices = torch.randperm(NUM_TOKENS, device="cuda")[:bs].to(torch.int32)
+            qkv = torch.randn((bs, HEAD_SIZE * 4), device="cuda", dtype=torch.float16)
+            k = qkv[:, :HEAD_SIZE]
+            v = qkv[:, HEAD_SIZE : HEAD_SIZE * 2]
+            store_cache(
+                k_cache,
+                v_cache,
+                indices,
+                k,
+                v,
+            )
+    
+            assert torch.all(k_cache[indices] == k), bs
+            assert torch.all(v_cache[indices] == v), bs
+    
+            # 2 = k + v
+            MEM = bs * HEAD_SIZE * 2 * kv_cache.element_size()
+    
+            k = k.contiguous()
+            v = v.contiguous()
+    
+            @torch.compile()
+            def baseline():
+                k_cache[indices] = k
+                v_cache[indices] = v
+    
+>           compare_memory_kernel_perf(
+                our_impl=lambda: store_cache(k_cache, v_cache, indices, k, v),
+                baseline=baseline,
+                memory_footprint=MEM,
+                description=f"BS={bs:6d} | ",
+                extra_kwargs={"init_stream": False},
+            )
+
+tests/kernel/test_store.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+python/minisgl/benchmark/perf.py:65: in compare_memory_kernel_perf
+    dur = perf_cuda(baseline, **extra_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+python/minisgl/benchmark/perf.py:30: in perf_cuda
+    f()
+.venv/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py:845: in compile_wrapper
+    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:990: in _compile_fx_inner
+    raise InductorError(e, currentframe()).with_traceback(
+.venv/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:974: in _compile_fx_inner
+    mb_compiled_graph = fx_codegen_and_compile(
+.venv/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:1695: in fx_codegen_and_compile
+    return scheme.codegen_and_compile(gm, example_inputs, inputs_to_check, graph_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:1505: in codegen_and_compile
+    compiled_module = graph.compile_to_module()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/graph.py:2319: in compile_to_module
+    return self._compile_to_module()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/graph.py:2325: in _compile_to_module
+    self.codegen_with_cpp_wrapper() if self.cpp_wrapper else self.codegen()
+                                                             ^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/graph.py:2264: in codegen
+    self.scheduler.codegen()
+.venv/lib/python3.12/site-packages/torch/_inductor/scheduler.py:5197: in codegen
+    self._codegen_partitions()
+.venv/lib/python3.12/site-packages/torch/_inductor/scheduler.py:5337: in _codegen_partitions
+    self._codegen(partition)
+.venv/lib/python3.12/site-packages/torch/_inductor/scheduler.py:5435: in _codegen
+    self.get_backend(device).codegen_node(node)
+.venv/lib/python3.12/site-packages/torch/_inductor/codegen/cuda_combined_scheduling.py:127: in codegen_node
+    return self._triton_scheduling.codegen_node(node)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/codegen/simd.py:1402: in codegen_node
+    return self.codegen_node_schedule(
+.venv/lib/python3.12/site-packages/torch/_inductor/codegen/simd.py:1465: in codegen_node_schedule
+    src_code = kernel.codegen_kernel()
+               ^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/codegen/triton.py:4173: in codegen_kernel
+    **self.inductor_meta_common(),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/_inductor/codegen/triton.py:3992: in inductor_meta_common
+    "backend_hash": torch.utils._triton.triton_hash_with_backend(),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/utils/_triton.py:175: in triton_hash_with_backend
+    backend = triton_backend()
+              ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/torch/utils/_triton.py:167: in triton_backend
+    target = driver.active.get_current_target()
+             ^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/runtime/driver.py:28: in active
+    self._active = self.default
+                   ^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/runtime/driver.py:22: in default
+    self._default = _create_driver()
+                    ^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/runtime/driver.py:10: in _create_driver
+    return active_drivers[0]()
+           ^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/backends/nvidia/driver.py:719: in __init__
+    self.utils = CudaUtils()  # TODO: make static
+                 ^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/backends/nvidia/driver.py:63: in __init__
+    mod = compile_module_from_src(
+.venv/lib/python3.12/site-packages/triton/runtime/build.py:89: in compile_module_from_src
+    so = _build(name, src_path, tmpdir, library_dirs or [], include_dirs or [], libraries or [], ccflags or [])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.12/site-packages/triton/runtime/build.py:51: in _build
+    subprocess.check_call(cc_cmd, stdout=subprocess.DEVNULL)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+popenargs = (['/usr/bin/gcc', '/tmp/tmp4tpc107o/cuda_utils.c', '-O3', '-shared', '-fPIC', '-Wno-psabi', ...],)
+kwargs = {'stdout': -3}
+
+    def check_call(*popenargs, **kwargs):
+        """Run command with arguments.  Wait for command to complete.  If
+        the exit code was zero then return, otherwise raise
+        CalledProcessError.  The CalledProcessError object will have the
+        return code in the returncode attribute.
+    
+        The arguments are the same as for the call function.  Example:
+    
+        check_call(["ls", "-l"])
+        """
+        retcode = call(*popenargs, **kwargs)
+        if retcode:
+            cmd = kwargs.get("args")
+            if cmd is None:
+                cmd = popenargs[0]
+>           raise CalledProcessError(retcode, cmd)
+E           torch._inductor.exc.InductorError: CalledProcessError: Command '['/usr/bin/gcc', '/tmp/tmp4tpc107o/cuda_utils.c', '-O3', '-shared', '-fPIC', '-Wno-psabi', '-o', '/tmp/tmp4tpc107o/cuda_utils.cpython-312-x86_64-linux-gnu.so', '-lcuda', '-L/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/triton/backends/nvidia/lib', '-L/usr/lib/wsl/lib', '-I/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/triton/backends/nvidia/include', '-I/tmp/tmp4tpc107o', '-I/usr/include/python3.12']' returned non-zero exit status 1.
+E           
+E           Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+/usr/lib/python3.12/subprocess.py:413: InductorError
+------------------------------ Captured log call -------------------------------
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:structured.py:28 
+DEBUG    torch.__trace:convert_frame.py:249 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:meta_utils.py:270 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:1902 
+DEBUG    torch.__trace:meta_utils.py:270 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:1902 
+DEBUG    torch.__trace:meta_utils.py:270 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:1902 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:1902 
+DEBUG    torch.__trace:meta_utils.py:488 
+DEBUG    torch.__trace:meta_utils.py:1902 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:output_graph.py:1989 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:2337 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:2368 
+DEBUG    torch.__trace:utils.py:1991 
+DEBUG    torch.__trace:autograd_cache.py:1254 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:graph_capture.py:301 
+DEBUG    torch.__trace:graph_capture.py:319 
+DEBUG    torch.__trace:graph_compile.py:285 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:2200 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:2213 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:1216 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:1265 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:compile_fx.py:1303 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:convert_frame.py:1463 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1952 
+DEBUG    torch.__trace:utils.py:1647 
+DEBUG    torch.__trace:utils.py:1952
+=============================== warnings summary ===============================
+tests/kernel/test_store.py::test_store_cache
+  /home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:161: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+  We recommend installing via `pip install torch-c-dlpack-ext`
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/kernel/test_store.py::test_store_cache - torch._inductor.exc.Ind...
+1 failed, 1 warning in 11.13s
+
+UPSTREAM_TEST_FAILED: exit=1. Keep the FIRST error above.
+Run directory: /home/weltlaw/projects/mini-sglang-kv/experiments/upstream/run-20260929-180451-GTVqUB
+Shared log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/upstream-run-20260929-180451-GTVqUB.log

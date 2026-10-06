@@ -1,0 +1,11 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+GPU: NVIDIA GeForce RTX 4070 Ti | Compute capability: 8.9
+PASS: all 1048589 GPU results match the CPU reference.
+Collecting data...
+Generating '/tmp/nsys-report-0b8c.qdstrm'
+[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [====26%                     ] nsys-vector-add.nsys-rep[1/1] [===========50%              ] nsys-vector-add.nsys-rep[1/1] [==================75%       ] nsys-vector-add.nsys-rep[1/1] [==================76%       ] nsys-vector-add.nsys-rep[1/1] [==================78%       ] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP/nsys-vector-add.nsys-rep

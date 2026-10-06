@@ -1,0 +1,31 @@
+Windows read-only checks; user WSL was not executed by the assistant.
+Recorded: 2026-09-30T17:57:34.5753896+08:00
+User-reported WSL error: Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND
+COMMAND: sc.exe query storvsp
+
+SERVICE_NAME: storvsp 
+        TYPE               : 1  KERNEL_DRIVER  
+        STATE              : 1  STOPPED 
+        WIN32_EXIT_CODE    : 1077  (0x435)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+COMMAND: Test-Path Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\ROOT\STORVSP\0000
+False
+SOURCE: C:\Windows\INF\setupapi.dev.log (numbered excerpt, last root storage device match)
+31674->>>  Section start 2026/09/30 17:41:44.447
+31675-      cmd: "C:\DevManView.exe" /uninstall *Disk* /use_wildcard
+31676-     dvi: Query-and-Remove succeeded
+31677-<<<  Section end 2026/09/30 17:41:44.455
+31678-<<<  [Exit status: SUCCESS]
+31679-
+31680-
+31681:>>>  [Delete Device - ROOT\STORVSP\0000]
+31682->>>  Section start 2026/09/30 17:41:44.455
+31683-      cmd: "C:\DevManView.exe" /uninstall *Disk* /use_wildcard
+31684-     dvi: Query-and-Remove succeeded
+31685-<<<  Section end 2026/09/30 17:41:44.455
+31686-<<<  [Exit status: SUCCESS]
+31687-
+31688-
+Repair was not executed in this check. The caller of DevManView remains unidentified.

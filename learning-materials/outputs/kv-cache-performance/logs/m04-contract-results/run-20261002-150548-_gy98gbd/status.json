@@ -1,0 +1,1357 @@
+{
+  "status": "PASS",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "cases": [
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 0,
+      "capacity": 32,
+      "rows": [],
+      "input_stride": [
+        0,
+        0
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 0,
+      "status": "EMPTY_ADAPTER_PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        64,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 0,
+      "capacity": 32,
+      "rows": [],
+      "input_stride": [
+        0,
+        0
+      ],
+      "cache_stride": [
+        64,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 0,
+      "status": "EMPTY_ADAPTER_PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 64,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "gap": 0,
+      "batch": 0,
+      "capacity": 32,
+      "rows": [],
+      "input_stride": [
+        0,
+        0
+      ],
+      "cache_stride": [
+        256,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 0,
+      "status": "EMPTY_ADAPTER_PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        128,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 1,
+      "capacity": 32,
+      "rows": [
+        31
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 2,
+      "capacity": 32,
+      "rows": [
+        31,
+        0
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 3,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 4,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 5,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 64,
+      "batch": 17,
+      "capacity": 32,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "input_stride": [
+        192,
+        1
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 1,
+      "status": "PASS"
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "batch": 0,
+      "capacity": 32,
+      "rows": [],
+      "input_stride": [
+        0,
+        0
+      ],
+      "cache_stride": [
+        128,
+        1
+      ],
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "original_calls": 0,
+      "status": "EMPTY_ADAPTER_PASS"
+    }
+  ],
+  "scope": "original CUDA M04 correctness; no timing; no Triton run",
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "numpy": "2.5.3",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "learner_K_V_controls": "PASS",
+  "current_case": null
+}

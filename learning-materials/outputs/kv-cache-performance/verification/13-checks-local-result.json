@@ -1,0 +1,11 @@
+{
+  "scope": "NumPy stand-in only; not PyTorch, Triton compilation or GPU execution",
+  "python_syntax_and_LF": "PASS",
+  "three_row_fixture_and_grid": "PASS",
+  "checker_deliberate_errors_rejected": 7,
+  "incorrect_two_program_launch_rejected_and_results_preserved": true,
+  "mismatched_input_rows_rejected_before_launch": true,
+  "mixed_definition_and_launch_signature_rejected": true,
+  "bash_execution": "NOT_RUN",
+  "gpu_execution": "NOT_RUN"
+}

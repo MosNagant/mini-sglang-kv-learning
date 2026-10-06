@@ -1,0 +1,20 @@
+Source: user-pasted output on 2026-10-01; presentation escapes normalized.
+Repair transcript independently read: outputs/logs/repair-storage-20261001-130723.log.
+
+Create missing device registration: True
+Name: Microsoft Hyper-V 虚拟磁盘服务器
+PNPDeviceID: ROOT\STORVSP\0000
+Present: True
+ConfigManagerErrorCode: 0
+Service: storvsp
+State: Running
+StartMode: Manual
+PathName: C:\Windows\system32\drivers\storvsp.sys
+STORAGE DEVICE OK.
+
+PS C:\Users\Administrator> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /bin/echo WSL_OK
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+WSL_OK
+
+Confirmed: device/driver recovery and this user-account WSL command succeeded.
+Not confirmed in this step: project activation, current GPU kernel run, long-term startup stability, or parent launcher of DevManView.

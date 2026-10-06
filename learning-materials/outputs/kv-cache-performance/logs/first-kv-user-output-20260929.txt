@@ -1,0 +1,20 @@
+Source: user-pasted terminal output; Markdown escapes normalized.
+Date: 2026-09-29. Exact run time and exit code not supplied.
+Scope: minimal Python list/print exercise; not a CUDA execution or benchmark.
+The assistant did not run this command or read the user's WSL source file directly.
+
+PS C:\Users\Administrator\source\repos> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /home/weltlaw/projects/mini-sglang-kv/.venv/bin/python /home/weltlaw/projects/mini-sglang-kv/experiments/first_kv.py
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+K: [10, 11, 12, 13]
+V: [20, 21, 22, 23]
+PS C:\Users\Administrator\source\repos>
+
+Follow-up: user edited the same file in Notepad after VS save failures, changed 10 to 99, saved, and provided this actual output. Exact run time and explicit exit code not supplied.
+
+PS C:\Users\Administrator\source\repos> wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /home/weltlaw/projects/mini-sglang-kv/.venv/bin/python /home/weltlaw/projects/mini-sglang-kv/experiments/first_kv.py
+wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+K: [99, 11, 12, 13]
+V: [20, 21, 22, 23]
+PS C:\Users\Administrator\source\repos>
+
+Interpretation: edit/save/run change is verified for this practice file. Not evidence that VS saving is fixed or that any CUDA kernel ran.

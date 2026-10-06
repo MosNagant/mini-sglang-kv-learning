@@ -1,0 +1,190 @@
+{
+  "record_type": "transcription_of_user_console_summary",
+  "recorded_date": "2026-10-04",
+  "source_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx",
+  "reported_status": "PILOT_COLLECTION_COMPLETE",
+  "verification_limit": "Summary values pasted by user; individual WSL JSON files and 30-sample arrays not independently read. No GPU run by assistant in this review.",
+  "statistic": "Median of three process-level medians; range and span concern those three medians, not individual calls or confidence bounds.",
+  "rows": [
+    {
+      "B": 1,
+      "D": 64,
+      "graph": {
+        "round_medians_us": [
+          0.8761600032448769,
+          1.0751999914646149,
+          1.074719987809658
+        ],
+        "median_us": 1.074719987809658,
+        "min_us": 0.8761600032448769,
+        "max_us": 1.0751999914646149,
+        "span_us": 0.199039988219738,
+        "span_pct": 18.52017181009103
+      },
+      "eager": {
+        "round_medians_us": [
+          10.634879767894745,
+          8.760319948196411,
+          8.5521599650383
+        ],
+        "median_us": 8.760319948196411,
+        "min_us": 8.5521599650383,
+        "max_us": 10.634879767894745,
+        "span_us": 2.0827198028564453,
+        "span_pct": 23.77447188199147
+      },
+      "kv_bytes_per_call": 512,
+      "effective_kv_GBps": 0.47640316157465895
+    },
+    {
+      "B": 1,
+      "D": 128,
+      "graph": {
+        "round_medians_us": [
+          0.8801599964499474,
+          1.2134400010108948,
+          0.8881599828600883
+        ],
+        "median_us": 0.8881599828600883,
+        "min_us": 0.8801599964499474,
+        "max_us": 1.2134400010108948,
+        "span_us": 0.3332800045609474,
+        "span_pct": 37.52477154934473
+      },
+      "eager": {
+        "round_medians_us": [
+          8.206560015678404,
+          18.968160152435303,
+          8.591199815273285
+        ],
+        "median_us": 8.591199815273285,
+        "min_us": 8.206560015678404,
+        "max_us": 18.968160152435303,
+        "span_us": 10.761600136756899,
+        "span_pct": 125.26306416043442
+      },
+      "kv_bytes_per_call": 1024,
+      "effective_kv_GBps": 1.1529454374902979
+    },
+    {
+      "B": 16,
+      "D": 64,
+      "graph": {
+        "round_medians_us": [
+          1.0734399780631065,
+          0.8780799806118011,
+          1.2185600027441976
+        ],
+        "median_us": 1.0734399780631065,
+        "min_us": 0.8780799806118011,
+        "max_us": 1.2185600027441976,
+        "span_us": 0.3404800221323965,
+        "span_pct": 31.718589682746096
+      },
+      "eager": {
+        "round_medians_us": [
+          8.812159895896912,
+          8.481760025024414,
+          20.452959537506104
+        ],
+        "median_us": 8.812159895896912,
+        "min_us": 8.481760025024414,
+        "max_us": 20.452959537506104,
+        "span_us": 11.97119951248169,
+        "span_pct": 135.84864158054688
+      },
+      "kv_bytes_per_call": 8192,
+      "effective_kv_GBps": 7.631539878719144
+    },
+    {
+      "B": 16,
+      "D": 128,
+      "graph": {
+        "round_medians_us": [
+          0.8940800279378891,
+          1.1084799841046333,
+          1.2132799997925758
+        ],
+        "median_us": 1.1084799841046333,
+        "min_us": 0.8940800279378891,
+        "max_us": 1.2132799997925758,
+        "span_us": 0.31919997185468674,
+        "span_pct": 28.79618725028384
+      },
+      "eager": {
+        "round_medians_us": [
+          8.065440058708191,
+          8.740479946136475,
+          19.231839776039124
+        ],
+        "median_us": 8.740479946136475,
+        "min_us": 8.065440058708191,
+        "max_us": 19.231839776039124,
+        "span_us": 11.166399717330933,
+        "span_pct": 127.75499499048424
+      },
+      "kv_bytes_per_call": 16384,
+      "effective_kv_GBps": 14.780600673844424
+    },
+    {
+      "B": 256,
+      "D": 64,
+      "graph": {
+        "round_medians_us": [
+          0.9614400193095207,
+          1.0785599797964096,
+          0.95551997423172
+        ],
+        "median_us": 0.9614400193095207,
+        "min_us": 0.95551997423172,
+        "max_us": 1.0785599797964096,
+        "span_us": 0.12304000556468964,
+        "span_pct": 12.797470782738326
+      },
+      "eager": {
+        "round_medians_us": [
+          7.926560044288634,
+          8.824799954891205,
+          8.182560205459595
+        ],
+        "median_us": 8.182560205459595,
+        "min_us": 7.926560044288634,
+        "max_us": 8.824799954891205,
+        "span_us": 0.8982399106025705,
+        "span_pct": 10.97749222796117
+      },
+      "kv_bytes_per_call": 131072,
+      "effective_kv_GBps": 136.32883733520083
+    },
+    {
+      "B": 256,
+      "D": 128,
+      "graph": {
+        "round_medians_us": [
+          1.1764800176024437,
+          1.1668800190091133,
+          0.9937600046396254
+        ],
+        "median_us": 1.1668800190091133,
+        "min_us": 0.9937600046396254,
+        "max_us": 1.1764800176024437,
+        "span_us": 0.18272001296281826,
+        "span_pct": 15.658851808772914
+      },
+      "eager": {
+        "round_medians_us": [
+          12.352319955825806,
+          9.497439861297607,
+          8.471840023994446
+        ],
+        "median_us": 9.497439861297607,
+        "min_us": 8.471840023994446,
+        "max_us": 12.352319955825806,
+        "span_us": 3.88047993183136,
+        "span_pct": 40.858167974766005
+      },
+      "kv_bytes_per_call": 262144,
+      "effective_kv_GBps": 224.65377393522124
+    }
+  ]
+}

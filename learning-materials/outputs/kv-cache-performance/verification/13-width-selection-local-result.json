@@ -1,0 +1,15 @@
+{
+  "scope": "Local Python/NumPy harness checks only; not PyTorch/Triton execution",
+  "syntax_and_lf": "PASS",
+  "fixtures_and_launches": [
+    64,
+    128
+  ],
+  "checker_deliberate_errors_rejected": 14,
+  "both_width_mismatches_rejected_before_launch": true,
+  "wrong_layout_rejected": true,
+  "partial_write_failure_and_preflight_failure_archived": true,
+  "student_source_preserved": true,
+  "bash_execution": "NOT_RUN",
+  "gpu_execution": "NOT_RUN"
+}

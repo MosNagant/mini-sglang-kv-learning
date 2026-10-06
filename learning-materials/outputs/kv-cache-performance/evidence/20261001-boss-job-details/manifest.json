@@ -1,0 +1,44 @@
+[
+  {
+    "image": 1,
+    "role": "AITER responsibilities",
+    "file": "detail-01.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\745d781f9ecb3ab2e5d80dc3e45b0518.jpg",
+    "sha256": "FF118D69DB8E71B1BF839EAA5F509C723578DB49DCB5240C92ADDE169A34D005"
+  },
+  {
+    "image": 2,
+    "role": "AITER requirements",
+    "file": "detail-02.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\ed39ec5bc69aa880c468d463e398e2f3.jpg",
+    "sha256": "9AB2DC1056B5CE0678AF3A071C2A3A0F4D623C17B159F4A20A6C32CAA75B8593"
+  },
+  {
+    "image": 3,
+    "role": "GPU software responsibilities",
+    "file": "detail-03.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\4b452c2c983aaa9cfa3c2e604dc3975f.jpg",
+    "sha256": "53C09190F6B80EDAD83D09A881AF69D12515ACD7ED7FED11FA85F4D07F9A353C"
+  },
+  {
+    "image": 4,
+    "role": "AI compiler responsibilities",
+    "file": "detail-04.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\34b5d9f37d208d3aab67361e71f5ad8e.jpg",
+    "sha256": "37BB68E72D4EA03E777A1FBB6D22CB501BA0C8F49E9280573F2AA03BB0CF8FDC"
+  },
+  {
+    "image": 5,
+    "role": "GPU software requirements",
+    "file": "detail-05.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\a77f02944254a87c6eece9700ffb1e5b.jpg",
+    "sha256": "5524921B948C026D09FFF70D70E2250D9A81E24DD53221FC3E0F5365CECC929F"
+  },
+  {
+    "image": 6,
+    "role": "AI compiler requirements",
+    "file": "detail-06.jpg",
+    "source": "C:\\Users\\Administrator\\Documents\\xwechat_files\\wxid_c1bk1lcege7v22_8e01\\temp\\RWTemp\\2026-10\\ea1a1b3b1df04948d34fcdb5bcc725bd\\f6eb6cde6b352a00af446a4ebbbfccee.jpg",
+    "sha256": "C8E464B4E2701D91903BD4A210C6904ECED434DB30D6B57CE3225F0BD46778CF"
+  }
+]

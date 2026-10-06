@@ -1,0 +1,60 @@
+PYTHON_HEADERS_PASS: /usr/include/python3.12/Python.h
+Commit: 9a91cfafe754aa85daee49998176275667eb58f2
+Random seed: 0
+Scope: upstream correctness and exploratory timing; NOT the project performance baseline.
+Existing compiler/JIT caches are retained; their initial contents are not controlled.
+Tue Sep 29 18:11:15 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 575.57.04              Driver Version: 576.52         CUDA Version: 12.9     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 4070 Ti     On  |   00000000:01:00.0  On |                  N/A |
+|  0%   54C    P8             13W /  285W |     881MiB /  12282MiB |     38%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "python_executable": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "python_include": "/usr/include/python3.12",
+  "torch": "2.9.1+cu128",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "seed": 0,
+  "cuda_launch_blocking": null,
+  "scope": "unmodified upstream test; exploratory timing only",
+  "jit_cache_state": "existing caches retained; initial contents uncontrolled"
+}
+[1m[2026-09-29|18:11:32][0m [32mINFO    [0m BS=     1 | Baseline:    0.011 ms |    0.046 GB/s | Our Impl:    0.006 ms |    0.084 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=     2 | Baseline:    0.002 ms |    0.629 GB/s | Our Impl:    0.001 ms |    0.990 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=     4 | Baseline:    0.002 ms |    1.036 GB/s | Our Impl:    0.001 ms |    1.923 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=     8 | Baseline:    0.003 ms |    1.444 GB/s | Our Impl:    0.002 ms |    2.105 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=    16 | Baseline:    0.002 ms |    4.908 GB/s | Our Impl:    0.002 ms |    4.001 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=    32 | Baseline:    0.002 ms |    9.581 GB/s | Our Impl:    0.001 ms |   11.940 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=    64 | Baseline:    0.003 ms |    9.581 GB/s | Our Impl:    0.002 ms |   18.217 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=   128 | Baseline:    0.002 ms |   31.527 GB/s | Our Impl:    0.002 ms |   40.339 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=   256 | Baseline:    0.002 ms |   60.664 GB/s | Our Impl:    0.001 ms |  134.737 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=   512 | Baseline:    0.002 ms |  119.626 GB/s | Our Impl:    0.002 ms |  172.973 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=  1024 | Baseline:    0.003 ms |  192.481 GB/s | Our Impl:    0.002 ms |  295.954 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=  2048 | Baseline:    0.004 ms |  286.034 GB/s | Our Impl:    0.002 ms |  691.892 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=  4096 | Baseline:    0.005 ms |  382.804 GB/s | Our Impl:    0.004 ms |  581.612 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS=  8192 | Baseline:    0.009 ms |  460.742 GB/s | Our Impl:    0.004 ms | 1098.123 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS= 16384 | Baseline:    0.016 ms |  513.605 GB/s | Our Impl:    0.006 ms | 1310.720 GB/s
+[1m[2026-09-29|18:11:34][0m [32mINFO    [0m BS= 32768 | Baseline:    0.031 ms |  539.657 GB/s | Our Impl:    0.015 ms | 1118.362 GB/s
+.
+1 passed in 17.78s
+
+UPSTREAM_TEST_PASS: the original store test completed successfully.
+Raw timings are exploratory; correctness coverage is limited to the upstream assertions.
+Run directory: /home/weltlaw/projects/mini-sglang-kv/experiments/upstream/run-20260929-181115-pFBvSx
+Shared log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/upstream-run-20260929-181115-pFBvSx.log

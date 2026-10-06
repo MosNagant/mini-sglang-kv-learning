@@ -1,0 +1,59 @@
+{
+  "source": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\away-run-20260929-181808-pa4Ovc\\nsys-vector-add.sqlite",
+  "runtime_api_events": 14,
+  "gpu_kernel_table_present": false,
+  "diagnostics": [
+    {
+      "severity": 1,
+      "text": "Profiling has started."
+    },
+    {
+      "severity": 1,
+      "text": "Process was launched by the profiler, see /tmp/nvidia/nsight_systems/quadd_session_102336/streams/pid_2349_stdout.log and stderr.log for program output"
+    },
+    {
+      "severity": 2,
+      "text": "No NVTX events collected. Does the process use NVTX?"
+    },
+    {
+      "severity": 1,
+      "text": "Number of CUDA events collected: \t14."
+    },
+    {
+      "severity": 1,
+      "text": "Common injection library initialized successfully."
+    },
+    {
+      "severity": 1,
+      "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior."
+    },
+    {
+      "severity": 1,
+      "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2024.6.2/target-linux-x64/libcupti.so.12.8"
+    },
+    {
+      "severity": 2,
+      "text": "Installed CUDA driver version (12.9) is not supported by this build of Nsight Systems. CUDA trace will be collected using libraries for driver version 12.8"
+    },
+    {
+      "severity": 1,
+      "text": "Enabling trace for device graph launch"
+    },
+    {
+      "severity": 1,
+      "text": "CUDA injection initialized successfully."
+    },
+    {
+      "severity": 3,
+      "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly."
+    },
+    {
+      "severity": 1,
+      "text": "Number of CUPTI events produced: \t47, CUPTI buffers: 50."
+    },
+    {
+      "severity": 1,
+      "text": "Profiling has stopped."
+    }
+  ]
+}

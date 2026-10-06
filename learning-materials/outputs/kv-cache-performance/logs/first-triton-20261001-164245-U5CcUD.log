@@ -1,0 +1,41 @@
+CREATED=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_first.py
+PROJECT_COMMIT=9a91cfafe754aa85daee49998176275667eb58f2
+LEARNER_SOURCE_BEGIN
+     1	"""First Triton KV store: one fixed learning case, not a general operator.
+     2	
+     3	Contract: FP16 k/v shape (2, 128), stride (128, 1); cache K/V views
+     4	shape (8, 128), stride (256, 1); unique int32 indices [5, 1].
+     5	Launch exactly two programs. Columns 0..127 are all valid in this case.
+     6	The coach supplies the previously discussed address formulas and harness.
+     7	The learner writes the four read/write lines below. No timing is measured.
+     8	"""
+     9	
+    10	import triton
+    11	import triton.language as tl
+    12	
+    13	
+    14	@triton.jit
+    15	def store_kv_first(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr):
+    16	    pid = tl.program_id(0)
+    17	    cols = tl.arange(0, 128)
+    18	    pos = tl.load(indices_ptr + pid)
+    19	
+    20	    # Offsets count elements, relative to EACH pointer's own beginning.
+    21	    src_offsets = pid * 128 + cols
+    22	    dst_offsets = pos * 256 + cols
+    23	
+    24	    # LEARNER_READ_WRITE_BEGIN
+    25	    # Replace pass with four lines, all indented by four spaces:
+    26	    # 1. Read input K into a variable called k_values.
+    27	    # 2. Read input V into a variable called v_values.
+    28	    # 3. Write k_values to the K cache destinations.
+    29	    # 4. Write v_values to the V cache destinations.
+    30	    pass
+    31	    # LEARNER_READ_WRITE_END
+    32	
+    33	
+    34	if __name__ == "__main__":
+    35	    print("This file defines the kernel. Use 11-triton-store.sh to run its checks.")
+LEARNER_SOURCE_END
+PREPARE_COMPLETE: replace pass with your four read/write lines; no GPU kernel was run.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/first-triton-20261001-164245-U5CcUD.log

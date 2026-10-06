@@ -1,0 +1,10 @@
+{
+  "positive_control": "PASS",
+  "negative_controls": [
+    "K input 0: last column corruption detected",
+    "K input 1: last column corruption detected",
+    "V input 0: last column corruption detected",
+    "V input 1: last column corruption detected",
+    "swapped destination mapping detected"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "two implementations, indices=[7,0,3]; FP16 batch=3 width=64 capacity=8; interleaved cache; no timing",
+  "width": 64,
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "passed_cases": [
+    "original_cuda-7-0-3",
+    "learner_triton-7-0-3"
+  ],
+  "kernel_layout_preflight": {
+    "width": 64,
+    "source_row_stride": 64,
+    "cache_row_stride": 128
+  },
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "triton_grid_rule": "(k.shape[0],)",
+  "triton_num_warps": 4,
+  "current_case": null
+}

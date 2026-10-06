@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-02",
+  "verifier": "verify_12_harness_cpu.py",
+  "scope": "Local NumPy stand-in validates index/check logic; no PyTorch, CUDA or Triton execution",
+  "python_syntax": "PASS",
+  "entry_files_crlf_count": 0,
+  "positive_fixtures": 3,
+  "target_corruptions_and_mapping_detected": 5,
+  "incomplete_sources_rejected": 2,
+  "incomplete_checkers_rejected": 2,
+  "untouched_and_input_corruptions_detected": 15,
+  "bash_syntax_execution": "not performed; no non-WSL bash found in inspected locations",
+  "gpu_cases": "NOT_RUN"
+}

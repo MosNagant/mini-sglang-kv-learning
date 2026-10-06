@@ -1,0 +1,101 @@
+NVIDIA Nsight Systems version 2025.1.3.140-251335620677v0
+NSYS_CONFIG_PATH=/home/weltlaw/.config/NVIDIA Corporation/nsys-config.ini
+CONFIG_UPDATED: CuptiUseRawGpuTimestamps=false
+{
+  "config_path": "/home/weltlaw/.config/NVIDIA Corporation/nsys-config.ini",
+  "existed_before": false,
+  "changed": true,
+  "previous_values": [],
+  "setting": "CuptiUseRawGpuTimestamps=false",
+  "backup": null,
+  "timing_limitation": "CUPTI timestamp conversion workaround; lower precision than the normal mechanism",
+  "reference": "https://forums.developer.nvidia.com/t/nsys-doesnt-show-cuda-kernel-and-memory-data/315536"
+}
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+GPU: NVIDIA GeForce RTX 4070 Ti | Compute capability: 8.9
+PASS: all 1048589 GPU results match the CPU reference.
+Collecting data...
+Generating '/tmp/nsys-report-0b8c.qdstrm'
+[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [0%                          ] nsys-vector-add.nsys-rep[1/1] [====26%                     ] nsys-vector-add.nsys-rep[1/1] [===========50%              ] nsys-vector-add.nsys-rep[1/1] [==================75%       ] nsys-vector-add.nsys-rep[1/1] [==================76%       ] nsys-vector-add.nsys-rep[1/1] [==================78%       ] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep[1/1] [========================100%] nsys-vector-add.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP/nsys-vector-add.nsys-rep
+Generating SQLite file /home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP/nsys-vector-add.sqlite from /home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP/nsys-vector-add.nsys-rep
+Processing [/home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP/nsys-vector-add.sqlite] with [/opt/nvidia/nsight-systems/2025.1.3/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+100.0,5824,1,5824.0,5824.0,5824,5824,0.0,"vector_add(const float *, const float *, float *, int)"
+
+{
+  "status": "GPU_KERNEL_EVENTS_PRESENT",
+  "event_counts": {
+    "CUPTI_ACTIVITY_KIND_RUNTIME": 14,
+    "CUPTI_ACTIVITY_KIND_KERNEL": 1,
+    "CUPTI_ACTIVITY_KIND_CONCURRENT_KERNEL": null
+  },
+  "positive_duration_gpu_events": {
+    "CUPTI_ACTIVITY_KIND_KERNEL": 1
+  },
+  "timestamp_mode": "CuptiUseRawGpuTimestamps=false",
+  "timing_limitation": "Workaround has lower timestamp precision; not a microbenchmark baseline.",
+  "diagnostics": [
+    {
+      "severity": 1,
+      "text": "Profiling has started."
+    },
+    {
+      "severity": 1,
+      "text": "Process was launched by the profiler, see /tmp/nvidia/nsight_systems/quadd_session_103546/streams/pid_3559_stdout.log and stderr.log for program output"
+    },
+    {
+      "severity": 2,
+      "text": "No NVTX events collected. Does the process use NVTX?"
+    },
+    {
+      "severity": 1,
+      "text": "Number of CUDA events collected: \t19."
+    },
+    {
+      "severity": 1,
+      "text": "Common injection library initialized successfully."
+    },
+    {
+      "severity": 1,
+      "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior."
+    },
+    {
+      "severity": 1,
+      "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2025.1.3/target-linux-x64/libcupti.so.12.9"
+    },
+    {
+      "severity": 1,
+      "text": "Enabling trace for device graph launch"
+    },
+    {
+      "severity": 1,
+      "text": "CUDA injection initialized successfully."
+    },
+    {
+      "severity": 3,
+      "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly."
+    },
+    {
+      "severity": 1,
+      "text": "Number of CUPTI events produced: \t48, CUPTI buffers: 50."
+    },
+    {
+      "severity": 1,
+      "text": "Profiling has stopped."
+    }
+  ]
+}
+EXIT_CODE=0
+NSYS_WSL_TRACE=GPU_KERNEL_EVENTS_PRESENT
+TIMESTAMP_SETTING=CuptiUseRawGpuTimestamps_false
+TIMESTAMP_PRECISION=the false setting uses a less precise conversion mechanism
+NCU_STATUS=unresolved; not retested in this step
+SCOPE=vector_add capability probe; not KV performance evidence
+WINDOWS_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/nsys-wsl-timestamps-run-20260929-191618-eHnaZP
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/nsys-wsl-timestamps/run-20260929-191618-eHnaZP
+2026-09-29T19:16:20+08:00

@@ -1,0 +1,2 @@
+RUN_DIRECTORY=C:\Users\Administrator\Documents\Codex\2026-09-27\cuda-wsl-wsl-2\outputs\kv-cache-performance\verification\first-triton-scaffold-x13b9i9j\experiments\learning\first-triton\run-20261001-163825-o5javqi0
+SCOPE=learner Triton fixed-case correctness; not a benchmark or full suite
