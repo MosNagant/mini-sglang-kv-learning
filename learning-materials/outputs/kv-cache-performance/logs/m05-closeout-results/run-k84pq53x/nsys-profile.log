@@ -1,0 +1,10 @@
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+KV_TRACE_WORKLOAD_OK: full cache and inputs checked
+Collecting data...
+Generating '/tmp/nsys-report-41ae.qdstrm'
+[1/1] [0%                          ] original-kv.nsys-rep[1/1] [0%                          ] original-kv.nsys-rep[1/1] [======35%                   ] original-kv.nsys-rep[1/1] [==========47%               ] original-kv.nsys-rep[1/1] [=============58%            ] original-kv.nsys-rep[1/1] [===============65%          ] original-kv.nsys-rep[1/1] [=================72%        ] original-kv.nsys-rep[1/1] [=================74%        ] original-kv.nsys-rep[1/1] [==================76%       ] original-kv.nsys-rep[1/1] [==================77%       ] original-kv.nsys-rep[1/1] [==================78%       ] original-kv.nsys-rep[1/1] [===================79%      ] original-kv.nsys-rep[1/1] [===================80%      ] original-kv.nsys-rep[1/1] [========================100%] original-kv.nsys-rep[1/1] [========================100%] original-kv.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.nsys-rep

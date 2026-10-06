@@ -1,7 +1,9 @@
-"""Coach harness for WIDTH=64/128 using one learner kernel source and checker.
+"""M06-01 coach harness: WIDTH=64/128, actual row strides, one v1 source.
 
 Fresh fixtures for each implementation/case; independent CPU expectations;
 source snapshots and full raw results retained, including on check failures.
+Only the stated contiguous-input/interleaved-cache cases are covered;
+passing this entry does not establish general layouts, masking or timing.
 """
 
 import argparse
@@ -21,7 +23,7 @@ from pathlib import Path
 COMMIT = "9a91cfafe754aa85daee49998176275667eb58f2"
 TARGET_ROWS = (7, 0, 3)
 WIDTHS = (64, 128)
-SCOPE = "two implementations x widths 64/128; FP16 batch=3 capacity=8 indices=[7,0,3]; no timing"
+SCOPE = "M06-01: two implementations x widths64/128; actual shared K/V row strides; FP16 batch=3 capacity=8 indices=[7,0,3]; no timing"
 
 
 def write_json(path, value):
@@ -110,6 +112,8 @@ def run_case(torch, launcher, checker, rows, width, directory, implementation):
         "triton_grid": [batch] if implementation == "learner_triton" else None,
         "cache_shape": [8, 2, width], "initial_value": -1,
         "input_stride": list(k.stride()), "cache_view_stride": list(k_cache.stride()),
+        "v_input_stride": list(v.stride()), "v_cache_view_stride": list(v_cache.stride()),
+        "stride_unit": "elements", "shared_kv_row_stride_contract": True,
         "dtype": "torch.float16", "expected_k": expected_k.tolist(),
         "expected_v": expected_v.tolist(),
     })
@@ -140,21 +144,25 @@ def run_case(torch, launcher, checker, rows, width, directory, implementation):
 
 
 def validate_kernel(source):
-    validate_draft(source, "store_kv_width")
+    validate_draft(source, "store_kv_v1")
     function = next(node for node in ast.parse(source).body
-                    if isinstance(node, ast.FunctionDef) and node.name == "store_kv_width")
+                    if isinstance(node, ast.FunctionDef) and node.name == "store_kv_v1")
     args = function.args
     parameters = args.posonlyargs + args.args
-    if (len(parameters) != 6 or args.defaults or args.kwonlyargs
-            or args.vararg or args.kwarg):
-        raise RuntimeError("KERNEL_SIGNATURE: five pointer parameters followed by WIDTH: tl.constexpr")
-    width = parameters[-1]
-    if width.arg != "WIDTH" or width.annotation is None or ast.unparse(width.annotation) != "tl.constexpr":
-        raise RuntimeError("WIDTH_PARAMETER: keep WIDTH: tl.constexpr in the definition")
+    expected_names = ["k_cache_ptr", "v_cache_ptr", "indices_ptr", "k_ptr", "v_ptr",
+                      "WIDTH", "SRC_ROW_STRIDE", "DST_ROW_STRIDE"]
+    if ([parameter.arg for parameter in parameters] != expected_names
+            or args.defaults or args.kwonlyargs or args.vararg or args.kwarg):
+        raise RuntimeError("KERNEL_SIGNATURE: five pointers, WIDTH, SRC_ROW_STRIDE, DST_ROW_STRIDE")
+    for parameter in parameters[5:]:
+        if parameter.annotation is None or ast.unparse(parameter.annotation) != "tl.constexpr":
+            raise RuntimeError(f"KERNEL_PARAMETER: keep {parameter.arg}: tl.constexpr")
+    # This preflight detects incomplete/signature-mismatched drafts only.
+    # Actual address use still requires source review and result checks.
 
 
 def prepare_student(project):
-    student = project / "experiments" / "triton_store_width.py"
+    student = project / "experiments" / "triton_store_v1.py"
     template = Path(__file__).with_name("14-triton-store-width-template.py")
     student.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -167,20 +175,35 @@ def prepare_student(project):
 
 
 def make_learner_launcher(module):
+    """Coach adapter for this lesson; broader validation belongs to M06-04."""
     def learner_launch(k_cache, v_cache, indices, k, v):
-        if k.ndim != 2:
-            raise RuntimeError("INPUT_SHAPE: expected two-dimensional input")
+        if k.ndim != 2 or v.ndim != 2:
+            raise RuntimeError("INPUT_SHAPE: expected two-dimensional K/V")
         batch, width = k.shape
         if batch != 3 or width not in WIDTHS or v.shape != k.shape or indices.shape != (batch,):
             raise RuntimeError("INPUT_CONTRACT: batch3, width64/128, matching K/V and index count")
-        if k.stride() != (width, 1) or v.stride() != (width, 1):
-            raise RuntimeError("INPUT_LAYOUT: this lesson requires contiguous input rows")
-        for cache in (k_cache, v_cache):
-            if cache.shape != (8, width) or cache.stride() != (2 * width, 1):
-                raise RuntimeError("CACHE_LAYOUT: this lesson requires interleaved K/V rows")
-        print(f"TRITON_LAUNCH grid=({batch},) WIDTH={width} num_warps=4", flush=True)
-        module.store_kv_width[(batch,)](
-            k_cache, v_cache, indices, k, v, WIDTH=width, num_warps=4
+        if any(cache.shape != (8, width) for cache in (k_cache, v_cache)):
+            raise RuntimeError("CACHE_SHAPE: expected capacity8 and matching width")
+        if any(tensor.stride(1) != 1 for tensor in (k, v, k_cache, v_cache)):
+            raise RuntimeError("COLUMN_STRIDE: this kernel requires unit column strides")
+        if indices.stride() != (1,):
+            raise RuntimeError("INDEX_STRIDE: this kernel requires contiguous indices")
+        # Shared offsets are valid only while the matching K/V strides agree.
+        source_stride = k.stride(0)
+        destination_stride = k_cache.stride(0)
+        if v.stride(0) != source_stride:
+            raise RuntimeError("SHARED_SOURCE_STRIDE: K/V input row strides must match")
+        if v_cache.stride(0) != destination_stride:
+            raise RuntimeError("SHARED_CACHE_STRIDE: K/V cache row strides must match")
+        if source_stride != width or destination_stride != 2 * width:
+            raise RuntimeError("LESSON_LAYOUT: only contiguous inputs/interleaved cache checked here")
+        print(f"TRITON_LAUNCH grid=({batch},) WIDTH={width} "
+              f"SRC_ROW_STRIDE={source_stride} DST_ROW_STRIDE={destination_stride} num_warps=4",
+              flush=True)
+        module.store_kv_v1[(batch,)](
+            k_cache, v_cache, indices, k, v, WIDTH=width,
+            SRC_ROW_STRIDE=source_stride, DST_ROW_STRIDE=destination_stride,
+            num_warps=4,
         )
     return learner_launch
 
@@ -203,7 +226,7 @@ def main():
     student = prepare_student(project)
     if args.prepare:
         print("LEARNER_SOURCE_BEGIN\n" + student.read_text(encoding="utf-8-sig") + "LEARNER_SOURCE_END", flush=True)
-        print("PREPARE_COMPLETE: replace pass with three width-based address lines; no GPU was run.", flush=True)
+        print("PREPARE_COMPLETE: edit triton_store_v1.py; fill cols/src_offsets/dst_offsets using WIDTH and actual row strides; no GPU was run.", flush=True)
         return
     checker_path = project / "experiments" / "check_kv_targets.py"
     if not checker_path.is_file():
@@ -218,7 +241,7 @@ def main():
         shutil.copyfile(__file__, run / "coach_runner.py")
         shutil.copyfile(Path(__file__).with_suffix(".sh"), run / "coach_entry.sh")
         hashes = {}
-        for source, relative in [(student, "triton_store_width.py"), (checker_path, "check_kv_targets.py")]:
+        for source, relative in [(student, "triton_store_v1.py"), (checker_path, "check_kv_targets.py")]:
             snapshot = run / relative
             snapshot.write_text(source.read_text(encoding="utf-8-sig"), encoding="utf-8")
             hashes[relative] = hashlib.sha256(snapshot.read_bytes()).hexdigest()
@@ -231,7 +254,7 @@ def main():
         check_source = (run / "check_kv_targets.py").read_text(encoding="utf-8")
         print("SAVED_CHECK_BEGIN\n" + check_source + "SAVED_CHECK_END", flush=True)
         validate_draft(check_source, "check_kv_targets")
-        kernel_source = (run / "triton_store_width.py").read_text(encoding="utf-8")
+        kernel_source = (run / "triton_store_v1.py").read_text(encoding="utf-8")
         print("SAVED_KERNEL_BEGIN\n" + kernel_source + "SAVED_KERNEL_END", flush=True)
         validate_kernel(kernel_source)
         import torch
@@ -245,10 +268,14 @@ def main():
         controls = {str(width): checker_controls(torch, checker, width) for width in WIDTHS}
         write_json(run / "checker_controls.json", controls)
         print("CHECKER_CONTROLS_PASS: 2 correct fixtures accepted; 14 deliberate errors rejected on CPU", flush=True)
-        module = load_module(run / "triton_store_width.py", "learner_width_kernel")
+        module = load_module(run / "triton_store_v1.py", "learner_width_kernel")
         state.update({"torch": torch.__version__, "triton": triton.__version__,
                       "cuda_runtime": torch.version.cuda, "gpu": torch.cuda.get_device_name(0),
-                      "triton_grid_rule": "(k.shape[0],)", "triton_width_rule": "k.shape[1]", "triton_num_warps": 4})
+                      "triton_grid_rule": "(k.shape[0],)", "triton_width_rule": "k.shape[1]", "triton_num_warps": 4,
+                      "triton_source_stride_rule": "k.stride(0), equal to v.stride(0)",
+                      "triton_destination_stride_rule": "k_cache.stride(0), equal to v_cache.stride(0)",
+                      "learner_file": "triton_store_v1.py",
+                      "ownership": "coach parameter declarations/launcher/checks; learner address-line draft"})
         print(f"GPU={state['gpu']} TORCH={state['torch']} TRITON={state['triton']}", flush=True)
         learner_launch = make_learner_launcher(module)
         for implementation, launcher in (("original_cuda", store_cache), ("learner_triton", learner_launch)):
@@ -277,7 +304,7 @@ def main():
             if state["status"] == "PASS":
                 raise
     print("KV_WIDTH_CASES_PASS: 4/4 cases; all target elements, untouched rows and inputs checked.", flush=True)
-    print("COVERAGE_LIMIT: only FP16 batch=3 widths64/128 capacity=8, contiguous inputs/interleaved cache and indices=[7,0,3]; NOT a benchmark.")
+    print("COVERAGE_LIMIT: only FP16 batch=3 widths64/128 capacity=8, contiguous inputs/interleaved cache, shared K/V row strides and indices=[7,0,3]; NOT general-layout/mask coverage or a benchmark.")
 
 
 if __name__ == "__main__":

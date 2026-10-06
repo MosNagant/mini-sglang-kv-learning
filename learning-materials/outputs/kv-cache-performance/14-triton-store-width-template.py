@@ -1,11 +1,16 @@
-"""Learner width-parameter exercise; not a general operator or benchmark.
+"""M06-01: configurable-width Triton v1 draft; no performance claim.
 
-Test contract: FP16, K/V shape (3, WIDTH) with stride (WIDTH, 1);
-capacity=8 interleaved cache, each K/V view stride (2 * WIDTH, 1);
-unique int32 indices [7, 0, 3]; WIDTH is 64 or 128; grid=(3,).
+Checked lesson cases: FP16 K/V shape (3, WIDTH), capacity=8, interleaved
+cache, unique GPU int32 indices [7, 0, 3]. WIDTH is 64 or 128.
+The launcher reads WIDTH and row strides from the actual tensors.
+SRC_ROW_STRIDE is shared by K/V inputs; DST_ROW_STRIDE is shared by
+K/V cache views. Column strides must be 1. All offsets count elements.
+Different K/V row strides and other layouts are not covered in this lesson.
 
-The coach adds the WIDTH parameter and test runner. The learner replaces
-pass with three address lines, extending their reviewed 64-wide draft.
+Coach: parameter declarations, launch adapter, checks and recording.
+Learner: replace pass with cols/src_offsets/dst_offsets, extending the
+reviewed fixed-width kernel. The four reviewed read/write lines are kept.
+The old triton_store_first.py and any width exercise remain unchanged.
 """
 
 import triton
@@ -13,14 +18,17 @@ import triton.language as tl
 
 
 @triton.jit
-def store_kv_width(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr,
-                   WIDTH: tl.constexpr):
+def store_kv_v1(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr,
+                WIDTH: tl.constexpr, SRC_ROW_STRIDE: tl.constexpr,
+                DST_ROW_STRIDE: tl.constexpr):
     pid = tl.program_id(0)
     pos = tl.load(indices_ptr + pid)
 
     # LEARNER_WIDTH_BEGIN
-    # Replace pass with your three lines defining:
-    # cols, src_offsets, dst_offsets. Use WIDTH instead of fixed 64/128.
+    # Replace pass with three lines defining cols, src_offsets, dst_offsets.
+    # WIDTH is the valid column count. The two row-stride parameters describe
+    # the actual source/destination row spacing, measured in elements.
+    # Use the matching parameter rather than fixed 64/128 or 2 * WIDTH.
     pass
     # LEARNER_WIDTH_END
 

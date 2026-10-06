@@ -1,0 +1,22 @@
+{
+  "status": "KV_TRACE_WORKLOAD_OK",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "batch": 256,
+  "width": 128,
+  "capacity": 1024,
+  "calls_in_nvtx_range": 20,
+  "expected_total_store_calls": 41,
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "input_stride": [
+    128,
+    1
+  ],
+  "cache_stride": [
+    256,
+    1
+  ],
+  "dtype": "torch.float16",
+  "scope": "profiling workload; no benchmark time used"
+}

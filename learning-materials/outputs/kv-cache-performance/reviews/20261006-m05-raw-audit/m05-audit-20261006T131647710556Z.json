@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "created_utc": "20261006T131647710556Z",
+  "status": "ARTIFACT_AUDIT_PASS",
+  "input_run": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx",
+  "pinned_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "valid_cases": 18,
+  "expected_cases": 18,
+  "numeric_tolerance": {
+    "relative": 1e-09,
+    "absolute": 1e-09
+  },
+  "scope": "Offline consistency audit of saved artifacts only; no imported/executed archive code, WSL or GPU.",
+  "kernel_correctness_independently_verified": false,
+  "full_m05_acceptance": false,
+  "limitations": [
+    "Only saved K dtype, input/cache strides and B/D/C metadata are checked; full K/V arrays, shapes, V/index dtype and V stride were not persisted.",
+    "Matching commit/torch/cuda/GPU model strings does not establish GPU UUID, clocks, temperature or current machine state.",
+    "No trace, kernel execution or runtime assertions were independently checked; Python optimization/assertion mode was not recorded.",
+    "Source AST reference assumes the reviewed 17/18 coach scripts. Different ASTs remain UNKNOWN and need review, not automatic baseline rejection/approval.",
+    "Original console, partial-summary.json and per-round-summary.csv are not acceptance inputs; output CSV is recalculated from the raw per-case sample arrays.",
+    "Pilot scope remains six reused-address configurations; this does not complete M05, demonstrate Triton speedup or measure DRAM traffic."
+  ],
+  "reference_ast_sha256": {
+    "runner.py": "3587354009a9d25b98f7c53cff8435187263c382024ac15fb9fd7ffca7e35a8c",
+    "driver.py": "020506e3f4a378e03d191231f3a7d8031ed03bcc6bed5e84d4198b19cfb7adbe"
+  },
+  "environment_as_recorded": {
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "artifacts": {
+    "plan.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\plan.json",
+      "bytes": 935,
+      "sha256": "cd0c841637db9bf627b65c1884f9298044692de715c139b76f0b7cccc33dd0ac"
+    },
+    "summary.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\summary.json",
+      "bytes": 4560,
+      "sha256": "b78225d102306a9f60dfa68e341cd377131e5b8587fca07776850123838be2eb"
+    },
+    "runner.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\runner.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8",
+      "ast_sha256": "3587354009a9d25b98f7c53cff8435187263c382024ac15fb9fd7ffca7e35a8c"
+    },
+    "driver.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\driver.py",
+      "bytes": 6448,
+      "sha256": "8e71484faf9d867d2000dfd5467d6dc698af1984590808ea654ff9720f8ff027",
+      "ast_sha256": "020506e3f4a378e03d191231f3a7d8031ed03bcc6bed5e84d4198b19cfb7adbe"
+    },
+    "round-1/B1-D64/run-5uji2j1t/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D64\\run-5uji2j1t\\result.json",
+      "bytes": 3003,
+      "sha256": "df632c0abb4f2aa514c2dfe4b1cec82731c1d62e97530d7481acbc7c0e0439ca"
+    },
+    "round-1/B1-D64/run-5uji2j1t/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D64\\run-5uji2j1t\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B1-D64/run-5uji2j1t/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D64\\run-5uji2j1t\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-1/B1-D128/run-1aa1ieum/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D128\\run-1aa1ieum\\result.json",
+      "bytes": 3015,
+      "sha256": "ac9a92d5f03b952084250d11a944e99bf575f0ad926cd6e40c1839205712af42"
+    },
+    "round-1/B1-D128/run-1aa1ieum/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D128\\run-1aa1ieum\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B1-D128/run-1aa1ieum/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B1-D128\\run-1aa1ieum\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-1/B16-D64/run-_a1eulr6/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D64\\run-_a1eulr6\\result.json",
+      "bytes": 3121,
+      "sha256": "8cbf675bacee2518ed10efa18a3a546fcc513309dfed61d8c1ee831edc557b8b"
+    },
+    "round-1/B16-D64/run-_a1eulr6/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D64\\run-_a1eulr6\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B16-D64/run-_a1eulr6/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D64\\run-_a1eulr6\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-1/B16-D128/run-4gvl0egb/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D128\\run-4gvl0egb\\result.json",
+      "bytes": 3127,
+      "sha256": "cacc8efed95d5cec5aabd35983709e653e9f5329249da71b7304231e1b2b10d1"
+    },
+    "round-1/B16-D128/run-4gvl0egb/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D128\\run-4gvl0egb\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B16-D128/run-4gvl0egb/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B16-D128\\run-4gvl0egb\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-1/B256-D64/run-1m3gf67b/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D64\\run-1m3gf67b\\result.json",
+      "bytes": 5203,
+      "sha256": "7c61814776cf44eb7ba7470ed11cab6174675c4642620c8f3ae92ea213eb12ae"
+    },
+    "round-1/B256-D64/run-1m3gf67b/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D64\\run-1m3gf67b\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B256-D64/run-1m3gf67b/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D64\\run-1m3gf67b\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-1/B256-D128/run-n1uhugig/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D128\\run-n1uhugig\\result.json",
+      "bytes": 5196,
+      "sha256": "4db44fa090685850b3ad2dc803fcd403aa7d096580b3cbc2c16474c8ebd44aaf"
+    },
+    "round-1/B256-D128/run-n1uhugig/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D128\\run-n1uhugig\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-1/B256-D128/run-n1uhugig/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-1\\B256-D128\\run-n1uhugig\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B1-D64/run-7n9h21u0/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D64\\run-7n9h21u0\\result.json",
+      "bytes": 3004,
+      "sha256": "45f6ab6718fccd5a5add593ef87334f357bf993cf3744d690191039aa921db03"
+    },
+    "round-2/B1-D64/run-7n9h21u0/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D64\\run-7n9h21u0\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B1-D64/run-7n9h21u0/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D64\\run-7n9h21u0\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B1-D128/run-dcb_1815/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D128\\run-dcb_1815\\result.json",
+      "bytes": 3001,
+      "sha256": "a82c5d43dc4162caeaabaad73ec1141f22b89d9eb40546539725ac6dd72622fa"
+    },
+    "round-2/B1-D128/run-dcb_1815/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D128\\run-dcb_1815\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B1-D128/run-dcb_1815/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B1-D128\\run-dcb_1815\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B16-D64/run-d12mar2y/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D64\\run-d12mar2y\\result.json",
+      "bytes": 3118,
+      "sha256": "1a99a6ecb62ff0fe4f780a3a3785ae6aab36affb7cd861e948201df0d879c32e"
+    },
+    "round-2/B16-D64/run-d12mar2y/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D64\\run-d12mar2y\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B16-D64/run-d12mar2y/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D64\\run-d12mar2y\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B16-D128/run-aak0652k/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D128\\run-aak0652k\\result.json",
+      "bytes": 3126,
+      "sha256": "a6160f8ee0b8c37f5a3c0692d15c0c2f91a1d5e51c61e677b2c2df41793edbe1"
+    },
+    "round-2/B16-D128/run-aak0652k/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D128\\run-aak0652k\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B16-D128/run-aak0652k/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B16-D128\\run-aak0652k\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B256-D64/run-tmu3x93u/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D64\\run-tmu3x93u\\result.json",
+      "bytes": 5202,
+      "sha256": "7c9fc3b6517f8129b5ee8995524b85e839212d93cb8a752f9df14f496f435d12"
+    },
+    "round-2/B256-D64/run-tmu3x93u/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D64\\run-tmu3x93u\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B256-D64/run-tmu3x93u/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D64\\run-tmu3x93u\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-2/B256-D128/run-jo_a0paq/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D128\\run-jo_a0paq\\result.json",
+      "bytes": 5192,
+      "sha256": "3ef23baa6755f8d4158183bf42c9bdd45ebb85d0f61a048f617a9df2cacfdbb4"
+    },
+    "round-2/B256-D128/run-jo_a0paq/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D128\\run-jo_a0paq\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-2/B256-D128/run-jo_a0paq/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-2\\B256-D128\\run-jo_a0paq\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B1-D64/run-wr_ebhtt/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D64\\run-wr_ebhtt\\result.json",
+      "bytes": 3006,
+      "sha256": "9d251e34a87724f379a51374833668eb5159ef62e528dcd38a5acac64cf2f885"
+    },
+    "round-3/B1-D64/run-wr_ebhtt/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D64\\run-wr_ebhtt\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B1-D64/run-wr_ebhtt/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D64\\run-wr_ebhtt\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B1-D128/run-suae9pyh/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D128\\run-suae9pyh\\result.json",
+      "bytes": 3018,
+      "sha256": "cfc2cd15905b94c75c5331e7c6ac04a8eec6ee097842bf300a048ee1795974e2"
+    },
+    "round-3/B1-D128/run-suae9pyh/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D128\\run-suae9pyh\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B1-D128/run-suae9pyh/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B1-D128\\run-suae9pyh\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B16-D64/run-aynny5v9/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D64\\run-aynny5v9\\result.json",
+      "bytes": 3110,
+      "sha256": "f89591042b4d4151fff3024a3f6baaee923d89d973c5f412dcf4394bed555623"
+    },
+    "round-3/B16-D64/run-aynny5v9/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D64\\run-aynny5v9\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B16-D64/run-aynny5v9/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D64\\run-aynny5v9\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B16-D128/run-a824k026/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D128\\run-a824k026\\result.json",
+      "bytes": 3111,
+      "sha256": "5e48a9ee53a4f2ac3c39ffe24785490969884f31519e17bf8ce186c391fa816d"
+    },
+    "round-3/B16-D128/run-a824k026/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D128\\run-a824k026\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B16-D128/run-a824k026/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B16-D128\\run-a824k026\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B256-D64/run-9eptx_fg/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D64\\run-9eptx_fg\\result.json",
+      "bytes": 5197,
+      "sha256": "c77dbf56722fcbcd12e483be65b30fbe3e66ffe13ab157362911ba1a50177cec"
+    },
+    "round-3/B256-D64/run-9eptx_fg/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D64\\run-9eptx_fg\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B256-D64/run-9eptx_fg/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D64\\run-9eptx_fg\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    },
+    "round-3/B256-D128/run-auddrmu8/result.json": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D128\\run-auddrmu8\\result.json",
+      "bytes": 5198,
+      "sha256": "6c1a43ed0c7bcb9c790b14c82651a0735ba97023fba026d89633c339c0e6aa1e"
+    },
+    "round-3/B256-D128/run-auddrmu8/diagnostic.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D128\\run-auddrmu8\\diagnostic.py",
+      "bytes": 8035,
+      "sha256": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8"
+    },
+    "round-3/B256-D128/run-auddrmu8/learner_source.py": {
+      "path": "\\\\?\\C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\github-upload\\current-wsl-20261006T131451Z\\experiments\\learning\\m05-original-pilot\\run-d9gjhywx\\round-3\\B256-D128\\run-auddrmu8\\learner_source.py",
+      "bytes": 4698,
+      "sha256": "30178c2e2416958add81c8eac354b6f3e07342aad62fdeb64668bf22dc537738"
+    }
+  },
+  "recomputed_per_round": [
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 64,
+      "method": "graph",
+      "median_us": 0.8761600032448769,
+      "min_us": 0.8499199897050858,
+      "max_us": 1.7100800573825836,
+      "result_file": "round-1/B1-D64/run-5uji2j1t/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "df632c0abb4f2aa514c2dfe4b1cec82731c1d62e97530d7481acbc7c0e0439ca"
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 64,
+      "method": "eager",
+      "median_us": 10.634879767894745,
+      "min_us": 8.245440125465393,
+      "max_us": 23.51072072982788,
+      "result_file": "round-1/B1-D64/run-5uji2j1t/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "df632c0abb4f2aa514c2dfe4b1cec82731c1d62e97530d7481acbc7c0e0439ca"
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 128,
+      "method": "graph",
+      "median_us": 0.8801599964499474,
+      "min_us": 0.8499199897050858,
+      "max_us": 1.9174399971961975,
+      "result_file": "round-1/B1-D128/run-1aa1ieum/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "ac9a92d5f03b952084250d11a944e99bf575f0ad926cd6e40c1839205712af42"
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 128,
+      "method": "eager",
+      "median_us": 8.206560015678404,
+      "min_us": 7.017920017242432,
+      "max_us": 27.773120403289795,
+      "result_file": "round-1/B1-D128/run-1aa1ieum/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "ac9a92d5f03b952084250d11a944e99bf575f0ad926cd6e40c1839205712af42"
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 64,
+      "method": "graph",
+      "median_us": 1.0734399780631065,
+      "min_us": 0.8601599931716919,
+      "max_us": 1.5827199816703796,
+      "result_file": "round-1/B16-D64/run-_a1eulr6/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "8cbf675bacee2518ed10efa18a3a546fcc513309dfed61d8c1ee831edc557b8b"
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.812159895896912,
+      "min_us": 7.5174397230148315,
+      "max_us": 23.287360668182373,
+      "result_file": "round-1/B16-D64/run-_a1eulr6/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "8cbf675bacee2518ed10efa18a3a546fcc513309dfed61d8c1ee831edc557b8b"
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 128,
+      "method": "graph",
+      "median_us": 0.8940800279378891,
+      "min_us": 0.8601599931716919,
+      "max_us": 1.4480000734329224,
+      "result_file": "round-1/B16-D128/run-4gvl0egb/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "cacc8efed95d5cec5aabd35983709e653e9f5329249da71b7304231e1b2b10d1"
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 128,
+      "method": "eager",
+      "median_us": 8.065440058708191,
+      "min_us": 7.178239822387695,
+      "max_us": 11.427199840545654,
+      "result_file": "round-1/B16-D128/run-4gvl0egb/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "cacc8efed95d5cec5aabd35983709e653e9f5329249da71b7304231e1b2b10d1"
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 64,
+      "method": "graph",
+      "median_us": 0.9614400193095207,
+      "min_us": 0.9318400174379349,
+      "max_us": 2.1913599967956543,
+      "result_file": "round-1/B256-D64/run-1m3gf67b/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "7c61814776cf44eb7ba7470ed11cab6174675c4642620c8f3ae92ea213eb12ae"
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 64,
+      "method": "eager",
+      "median_us": 7.926560044288634,
+      "min_us": 7.141119837760925,
+      "max_us": 19.886080026626587,
+      "result_file": "round-1/B256-D64/run-1m3gf67b/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "7c61814776cf44eb7ba7470ed11cab6174675c4642620c8f3ae92ea213eb12ae"
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 128,
+      "method": "graph",
+      "median_us": 1.1764800176024437,
+      "min_us": 0.9398400038480759,
+      "max_us": 1.5248000621795654,
+      "result_file": "round-1/B256-D128/run-n1uhugig/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "4db44fa090685850b3ad2dc803fcd403aa7d096580b3cbc2c16474c8ebd44aaf"
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 128,
+      "method": "eager",
+      "median_us": 12.352319955825806,
+      "min_us": 7.620800137519836,
+      "max_us": 22.81183958053589,
+      "result_file": "round-1/B256-D128/run-n1uhugig/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "4db44fa090685850b3ad2dc803fcd403aa7d096580b3cbc2c16474c8ebd44aaf"
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 64,
+      "method": "graph",
+      "median_us": 1.0751999914646149,
+      "min_us": 0.8499199897050858,
+      "max_us": 1.748799979686737,
+      "result_file": "round-2/B1-D64/run-7n9h21u0/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "45f6ab6718fccd5a5add593ef87334f357bf993cf3744d690191039aa921db03"
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.760319948196411,
+      "min_us": 8.343679904937744,
+      "max_us": 30.22495985031128,
+      "result_file": "round-2/B1-D64/run-7n9h21u0/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "45f6ab6718fccd5a5add593ef87334f357bf993cf3744d690191039aa921db03"
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 128,
+      "method": "graph",
+      "median_us": 1.2134400010108948,
+      "min_us": 0.8806400001049042,
+      "max_us": 1.3094399869441986,
+      "result_file": "round-2/B1-D128/run-dcb_1815/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "a82c5d43dc4162caeaabaad73ec1141f22b89d9eb40546539725ac6dd72622fa"
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 128,
+      "method": "eager",
+      "median_us": 18.968160152435303,
+      "min_us": 7.605119943618774,
+      "max_us": 23.74624013900757,
+      "result_file": "round-2/B1-D128/run-dcb_1815/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "a82c5d43dc4162caeaabaad73ec1141f22b89d9eb40546539725ac6dd72622fa"
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 64,
+      "method": "graph",
+      "median_us": 0.8780799806118011,
+      "min_us": 0.8601599931716919,
+      "max_us": 1.1343999952077866,
+      "result_file": "round-2/B16-D64/run-d12mar2y/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "1a99a6ecb62ff0fe4f780a3a3785ae6aab36affb7cd861e948201df0d879c32e"
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.481760025024414,
+      "min_us": 7.130879759788513,
+      "max_us": 16.33695960044861,
+      "result_file": "round-2/B16-D64/run-d12mar2y/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "1a99a6ecb62ff0fe4f780a3a3785ae6aab36affb7cd861e948201df0d879c32e"
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 128,
+      "method": "graph",
+      "median_us": 1.1084799841046333,
+      "min_us": 0.8806400001049042,
+      "max_us": 1.3107199966907501,
+      "result_file": "round-2/B16-D128/run-aak0652k/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "a6160f8ee0b8c37f5a3c0692d15c0c2f91a1d5e51c61e677b2c2df41793edbe1"
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 128,
+      "method": "eager",
+      "median_us": 8.740479946136475,
+      "min_us": 7.345280051231384,
+      "max_us": 22.706239223480225,
+      "result_file": "round-2/B16-D128/run-aak0652k/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "a6160f8ee0b8c37f5a3c0692d15c0c2f91a1d5e51c61e677b2c2df41793edbe1"
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 64,
+      "method": "graph",
+      "median_us": 1.0785599797964096,
+      "min_us": 0.9318400174379349,
+      "max_us": 1.2697599828243256,
+      "result_file": "round-2/B256-D64/run-tmu3x93u/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "7c9fc3b6517f8129b5ee8995524b85e839212d93cb8a752f9df14f496f435d12"
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.824799954891205,
+      "min_us": 7.154560089111328,
+      "max_us": 19.84320044517517,
+      "result_file": "round-2/B256-D64/run-tmu3x93u/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "7c9fc3b6517f8129b5ee8995524b85e839212d93cb8a752f9df14f496f435d12"
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 128,
+      "method": "graph",
+      "median_us": 1.1668800190091133,
+      "min_us": 0.9625600278377533,
+      "max_us": 1.831360012292862,
+      "result_file": "round-2/B256-D128/run-jo_a0paq/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "3ef23baa6755f8d4158183bf42c9bdd45ebb85d0f61a048f617a9df2cacfdbb4"
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 128,
+      "method": "eager",
+      "median_us": 9.497439861297607,
+      "min_us": 8.249279856681824,
+      "max_us": 22.32095956802368,
+      "result_file": "round-2/B256-D128/run-jo_a0paq/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "3ef23baa6755f8d4158183bf42c9bdd45ebb85d0f61a048f617a9df2cacfdbb4"
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 64,
+      "method": "graph",
+      "median_us": 1.074719987809658,
+      "min_us": 0.8499199897050858,
+      "max_us": 1.2268800288438797,
+      "result_file": "round-3/B1-D64/run-wr_ebhtt/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "9d251e34a87724f379a51374833668eb5159ef62e528dcd38a5acac64cf2f885"
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.5521599650383,
+      "min_us": 7.427840232849121,
+      "max_us": 11.233279705047607,
+      "result_file": "round-3/B1-D64/run-wr_ebhtt/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "9d251e34a87724f379a51374833668eb5159ef62e528dcd38a5acac64cf2f885"
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 128,
+      "method": "graph",
+      "median_us": 0.8881599828600883,
+      "min_us": 0.8579199761152267,
+      "max_us": 1.2591999769210815,
+      "result_file": "round-3/B1-D128/run-suae9pyh/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "cfc2cd15905b94c75c5331e7c6ac04a8eec6ee097842bf300a048ee1795974e2"
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 128,
+      "method": "eager",
+      "median_us": 8.591199815273285,
+      "min_us": 7.184640169143677,
+      "max_us": 22.853760719299316,
+      "result_file": "round-3/B1-D128/run-suae9pyh/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "cfc2cd15905b94c75c5331e7c6ac04a8eec6ee097842bf300a048ee1795974e2"
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 64,
+      "method": "graph",
+      "median_us": 1.2185600027441976,
+      "min_us": 0.8601599931716919,
+      "max_us": 1.5481600165367126,
+      "result_file": "round-3/B16-D64/run-aynny5v9/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "f89591042b4d4151fff3024a3f6baaee923d89d973c5f412dcf4394bed555623"
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 64,
+      "method": "eager",
+      "median_us": 20.452959537506104,
+      "min_us": 8.711360096931458,
+      "max_us": 22.82047986984253,
+      "result_file": "round-3/B16-D64/run-aynny5v9/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "f89591042b4d4151fff3024a3f6baaee923d89d973c5f412dcf4394bed555623"
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 128,
+      "method": "graph",
+      "median_us": 1.2132799997925758,
+      "min_us": 0.8873599767684937,
+      "max_us": 1.740799993276596,
+      "result_file": "round-3/B16-D128/run-a824k026/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "5e48a9ee53a4f2ac3c39ffe24785490969884f31519e17bf8ce186c391fa816d"
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 128,
+      "method": "eager",
+      "median_us": 19.231839776039124,
+      "min_us": 8.4169602394104,
+      "max_us": 22.860159873962402,
+      "result_file": "round-3/B16-D128/run-a824k026/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "5e48a9ee53a4f2ac3c39ffe24785490969884f31519e17bf8ce186c391fa816d"
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 64,
+      "method": "graph",
+      "median_us": 0.95551997423172,
+      "min_us": 0.9318400174379349,
+      "max_us": 1.356160044670105,
+      "result_file": "round-3/B256-D64/run-9eptx_fg/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "c77dbf56722fcbcd12e483be65b30fbe3e66ffe13ab157362911ba1a50177cec"
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 64,
+      "method": "eager",
+      "median_us": 8.182560205459595,
+      "min_us": 6.646400094032288,
+      "max_us": 22.42784023284912,
+      "result_file": "round-3/B256-D64/run-9eptx_fg/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "c77dbf56722fcbcd12e483be65b30fbe3e66ffe13ab157362911ba1a50177cec"
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 128,
+      "method": "graph",
+      "median_us": 0.9937600046396254,
+      "min_us": 0.9504000097513199,
+      "max_us": 1.8009600043296814,
+      "result_file": "round-3/B256-D128/run-auddrmu8/result.json",
+      "samples_field": "samples_ms_per_call.graph",
+      "result_sha256": "6c1a43ed0c7bcb9c790b14c82651a0735ba97023fba026d89633c339c0e6aa1e"
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 128,
+      "method": "eager",
+      "median_us": 8.471840023994446,
+      "min_us": 7.280640006065369,
+      "max_us": 22.835519313812256,
+      "result_file": "round-3/B256-D128/run-auddrmu8/result.json",
+      "samples_field": "samples_ms_per_call.eager",
+      "result_sha256": "6c1a43ed0c7bcb9c790b14c82651a0735ba97023fba026d89633c339c0e6aa1e"
+    }
+  ],
+  "errors": [],
+  "unknowns": []
+}

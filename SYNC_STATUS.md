@@ -1,6 +1,8 @@
 # 同步范围与来源
 
-此次 WSL 快照时间：2026-10-06 13:14:51 UTC / 21:14:51 Asia/Shanghai。
+此次 WSL 快照时间：2026-10-06 13:14:51 UTC / 21:14:51 Asia/Shanghai。source/ 保持该快照不变。
+
+随后补充发布了 21:23 起的 M05 收尾证据与最终笔记到 learning-materials/。当前工程结论：**M05 六配置原版 baseline v0 已验收**；个人独立掌握另列，M06 草稿已准备而未运行。最新入口：[M05基线收尾与后续优化路线](learning-materials/outputs/kv-cache-performance/M05基线收尾与后续优化路线-20261006.md)、[详细基线报告](learning-materials/outputs/kv-cache-performance/M05原版基线-v0.md)。
 
 ## 已同步内容
 
@@ -8,9 +10,9 @@
 - 原始导出共 1029 个普通文件，7,419,517 字节；每项已按 EXPORT_MANIFEST.json 校验 SHA-256。
 - 发布其中 1027 个普通文件，另附原始 EXPORT_MANIFEST.json、SOURCE_SNAPSHOT.json，并将 .dockerignore 记录恢复为指向 .gitignore 的 Git 符号链接。
 - M05 pilot run-d9gjhywx 的 78 个文件已包含在 source/experiments/learning/m05-original-pilot/ 内，包括计划、逐次样本、运行脚本和汇总。
-- learning-materials/ 原有 894 个 Windows 学习材料文件保留，本次未改写或刷新。
+- learning-materials/ 原有材料保留，并定向更新 M05/M06 文件：收尾笔记、六配置基线报告、进度与任务表、原始数据审计、代表配置复测、真实 KV Nsight 记录以及 M06-01 模板和运行器。
 
-WSL 能完成导出是这次恢复后的实际证据。同步不修改原 WSL 源码，不重新执行 GPU 测试，也不自动构成 M05 基线验收。当前仍需按任务表完成审查、测量解释及相关验收。
+WSL 能完成导出是这次恢复后的实际证据。同步不修改原 WSL 源码，也不运行 GPU 测试。M05 工程验收来自单独完成的原始数据审查、用户实际复测与时间线证据：共 41 次真实 store 调用，20 次对应标记区间。profile 时长不替代六配置 Graph 基线，未声明 NCU/DRAM 计数或整模型提速。
 
 ## 来源与版本
 
@@ -37,4 +39,4 @@ WSL 能完成导出是这次恢复后的实际证据。同步不修改原 WSL �
 
 可直接阅读源代码和实验记录。要执行历史脚本，先建立兼容环境，核对原始记录中的驱动、CUDA、PyTorch 与 Triton 版本，再调整原机绝对路径与激活脚本。部分计时脚本明确校验上游 Git 提交，建议在单独检出的上游固定版本中恢复相应实验文件；不要删去版本校验来假装环境一致。
 
-本次成功备份是截至快照时间的文件状态；之后在 WSL 或 Windows 中的修改需要再次同步。GitHub 已有历史笔记保留各自日期，最新本地审查可能尚未发布。
+本次成功备份是截至快照时间的文件状态；之后在 WSL 或 Windows 中的修改需要再次同步。本次列出的最终审查与收尾记录已补充发布；其余历史笔记保留各自日期。之后的新实验仍需再次同步。

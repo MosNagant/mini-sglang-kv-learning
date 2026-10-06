@@ -1,0 +1,22 @@
+{
+  "status": "KV_TRACE_REVIEWED",
+  "database_sha256": "91c987c6508208345a21140bf8bf4fb2fd7bae523f6a5cdc4d85bdc5ab2cde32",
+  "store_kernel_name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+  "total_store_calls": 41,
+  "nvtx_range": "M05_ORIGINAL_KV_STEADY_20_CALLS",
+  "store_calls_correlated_to_marked_cpu_launches": 20,
+  "launch_grid_x": [
+    64
+  ],
+  "launch_block_x": [
+    128
+  ],
+  "positive_durations": true,
+  "kernel_location_verified": true,
+  "limits": [
+    "CuptiUseRawGpuTimestamps=false; lower precision",
+    "CUDA event completion trace was enabled; extra overhead possible",
+    "No trace duration used as benchmark baseline",
+    "No NCU occupancy/DRAM hardware counters claimed"
+  ]
+}

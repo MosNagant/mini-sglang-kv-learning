@@ -1,0 +1,104 @@
+M05_CLOSEOUT_RUN: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x
+STEP: reproduction
+RUN_DIRECTORY: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/reproduction/run-z4djm8zv
+REPLAY_CORRECTNESS_OK: targets, untouched storage and inputs
+EAGER_US_PER_CALL: {'median': 9.035679996013641, 'min': 7.895039916038514, 'max': 18.62272024154663}
+GRAPH_US_PER_CALL: {'median': 1.0956799983978271, 'min': 0.9523200243711472, 'max': 2.265920042991638}
+SAVED: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/reproduction/run-z4djm8zv/result.json
+DIAGNOSTIC_COMPLETE: compare execution policies; no final baseline PASS.
+
+REPRODUCTION_COMPARISON: {"graph": {"new_median_us": 1.0956799983978271, "old_round_medians_us": [1.1764800176024437, 1.1668800190091133, 0.9937600046396254], "old_representative_us": 1.1668800190091133, "difference_pct": -6.101743062816989, "within_observed_old_range": true, "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."}, "eager": {"new_median_us": 9.035679996013641, "old_round_medians_us": [12.352319955825806, 9.497439861297607, 8.471840023994446], "old_representative_us": 9.497439861297607, "difference_pct": -4.861940396860565, "within_observed_old_range": true, "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."}}
+STEP: nsys-version
+NVIDIA Nsight Systems version 2025.1.3.140-251335620677v0
+
+STEP: nsys-config-path
+/home/weltlaw/.config/NVIDIA Corporation/nsys-config.ini
+
+STEP: nsys-profile
+WARNING: Device-side CUDA Event completion trace is currently enabled.
+         This may increase runtime overhead and the likelihood of false
+         dependencies across CUDA Streams. If you wish to avoid this, please
+         disable the feature with --cuda-event-trace=false.
+KV_TRACE_WORKLOAD_OK: full cache and inputs checked
+Collecting data...
+Generating '/tmp/nsys-report-41ae.qdstrm'
+
+[1/1] [0%                          ] original-kv.nsys-rep
+[1/1] [0%                          ] original-kv.nsys-rep
+[1/1] [======35%                   ] original-kv.nsys-rep
+[1/1] [==========47%               ] original-kv.nsys-rep
+[1/1] [=============58%            ] original-kv.nsys-rep
+[1/1] [===============65%          ] original-kv.nsys-rep
+[1/1] [=================72%        ] original-kv.nsys-rep
+[1/1] [=================74%        ] original-kv.nsys-rep
+[1/1] [==================76%       ] original-kv.nsys-rep
+[1/1] [==================77%       ] original-kv.nsys-rep
+[1/1] [==================78%       ] original-kv.nsys-rep
+[1/1] [===================79%      ] original-kv.nsys-rep
+[1/1] [===================80%      ] original-kv.nsys-rep
+[1/1] [========================100%] original-kv.nsys-rep
+[1/1] [========================100%] original-kv.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.nsys-rep
+
+STEP: nsys-kernels
+Generating SQLite file /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.sqlite from /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.nsys-rep
+Processing [/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.sqlite] with [/opt/nvidia/nsight-systems/2025.1.3/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+90.9,40897,41,997.5,992.0,991,1056,14.1,"void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)"
+4.6,2080,2,1040.0,1040.0,1024,1056,22.6,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::FillFunctor<c10::Half>, std::array<char *, (unsigned long)1>>(int, T2, T3)"
+2.6,1184,1,1184.0,1184.0,1184,1184,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+1.8,831,1,831.0,831.0,831,831,0.0,"void <unnamed>::elementwise_kernel_with_index<int, at::native::arange_cuda_out(const c10::Scalar &, const c10::Scalar &, const c10::Scalar &, at::Tensor &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(long) (instance 1)]>(T1, T2, function_traits<T2>::result_type *)"
+
+
+M05_PROFILE_STATUS: KV_KERNEL_LOCATED
+SAVED: /home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/closeout.json
+SHARED_CLOSEOUT: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m05-closeout-results/run-k84pq53x
+M05_EVIDENCE_READY: review reproduction and trace/limitations; no automatic learning or baseline PASS.
+CREATED_LEARNER_TEMPLATE=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_v1.py
+LEARNER_SOURCE_BEGIN
+"""M06-01: configurable-width Triton v1 draft; no performance claim.
+
+Checked lesson cases: FP16 K/V shape (3, WIDTH), capacity=8, interleaved
+cache, unique GPU int32 indices [7, 0, 3]. WIDTH is 64 or 128.
+The launcher reads WIDTH and row strides from the actual tensors.
+SRC_ROW_STRIDE is shared by K/V inputs; DST_ROW_STRIDE is shared by
+K/V cache views. Column strides must be 1. All offsets count elements.
+Different K/V row strides and other layouts are not covered in this lesson.
+
+Coach: parameter declarations, launch adapter, checks and recording.
+Learner: replace pass with cols/src_offsets/dst_offsets, extending the
+reviewed fixed-width kernel. The four reviewed read/write lines are kept.
+The old triton_store_first.py and any width exercise remain unchanged.
+"""
+
+import triton
+import triton.language as tl
+
+
+@triton.jit
+def store_kv_v1(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr,
+                WIDTH: tl.constexpr, SRC_ROW_STRIDE: tl.constexpr,
+                DST_ROW_STRIDE: tl.constexpr):
+    pid = tl.program_id(0)
+    pos = tl.load(indices_ptr + pid)
+
+    # LEARNER_WIDTH_BEGIN
+    # Replace pass with three lines defining cols, src_offsets, dst_offsets.
+    # WIDTH is the valid column count. The two row-stride parameters describe
+    # the actual source/destination row spacing, measured in elements.
+    # Use the matching parameter rather than fixed 64/128 or 2 * WIDTH.
+    pass
+    # LEARNER_WIDTH_END
+
+    k_values = tl.load(k_ptr + src_offsets)
+    tl.store(k_cache_ptr + dst_offsets, k_values)
+    v_values = tl.load(v_ptr + src_offsets)
+    tl.store(v_cache_ptr + dst_offsets, v_values)
+
+
+if __name__ == "__main__":
+    print("Kernel definition only. Use 14-check-kv-widths.sh after filling the three lines.")
+LEARNER_SOURCE_END
+PREPARE_COMPLETE: edit triton_store_v1.py; fill cols/src_offsets/dst_offsets using WIDTH and actual row strides; no GPU was run.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m05-closeout-20261006-212338-DLJ9T1.log

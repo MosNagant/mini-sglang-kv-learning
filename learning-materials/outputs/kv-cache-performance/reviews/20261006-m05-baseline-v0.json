@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-06",
+  "status": "BASELINE_V0_ACCEPTED",
+  "scope": "six configs; reused addresses; no new GPU execution",
+  "audit": "20261006-m05-raw-audit/m05-audit-20261006T131647710556Z.json",
+  "cases": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph_rounds": [
+        0.8761600032448769,
+        1.0751999914646149,
+        1.074719987809658
+      ],
+      "eager_rounds": [
+        10.634879767894745,
+        8.760319948196411,
+        8.5521599650383
+      ],
+      "graph_us": 1.074719987809658,
+      "eager_us": 8.760319948196411,
+      "span_pct": 18.520171810091025,
+      "kv_bytes": 512,
+      "effective_gb_s": 0.47640316157465895
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "graph_rounds": [
+        0.8801599964499474,
+        1.2134400010108948,
+        0.8881599828600883
+      ],
+      "eager_rounds": [
+        8.206560015678404,
+        18.968160152435303,
+        8.591199815273285
+      ],
+      "graph_us": 0.8881599828600883,
+      "eager_us": 8.591199815273285,
+      "span_pct": 37.52477154934473,
+      "kv_bytes": 1024,
+      "effective_gb_s": 1.1529454374902979
+    },
+    {
+      "batch": 16,
+      "width": 64,
+      "graph_rounds": [
+        1.0734399780631065,
+        0.8780799806118011,
+        1.2185600027441976
+      ],
+      "eager_rounds": [
+        8.812159895896912,
+        8.481760025024414,
+        20.452959537506104
+      ],
+      "graph_us": 1.0734399780631065,
+      "eager_us": 8.812159895896912,
+      "span_pct": 31.7185896827461,
+      "kv_bytes": 8192,
+      "effective_gb_s": 7.631539878719144
+    },
+    {
+      "batch": 16,
+      "width": 128,
+      "graph_rounds": [
+        0.8940800279378891,
+        1.1084799841046333,
+        1.2132799997925758
+      ],
+      "eager_rounds": [
+        8.065440058708191,
+        8.740479946136475,
+        19.231839776039124
+      ],
+      "graph_us": 1.1084799841046333,
+      "eager_us": 8.740479946136475,
+      "span_pct": 28.79618725028384,
+      "kv_bytes": 16384,
+      "effective_gb_s": 14.780600673844424
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "graph_rounds": [
+        0.9614400193095207,
+        1.0785599797964096,
+        0.95551997423172
+      ],
+      "eager_rounds": [
+        7.926560044288634,
+        8.824799954891205,
+        8.182560205459595
+      ],
+      "graph_us": 0.9614400193095207,
+      "eager_us": 8.182560205459595,
+      "span_pct": 12.797470782738326,
+      "kv_bytes": 131072,
+      "effective_gb_s": 136.32883733520083
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph_rounds": [
+        1.1764800176024437,
+        1.1668800190091133,
+        0.9937600046396254
+      ],
+      "eager_rounds": [
+        12.352319955825806,
+        9.497439861297607,
+        8.471840023994446
+      ],
+      "graph_us": 1.1668800190091133,
+      "eager_us": 9.497439861297607,
+      "span_pct": 15.658851808772914,
+      "kv_bytes": 262144,
+      "effective_gb_s": 224.65377393522124
+    }
+  ],
+  "closeout": "../logs/m05-closeout-results/run-k84pq53x/closeout.json",
+  "trace_review": "20261006-m05-kv-trace-review.json",
+  "reproduction": {
+    "graph": {
+      "new_median_us": 1.0956799983978271,
+      "old_round_medians_us": [
+        1.1764800176024437,
+        1.1668800190091133,
+        0.9937600046396254
+      ],
+      "old_representative_us": 1.1668800190091133,
+      "difference_pct": -6.101743062816989,
+      "within_observed_old_range": true,
+      "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."
+    },
+    "eager": {
+      "new_median_us": 9.035679996013641,
+      "old_round_medians_us": [
+        12.352319955825806,
+        9.497439861297607,
+        8.471840023994446
+      ],
+      "old_representative_us": 9.497439861297607,
+      "difference_pct": -4.861940396860565,
+      "within_observed_old_range": true,
+      "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."
+    }
+  },
+  "personal_explanation": "Continue coached practice during M06; not a prerequisite to record completed baseline delivery.",
+  "m05_delivery_accepted": true,
+  "acceptance_scope": "Six configurations, reused addresses, pinned original; raw audit, repeat, real trace and reproducible documentation completed. Independent learner mastery is recorded separately after user clarified coaching needs.",
+  "independent_understanding_accepted": false
+}
