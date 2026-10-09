@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "implementation": "learner_triton",
+  "config": {
+    "batch": 4,
+    "width": 128,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 0,
+    "guard": 0,
+    "rows": [
+      31,
+      0,
+      1,
+      2
+    ]
+  },
+  "submissions": 1
+}

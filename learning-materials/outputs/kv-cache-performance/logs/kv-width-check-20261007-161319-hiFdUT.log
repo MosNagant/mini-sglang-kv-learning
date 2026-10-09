@@ -1,0 +1,73 @@
+EXISTING_LEARNER_FILE_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_v1.py
+EXISTING_CHECK_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/check_kv_targets.py
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/kv-width-check/run-20261007-161319-4d7j4cip
+SCOPE=M06-02: two implementations; FP16 B3 C8 indices=[7,0,3]; selected configurations=[{'width': 64, 'layout': 'interleaved', 'input_gap': 64}]; full backing checked; no timing
+SAVED_CHECK_BEGIN
+"""Learner's reviewed 2026-10-02 submission, formatted as a callable check.
+
+The coach adds only this function wrapper/import. The caller supplies CPU
+snapshots of results and independent pre-launch expected inputs.
+"""
+
+import torch
+
+
+def check_kv_targets(k_cache, v_cache, expected_k, expected_v, target_rows):
+    for pid, pos in enumerate(target_rows):
+        assert torch.equal(k_cache[pos], expected_k[pid])
+        assert torch.equal(v_cache[pos], expected_v[pid])
+SAVED_CHECK_END
+SAVED_KERNEL_BEGIN
+"""M06-01: configurable-width Triton v1 draft; no performance claim.
+
+Checked lesson cases: FP16 K/V shape (3, WIDTH), capacity=8, interleaved
+cache, unique GPU int32 indices [7, 0, 3]. WIDTH is 64 or 128.
+The launcher reads WIDTH and row strides from the actual tensors.
+SRC_ROW_STRIDE is shared by K/V inputs; DST_ROW_STRIDE is shared by
+K/V cache views. Column strides must be 1. All offsets count elements.
+Different K/V row strides and other layouts are not covered in this lesson.
+
+Coach: parameter declarations, launch adapter, checks and recording.
+Learner: replace pass with cols/src_offsets/dst_offsets, extending the
+reviewed fixed-width kernel. The four reviewed read/write lines are kept.
+The old triton_store_first.py and any width exercise remain unchanged.
+"""
+
+import triton
+import triton.language as tl
+
+
+@triton.jit
+def store_kv_v1(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr,
+                WIDTH: tl.constexpr, SRC_ROW_STRIDE: tl.constexpr,
+                DST_ROW_STRIDE: tl.constexpr):
+    pid = tl.program_id(0)
+    pos = tl.load(indices_ptr + pid)
+
+    # LEARNER_WIDTH_BEGIN
+    cols = tl.arange(0, WIDTH)
+    src_offsets = pid * SRC_ROW_STRIDE + cols
+    dst_offsets = pos * DST_ROW_STRIDE + cols
+    # LEARNER_WIDTH_END
+
+    k_values = tl.load(k_ptr + src_offsets)
+    tl.store(k_cache_ptr + dst_offsets, k_values)
+    v_values = tl.load(v_ptr + src_offsets)
+    tl.store(v_cache_ptr + dst_offsets, v_values)
+
+
+if __name__ == "__main__":
+    print("Kernel definition only. Use 14-check-kv-widths.sh after filling the three lines.")
+SAVED_KERNEL_END
+CHECKER_CONTROLS_PASS: 1 correct fixtures accepted; 7 deliberate errors rejected on CPU
+BACKING_CONTROLS_PASS: 1 correct fixtures accepted; 9 corruptions rejected on CPU
+GPU=NVIDIA GeForce RTX 4070 Ti TORCH=2.9.1+cu128 TRITON=3.5.1
+CASE_SETUP implementation=original_cuda input_shape=(3, 64) layout=interleaved input_gap=64 input_stride=(128, 1) cache_stride=(128, 1) indices=[7, 0, 3]
+CASE_PASS implementation=original_cuda width=64 layout=interleaved input_gap=64 indices=[7, 0, 3]
+CASE_SETUP implementation=learner_triton input_shape=(3, 64) layout=interleaved input_gap=64 input_stride=(128, 1) cache_stride=(128, 1) indices=[7, 0, 3]
+TRITON_LAUNCH grid=(3,) WIDTH=64 SRC_ROW_STRIDE=128 DST_ROW_STRIDE=128 num_warps=4
+CASE_PASS implementation=learner_triton width=64 layout=interleaved input_gap=64 indices=[7, 0, 3]
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-width-check-results/run-20261007-161319-4d7j4cip
+KV_LAYOUT_CASES_PASS: 2/2 cases; all targets, untouched cache, complete input backing/gap and indices checked.
+COVERAGE_LIMIT: only selected configurations [{'width': 64, 'layout': 'interleaved', 'input_gap': 64}]; FP16 B3 C8 indices=[7,0,3], shared K/V row strides, unit column strides. NOT arbitrary-layout/mask/batch coverage or a benchmark.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-width-check-20261007-161319-hiFdUT.log

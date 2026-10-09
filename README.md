@@ -1,62 +1,41 @@
 # mini-sglang KV Cache 学习项目
 
-**已补齐 2026-10-06 21:14:51（北京时间）的 WSL 项目快照。** [source/](source/) 现在包含实际项目源码、本人练习、正确性检查记录和 M05 原始试测样本；原有 Windows 讲义与记录继续保留在 [learning-materials/](learning-materials/)。同步范围和排除项见 [SYNC_STATUS.md](SYNC_STATUS.md)。
+**最新同步：2026-10-09。M06 v1工程产物已冻结，M07已有第一条优化预测。** 当前工程进度53/100、M06为23/25；最后的本人独立串讲待记录。限定范围内正确性已通过，尚无稳定提速结论。
 
-**最新进展（2026-10-06）：M05 六配置原版基线的工程交付已验收。** 已补齐原始数据审计、代表配置复测和真实 KV 时间线；[基线成绩单与后续优化路线](learning-materials/outputs/kv-cache-performance/M05基线收尾与后续优化路线-20261006.md)是本次复习入口。个人理解与独立实现能力单独记录，M06 草稿已准备、尚未运行。21:23 后的新证据在 learning-materials/，source/ 仍保持上面的 21:14:51 快照。
+## 今晚复习从这里开始
 
-围绕 mini-sglang 的 KV Cache 写入路径，学习张量布局、原版 CUDA 实现、Triton 算子、正确性检查和性能测量。本仓库用于跨设备阅读与复习，不是 WSL 系统镜像。
+| 顺序 | 入口 | 看什么 |
+| --- | --- | --- |
+| 1 | [今天的开发日志](learning-materials/outputs/kv-cache-performance/obsidian/2026-10-09-开发日志-M06冻结与M07起步.md) | 今天做了什么、成绩如何、本人参与和待巩固内容 |
+| 2 | [M06独立区块](learning-materials/outputs/kv-cache-performance/modules/M06/README.md) | 冻结源码、设计、正确性、编译产物与原始证据 |
+| 3 | [M06性能报告](learning-materials/outputs/kv-cache-performance/modules/M06/RESULTS.md) | 全六配置、Graph/Eager、三轮波动与结论限制 |
+| 4 | [M07第一课](learning-materials/outputs/kv-cache-performance/lessons/m07-01-num-warps-hypothesis.md) | num_warps从4改1的假设，候选尚未修改或运行 |
+| 下载 | [M06完整ZIP](learning-materials/outputs/kv-cache-performance/modules/M06-v1-20261009.zip) | 可离线查证的完整阶段归档，包含源码和数据 |
 
-## 阅读入口
+[最新进度](learning-materials/outputs/kv-cache-performance/PROGRESS.md) · [任务表](learning-materials/outputs/kv-cache-performance/KV算子项目任务表.md) · [连续日志](learning-materials/outputs/kv-cache-performance/LEARNING_LOG.md) · [笔记索引](learning-materials/outputs/kv-cache-performance/obsidian/学习笔记索引.md)
 
-| 想看什么 | 入口 |
+## 目录与当前状态
+
+- `learning-materials/outputs/kv-cache-performance/`：本次更新到10月9日的代码、讲义、日志、M06完整原始数据与归档区。最新接受的Triton代码在[modules/M06/src/](learning-materials/outputs/kv-cache-performance/modules/M06/src/)。
+- `source/`：保留2026-10-06 13:14:51 UTC（北京时间21:14:51）的WSL只读导出。它不是10月9日的新WSL导出，不能把其中早期练习当成最新v1。
+- [同步范围与限制](SYNC_STATUS.md)：来源、排除项和换机前提。
+
+| 阶段 | 证据支持的结论 |
 | --- | --- |
-| 最新导出的本人 Triton 练习 | [triton_store_first.py](source/experiments/triton_store_first.py) |
-| 本人 K/V 检查与计时练习 | [check_kv_targets.py](source/experiments/check_kv_targets.py)、[bench_kv_first.py](source/experiments/bench_kv_first.py) |
-| M05 六配置 × 三进程原始试测 | [run-d9gjhywx/](source/experiments/learning/m05-original-pilot/run-d9gjhywx/)、[summary.json](source/experiments/learning/m05-original-pilot/run-d9gjhywx/summary.json) |
-| 全部导出的实验与历史运行 | [experiments/](source/experiments/) |
-| 进度、讲义和任务安排 | [学习日志](learning-materials/outputs/kv-cache-performance/LEARNING_LOG.md)、[任务与验收表](learning-materials/outputs/kv-cache-performance/KV算子项目任务表.md)、[lessons/](learning-materials/outputs/kv-cache-performance/lessons/) |
-| 试测解释与历史审查 | [reviews/](learning-materials/outputs/kv-cache-performance/reviews/)、[M05 试测审查](learning-materials/outputs/kv-cache-performance/reviews/20261004-original-pilot-review.md) |
-| 环境恢复记录 | [ENVIRONMENT_RECOVERY.md](learning-materials/outputs/kv-cache-performance/ENVIRONMENT_RECOVERY.md) |
-| 文件来源与哈希清单 | [EXPORT_MANIFEST.json](source/EXPORT_MANIFEST.json)、[SOURCE_SNAPSHOT.json](source/SOURCE_SNAPSHOT.json) |
+| M05 | 六配置原版baseline v0工程交付已完成，旧成绩与真实KV时间线保持冻结 |
+| M06 | 公共入口检查、共同正确性196结果（168非空GPU调用+28空返回）、实际编译产物、18进程同场对照已归档 |
+| M06性能 | 没有稳定快于原版的证据；不能挑最快一轮或用Graph对Eager计算优化收益 |
+| M07 | 本人预测减少warp可能更快；尚未实现或测量候选，未产生新优化成绩 |
+| 模型/其他硬件 | 尚无模型端到端、AMD实机或NCU运行时计数器结论 |
 
-本次补充同步了 M05 收尾笔记、进度表、原始数据审计、复测与 Nsight 证据，以及 M06-01 草稿。其余历史材料保留原日期；当前状态以[最新收尾笔记](learning-materials/outputs/kv-cache-performance/M05基线收尾与后续优化路线-20261006.md)及对应审查为准。source/ 内的 SOURCE_SNAPSHOT.json 记录导出当时状态，不代表后续验收状态。
+本人参与K/V断言、指导下的核心表达式修改、实验执行、问题推导和初步假设；部分参数化/mask按本人请求由教练示范。环境、辅助校验、矩阵、计时组织和文档由教练协助，不能写成独立开发全部工程。分工见[教练约定](learning-materials/outputs/kv-cache-performance/COACHING_GUIDE.md)。
 
-## 项目状态与贡献范围
+## 源码与运行
 
-| 部分 | 当前证据支持的结论 |
-| --- | --- |
-| 原版 CUDA | 基于上游固定版本，原版 store 属于 mini-sglang；已保存原版正确性检查结果。 |
-| 本人代码 | 指导下完成固定尺寸 Triton K/V 读写、K/V 比较检查和 Event 计时练习。64 / 128 宽分别通过的历史例子，不等于同一通用内核已经完成。 |
-| M03 / M04 | 课堂记录中的布局理解和原版契约检查已有验收依据；覆盖范围以对应运行与审查为准。 |
-| M05 | 六配置原版 baseline v0 工程交付已验收：18 组原始数据审计、代表配置复测、真实 KV 时间线及复现记录已完成；具体支持范围见新报告。个人独立掌握另列。 |
-| M06 / 优化 | M06-01 参数化宽度草稿及运行器已准备，尚未运行。统一正确性覆盖、公平性能对比、优化收益和模型端到端验证仍待后续。 |
-| 教练辅助 | 环境排障、脚手架、批量运行器、检查框架和审查文档由助手协助，不计为本人独立编写全部工程。 |
+上游：[sgl-project/mini-sglang](https://github.com/sgl-project/mini-sglang)，固定提交 `9a91cfafe754aa85daee49998176275667eb58f2`。[source/LICENSE](source/LICENSE)保留MIT许可证及原文件声明。
 
-本人编写约定见[手写项目执行规则](learning-materials/outputs/kv-cache-performance/手写项目执行规则-20261002.md)和[本人手写补充清单](learning-materials/outputs/kv-cache-performance/本人手写补充清单-20261002.md)。
+原版阅读入口：[store.py](source/python/minisgl/kernel/store.py)、[store.cu](source/python/minisgl/kernel/csrc/jit/store.cu)、[mha_pool.py](source/python/minisgl/kvcache/mha_pool.py)。最新v1：[内核](learning-materials/outputs/kv-cache-performance/modules/M06/src/triton_store_mask.py)、[公共入口](learning-materials/outputs/kv-cache-performance/modules/M06/src/triton_store_api.py)。
 
-## 源码阅读路线
+阅读无需GPU。复现需要完整上游固定版本及兼容环境，见[M06复现说明](learning-materials/outputs/kv-cache-performance/modules/M06/REPRODUCE.md)。本机证据来自RTX4070Ti、Torch2.9.1+cu128、Triton3.5.1；路径/激活脚本仍含原机器约定。本仓库Git提交不等于上游固定提交，不能删去版本检查来假装一致。
 
-1. [tests/kernel/test_store.py](source/tests/kernel/test_store.py)：准备数据、调用、检查及上游计时入口。
-2. [python/minisgl/kernel/store.py](source/python/minisgl/kernel/store.py)：Python 到原版 CUDA 的封装。
-3. [store.cu](source/python/minisgl/kernel/csrc/jit/store.cu)：选择目标行与复制分工。
-4. [warp.cuh](source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh)：warp 内复制方式。
-5. [mha_pool.py](source/python/minisgl/kvcache/mha_pool.py)：模型侧缓存分配与写入调用。
-6. [triton_store_first.py](source/experiments/triton_store_first.py)：对照本人固定尺寸读写原型及同目录的检查、运行档案。
-
-上游来源：[sgl-project/mini-sglang](https://github.com/sgl-project/mini-sglang)，WSL 导出提交为 [9a91cfafe754aa85daee49998176275667eb58f2](https://github.com/sgl-project/mini-sglang/tree/9a91cfafe754aa85daee49998176275667eb58f2)。[MIT 许可证](source/LICENSE)及文件中的第三方声明保留。
-
-## 性能数据的解释边界
-
-M05 首批试测范围：原版 CUDA store，B=1/16/256，D=64/128，容量 1024，FP16，交错缓存，连续唯一索引；重复访问同一批张量和地址，每区间 100 次调用。CUDA Graph 重放是主口径，eager Python 循环提交是参考口径。
-
-Graph 与 eager 是同一算子的不同执行方式，其差值不能写成本人优化的加速比。现有结果未覆盖大工作集、冷缓存、随机索引或模型接入。FP16 K/V 逻辑读写量为 8 × B × D 字节/调用，不含 indices；由此计算的有效带宽不能直接称为 DRAM 实测带宽。
-
-此前 [summary-transcribed.json](learning-materials/outputs/kv-cache-performance/reviews/20261004-original-pilot-summary-transcribed.json)是控制台结果转录；新补齐的 source/experiments 保存原始样本与运行快照。二者分开保留。同步过程本身没有运行 GPU 测试。用户随后执行的 M05 收尾已归档在[run-k84pq53x](learning-materials/outputs/kv-cache-performance/logs/m05-closeout-results/run-k84pq53x/)。真实 KV 时间线共定位 41 次 store 调用，其中 20 次关联到标记范围内的 CPU 启动；这项观察用于定位内核，profile 时长不替换六配置 Graph 基线。代表配置 B256/D128 复测 Graph=1.095680 微秒/次，处于旧三轮范围内，也不覆盖旧代表值。
-
-## 换设备阅读与运行
-
-阅读时可直接在 GitHub 浏览或克隆本仓库，无需 CUDA。运行时需要重新建立 Linux / WSL、NVIDIA 驱动、CUDA、Python 与依赖环境；虚拟环境、安装工具及缓存没有同步。
-
-**本仓库未导入原项目 .git 历史。** 克隆后的 Git HEAD 是本备份仓库提交，source/ 也不是独立的上游 Git 仓库。历史 M05 脚本含固定上游提交校验，因此不要把它们在这里的报错误认为源码变更。要复现实验，可另行检出上述 mini-sglang 固定提交，再将对应 experiments 和教练脚本放入约定位置，核对环境与路径后运行。
-
-历史脚本保留原机器 /home/...、/mnt/c/...、Windows 绝对路径、WSL 名称和用户名；换机时需要调整工作目录、激活脚本、PYTHONPATH 及外部脚本路径。完整排除说明见 [SYNC_STATUS.md](SYNC_STATUS.md)。
+上传只同步文件，没有重新运行GPU。冻结包说明中的“尚未同步GitHub”描述打包时状态；本次发布状态以本页与SYNC_STATUS为准。

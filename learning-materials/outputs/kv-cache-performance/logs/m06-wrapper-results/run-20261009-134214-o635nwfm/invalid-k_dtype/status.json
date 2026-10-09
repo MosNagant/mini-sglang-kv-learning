@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "k_dtype",
+  "rejection": {
+    "type": "TypeError",
+    "message": "TENSOR_DTYPE: k"
+  }
+}

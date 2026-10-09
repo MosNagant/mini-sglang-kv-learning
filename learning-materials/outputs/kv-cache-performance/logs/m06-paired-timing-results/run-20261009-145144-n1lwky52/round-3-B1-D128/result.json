@@ -1,0 +1,1048 @@
+{
+  "status": "COLLECTED",
+  "batch": 1,
+  "width": 128,
+  "round": 3,
+  "capacity": 1024,
+  "calls_per_interval": 100,
+  "seed": 20261004,
+  "config": {
+    "layout": "interleaved",
+    "input_gap": 0
+  },
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.000896959975361824,
+        0.0010838399827480317,
+        0.0011935999989509582,
+        0.0009663999825716018,
+        0.0010966400057077408,
+        0.0011270400136709213,
+        0.0010963200032711028,
+        0.0010988800227642059,
+        0.0008873599767684937,
+        0.0011247999966144562,
+        0.0008790399879217148,
+        0.0010806400328874587,
+        0.0010985600203275681,
+        0.0011423999816179275,
+        0.0010867200046777725,
+        0.0011033599823713303,
+        0.0010889600217342376,
+        0.001186240017414093,
+        0.0010889600217342376,
+        0.0010982400178909302,
+        0.0010886400192975999,
+        0.0010915199667215346,
+        0.001093439981341362,
+        0.0013228799402713776,
+        0.001085439994931221,
+        0.0010899200290441513,
+        0.0011273600161075593,
+        0.001096000000834465,
+        0.001090880036354065,
+        0.001090880036354065
+      ],
+      "eager": [
+        0.008996800184249878,
+        0.00874015986919403,
+        0.011619839668273926,
+        0.012670719623565673,
+        0.008369600176811218,
+        0.00844543993473053,
+        0.00833504021167755,
+        0.009418560266494751,
+        0.007913600206375122,
+        0.008247039914131164,
+        0.008042560219764709,
+        0.008264960050582885,
+        0.007942399978637694,
+        0.01147871971130371,
+        0.008428159952163696,
+        0.00809440016746521,
+        0.008811200261116028,
+        0.00829375982284546,
+        0.008559039831161498,
+        0.00854304015636444,
+        0.008304640054702758,
+        0.00845471978187561,
+        0.008197759985923767,
+        0.008181759715080261,
+        0.0082150399684906,
+        0.00913375973701477,
+        0.008159999847412109,
+        0.008345280289649964,
+        0.009790400266647339,
+        0.008173120021820069
+      ]
+    },
+    "learner_triton": {
+      "graph": [
+        0.0011177600175142288,
+        0.001130559965968132,
+        0.0012544000148773193,
+        0.0011318399757146835,
+        0.0011612799763679503,
+        0.0009289599955081939,
+        0.0011372800171375276,
+        0.0011350400000810622,
+        0.0013142399489879607,
+        0.0010364799946546554,
+        0.0011369600147008896,
+        0.0011215999722480774,
+        0.001125119999051094,
+        0.0012751999497413635,
+        0.0011443199962377548,
+        0.0011379200220108033,
+        0.0011260800063610076,
+        0.0011187200248241424,
+        0.001141439974308014,
+        0.001165120005607605,
+        0.0011292800307273864,
+        0.0011910399794578552,
+        0.001159999966621399,
+        0.0011343999952077865,
+        0.0011430399864912034,
+        0.0011241599917411805,
+        0.0011449600011110305,
+        0.001125119999051094,
+        0.001138880029320717,
+        0.001141119971871376
+      ],
+      "eager": [
+        0.034785280227661135,
+        0.012395839691162109,
+        0.012753599882125854,
+        0.029779839515686034,
+        0.03429503917694092,
+        0.012935999631881714,
+        0.013474559783935547,
+        0.017108800411224364,
+        0.012791039943695069,
+        0.013131519556045532,
+        0.0134825599193573,
+        0.013082879781723022,
+        0.01233407974243164,
+        0.014177600145339966,
+        0.014013439416885376,
+        0.012890880107879638,
+        0.012533760070800782,
+        0.012415679693222046,
+        0.013356800079345704,
+        0.01308351993560791,
+        0.013146879673004151,
+        0.012415679693222046,
+        0.012263360023498536,
+        0.013529280424118042,
+        0.012976000308990479,
+        0.014656959772109986,
+        0.012356799840927125,
+        0.01283776044845581,
+        0.01338271975517273,
+        0.031174399852752686
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.034785280227661135
+    },
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008996800184249878
+    },
+    {
+      "sample": 0,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011177600175142288
+    },
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000896959975361824
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010838399827480317
+    },
+    {
+      "sample": 1,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001130559965968132
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00874015986919403
+    },
+    {
+      "sample": 1,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012395839691162109
+    },
+    {
+      "sample": 2,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012753599882125854
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.011619839668273926
+    },
+    {
+      "sample": 2,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0012544000148773193
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011935999989509582
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009663999825716018
+    },
+    {
+      "sample": 3,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011318399757146835
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.012670719623565673
+    },
+    {
+      "sample": 3,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.029779839515686034
+    },
+    {
+      "sample": 4,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.03429503917694092
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008369600176811218
+    },
+    {
+      "sample": 4,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011612799763679503
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010966400057077408
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011270400136709213
+    },
+    {
+      "sample": 5,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0009289599955081939
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00844543993473053
+    },
+    {
+      "sample": 5,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012935999631881714
+    },
+    {
+      "sample": 6,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013474559783935547
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00833504021167755
+    },
+    {
+      "sample": 6,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011372800171375276
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010963200032711028
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010988800227642059
+    },
+    {
+      "sample": 7,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011350400000810622
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009418560266494751
+    },
+    {
+      "sample": 7,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.017108800411224364
+    },
+    {
+      "sample": 8,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012791039943695069
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007913600206375122
+    },
+    {
+      "sample": 8,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0013142399489879607
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008873599767684937
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011247999966144562
+    },
+    {
+      "sample": 9,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0010364799946546554
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008247039914131164
+    },
+    {
+      "sample": 9,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013131519556045532
+    },
+    {
+      "sample": 10,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.0134825599193573
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008042560219764709
+    },
+    {
+      "sample": 10,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011369600147008896
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008790399879217148
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010806400328874587
+    },
+    {
+      "sample": 11,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011215999722480774
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008264960050582885
+    },
+    {
+      "sample": 11,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013082879781723022
+    },
+    {
+      "sample": 12,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.01233407974243164
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007942399978637694
+    },
+    {
+      "sample": 12,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001125119999051094
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010985600203275681
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011423999816179275
+    },
+    {
+      "sample": 13,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0012751999497413635
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.01147871971130371
+    },
+    {
+      "sample": 13,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.014177600145339966
+    },
+    {
+      "sample": 14,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.014013439416885376
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008428159952163696
+    },
+    {
+      "sample": 14,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011443199962377548
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010867200046777725
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011033599823713303
+    },
+    {
+      "sample": 15,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011379200220108033
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00809440016746521
+    },
+    {
+      "sample": 15,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012890880107879638
+    },
+    {
+      "sample": 16,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012533760070800782
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008811200261116028
+    },
+    {
+      "sample": 16,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011260800063610076
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010889600217342376
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001186240017414093
+    },
+    {
+      "sample": 17,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011187200248241424
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00829375982284546
+    },
+    {
+      "sample": 17,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012415679693222046
+    },
+    {
+      "sample": 18,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013356800079345704
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008559039831161498
+    },
+    {
+      "sample": 18,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001141439974308014
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010889600217342376
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010982400178909302
+    },
+    {
+      "sample": 19,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001165120005607605
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00854304015636444
+    },
+    {
+      "sample": 19,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.01308351993560791
+    },
+    {
+      "sample": 20,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013146879673004151
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008304640054702758
+    },
+    {
+      "sample": 20,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011292800307273864
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010886400192975999
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010915199667215346
+    },
+    {
+      "sample": 21,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011910399794578552
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00845471978187561
+    },
+    {
+      "sample": 21,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012415679693222046
+    },
+    {
+      "sample": 22,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012263360023498536
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008197759985923767
+    },
+    {
+      "sample": 22,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001159999966621399
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001093439981341362
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0013228799402713776
+    },
+    {
+      "sample": 23,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011343999952077865
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008181759715080261
+    },
+    {
+      "sample": 23,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.013529280424118042
+    },
+    {
+      "sample": 24,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012976000308990479
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0082150399684906
+    },
+    {
+      "sample": 24,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011430399864912034
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001085439994931221
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010899200290441513
+    },
+    {
+      "sample": 25,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011241599917411805
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00913375973701477
+    },
+    {
+      "sample": 25,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.014656959772109986
+    },
+    {
+      "sample": 26,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.012356799840927125
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008159999847412109
+    },
+    {
+      "sample": 26,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.0011449600011110305
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011273600161075593
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001096000000834465
+    },
+    {
+      "sample": 27,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001125119999051094
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008345280289649964
+    },
+    {
+      "sample": 27,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.01283776044845581
+    },
+    {
+      "sample": 28,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.01338271975517273
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009790400266647339
+    },
+    {
+      "sample": 28,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001138880029320717
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001090880036354065
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001090880036354065
+    },
+    {
+      "sample": 29,
+      "implementation": "learner_triton",
+      "policy": "graph",
+      "ms_per_call": 0.001141119971871376
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008173120021820069
+    },
+    {
+      "sample": 29,
+      "implementation": "learner_triton",
+      "policy": "eager",
+      "ms_per_call": 0.031174399852752686
+    }
+  ],
+  "correctness_checks": 127,
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "triton": "3.5.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "device_properties": "_CudaDeviceProperties(name='NVIDIA GeForce RTX 4070 Ti', major=8, minor=9, total_memory=12281MB, multi_processor_count=60, uuid=e77953c3-ff4f-6148-ce27-8b41e1c2745b, pci_bus_id=1, pci_device_id=0, pci_domain_id=0, L2_cache_size=48MB)",
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P0, 51, 2640, 10501, 0, 849\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "setup_order": [
+    "original_cuda",
+    "learner_triton"
+  ],
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 51, 2640, 10251, 1, 1086\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "policy": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        1,
+        128
+      ],
+      [
+        16,
+        64
+      ],
+      [
+        16,
+        128
+      ],
+      [
+        256,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 128
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 104,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": 4,
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "learner_triton": "trusted raw kernel launcher with prevalidated fixed arguments"
+    },
+    "excluded": "allocation, validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "alternate forward/reverse four-measurement blocks; 15 each per process",
+    "address_policy": "same shared buffers for both implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "scope": "same-session six-case microbenchmark; not model/DRAM/AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph comparison is primary; no automatic speedup acceptance"
+  },
+  "scope": "both implementations passed this benchmark input; timings require review"
+}

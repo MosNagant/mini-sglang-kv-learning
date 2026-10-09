@@ -1,0 +1,12 @@
+{
+  "status": "INSTALL_PRESERVATION_PASS",
+  "GPU": "NOT_RUN",
+  "evidence": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\m06-wrapper-install-u1629cap",
+  "checks": [
+    "new template installed with blanks",
+    "existing learner kept",
+    "existing support kept",
+    "mask unchanged",
+    "old v1 unchanged"
+  ]
+}

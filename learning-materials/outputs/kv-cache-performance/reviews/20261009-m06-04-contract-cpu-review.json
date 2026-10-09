@@ -1,0 +1,367 @@
+{
+  "status": "CPU_CONTRACT_SUPPORT_PASS",
+  "GPU": "NOT_RUN",
+  "learner": "NOT_RUN",
+  "method": "NumPy-backed fake torch.Tensor metadata; actual CPU addresses exercise live-byte alias checks; fake CUDA device tags are not GPU evidence",
+  "cases": 47,
+  "results": [
+    {
+      "name": "D64-gap0-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        64,
+        128,
+        64
+      ]
+    },
+    {
+      "name": "D64-gap0-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "D64-gap64-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        128,
+        128,
+        64
+      ]
+    },
+    {
+      "name": "D64-gap64-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        128,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "D128-gap0-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        128,
+        128,
+        256,
+        128
+      ]
+    },
+    {
+      "name": "D128-gap0-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        128,
+        128,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "D128-gap64-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        128,
+        192,
+        256,
+        128
+      ]
+    },
+    {
+      "name": "D128-gap64-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        128,
+        192,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "D192-gap0-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        192,
+        384,
+        256
+      ]
+    },
+    {
+      "name": "D192-gap0-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        192,
+        192,
+        256
+      ]
+    },
+    {
+      "name": "D192-gap64-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        256,
+        384,
+        256
+      ]
+    },
+    {
+      "name": "D192-gap64-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        256,
+        192,
+        256
+      ]
+    },
+    {
+      "name": "guard192-interleaved",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        256,
+        512,
+        256
+      ]
+    },
+    {
+      "name": "empty-interleaved",
+      "status": "PASS",
+      "result": [
+        0,
+        64,
+        64,
+        128,
+        64
+      ]
+    },
+    {
+      "name": "guard192-separate",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        256,
+        256,
+        256
+      ]
+    },
+    {
+      "name": "empty-separate",
+      "status": "PASS",
+      "result": [
+        0,
+        64,
+        64,
+        64,
+        64
+      ]
+    },
+    {
+      "name": "source-KV-readonly-overlap-allowed",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        64,
+        128,
+        64
+      ]
+    },
+    {
+      "name": "index-length-deferred-to-learner-entry",
+      "status": "PASS",
+      "result": [
+        3,
+        64,
+        64,
+        128,
+        64
+      ]
+    },
+    {
+      "name": "not-a-tensor",
+      "status": "PASS",
+      "rejection": "TENSOR_TYPE: k must be a torch.Tensor"
+    },
+    {
+      "name": "input-rank",
+      "status": "PASS",
+      "rejection": "TENSOR_RANK: k"
+    },
+    {
+      "name": "index-rank",
+      "status": "PASS",
+      "rejection": "TENSOR_RANK: indices"
+    },
+    {
+      "name": "input-dtype",
+      "status": "PASS",
+      "rejection": "TENSOR_DTYPE: k"
+    },
+    {
+      "name": "cache-dtype",
+      "status": "PASS",
+      "rejection": "TENSOR_DTYPE: k_cache"
+    },
+    {
+      "name": "index-dtype",
+      "status": "PASS",
+      "rejection": "TENSOR_DTYPE: indices"
+    },
+    {
+      "name": "cpu-device",
+      "status": "PASS",
+      "rejection": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+    },
+    {
+      "name": "different-cuda-device",
+      "status": "PASS",
+      "rejection": "SAME_DEVICE: all five tensors must use one CUDA device"
+    },
+    {
+      "name": "kv-shape-mismatch",
+      "status": "PASS",
+      "rejection": "INPUT_SHAPE: K/V must have the same (B,D)"
+    },
+    {
+      "name": "cache-shape-mismatch",
+      "status": "PASS",
+      "rejection": "CACHE_SHAPE: caches must have the same (C,D)"
+    },
+    {
+      "name": "unsupported-width",
+      "status": "PASS",
+      "rejection": "WIDTH_SCOPE: D must be 64, 128, or 192"
+    },
+    {
+      "name": "zero-capacity",
+      "status": "PASS",
+      "rejection": "BATCH_CAPACITY: require C>0 and 0<=B<=C"
+    },
+    {
+      "name": "batch-exceeds-capacity",
+      "status": "PASS",
+      "rejection": "BATCH_CAPACITY: require C>0 and 0<=B<=C"
+    },
+    {
+      "name": "strided-indices",
+      "status": "PASS",
+      "rejection": "INDEX_STRIDE: require contiguous rank-1 indices"
+    },
+    {
+      "name": "strided-columns",
+      "status": "PASS",
+      "rejection": "COLUMN_STRIDE: k"
+    },
+    {
+      "name": "different-source-row-stride",
+      "status": "PASS",
+      "rejection": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+    },
+    {
+      "name": "different-cache-row-stride",
+      "status": "PASS",
+      "rejection": "SHARED_CACHE_STRIDE: cache row strides must match"
+    },
+    {
+      "name": "unsupported-source-stride",
+      "status": "PASS",
+      "rejection": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+    },
+    {
+      "name": "unsupported-cache-stride",
+      "status": "PASS",
+      "rejection": "CACHE_LAYOUT_SCOPE: unsupported cache row stride"
+    },
+    {
+      "name": "identical-cache-views",
+      "status": "PASS",
+      "rejection": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+    },
+    {
+      "name": "cache-different-base-actual-overlap",
+      "status": "PASS",
+      "rejection": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+    },
+    {
+      "name": "source-different-base-cache-overlap",
+      "status": "PASS",
+      "rejection": "SOURCE_CACHE_ALIAS: k_cache/k"
+    },
+    {
+      "name": "indices-write-alias",
+      "status": "PASS",
+      "rejection": "INDEX_CACHE_ALIAS: k_cache"
+    },
+    {
+      "name": "guard-live-regions-disjoint",
+      "status": "PASS",
+      "result": [
+        3,
+        192,
+        256,
+        512,
+        256
+      ]
+    },
+    {
+      "name": "index-values-unique-valid",
+      "status": "PASS",
+      "cpu_calls": 1,
+      "tolist_calls": 1
+    },
+    {
+      "name": "index-values-duplicate",
+      "status": "PASS",
+      "cpu_calls": 1,
+      "tolist_calls": 1
+    },
+    {
+      "name": "index-values-negative",
+      "status": "PASS",
+      "cpu_calls": 1,
+      "tolist_calls": 1
+    },
+    {
+      "name": "index-values-equal-capacity",
+      "status": "PASS",
+      "cpu_calls": 1,
+      "tolist_calls": 1
+    },
+    {
+      "name": "index-values-empty-no-transfer",
+      "status": "PASS",
+      "cpu_calls": 0,
+      "tolist_calls": 0
+    }
+  ],
+  "source": "outputs/kv-cache-performance/22-kv-contract-support.py",
+  "source_sha256": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+  "python_executable": "C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+  "test_source": "import importlib.util\nimport json\nimport sys\nimport types\nimport numpy as np\nfrom unittest.mock import patch\n\npath = sys.argv[1]\nspec = importlib.util.spec_from_file_location('contract_support', path)\nm = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(m)\n\nclass Device:\n    def __init__(self, kind='cuda', index=0): self.type, self.index = kind, index\n    def __eq__(self, other): return isinstance(other, Device) and (self.type, self.index) == (other.type, other.index)\n    def __ne__(self, other): return not self == other\n\nclass Tensor:\n    def __init__(self, array, device=None, strides=None):\n        self.array = array\n        self.device = Device() if device is None else device\n        self.strides = strides\n        self.cpu_calls = 0\n        self.tolist_calls = 0\n    @property\n    def shape(self): return self.array.shape\n    @property\n    def ndim(self): return self.array.ndim\n    @property\n    def dtype(self): return self.array.dtype\n    def stride(self, dimension=None):\n        value = self.strides if self.strides is not None else tuple(n // self.array.itemsize for n in self.array.strides)\n        return value if dimension is None else value[dimension]\n    def data_ptr(self): return self.array.__array_interface__['data'][0]\n    def element_size(self): return self.array.itemsize\n    def cpu(self): self.cpu_calls += 1; return self\n    def tolist(self): self.tolist_calls += 1; return self.array.tolist()\n\nfake_torch = types.SimpleNamespace(Tensor=Tensor, float16=np.dtype('float16'), int32=np.dtype('int32'))\n\ndef fixture(d=64, gap=0, layout='interleaved', guard=0, batch=3, capacity=8):\n    pitch = d + guard\n    if layout == 'interleaved':\n        cache = np.empty((capacity,2,pitch), dtype=np.float16)\n        kc, vc = cache[:,0,:d], cache[:,1,:d]\n    else:\n        cache = np.empty((2,capacity,pitch), dtype=np.float16)\n        kc, vc = cache[0,:,:d], cache[1,:,:d]\n    src_k = np.empty((batch,d+gap), dtype=np.float16)[:,:d]\n    src_v = np.empty((batch,d+gap), dtype=np.float16)[:,:d]\n    rows = np.array([7,0,3][:batch], dtype=np.int32)\n    if batch != 3: rows = np.arange(batch, dtype=np.int32)\n    # NumPy empty arrays report zero strides; expose ordinary torch empty strides.\n    src_strides = (d+gap,1) if batch == 0 else None\n    cache_strides = (pitch*(2 if layout=='interleaved' else 1),1) if capacity==0 else None\n    return [Tensor(kc,strides=cache_strides), Tensor(vc,strides=cache_strides),\n            Tensor(rows,strides=(1,) if batch==0 else None),\n            Tensor(src_k,strides=src_strides), Tensor(src_v,strides=src_strides)]\n\nresults=[]\ndef good(name, args, expected=None):\n    value=m.validate_metadata(*args)\n    assert expected is None or value == expected, (name,value,expected)\n    assert args[2].cpu_calls == 0 and args[2].tolist_calls == 0\n    results.append(dict(name=name,status='PASS',result=list(value)))\ndef bad(name, args, prefix):\n    try: m.validate_metadata(*args)\n    except (TypeError,ValueError) as e:\n        assert str(e).startswith(prefix), (name,str(e),prefix)\n        assert args[2].cpu_calls == 0 and args[2].tolist_calls == 0\n        results.append(dict(name=name,status='PASS',rejection=str(e)))\n    else: raise AssertionError('accepted invalid metadata: '+name)\n\nwith patch.dict(sys.modules, {'torch':fake_torch}):\n    for d in (64,128,192):\n        for gap in (0,64):\n            for layout in ('interleaved','separate'):\n                good(f'D{d}-gap{gap}-{layout}',fixture(d,gap,layout),\n                     (3,d,d+gap,d*(2 if layout=='interleaved' else 1),1<<(d-1).bit_length()))\n    for layout in ('interleaved','separate'):\n        good('guard192-'+layout,fixture(192,64,layout,64))\n        good('empty-'+layout,fixture(layout=layout,batch=0))\n    a=fixture(); a[4]=a[3]; good('source-KV-readonly-overlap-allowed',a)\n    a=fixture(); a[2]=Tensor(np.array([7,0],dtype=np.int32)); good('index-length-deferred-to-learner-entry',a)\n    a=fixture(); a[3]=object(); bad('not-a-tensor',a,'TENSOR_TYPE')\n    a=fixture(); a[3]=Tensor(a[3].array.ravel()); bad('input-rank',a,'TENSOR_RANK')\n    a=fixture(); a[2]=Tensor(a[2].array.reshape(3,1)); bad('index-rank',a,'TENSOR_RANK')\n    a=fixture(); a[3]=Tensor(a[3].array.astype(np.float32)); bad('input-dtype',a,'TENSOR_DTYPE')\n    a=fixture(); a[0]=Tensor(a[0].array.astype(np.float32)); bad('cache-dtype',a,'TENSOR_DTYPE')\n    a=fixture(); a[2]=Tensor(a[2].array.astype(np.int64)); bad('index-dtype',a,'TENSOR_DTYPE')\n    a=fixture(); a[3].device=Device('cpu'); bad('cpu-device',a,'CUDA_DEVICE')\n    a=fixture(); a[4].device=Device('cuda',1); bad('different-cuda-device',a,'SAME_DEVICE')\n    a=fixture(); a[4]=Tensor(a[4].array[:2]); bad('kv-shape-mismatch',a,'INPUT_SHAPE')\n    a=fixture(); a[1]=Tensor(a[1].array[:7]); bad('cache-shape-mismatch',a,'CACHE_SHAPE')\n    bad('unsupported-width',fixture(d=96),'WIDTH_SCOPE')\n    bad('zero-capacity',fixture(batch=0,capacity=0),'BATCH_CAPACITY')\n    bad('batch-exceeds-capacity',fixture(batch=9),'BATCH_CAPACITY')\n    a=fixture(); a[2]=Tensor(np.zeros(6,dtype=np.int32)[::2]); bad('strided-indices',a,'INDEX_STRIDE')\n    a=fixture(); a[3]=Tensor(np.empty((3,128),dtype=np.float16)[:,::2]); bad('strided-columns',a,'COLUMN_STRIDE')\n    a=fixture(); a[4]=Tensor(np.empty((3,128),dtype=np.float16)[:,:64]); bad('different-source-row-stride',a,'SHARED_SOURCE_STRIDE')\n    a=fixture(); a[1]=Tensor(np.empty((8,64),dtype=np.float16)); bad('different-cache-row-stride',a,'SHARED_CACHE_STRIDE')\n    bad('unsupported-source-stride',fixture(gap=32),'SOURCE_LAYOUT_SCOPE')\n    bad('unsupported-cache-stride',fixture(guard=32),'CACHE_LAYOUT_SCOPE')\n    a=fixture(); a[1]=a[0]; bad('identical-cache-views',a,'CACHE_WRITE_ALIAS')\n    a=fixture(); pool=np.empty((9,128),dtype=np.float16); a[0]=Tensor(pool[:8,:64]); a[1]=Tensor(pool[1:9,:64]); assert a[0].data_ptr()!=a[1].data_ptr(); bad('cache-different-base-actual-overlap',a,'CACHE_WRITE_ALIAS')\n    a=fixture(); a[3]=Tensor(a[0].array[1:4]); a[4]=Tensor(np.empty((3,128),dtype=np.float16)[:,:64]); assert a[3].data_ptr()!=a[0].data_ptr(); bad('source-different-base-cache-overlap',a,'SOURCE_CACHE_ALIAS')\n    a=fixture(); a[2]=Tensor(a[0].array[0].view(np.int32)[:3]); bad('indices-write-alias',a,'INDEX_CACHE_ALIAS')\n    # Source live rows can sit in guard regions without touching live cache rows.\n    a=fixture(64,0,'interleaved',0); pool=np.empty((8,256),dtype=np.float16)\n    a[0]=Tensor(pool[:,:64],strides=(128,1))\n    # Do not fake backing layout semantics in alias tests: real supported guard case instead.\n    a=fixture(192,64,'interleaved',64)\n    good('guard-live-regions-disjoint',a)\n\n    for name, values, batch, capacity, error in (\n        ('unique-valid',[7,0,3],3,8,None),\n        ('duplicate',[7,0,7],3,8,'INDEX_DUPLICATE'),\n        ('negative',[-1,0,3],3,8,'INDEX_RANGE'),\n        ('equal-capacity',[8,0,3],3,8,'INDEX_RANGE'),\n        ('empty-no-transfer',[],0,8,None)):\n        indices=Tensor(np.array(values,dtype=np.int32))\n        try: m.validate_index_values(indices,batch,capacity)\n        except ValueError as e:\n            assert error and str(e).startswith(error), (name,str(e))\n        else: assert error is None, name\n        assert indices.cpu_calls == (0 if batch==0 else 1)\n        assert indices.tolist_calls == (0 if batch==0 else 1)\n        results.append(dict(name='index-values-'+name,status='PASS',cpu_calls=indices.cpu_calls,tolist_calls=indices.tolist_calls))\n\nprint(json.dumps(dict(status='CPU_CONTRACT_SUPPORT_PASS',GPU='NOT_RUN',learner='NOT_RUN',\n    method='NumPy-backed fake torch.Tensor metadata; actual CPU addresses exercise live-byte alias checks; fake CUDA device tags are not GPU evidence',\n    cases=len(results),results=results),indent=2))\n"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-06",
+  "request": "Add interview experience and job requirement knowledge reminders to teaching",
+  "updated": [
+    "M06-M07教学大纲-20261006.md",
+    "COACHING_GUIDE.md",
+    "lessons/14-width-parameter.md",
+    "LEARNING_LOG.md",
+    "PROGRESS.md",
+    "KNOWLEDGE_MAP.md"
+  ],
+  "source_scope": "Previously supplied JD and interview screenshots; no live hiring verification",
+  "local_links_checked": 16,
+  "issues": [],
+  "learner_solution_preserved": true,
+  "gpu_runs": 0,
+  "engineering_score_unchanged": 30,
+  "mastery_newly_claimed": false
+}

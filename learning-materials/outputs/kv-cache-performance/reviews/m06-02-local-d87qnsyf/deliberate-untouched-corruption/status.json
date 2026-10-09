@@ -1,0 +1,5 @@
+{
+  "status": "FAILED",
+  "error_type": "AssertionError",
+  "error": "\nArrays are not equal\ncache\nMismatched elements: 1 / 1024 (0.0977%)\nMax absolute difference among violations: 98.\nMax relative difference among violations: 98.\n ACTUAL: array([[[ 7.400e+01,  7.500e+01,  7.600e+01, ...,  1.350e+02,\n          1.360e+02,  1.370e+02],\n        [-1.000e+00, -1.000e+00, -1.000e+00, ..., -1.000e+00,...\n DESIRED: array([[[ 7.400e+01,  7.500e+01,  7.600e+01, ...,  1.350e+02,\n          1.360e+02,  1.370e+02],\n        [-1.000e+00, -1.000e+00, -1.000e+00, ..., -1.000e+00,..."
+}

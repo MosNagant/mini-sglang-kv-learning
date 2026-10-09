@@ -1,0 +1,10 @@
+{
+  "recorded_at_utc": "2026-10-09T05:38:54.088Z",
+  "source": "user PowerShell output in current conversation",
+  "repair_output": "STORAGE DEVICE OK.",
+  "verification_command": "wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /bin/echo WSL_OK",
+  "verification_output": "localhost proxy warning followed by WSL_OK",
+  "status": "WSL_STARTUP_RECOVERED",
+  "limits": "Project imports/GPU/long-term recurrence not tested by this command",
+  "next": "M06-04: run22 --prepare, fill learner wrapper, then run checks"
+}

@@ -1,0 +1,83 @@
+{
+  "status": "LOCAL_HARNESS_AND_LAUNCH_MOCK_PASS",
+  "GPU": "NOT_RUN",
+  "Triton_kernel": "NOT_EXECUTED",
+  "simulated_cases": 16,
+  "parameter_sets": [
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 64,
+      "DST_ROW_STRIDE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 64,
+      "DST_ROW_STRIDE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 128,
+      "num_warps": 4
+    }
+  ],
+  "failed_case_preserved": true,
+  "rejected_launch_contracts": 2,
+  "artifacts": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\m06-02-local-d87qnsyf"
+}

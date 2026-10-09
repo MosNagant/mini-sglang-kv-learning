@@ -1,0 +1,73 @@
+EXISTING_FILE_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/kv_contract_support.py
+EXISTING_FILE_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_api.py
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-wrapper/run-20261009-134214-o635nwfm
+SCOPE=4 nonempty KV calls, 2 empty no-op calls, 18 invalid public calls; no timing
+LEARNER_SOURCE_BEGIN
+"""M06-04 learner launcher: fill the THREE ellipses below.
+
+Coach supplies validation helpers and recording. Learner completes index count,
+empty-input condition and grid using the contract discussed in class.
+This checked public call may synchronize to validate GPU index VALUES.
+It is NOT the future pure-kernel/Graph timing entry.
+The accepted triton_store_mask.py kernel is imported, never rewritten here.
+"""
+from kv_contract_support import validate_metadata, validate_index_values
+from triton_store_mask import store_kv_v1
+
+
+def store_cache_triton(k_cache, v_cache, indices, k, v):
+    batch, width, src_stride, dst_stride, block = validate_metadata(
+        k_cache, v_cache, indices, k, v)
+
+    # LEARNER_BEGIN: replace the three ... expressions, not the whole function.
+    # One destination per input row (shape is a one-element tuple).
+    if indices.shape != (batch,):
+        raise ValueError("INDEX_COUNT: one destination is required per input row")
+
+    # No input rows: return before reading index values or launching a kernel.
+    if batch == 0:
+        return
+
+    validate_index_values(indices, batch, k_cache.shape[0])
+
+    # Our current kernel assigns ONE program to ONE input K/V row.
+    store_kv_v1[(batch,)](
+        k_cache, v_cache, indices, k, v,
+        WIDTH=width, SRC_ROW_STRIDE=src_stride,
+        DST_ROW_STRIDE=dst_stride, BLOCK_SIZE=block, num_warps=4,
+    )
+    # LEARNER_END
+
+
+if __name__ == "__main__":
+    print("Fill THREE ellipses, then use 22-check-kv-wrapper.sh; no GPU launched here.")
+LEARNER_SOURCE_END
+WRAPPER_CASE_PASS B=3 D=64 layout=interleaved KV_launches=1
+WRAPPER_CASE_PASS B=5 D=64 layout=interleaved KV_launches=1
+WRAPPER_CASE_PASS B=5 D=192 layout=separate KV_launches=1
+WRAPPER_CASE_PASS B=1 D=128 layout=separate KV_launches=1
+WRAPPER_CASE_PASS B=0 D=64 layout=interleaved KV_launches=0
+WRAPPER_CASE_PASS B=0 D=192 layout=separate KV_launches=0
+EXPECTED_REJECTION indices_too_many: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION indices_too_few: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION v_shape: INPUT_SHAPE: K/V must have the same (B,D)
+EXPECTED_REJECTION k_dtype: TENSOR_DTYPE: k
+EXPECTED_REJECTION indices_dtype: TENSOR_DTYPE: indices
+EXPECTED_REJECTION cpu_k: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION cpu_indices: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION unsupported_width: WIDTH_SCOPE: D must be 64, 128, or 192
+EXPECTED_REJECTION column_stride: COLUMN_STRIDE: k
+EXPECTED_REJECTION index_stride: INDEX_STRIDE: require contiguous rank-1 indices
+EXPECTED_REJECTION unequal_source_stride: SHARED_SOURCE_STRIDE: K/V row strides must match
+EXPECTED_REJECTION unsupported_source_stride: SOURCE_LAYOUT_SCOPE: require D or D+64
+EXPECTED_REJECTION cache_overlap: CACHE_WRITE_ALIAS: K/V cache live regions overlap
+EXPECTED_REJECTION source_cache_overlap: SOURCE_CACHE_ALIAS: k_cache/k
+EXPECTED_REJECTION duplicate_indices: INDEX_DUPLICATE: destinations must be unique
+EXPECTED_REJECTION negative_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION out_of_range_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION empty_with_one_index: INDEX_COUNT: one destination is required per input row
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m06-wrapper-results/run-20261009-134214-o635nwfm
+WRAPPER_CASES_PASS: 4 nonempty GPU cases + 2 empty no-launch cases + 18 rejected invalid calls
+COVERAGE_LIMIT: FP16/int32; selected B0/1/3/5 and D64/128/192 layouts/strides; not full M06-05 suite or benchmark
+REVIEW_REQUIRED: review code and saved results; independent mastery is not inferred
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-wrapper-check-20261009-134213-Q0P2TM.log

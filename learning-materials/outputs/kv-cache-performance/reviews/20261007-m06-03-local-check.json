@@ -1,0 +1,152 @@
+{
+  "status": "LOCAL_HARNESS_PASS",
+  "GPU": "NOT_RUN",
+  "Triton_compilation": "NOT_RUN",
+  "simulated_cases": 28,
+  "mask_source_mutations_rejected": 7,
+  "guard_failure_saved": true,
+  "install_preserves_old_and_existing_sources": true,
+  "launch_parameter_sets": [
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 64,
+      "DST_ROW_STRIDE": 128,
+      "BLOCK_SIZE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 128,
+      "BLOCK_SIZE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 64,
+      "DST_ROW_STRIDE": 64,
+      "BLOCK_SIZE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 64,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 64,
+      "BLOCK_SIZE": 64,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 256,
+      "BLOCK_SIZE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 256,
+      "BLOCK_SIZE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 128,
+      "BLOCK_SIZE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 128,
+      "BLOCK_SIZE": 128,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 384,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 256,
+      "DST_ROW_STRIDE": 384,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 192,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 256,
+      "DST_ROW_STRIDE": 192,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 256,
+      "DST_ROW_STRIDE": 512,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    },
+    {
+      "grid": [
+        3
+      ],
+      "WIDTH": 192,
+      "SRC_ROW_STRIDE": 256,
+      "DST_ROW_STRIDE": 256,
+      "BLOCK_SIZE": 256,
+      "num_warps": 4
+    }
+  ],
+  "artifacts": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\m06-03-local-kar1ktst"
+}

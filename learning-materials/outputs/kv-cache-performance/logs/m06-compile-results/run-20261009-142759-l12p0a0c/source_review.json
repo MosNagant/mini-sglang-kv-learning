@@ -1,0 +1,12 @@
+{
+  "wrapper": {
+    "status": "THREE_EXPRESSIONS_REVIEWED",
+    "independent_mastery": "not inferred"
+  },
+  "mask": {
+    "status": "REVIEWED_BODY_MATCH",
+    "vector_load_masks": 2,
+    "vector_store_masks": 2,
+    "meaning": "Static source comparison only; not runtime invalid-read detection"
+  }
+}

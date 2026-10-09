@@ -1,0 +1,213 @@
+{
+  "run": "run-20261009-134214-o635nwfm",
+  "review_date": "2026-10-09",
+  "status": "PASS_LIMITED_M06_04",
+  "review_type": "offline source/result review; reviewer did not run GPU",
+  "cases": [
+    {
+      "directory": "valid-0-B3-D64",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3
+        ]
+      },
+      "full_backing_equal": true,
+      "launches": [
+        {
+          "grid": [
+            3
+          ],
+          "parameters": {
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "num_warps": 4
+          }
+        }
+      ],
+      "saved_expectation_matches_reconstruction": true
+    },
+    {
+      "directory": "valid-1-B5-D64",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "full_backing_equal": true,
+      "launches": [
+        {
+          "grid": [
+            5
+          ],
+          "parameters": {
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "num_warps": 4
+          }
+        }
+      ],
+      "saved_expectation_matches_reconstruction": true
+    },
+    {
+      "directory": "valid-2-B5-D192",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "full_backing_equal": true,
+      "launches": [
+        {
+          "grid": [
+            5
+          ],
+          "parameters": {
+            "WIDTH": 192,
+            "SRC_ROW_STRIDE": 256,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 256,
+            "num_warps": 4
+          }
+        }
+      ],
+      "saved_expectation_matches_reconstruction": true
+    },
+    {
+      "directory": "valid-3-B1-D128",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7
+        ]
+      },
+      "full_backing_equal": true,
+      "launches": [
+        {
+          "grid": [
+            1
+          ],
+          "parameters": {
+            "WIDTH": 128,
+            "SRC_ROW_STRIDE": 128,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 128,
+            "num_warps": 4
+          }
+        }
+      ],
+      "saved_expectation_matches_reconstruction": true
+    },
+    {
+      "directory": "valid-4-B0-D64",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "full_backing_equal": true,
+      "launches": [],
+      "saved_expectation_matches_reconstruction": true
+    },
+    {
+      "directory": "valid-5-B0-D192",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "full_backing_equal": true,
+      "launches": [],
+      "saved_expectation_matches_reconstruction": true
+    }
+  ],
+  "counts": {
+    "target_values": 3200,
+    "untouched_cache_values": 8064,
+    "cache_guard_values": 2048,
+    "input_values": 3200,
+    "input_gap_values": 640,
+    "index_values": 14
+  },
+  "errors": [],
+  "independent_reviewer": {
+    "agent": "wrapper_harness_audit",
+    "source_hashes_matched": 11,
+    "coach_assets_matched_current": 7,
+    "nonempty_single_launch": 4,
+    "empty_zero_launch": 2,
+    "invalid_rejections_zero_launch_unchanged_visible_values": 18,
+    "issues": []
+  },
+  "environment": {
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "torch": "2.9.1+cu128",
+    "triton": "3.5.1",
+    "cuda": "12.8",
+    "public_api_policy": "checks index VALUES on CPU before nonempty launch; may synchronize; not timed"
+  },
+  "ownership": {
+    "learner": "initial (0) index-shape and (batch) launch-grid errors corrected after coach feedback; B0 condition initially correct; learner saved and ran",
+    "coach": "validation helpers, harness, prior mask demonstration, audit and records",
+    "independent_mastery": "not inferred"
+  },
+  "limits": [
+    "selected FP16/int32 B0/1/3/5 D64/128/192 layouts/strides; C8",
+    "M06-05 full common correctness matrix pending",
+    "no timing/Graph comparison or speedup; public index-value check copies to CPU and may synchronize",
+    "source masks reviewed; no runtime invalid-read detector",
+    "invalid unchanged checks cover visible tensors, not all unrelated backing"
+  ],
+  "source_hashes": {
+    "coach_runner.py": "600f831894ed350e76c673ccc71a90eb99f58ef152b33f1652156d7afff3d8f2",
+    "coach_entry.sh": "16aa18397a8b1bb5233b35cd764b13de9614dbcb8eb9d3bbcef2439dd6c748e4",
+    "coach_template.py": "c025efbd95fc02551c7c409f7e36e5ab1a1ad242165e27472fca49221ac7a275",
+    "coach_contract.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "mask_helpers.py": "990ded9495ced25f4d145450a728741d7b2da663ab50fa16909b4683e81fe285",
+    "layout_helpers.py": "aadd183f448b0a634caf243a2ae036e73a94969c9a877276804f755e3e7aa514",
+    "coach_mask_reference.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+    "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+    "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+    "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+  }
+}

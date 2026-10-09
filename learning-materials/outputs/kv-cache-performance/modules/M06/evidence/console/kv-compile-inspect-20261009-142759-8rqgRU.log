@@ -1,0 +1,27 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-compile/run-20261009-142759-l12p0a0c
+SCOPE=one checked Triton call and its retained compiler output; no timing
+GPU=NVIDIA GeForce RTX 4070 Ti TRITON=3.5.1
+COMMON_CASE_PASS implementation=learner_triton B=3 D=192 layout=separate input_gap=64 cache_guard=64 submissions=1
+CHECKED_CONFIGURATION: B=3 D=192 C=32 separate input_gap=64 cache_guard=64
+ACTUAL_LAUNCH: [{'grid': [3], 'parameters': {'WIDTH': 192, 'SRC_ROW_STRIDE': 256, 'DST_ROW_STRIDE': 256, 'BLOCK_SIZE': 256, 'num_warps': 4}}]
+COMPILED_KERNEL_NAME: store_kv_v1
+RETAINED_ARTIFACTS: ['ttir', 'ttgir', 'llir', 'ptx', 'cubin']
+COMPILE_CACHE: fresh compilation not observed; retained specialization may be reused
+PTX_EXCERPT_BEGIN
+header:
+.version 8.7
+.target sm_89
+.address_size 64
+.visible .entry store_kv_v1(
+global_load_examples:
+	ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+	@%p1 ld.global.b32 { %r4 }, [ %rd2 + 0 ];
+	@%p1 ld.global.b32 { %r7 }, [ %rd4 + 0 ];
+global_store_examples:
+	@%p1 st.global.b32 [ %rd3 + 0 ], { %r4 };
+	@%p1 st.global.b32 [ %rd5 + 0 ], { %r7 };
+PTX_EXCERPT_END
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m06-compile-results/run-20261009-142759-l12p0a0c
+COMPILE_OBSERVATION_READY: one actual launch checked; review its saved specialization
+LIMIT: no timing, speedup, fresh-compilation proof, hardware counters or independent mastery claim
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-compile-inspect-20261009-142759-8rqgRU.log

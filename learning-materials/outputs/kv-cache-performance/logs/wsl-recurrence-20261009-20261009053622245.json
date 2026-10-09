@@ -1,0 +1,32 @@
+{
+  "observed_at_utc": "2026-10-09T05:36:22.245Z",
+  "user_error": "Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND",
+  "read_only_checks": [
+    {
+      "check": "storvsp_service",
+      "status": "fulfilled",
+      "stdout": "\r\nSERVICE_NAME: storvsp \r\n        TYPE               : 1  KERNEL_DRIVER  \r\n        STATE              : 1  STOPPED \r\n        WIN32_EXIT_CODE    : 1077  (0x435)\r\n        SERVICE_EXIT_CODE  : 0  (0x0)\r\n        CHECKPOINT         : 0x0\r\n        WAIT_HINT          : 0x0\r\n",
+      "stderr": ""
+    },
+    {
+      "check": "storvsp_device_registration",
+      "status": "rejected",
+      "code": 1,
+      "stdout": "",
+      "stderr": "����: ϵͳ�Ҳ���ָ����ע������ֵ��\r\n",
+      "message": "Command failed: C:/Windows/System32/reg.exe query HKLM\\SYSTEM\\CurrentControlSet\\Enum\\ROOT\\STORVSP\\0000\n����: ϵͳ�Ҳ���ָ����ע������ֵ��\r\n"
+    },
+    {
+      "check": "existing_repair_script",
+      "status": "fulfilled",
+      "exists": true
+    },
+    {
+      "check": "driver_file",
+      "status": "fulfilled",
+      "exists": true
+    }
+  ],
+  "interpretation": "storvsp stopped and device registration absent; driver file present; recurrence matches prior startup condition. Removal source not investigated; repair not run by tool.",
+  "next": "User administrator PowerShell runs existing Repair-WSL-Storage.ps1 -SkipSetup, then WSL_OK check; resume M06-04 learner wrapper."
+}

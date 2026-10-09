@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "implementation": "original_cuda",
+  "config": {
+    "batch": 4,
+    "width": 64,
+    "capacity": 32,
+    "layout": "interleaved",
+    "gap": 64,
+    "guard": 0,
+    "rows": [
+      31,
+      0,
+      1,
+      2
+    ]
+  },
+  "submissions": 1
+}

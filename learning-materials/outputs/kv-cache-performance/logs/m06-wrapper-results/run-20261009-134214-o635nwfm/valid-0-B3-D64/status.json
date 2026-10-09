@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "config": {
+    "batch": 3,
+    "width": 64,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0,
+    "rows": [
+      7,
+      0,
+      3
+    ]
+  },
+  "kv_launches": 1
+}

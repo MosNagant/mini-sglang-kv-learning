@@ -1,5 +1,13 @@
 # 环境问题与恢复手册
 
+**2026-10-09最新恢复确认：** 用户执行既有-SkipSetup修复后返回STORAGE DEVICE OK，并实际运行echo得到WSL_OK；见[用户输出记录](logs/wsl-recovery-user-output-20261009.json)。本次WSL启动阻塞解除，localhost代理警告未阻止命令执行。此步骤未验证项目导入/GPU或长期重启稳定性，不重复修复。继续当前PowerShell运行22号--prepare并编辑M06-04外层入口。下方同日“恢复待确认”为修复前历史。
+
+**2026-10-09最新状态：启动故障复发，恢复待确认。** 用户进入项目报CreateVm/HCS/ERROR_PATH_NOT_FOUND；本次只读检查storvsp STOPPED/1077、ROOT/STORVSP/0000注册缺失、storvsp.sys及既有修复脚本存在。见[本次诊断](logs/wsl-recurrence-20261009-20261009053622245.json)。当前故障条件与之前一致，设备移除来源未调查，不能把旧DevManView日志当作本次原因证据。下一步用户管理员PowerShell沿用Repair-WSL-Storage.ps1 -SkipSetup后验证WSL_OK；恢复后回M06-04三空位入口练习，不重做M05。工具未执行修复或GPU，工程进度不变。
+
+**2026-10-07最新状态：本次启动已恢复。** 15:42用户运行既有-SkipSetup脚本，日志确认ROOT/STORVSP/0000重新注册、Present=True、ConfigManagerErrorCode=0、storvsp Running、STORAGE DEVICE OK；随后15:46 M06-01四例GPU运行通过。见[恢复日志](../logs/repair-storage-20261007-154213.log)与[M06证据](logs/kv-width-check-results/run-20261007-154657-9g3dxths/status.json)。此前只读故障检查保留在[环境证据](logs/wsl-recurrence-20261007.json)。本次设备移除来源未调查，不能称为长期故障已根治；现在继续M06-02，无需再次修复。
+
+> 以下原有日期的恢复状态为历史；当前是否恢复以上方最新修复日志及用户GPU运行证据为准。
+
 整理日期：2026-09-29；更新：2026-10-02，Asia/Shanghai。当前状态：12:28沿用既有-SkipSetup脚本恢复设备，Present=True、ConfigManagerErrorCode=0、storvsp=Running；用户已返回实际WSL_OK，本次启动阻塞解除。系统日志此前记录10月1日22:40:12再次被DevManView卸载；上级调用来源和长期稳定性仍未解决。[最新复发证据](logs/wsl-recurrence-20261002.txt)、[恢复用户输出](logs/wsl-recovery-user-output-20261002.txt)。学习任务以LEARNING_LOG.md顶部及当前快照为准。
 
 ## 下次从这里回来
@@ -27,7 +35,7 @@ wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec /home/weltlaw/projects/mini-sglang-kv
 | 现象 | 已确认的处理与证据 | 当前状态 |
 | --- | --- | --- |
 | WSL 下载返回 403 | 用经过微软签名和 SHA-256 校验的本地官方 WSL MSI 安装 | 已安装，无需重复 |
-| CreateVm/HCS/ERROR_PATH_NOT_FOUND | 10-02 12:28修复后设备Present、驱动Running；用户WSL_OK已返回 | 本次启动恢复；上级调用来源与长期稳定性未解决 |
+| CreateVm/HCS/ERROR_PATH_NOT_FOUND | 10-07 15:42设备Present、驱动Running；15:46用户四例GPU通过 | 本次启动恢复；最新移除来源与长期稳定性未解决 |
 | Linux 用户名含大写或空格被拒绝 | 创建并使用 `weltlaw` | 已解决 |
 | Triton/Inductor 编译找不到 Python.h | 安装 Ubuntu `python3.12-dev` 后，原版测试通过 | 已解决 |
 | 指定 Nsight Systems APT 版本不存在 | 从实际 apt-cache policy 读取完整 Version，修正包版本假设 | 已安装 |

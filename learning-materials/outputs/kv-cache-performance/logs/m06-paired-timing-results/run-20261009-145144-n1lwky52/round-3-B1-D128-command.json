@@ -1,0 +1,17 @@
+[
+  "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "-B",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-paired-timing/run-20261009-145144-n1lwky52/25-compare-kv-v1.py",
+  "--project",
+  "/home/weltlaw/projects/mini-sglang-kv",
+  "--snapshot",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-paired-timing/run-20261009-145144-n1lwky52",
+  "--worker-dir",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-paired-timing/run-20261009-145144-n1lwky52/round-3-B1-D128",
+  "--batch",
+  "1",
+  "--width",
+  "128",
+  "--round",
+  "3"
+]

@@ -1,0 +1,14 @@
+{
+  "status": "EMPTY_ADAPTER_PASS",
+  "implementation": "original_cuda",
+  "config": {
+    "batch": 0,
+    "width": 128,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 0,
+    "guard": 0,
+    "rows": []
+  },
+  "submissions": 0
+}

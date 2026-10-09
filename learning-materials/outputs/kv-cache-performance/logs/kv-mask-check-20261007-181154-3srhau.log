@@ -1,0 +1,118 @@
+CREATED_MASK_KERNEL=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_mask.py
+OLD_V1_KEPT: experiments/triton_store_v1.py was not modified
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-mask/run-20261007-181154-5q2k4kbh
+SCOPE=FP16 B3 C8 D64/128/192; selected gaps/layouts/guards; no timing
+MASK_SOURCE_BEGIN
+"""M06-03 KV store with column masks; coach demonstration requested by learner.
+
+Extends the reviewed v1 address formulas without changing their element units.
+Lesson: FP16 B3, widths64/128/192, capacity8, unique int32 indices[7,0,3].
+K/V inputs share their row stride; K/V cache views share their row stride.
+Column strides are1. BLOCK_SIZE is logical column count, not thread count.
+Actual GPU acceptance is recorded by21-check-kv-mask.sh, not this docstring.
+"""
+
+import triton
+import triton.language as tl
+
+
+@triton.jit
+def store_kv_v1(k_cache_ptr, v_cache_ptr, indices_ptr, k_ptr, v_ptr,
+                WIDTH: tl.constexpr, SRC_ROW_STRIDE: tl.constexpr,
+                DST_ROW_STRIDE: tl.constexpr, BLOCK_SIZE: tl.constexpr):
+    pid = tl.program_id(0)
+    pos = tl.load(indices_ptr + pid)
+
+    cols = tl.arange(0, BLOCK_SIZE)
+    mask = cols < WIDTH
+    src_offsets = pid * SRC_ROW_STRIDE + cols
+    dst_offsets = pos * DST_ROW_STRIDE + cols
+
+    k_values = tl.load(k_ptr + src_offsets, mask=mask, other=0)
+    tl.store(k_cache_ptr + dst_offsets, k_values, mask=mask)
+    v_values = tl.load(v_ptr + src_offsets, mask=mask, other=0)
+    tl.store(v_cache_ptr + dst_offsets, v_values, mask=mask)
+
+
+if __name__ == "__main__":
+    print("Kernel definition only. Use21-check-kv-mask.sh for the lesson checks.")
+MASK_SOURCE_END
+MASK_SOURCE_REVIEW_OK: two masked vector loads and two masked stores
+CHECKER_CONTROLS_PASS:3 correct fixtures and21 deliberate errors on CPU
+BACKING_CONTROLS_PASS: 14 correct fixtures; 122 corruptions rejected on CPU
+GPU=NVIDIA GeForce RTX 4070 Ti TORCH=2.9.1+cu128 TRITON=3.5.1
+CASE_SETUP implementation=original_cuda D=64 layout=interleaved input_gap=0 cache_guard=0 src_stride=64 dst_stride=128
+CASE_PASS implementation=original_cuda D=64 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=64 layout=interleaved input_gap=64 cache_guard=0 src_stride=128 dst_stride=128
+CASE_PASS implementation=original_cuda D=64 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=64 layout=separate input_gap=0 cache_guard=0 src_stride=64 dst_stride=64
+CASE_PASS implementation=original_cuda D=64 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=64 layout=separate input_gap=64 cache_guard=0 src_stride=128 dst_stride=64
+CASE_PASS implementation=original_cuda D=64 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=128 layout=interleaved input_gap=0 cache_guard=0 src_stride=128 dst_stride=256
+CASE_PASS implementation=original_cuda D=128 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=128 layout=interleaved input_gap=64 cache_guard=0 src_stride=192 dst_stride=256
+CASE_PASS implementation=original_cuda D=128 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=128 layout=separate input_gap=0 cache_guard=0 src_stride=128 dst_stride=128
+CASE_PASS implementation=original_cuda D=128 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=128 layout=separate input_gap=64 cache_guard=0 src_stride=192 dst_stride=128
+CASE_PASS implementation=original_cuda D=128 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=192 layout=interleaved input_gap=0 cache_guard=0 src_stride=192 dst_stride=384
+CASE_PASS implementation=original_cuda D=192 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=192 layout=interleaved input_gap=64 cache_guard=0 src_stride=256 dst_stride=384
+CASE_PASS implementation=original_cuda D=192 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=192 layout=separate input_gap=0 cache_guard=0 src_stride=192 dst_stride=192
+CASE_PASS implementation=original_cuda D=192 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=original_cuda D=192 layout=separate input_gap=64 cache_guard=0 src_stride=256 dst_stride=192
+CASE_PASS implementation=original_cuda D=192 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=original_cuda D=192 layout=interleaved input_gap=64 cache_guard=64 src_stride=256 dst_stride=512
+CASE_PASS implementation=original_cuda D=192 layout=interleaved input_gap=64 cache_guard=64
+CASE_SETUP implementation=original_cuda D=192 layout=separate input_gap=64 cache_guard=64 src_stride=256 dst_stride=256
+CASE_PASS implementation=original_cuda D=192 layout=separate input_gap=64 cache_guard=64
+CASE_SETUP implementation=triton_mask D=64 layout=interleaved input_gap=0 cache_guard=0 src_stride=64 dst_stride=128
+TRITON_LAUNCH grid=(3,) WIDTH=64 BLOCK_SIZE=64 SRC_ROW_STRIDE=64 DST_ROW_STRIDE=128 num_warps=4
+CASE_PASS implementation=triton_mask D=64 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=64 layout=interleaved input_gap=64 cache_guard=0 src_stride=128 dst_stride=128
+TRITON_LAUNCH grid=(3,) WIDTH=64 BLOCK_SIZE=64 SRC_ROW_STRIDE=128 DST_ROW_STRIDE=128 num_warps=4
+CASE_PASS implementation=triton_mask D=64 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=64 layout=separate input_gap=0 cache_guard=0 src_stride=64 dst_stride=64
+TRITON_LAUNCH grid=(3,) WIDTH=64 BLOCK_SIZE=64 SRC_ROW_STRIDE=64 DST_ROW_STRIDE=64 num_warps=4
+CASE_PASS implementation=triton_mask D=64 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=64 layout=separate input_gap=64 cache_guard=0 src_stride=128 dst_stride=64
+TRITON_LAUNCH grid=(3,) WIDTH=64 BLOCK_SIZE=64 SRC_ROW_STRIDE=128 DST_ROW_STRIDE=64 num_warps=4
+CASE_PASS implementation=triton_mask D=64 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=128 layout=interleaved input_gap=0 cache_guard=0 src_stride=128 dst_stride=256
+TRITON_LAUNCH grid=(3,) WIDTH=128 BLOCK_SIZE=128 SRC_ROW_STRIDE=128 DST_ROW_STRIDE=256 num_warps=4
+CASE_PASS implementation=triton_mask D=128 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=128 layout=interleaved input_gap=64 cache_guard=0 src_stride=192 dst_stride=256
+TRITON_LAUNCH grid=(3,) WIDTH=128 BLOCK_SIZE=128 SRC_ROW_STRIDE=192 DST_ROW_STRIDE=256 num_warps=4
+CASE_PASS implementation=triton_mask D=128 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=128 layout=separate input_gap=0 cache_guard=0 src_stride=128 dst_stride=128
+TRITON_LAUNCH grid=(3,) WIDTH=128 BLOCK_SIZE=128 SRC_ROW_STRIDE=128 DST_ROW_STRIDE=128 num_warps=4
+CASE_PASS implementation=triton_mask D=128 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=128 layout=separate input_gap=64 cache_guard=0 src_stride=192 dst_stride=128
+TRITON_LAUNCH grid=(3,) WIDTH=128 BLOCK_SIZE=128 SRC_ROW_STRIDE=192 DST_ROW_STRIDE=128 num_warps=4
+CASE_PASS implementation=triton_mask D=128 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=192 layout=interleaved input_gap=0 cache_guard=0 src_stride=192 dst_stride=384
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=192 DST_ROW_STRIDE=384 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=interleaved input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=192 layout=interleaved input_gap=64 cache_guard=0 src_stride=256 dst_stride=384
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=256 DST_ROW_STRIDE=384 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=interleaved input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=192 layout=separate input_gap=0 cache_guard=0 src_stride=192 dst_stride=192
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=192 DST_ROW_STRIDE=192 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=separate input_gap=0 cache_guard=0
+CASE_SETUP implementation=triton_mask D=192 layout=separate input_gap=64 cache_guard=0 src_stride=256 dst_stride=192
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=256 DST_ROW_STRIDE=192 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=separate input_gap=64 cache_guard=0
+CASE_SETUP implementation=triton_mask D=192 layout=interleaved input_gap=64 cache_guard=64 src_stride=256 dst_stride=512
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=256 DST_ROW_STRIDE=512 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=interleaved input_gap=64 cache_guard=64
+CASE_SETUP implementation=triton_mask D=192 layout=separate input_gap=64 cache_guard=64 src_stride=256 dst_stride=256
+TRITON_LAUNCH grid=(3,) WIDTH=192 BLOCK_SIZE=256 SRC_ROW_STRIDE=256 DST_ROW_STRIDE=256 num_warps=4
+CASE_PASS implementation=triton_mask D=192 layout=separate input_gap=64 cache_guard=64
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m06-mask-results/run-20261007-181154-5q2k4kbh
+MASK_CASES_PASS: 28/28 cases;16 regression+8 width192+4 guard cases
+COVERAGE_LIMIT: FP16 B3 C8 indices[7,0,3], selected layouts and strides; full storage/guards checked. Load safety reviewed in source; no runtime invalid-read detector. No timing, arbitrary widths or batch coverage.
+REVIEW_REQUIRED: submit output; no automatic independent-learning or performance PASS.
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-mask-check-20261007-181154-3srhau.log

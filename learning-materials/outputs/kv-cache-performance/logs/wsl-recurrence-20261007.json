@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-07",
+  "trigger": "User WSL echo failed with Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND",
+  "read_only_probes": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "exe": "C:/Windows/System32/sc.exe",
+        "code": 0,
+        "out": "\r\nSERVICE_NAME: storvsp \r\n        TYPE               : 1  KERNEL_DRIVER  \r\n        STATE              : 1  STOPPED \r\n        WIN32_EXIT_CODE    : 1077  (0x435)\r\n        SERVICE_EXIT_CODE  : 0  (0x0)\r\n        CHECKPOINT         : 0x0\r\n        WAIT_HINT          : 0x0\r\n",
+        "err": ""
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "exe": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+        "code": 0,
+        "out": "{\"DeviceKeyPresent\":false,\"DriverFilePresent\":true}\r\n",
+        "err": ""
+      }
+    }
+  ],
+  "conclusion": "storvsp STOPPED exit 1077; expected ROOT/STORVSP/0000 registry key missing; storvsp.sys exists. Matches previously repaired missing-device condition.",
+  "cause_of_latest_removal": "not investigated or attributed",
+  "action": "Reuse reviewed Repair-WSL-Storage.ps1 -SkipSetup in user elevated PowerShell; awaiting output and WSL_OK",
+  "repair_executed_by_assistant": false,
+  "gpu_run": false,
+  "lesson": "M06-01 learner three expressions still pending"
+}

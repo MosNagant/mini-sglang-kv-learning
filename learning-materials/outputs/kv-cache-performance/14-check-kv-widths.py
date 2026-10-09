@@ -1,9 +1,9 @@
-"""M06-01 coach harness: WIDTH=64/128, actual row strides, one v1 source.
+"""M06-01/02 coach harness: widths64/128 and selected layouts, one v1 source.
 
 Fresh fixtures for each implementation/case; independent CPU expectations;
 source snapshots and full raw results retained, including on check failures.
-Only the stated contiguous-input/interleaved-cache cases are covered;
-passing this entry does not establish general layouts, masking or timing.
+Default: original M06-01 four cases. M06-02 adds input gap and separate cache.
+Only selected cases count as run; no arbitrary strides, masking or timing.
 """
 
 import argparse
@@ -23,7 +23,6 @@ from pathlib import Path
 COMMIT = "9a91cfafe754aa85daee49998176275667eb58f2"
 TARGET_ROWS = (7, 0, 3)
 WIDTHS = (64, 128)
-SCOPE = "M06-01: two implementations x widths64/128; actual shared K/V row strides; FP16 batch=3 capacity=8 indices=[7,0,3]; no timing"
 
 
 def write_json(path, value):
@@ -78,61 +77,150 @@ def checker_controls(torch, checker, width):
     return {"positive_control": "PASS", "negative_controls": detected}
 
 
-def check_other_state(torch, k_cache, v_cache, k_after, v_after, indices_after,
-                      expected_k, expected_v, expected_indices, rows):
-    # The learner already checked untouched rows in the earlier lesson;
-    # the coach adapts that loop to the current target list and checks inputs.
-    for row in range(8):
-        if row not in rows:
-            assert torch.all(k_cache[row] == -1).item(), f"Untouched K row {row} changed"
-            assert torch.all(v_cache[row] == -1).item(), f"Untouched V row {row} changed"
-    assert torch.equal(k_after, expected_k), "Input K changed"
-    assert torch.equal(v_after, expected_v), "Input V changed"
-    assert torch.equal(indices_after, expected_indices), "Input indices changed"
+def cache_views(cache, layout):
+    if layout == "interleaved":
+        return cache[:, 0, :], cache[:, 1, :]
+    return cache[0], cache[1]
 
 
-def run_case(torch, launcher, checker, rows, width, directory, implementation):
+def make_fixture(width, layout, gap, rows=TARGET_ROWS):
+    import numpy as np
+    if width not in WIDTHS or layout not in ("interleaved", "separate") or gap not in (0, 64):
+        raise ValueError("LESSON_CONFIGURATION_OUT_OF_SCOPE")
+    if tuple(rows) != TARGET_ROWS:
+        raise ValueError("LESSON_INDICES: keep [7,0,3]")
+    batch = len(rows)
+    shape = (8, 2, width) if layout == "interleaved" else (2, 8, width)
+    before = {"cache": np.full(shape, -1, dtype=np.float16),
+              "k": np.full((batch, width + gap), -9, dtype=np.float16),
+              "v": np.full((batch, width + gap), -9, dtype=np.float16),
+              "indices": np.array(rows, dtype=np.int32)}
+    values = np.arange(batch * width).reshape(batch, width).astype(np.float16) + 10
+    before["k"][:, :width] = values
+    before["v"][:, :width] = values + 1000
+    before["expected_cache"] = before["cache"].copy()
+    ek, ev = cache_views(before["expected_cache"], layout)
+    for pid, pos in enumerate(rows):
+        ek[pos] = before["k"][pid, :width]
+        ev[pos] = before["v"][pid, :width]
+    return before
+
+
+def verify_backing(before, after):
+    import numpy as np
+    for name in ("cache", "k", "v", "indices"):
+        expected = before["expected_cache" if name == "cache" else name]
+        np.testing.assert_array_equal(after[name], expected, err_msg=name)
+
+
+def backing_controls(configurations):
+    """CPU checks of full-storage oracle; these do not execute CUDA/Triton."""
+    records = []
+    for spec in configurations:
+        width, layout, gap = spec["width"], spec["layout"], spec["input_gap"]
+        before = make_fixture(width, layout, gap)
+        def good():
+            return {name: before["expected_cache" if name == "cache" else name].copy()
+                    for name in ("cache", "k", "v", "indices")}
+        verify_backing(before, good())
+        detected = []
+        kinds = ["target_K_last", "target_V_last", "untouched_K", "untouched_V",
+                 "input_K", "input_V", "indices"]
+        if gap:
+            kinds += ["input_K_gap", "input_V_gap"]
+        for kind in kinds:
+            after = good()
+            kc, vc = cache_views(after["cache"], layout)
+            if kind == "target_K_last":
+                kc[7, width - 1] = -99
+            elif kind == "target_V_last":
+                vc[3, width - 1] = -99
+            elif kind == "untouched_K":
+                kc[2, 0] = -99
+            elif kind == "untouched_V":
+                vc[2, 0] = -99
+            elif kind == "input_K":
+                after["k"][1, 0] = -99
+            elif kind == "input_V":
+                after["v"][1, 0] = -99
+            elif kind == "indices":
+                after["indices"][0] = 2
+            elif kind == "input_K_gap":
+                after["k"][1, width] = -99
+            else:
+                after["v"][1, width] = -99
+            try:
+                verify_backing(before, after)
+            except AssertionError:
+                detected.append(kind)
+            else:
+                raise AssertionError("BACKING_CHECK_MISSED: " + kind)
+        records.append({**spec, "positive_control": "PASS", "negative_controls": detected})
+    return records
+
+
+def select_configurations(width=None, layout=None, input_gap=None, layouts=False):
+    if layouts and any(value is not None for value in (width, layout, input_gap)):
+        raise ValueError("Use --layouts alone or select --width/--layout/--input-gap")
+    widths = WIDTHS if width is None else (width,)
+    cache_layouts = ("interleaved", "separate") if layouts else (layout or "interleaved",)
+    gaps = (0, 64) if layouts else (0 if input_gap is None else input_gap,)
+    return [{"width": d, "layout": kind, "input_gap": gap}
+            for d in widths for kind in cache_layouts for gap in gaps]
+
+
+def run_case(torch, launcher, checker, rows, width, directory, implementation,
+             layout="interleaved", gap=0):
     directory.mkdir()
     rows = list(rows)
-    # CPU copies exist before launch and cannot alias these GPU inputs.
     batch = len(rows)
-    expected_k = torch.arange(batch * width, dtype=torch.float16).reshape(batch, width) + 10
-    expected_v = expected_k + 1000
-    expected_indices = torch.tensor(rows, dtype=torch.int32)
-    k, v, indices = expected_k.cuda(), expected_v.cuda(), expected_indices.cuda()
-    cache = torch.full((8, 2, width), -1, dtype=torch.float16, device="cuda")
-    k_cache, v_cache = cache[:, 0, :], cache[:, 1, :]
-    if k.stride() != (width, 1) or v.stride() != (width, 1):
+    before = make_fixture(width, layout, gap, rows)
+    # Transfer full backing arrays FIRST; slicing on GPU preserves the gap.
+    buffers = {name: torch.from_numpy(before[name].copy()).cuda()
+               for name in ("cache", "k", "v", "indices")}
+    cache, indices = buffers["cache"], buffers["indices"]
+    k, v = buffers["k"][:, :width], buffers["v"][:, :width]
+    k_cache, v_cache = cache_views(cache, layout)
+    if k.stride() != (width + gap, 1) or v.stride() != (width + gap, 1):
         raise RuntimeError("Unexpected input layout")
-    if k_cache.stride() != (2 * width, 1) or v_cache.stride() != (2 * width, 1):
+    expected_dst = width * (2 if layout == "interleaved" else 1)
+    if k_cache.stride() != (expected_dst, 1) or v_cache.stride() != (expected_dst, 1):
         raise RuntimeError("Unexpected cache layout")
+    expected_k = torch.from_numpy(before["k"][:, :width].copy())
+    expected_v = torch.from_numpy(before["v"][:, :width].copy())
     write_json(directory / "input.json", {
         "implementation": implementation, "indices": rows,
         "batch": batch, "width": width, "input_shape": list(k.shape),
+        "layout": layout, "input_gap": gap, "gap_initial_value": -9,
         "triton_grid": [batch] if implementation == "learner_triton" else None,
-        "cache_shape": [8, 2, width], "initial_value": -1,
+        "cache_shape": list(cache.shape), "initial_value": -1,
         "input_stride": list(k.stride()), "cache_view_stride": list(k_cache.stride()),
         "v_input_stride": list(v.stride()), "v_cache_view_stride": list(v_cache.stride()),
         "stride_unit": "elements", "shared_kv_row_stride_contract": True,
         "dtype": "torch.float16", "expected_k": expected_k.tolist(),
         "expected_v": expected_v.tolist(),
+        "backing_before": {name: value.tolist() for name, value in before.items()},
     })
-    print(f"CASE_SETUP implementation={implementation} input_shape={tuple(k.shape)} indices={rows}", flush=True)
+    print(f"CASE_SETUP implementation={implementation} input_shape={tuple(k.shape)} "
+          f"layout={layout} input_gap={gap} input_stride={k.stride()} "
+          f"cache_stride={k_cache.stride()} indices={rows}", flush=True)
     write_json(directory / "status.json", {"status": "LAUNCHING"})
     try:
         launcher(k_cache, v_cache, indices, k, v)
         torch.cuda.synchronize()
-        actual_k_cache, actual_v_cache = k_cache.cpu(), v_cache.cpu()
-        actual_k, actual_v, actual_indices = k.cpu(), v.cpu(), indices.cpu()
-        # Raw data precedes verification; a failed check never destroys it.
+        after = {name: value.cpu().numpy().copy() for name, value in buffers.items()}
+        ak, av = cache_views(after["cache"], layout)
+        # Save full storage before any assertion, including failed results.
         write_json(directory / "result.json", {
-            "k_cache": actual_k_cache.tolist(), "v_cache": actual_v_cache.tolist(),
-            "k_after": actual_k.tolist(), "v_after": actual_v.tolist(),
-            "indices_after": actual_indices.tolist(),
+            "k_cache": ak.tolist(), "v_cache": av.tolist(),
+            "k_after": after["k"][:, :width].tolist(),
+            "v_after": after["v"][:, :width].tolist(),
+            "indices_after": after["indices"].tolist(),
+            "backing_after": {name: value.tolist() for name, value in after.items()},
         })
-        checker(actual_k_cache, actual_v_cache, expected_k, expected_v, rows)
-        check_other_state(torch, actual_k_cache, actual_v_cache, actual_k, actual_v,
-                          actual_indices, expected_k, expected_v, expected_indices, rows)
+        checker(torch.from_numpy(ak.copy()), torch.from_numpy(av.copy()),
+                expected_k, expected_v, rows)
+        verify_backing(before, after)
         write_json(directory / "status.json", {"status": "PASS"})
     except Exception as error:
         write_json(directory / "status.json", {
@@ -140,7 +228,8 @@ def run_case(torch, launcher, checker, rows, width, directory, implementation):
         })
         (directory / "error.txt").write_text(traceback.format_exc(), encoding="utf-8")
         raise
-    print(f"CASE_PASS implementation={implementation} width={width} indices={rows}", flush=True)
+    print(f"CASE_PASS implementation={implementation} width={width} "
+          f"layout={layout} input_gap={gap} indices={rows}", flush=True)
 
 
 def validate_kernel(source):
@@ -195,8 +284,8 @@ def make_learner_launcher(module):
             raise RuntimeError("SHARED_SOURCE_STRIDE: K/V input row strides must match")
         if v_cache.stride(0) != destination_stride:
             raise RuntimeError("SHARED_CACHE_STRIDE: K/V cache row strides must match")
-        if source_stride != width or destination_stride != 2 * width:
-            raise RuntimeError("LESSON_LAYOUT: only contiguous inputs/interleaved cache checked here")
+        if source_stride not in (width, width + 64) or destination_stride not in (width, 2 * width):
+            raise RuntimeError("LESSON_LAYOUT: only selected gap0/64 and interleaved/separate cases")
         print(f"TRITON_LAUNCH grid=({batch},) WIDTH={width} "
               f"SRC_ROW_STRIDE={source_stride} DST_ROW_STRIDE={destination_stride} num_warps=4",
               flush=True)
@@ -210,10 +299,29 @@ def make_learner_launcher(module):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--project", required=True, type=Path)
-    parser.add_argument("--shared-results", required=True, type=Path)
+    parser.add_argument("--project", type=Path)
+    parser.add_argument("--shared-results", type=Path)
     parser.add_argument("--prepare", action="store_true", help="Create missing learner template only; no GPU imports or run")
+    parser.add_argument("--width", type=int, choices=WIDTHS)
+    parser.add_argument("--layout", choices=("interleaved", "separate"))
+    parser.add_argument("--input-gap", type=int, choices=(0, 64))
+    parser.add_argument("--layouts", action="store_true", help="All 16 implementation/width/layout/gap cases")
+    parser.add_argument("--cpu-self-test", type=Path, help="Coach full-storage oracle tests only; no GPU imports")
     args = parser.parse_args()
+    if sys.flags.optimize:
+        raise RuntimeError("Run without -O: checks use assert")
+    try:
+        configurations = select_configurations(args.width, args.layout, args.input_gap, args.layouts)
+    except ValueError as error:
+        parser.error(str(error))
+    if args.cpu_self_test:
+        controls = backing_controls(select_configurations(layouts=True))
+        write_json(args.cpu_self_test, {"status": "CPU_HARNESS_PASS", "GPU": "NOT_RUN",
+                   "learner": "NOT_RUN", "fixtures": len(controls), "controls": controls})
+        print("CPU_HARNESS_PASS: 8 fixtures, 64 deliberate corruptions rejected; GPU NOT_RUN")
+        return
+    if args.project is None or args.shared_results is None:
+        parser.error("--project and --shared-results required for the WSL run")
     project = args.project.resolve()
     if sys.flags.optimize:
         raise RuntimeError("Run without -O: the learner checks use assert")
@@ -235,12 +343,17 @@ def main():
     parent = project / "experiments" / "learning" / "kv-width-check"
     parent.mkdir(parents=True, exist_ok=True)
     run = Path(tempfile.mkdtemp(prefix=datetime.now().strftime("run-%Y%m%d-%H%M%S-"), dir=parent))
-    state = {"status": "PREPARING", "scope": SCOPE, "commit": COMMIT, "passed_cases": []}
-    print(f"RUN_DIRECTORY={run}\nSCOPE={SCOPE}", flush=True)
+    lesson = "M06-02" if any(c["layout"] != "interleaved" or c["input_gap"] != 0 for c in configurations) else "M06-01"
+    scope = (f"{lesson}: two implementations; FP16 B3 C8 indices=[7,0,3]; "
+             f"selected configurations={configurations}; full backing checked; no timing")
+    state = {"status": "PREPARING", "scope": scope, "commit": COMMIT, "passed_cases": [],
+             "configurations": configurations, "expected_cases": 2 * len(configurations)}
+    print(f"RUN_DIRECTORY={run}\nSCOPE={scope}", flush=True)
     try:
         shutil.copyfile(__file__, run / "coach_runner.py")
         shutil.copyfile(Path(__file__).with_suffix(".sh"), run / "coach_entry.sh")
-        hashes = {}
+        hashes = {name: hashlib.sha256((run / name).read_bytes()).hexdigest()
+                  for name in ("coach_runner.py", "coach_entry.sh")}
         for source, relative in [(student, "triton_store_v1.py"), (checker_path, "check_kv_targets.py")]:
             snapshot = run / relative
             snapshot.write_text(source.read_text(encoding="utf-8-sig"), encoding="utf-8")
@@ -265,9 +378,15 @@ def main():
         if not torch.cuda.is_available():
             raise RuntimeError("CUDA_NOT_AVAILABLE")
         checker = load_module(run / "check_kv_targets.py", "learner_index_checker").check_kv_targets
-        controls = {str(width): checker_controls(torch, checker, width) for width in WIDTHS}
+        checked_widths = sorted({c["width"] for c in configurations})
+        controls = {str(width): checker_controls(torch, checker, width) for width in checked_widths}
         write_json(run / "checker_controls.json", controls)
-        print("CHECKER_CONTROLS_PASS: 2 correct fixtures accepted; 14 deliberate errors rejected on CPU", flush=True)
+        print(f"CHECKER_CONTROLS_PASS: {len(controls)} correct fixtures accepted; "
+              f"{7 * len(controls)} deliberate errors rejected on CPU", flush=True)
+        backing = backing_controls(configurations)
+        write_json(run / "backing_controls.json", backing)
+        print(f"BACKING_CONTROLS_PASS: {len(backing)} correct fixtures accepted; "
+              f"{sum(len(c['negative_controls']) for c in backing)} corruptions rejected on CPU", flush=True)
         module = load_module(run / "triton_store_v1.py", "learner_width_kernel")
         state.update({"torch": torch.__version__, "triton": triton.__version__,
                       "cuda_runtime": torch.version.cuda, "gpu": torch.cuda.get_device_name(0),
@@ -275,16 +394,17 @@ def main():
                       "triton_source_stride_rule": "k.stride(0), equal to v.stride(0)",
                       "triton_destination_stride_rule": "k_cache.stride(0), equal to v_cache.stride(0)",
                       "learner_file": "triton_store_v1.py",
-                      "ownership": "coach parameter declarations/launcher/checks; learner address-line draft"})
+                      "ownership": "coach harness; core source snapshot preserved; consult lesson review for actual authorship"})
         print(f"GPU={state['gpu']} TORCH={state['torch']} TRITON={state['triton']}", flush=True)
         learner_launch = make_learner_launcher(module)
         for implementation, launcher in (("original_cuda", store_cache), ("learner_triton", learner_launch)):
-            for width in WIDTHS:
+            for config in configurations:
+                width, layout, gap = config["width"], config["layout"], config["input_gap"]
                 rows = TARGET_ROWS
-                name = f"{implementation}-w{width}-" + "-".join(map(str, rows))
+                name = f"{implementation}-w{width}-{layout}-gap{gap}-" + "-".join(map(str, rows))
                 state.update({"status": "RUNNING", "current_case": name})
                 write_json(run / "status.json", state)
-                run_case(torch, launcher, checker, rows, width, run / name, implementation)
+                run_case(torch, launcher, checker, rows, width, run / name, implementation, layout, gap)
                 state["passed_cases"].append(name)
                 write_json(run / "status.json", state)
         state.update({"status": "PASS", "current_case": None})
@@ -303,8 +423,12 @@ def main():
             print(f"SHARED_COPY_FAILED={archive_error}; WSL records retained at {run}", flush=True)
             if state["status"] == "PASS":
                 raise
-    print("KV_WIDTH_CASES_PASS: 4/4 cases; all target elements, untouched rows and inputs checked.", flush=True)
-    print("COVERAGE_LIMIT: only FP16 batch=3 widths64/128 capacity=8, contiguous inputs/interleaved cache, shared K/V row strides and indices=[7,0,3]; NOT general-layout/mask coverage or a benchmark.")
+    label = "KV_LAYOUT_CASES_PASS" if lesson == "M06-02" else "KV_WIDTH_CASES_PASS"
+    print(f"{label}: {len(state['passed_cases'])}/{state['expected_cases']} cases; "
+          "all targets, untouched cache, complete input backing/gap and indices checked.", flush=True)
+    print(f"COVERAGE_LIMIT: only selected configurations {configurations}; FP16 B3 C8 "
+          "indices=[7,0,3], shared K/V row strides, unit column strides. "
+          "NOT arbitrary-layout/mask/batch coverage or a benchmark.")
 
 
 if __name__ == "__main__":

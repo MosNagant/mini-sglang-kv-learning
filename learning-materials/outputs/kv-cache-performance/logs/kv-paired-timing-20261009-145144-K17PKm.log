@@ -1,0 +1,66 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m06-paired-timing/run-20261009-145144-n1lwky52
+SCOPE=same-session original/Triton; six cases x three fresh processes; Graph primary
+RUN round=1/3 B=256 D=128 both implementations
+COLLECTED graph original=1.033920 us triton=1.167360 us ratio=0.8857x
+COLLECTED eager original=9.008320 us triton=14.868160 us ratio=0.6059x
+RUN round=1/3 B=16 D=64 both implementations
+COLLECTED graph original=1.087360 us triton=1.057440 us ratio=1.0283x
+COLLECTED eager original=9.787520 us triton=13.335200 us ratio=0.7340x
+RUN round=1/3 B=16 D=128 both implementations
+COLLECTED graph original=1.109760 us triton=1.148640 us ratio=0.9662x
+COLLECTED eager original=8.586080 us triton=13.408320 us ratio=0.6404x
+RUN round=1/3 B=256 D=64 both implementations
+COLLECTED graph original=0.962880 us triton=1.107840 us ratio=0.8692x
+COLLECTED eager original=8.470560 us triton=13.072320 us ratio=0.6480x
+RUN round=1/3 B=1 D=128 both implementations
+COLLECTED graph original=0.956160 us triton=0.961440 us ratio=0.9945x
+COLLECTED eager original=9.273760 us triton=13.061120 us ratio=0.7100x
+RUN round=1/3 B=1 D=64 both implementations
+COLLECTED graph original=0.885280 us triton=0.941120 us ratio=0.9407x
+COLLECTED eager original=8.676640 us triton=13.120160 us ratio=0.6613x
+RUN round=2/3 B=256 D=64 both implementations
+COLLECTED graph original=1.340480 us triton=1.438400 us ratio=0.9319x
+COLLECTED eager original=20.291361 us triton=35.844320 us ratio=0.5661x
+RUN round=2/3 B=16 D=64 both implementations
+COLLECTED graph original=1.011680 us triton=0.976800 us ratio=1.0357x
+COLLECTED eager original=8.482240 us triton=12.925280 us ratio=0.6563x
+RUN round=2/3 B=16 D=128 both implementations
+COLLECTED graph original=1.118880 us triton=1.180160 us ratio=0.9481x
+COLLECTED eager original=14.922400 us triton=34.896159 us ratio=0.4276x
+RUN round=2/3 B=256 D=128 both implementations
+COLLECTED graph original=1.196480 us triton=1.151520 us ratio=1.0390x
+COLLECTED eager original=8.829760 us triton=13.704000 us ratio=0.6443x
+RUN round=2/3 B=1 D=128 both implementations
+COLLECTED graph original=1.258400 us triton=1.324640 us ratio=0.9500x
+COLLECTED eager original=20.286400 us triton=36.962720 us ratio=0.5488x
+RUN round=2/3 B=1 D=64 both implementations
+COLLECTED graph original=0.900800 us triton=0.949600 us ratio=0.9486x
+COLLECTED eager original=8.608480 us triton=13.003360 us ratio=0.6620x
+RUN round=3/3 B=16 D=128 both implementations
+COLLECTED graph original=1.246240 us triton=1.266880 us ratio=0.9837x
+COLLECTED eager original=15.872160 us triton=31.181279 us ratio=0.5090x
+RUN round=3/3 B=256 D=128 both implementations
+COLLECTED graph original=1.013280 us triton=1.156480 us ratio=0.8762x
+COLLECTED eager original=9.848800 us triton=15.323200 us ratio=0.6427x
+RUN round=3/3 B=16 D=64 both implementations
+COLLECTED graph original=1.102400 us triton=1.155040 us ratio=0.9544x
+COLLECTED eager original=8.427360 us triton=13.013920 us ratio=0.6476x
+RUN round=3/3 B=256 D=64 both implementations
+COLLECTED graph original=1.170240 us triton=1.111200 us ratio=1.0531x
+COLLECTED eager original=8.800480 us triton=12.963679 us ratio=0.6789x
+RUN round=3/3 B=1 D=64 both implementations
+COLLECTED graph original=1.088320 us triton=1.137600 us ratio=0.9567x
+COLLECTED eager original=8.343680 us triton=12.841760 us ratio=0.6497x
+RUN round=3/3 B=1 D=128 both implementations
+COLLECTED graph original=1.092480 us triton=1.137120 us ratio=0.9607x
+COLLECTED eager original=8.357440 us triton=13.107520 us ratio=0.6376x
+GRAPH_SUMMARY B=1 D=64 original=0.900800 us triton=0.949600 us ratio=0.9486x
+GRAPH_SUMMARY B=1 D=128 original=1.092480 us triton=1.137120 us ratio=0.9607x
+GRAPH_SUMMARY B=16 D=64 original=1.087360 us triton=1.057440 us ratio=1.0283x
+GRAPH_SUMMARY B=16 D=128 original=1.118880 us triton=1.180160 us ratio=0.9481x
+GRAPH_SUMMARY B=256 D=64 original=1.170240 us triton=1.111200 us ratio=1.0531x
+GRAPH_SUMMARY B=256 D=128 original=1.033920 us triton=1.156480 us ratio=0.8940x
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m06-paired-timing-results/run-20261009-145144-n1lwky52
+PAIRED_COLLECTION_COMPLETE: 18 processes; 2160 interval averages; review all rounds before a performance claim
+LIMIT: reused-address FP16 microbenchmark; Eager and Graph separate; no automatic M06 acceptance or model speedup
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-paired-timing-20261009-145144-K17PKm.log

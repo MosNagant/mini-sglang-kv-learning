@@ -1,5 +1,19 @@
 # 同步范围与来源
 
+## 2026-10-09 最新增量
+
+本次将Windows工作区的 `outputs/kv-cache-performance/` 同步到仓库 `learning-materials/outputs/kv-cache-performance/`，保留已有其他路径；没有重新导出WSL或修改source/快照。
+
+新增/更新范围：今日独立开发日志、连续日志与进度/任务表、教学指南、M06-01～07脚本及原始记录、M06冻结区/ZIP/哈希清单、M07首课与本人初步假设。首页提供直接复习入口。
+
+M06 23/25、总53/100；M06-08独立串讲待记录，M07候选未改/未运行。同步成功不代表新的GPU验收或优化收益。
+
+排除可再生成的__pycache__、.pyc等缓存。NPZ、PTX/cubin、Nsight归档和ZIP属于实验资产，随对应材料保留。冻结M06包保持逐字节完整，未改写其中打包时的未同步状态描述。本次不改变仓库私有可见性。
+
+source/仍为10月6日快照；最新接受的学员源码以M06/src为准。完整原版仓库/虚拟环境/模型权重不由本次材料增量提供。换机阅读直接使用GitHub；执行时按M06复现说明核对固定上游版本、环境及路径。
+
+## 以下为10月6日同步时的历史记录
+
 此次 WSL 快照时间：2026-10-06 13:14:51 UTC / 21:14:51 Asia/Shanghai。source/ 保持该快照不变。
 
 随后补充发布了 21:23 起的 M05 收尾证据与最终笔记到 learning-materials/。当前工程结论：**M05 六配置原版 baseline v0 已验收**；个人独立掌握另列，M06 草稿已准备而未运行。最新入口：[M05基线收尾与后续优化路线](learning-materials/outputs/kv-cache-performance/M05基线收尾与后续优化路线-20261006.md)、[详细基线报告](learning-materials/outputs/kv-cache-performance/M05原版基线-v0.md)。

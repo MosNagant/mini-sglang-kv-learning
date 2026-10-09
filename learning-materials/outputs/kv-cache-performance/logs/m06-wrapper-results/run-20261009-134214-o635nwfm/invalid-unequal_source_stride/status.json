@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "unequal_source_stride",
+  "rejection": {
+    "type": "ValueError",
+    "message": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+  }
+}

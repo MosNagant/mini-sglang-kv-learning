@@ -1,0 +1,67 @@
+{
+  "status": "OBSERVATION_READY",
+  "lesson": "M06-07",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "config": {
+    "batch": 3,
+    "width": 192,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 64,
+    "rows": [
+      31,
+      0,
+      1
+    ]
+  },
+  "scope": "one checked Triton call and its retained compiler output; no timing",
+  "ownership": "Accepted learner sources reused; probe, export and recording supplied by coach",
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "correctness": {
+    "status": "PASS",
+    "implementation": "learner_triton",
+    "config": {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    "submissions": 1
+  },
+  "launch": [
+    {
+      "grid": [
+        3
+      ],
+      "parameters": {
+        "WIDTH": 192,
+        "SRC_ROW_STRIDE": 256,
+        "DST_ROW_STRIDE": 256,
+        "BLOCK_SIZE": 256,
+        "num_warps": 4
+      }
+    }
+  ],
+  "compiler_evidence": "PTX_AND_METADATA",
+  "runtime_sources": {
+    "compiler": {
+      "path": "runtime-compiler.py",
+      "sha256": "c37149275a03d063fc1c339cd76a19da1c17e3d555410372e6cad29eedef6202"
+    },
+    "jit": {
+      "path": "runtime-jit.py",
+      "sha256": "ea831e03e08675654c94a21e2e6917ada4b772e97f266c2ce141e7a6645ee16d"
+    }
+  }
+}

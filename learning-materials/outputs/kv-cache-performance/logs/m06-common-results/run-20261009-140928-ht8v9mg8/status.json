@@ -1,0 +1,6953 @@
+{
+  "status": "PASS",
+  "lesson": "M06-05",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "cases": [
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_ADAPTER_PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "original_cuda",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "learner_triton",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    }
+  ],
+  "pairs": [
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    }
+  ],
+  "expected_implementation_cases": 196,
+  "expected_nonempty_calls": 168,
+  "expected_empty_returns": 28,
+  "configurations": [
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "scope": "common correctness; FP16/int32; C32; no timing",
+  "ownership": "Learner's reviewed kernel/wrapper/checks reused; matrix, oracle and records by coach",
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "public_api_policy": "index values checked on CPU; may synchronize; no timing",
+  "empty_policy": "original coach adapter and learner public wrapper return without KV submission",
+  "current_case": null
+}

@@ -1,0 +1,255 @@
+{
+  "status": "CPU_STORAGE_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "fixtures": 14,
+  "controls": [
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap",
+        "cache_K_guard_first",
+        "cache_V_guard_first",
+        "cache_K_guard_last",
+        "cache_V_guard_last"
+      ]
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "positive_control": "PASS",
+      "negative_controls": [
+        "target_K_last",
+        "target_V_last",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V",
+        "indices",
+        "input_K_gap",
+        "input_V_gap",
+        "cache_K_guard_first",
+        "cache_V_guard_first",
+        "cache_K_guard_last",
+        "cache_V_guard_last"
+      ]
+    }
+  ]
+}

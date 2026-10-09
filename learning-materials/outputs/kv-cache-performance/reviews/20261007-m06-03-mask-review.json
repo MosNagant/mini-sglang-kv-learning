@@ -1,0 +1,53 @@
+{
+  "status": "SCOPED_M06_03_ACCEPTED",
+  "date": "2026-10-07",
+  "run": "run-20261007-181154-5q2k4kbh",
+  "source": "User-run WSL GPU evidence; coach read-only review, no repeated GPU run",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "matrix": {
+    "cases": 28,
+    "regression64_128": 16,
+    "width192": 8,
+    "cache_guard": 4,
+    "implementations": [
+      "original_cuda",
+      "triton_mask"
+    ]
+  },
+  "checked": {
+    "target_cache_scalars": 23040,
+    "untouched_valid_cache_scalars": 38400,
+    "cache_guard_scalars": 4096,
+    "valid_input_scalars": 23040,
+    "input_gap_scalars": 6144,
+    "index_values": 84
+  },
+  "source_hashes_matched": 27,
+  "mask_source_sha256": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+  "previous_v1_sha256": "b8761fc74a6cd6a07db23617cb18fd5fc88b6dee8f5752a89b0bc3048b305031",
+  "previous_v1_difference": "One added blank line; logical source unchanged; not loaded in this run",
+  "controls": {
+    "checker_positive": 3,
+    "checker_negative": 21,
+    "backing_positive": 14,
+    "backing_negative": 122
+  },
+  "ownership": "Mask core demonstrated by coach at explicit learner request; learner executed; independent mastery not inferred",
+  "limits": [
+    "FP16 B3 C8 and unique int32 indices[7,0,3]",
+    "D64/128/192 and selected layout/gap/guard only",
+    "Shared K/V row strides on each side; unit column strides",
+    "No timing or performance claim",
+    "Guard checks writes; vector load masks reviewed in source; no runtime invalid-read detector"
+  ],
+  "independent_audit": "Second agent independently reconstructed all before/after buffers; no mismatches",
+  "acceptance": {
+    "M06_03": 4,
+    "M06": 11,
+    "total": 41,
+    "next": "M06-04 wrapper, grid and contracts"
+  }
+}

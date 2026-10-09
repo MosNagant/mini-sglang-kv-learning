@@ -1,0 +1,109 @@
+{
+  "created_at": "2026-10-06T14:49:18.574Z",
+  "scope": "Markdown-only consolidation through M05; no GPU execution, no score increase, no remote upload in this update",
+  "standalone_note": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+  "old_obsidian_notes": [
+    {
+      "file": "2026-09-30-CUDA学习日志.md",
+      "unchanged": true
+    },
+    {
+      "file": "2026-10-01-CUDA学习日志.md",
+      "unchanged": true
+    },
+    {
+      "file": "2026-10-01-学习笔记-首个Triton算子与项目路线.md",
+      "unchanged": true
+    },
+    {
+      "file": "2026-10-03-KV-Cache面试笔记-纠正版.md",
+      "unchanged": true
+    }
+  ],
+  "baseline_table_checks": [
+    {
+      "B": 1,
+      "D": 64,
+      "graph_us": 1.074719987809658,
+      "matches": true
+    },
+    {
+      "B": 1,
+      "D": 128,
+      "graph_us": 0.8881599828600883,
+      "matches": true
+    },
+    {
+      "B": 16,
+      "D": 64,
+      "graph_us": 1.0734399780631065,
+      "matches": true
+    },
+    {
+      "B": 16,
+      "D": 128,
+      "graph_us": 1.1084799841046333,
+      "matches": true
+    },
+    {
+      "B": 256,
+      "D": 64,
+      "graph_us": 0.9614400193095207,
+      "matches": true
+    },
+    {
+      "B": 256,
+      "D": 128,
+      "graph_us": 1.1668800190091133,
+      "matches": true
+    }
+  ],
+  "local_link_checks": {
+    "checked": 28,
+    "broken": []
+  },
+  "progress": {
+    "accepted": 30,
+    "weight": 100,
+    "m05_engineering_complete": true,
+    "m06_parameterized_gpu_run": false,
+    "personal_mastery": "separately recorded; not inferred from test passes"
+  },
+  "backups": "history/20261006-before-m05-note-review",
+  "reviews": [
+    "Content review: two minor wording issues corrected (per-pair correctness checks and main-report wording).",
+    "Final state review: no outstanding issue; old Obsidian file hashes unchanged."
+  ],
+  "files": [
+    {
+      "path": "LEARNING_LOG.md",
+      "bytes": 123464,
+      "sha256": "038e2f2b486919683709e2f448d03f39715a6d0cde1e1f7fdcaf986777c3420d"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 21142,
+      "sha256": "acba70c81c7930d405184c5ca9ce23acfb25eecd6cce5ff8854666460560871e"
+    },
+    {
+      "path": "KNOWLEDGE_MAP.md",
+      "bytes": 12834,
+      "sha256": "50cf65c584e9ca47e4c7bc8efed8503c35a1a58fdc9309c9f89a70b30bcad351"
+    },
+    {
+      "path": "KV算子项目任务表.md",
+      "bytes": 29276,
+      "sha256": "40572203b39da8f8cfbe2e0420bad032063b873a0057b79ccfe9e18c7e5b99c3"
+    },
+    {
+      "path": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+      "bytes": 18654,
+      "sha256": "6a96e2a8366205c08db6e68a27de17ccf045078194ca7cdc079eefc13f7f593c"
+    },
+    {
+      "path": "obsidian/学习笔记索引.md",
+      "bytes": 4152,
+      "sha256": "fadacf298a22ac0e917ba12e12b0f6bc754ef118011f0380d25f1b82d7cf0bd9"
+    }
+  ]
+}

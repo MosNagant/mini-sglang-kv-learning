@@ -1,0 +1,83 @@
+[
+  {
+    "batch": 1,
+    "width": 64,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 1,
+    "width": 128,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 1,
+    "width": 192,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 3,
+    "width": 64,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 3,
+    "width": 128,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 3,
+    "width": 192,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 17,
+    "width": 64,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 17,
+    "width": 128,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  },
+  {
+    "batch": 17,
+    "width": 192,
+    "positive": "PASS",
+    "corruptions_rejected": [
+      "K_last_input_last_column",
+      "V_last_input_last_column"
+    ]
+  }
+]

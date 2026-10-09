@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-06",
+  "scope": "M06/M07 teaching-plan and project-local coaching preferences",
+  "created": [
+    "AGENTS.md",
+    "outputs/kv-cache-performance/COACHING_GUIDE.md",
+    "outputs/kv-cache-performance/M06-M07教学大纲-20261006.md",
+    "outputs/kv-cache-performance/references/20261006-用户教学指引原文.txt"
+  ],
+  "updated": [
+    "LEARNING_LOG.md",
+    "PROGRESS.md",
+    "KV算子项目任务表.md",
+    "ROADMAP-TRITON-20261024.md",
+    "手写项目执行规则-20261002.md",
+    "lessons/14-width-parameter.md"
+  ],
+  "backup": "history/20261006-before-m06-m07-syllabus",
+  "source_prompt_sha256": "6c7ee6c4bf064c7bbaf5c79135a70d709db52f2b4f5e1d0085ee87eea906a47b",
+  "local_links_checked": 13,
+  "issues": [],
+  "engineering_score": 30,
+  "m05": "complete within frozen six-configuration scope",
+  "m06": "01 draft; three learner lines pending; no configurable GPU run",
+  "m07": "not started; hypothesis to be chosen from v1 results",
+  "gpu_runs_this_turn": 0,
+  "kernel_modified": false,
+  "obsidian_notes_modified": false,
+  "github_uploaded": false,
+  "existing_obsidian_files": [
+    "2026-09-30-CUDA学习日志.md",
+    "2026-10-01-CUDA学习日志.md",
+    "2026-10-01-学习笔记-首个Triton算子与项目路线.md",
+    "2026-10-03-KV-Cache面试笔记-纠正版.md",
+    "2026-10-06-M05学习补记-计时与真实场景.md",
+    "学习笔记索引.md"
+  ],
+  "plan_sha256": "fa8e1efb73a7d52e1eedb8988a559fc317bd034f9cf2a5328e0e5b5d68cdb23c",
+  "independent_review": "No blocking issues; learner expressions remain blank; fixed runner scope and planned D192 extension distinct; clarified row stride and typed-pointer units.",
+  "coaching_guide_sha256": "f0f25a6377db4e02c278be1d1d168ef276a2febbcf8580ec2ac6325960ca22de"
+}

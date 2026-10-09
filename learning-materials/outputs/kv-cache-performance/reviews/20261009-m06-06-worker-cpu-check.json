@@ -1,0 +1,788 @@
+{
+  "status": "CPU_PAIRED_WORKER_CHECK_PASS",
+  "GPU": "NOT_RUN",
+  "performance_evidence": "NONE",
+  "learner_acceptance": "NOT_INFERRED",
+  "config": {
+    "batch": 1,
+    "width": 64,
+    "round": 1
+  },
+  "method": "Unchanged worker/load_reviewed_timer/measurement_order/measure_graph/make_plan AST bodies; NumPy tensors and scatter; capture queues 100 calls and replay executes them",
+  "mocked": [
+    "Torch/CUDA/Triton",
+    "both GPU kernels",
+    "support metadata/index validators",
+    "module loading",
+    "source identity/hash verification",
+    "telemetry",
+    "filesystem"
+  ],
+  "limits": "CPU orchestration and serialized evidence checks only; no CUDA capture legality, async streams, JIT, real GPU correctness, timing, environment checks or driver execution",
+  "artifact_storage": "Worker JSON/text/NPZ bytes serialized in memory, read back and verified; review retains hashes/byte lengths/NPZ shapes and failure messages. Raw temporary bytes discarded; no extra filesystem artifacts created.",
+  "source_sha256": "02cd7fe12091edbbd1841c203829b9b115ae24fdb56639697e8dcfe7d78b9e53",
+  "test_source_sha256": "a5f0f3dc6f1c86816b35dd7cefc1b6dde2d43dde71e38effdc83f2b90676763d",
+  "cases": [
+    {
+      "status": "CPU_WORKER_PASS",
+      "noop_implementation": null,
+      "real_worker_status": "COLLECTED",
+      "correctness_checks": 127,
+      "initial_sentinel_proofs": [
+        "original_cuda",
+        "learner_triton"
+      ],
+      "replay_sentinel_proofs": [
+        "original_cuda",
+        "learner_triton"
+      ],
+      "captured_calls": [
+        100,
+        100
+      ],
+      "graph_replays": [
+        36,
+        36
+      ],
+      "total_scatter_calls": {
+        "original_cuda": 6621,
+        "learner_triton": 6621
+      },
+      "measured_interval_call_counts": [
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100
+      ],
+      "measurement_blocks": 30,
+      "original_and_triton_share_buffers": true,
+      "stdout": "PAIRED_READY round=1 B=1 D=64: two initial and two reset-Graph checks passed\n",
+      "artifacts": {
+        "worker/result.json": {
+          "sha256": "a8d6ad0444644ae86722c1ed7c538e235503a615b3bcd88b707757fea1899c60",
+          "bytes": 20529
+        },
+        "worker/before.npz": {
+          "sha256": "f2a694a1610ad5fc8df975eb910ffde0639dcf754050fa7e214dec4ab308777f",
+          "bytes": 2076,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            },
+            "expected_cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/tensors.json": {
+          "sha256": "825cd3334ccf7fd0328be5b361d1a9ac06ba792ac4708c3ca3f52a5c52cba086",
+          "bytes": 238
+        },
+        "worker/original_cuda-initial.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/original_cuda-graph-replay.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/learner_triton-initial.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/learner_triton-graph-replay.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/final.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        }
+      }
+    },
+    {
+      "status": "NOOP_GRAPH_REJECTED_AND_SAVED",
+      "noop_implementation": "original_cuda",
+      "real_worker_status": "FAILED",
+      "correctness_checks": 1,
+      "initial_sentinel_proofs": [
+        "original_cuda"
+      ],
+      "replay_sentinel_proofs": [
+        "original_cuda"
+      ],
+      "captured_calls": [
+        100
+      ],
+      "graph_replays": [
+        1
+      ],
+      "total_scatter_calls": {
+        "original_cuda": 21,
+        "learner_triton": 0
+      },
+      "measured_interval_call_counts": [],
+      "measurement_blocks": 0,
+      "original_and_triton_share_buffers": false,
+      "stdout": "",
+      "artifacts": {
+        "worker/result.json": {
+          "sha256": "cc814463ac8837e365d71bdc075cc84e67f75720a0cd6b934f63b1aa512a860c",
+          "bytes": 831
+        },
+        "worker/before.npz": {
+          "sha256": "f2a694a1610ad5fc8df975eb910ffde0639dcf754050fa7e214dec4ab308777f",
+          "bytes": 2076,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            },
+            "expected_cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/tensors.json": {
+          "sha256": "825cd3334ccf7fd0328be5b361d1a9ac06ba792ac4708c3ca3f52a5c52cba086",
+          "bytes": 238
+        },
+        "worker/original_cuda-initial.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/failed-original_cuda-graph-replay.npz": {
+          "sha256": "59bc7dc2edceb00c58c00f66963f62ad3e8e70c07dfb252dc2e322924610ccec",
+          "bytes": 1304,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/error.txt": {
+          "sha256": "0958a59481e45d17f72b230f4f3d7f22e8c1908c3a2cb8932c8a5d1f7d8ad54e",
+          "bytes": 475,
+          "error": "AssertionError: original_cuda-graph-replay: cache mismatch"
+        }
+      }
+    },
+    {
+      "status": "NOOP_GRAPH_REJECTED_AND_SAVED",
+      "noop_implementation": "learner_triton",
+      "real_worker_status": "FAILED",
+      "correctness_checks": 4,
+      "initial_sentinel_proofs": [
+        "original_cuda",
+        "learner_triton"
+      ],
+      "replay_sentinel_proofs": [
+        "original_cuda",
+        "learner_triton"
+      ],
+      "captured_calls": [
+        100,
+        100
+      ],
+      "graph_replays": [
+        6,
+        1
+      ],
+      "total_scatter_calls": {
+        "original_cuda": 621,
+        "learner_triton": 21
+      },
+      "measured_interval_call_counts": [],
+      "measurement_blocks": 0,
+      "original_and_triton_share_buffers": true,
+      "stdout": "",
+      "artifacts": {
+        "worker/result.json": {
+          "sha256": "b4a57d309a903c3d11e23b8893eb8fdca496d9be9611ead19b2d5cc9421ccc49",
+          "bytes": 832
+        },
+        "worker/before.npz": {
+          "sha256": "f2a694a1610ad5fc8df975eb910ffde0639dcf754050fa7e214dec4ab308777f",
+          "bytes": 2076,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            },
+            "expected_cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/tensors.json": {
+          "sha256": "825cd3334ccf7fd0328be5b361d1a9ac06ba792ac4708c3ca3f52a5c52cba086",
+          "bytes": 238
+        },
+        "worker/original_cuda-initial.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/original_cuda-graph-replay.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/learner_triton-initial.npz": {
+          "sha256": "58b51328d5cfa1ff64cdc8eee824e12755972224c38879aa9c30abf464b9d66e",
+          "bytes": 1583,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/failed-learner_triton-graph-replay.npz": {
+          "sha256": "59bc7dc2edceb00c58c00f66963f62ad3e8e70c07dfb252dc2e322924610ccec",
+          "bytes": 1304,
+          "arrays": {
+            "cache": {
+              "shape": [
+                1024,
+                2,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "k": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "v": {
+              "shape": [
+                1,
+                64
+              ],
+              "dtype": "float16"
+            },
+            "indices": {
+              "shape": [
+                1
+              ],
+              "dtype": "int32"
+            }
+          },
+          "serialization_readback": "VERIFIED"
+        },
+        "worker/error.txt": {
+          "sha256": "6868e6247b05cb20142d28da87246c6de15b8e136a8a4c03a3d4fd1456cbb3bd",
+          "bytes": 476,
+          "error": "AssertionError: learner_triton-graph-replay: cache mismatch"
+        }
+      }
+    }
+  ]
+}

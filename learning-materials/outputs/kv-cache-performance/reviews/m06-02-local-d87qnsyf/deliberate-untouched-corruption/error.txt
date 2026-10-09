@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\Codex\2026-09-27\cuda-wsl-wsl-2\outputs\kv-cache-performance\14-check-kv-widths.py", line 223, in run_case
+    verify_backing(before, after)
+  File "C:\Users\Administrator\Documents\Codex\2026-09-27\cuda-wsl-wsl-2\outputs\kv-cache-performance\14-check-kv-widths.py", line 113, in verify_backing
+    np.testing.assert_array_equal(after[name], expected, err_msg=name)
+  File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\site-packages\numpy\testing\_private\utils.py", line 1054, in assert_array_equal
+    assert_array_compare(operator.__eq__, actual, desired, err_msg=err_msg,
+  File "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\site-packages\numpy\testing\_private\utils.py", line 919, in assert_array_compare
+    raise AssertionError(msg)
+AssertionError: 
+Arrays are not equal
+cache
+Mismatched elements: 1 / 1024 (0.0977%)
+Max absolute difference among violations: 98.
+Max relative difference among violations: 98.
+ ACTUAL: array([[[ 7.400e+01,  7.500e+01,  7.600e+01, ...,  1.350e+02,
+          1.360e+02,  1.370e+02],
+        [-1.000e+00, -1.000e+00, -1.000e+00, ..., -1.000e+00,...
+ DESIRED: array([[[ 7.400e+01,  7.500e+01,  7.600e+01, ...,  1.350e+02,
+          1.360e+02,  1.370e+02],
+        [-1.000e+00, -1.000e+00, -1.000e+00, ..., -1.000e+00,...

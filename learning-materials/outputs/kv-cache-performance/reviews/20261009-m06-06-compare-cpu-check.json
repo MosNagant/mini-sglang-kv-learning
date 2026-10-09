@@ -1,0 +1,202 @@
+{
+  "status": "CPU_COMPARE_API_CHECK_PASS",
+  "GPU": "NOT_RUN",
+  "real_timing": "NOT_RUN",
+  "performance_claim": "NONE; all timing values below are synthetic test inputs",
+  "scope": "Pure schedule/order/timer-extraction/aggregation APIs only; worker/capture/GPU behavior is not validated",
+  "checks": 29,
+  "results": [
+    {
+      "name": "balanced_measurement_order",
+      "round": 1,
+      "status": "CPU_PASS",
+      "original_first_per_policy": {
+        "graph": 15,
+        "eager": 15
+      },
+      "graph_first": 15,
+      "measurements": 120
+    },
+    {
+      "name": "balanced_measurement_order",
+      "round": 2,
+      "status": "CPU_PASS",
+      "original_first_per_policy": {
+        "graph": 15,
+        "eager": 15
+      },
+      "graph_first": 15,
+      "measurements": 120
+    },
+    {
+      "name": "balanced_measurement_order",
+      "round": 3,
+      "status": "CPU_PASS",
+      "original_first_per_policy": {
+        "graph": 15,
+        "eager": 15
+      },
+      "graph_first": 15,
+      "measurements": 120
+    },
+    {
+      "name": "deterministic_complete_plan",
+      "status": "CPU_PASS",
+      "processes": 18,
+      "interval_averages": 2160,
+      "independent_global_rng": true
+    },
+    {
+      "name": "reviewed_event_timer_order_and_normalization",
+      "status": "CPU_PASS",
+      "cpu_standin_calls": 100,
+      "synthetic_interval_ms": 7.5,
+      "result_ms_per_call": 0.075,
+      "archive_top_level_executed": false
+    },
+    {
+      "name": "timer_reject_loop_99",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "timer_reject_divisor_99",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "timer_reject_missing_end_synchronize",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "timer_reject_duplicate_function",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "timer_reject_missing_function",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "timer_reject_decorated_function",
+      "status": "CPU_PASS",
+      "error": "REVIEWED_TIMER_CHANGED: preserve original 100-call measurement"
+    },
+    {
+      "name": "graph_one_replay_divide_100",
+      "status": "CPU_PASS",
+      "replays": 1,
+      "represented_calls": 100,
+      "result_ms_per_call": 0.075
+    },
+    {
+      "name": "graph_failure_propagates_without_stale_elapsed",
+      "status": "CPU_PASS"
+    },
+    {
+      "name": "eager_failure_propagates_without_stale_elapsed",
+      "status": "CPU_PASS"
+    },
+    {
+      "name": "synthetic_summary_formulas_units_and_order",
+      "status": "CPU_PASS",
+      "worker_results": 18,
+      "graph_ratio_of_representatives": 2.25,
+      "graph_median_of_round_ratios_is_different": 2.5,
+      "eager_negative_reduction_pct": -100,
+      "synthetic": true
+    },
+    {
+      "name": "summary_reject_missing_result",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INCOMPLETE_18_PROCESS_MATRIX"
+    },
+    {
+      "name": "summary_reject_duplicate_result",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "RESULT_ID_OR_STATUS_MISMATCH"
+    },
+    {
+      "name": "summary_reject_failed_status",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "RESULT_ID_OR_STATUS_MISMATCH"
+    },
+    {
+      "name": "summary_reject_unexpected_round",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "RESULT_ID_OR_STATUS_MISMATCH"
+    },
+    {
+      "name": "summary_reject_unexpected_batch",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "RESULT_ID_OR_STATUS_MISMATCH"
+    },
+    {
+      "name": "summary_reject_unexpected_width",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "RESULT_ID_OR_STATUS_MISMATCH"
+    },
+    {
+      "name": "summary_reject_29_samples",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_31_samples",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_zero_sample",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_negative_sample",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_nan_sample",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_infinite_sample",
+      "status": "CPU_PASS",
+      "error_type": "ValueError",
+      "error": "INVALID_INTERVAL_SAMPLES"
+    },
+    {
+      "name": "summary_reject_missing_implementation",
+      "status": "CPU_PASS",
+      "error_type": "KeyError",
+      "error": "'learner_triton'"
+    },
+    {
+      "name": "summary_reject_missing_policy",
+      "status": "CPU_PASS",
+      "error_type": "KeyError",
+      "error": "'eager'"
+    }
+  ],
+  "source_hashes": {
+    "25-compare-kv-v1.py": "02cd7fe12091edbbd1841c203829b9b115ae24fdb56639697e8dcfe7d78b9e53",
+    "17-compare-event-graph.py": "806c4b9db29ff9832293fadaac2f6fdbff7f2bd1202472b04a3ba687685fc2c8",
+    "18-original-baseline-pilot.py": "8e71484faf9d867d2000dfd5467d6dc698af1984590808ea654ff9720f8ff027"
+  },
+  "test_source_sha256": "6fdf622703f39701b205c3273fb4ee928cf5716e48c2a53080936305cf921c42"
+}

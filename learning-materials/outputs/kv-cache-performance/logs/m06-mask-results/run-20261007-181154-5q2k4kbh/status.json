@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "lesson": "M06-03",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "expected_cases": 28,
+  "passed_cases": [
+    "original_cuda-w64-interleaved-gap0-guard0",
+    "original_cuda-w64-interleaved-gap64-guard0",
+    "original_cuda-w64-separate-gap0-guard0",
+    "original_cuda-w64-separate-gap64-guard0",
+    "original_cuda-w128-interleaved-gap0-guard0",
+    "original_cuda-w128-interleaved-gap64-guard0",
+    "original_cuda-w128-separate-gap0-guard0",
+    "original_cuda-w128-separate-gap64-guard0",
+    "original_cuda-w192-interleaved-gap0-guard0",
+    "original_cuda-w192-interleaved-gap64-guard0",
+    "original_cuda-w192-separate-gap0-guard0",
+    "original_cuda-w192-separate-gap64-guard0",
+    "original_cuda-w192-interleaved-gap64-guard64",
+    "original_cuda-w192-separate-gap64-guard64",
+    "triton_mask-w64-interleaved-gap0-guard0",
+    "triton_mask-w64-interleaved-gap64-guard0",
+    "triton_mask-w64-separate-gap0-guard0",
+    "triton_mask-w64-separate-gap64-guard0",
+    "triton_mask-w128-interleaved-gap0-guard0",
+    "triton_mask-w128-interleaved-gap64-guard0",
+    "triton_mask-w128-separate-gap0-guard0",
+    "triton_mask-w128-separate-gap64-guard0",
+    "triton_mask-w192-interleaved-gap0-guard0",
+    "triton_mask-w192-interleaved-gap64-guard0",
+    "triton_mask-w192-separate-gap0-guard0",
+    "triton_mask-w192-separate-gap64-guard0",
+    "triton_mask-w192-interleaved-gap64-guard64",
+    "triton_mask-w192-separate-gap64-guard64"
+  ],
+  "configurations": [
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 64,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 128,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 0,
+      "cache_guard": 0
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0
+    },
+    {
+      "width": 192,
+      "layout": "interleaved",
+      "input_gap": 64,
+      "cache_guard": 64
+    },
+    {
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64
+    }
+  ],
+  "scope": "FP16 B3 C8 D64/128/192; selected gaps/layouts/guards; no timing",
+  "ownership": "Core mask demonstration by coach at explicit learner request; independent mastery not inferred",
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "grid": [
+    3
+  ],
+  "num_warps": 4,
+  "source_review": {
+    "status": "REVIEWED_BODY_MATCH",
+    "vector_load_masks": 2,
+    "vector_store_masks": 2,
+    "meaning": "Static source comparison only; not runtime invalid-read detection"
+  },
+  "current_case": null
+}

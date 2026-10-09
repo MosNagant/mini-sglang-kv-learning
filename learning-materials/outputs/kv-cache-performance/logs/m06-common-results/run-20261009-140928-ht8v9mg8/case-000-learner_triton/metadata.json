@@ -1,0 +1,77 @@
+{
+  "config": {
+    "batch": 0,
+    "width": 64,
+    "capacity": 32,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0,
+    "rows": []
+  },
+  "implementation": "learner_triton",
+  "tensors": [
+    {
+      "shape": [
+        32,
+        64
+      ],
+      "stride": [
+        128,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30259806208
+    },
+    {
+      "shape": [
+        32,
+        64
+      ],
+      "stride": [
+        128,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30259806336
+    },
+    {
+      "shape": [
+        0
+      ],
+      "stride": [
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "cuda:0",
+      "data_ptr": 0
+    },
+    {
+      "shape": [
+        0,
+        64
+      ],
+      "stride": [
+        64,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 0
+    },
+    {
+      "shape": [
+        0,
+        64
+      ],
+      "stride": [
+        64,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 0
+    }
+  ]
+}

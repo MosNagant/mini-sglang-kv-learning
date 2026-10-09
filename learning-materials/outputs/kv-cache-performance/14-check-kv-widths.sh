@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 # Run in the learner's WSL. Keep the learner's existing kernel/checker.
 set -Eeuo pipefail
-if [[ $# -gt 1 || ( $# -eq 1 && "$1" != --prepare ) ]]; then
-    printf 'Usage: bash 14-check-kv-widths.sh [--prepare]\n'
-    exit 2
-fi
+# Arguments are validated by argparse before any GPU imports or launch.
 lab_source=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 lab_project="$HOME/projects/mini-sglang-kv"
 [[ -f "$lab_project/experiments/activate.sh" ]] || { printf 'PROJECT_ACTIVATION_MISSING\n'; exit 1; }

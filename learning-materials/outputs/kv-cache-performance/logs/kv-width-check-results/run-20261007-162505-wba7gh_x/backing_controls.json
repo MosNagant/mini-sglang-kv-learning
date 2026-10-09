@@ -1,0 +1,19 @@
+[
+  {
+    "width": 64,
+    "layout": "separate",
+    "input_gap": 64,
+    "positive_control": "PASS",
+    "negative_controls": [
+      "target_K_last",
+      "target_V_last",
+      "untouched_K",
+      "untouched_V",
+      "input_K",
+      "input_V",
+      "indices",
+      "input_K_gap",
+      "input_V_gap"
+    ]
+  }
+]

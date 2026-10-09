@@ -1,0 +1,37 @@
+{
+  "01-width": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\kv-width-check-results\\run-20261007-154657-9g3dxths",
+    "package": "evidence/01-width",
+    "files": 39
+  },
+  "02-layout": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\kv-width-check-results\\run-20261007-164300-ejjr_j5x",
+    "package": "evidence/02-layout",
+    "files": 76
+  },
+  "03-mask": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m06-mask-results\\run-20261007-181154-5q2k4kbh",
+    "package": "evidence/03-mask",
+    "files": 116
+  },
+  "04-wrapper": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m06-wrapper-results\\run-20261009-134214-o635nwfm",
+    "package": "evidence/04-wrapper",
+    "files": 93
+  },
+  "05-common": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m06-common-results\\run-20261009-140928-ht8v9mg8",
+    "package": "evidence/05-common",
+    "files": 1018
+  },
+  "07-compile": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m06-compile-results\\run-20261009-142759-l12p0a0c",
+    "package": "evidence/07-compile",
+    "files": 52
+  },
+  "06-paired": {
+    "original": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m06-paired-timing-results\\run-20261009-145144-n1lwky52",
+    "package": "evidence/06-paired",
+    "files": 222
+  }
+}

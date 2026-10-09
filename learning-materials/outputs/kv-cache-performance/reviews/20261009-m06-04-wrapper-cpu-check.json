@@ -1,0 +1,462 @@
+{
+  "status": "CPU_REFERENCE_WRAPPER_CHECK_PASS",
+  "GPU": "NOT_RUN",
+  "learner": "NOT_RUN",
+  "scope": "Coach reference executed only in memory; 6 complete public calls, 18 invalid calls, 3 bad-source controls; fake tensor CPU metadata plus CPU scatter stub, not GPU kernel validation",
+  "cases": 27,
+  "source_hashes": {
+    "22-check-kv-wrapper.py": "600f831894ed350e76c673ccc71a90eb99f58ef152b33f1652156d7afff3d8f2",
+    "22-triton-store-api-template.py": "c025efbd95fc02551c7c409f7e36e5ab1a1ad242165e27472fca49221ac7a275",
+    "22-kv-contract-support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "21-check-kv-mask.py": "990ded9495ced25f4d145450a728741d7b2da663ab50fa16909b4683e81fe285",
+    "14-check-kv-widths.py": "aadd183f448b0a634caf243a2ae036e73a94969c9a877276804f755e3e7aa514"
+  },
+  "results": [
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3
+        ]
+      },
+      "launches": [
+        {
+          "grid": [
+            3
+          ],
+          "parameters": {
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "num_warps": 4
+          }
+        }
+      ],
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "launches": [
+        {
+          "grid": [
+            5
+          ],
+          "parameters": {
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "num_warps": 4
+          }
+        }
+      ],
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "launches": [
+        {
+          "grid": [
+            5
+          ],
+          "parameters": {
+            "WIDTH": 192,
+            "SRC_ROW_STRIDE": 256,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 256,
+            "num_warps": 4
+          }
+        }
+      ],
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7
+        ]
+      },
+      "launches": [
+        {
+          "grid": [
+            1
+          ],
+          "parameters": {
+            "WIDTH": 128,
+            "SRC_ROW_STRIDE": 128,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 128,
+            "num_warps": 4
+          }
+        }
+      ],
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "launches": [],
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "positive",
+      "status": "CPU_PASS",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "launches": [],
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      },
+      "full_backing": "CPU_STUB_MATCHES_FIXTURE"
+    },
+    {
+      "kind": "indices_too_many",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "rejection_owner": "learner_outer_index_count",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "indices_too_few",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "rejection_owner": "learner_outer_index_count",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "v_shape",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INPUT_SHAPE: K/V must have the same (B,D)"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "k_dtype",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: k"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "indices_dtype",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: indices"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "cpu_k",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "cpu_indices",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "unsupported_width",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "WIDTH_SCOPE: D must be 64, 128, or 192"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "column_stride",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "COLUMN_STRIDE: k"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "index_stride",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_STRIDE: require contiguous rank-1 indices"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "unequal_source_stride",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "unsupported_source_stride",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "cache_overlap",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "source_cache_overlap",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_CACHE_ALIAS: k_cache/k"
+      },
+      "rejection_owner": "validate_metadata",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "duplicate_indices",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_DUPLICATE: destinations must be unique"
+      },
+      "rejection_owner": "validate_index_values",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      }
+    },
+    {
+      "kind": "negative_index",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "rejection_owner": "validate_index_values",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      }
+    },
+    {
+      "kind": "out_of_range_index",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "rejection_owner": "validate_index_values",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 1,
+        "tolist": 1
+      }
+    },
+    {
+      "kind": "empty_with_one_index",
+      "status": "CPU_REJECTED_BEFORE_KV_LAUNCH",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "rejection_owner": "learner_outer_index_count",
+      "kv_launches": 0,
+      "index_transfers": {
+        "cpu": 0,
+        "tolist": 0
+      }
+    },
+    {
+      "kind": "wrong_empty_condition",
+      "status": "CPU_PREFLIGHT_REJECTED",
+      "message": "WRAPPER_SOURCE_REVIEW_REQUIRED: three-slot lesson changed; no kernel submitted"
+    },
+    {
+      "kind": "wrong_grid",
+      "status": "CPU_PREFLIGHT_REJECTED",
+      "message": "WRAPPER_SOURCE_REVIEW_REQUIRED: three-slot lesson changed; no kernel submitted"
+    },
+    {
+      "kind": "wrong_index_length",
+      "status": "CPU_PREFLIGHT_REJECTED",
+      "message": "WRAPPER_SOURCE_REVIEW_REQUIRED: three-slot lesson changed; no kernel submitted"
+    }
+  ],
+  "test_source_sha256": "a6b1edee5e117cadfc7ddddeb874c305c625d1f39823bc34352b782633fd1c06"
+}

@@ -1,0 +1,11 @@
+{
+  "archive": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\modules\\M06-v1-20261009.zip",
+  "archive_sha256": "7c1dcc0c30449855f14d20b63834fe7500b570c72913a8d204768c9f30059f7e",
+  "archive_bytes": 8420921,
+  "payload_files": 1646,
+  "payload_bytes": 19525312,
+  "checked_markdown_links": 19,
+  "scope": "local copy, file hashes, arithmetic, links and ZIP integrity; no new GPU run",
+  "wsl_installed": false,
+  "github_uploaded": false
+}

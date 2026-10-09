@@ -1,0 +1,175 @@
+{
+  "status": "CPU_COMPILE_CAPTURE_EXPORT_CHECK_PASS",
+  "GPU": "NOT_RUN",
+  "real_compiler": "NOT_RUN",
+  "new_learner_acceptance": "NOT_INFERRED",
+  "cases": 9,
+  "results": [
+    {
+      "name": "actual_probe_return_identity",
+      "status": "CPU_PASS",
+      "launch": [
+        {
+          "grid": [
+            3
+          ],
+          "parameters": {
+            "WIDTH": 192,
+            "SRC_ROW_STRIDE": 256,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 256,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "name": "executed_specialization_export",
+      "status": "CPU_PASS",
+      "synthetic_fixture": true,
+      "metadata": {
+        "shared": 0,
+        "num_warps": 4,
+        "specialization": {
+          "WIDTH": 192,
+          "SRC_ROW_STRIDE": 256,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 256,
+          "num_warps": 4
+        }
+      },
+      "artifacts": {
+        "ttir": {
+          "path": "compiled/kernel.ttir",
+          "bytes": 46,
+          "sha256": "749a7240ff44af46b09510a864ea3b2e2847d46e0e09fb3c49eb69643f4a33a3",
+          "lines": 1
+        },
+        "ttgir": {
+          "path": "compiled/kernel.ttgir",
+          "bytes": 43,
+          "sha256": "a7cab81d07f709aa6a33c86704577d460ceb28957e4305c1a557602a406893dc"
+        },
+        "llir": {
+          "path": "compiled/kernel.llir",
+          "bytes": 42,
+          "sha256": "454545b367520a38026c9beb2bb4b337627d78c84f113ac18214a24aa4837b22"
+        },
+        "ptx": {
+          "path": "compiled/kernel.ptx",
+          "bytes": 218,
+          "sha256": "f0be31ed1e2b21063898d94af98a91d383fb013f569f0395e763de12db7f83cd",
+          "lines": 7
+        },
+        "cubin": {
+          "path": "compiled/kernel.cubin",
+          "bytes": 46,
+          "sha256": "ceb252a6b184f73e5975849016e9ed29cfe8a55dd540f94b8fa47b848700450f"
+        }
+      }
+    },
+    {
+      "name": "missing_ptx_binary_retained",
+      "status": "CPU_PASS",
+      "export_status": "BINARY_AND_METADATA"
+    },
+    {
+      "name": "missing_asm_metadata_only",
+      "status": "CPU_PASS",
+      "export_status": "METADATA_OR_IR_ONLY",
+      "static_resources": {
+        "registers_per_thread": null,
+        "shared_memory_bytes": null,
+        "scope": "loaded specialization metadata; not achieved occupancy or runtime counters"
+      }
+    },
+    {
+      "name": "ir_without_ptx_or_metadata",
+      "status": "CPU_PASS",
+      "export_status": "METADATA_OR_IR_ONLY"
+    },
+    {
+      "name": "unsupported_ptx_type_not_synthesized",
+      "status": "CPU_PASS",
+      "unavailable": {
+        "ttir": "not retained by this runtime/cache configuration",
+        "ttgir": "not retained by this runtime/cache configuration",
+        "llir": "not retained by this runtime/cache configuration",
+        "ptx": "unsupported artifact type: int",
+        "cubin": "not retained by this runtime/cache configuration"
+      }
+    },
+    {
+      "name": "no_compiled_return_rejected",
+      "status": "CPU_PASS",
+      "error": "NO_COMPILED_RETURN: underlying launch returned no compiled object"
+    },
+    {
+      "name": "no_artifacts_or_metadata_preserves_checked_call",
+      "status": "CPU_PASS",
+      "error": "NO_COMPILER_EVIDENCE: no retained artifacts or metadata",
+      "preserved_files": [
+        "after.npz",
+        "before.npz",
+        "metadata.json",
+        "status.json",
+        "submissions.json"
+      ]
+    },
+    {
+      "name": "bad_result_preserves_submission_and_storage",
+      "status": "CPU_PASS",
+      "real_driver_status": {
+        "status": "FAILED",
+        "implementation": "learner_triton",
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "error_type": "AssertionError",
+        "error": "\nArrays are not equal\ncache\nMismatched elements: 1 / 16384 (0.0061%)\nMax absolute difference among violations: 199.\nMax relative difference among violations: 1.99\n ACTUAL: array([[[ 1.050e+02,  1.060e+02,  1.000e+01, ..., -7.000e+00,\n         -7.000e+00, -7.000e+00],\n        [ 1.030e+02,  1.040e+02,  1.050e+02, ..., -7.000e+00,...\n DESIRED: array([[[ 1.050e+02,  1.060e+02,  1.000e+01, ..., -7.000e+00,\n         -7.000e+00, -7.000e+00],\n        [ 1.030e+02,  1.040e+02,  1.050e+02, ..., -7.000e+00,..."
+      },
+      "submissions": [
+        {
+          "grid": [
+            3
+          ],
+          "parameters": {
+            "WIDTH": 192,
+            "SRC_ROW_STRIDE": 256,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 256,
+            "num_warps": 4
+          }
+        }
+      ],
+      "preserved_file_sha256": {
+        "after.npz": "8cba7e03bdefb17ada12b03b6698c1a3a9fbddd6ebebf82ac3024ba3ffed00ae",
+        "before.npz": "53cb31bee857aec978020f353b49f9f604e9074789f2e411bd8aa759db61de74",
+        "metadata.json": "87bc6074ed75d53a7ede702985b38718e0ce9276748a12728096d8957dbdd949",
+        "status.json": "7d779163414385d8fac6272c1cfed563810adb7b3b7111126db894978753d3f5",
+        "submissions.json": "0f1b74f282ba8218b24d29211a4363c67cb6c419f39fc5fa4d3a597212aa15d2"
+      }
+    }
+  ],
+  "method": "Real capture/export/run_case APIs; accepted wrapper/checker; fake torch and CPU scatter with synthetic CompiledKernel fixtures; all temporary exports read back and removed",
+  "source_hashes": {
+    "24-inspect-triton-compile.py": "cddbad7e745d628c6d0452702cd35568a32258521164021a97c32e200fc480a5",
+    "23-check-kv-common.py": "c17004a1ba219753416d499699b22abca9ccf2ea528e9f2ff15de864c910b634",
+    "22-check-kv-wrapper.py": "600f831894ed350e76c673ccc71a90eb99f58ef152b33f1652156d7afff3d8f2",
+    "22-kv-contract-support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "reviews/20261009-m06-05-cpu-driver-check.py": "1905441fa2f7748a64f7951a279f1117da956e5ed16918d0dac89357a48d3e02",
+    "logs/m06-wrapper-results/run-20261009-134214-o635nwfm/triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+    "logs/m06-wrapper-results/run-20261009-134214-o635nwfm/check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+  },
+  "test_source_sha256": "9e7ba3653b205fab992f904e748a27be85c32f2c4d8c76e01434cef8a96c63a3"
+}
