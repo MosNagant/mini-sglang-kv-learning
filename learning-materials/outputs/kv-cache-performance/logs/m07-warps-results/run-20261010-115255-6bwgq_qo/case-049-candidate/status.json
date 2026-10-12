@@ -1,0 +1,14 @@
+{
+  "status": "EMPTY_WRAPPER_PASS",
+  "implementation": "candidate",
+  "config": {
+    "batch": 0,
+    "width": 128,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 0,
+    "rows": []
+  },
+  "submissions": 0
+}

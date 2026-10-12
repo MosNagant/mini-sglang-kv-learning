@@ -1,0 +1,925 @@
+{
+  "status": "INDEPENDENT_SAVED_EVIDENCE_AUDIT_PASS",
+  "run": "outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3",
+  "blocking_findings": [],
+  "source_verification": {
+    "manifest_entries": 62,
+    "input_manifest_entries": 35,
+    "accepted34_linked_entries": 33,
+    "accepted32_original_and_timer_entries": 21,
+    "current_windows_helper_hashes": 29,
+    "pins": {
+      "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+      "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+      "35-compare-kv-full-groups.py": "ae5efd06babab6296038f52e4385bf0295cb998b36a217b03274604f3fb84987",
+      "35-compare-kv-full-groups.sh": "624b8fb4cd0db14aca65b747ad102c888cf09e9d32bf91daa679f55c33a47fae"
+    },
+    "prior34_and32_gates_match": true
+  },
+  "counts": {
+    "workers": 18,
+    "worker_subprocess_commands": 18,
+    "raw_interval_averages": 3240,
+    "calls_per_interval": 100,
+    "recorded_correctness_checks_per_worker": 190,
+    "total_recorded_checks": 3420,
+    "actual_entry_records": 54,
+    "saved_after_npz_exists": 126,
+    "before_npz_exists": 18
+  },
+  "policy": {
+    "capacity": 512,
+    "rounds": 3,
+    "intervals_per_arm_policy": 30,
+    "balanced_measurement_positions": true,
+    "graph_primary_eager_separate": true,
+    "statistic": "Median of 30 interval averages per worker; median of three worker medians. Reference/full ratio differs from median of three paired ratios.",
+    "win_tie_loss_definition": "Full-groups numerical median <, ==, > reference in each same-process round; exact ties, not statistical significance.",
+    "trusted_triton_parameters": "RPP=4, num_warps=4; grid ceil(B/4); actual metadata checked for all workers",
+    "scope": "B5/256 x D64 interleaved gap0 guard0 / D128 separate gap64 guard0 / D192 separate gap64 guard64; repeated addresses and fixed unique mapping"
+  },
+  "summary_values_independently_recomputed": true,
+  "totals": {
+    "graph": {
+      "original": {
+        "win": 3,
+        "tie": 0,
+        "loss": 15
+      },
+      "grouped": {
+        "win": 4,
+        "tie": 1,
+        "loss": 13
+      }
+    },
+    "eager": {
+      "original": {
+        "win": 0,
+        "tie": 0,
+        "loss": 18
+      },
+      "grouped": {
+        "win": 5,
+        "tie": 0,
+        "loss": 13
+      }
+    }
+  },
+  "results": [
+    {
+      "batch": 5,
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            0.897439979016781,
+            1.093919984996319,
+            1.104159988462925
+          ],
+          "representative_us": 1.093919984996319
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            0.9945599734783174,
+            1.1420800164341927,
+            1.1768000200390816
+          ],
+          "representative_us": 1.1420800164341927
+        },
+        "full_groups": {
+          "round_medians_us": [
+            0.9945599734783174,
+            1.16736002266407,
+            1.1878399923443794
+          ],
+          "representative_us": 1.16736002266407
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.9370887847434153,
+          "representative_full_time_change_pct": 6.71347435598757,
+          "paired_reference_over_full": [
+            0.9023487803134943,
+            0.9370887847434153,
+            0.9295527980024485
+          ],
+          "paired_ratio_median": 0.9295527980024485,
+          "paired_full_time_change_pct": [
+            10.821893021518747,
+            6.71347435598757,
+            7.578612226108961
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9783442933293321,
+          "representative_full_time_change_pct": 2.2135056971583023,
+          "paired_reference_over_full": [
+            1.0,
+            0.9783442933293321,
+            0.9907058422207954
+          ],
+          "paired_ratio_median": 0.9907058422207954,
+          "paired_full_time_change_pct": [
+            0.0,
+            2.2135056971583023,
+            0.9381349521842441
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 1,
+            "loss": 2
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.597280085086823,
+            9.154079854488371,
+            8.379519879817963
+          ],
+          "representative_us": 8.597280085086823
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            13.759679794311523,
+            15.396959781646729,
+            14.146559834480286
+          ],
+          "representative_us": 14.146559834480286
+        },
+        "full_groups": {
+          "round_medians_us": [
+            13.633759617805481,
+            16.2745600938797,
+            15.841119885444641
+          ],
+          "representative_us": 15.841119885444641
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.5427192109685562,
+          "representative_full_time_change_pct": 84.25734335354814,
+          "paired_reference_over_full": [
+            0.630587624110587,
+            0.5624778674006006,
+            0.5289726951386404
+          ],
+          "paired_ratio_median": 0.5624778674006006,
+          "paired_full_time_change_pct": [
+            58.58224325452805,
+            77.78477304739766,
+            89.0456746047934
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.8930277617227445,
+          "representative_full_time_change_pct": 11.978601658574961,
+          "paired_reference_over_full": [
+            1.0092359099790489,
+            0.9460753281704366,
+            0.8930277617227445
+          ],
+          "paired_ratio_median": 0.9460753281704366,
+          "paired_full_time_change_pct": [
+            -0.9151388577959496,
+            5.699828567968823,
+            11.978601658574961
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.1135999858379364,
+            0.9582399949431419,
+            0.9841600060462952
+          ],
+          "representative_us": 0.9841600060462952
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            1.160000003874302,
+            1.085279993712902,
+            1.000640019774437
+          ],
+          "representative_us": 1.085279993712902
+        },
+        "full_groups": {
+          "round_medians_us": [
+            1.1521600186824799,
+            1.1423999816179278,
+            1.0438400134444237
+          ],
+          "representative_us": 1.1423999816179278
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.8614846129920934,
+          "representative_full_time_change_pct": 16.078683811521287,
+          "paired_reference_over_full": [
+            0.9665323980876912,
+            0.8387955272776102,
+            0.942826480466869
+          ],
+          "paired_ratio_median": 0.942826480466869,
+          "paired_full_time_change_pct": [
+            3.4626466715989235,
+            19.218566084346445,
+            6.064055339729091
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9500000097828001,
+          "representative_full_time_change_pct": 5.2631568107700755,
+          "paired_reference_over_full": [
+            1.006804597507894,
+            0.9500000097828001,
+            0.9586143536235625
+          ],
+          "paired_ratio_median": 0.9586143536235625,
+          "paired_full_time_change_pct": [
+            -0.6758607901411362,
+            5.2631568107700755,
+            4.317236250427481
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.872639834880829,
+            8.637759983539581,
+            8.620960116386415
+          ],
+          "representative_us": 8.637759983539581
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            13.49519968032837,
+            13.35312008857727,
+            13.32319974899292
+          ],
+          "representative_us": 13.35312008857727
+        },
+        "full_groups": {
+          "round_medians_us": [
+            13.519840240478516,
+            13.45359981060028,
+            13.466399908065796
+          ],
+          "representative_us": 13.466399908065796
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.641430526533371,
+          "representative_full_time_change_pct": 55.901529259065306,
+          "paired_reference_over_full": [
+            0.6562680976300349,
+            0.64204079987081,
+            0.6401829869334884
+          ],
+          "paired_ratio_median": 0.64204079987081,
+          "paired_full_time_change_pct": [
+            52.376750235349824,
+            55.75334156352958,
+            56.20533822525569
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9915879655838324,
+          "representative_full_time_change_pct": 0.8483397044068308,
+          "paired_reference_over_full": [
+            0.9981774518254756,
+            0.9925313876257981,
+            0.9893661141767293
+          ],
+          "paired_ratio_median": 0.9925313876257981,
+          "paired_full_time_change_pct": [
+            0.18258759213518605,
+            0.752481228031221,
+            1.074818075017614
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.1324799805879593,
+            1.0632000118494034,
+            1.1881599947810173
+          ],
+          "representative_us": 1.1324799805879593
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            1.1563200131058695,
+            1.0912000015377998,
+            1.1764800176024435
+          ],
+          "representative_us": 1.1563200131058695
+        },
+        "full_groups": {
+          "round_medians_us": [
+            1.1766399815678596,
+            1.1070399731397629,
+            1.204960010945797
+          ],
+          "representative_us": 1.1766399815678596
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.962469402985051,
+          "representative_full_time_change_pct": 3.8994067654046782,
+          "paired_reference_over_full": [
+            0.962469402985051,
+            0.9603989355813218,
+            0.9860576151804465
+          ],
+          "paired_ratio_median": 0.962469402985051,
+          "paired_full_time_change_pct": [
+            3.8994067654046782,
+            4.123397366606607,
+            1.4139523497318285
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9827305133428205,
+          "representative_full_time_change_pct": 1.7572962702090411,
+          "paired_reference_over_full": [
+            0.9827305133428205,
+            0.9856915992319247,
+            0.9763643663817532
+          ],
+          "paired_ratio_median": 0.9827305133428205,
+          "paired_full_time_change_pct": [
+            1.7572962702090411,
+            1.4516102987206958,
+            2.4207800317249006
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            10.14415979385376,
+            8.681600093841555,
+            9.00527983903885
+          ],
+          "representative_us": 9.00527983903885
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            14.052159786224365,
+            13.68656039237976,
+            14.988319873809813
+          ],
+          "representative_us": 14.052159786224365
+        },
+        "full_groups": {
+          "round_medians_us": [
+            14.195039868354797,
+            13.347200155258179,
+            15.522239804267883
+          ],
+          "representative_us": 14.195039868354797
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.6343962343574989,
+          "representative_full_time_change_pct": 57.63019164399292,
+          "paired_reference_over_full": [
+            0.7146270731136358,
+            0.6504435381844039,
+            0.5801533768704452
+          ],
+          "paired_ratio_median": 0.6504435381844039,
+          "paired_full_time_change_pct": [
+            39.93312562914697,
+            53.74124597983094,
+            72.36821155715023
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9899345064575016,
+          "representative_full_time_change_pct": 1.0167837848705785,
+          "paired_reference_over_full": [
+            0.9899345064575016,
+            1.0254255748901682,
+            0.9656029067202487
+          ],
+          "paired_ratio_median": 0.9899345064575016,
+          "paired_full_time_change_pct": [
+            1.0167837848705785,
+            -2.4795144097016997,
+            3.5622400305922675
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        }
+      }
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            0.9681599959731102,
+            1.1668800190091133,
+            1.1633599922060966
+          ],
+          "representative_us": 1.1633599922060966
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            1.0476800054311752,
+            1.1323199793696404,
+            1.1459200084209442
+          ],
+          "representative_us": 1.1323199793696404
+        },
+        "full_groups": {
+          "round_medians_us": [
+            1.0291200131177904,
+            1.1694400012493134,
+            1.0508800297975538
+          ],
+          "representative_us": 1.0508800297975538
+        },
+        "versus_original": {
+          "representative_reference_over_full": 1.1070340659439608,
+          "representative_full_time_change_pct": -9.668543113232342,
+          "paired_reference_over_full": [
+            0.9407649094686269,
+            0.9978109332351679,
+            1.1070340659439608
+          ],
+          "paired_ratio_median": 0.9978109332351679,
+          "paired_full_time_change_pct": [
+            6.296481717715308,
+            0.21938692911838142,
+            -9.668543113232342
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 1.0774969047492278,
+          "representative_full_time_change_pct": -7.192308804568115,
+          "paired_reference_over_full": [
+            1.0180348181716494,
+            0.9682582929949226,
+            1.0904384667407747
+          ],
+          "paired_ratio_median": 1.0180348181716494,
+          "paired_full_time_change_pct": [
+            -1.771532549745125,
+            3.278227228697106,
+            -8.293770762791175
+          ],
+          "full_wins_ties_losses": {
+            "win": 2,
+            "tie": 0,
+            "loss": 1
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.433119952678682,
+            12.52784013748169,
+            8.733759820461273
+          ],
+          "representative_us": 8.733759820461273
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            13.691359758377077,
+            16.685439944267273,
+            13.174880146980286
+          ],
+          "representative_us": 13.691359758377077
+        },
+        "full_groups": {
+          "round_medians_us": [
+            13.710400462150572,
+            19.9590402841568,
+            13.267679810523987
+          ],
+          "representative_us": 13.710400462150572
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.6370171202928759,
+          "representative_full_time_change_pct": 56.98165216348321,
+          "paired_reference_over_full": [
+            0.6150892511097293,
+            0.6276774814381285,
+            0.6582733337846768
+          ],
+          "paired_ratio_median": 0.6276774814381285,
+          "paired_full_time_change_pct": [
+            62.578032081657085,
+            59.31748861036239,
+            51.91257927016426
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9986112219095234,
+          "representative_full_time_change_pct": 0.13907094773288886,
+          "paired_reference_over_full": [
+            0.9986112219095234,
+            0.8359840807331772,
+            0.9930055846335625
+          ],
+          "paired_ratio_median": 0.9930055846335625,
+          "paired_full_time_change_pct": [
+            0.13907094773288886,
+            19.61950269710604,
+            0.7043681802674451
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        }
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.0126399993896484,
+            1.1505600064992905,
+            1.1840000003576276
+          ],
+          "representative_us": 1.1505600064992905
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            1.0999999940395355,
+            1.064319983124733,
+            1.2211199849843979
+          ],
+          "representative_us": 1.0999999940395355
+        },
+        "full_groups": {
+          "round_medians_us": [
+            1.0753599926829338,
+            1.0654399916529655,
+            1.2596800178289413
+          ],
+          "representative_us": 1.0753599926829338
+        },
+        "versus_original": {
+          "representative_reference_over_full": 1.069930083254017,
+          "representative_full_time_change_pct": -6.535948876335551,
+          "paired_reference_over_full": [
+            0.9416753517705228,
+            1.079891890217361,
+            0.9399212368219128
+          ],
+          "paired_ratio_median": 0.9416753517705228,
+          "paired_full_time_change_pct": [
+            6.193710828239918,
+            -7.398137808154159,
+            6.391893365578927
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 1.0229132583732514,
+          "representative_full_time_change_pct": -2.2400001354651033,
+          "paired_reference_over_full": [
+            1.0229132583732514,
+            0.9989487830971175,
+            0.9693890255471372
+          ],
+          "paired_ratio_median": 0.9989487830971175,
+          "paired_full_time_change_pct": [
+            -2.2400001354651033,
+            0.10523231227363983,
+            3.1577595419532978
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            9.726400077342985,
+            8.478560149669647,
+            12.085120081901549
+          ],
+          "representative_us": 9.726400077342985
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            13.891680240631104,
+            13.405920267105104,
+            29.231361150741577
+          ],
+          "representative_us": 13.891680240631104
+        },
+        "full_groups": {
+          "round_medians_us": [
+            15.135999917984009,
+            13.434879779815674,
+            23.53775978088379
+          ],
+          "representative_us": 15.135999917984009
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.6426004314248478,
+          "representative_full_time_change_pct": 55.617698198970174,
+          "paired_reference_over_full": [
+            0.6426004314248478,
+            0.6310856731600745,
+            0.5134354413675548
+          ],
+          "paired_ratio_median": 0.6310856731600745,
+          "paired_full_time_change_pct": [
+            55.617698198970174,
+            58.45709109392991,
+            94.76645346812482
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9177907185454954,
+          "representative_full_time_change_pct": 8.957301462449841,
+          "paired_reference_over_full": [
+            0.9177907185454954,
+            0.9978444531558758,
+            1.2418922371058376
+          ],
+          "paired_ratio_median": 0.9978444531558758,
+          "paired_full_time_change_pct": [
+            8.957301462449841,
+            0.21602032634513435,
+            -19.477715527842754
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        }
+      }
+    },
+    {
+      "batch": 256,
+      "width": 192,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.0177600011229515,
+            1.0151999816298487,
+            1.1404800042510033
+          ],
+          "representative_us": 1.0177600011229515
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            1.080160029232502,
+            1.0804800316691399,
+            1.082720011472702
+          ],
+          "representative_us": 1.0804800316691399
+        },
+        "full_groups": {
+          "round_medians_us": [
+            1.0904000326991081,
+            1.0923199728131296,
+            1.1008000001311302
+          ],
+          "representative_us": 1.0923199728131296
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.931741638397256,
+          "representative_full_time_change_pct": 7.325889365657123,
+          "paired_reference_over_full": [
+            0.9333822180871106,
+            0.9293979849286576,
+            1.0360465153662302
+          ],
+          "paired_ratio_median": 0.9333822180871106,
+          "paired_full_time_change_pct": [
+            7.13724566656273,
+            7.5965319719045965,
+            -3.4792371608419748
+          ],
+          "full_wins_ties_losses": {
+            "win": 1,
+            "tie": 0,
+            "loss": 2
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9891607391252789,
+          "representative_full_time_change_pct": 1.0958037906262152,
+          "paired_reference_over_full": [
+            0.9906089479461416,
+            0.9891607391252789,
+            0.983575591700332
+          ],
+          "paired_ratio_median": 0.9891607391252789,
+          "paired_full_time_change_pct": [
+            0.9480079978410272,
+            1.0958037906262152,
+            1.6698674141836456
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        }
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.629119992256165,
+            8.652639985084534,
+            8.755679726600647
+          ],
+          "representative_us": 8.652639985084534
+        },
+        "accepted_grouped": {
+          "round_medians_us": [
+            16.255840063095093,
+            13.215839862823486,
+            13.669599890708925
+          ],
+          "representative_us": 13.669599890708925
+        },
+        "full_groups": {
+          "round_medians_us": [
+            14.028159976005554,
+            13.17791998386383,
+            13.700159788131714
+          ],
+          "representative_us": 13.700159788131714
+        },
+        "versus_original": {
+          "representative_reference_over_full": 0.6315721946966059,
+          "representative_full_time_change_pct": 58.33502620874231,
+          "paired_reference_over_full": [
+            0.6151284278918854,
+            0.6566013449527364,
+            0.6390932559914804
+          ],
+          "paired_ratio_median": 0.6390932559914804,
+          "paired_full_time_change_pct": [
+            62.567677684335465,
+            52.299413896567955,
+            56.4716871325162
+          ],
+          "full_wins_ties_losses": {
+            "win": 0,
+            "tie": 0,
+            "loss": 3
+          }
+        },
+        "versus_grouped": {
+          "representative_reference_over_full": 0.9977693765696615,
+          "representative_full_time_change_pct": 0.22356102349097018,
+          "paired_reference_over_full": [
+            1.158800590448061,
+            1.002877531431826,
+            0.9977693765696615
+          ],
+          "paired_ratio_median": 1.002877531431826,
+          "paired_full_time_change_pct": [
+            -13.703875520693277,
+            -0.28692750028188607,
+            0.22356102349097018
+          ],
+          "full_wins_ties_losses": {
+            "win": 2,
+            "tie": 0,
+            "loss": 1
+          }
+        }
+      }
+    }
+  ],
+  "interpretation": [
+    "No configuration shows three-of-three Graph wins over accepted_grouped or original.",
+    "B256 D64 representative grouped/full ratio is favorable, but only two-of-three wins against grouped and one-of-three against original.",
+    "B256 D128 representative ratios are favorable while median paired ratios are below one against both references; only one-of-three wins.",
+    "B5 uses the unchanged tail branch and supplies a control, not an expected full-group optimization gain.",
+    "Eager has distinct host paths and stays separate from Graph."
+  ],
+  "limitations": [
+    "Only saved metadata and recorded correctness counts checked here; existing before/after NPZ presence checked, arrays not independently re-audited in this bounded timing audit.",
+    "No GPU/WSL invocation, rerun, hardware counter, statistical significance test, model or AMD claim.",
+    "Three fresh-process rounds with reused addresses do not establish broad stable speedup; 3240 interval averages are not3240 independent experimental rounds.",
+    "Across D, layout/gap/guard also change. This C512 run cannot be directly combined with prior C1024 summaries."
+  ],
+  "environment": {
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "triton": "3.5.1",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "device_properties": "_CudaDeviceProperties(name='NVIDIA GeForce RTX 4070 Ti', major=8, minor=9, total_memory=12281MB, multi_processor_count=60, uuid=e77953c3-ff4f-6148-ce27-8b41e1c2745b, pci_bus_id=1, pci_device_id=0, pci_domain_id=0, L2_cache_size=48MB)"
+  }
+}

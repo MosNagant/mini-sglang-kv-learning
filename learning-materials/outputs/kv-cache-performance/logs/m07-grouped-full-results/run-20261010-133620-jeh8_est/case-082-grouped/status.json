@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "implementation": "grouped",
+  "config": {
+    "batch": 5,
+    "width": 192,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 0,
+    "rows": [
+      31,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "submissions": 1
+}

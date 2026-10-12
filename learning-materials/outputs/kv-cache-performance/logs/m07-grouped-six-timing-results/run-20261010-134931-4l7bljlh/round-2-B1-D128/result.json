@@ -1,0 +1,1525 @@
+{
+  "status": "COLLECTED",
+  "batch": 1,
+  "width": 128,
+  "round": 2,
+  "capacity": 1024,
+  "calls_per_interval": 100,
+  "seed": 20261004,
+  "config": {
+    "layout": "interleaved",
+    "input_gap": 0
+  },
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.0010950399935245514,
+        0.0012540799379348756,
+        0.0012483199685811997,
+        0.0008771199733018875,
+        0.0009244800359010696,
+        0.001080320030450821,
+        0.0012121599912643432,
+        0.0012240000069141388,
+        0.0010972800105810165,
+        0.0012137600034475325,
+        0.0012249600142240525,
+        0.0014534400403499604,
+        0.001483200043439865,
+        0.0012284799665212632,
+        0.0012035199999809265,
+        0.0010947199910879134,
+        0.0012739199399948121,
+        0.0010972800105810165,
+        0.0011011199653148652,
+        0.0011049599945545197,
+        0.0010867200046777725,
+        0.0012284799665212632,
+        0.0011030399799346923,
+        0.0008819200098514557,
+        0.0010531199723482132,
+        0.0012044800072908402,
+        0.0008867199718952178,
+        0.0008883199840784072,
+        0.001263680011034012,
+        0.0010940799862146377
+      ],
+      "eager": [
+        0.02001823902130127,
+        0.018783999681472777,
+        0.020512640476226807,
+        0.020616319179534912,
+        0.008235840201377869,
+        0.012413760423660278,
+        0.02035775899887085,
+        0.014592640399932862,
+        0.021119039058685302,
+        0.02047424077987671,
+        0.015152000188827515,
+        0.020700159072875975,
+        0.020075840950012205,
+        0.017095999717712404,
+        0.008408640027046204,
+        0.008746240139007568,
+        0.02041183948516846,
+        0.008414080142974853,
+        0.008575040102005004,
+        0.019171199798583984,
+        0.008871999979019165,
+        0.020522880554199218,
+        0.00888704001903534,
+        0.009884480237960815,
+        0.008152959942817688,
+        0.0171945595741272,
+        0.008089920282363891,
+        0.008691520094871522,
+        0.02046272039413452,
+        0.008466879725456239
+      ]
+    },
+    "frozen_v1": {
+      "graph": [
+        0.001406400054693222,
+        0.0013558399677276612,
+        0.001305599957704544,
+        0.0009520000219345093,
+        0.0012009599804878235,
+        0.0011481600254774093,
+        0.0017664000391960145,
+        0.0013043199479579924,
+        0.001271360069513321,
+        0.001305599957704544,
+        0.0013500800728797912,
+        0.001332480013370514,
+        0.0011337599903345108,
+        0.0011539199948310851,
+        0.0011763200163841248,
+        0.0012009599804878235,
+        0.0012995199859142303,
+        0.0011177600175142288,
+        0.0011340799927711488,
+        0.0011356800049543382,
+        0.000942080020904541,
+        0.0013174399733543395,
+        0.0011564800143241882,
+        0.0009276799857616425,
+        0.0009296000003814697,
+        0.0014371199905872346,
+        0.00121568001806736,
+        0.0009404800087213516,
+        0.0013020800054073334,
+        0.0011532799899578094
+      ],
+      "eager": [
+        0.03031008005142212,
+        0.03527168035507202,
+        0.035422399044036865,
+        0.01261631965637207,
+        0.01325376033782959,
+        0.03709439992904663,
+        0.03962559938430786,
+        0.03884416103363037,
+        0.03783999919891357,
+        0.03817343950271607,
+        0.022335679531097413,
+        0.0388595199584961,
+        0.034511680603027346,
+        0.03580703973770141,
+        0.01761888027191162,
+        0.012345600128173827,
+        0.03942015886306763,
+        0.0128438401222229,
+        0.0147052800655365,
+        0.03992288112640381,
+        0.013199679851531983,
+        0.021162559986114503,
+        0.012929600477218629,
+        0.0386627197265625,
+        0.012383040189743042,
+        0.021562559604644774,
+        0.012539199590682983,
+        0.013253439664840699,
+        0.03828639984130859,
+        0.012565120458602905
+      ]
+    },
+    "grouped": {
+      "graph": [
+        0.0013491199910640717,
+        0.001316159963607788,
+        0.0013228799402713776,
+        0.000987199991941452,
+        0.0011798399686813355,
+        0.0010681600123643876,
+        0.0013139200210571288,
+        0.0013446399569511413,
+        0.0013648000359535216,
+        0.0013689599931240083,
+        0.001395519971847534,
+        0.001366720050573349,
+        0.001212799996137619,
+        0.0013519999384880065,
+        0.0015580800175666808,
+        0.001209919974207878,
+        0.0013289600610733032,
+        0.001010880023241043,
+        0.0011894399672746658,
+        0.000989760011434555,
+        0.000979200005531311,
+        0.001356479972600937,
+        0.0009907200187444687,
+        0.000984639972448349,
+        0.0011782400310039521,
+        0.0011327999830245971,
+        0.0010438399761915206,
+        0.0011875200271606445,
+        0.0013279999792575837,
+        0.0011875200271606445
+      ],
+      "eager": [
+        0.031603200435638426,
+        0.039972798824310304,
+        0.03970047950744629,
+        0.013745280504226685,
+        0.014158079624176026,
+        0.013825600147247314,
+        0.0373475193977356,
+        0.04039040088653564,
+        0.030971839427947997,
+        0.03617856025695801,
+        0.03516864061355591,
+        0.03759455919265747,
+        0.02759360074996948,
+        0.04066368103027344,
+        0.024424641132354735,
+        0.01378559947013855,
+        0.028823359012603758,
+        0.026697919368743897,
+        0.01313439965248108,
+        0.01884511947631836,
+        0.013178880214691163,
+        0.03186847925186157,
+        0.013799999952316283,
+        0.03828191995620728,
+        0.013542079925537109,
+        0.03569247961044311,
+        0.013496960401535035,
+        0.013138879537582398,
+        0.017980480194091798,
+        0.013992960453033448
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010950399935245514
+    },
+    {
+      "sample": 0,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.031603200435638426
+    },
+    {
+      "sample": 0,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03031008005142212
+    },
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02001823902130127
+    },
+    {
+      "sample": 0,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013491199910640717
+    },
+    {
+      "sample": 0,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.001406400054693222
+    },
+    {
+      "sample": 1,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0013558399677276612
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012540799379348756
+    },
+    {
+      "sample": 1,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.039972798824310304
+    },
+    {
+      "sample": 1,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03527168035507202
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.018783999681472777
+    },
+    {
+      "sample": 1,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001316159963607788
+    },
+    {
+      "sample": 2,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013228799402713776
+    },
+    {
+      "sample": 2,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.001305599957704544
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012483199685811997
+    },
+    {
+      "sample": 2,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03970047950744629
+    },
+    {
+      "sample": 2,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.035422399044036865
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020512640476226807
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020616319179534912
+    },
+    {
+      "sample": 3,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.000987199991941452
+    },
+    {
+      "sample": 3,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0009520000219345093
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008771199733018875
+    },
+    {
+      "sample": 3,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013745280504226685
+    },
+    {
+      "sample": 3,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.01261631965637207
+    },
+    {
+      "sample": 4,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.01325376033782959
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008235840201377869
+    },
+    {
+      "sample": 4,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011798399686813355
+    },
+    {
+      "sample": 4,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0012009599804878235
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009244800359010696
+    },
+    {
+      "sample": 4,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.014158079624176026
+    },
+    {
+      "sample": 5,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013825600147247314
+    },
+    {
+      "sample": 5,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03709439992904663
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.012413760423660278
+    },
+    {
+      "sample": 5,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0010681600123643876
+    },
+    {
+      "sample": 5,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011481600254774093
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001080320030450821
+    },
+    {
+      "sample": 6,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0017664000391960145
+    },
+    {
+      "sample": 6,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013139200210571288
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02035775899887085
+    },
+    {
+      "sample": 6,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03962559938430786
+    },
+    {
+      "sample": 6,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.0373475193977356
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012121599912643432
+    },
+    {
+      "sample": 7,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013446399569511413
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.014592640399932862
+    },
+    {
+      "sample": 7,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03884416103363037
+    },
+    {
+      "sample": 7,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.04039040088653564
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012240000069141388
+    },
+    {
+      "sample": 7,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0013043199479579924
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.021119039058685302
+    },
+    {
+      "sample": 8,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03783999919891357
+    },
+    {
+      "sample": 8,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.030971839427947997
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010972800105810165
+    },
+    {
+      "sample": 8,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.001271360069513321
+    },
+    {
+      "sample": 8,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013648000359535216
+    },
+    {
+      "sample": 9,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03817343950271607
+    },
+    {
+      "sample": 9,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03617856025695801
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012137600034475325
+    },
+    {
+      "sample": 9,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.001305599957704544
+    },
+    {
+      "sample": 9,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013689599931240083
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02047424077987671
+    },
+    {
+      "sample": 10,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03516864061355591
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012249600142240525
+    },
+    {
+      "sample": 10,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0013500800728797912
+    },
+    {
+      "sample": 10,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001395519971847534
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.015152000188827515
+    },
+    {
+      "sample": 10,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.022335679531097413
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0014534400403499604
+    },
+    {
+      "sample": 11,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.001332480013370514
+    },
+    {
+      "sample": 11,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001366720050573349
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020700159072875975
+    },
+    {
+      "sample": 11,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.0388595199584961
+    },
+    {
+      "sample": 11,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03759455919265747
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001483200043439865
+    },
+    {
+      "sample": 12,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.02759360074996948
+    },
+    {
+      "sample": 12,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.034511680603027346
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020075840950012205
+    },
+    {
+      "sample": 12,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001212799996137619
+    },
+    {
+      "sample": 12,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011337599903345108
+    },
+    {
+      "sample": 13,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011539199948310851
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012284799665212632
+    },
+    {
+      "sample": 13,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.04066368103027344
+    },
+    {
+      "sample": 13,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03580703973770141
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.017095999717712404
+    },
+    {
+      "sample": 13,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013519999384880065
+    },
+    {
+      "sample": 14,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0015580800175666808
+    },
+    {
+      "sample": 14,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011763200163841248
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012035199999809265
+    },
+    {
+      "sample": 14,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.024424641132354735
+    },
+    {
+      "sample": 14,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.01761888027191162
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008408640027046204
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008746240139007568
+    },
+    {
+      "sample": 15,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001209919974207878
+    },
+    {
+      "sample": 15,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0012009599804878235
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010947199910879134
+    },
+    {
+      "sample": 15,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01378559947013855
+    },
+    {
+      "sample": 15,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.012345600128173827
+    },
+    {
+      "sample": 16,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03942015886306763
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02041183948516846
+    },
+    {
+      "sample": 16,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013289600610733032
+    },
+    {
+      "sample": 16,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0012995199859142303
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012739199399948121
+    },
+    {
+      "sample": 16,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.028823359012603758
+    },
+    {
+      "sample": 17,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.026697919368743897
+    },
+    {
+      "sample": 17,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.0128438401222229
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008414080142974853
+    },
+    {
+      "sample": 17,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001010880023241043
+    },
+    {
+      "sample": 17,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011177600175142288
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010972800105810165
+    },
+    {
+      "sample": 18,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011340799927711488
+    },
+    {
+      "sample": 18,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011894399672746658
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008575040102005004
+    },
+    {
+      "sample": 18,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.0147052800655365
+    },
+    {
+      "sample": 18,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01313439965248108
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011011199653148652
+    },
+    {
+      "sample": 19,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.000989760011434555
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.019171199798583984
+    },
+    {
+      "sample": 19,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03992288112640381
+    },
+    {
+      "sample": 19,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01884511947631836
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011049599945545197
+    },
+    {
+      "sample": 19,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011356800049543382
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008871999979019165
+    },
+    {
+      "sample": 20,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.013199679851531983
+    },
+    {
+      "sample": 20,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013178880214691163
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010867200046777725
+    },
+    {
+      "sample": 20,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.000942080020904541
+    },
+    {
+      "sample": 20,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.000979200005531311
+    },
+    {
+      "sample": 21,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.021162559986114503
+    },
+    {
+      "sample": 21,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03186847925186157
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012284799665212632
+    },
+    {
+      "sample": 21,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0013174399733543395
+    },
+    {
+      "sample": 21,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001356479972600937
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020522880554199218
+    },
+    {
+      "sample": 22,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013799999952316283
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011030399799346923
+    },
+    {
+      "sample": 22,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011564800143241882
+    },
+    {
+      "sample": 22,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009907200187444687
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00888704001903534
+    },
+    {
+      "sample": 22,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.012929600477218629
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008819200098514557
+    },
+    {
+      "sample": 23,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0009276799857616425
+    },
+    {
+      "sample": 23,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.000984639972448349
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009884480237960815
+    },
+    {
+      "sample": 23,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.0386627197265625
+    },
+    {
+      "sample": 23,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03828191995620728
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010531199723482132
+    },
+    {
+      "sample": 24,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013542079925537109
+    },
+    {
+      "sample": 24,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.012383040189743042
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008152959942817688
+    },
+    {
+      "sample": 24,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011782400310039521
+    },
+    {
+      "sample": 24,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0009296000003814697
+    },
+    {
+      "sample": 25,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0014371199905872346
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012044800072908402
+    },
+    {
+      "sample": 25,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03569247961044311
+    },
+    {
+      "sample": 25,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.021562559604644774
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0171945595741272
+    },
+    {
+      "sample": 25,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011327999830245971
+    },
+    {
+      "sample": 26,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0010438399761915206
+    },
+    {
+      "sample": 26,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.00121568001806736
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008867199718952178
+    },
+    {
+      "sample": 26,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013496960401535035
+    },
+    {
+      "sample": 26,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.012539199590682983
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008089920282363891
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008691520094871522
+    },
+    {
+      "sample": 27,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011875200271606445
+    },
+    {
+      "sample": 27,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0009404800087213516
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008883199840784072
+    },
+    {
+      "sample": 27,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013138879537582398
+    },
+    {
+      "sample": 27,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.013253439664840699
+    },
+    {
+      "sample": 28,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.03828639984130859
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02046272039413452
+    },
+    {
+      "sample": 28,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013279999792575837
+    },
+    {
+      "sample": 28,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0013020800054073334
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001263680011034012
+    },
+    {
+      "sample": 28,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.017980480194091798
+    },
+    {
+      "sample": 29,
+      "implementation": "grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013992960453033448
+    },
+    {
+      "sample": 29,
+      "implementation": "frozen_v1",
+      "policy": "eager",
+      "ms_per_call": 0.012565120458602905
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008466879725456239
+    },
+    {
+      "sample": 29,
+      "implementation": "grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011875200271606445
+    },
+    {
+      "sample": 29,
+      "implementation": "frozen_v1",
+      "policy": "graph",
+      "ms_per_call": 0.0011532799899578094
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010940799862146377
+    }
+  ],
+  "correctness_checks": 190,
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "triton": "3.5.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "device_properties": "_CudaDeviceProperties(name='NVIDIA GeForce RTX 4070 Ti', major=8, minor=9, total_memory=12281MB, multi_processor_count=60, uuid=e77953c3-ff4f-6148-ce27-8b41e1c2745b, pci_bus_id=1, pci_device_id=0, pci_domain_id=0, L2_cache_size=48MB)",
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P0, 51, 2640, 10501, 0, 895\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "setup_order": [
+    "frozen_v1",
+    "grouped",
+    "original_cuda"
+  ],
+  "actual_launches": {
+    "frozen_v1": [
+      {
+        "grid": [
+          1
+        ],
+        "parameters": {
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "num_warps": 4
+        }
+      }
+    ],
+    "grouped": [
+      {
+        "grid": [
+          1
+        ],
+        "parameters": {
+          "BATCH": 1,
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "ROWS_PER_PROGRAM": 4,
+          "num_warps": 4
+        }
+      }
+    ],
+    "original_cuda": {
+      "entry": "upstream store_cache",
+      "public_calls": 1
+    }
+  },
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 51, 2640, 10251, 12, 1133\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "policy": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        1,
+        128
+      ],
+      [
+        16,
+        64
+      ],
+      [
+        16,
+        128
+      ],
+      [
+        256,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 64
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 107,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "fresh_processes": 18,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 3240,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": {
+      "frozen_v1": 4,
+      "grouped": 4
+    },
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "frozen_v1": "trusted raw v1 launch; grid B; four warps; prevalidated arguments",
+      "grouped": "trusted raw grouped launch; grid ceil(B/4); BATCH and ROWS_PER_PROGRAM=4; four warps"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "actual C1024 input; each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+    "accepted_correctness_run": "run-20261010-133620-jeh8_est",
+    "scope": "six-case NVIDIA FP16 C1024 microbenchmark; not arbitrary-layout, model, DRAM or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance",
+    "rows_per_program": {
+      "frozen_v1": 1,
+      "grouped": 4
+    },
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "observation": "full six-case run;30 exploration remains separate; all ratios use the current same-session workers"
+  },
+  "scope": "three implementations passed this benchmark input; timings require review"
+}

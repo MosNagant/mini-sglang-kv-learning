@@ -1,0 +1,2860 @@
+{
+  "status": "CPU_HARNESS_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "timing": "NOT_IMPLEMENTED",
+  "common_fixture_controls": {
+    "status": "CPU_FIXTURE_CONTROLS_PASS",
+    "GPU": "NOT_RUN",
+    "configurations": 98,
+    "original_M04_fixtures_unchanged": 52,
+    "backing_controls": [
+      {
+        "config": {
+          "batch": 0,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 64,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 64,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 128,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 128,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 0,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 0,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "interleaved",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 0,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": []
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 1,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 2,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 3,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 4,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 5,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      },
+      {
+        "config": {
+          "batch": 17,
+          "width": 192,
+          "capacity": 32,
+          "layout": "separate",
+          "gap": 64,
+          "guard": 64,
+          "rows": [
+            31,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        "positive": "PASS",
+        "corruptions_rejected": [
+          "untouched_K",
+          "untouched_V",
+          "target_K_last",
+          "target_V_last",
+          "input_K",
+          "input_V",
+          "indices",
+          "wrong_mapping",
+          "swap_KV",
+          "input_K_gap",
+          "input_V_gap",
+          "cache_K_guard_first",
+          "cache_K_guard_last",
+          "cache_V_guard_first",
+          "cache_V_guard_last"
+        ]
+      }
+    ],
+    "m04_controls": {
+      "positive": "PASS",
+      "rejected_corruptions": [
+        "wrong_row",
+        "missing_K_last",
+        "missing_V_last",
+        "swap_KV",
+        "untouched_K",
+        "untouched_V",
+        "input_K",
+        "input_V_padding",
+        "indices"
+      ],
+      "rejected_contracts": [
+        "negative_index",
+        "upper_bound",
+        "duplicate",
+        "count",
+        "capacity",
+        "unsupported_width"
+      ],
+      "invalid_cases_submitted_to_GPU": false
+    },
+    "limitation": "No PyTorch/Triton compilation or GPU result inferred"
+  },
+  "source_mutations_rejected": [
+    "unchanged_4",
+    "warps_2",
+    "grid_changed",
+    "block_changed",
+    "index_check_removed"
+  ],
+  "prepare": "creates once; preserves learner edit; rejects changed accepted kernel",
+  "mock_nonempty_forwards": 168,
+  "mock_bad_launches_blocked": 392,
+  "limitation": "CPU fixtures, AST, file installation and launch-probe mocks only; no GPU correctness inferred"
+}

@@ -1,0 +1,40 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped/run-20261010-125938-pe9pljcg
+SCOPE=C32 FP16/int32; B1/3/4/5/17; selected layouts/gaps/guards; D64/128/192; two B0 configurations
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-grouped-results/run-20261010-125938-pe9pljcg
+GROUPED_CORRECTNESS_PASS: 34/34 = 30 nonempty submissions + four empty wrapper returns; 17 pairs
+LIMIT: small scoped matrix, not full regression or kernel B0 safety; no timing, warp-to-row mapping or independent mastery claim
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-grouped-check-20261010-125938-6Npkaj.log

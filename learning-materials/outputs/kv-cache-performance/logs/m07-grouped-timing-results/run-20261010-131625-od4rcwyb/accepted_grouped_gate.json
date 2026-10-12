@@ -1,0 +1,9 @@
+{
+  "status": "ACCEPTED_GROUPED_SOURCE_AND_STATUS_GATE_PASS",
+  "source_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped/run-20261010-125938-pe9pljcg",
+  "status_sha256": "17a0dc7fd1d76f52b3f81697a858075f11e8a97216a4476ee0e156de4ea84645",
+  "source_hashes_sha256": "0bcb686c4955deb6541e64f17d7c194be19e135d9260f292ad151b252b48380e",
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "positive_and_empty_cases": 34,
+  "scope": "accepted C32 B<=17 source/status records; actual C1024 timing inputs must pass in every worker"
+}

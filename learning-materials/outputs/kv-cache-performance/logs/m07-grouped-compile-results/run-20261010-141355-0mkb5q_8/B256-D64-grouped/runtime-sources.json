@@ -1,0 +1,12 @@
+{
+  "compiler": {
+    "status": "AVAILABLE",
+    "path": "runtime-compiler.py",
+    "sha256": "c37149275a03d063fc1c339cd76a19da1c17e3d555410372e6cad29eedef6202"
+  },
+  "jit": {
+    "status": "AVAILABLE",
+    "path": "runtime-jit.py",
+    "sha256": "ea831e03e08675654c94a21e2e6917ada4b772e97f266c2ce141e7a6645ee16d"
+  }
+}

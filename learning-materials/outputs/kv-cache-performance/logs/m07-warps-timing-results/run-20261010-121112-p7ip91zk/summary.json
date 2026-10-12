@@ -1,0 +1,263 @@
+{
+  "status": "COLLECTION_COMPLETE",
+  "plan": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 107,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "fresh_processes": 6,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": {
+      "frozen_v1": 4,
+      "candidate": 1
+    },
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "frozen_v1": "trusted raw kernel launcher with prevalidated fixed arguments",
+      "candidate": "trusted raw kernel launcher; NUM_WARPS from accepted candidate snapshot"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+    "accepted_correctness_run": "run-20261010-115255-6bwgq_qo",
+    "candidate_sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b",
+    "scope": "two-case NVIDIA FP16 microbenchmark; not all-six-case regression, model, DRAM, or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance"
+  },
+  "summary": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            0.9814399853348733,
+            1.0950399935245514,
+            0.9135999903082848
+          ],
+          "representative_us": 0.9814399853348733,
+          "round_span_pct": 18.48712156906448
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.1697600036859512,
+            0.953120030462742,
+            0.9585599973797798
+          ],
+          "representative_us": 0.9585599973797798,
+          "round_span_pct": 22.60056478628295
+        },
+        "candidate": {
+          "round_medians_us": [
+            0.9926399961113931,
+            1.1401600018143654,
+            0.9782399982213974
+          ],
+          "representative_us": 0.9926399961113931,
+          "round_span_pct": 16.312057163450977
+        },
+        "speedup_original_over_candidate": 0.9887169459014394,
+        "time_reduction_pct_vs_original": -1.141181421571913,
+        "paired_round_speedups_original_over_candidate": [
+          0.9887169459014394,
+          0.9604265995842571,
+          0.9339221376853953
+        ],
+        "speedup_v1_over_candidate": 0.9656673125552874,
+        "time_reduction_pct_vs_v1": -3.555332876895645,
+        "paired_round_speedups_v1_over_candidate": [
+          1.1784332771885226,
+          0.8359528741106669,
+          0.9798822365908171
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.973760008811952,
+            8.567839860916138,
+            8.430239856243135
+          ],
+          "representative_us": 8.567839860916138,
+          "round_span_pct": 6.343724455544386
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.934719920158386,
+            12.95744001865387,
+            12.802239656448364
+          ],
+          "representative_us": 12.934719920158386,
+          "round_span_pct": 1.1998741616633701
+        },
+        "candidate": {
+          "round_medians_us": [
+            13.09183955192566,
+            12.690399885177614,
+            13.065920472145082
+          ],
+          "representative_us": 13.065920472145082,
+          "round_span_pct": 3.0724178032758163
+        },
+        "speedup_original_over_candidate": 0.6557394773052313,
+        "time_reduction_pct_vs_original": -52.49958781031625,
+        "paired_round_speedups_original_over_candidate": [
+          0.6854468368039246,
+          0.6751434106440865,
+          0.6452082632995784
+        ],
+        "speedup_v1_over_candidate": 0.9899585679963077,
+        "time_reduction_pct_vs_v1": -1.014328511143292,
+        "paired_round_speedups_v1_over_candidate": [
+          0.9879986589245846,
+          1.0210426886380592,
+          0.9798191932777447
+        ]
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.2244800105690956,
+            1.0094400122761726,
+            0.9779199957847596
+          ],
+          "representative_us": 1.0094400122761726,
+          "round_span_pct": 24.425425165025025
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.2836799770593643,
+            1.1449600011110306,
+            1.1275200173258781
+          ],
+          "representative_us": 1.1449600011110306,
+          "round_span_pct": 13.638900885791104
+        },
+        "candidate": {
+          "round_medians_us": [
+            1.4473599940538406,
+            1.1953600123524666,
+            1.1654400080442429
+          ],
+          "representative_us": 1.1953600123524666,
+          "round_span_pct": 23.584525422996183
+        },
+        "speedup_original_over_candidate": 0.8444652672374378,
+        "time_reduction_pct_vs_original": -18.418132609689742,
+        "paired_round_speedups_original_over_candidate": [
+          0.8460092966501781,
+          0.8444652672374378,
+          0.839099386527698
+        ],
+        "speedup_v1_over_candidate": 0.9578369606473209,
+        "time_reduction_pct_vs_v1": -4.401901480621984,
+        "paired_round_speedups_v1_over_candidate": [
+          0.88691132982332,
+          0.9578369606473209,
+          0.9674629406433375
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            14.857119917869568,
+            8.043999969959259,
+            8.350879848003387
+          ],
+          "representative_us": 8.350879848003387,
+          "round_span_pct": 81.58565410971944
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            17.849279642105103,
+            12.935839891433716,
+            12.65455961227417
+          ],
+          "representative_us": 12.935839891433716,
+          "round_span_pct": 40.15757827422512
+        },
+        "candidate": {
+          "round_medians_us": [
+            16.668800115585327,
+            12.660479545593262,
+            12.620000243186949
+          ],
+          "representative_us": 12.660479545593262,
+          "round_span_pct": 31.979830288558425
+        },
+        "speedup_original_over_candidate": 0.659602175251733,
+        "time_reduction_pct_vs_original": -51.60653459312143,
+        "paired_round_speedups_original_over_candidate": [
+          0.8913131008139069,
+          0.6353629766543193,
+          0.6617178832870233
+        ],
+        "speedup_v1_over_candidate": 1.021749598413616,
+        "time_reduction_pct_vs_v1": 2.12866229136619,
+        "paired_round_speedups_v1_over_candidate": [
+          1.0708197061776525,
+          1.021749598413616,
+          1.0027384602552507
+        ]
+      }
+    }
+  ]
+}

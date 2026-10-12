@@ -1,0 +1,46 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-compile/run-20261010-141355-0mkb5q_8
+SCOPE=four independent checked calls; actual retained compiler artifacts only; no timing
+WARPS_CASE_PASS arm=frozen_v1 B=256 D=64 layout=interleaved gap=0 guard=0 submissions=1
+CHECKED_CASE=B256-D64-frozen_v1 ACTUAL_LAUNCH=[{'grid': [256], 'parameters': {'WIDTH': 64, 'SRC_ROW_STRIDE': 64, 'DST_ROW_STRIDE': 128, 'BLOCK_SIZE': 64, 'num_warps': 4}}] COMPILER_OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=B256-D64-frozen_v1 {"registers_per_thread": {"status": "AVAILABLE", "value": 14, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ptx_global_load line=43: 	ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ptx_global_load line=65: 	@%p1 ld.global.b16 { %rs3 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ptx_global_load line=81: 	@%p1 ld.global.b16 { %rs6 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ptx_global_store line=74: 	@%p2 st.global.b16 [ %rd3 + 0 ], { %rs3 };
+ACTUAL_EXCERPT arm=B256-D64-frozen_v1 kind=ptx_global_store line=87: 	@%p2 st.global.b16 [ %rd5 + 0 ], { %rs6 };
+WARPS_CASE_PASS arm=grouped B=256 D=64 layout=interleaved gap=0 guard=0 submissions=1
+CHECKED_CASE=B256-D64-grouped ACTUAL_LAUNCH=[{'grid': [64], 'parameters': {'BATCH': 256, 'WIDTH': 64, 'SRC_ROW_STRIDE': 64, 'DST_ROW_STRIDE': 128, 'BLOCK_SIZE': 64, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] COMPILER_OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=B256-D64-grouped {"registers_per_thread": {"status": "AVAILABLE", "value": 18, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 2], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ttgir_layout line=10:     %cst = arith.constant dense<256> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ttgir_layout line=11:     %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ptx_global_load line=52: 	@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ptx_global_load line=72: 	@%p1 ld.global.b32 { %r4 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ptx_global_load line=86: 	@%p1 ld.global.b32 { %r7 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ptx_global_store line=79: 	@%p1 st.global.b32 [ %rd3 + 0 ], { %r4 };
+ACTUAL_EXCERPT arm=B256-D64-grouped kind=ptx_global_store line=92: 	@%p1 st.global.b32 [ %rd5 + 0 ], { %r7 };
+WARPS_CASE_PASS arm=frozen_v1 B=256 D=128 layout=interleaved gap=0 guard=0 submissions=1
+CHECKED_CASE=B256-D128-frozen_v1 ACTUAL_LAUNCH=[{'grid': [256], 'parameters': {'WIDTH': 128, 'SRC_ROW_STRIDE': 128, 'DST_ROW_STRIDE': 256, 'BLOCK_SIZE': 128, 'num_warps': 4}}] COMPILER_OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=B256-D128-frozen_v1 {"registers_per_thread": {"status": "AVAILABLE", "value": 14, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ptx_global_load line=43: 	ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ptx_global_load line=65: 	@%p1 ld.global.b16 { %rs3 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ptx_global_load line=79: 	@%p1 ld.global.b16 { %rs6 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ptx_global_store line=72: 	@%p1 st.global.b16 [ %rd3 + 0 ], { %rs3 };
+ACTUAL_EXCERPT arm=B256-D128-frozen_v1 kind=ptx_global_store line=85: 	@%p1 st.global.b16 [ %rd5 + 0 ], { %rs6 };
+WARPS_CASE_PASS arm=grouped B=256 D=128 layout=interleaved gap=0 guard=0 submissions=1
+CHECKED_CASE=B256-D128-grouped ACTUAL_LAUNCH=[{'grid': [64], 'parameters': {'BATCH': 256, 'WIDTH': 128, 'SRC_ROW_STRIDE': 128, 'DST_ROW_STRIDE': 256, 'BLOCK_SIZE': 128, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] COMPILER_OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=B256-D128-grouped {"registers_per_thread": {"status": "AVAILABLE", "value": 18, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ttgir_layout line=10:     %cst = arith.constant dense<256> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ttgir_layout line=11:     %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ptx_global_load line=52: 	@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ptx_global_load line=73: 	@%p1 ld.global.v2.b32 { %r6, %r7 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ptx_global_load line=88: 	@%p1 ld.global.v2.b32 { %r12, %r13 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ptx_global_store line=80: 	@%p1 st.global.v2.b32 [ %rd3 + 0 ], { %r6, %r7 };
+ACTUAL_EXCERPT arm=B256-D128-grouped kind=ptx_global_store line=94: 	@%p1 st.global.v2.b32 [ %rd5 + 0 ], { %r12, %r13 };
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-grouped-compile-results/run-20261010-141355-0mkb5q_8
+GROUPED_COMPILE_OBSERVATION_READY: four checked calls; B256 D64/128; v1 grid256/grouped grid64; both4warps
+LIMIT: no timing, fresh-compilation proof, occupancy/counters, vector-width assumption or performance-cause claim
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-grouped-compile-20261010-141354-BXUaSj.log

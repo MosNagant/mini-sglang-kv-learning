@@ -1,0 +1,23 @@
+{
+  "grouped": {
+    "status": "THREE_EXPRESSIONS_REVIEWED",
+    "rows_per_program": 4,
+    "num_warps": 4,
+    "row_index_load_mask": "row_mask",
+    "kv_load_store_mask": "row_mask[:,None] & col_mask[None,:]",
+    "scope": "narrow AST preflight, not a general proof or GPU memory-safety result",
+    "ownership": "learner fills row numbers, row predicate and grid; coach supplies 2-D address/mask scaffold"
+  },
+  "actual_ownership": "coach demonstrated the three grouped expressions; learner applied them and ran accepted correctness; independent authorship/mastery not inferred",
+  "frozen_sources": {
+    "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+    "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+    "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+  },
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "pinned_30": {
+    "30-compare-kv-grouped.py": "f575c7b08d321639386bc1e62544878ca7098e0eec1e29579f5e9cde7ca16e5b",
+    "30-compare-kv-grouped.sh": "0e1b014ca1ed78686f3e611b5185ea554a8074a1be2491c3a662ab5278992f70"
+  }
+}

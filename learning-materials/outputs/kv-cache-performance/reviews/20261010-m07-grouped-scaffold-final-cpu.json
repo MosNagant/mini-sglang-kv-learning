@@ -1,0 +1,435 @@
+{
+  "status": "CPU_GROUPED_HARNESS_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "configurations": 17,
+  "backing_controls": [
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache",
+        "k",
+        "v",
+        "indices"
+      ]
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache"
+      ]
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "positive": "PASS",
+      "corruptions_rejected": [
+        "cache"
+      ]
+    }
+  ],
+  "source_changes_rejected": [
+    "unfilled_template",
+    "wrong_row_numbers",
+    "wrong_row_mask",
+    "floor_grid",
+    "num_warps_changed",
+    "rows_per_program_changed",
+    "index_row_mask_removed",
+    "kv_row_mask_removed",
+    "column_mask_changed",
+    "source_stride_changed",
+    "store_mask_removed",
+    "changed_prior_source"
+  ],
+  "mock_nonempty_forwards": 15,
+  "mock_bad_launches_blocked": 53,
+  "installation": "unfilled template created once; learner edit retained; frozen sources protected",
+  "limitation": "AST, fixtures, file installation and launch-probe mocks only; no Triton compilation or GPU result",
+  "source_sha256": {
+    "29-check-kv-grouped.py": "3a8edafb19ac86eaba7769cbb77be24a4c7490e93b8dd322d882f8e4dadfffdb",
+    "29-check-kv-grouped.sh": "f79597a47d874520ffe08bb0cd0594a861ac0906482982d0f9a7a5346a677148",
+    "29-triton-store-grouped.py": "86890437f0125140db796db80109497a793e97e9ba7ab48ed0335f7189310646"
+  }
+}

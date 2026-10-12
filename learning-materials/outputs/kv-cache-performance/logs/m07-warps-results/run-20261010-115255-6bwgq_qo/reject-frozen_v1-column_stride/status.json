@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "column_stride",
+  "rejection": {
+    "type": "ValueError",
+    "message": "COLUMN_STRIDE: k"
+  }
+}

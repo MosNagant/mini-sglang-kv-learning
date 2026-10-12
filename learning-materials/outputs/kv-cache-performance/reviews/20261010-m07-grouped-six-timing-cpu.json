@@ -1,0 +1,935 @@
+{
+  "status": "CPU_SIX_CASE_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "WSL": "NOT_RUN",
+  "source_sha256": {
+    "32-compare-kv-grouped-full.py": "75b55e6bcd966904ea000f854aa0e0822f6fae2a8adee6133c68794e45e50a97",
+    "32-compare-kv-grouped-full.sh": "c60b498630fa45c96f0f57c39fbd5ead5089c8477225b98cf7c17c7ffabc5dda",
+    "32-grouped-six-timing-cpu-test.py": "6c10145d7b16edc1b2daafefff49f9f906dac6746d593f3186dc3bc52f850d2c"
+  },
+  "worker_equivalence": "32.worker AST equals accepted30.worker AST including all check/capture/timing/failure paths; local six-case globals used, no module monkeypatch",
+  "plan": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        1,
+        128
+      ],
+      [
+        16,
+        64
+      ],
+      [
+        16,
+        128
+      ],
+      [
+        256,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 16,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 64
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 107,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "fresh_processes": 18,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 3240,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": {
+      "frozen_v1": 4,
+      "grouped": 4
+    },
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "frozen_v1": "trusted raw v1 launch; grid B; four warps; prevalidated arguments",
+      "grouped": "trusted raw grouped launch; grid ceil(B/4); BATCH and ROWS_PER_PROGRAM=4; four warps"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "actual C1024 input; each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+    "accepted_correctness_run": "run-20261010-133620-jeh8_est",
+    "scope": "six-case NVIDIA FP16 C1024 microbenchmark; not arbitrary-layout, model, DRAM or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance",
+    "rows_per_program": {
+      "frozen_v1": 1,
+      "grouped": 4
+    },
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "observation": "full six-case run;30 exploration remains separate; all ratios use the current same-session workers"
+  },
+  "order_positions": {
+    "1": "each of six arm/policy items occupies every position five times",
+    "2": "each of six arm/policy items occupies every position five times",
+    "3": "each of six arm/policy items occupies every position five times"
+  },
+  "synthetic_summary": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 16,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 16,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "grouped": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_grouped": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_grouped": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_grouped": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_grouped": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    }
+  ],
+  "negative_controls_rejected": [
+    "missing_worker",
+    "duplicate_worker",
+    "noncollected",
+    "unplanned_case",
+    "missing_correctness",
+    "wrong_interval_calls",
+    "wrong_grouped_grid",
+    "wrong_grouped_warps",
+    "wrong_grouped_batch",
+    "short_samples",
+    "swapped_order",
+    "raw_sample_mismatch",
+    "invalid_value_nan",
+    "invalid_value_inf",
+    "invalid_value_0",
+    "invalid_value_-1",
+    "unplanned_B2_D64",
+    "unplanned_D192",
+    "unplanned_round",
+    "fixture_B1_D64_target_K",
+    "fixture_B1_D64_target_V",
+    "fixture_B1_D64_untouched_cache",
+    "fixture_B1_D64_input_K",
+    "fixture_B1_D64_input_V",
+    "fixture_B1_D64_indices",
+    "fixture_B1_D128_target_K",
+    "fixture_B1_D128_target_V",
+    "fixture_B1_D128_untouched_cache",
+    "fixture_B1_D128_input_K",
+    "fixture_B1_D128_input_V",
+    "fixture_B1_D128_indices",
+    "fixture_B16_D64_target_K",
+    "fixture_B16_D64_target_V",
+    "fixture_B16_D64_untouched_cache",
+    "fixture_B16_D64_input_K",
+    "fixture_B16_D64_input_V",
+    "fixture_B16_D64_indices",
+    "fixture_B16_D64_wrong_rows0_8",
+    "fixture_B16_D128_target_K",
+    "fixture_B16_D128_target_V",
+    "fixture_B16_D128_untouched_cache",
+    "fixture_B16_D128_input_K",
+    "fixture_B16_D128_input_V",
+    "fixture_B16_D128_indices",
+    "fixture_B16_D128_wrong_rows0_8",
+    "fixture_B256_D64_target_K",
+    "fixture_B256_D64_target_V",
+    "fixture_B256_D64_untouched_cache",
+    "fixture_B256_D64_input_K",
+    "fixture_B256_D64_input_V",
+    "fixture_B256_D64_indices",
+    "fixture_B256_D64_wrong_rows0_8",
+    "fixture_B256_D128_target_K",
+    "fixture_B256_D128_target_V",
+    "fixture_B256_D128_untouched_cache",
+    "fixture_B256_D128_input_K",
+    "fixture_B256_D128_input_V",
+    "fixture_B256_D128_indices",
+    "fixture_B256_D128_wrong_rows0_8",
+    "fixture_unplanned_shape",
+    "fixture_wrong_dtype",
+    "gate_nonpass",
+    "gate_missing_full_case",
+    "gate_grouped_snapshot_hash",
+    "gate_executed31_helper_changed",
+    "gate31_runner_manifest_pin",
+    "gate_missing_invalid",
+    "nonzero_submission",
+    "invalid_runtime_error",
+    "invalid_launch_record",
+    "invalid_argument_view_changed",
+    "worker_preflight_failure_saved"
+  ],
+  "accepted_gate": {
+    "status": "ACCEPTED_31_FULL_EVIDENCE_GATE_PASS",
+    "source_run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m07-grouped-full-results\\run-20261010-133620-jeh8_est",
+    "status_sha256": "27db08f86e26a9f6b398d0709896a2d23bb76b13cd86ff2059078cdbff7cfa9a",
+    "source_hashes_sha256": "f88b192a9d1d6a8b2b5cba3664573bec44bec772edae61df4c77900d698d8900",
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "positive_and_empty_cases": 196,
+    "matched_pairs": 98,
+    "nonempty_calls": 168,
+    "empty_returns": 28,
+    "invalid_rejections": 36,
+    "invalid_submissions": 0,
+    "scope": "31 saved source/status and NPZ full backings rechecked on CPU; invalid checks cover five argument views; actual C1024 timing inputs checked again per worker"
+  },
+  "fixture_controls": [
+    {
+      "batch": 1,
+      "width": 64,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            1
+          ],
+          "parameters": {
+            "BATCH": 1,
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            1
+          ],
+          "parameters": {
+            "BATCH": 1,
+            "WIDTH": 128,
+            "SRC_ROW_STRIDE": 128,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 128,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "batch": 16,
+      "width": 64,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            4
+          ],
+          "parameters": {
+            "BATCH": 16,
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "batch": 16,
+      "width": 128,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            4
+          ],
+          "parameters": {
+            "BATCH": 16,
+            "WIDTH": 128,
+            "SRC_ROW_STRIDE": 128,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 128,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            64
+          ],
+          "parameters": {
+            "BATCH": 256,
+            "WIDTH": 64,
+            "SRC_ROW_STRIDE": 64,
+            "DST_ROW_STRIDE": 128,
+            "BLOCK_SIZE": 64,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "status": "CPU_ORACLE_CONTROLS_PASS",
+      "raw_grouped_call": [
+        {
+          "grid": [
+            64
+          ],
+          "parameters": {
+            "BATCH": 256,
+            "WIDTH": 128,
+            "SRC_ROW_STRIDE": 128,
+            "DST_ROW_STRIDE": 256,
+            "BLOCK_SIZE": 128,
+            "ROWS_PER_PROGRAM": 4,
+            "num_warps": 4
+          }
+        }
+      ]
+    }
+  ],
+  "failure_control": "actual worker retains FAILED result and first traceback before GPU import",
+  "limitation": "CPU source/record/fixture/summary controls and saved31 evidence reread; no new GPU correctness or timing result"
+}

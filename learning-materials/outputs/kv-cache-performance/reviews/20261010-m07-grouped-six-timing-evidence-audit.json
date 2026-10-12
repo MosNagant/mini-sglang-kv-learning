@@ -1,0 +1,652 @@
+{
+  "status": "INDEPENDENT_CPU_GROUPED_SIX_TIMING_EVIDENCE_AUDIT_PASS",
+  "review_date": "2026-10-10",
+  "reviewer": "m07_result_audit",
+  "reviewed_run": "outputs/kv-cache-performance/logs/m07-grouped-six-timing-results/run-20261010-134931-4l7bljlh",
+  "new_gpu_runs": 0,
+  "method": "Offline source/JSON/NPZ inspection; independently recomputed cache expectations, full saved values, measurement order, process/arm medians, ratio-of-medians, paired ratios and exact latency change percentages. No WSL/GPU execution.",
+  "source_hashes_matched": 52,
+  "accepted_31_gate_matches": true,
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "counts": {
+    "worker_results": 18,
+    "interval_averages": 3240,
+    "calls_per_interval": 100,
+    "reported_checks_per_worker": 190,
+    "reported_checks_total": 3420,
+    "before_npz_files": 18,
+    "before_arrays_checked": 90,
+    "before_array_elements": 7394022,
+    "after_npz_files": 126,
+    "after_arrays_checked": 504,
+    "after_array_elements": 26985546
+  },
+  "checks_explanation": "190 per worker, not192: 3arms x(initial+resetGraph+warmup)=9, plus180 interval checks, plus1 final. Seven after snapshots per worker persist; intermediate180 checks have counter/code evidence but no separate arrays.",
+  "launch_review": "Each current worker records original CUDA upstream call plus frozen Triton grid B and grouped Triton grid ceil(B/4). Both Triton arms use four warps; grouped RPP4. C1024 contiguous FP16 input and interleaved cache with source strideD/cache stride2D; int32 indices0..B-1.",
+  "order_review": "18 distinct worker command/result pairs in seeded six-case schedule; three-arm setup order rotates by round; six arm/policy items each occupy each of six positions five times per worker.",
+  "array_review": "All three initial calls, all three reset-cache Graph replays and final state per worker match independently recomputed complete cache; untouched rows/input arrays/indices unchanged; before values match across rounds of the same case.",
+  "statistic": "Median of30 interval averages per process, then median of3 process medians per implementation/policy. Representative ratios divide those medians; median paired ratios are computed separately and can have a different direction.",
+  "latency_formula": "latency reduction%=100*(1-grouped/reference); negative reduction means increased time. (reference/grouped-1)*100 is not latency reduction%.",
+  "results": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            0.9665600210428237,
+            1.1320000141859055,
+            1.1476800218224525
+          ],
+          "representative_us": 1.1320000141859055,
+          "round_span_pct": 15.999999868364311
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.1439999938011172,
+            1.210720017552376,
+            1.1352000012993813
+          ],
+          "representative_us": 1.1439999938011172,
+          "round_span_pct": 6.601400057885298
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.1468799784779549,
+            1.2116799876093864,
+            1.1872000247240064
+          ],
+          "representative_us": 1.1872000247240064,
+          "round_span_pct": 5.458221679745662
+        },
+        "ratio_original_over_grouped": 0.9535040352185525,
+        "grouped_time_reduction_pct_vs_original": -4.876325958158123,
+        "grouped_time_increase_pct_vs_original": 4.876325958158123,
+        "paired_round_ratios_original_over_grouped": [
+          0.8427734716631491,
+          0.934240084644224,
+          0.9667115885457118
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.934240084644224,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9636118345491678,
+        "grouped_time_reduction_pct_vs_v1": -3.7762264997354134,
+        "grouped_time_increase_pct_vs_v1": 3.7762264997354134,
+        "paired_round_ratios_v1_over_grouped": [
+          0.997488852599328,
+          0.9992077363108849,
+          0.9561994420976248
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.997488852599328,
+        "grouped_wins_vs_v1": 0
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.55103999376297,
+            9.529919922351839,
+            9.360959827899933
+          ],
+          "representative_us": 9.360959827899933,
+          "round_span_pct": 10.457046569854514
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            13.058080077171324,
+            13.131839632987978,
+            19.43615972995758
+          ],
+          "representative_us": 13.131839632987978,
+          "round_span_pct": 48.56958225993054
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.445760011672972,
+            14.459680318832397,
+            18.923679590225223
+          ],
+          "representative_us": 14.459680318832397,
+          "round_span_pct": 37.884098802777594
+        },
+        "ratio_original_over_grouped": 0.6473835950375851,
+        "grouped_time_reduction_pct_vs_original": -54.467924066247456,
+        "grouped_time_increase_pct_vs_original": 54.467924066247456,
+        "paired_round_ratios_original_over_grouped": [
+          0.6359655375627232,
+          0.6590685072020575,
+          0.4946691146015394
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.6359655375627232,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9081694299897467,
+        "grouped_time_reduction_pct_vs_v1": -10.11161210428433,
+        "grouped_time_increase_pct_vs_v1": 10.11161210428433,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9711671237501575,
+          0.9081694299897467,
+          1.0270814213107409
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9711671237501575,
+        "grouped_wins_vs_v1": 1
+      }
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.1992000043392181,
+            1.103999987244606,
+            1.2209600210189817
+          ],
+          "representative_us": 1.1992000043392181,
+          "round_span_pct": 9.753171560303896
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.255519986152649,
+            1.2009599804878235,
+            1.28431998193264
+          ],
+          "representative_us": 1.255519986152649,
+          "round_span_pct": 6.639480244377527
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.3027200102806091,
+            1.2113599851727486,
+            1.345280036330223
+          ],
+          "representative_us": 1.3027200102806091,
+          "round_span_pct": 10.280033322634525
+        },
+        "ratio_original_over_grouped": 0.92053549103073,
+        "grouped_time_reduction_pct_vs_original": -8.632422078620028,
+        "grouped_time_increase_pct_vs_original": 8.632422078620028,
+        "paired_round_ratios_original_over_grouped": [
+          0.92053549103073,
+          0.9113723424562087,
+          0.9075880025318945
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.9113723424562087,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9637680977067411,
+        "grouped_time_reduction_pct_vs_v1": -3.7594004594540653,
+        "grouped_time_increase_pct_vs_v1": 3.7594004594540653,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9637680977067411,
+          0.9914146044014802,
+          0.9546859741085021
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9637680977067411,
+        "grouped_wins_vs_v1": 0
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            20.37328004837036,
+            16.12399995326996,
+            20.38848042488098
+          ],
+          "representative_us": 20.37328004837036,
+          "round_span_pct": 20.931732452929857
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            36.80383920669556,
+            26.322879791259766,
+            39.08336043357849
+          ],
+          "representative_us": 36.80383920669556,
+          "round_span_pct": 34.6716019778645
+        },
+        "grouped": {
+          "round_medians_us": [
+            28.379039764404297,
+            27.14576005935669,
+            38.483840227127075
+          ],
+          "representative_us": 28.379039764404297,
+          "round_span_pct": 39.9523037491624
+        },
+        "ratio_original_over_grouped": 0.7178988513178827,
+        "grouped_time_reduction_pct_vs_original": -39.29538933851895,
+        "grouped_time_increase_pct_vs_original": 39.29538933851895,
+        "paired_round_ratios_original_over_grouped": [
+          0.7178988513178827,
+          0.5939785777968035,
+          0.5297932925755481
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.5939785777968035,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 1.2968669663326118,
+        "grouped_time_reduction_pct_vs_v1": 22.891088603491603,
+        "grouped_time_increase_pct_vs_v1": -22.891088603491603,
+        "paired_round_ratios_v1_over_grouped": [
+          1.2968669663326118,
+          0.969686600548387,
+          1.015578492242799
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 1.015578492242799,
+        "grouped_wins_vs_v1": 2
+      }
+    },
+    {
+      "batch": 16,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.1033599823713303,
+            1.1078400164842606,
+            1.0929600149393082
+          ],
+          "representative_us": 1.1033599823713303,
+          "round_span_pct": 1.3486080502006645
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.1724799871444702,
+            1.1588799953460693,
+            1.1574399843811989
+          ],
+          "representative_us": 1.1588799953460693,
+          "round_span_pct": 1.2978050206811989
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.1796800047159195,
+            1.2033599987626076,
+            1.1688000336289406
+          ],
+          "representative_us": 1.1796800047159195,
+          "round_span_pct": 2.929605062009119
+        },
+        "ratio_original_over_grouped": 0.9353044706704442,
+        "grouped_time_reduction_pct_vs_original": -6.91705549992514,
+        "grouped_time_increase_pct_vs_original": 6.91705549992514,
+        "paired_round_ratios_original_over_grouped": [
+          0.9353044706704442,
+          0.9206222723236867,
+          0.9351129222214676
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.9351129222214676,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9823680919514618,
+        "grouped_time_reduction_pct_vs_v1": -1.7948372094936937,
+        "grouped_time_increase_pct_vs_v1": 1.7948372094936937,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9938966350682674,
+          0.9630368273315748,
+          0.9902805878500273
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9902805878500273,
+        "grouped_wins_vs_v1": 0
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.74864012002945,
+            16.554239988327026,
+            9.774720072746277
+          ],
+          "representative_us": 9.774720072746277,
+          "round_span_pct": 79.85497088618455
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            13.28607976436615,
+            31.598880290985107,
+            15.073280334472656
+          ],
+          "representative_us": 15.073280334472656,
+          "round_span_pct": 121.49180616469731
+        },
+        "grouped": {
+          "round_medians_us": [
+            14.37183976173401,
+            27.98480033874512,
+            15.781440138816833
+          ],
+          "representative_us": 15.781440138816833,
+          "round_span_pct": 86.25930496373383
+        },
+        "ratio_original_over_grouped": 0.6193807400823882,
+        "grouped_time_reduction_pct_vs_original": -61.45158144035654,
+        "grouped_time_increase_pct_vs_original": 61.45158144035654,
+        "paired_round_ratios_original_over_grouped": [
+          0.6087348777240957,
+          0.591543973440739,
+          0.6193807400823882
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.6087348777240957,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9551270480947838,
+        "grouped_time_reduction_pct_vs_v1": -4.698113407501703,
+        "grouped_time_increase_pct_vs_v1": 4.698113407501703,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9244522611323034,
+          1.129144389400423,
+          0.9551270480947838
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9551270480947838,
+        "grouped_wins_vs_v1": 1
+      }
+    },
+    {
+      "batch": 16,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.0950399935245514,
+            1.1126399785280228,
+            0.997919999063015
+          ],
+          "representative_us": 1.0950399935245514,
+          "round_span_pct": 10.476327818472111
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            0.9864000231027603,
+            1.1585599929094312,
+            0.9798400104045868
+          ],
+          "representative_us": 0.9864000231027603,
+          "round_span_pct": 18.118408183190596
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.1527999863028526,
+            1.175679974257946,
+            1.1014400050044062
+          ],
+          "representative_us": 1.1527999863028526,
+          "round_span_pct": 6.4399696509049225
+        },
+        "ratio_original_over_grouped": 0.9498959112902634,
+        "grouped_time_reduction_pct_vs_original": -5.274692533593406,
+        "grouped_time_increase_pct_vs_original": 5.274692533593406,
+        "paired_round_ratios_original_over_grouped": [
+          0.9498959112902634,
+          0.9463799697960219,
+          0.9060139404134162
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.9463799697960219,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.8556558247942438,
+        "grouped_time_reduction_pct_vs_v1": -16.869420042861982,
+        "grouped_time_increase_pct_vs_v1": 16.869420042861982,
+        "paired_round_ratios_v1_over_grouped": [
+          0.8556558247942438,
+          0.9854382300257173,
+          0.8895990757124053
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.8895990757124053,
+        "grouped_wins_vs_v1": 0
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.688639998435974,
+            8.921439945697784,
+            8.50816011428833
+          ],
+          "representative_us": 8.688639998435974,
+          "round_span_pct": 4.756553747005839
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.979039549827576,
+            13.024479746818542,
+            12.876160144805908
+          ],
+          "representative_us": 12.979039549827576,
+          "round_span_pct": 1.142762539887666
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.529759645462036,
+            13.528480529785156,
+            13.5835200548172
+          ],
+          "representative_us": 13.529759645462036,
+          "round_span_pct": 0.40680342056559776
+        },
+        "ratio_original_over_grouped": 0.6421873134568357,
+        "grouped_time_reduction_pct_vs_original": -55.71780679021692,
+        "grouped_time_increase_pct_vs_original": 55.71780679021692,
+        "paired_round_ratios_original_over_grouped": [
+          0.6421873134568357,
+          0.6594561692317019,
+          0.6263590056151191
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.6421873134568357,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9592956482549803,
+        "grouped_time_reduction_pct_vs_v1": -4.24314983801537,
+        "grouped_time_increase_pct_vs_v1": 4.24314983801537,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9592956482549803,
+          0.9627452039527297,
+          0.947925139642987
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9592956482549803,
+        "grouped_wins_vs_v1": 0
+      }
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.1766399815678596,
+            1.1735999956727028,
+            1.1134400218725204
+          ],
+          "representative_us": 1.1735999956727028,
+          "round_span_pct": 5.385136326548232
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.143679991364479,
+            1.176160015165806,
+            1.2742399796843529
+          ],
+          "representative_us": 1.176160015165806,
+          "round_span_pct": 11.100529403855687
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.114719994366169,
+            1.324479952454567,
+            1.0668800026178362
+          ],
+          "representative_us": 1.114719994366169,
+          "round_span_pct": 23.108937772593052
+        },
+        "ratio_original_over_grouped": 1.0528204406524646,
+        "grouped_time_reduction_pct_vs_original": 5.017041711284609,
+        "grouped_time_increase_pct_vs_original": -5.017041711284609,
+        "paired_round_ratios_original_over_grouped": [
+          1.0555475702549846,
+          0.8860836236122346,
+          1.043641289686224
+        ],
+        "median_of_paired_ratios_original_over_grouped": 1.043641289686224,
+        "grouped_wins_vs_original": 2,
+        "ratio_v1_over_grouped": 1.0551169989864333,
+        "grouped_time_reduction_pct_vs_v1": 5.2237807787553265,
+        "grouped_time_increase_pct_vs_v1": -5.2237807787553265,
+        "paired_round_ratios_v1_over_grouped": [
+          1.0259796156386132,
+          0.8880164724170495,
+          1.1943611058016939
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 1.0259796156386132,
+        "grouped_wins_vs_v1": 2
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.71520012617111,
+            19.418559670448303,
+            11.304479837417603
+          ],
+          "representative_us": 11.304479837417603,
+          "round_span_pct": 94.68245950467607
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.875840067863464,
+            23.02240014076233,
+            18.90208065509796
+          ],
+          "representative_us": 18.90208065509796,
+          "round_span_pct": 53.679593575124755
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.867520093917847,
+            26.896799802780155,
+            15.651520490646362
+          ],
+          "representative_us": 15.651520490646362,
+          "round_span_pct": 83.24609558955532
+        },
+        "ratio_original_over_grouped": 0.7222608080903941,
+        "grouped_time_reduction_pct_vs_original": -38.45414132935283,
+        "grouped_time_increase_pct_vs_original": 38.45414132935283,
+        "paired_round_ratios_original_over_grouped": [
+          0.6284613302989558,
+          0.7219654313090856,
+          0.7222608080903941
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.7219654313090856,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 1.2076833472118056,
+        "grouped_time_reduction_pct_vs_v1": 17.196837870728853,
+        "grouped_time_increase_pct_vs_v1": -17.196837870728853,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9284890146660524,
+          0.8559531360449301,
+          1.2076833472118056
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9284890146660524,
+        "grouped_wins_vs_v1": 1
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.173759996891022,
+            0.9995199739933013,
+            1.2838400155305865
+          ],
+          "representative_us": 1.173759996891022,
+          "round_span_pct": 24.223013417595876
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.12271998077631,
+            1.1219200119376183,
+            1.355680003762245
+          ],
+          "representative_us": 1.12271998077631,
+          "round_span_pct": 20.820863245258384
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.1004800349473953,
+            1.0944000259041786,
+            1.3681600242853165
+          ],
+          "representative_us": 1.1004800349473953,
+          "round_span_pct": 24.87641662615206
+        },
+        "ratio_original_over_grouped": 1.066589088049316,
+        "grouped_time_reduction_pct_vs_original": 6.243181070894033,
+        "grouped_time_increase_pct_vs_original": -6.243181070894033,
+        "paired_round_ratios_original_over_grouped": [
+          1.066589088049316,
+          0.9133040481861386,
+          0.9383697760071772
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.9383697760071772,
+        "grouped_wins_vs_original": 1,
+        "ratio_v1_over_grouped": 1.0202093133202346,
+        "grouped_time_reduction_pct_vs_v1": 1.9808987289543722,
+        "grouped_time_increase_pct_vs_v1": -1.9808987289543722,
+        "paired_round_ratios_v1_over_grouped": [
+          1.0202093133202346,
+          1.025146185473363,
+          0.9908782450140723
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 1.0202093133202346,
+        "grouped_wins_vs_v1": 2
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.918720185756682,
+            9.622079730033876,
+            12.083680033683777
+          ],
+          "representative_us": 9.622079730033876,
+          "round_span_pct": 32.892679511355
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            13.411200046539307,
+            14.202560186386107,
+            23.43775987625122
+          ],
+          "representative_us": 14.202560186386107,
+          "round_span_pct": 70.59684801985837
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.98672044277191,
+            14.589120149612427,
+            23.408639430999756
+          ],
+          "representative_us": 14.589120149612427,
+          "round_span_pct": 64.58181776286315
+        },
+        "ratio_original_over_grouped": 0.6595380414554675,
+        "grouped_time_reduction_pct_vs_original": -51.62127688543965,
+        "grouped_time_increase_pct_vs_original": 51.62127688543965,
+        "paired_round_ratios_original_over_grouped": [
+          0.6376562842053313,
+          0.6595380414554675,
+          0.5162059960512492
+        ],
+        "median_of_paired_ratios_original_over_grouped": 0.6376562842053313,
+        "grouped_wins_vs_original": 0,
+        "ratio_v1_over_grouped": 0.9735035451581644,
+        "grouped_time_reduction_pct_vs_v1": -2.721762542480599,
+        "grouped_time_increase_pct_vs_v1": 2.721762542480599,
+        "paired_round_ratios_v1_over_grouped": [
+          0.9588523701043855,
+          0.9735035451581644,
+          1.0012440041779147
+        ],
+        "median_of_paired_ratios_v1_over_grouped": 0.9735035451581644,
+        "grouped_wins_vs_v1": 1
+      }
+    }
+  ],
+  "ownership": "Grouped code was accepted after coach demonstration and learner application; no independent authorship or mastery inferred.",
+  "limitations": [
+    "Only six FP16 C1024 repeated-address NVIDIA microbenchmark cases, with B1/16/256 and D64/128, interleaved cache/gap0 and contiguous unique indices.",
+    "Graph primary; Eager includes host submission path effects. No confidence intervals or hardware counters establish significance or cause.",
+    "B256/D128 representative original/grouped exceeds1, but only1/3 paired rounds wins; paired-ratio median is below1. Do not describe this as a stable win against the original.",
+    "No arbitrary-layout, D192 performance, model, DRAM, request-P99 or AMD claims."
+  ],
+  "blocking_findings": []
+}

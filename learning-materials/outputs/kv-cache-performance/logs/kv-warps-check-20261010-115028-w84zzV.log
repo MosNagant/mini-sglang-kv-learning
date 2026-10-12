@@ -1,0 +1,4 @@
+EXISTING_FILE_KEPT=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_candidate.py
+CANDIDATE_PATH=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_candidate.py
+PREPARE_COMPLETE: candidate retained; learner changes NUM_WARPS 4 to 1; GPU NOT_RUN
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-warps-check-20261010-115028-w84zzV.log

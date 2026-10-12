@@ -1,0 +1,26 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-timing/run-20261010-131625-od4rcwyb
+SCOPE=three arms; two cases x three fresh processes; Graph primary
+RUN round=1/3 B=256 D=128 three implementations
+COLLECTED graph original=1.041120 us v1=1.179040 us grouped=1.080160 us v1/grouped=1.0915x original/grouped=0.9639x
+COLLECTED eager original=9.041440 us v1=14.095200 us grouped=13.906560 us v1/grouped=1.0136x original/grouped=0.6502x
+RUN round=1/3 B=1 D=64 three implementations
+COLLECTED graph original=0.911200 us v1=0.949440 us grouped=1.005600 us v1/grouped=0.9442x original/grouped=0.9061x
+COLLECTED eager original=8.364800 us v1=12.711360 us grouped=13.678720 us v1/grouped=0.9293x original/grouped=0.6115x
+RUN round=2/3 B=1 D=64 three implementations
+COLLECTED graph original=1.089600 us v1=1.143520 us grouped=1.222080 us v1/grouped=0.9357x original/grouped=0.8916x
+COLLECTED eager original=9.261120 us v1=12.691520 us grouped=13.477120 us v1/grouped=0.9417x original/grouped=0.6872x
+RUN round=2/3 B=256 D=128 three implementations
+COLLECTED graph original=1.177760 us v1=1.177920 us grouped=1.125280 us v1/grouped=1.0468x original/grouped=1.0466x
+COLLECTED eager original=9.527840 us v1=14.374240 us grouped=13.876640 us v1/grouped=1.0359x original/grouped=0.6866x
+RUN round=3/3 B=1 D=64 three implementations
+COLLECTED graph original=1.109280 us v1=1.165760 us grouped=1.206880 us v1/grouped=0.9659x original/grouped=0.9191x
+COLLECTED eager original=10.302880 us v1=12.774880 us grouped=13.989600 us v1/grouped=0.9132x original/grouped=0.7365x
+RUN round=3/3 B=256 D=128 three implementations
+COLLECTED graph original=0.978240 us v1=1.128960 us grouped=1.063200 us v1/grouped=1.0619x original/grouped=0.9201x
+COLLECTED eager original=10.147840 us v1=13.003520 us grouped=13.894080 us v1/grouped=0.9359x original/grouped=0.7304x
+GRAPH_SUMMARY B=1 D=64 v1/grouped=0.9475x original/grouped=0.9028x
+GRAPH_SUMMARY B=256 D=128 v1/grouped=1.0905x original/grouped=0.9639x
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-grouped-timing-results/run-20261010-131625-od4rcwyb
+GROUPED_TIMING_COLLECTION_COMPLETE: 6 processes; 1080 interval averages; review all rounds before a performance claim
+LIMIT: two-case reused-address FP16 microbenchmark; Graph/Eager separate; not full regression, model or AMD speedup
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-grouped-timing-20261010-131625-K3LvSM.log

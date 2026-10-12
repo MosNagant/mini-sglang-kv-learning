@@ -1,0 +1,268 @@
+{
+  "status": "COLLECTION_COMPLETE",
+  "plan": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 107,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "fresh_processes": 6,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": {
+      "frozen_v1": 4,
+      "grouped": 4
+    },
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "frozen_v1": "trusted raw v1 launch; grid B; four warps; prevalidated arguments",
+      "grouped": "trusted raw grouped launch; grid ceil(B/4); BATCH and ROWS_PER_PROGRAM=4; four warps"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "actual C1024 input; each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+    "accepted_correctness_run": "run-20261010-125938-pe9pljcg",
+    "scope": "two-case NVIDIA FP16 grouped microbenchmark; not all-six-case regression, model, DRAM, or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance",
+    "rows_per_program": {
+      "frozen_v1": 1,
+      "grouped": 4
+    },
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "observation": "same policy as27; this run contains original/frozen_v1/grouped only; no cross-run speedup ratio"
+  },
+  "summary": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            0.9112000092864037,
+            1.0895999893546104,
+            1.109279990196228
+          ],
+          "representative_us": 1.0895999893546104,
+          "round_span_pct": 18.179146736881915
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            0.9494400024414062,
+            1.1435199901461601,
+            1.1657599732279778
+          ],
+          "representative_us": 1.1435199901461601,
+          "round_span_pct": 18.91702573200512
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.005600020289421,
+            1.2220800295472145,
+            1.2068800255656242
+          ],
+          "representative_us": 1.2068800255656242,
+          "round_span_pct": 17.937160668173004
+        },
+        "speedup_original_over_grouped": 0.9028237822097945,
+        "time_reduction_pct_vs_original": -10.763586394717283,
+        "paired_round_speedups_original_over_grouped": [
+          0.9061256870541349,
+          0.891594628019829,
+          0.9191302919081337
+        ],
+        "speedup_v1_over_grouped": 0.9475009660634913,
+        "time_reduction_pct_vs_v1": -5.5407894890727505,
+        "paired_round_speedups_v1_over_grouped": [
+          0.9441527280082478,
+          0.9357161253750614,
+          0.9659286329489338
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.364799916744232,
+            9.26112025976181,
+            10.302879810333252
+          ],
+          "representative_us": 9.26112025976181,
+          "round_span_pct": 20.92705676234104
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.711359858512877,
+            12.69152045249939,
+            12.774879932403563
+          ],
+          "representative_us": 12.711359858512877,
+          "round_span_pct": 0.6557872708508576
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.678719997406006,
+            13.47711980342865,
+            13.989599943161009
+          ],
+          "representative_us": 13.678719997406006,
+          "round_span_pct": 3.7465504069791935
+        },
+        "speedup_original_over_grouped": 0.6770458245740876,
+        "time_reduction_pct_vs_original": -47.700489937896705,
+        "paired_round_speedups_original_over_grouped": [
+          0.611519200504909,
+          0.6871735500493016,
+          0.7364670792726953
+        ],
+        "speedup_v1_over_grouped": 0.9292799224579071,
+        "time_reduction_pct_vs_v1": -7.610201816804696,
+        "paired_round_speedups_v1_over_grouped": [
+          0.9292799224579071,
+          0.9417086616140787,
+          0.9131697821458234
+        ]
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            1.0411199927330017,
+            1.1777599900960924,
+            0.9782399982213974
+          ],
+          "representative_us": 1.0411199927330017,
+          "round_span_pct": 19.163976608588914
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            1.1790399998426437,
+            1.1779199913144112,
+            1.1289599910378456
+          ],
+          "representative_us": 1.1779199913144112,
+          "round_span_pct": 4.251562854359498
+        },
+        "grouped": {
+          "round_medians_us": [
+            1.080159991979599,
+            1.125280000269413,
+            1.0631999745965002
+          ],
+          "representative_us": 1.080159991979599,
+          "round_span_pct": 5.747299116229934
+        },
+        "speedup_original_over_grouped": 0.963857206768926,
+        "time_reduction_pct_vs_original": -3.7498078529944356,
+        "paired_round_speedups_original_over_grouped": [
+          0.963857206768926,
+          1.0466372723358761,
+          0.9200903137649656
+        ],
+        "speedup_v1_over_grouped": 1.0905051104102166,
+        "time_reduction_pct_vs_v1": 8.299375174516243,
+        "paired_round_speedups_v1_over_grouped": [
+          1.0915420017379354,
+          1.046779460252022,
+          1.0618510327432074
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            9.041440188884735,
+            9.5278400182724,
+            10.147840082645416
+          ],
+          "representative_us": 9.5278400182724,
+          "round_span_pct": 11.612284543389038
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            14.095200300216675,
+            14.374240040779112,
+            13.003520369529724
+          ],
+          "representative_us": 14.095200300216675,
+          "round_span_pct": 9.724726446266372
+        },
+        "grouped": {
+          "round_medians_us": [
+            13.906559944152832,
+            13.876639604568481,
+            13.894079923629759
+          ],
+          "representative_us": 13.894079923629759,
+          "round_span_pct": 0.21534595848599414
+        },
+        "speedup_original_over_grouped": 0.6857481798466076,
+        "time_reduction_pct_vs_original": -45.82612530210233,
+        "paired_round_speedups_original_over_grouped": [
+          0.6501564891097535,
+          0.6866100359870725,
+          0.7303715063123333
+        ],
+        "speedup_v1_over_grouped": 1.0144752569218254,
+        "time_reduction_pct_vs_v1": 1.4268713626142904,
+        "paired_round_speedups_v1_over_grouped": [
+          1.0135648468651774,
+          1.0358588570713338,
+          0.9359036683972536
+        ]
+      }
+    }
+  ]
+}

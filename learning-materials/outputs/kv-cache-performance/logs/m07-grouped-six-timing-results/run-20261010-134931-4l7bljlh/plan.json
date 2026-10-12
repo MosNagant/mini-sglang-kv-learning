@@ -1,0 +1,159 @@
+{
+  "cases": [
+    [
+      1,
+      64
+    ],
+    [
+      1,
+      128
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      256,
+      64
+    ],
+    [
+      256,
+      128
+    ]
+  ],
+  "schedule": [
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 64
+    }
+  ],
+  "capacity": 1024,
+  "dtype": "float16",
+  "layout": "interleaved",
+  "input_gap": 0,
+  "input_seed": 20261004,
+  "order_seed": 107,
+  "indices": "0..B-1, int32, unique",
+  "rounds": 3,
+  "fresh_processes": 18,
+  "intervals_per_impl_policy": 30,
+  "calls_per_interval": 100,
+  "interval_averages": 3240,
+  "eager_warmup_calls": 20,
+  "graph_warmup_replays": 5,
+  "primary": "graph",
+  "reference": "eager",
+  "num_warps": {
+    "frozen_v1": 4,
+    "grouped": 4
+  },
+  "timed_entries": {
+    "original_cuda": "upstream store_cache Python/JIT entry",
+    "frozen_v1": "trusted raw v1 launch; grid B; four warps; prevalidated arguments",
+    "grouped": "trusted raw grouped launch; grid ceil(B/4); BATCH and ROWS_PER_PROGRAM=4; four warps"
+  },
+  "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+  "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+  "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+  "statistic": "median of 30 interval averages per process; median of three process medians",
+  "correctness": "actual C1024 input; each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+  "accepted_correctness_run": "run-20261010-133620-jeh8_est",
+  "scope": "six-case NVIDIA FP16 C1024 microbenchmark; not arbitrary-layout, model, DRAM or AMD measurement",
+  "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance",
+  "rows_per_program": {
+    "frozen_v1": 1,
+    "grouped": 4
+  },
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "observation": "full six-case run;30 exploration remains separate; all ratios use the current same-session workers"
+}

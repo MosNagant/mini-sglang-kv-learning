@@ -1,0 +1,92 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups/run-20261010-213028-jgwjfp1z
+SCOPE=FP16/int32; B1/3/4/5/8/17/256; three selected width/layout/gap/guard combinations and two B0 cases
+WARPS_CASE_PASS arm=accepted_grouped B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=8 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=8 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=256 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=256 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=8 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=8 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=full_groups B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=256 D=128 layout=separate gap=64 guard=0 submissions=1
+COMPILE_CASE=case-013-accepted_grouped B=256 D=128 ACTUAL_LAUNCH=[{'grid': [64], 'parameters': {'BATCH': 256, 'WIDTH': 128, 'SRC_ROW_STRIDE': 192, 'DST_ROW_STRIDE': 128, 'BLOCK_SIZE': 128, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=case-013-accepted_grouped {"registers_per_thread": {"status": "AVAILABLE", "value": 18, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ttgir_layout line=10:     %cst = arith.constant dense<256> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ttgir_layout line=11:     %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ptx_global_load line=52: 	@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ptx_global_load line=71: 	@%p1 ld.global.v2.b32 { %r6, %r7 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ptx_global_load line=86: 	@%p1 ld.global.v2.b32 { %r12, %r13 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ptx_global_store line=78: 	@%p1 st.global.v2.b32 [ %rd3 + 0 ], { %r6, %r7 };
+ACTUAL_EXCERPT arm=case-013-accepted_grouped kind=ptx_global_store line=92: 	@%p1 st.global.v2.b32 [ %rd5 + 0 ], { %r12, %r13 };
+WARPS_CASE_PASS arm=full_groups B=256 D=128 layout=separate gap=64 guard=0 submissions=1
+COMPILE_CASE=case-013-full_groups B=256 D=128 ACTUAL_LAUNCH=[{'grid': [64], 'parameters': {'BATCH': 256, 'WIDTH': 128, 'SRC_ROW_STRIDE': 192, 'DST_ROW_STRIDE': 128, 'BLOCK_SIZE': 128, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=case-013-full_groups {"registers_per_thread": {"status": "AVAILABLE", "value": 14, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ttgir_layout line=10:     %cst = arith.constant dense<128> : tensor<128xi32, #ttg.slice<{dim = 0, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ttgir_layout line=17:     %rows_3 = tt.make_range {end = 4 : i32, start = 0 : i32} : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc35)
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ptx_global_load line=50: 	ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ptx_global_load line=70: 	@%p1 ld.global.v2.b32 { %r6, %r7 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ptx_global_load line=85: 	@%p1 ld.global.v2.b32 { %r12, %r13 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ptx_global_store line=77: 	@%p1 st.global.v2.b32 [ %rd3 + 0 ], { %r6, %r7 };
+ACTUAL_EXCERPT arm=case-013-full_groups kind=ptx_global_store line=91: 	@%p1 st.global.v2.b32 [ %rd5 + 0 ], { %r12, %r13 };
+WARPS_CASE_PASS arm=accepted_grouped B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+COMPILE_CASE=case-017-accepted_grouped B=5 D=192 ACTUAL_LAUNCH=[{'grid': [2], 'parameters': {'BATCH': 5, 'WIDTH': 192, 'SRC_ROW_STRIDE': 256, 'DST_ROW_STRIDE': 256, 'BLOCK_SIZE': 256, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=case-017-accepted_grouped {"registers_per_thread": {"status": "AVAILABLE", "value": 22, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 8], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ttgir_layout line=10:     %cst = arith.constant dense<5> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ttgir_layout line=11:     %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ptx_global_load line=52: 	@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ptx_global_load line=79: 	@%p2 ld.global.v4.b32 { %r10, %r11, %r12, %r13 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ptx_global_load line=96: 	@%p2 ld.global.v4.b32 { %r22, %r23, %r24, %r25 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ptx_global_store line=86: 	@%p2 st.global.v4.b32 [ %rd3 + 0 ], { %r10, %r11, %r12, %r13 };
+ACTUAL_EXCERPT arm=case-017-accepted_grouped kind=ptx_global_store line=102: 	@%p2 st.global.v4.b32 [ %rd5 + 0 ], { %r22, %r23, %r24, %r25 };
+WARPS_CASE_PASS arm=full_groups B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+COMPILE_CASE=case-017-full_groups B=5 D=192 ACTUAL_LAUNCH=[{'grid': [2], 'parameters': {'BATCH': 5, 'WIDTH': 192, 'SRC_ROW_STRIDE': 256, 'DST_ROW_STRIDE': 256, 'BLOCK_SIZE': 256, 'ROWS_PER_PROGRAM': 4, 'num_warps': 4}}] OUTPUT=ALL_REQUESTED_ARTIFACTS_RETAINED
+STATIC_RESOURCES arm=case-017-full_groups {"registers_per_thread": {"status": "AVAILABLE", "value": 22, "source": "compiled.n_regs", "units": "registers per thread"}, "shared_memory_bytes": {"status": "AVAILABLE", "value": 0, "source": "compiled.metadata.shared", "units": "bytes"}, "n_spills_raw": {"status": "AVAILABLE", "value": 0, "source": "compiled.n_spills", "units": "runtime-reported raw field; unit not inferred"}, "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"}
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ttgir_layout line=1: #blocked = #ttg.blocked<{sizePerThread = [1, 8], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ttgir_layout line=10:     %cst = arith.constant dense<5> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ttgir_layout line=11:     %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ptx_global_load line=52: 	@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ptx_global_load line=79: 	@%p2 ld.global.v4.b32 { %r10, %r11, %r12, %r13 }, [ %rd2 + 0 ];
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ptx_global_load line=96: 	@%p2 ld.global.v4.b32 { %r22, %r23, %r24, %r25 }, [ %rd4 + 0 ];
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ptx_global_store line=86: 	@%p2 st.global.v4.b32 [ %rd3 + 0 ], { %r10, %r11, %r12, %r13 };
+ACTUAL_EXCERPT arm=case-017-full_groups kind=ptx_global_store line=102: 	@%p2 st.global.v4.b32 [ %rd5 + 0 ], { %r22, %r23, %r24, %r25 };
+WARPS_CASE_PASS arm=accepted_grouped B=8 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=8 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=256 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=full_groups B=256 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=accepted_grouped B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=full_groups B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=accepted_grouped B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=full_groups B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-full-groups-results/run-20261010-213028-jgwjfp1z
+FULL_GROUPS_CORRECTNESS_PASS: 46 results = 42 nonempty submissions + 4 empty wrapper returns; 23 pairs
+LIMIT: no timing or hardware bounds detector; four actual compiled returns observed, cache reuse possible
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-full-groups-check-20261010-213027-7Uc1iM.log

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "implementation": "accepted_grouped",
+  "config": {
+    "batch": 4,
+    "width": 192,
+    "capacity": 512,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 64,
+    "rows": [
+      11,
+      48,
+      85,
+      122
+    ]
+  },
+  "submissions": 1
+}

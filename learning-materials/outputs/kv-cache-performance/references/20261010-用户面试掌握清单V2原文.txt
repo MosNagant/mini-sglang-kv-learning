@@ -1,0 +1,230 @@
+好，我们更新一下你的 **Triton / GPU Kernel 面试知识掌握清单 V2.0**。
+
+这次根据今天的实际问答更新，而不是简单地把讲过的知识都算作掌握。
+
+**目前最明显的进步是：你已经从最初混淆 Warp、Program 和 Thread，逐渐建立起 GPU 执行、资源分配、内存层级以及线程协作的整体模型。**
+
+但我们还需要区分：**理解原理 ≠ 能独立分析性能 ≠ 能实际优化 Kernel。**
+
+## 一、当前总体进度
+
+| 知识模块 | 当前掌握情况 | 评价 |
+|---|---|---|
+| GPU 执行模型 | 🟡 基础机制大部分已理解 | 需要巩固 Launch、Grid、Program 映射 |
+| Warp Scheduling / Latency Hiding | ✅ 基础掌握 | 已能独立解释等待时如何调度其他 Warp |
+| Occupancy | 🟡 基础机制掌握 | 知道高 Occupancy 不一定快，计算需要复测 |
+| Register / Register Pressure | 🟡 基础掌握 | 理解寄存器资源限制，尚未深入硬件分析 |
+| GPU Memory Hierarchy | 🟡 基础框架已建立 | 已理解主要存储层级，但部分细节未验证 |
+| Shared Memory | ✅ 基础掌握 | 今天进步最大的一部分 |
+| Synchronization / Barrier | ✅ 基础掌握 | 能理解数据依赖和不必要同步的代价 |
+| Memory Coalescing | ⬜ 下一课 | 尚未完成正式验收 |
+| Triton Kernel 代码分析 | 🟡 项目接触过 | 尚需重新检验独立代码解释能力 |
+| Benchmark / Profiling | 🟡 项目已有实验 | 个人独立理解待系统复查 |
+| GPU Performance Optimization | ⬜ M07 主线 | 尚未完成新的优化实验闭环 |
+
+这里的 ✅ 只代表**基础机制已经通过问答验证**，不是已经达到高级 GPU 性能工程师的深度。
+
+---
+
+## 二、GPU 执行模型——详细掌握情况
+
+| 知识点 | 状态 | 依据 |
+|---|---|---|
+| Thread | ✅ | 理解线程是实际执行工作的单位 |
+| Warp | ✅ | 理解一个 NVIDIA Warp 包含 32 个线程 |
+| Triton Program | 🟡 | 理解是工作单元，但与 Launch 的数量关系需复测 |
+| Kernel Launch | 🟡 | 最初误认为 5 个 Program 需要 5 次启动 |
+| Grid | 🟡 | 已讲过 `grid=(B,)`，尚未独立重新设计 |
+| SM | ✅ | 理解 SM 是实际执行和调度的硬件单元 |
+| Warp Scheduling | ✅ | 能解释等待中的 Warp 不会阻止其他就绪 Warp 工作 |
+| Latency Hiding | ✅ | 能用其他 Warp 覆盖等待时间解释机制 |
+| Resident Warp | ✅ | 基本理解驻留不等于正在执行 |
+| Eligible Warp | ✅ | 基本理解就绪 Warp 与驻留 Warp 的区别 |
+| Occupancy | 🟡 | 知道高占用率不一定高性能，但百分比计算曾出错 |
+| Register Pressure | 🟡 | 理解寄存器用量可能限制驻留线程数量 |
+| Register Spilling | 🟡 | 理解寄存器不足可能增加额外访存，尚未深入验证 |
+
+### 这一部分的评价
+
+**你已经达到能够解释 GPU 为什么需要大量 Warp，以及为什么更多 Warp 不一定带来更高性能的基础水平。**
+
+下一步需要把这种直觉转换成资源约束分析能力。
+
+例如：
+
+> 一个 Program 使用多少寄存器？一个 SM 能同时驻留多少 Program？为什么 `num_warps=1` 可能优于 4？
+
+这是 M07 会继续训练的部分。
+
+---
+
+## 三、GPU Memory Hierarchy——今天进步最大的模块
+
+| 知识点 | 状态 | 依据 |
+|---|---|---|
+| Register | ✅ | 理解是线程私有的高速工作空间 |
+| Shared Memory | ✅ | 理解是物理硬件，并按 Block 分配使用 |
+| Shared Memory 作用域 | ✅ | 已理解不是 Warp 私有，而是 Block 内共享 |
+| Shared Memory vs L1/L2 | ✅ | 已理解显式管理与硬件自动缓存的区别 |
+| Data Reuse | ✅ | 能判断重复使用的数据更值得考虑 Shared Memory |
+| Shared Memory 容量限制 | ✅ | 主动提出容量有限、不能全部放入的判断 |
+| Shared Memory 与 Occupancy | 🟡 | 理解资源竞争，尚未进行定量计算 |
+| L1 Cache | 🟡 | 理解自动缓存机制，尚未深入缓存命中分析 |
+| L2 Cache | 🟡 | 理解跨 SM 共享，尚未深入访存路径 |
+| Global Memory | ✅ 基础 | 理解存储大规模数据的作用 |
+| Local Memory | 🟡 | 已学习定义，但容易与片上内存混淆，需复测 |
+| Memory Coalescing | ⬜ | 刚开始讲解，尚未回答相关问题 |
+| Bank Conflict | ⬜ | 已引入概念，尚未深入学习 |
+
+### 这一部分你真正学到了什么？
+
+最开始，你把 Shared Memory 理解成一种自动高速缓存。
+
+现在已经能够区分：
+
+**Register：** 每个线程自己的工作台。
+
+**Shared Memory：** 同一个 Block 内多个线程共同使用的工作空间。
+
+**L1：** 主要服务一个 SM 的硬件缓存。
+
+**L2：** 多个 SM 共享的硬件缓存。
+
+**Global Memory：** 大容量的 GPU 存储空间。
+
+你还能够解释为什么 KV Copy 不一定值得使用 Shared Memory。
+
+这是一个实质性的进步。
+
+不过，**下一步必须开始研究真实地址和访存行为**，否则目前仍然主要停留在概念层面。
+
+---
+
+## 四、Synchronization——基础已掌握
+
+| 知识点 | 状态 | 依据 |
+|---|---|---|
+| Data Dependency | ✅ | 主动联系计算机组成原理中的数据冒险 |
+| Read After Write | ✅ 基础 | 理解必须确保数据写入完成后再读取 |
+| Barrier Synchronization | ✅ | 理解为需要协作的线程设置同步点 |
+| 不必要的同步开销 | ✅ | 能独立判断无依赖时额外 Barrier 会浪费性能 |
+| Data Race | 🟡 | 理解基本风险，尚未做代码级判断 |
+| CUDA 同步原语 | ⬜ | 尚未学习具体使用与限制 |
+| Triton 中的同步机制 | ⬜ | 尚未深入编译器和线程协作层面 |
+
+**这一模块的基础概念已经可以暂时通过。**
+
+以后学习 Reduction、GEMM 时，再深入代码中的同步机制。
+
+不需要现在花大量时间研究复杂 Barrier。
+
+---
+
+# 五、M06 代码与工程知识——下一轮重点验收
+
+这部分在 GitHub 上有实际工程产物，但我们今天还没有全面重新考察。
+
+| 知识点 | 当前状态 | 目标 |
+|---|---|---|
+| Shape / Stride / Layout | 🟡 项目练习过 | 能独立手算和修改地址 |
+| Pointer Arithmetic | 🟡 项目练习过 | 能区分元素偏移与字节偏移 |
+| `tl.program_id` | 🟡 | 能独立解释 |
+| `tl.arange` | 🟡 | 能解释逻辑元素映射 |
+| `tl.load / tl.store` | 🟡 | 能修改与解释 |
+| Mask | 🟡 | 能解释读写保护与边界 |
+| `tl.constexpr` | ⬜ 待验收 | 能解释编译特化 |
+| JIT Compilation | ⬜ 待验收 | 区分编译和执行 |
+| PTX / cubin | ⬜ 待验收 | 能解释编译产物 |
+| Correctness | 🟡 工程已验证 | 能独立设计检查和反例 |
+| CUDA Event | ⬜ 待验收 | 能解释 GPU 计时 |
+| CUDA Graph | ⬜ 待验收 | 能解释 Graph 与 Eager 差异 |
+| Effective Bandwidth | ⬜ 待验收 | 能计算并解释 |
+| Benchmark 公平性 | ⬜ 待验收 | 能独立解释 M06 性能报告 |
+
+这里特别强调：
+
+**M06 工程完成 23/25，与个人知识掌握进度是两条不同的进度线。**
+
+你现在仍然需要能够独立解释 M06 的核心代码、正确性验证和性能结论。
+
+---
+
+# 六、距离 M07 性能优化，还缺什么？
+
+我们已经完成了一部分基础铺垫。
+
+| M07 核心能力 | 当前情况 |
+|---|---|
+| 理解 Warp Scheduling | ✅ |
+| 理解 Latency Hiding | ✅ |
+| 理解 Occupancy 与性能不一定正相关 | ✅ |
+| 理解 Register Pressure | 🟡 |
+| 理解 Shared Memory 的用途与成本 | ✅ |
+| 理解 Memory Coalescing | ⬜ |
+| 分析 Memory Bandwidth | ⬜ |
+| 判断 Memory Bound / Compute Bound | ⬜ |
+| 理解 Roofline Model | ⬜ |
+| 分析 M06 实际性能结果 | ⬜ 待独立验收 |
+| 独立提出优化假设 | 🟡 已有初步假设，尚未验证 |
+| 完成单因素优化实验 | ⬜ |
+
+你已经拥有了理解 M07 的一部分硬件基础。
+
+但**真正体现优化能力的步骤还没有完成**。
+
+下一阶段我们要从：
+
+> “Warp 少了可能更快。”
+
+推进到：
+
+> “根据执行资源、访存模式和工作规模，我预测在哪些配置下可能更快，如何通过实验验证。”
+
+---
+
+## 七、我们目前处于什么学习水平？
+
+我建议把你的能力分成四个阶段。
+
+| 能力层次 | 标准 | 当前情况 |
+|---|---|---|
+| **Level 1：概念理解** | 知道 GPU 各种执行和内存资源有什么作用 | **已经在多个模块达到** |
+| **Level 2：机制解释** | 能解释资源限制、同步、调度和性能的关系 | **部分达到** |
+| **Level 3：代码分析** | 能结合自己的 Triton 代码推导与修改 | **M06 已实践，需独立复测** |
+| **Level 4：性能工程** | 能根据数据提出假设、设计实验、判断收益 | **M07 即将重点训练** |
+
+**目前你在 GPU 执行模型、Shared Memory 和 Synchronization 方面，已从 Level 1 进入 Level 2。**
+
+这是基于今天回答得出的阶段判断，不代表整个模块的所有细节都已掌握。
+
+---
+
+## 八、接下来怎么推进最快？
+
+我不建议继续在 Shared Memory 或 Barrier 上无限扩展。
+
+你已经掌握了它们的基础机制，再往下深挖 Bank Conflict、复杂同步，短期回报反而不如回到 M06/M07 主线。
+
+建议接下来按这个顺序：
+
+**Memory Coalescing → Memory Bandwidth → Memory Bound → Roofline → CUDA Graph/Benchmark → M07 优化假设。**
+
+之后再回头用 M06 的代码完成独立验收。
+
+### 下一步：Memory Coalescing
+
+我们刚刚停在一个非常重要的问题：
+
+你的 KV Cache 写入使用：
+
+```python
+indices = [7, 0, 3]
+```
+
+三个 Program 分别向第 7、0、3 个缓存槽写数据。
+
+**问题：虽然这些缓存槽的位置不连续，但是每个槽内部的元素连续排列，那么 Memory Coalescing 一定会受到破坏吗？为什么？**
+
+这是我们接下来应该解决的第一个问题。
+
+它会让你从目前的“理解 GPU 存储资源”，真正进入**分析 GPU 访存效率**的阶段。

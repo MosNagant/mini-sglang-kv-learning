@@ -1,0 +1,123 @@
+{
+  "status": "INDEPENDENT_CPU_PREPARATION_CHECKS_PASS",
+  "scope": "35 timing runner preparation only; no WSL/GPU run or new performance result",
+  "blocking_findings": [],
+  "dry_run": {
+    "completed": true,
+    "torch_or_triton_imported": false,
+    "configurations": 6,
+    "capacity": 512,
+    "workers": 18,
+    "interval_averages": 3240,
+    "calls_per_interval": 100,
+    "policies_separate": true,
+    "seeded_schedule_independently_reproduced": true,
+    "all_six_positions_each_five_times": true
+  },
+  "fixture_checks": {
+    "source_run": "outputs/kv-cache-performance/logs/m07-full-groups-results/run-20261010-213028-jgwjfp1z",
+    "configurations": 6,
+    "arrays": 30,
+    "elements": 2103055,
+    "method": "Independently reconstruct seed20261011 values with first-column row IDs; compare all five before arrays against actual34 saved data and35's reused fixture",
+    "cache_guard_minus7_preserved": true,
+    "input_gap_minus9_preserved": true
+  },
+  "statistics_checks": {
+    "synthetic_workers": 18,
+    "synthetic_interval_averages": 3240,
+    "policies": [
+      "graph",
+      "eager"
+    ],
+    "grouped_graph_round_medians_us": [
+      12,
+      1,
+      13
+    ],
+    "full_groups_graph_round_medians_us": [
+      10,
+      2,
+      14
+    ],
+    "representative_grouped_over_full_groups": 1.2,
+    "time_reduction_pct_vs_grouped": 16.666666666666664,
+    "paired_round_ratios": [
+      1.2,
+      0.5,
+      0.9285714285714286
+    ],
+    "paired_median": 0.9285714285714286,
+    "wins": 1,
+    "interpretation": "Representative ratio >1 coexists with paired median <1 and only1/3 wins; code preserves individual paired ratios and does not replace them with ratio-of-representatives.",
+    "checked": "All six configuration summaries, both policies, both reference ratios, per-arm process medians and spans independently recomputed."
+  },
+  "summary_negative_controls": {
+    "count": 25,
+    "passed": [
+      "missing_worker",
+      "duplicate_worker",
+      "duplicate_replaces_missing",
+      "unplanned_round",
+      "failed_status",
+      "wrong_capacity",
+      "wrong_calls_per_interval",
+      "incomplete_checks",
+      "changed_input_gap",
+      "changed_cache_guard",
+      "changed_layout",
+      "changed_indices",
+      "changed_stride",
+      "changed_grid",
+      "changed_warps",
+      "changed_rpp",
+      "original_entry_count",
+      "missing_arm",
+      "missing_policy",
+      "missing_sample",
+      "nan_sample",
+      "zero_sample",
+      "negative_sample",
+      "raw_value_mismatch",
+      "wrong_measurement_order"
+    ]
+  },
+  "gate_checks": {
+    "actual34_gate_pass": true,
+    "temporary_copy_gate_pass": true,
+    "expected_rejections": [
+      "state_failed",
+      "missing_case",
+      "duplicate_case",
+      "changed_pair",
+      "changed_saved_launch",
+      "modified_candidate",
+      "modified_helper"
+    ],
+    "additional_manifest_control": "Invented manifest filename was rejected with FileNotFoundError; the auxiliary test stopped because its exception tuple omitted OSError. This was a test harness exception handling issue, not an accepted corrupted manifest or a35 implementation blocker.",
+    "no_additional_controls_after_root_stop": true
+  },
+  "source_review": {
+    "actual_two_kernel_closures_distinct": true,
+    "reset": "pool.copy_(initial_cache_gpu) preserves full initial cache and guards",
+    "valid_column_views_and_full_backing_retained": true,
+    "checks_outside_intervals": true,
+    "correctness_checks_per_worker": 190,
+    "saved_after_npz_per_worker": 7,
+    "candidate_pin": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+    "accepted_grouped_pin": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1"
+  },
+  "not_repeated": "Author's separate52-control suite was not rerun by this reviewer; root indicated its coverage was sufficient.",
+  "limitations": [
+    "B5 is a tail-group control; cross-D comparisons also change layout/gap/guard.",
+    "CPU preparation checks cannot establish GPU capture correctness or performance.",
+    "34 is limited correctness;35 must check each arm's actual timing input and reset Graph replay.",
+    "Do not mix these C512 configurations with prior32 C1024 timing.",
+    "No fresh compilation, hardware counters, model or AMD claim."
+  ],
+  "source_sha256": {
+    "35-compare-kv-full-groups.py": "ae5efd06babab6296038f52e4385bf0295cb998b36a217b03274604f3fb84987",
+    "35-compare-kv-full-groups.sh": "624b8fb4cd0db14aca65b747ad102c888cf09e9d32bf91daa679f55c33a47fae",
+    "35-full-groups-timing-cpu-test.py": "9e218de81618c123a2c58c15f946b2a97e40e9a2e51ad567930f767594248bfc"
+  }
+}

@@ -1,0 +1,26 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-warps-timing/run-20261010-121112-p7ip91zk
+SCOPE=three arms; two cases x three fresh processes; Graph primary
+RUN round=1/3 B=256 D=128 three implementations
+COLLECTED graph original=1.224480 us v1=1.283680 us candidate=1.447360 us v1/candidate=0.8869x original/candidate=0.8460x
+COLLECTED eager original=14.857120 us v1=17.849280 us candidate=16.668800 us v1/candidate=1.0708x original/candidate=0.8913x
+RUN round=1/3 B=1 D=64 three implementations
+COLLECTED graph original=0.981440 us v1=1.169760 us candidate=0.992640 us v1/candidate=1.1784x original/candidate=0.9887x
+COLLECTED eager original=8.973760 us v1=12.934720 us candidate=13.091840 us v1/candidate=0.9880x original/candidate=0.6854x
+RUN round=2/3 B=1 D=64 three implementations
+COLLECTED graph original=1.095040 us v1=0.953120 us candidate=1.140160 us v1/candidate=0.8360x original/candidate=0.9604x
+COLLECTED eager original=8.567840 us v1=12.957440 us candidate=12.690400 us v1/candidate=1.0210x original/candidate=0.6751x
+RUN round=2/3 B=256 D=128 three implementations
+COLLECTED graph original=1.009440 us v1=1.144960 us candidate=1.195360 us v1/candidate=0.9578x original/candidate=0.8445x
+COLLECTED eager original=8.044000 us v1=12.935840 us candidate=12.660480 us v1/candidate=1.0217x original/candidate=0.6354x
+RUN round=3/3 B=1 D=64 three implementations
+COLLECTED graph original=0.913600 us v1=0.958560 us candidate=0.978240 us v1/candidate=0.9799x original/candidate=0.9339x
+COLLECTED eager original=8.430240 us v1=12.802240 us candidate=13.065920 us v1/candidate=0.9798x original/candidate=0.6452x
+RUN round=3/3 B=256 D=128 three implementations
+COLLECTED graph original=0.977920 us v1=1.127520 us candidate=1.165440 us v1/candidate=0.9675x original/candidate=0.8391x
+COLLECTED eager original=8.350880 us v1=12.654560 us candidate=12.620000 us v1/candidate=1.0027x original/candidate=0.6617x
+GRAPH_SUMMARY B=1 D=64 v1/candidate=0.9657x original/candidate=0.9887x
+GRAPH_SUMMARY B=256 D=128 v1/candidate=0.9578x original/candidate=0.8445x
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-warps-timing-results/run-20261010-121112-p7ip91zk
+WARPS_TIMING_COLLECTION_COMPLETE: 6 processes; 1080 interval averages; review all rounds before a performance claim
+LIMIT: two-case reused-address FP16 microbenchmark; Graph/Eager separate; not full regression, model or AMD speedup
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-warps-timing-20261010-121112-ADSHS6.log

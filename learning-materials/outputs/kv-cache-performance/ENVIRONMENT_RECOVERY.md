@@ -1,5 +1,7 @@
 # 环境问题与恢复手册
 
+**2026-10-10 21:30最新：本轮启动已恢复。** 21:23只读检查确认storvsp STOPPED/1077、设备注册缺失、驱动/INF存在；[记录](logs/wsl-recurrence-20261010-212332.json)已保存。用户运行既有-SkipSetup修复后，[21:25日志](../logs/repair-storage-20261010-212523.log)确认ROOT/STORVSP/0000 Present=True、错误码0、storvsp Running、STORAGE DEVICE OK；随后21:30实际运行34号GPU检查成功，见[结果](logs/m07-full-groups-results/run-20261010-213028-jgwjfp1z/status.json)。无需再修复或重新安装。最新移除来源及长期启动稳定性仍未调查；旧DevManView记录不代表本次原因。当前学习继续完整组特化复盘，以下恢复记录为历史。
+
 **2026-10-09最新恢复确认：** 用户执行既有-SkipSetup修复后返回STORAGE DEVICE OK，并实际运行echo得到WSL_OK；见[用户输出记录](logs/wsl-recovery-user-output-20261009.json)。本次WSL启动阻塞解除，localhost代理警告未阻止命令执行。此步骤未验证项目导入/GPU或长期重启稳定性，不重复修复。继续当前PowerShell运行22号--prepare并编辑M06-04外层入口。下方同日“恢复待确认”为修复前历史。
 
 **2026-10-09最新状态：启动故障复发，恢复待确认。** 用户进入项目报CreateVm/HCS/ERROR_PATH_NOT_FOUND；本次只读检查storvsp STOPPED/1077、ROOT/STORVSP/0000注册缺失、storvsp.sys及既有修复脚本存在。见[本次诊断](logs/wsl-recurrence-20261009-20261009053622245.json)。当前故障条件与之前一致，设备移除来源未调查，不能把旧DevManView日志当作本次原因证据。下一步用户管理员PowerShell沿用Repair-WSL-Storage.ps1 -SkipSetup后验证WSL_OK；恢复后回M06-04三空位入口练习，不重做M05。工具未执行修复或GPU，工程进度不变。

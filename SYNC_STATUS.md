@@ -1,5 +1,19 @@
 # 同步范围与来源
 
+## 2026-10-12更新，证据截至10-10第35号
+
+本次将Windows工作区完整`outputs/kv-cache-performance/`同步到`learning-materials/outputs/kv-cache-performance/`，保留既有文件与历史证据。新增M07三条候选的源码、正确性、编译观察、计时原始数据、独立审查、教学记录和[10-10独立日志](learning-materials/outputs/kv-cache-performance/obsidian/2026-10-10-开发日志-M07三条优化路线与结果复盘.md)。不删除旧失败记录，不改写历史实验。
+
+工程61/100，M06为23/25、M07为8/25。35号已核验18进程、3240区间均值；三条路线均不足以支持稳定胜过原版CUDA，候选不晋升为默认新版本。M08真实模型接入与端到端验证未完成。同步不代表新的GPU运行、优化收益或独立掌握。
+
+`source/`底座仍是2026-10-06 13:14:51 UTC的WSL导出。仅`source/experiments/`七份有明确来源的学习文件补至已验证版本，详见[source/SOURCE_OVERLAY_20261012.json](source/SOURCE_OVERLAY_20261012.json)：api/mask/support/check/grouped/full_groups来自35号快照，1-warp candidate来自26号快照。check_kv_targets.py与旧导出字节相同。其余原导出文件、EXPORT_MANIFEST和SOURCE_SNAPSHOT逐字节保留；旧manifest描述原导出，overlay清单描述本次增量，两者共同解释当前source目录。这不是新WSL全量导出。
+
+排除`__pycache__`、`.pyc/.pyo`、`.git`及同类可再生缓存；NPZ、PTX、cubin、Nsight资产和既有ZIP按原字节保留。本次不创建新ZIP、不上传.env或凭据文件。普通文本做有限已知凭据模式扫描，无命中不构成穷尽安全保证。绝对路径和机器环境信息保留用于复现。
+
+本次保持私有仓库范围，不包含虚拟环境、模型权重或整机镜像。运行前仍需核对固定上游提交、环境与路径；不要用本整理仓库HEAD替代上游版本检查。上传提交与核验回执由同步操作记录，本文仅说明文件范围与证据边界。
+
+## 以下是前次同步的历史说明（不代表本次当前状态）
+
 ## 2026-10-09 最新增量
 
 本次将Windows工作区的 `outputs/kv-cache-performance/` 同步到仓库 `learning-materials/outputs/kv-cache-performance/`，保留已有其他路径；没有重新导出WSL或修改source/快照。

@@ -1,0 +1,82 @@
+{
+  "config": {
+    "batch": 4,
+    "width": 192,
+    "capacity": 512,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 64,
+    "rows": [
+      11,
+      48,
+      85,
+      122
+    ]
+  },
+  "implementation": "full_groups",
+  "tensors": [
+    {
+      "shape": [
+        512,
+        192
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30259806208
+    },
+    {
+      "shape": [
+        512,
+        192
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30260068352
+    },
+    {
+      "shape": [
+        4
+      ],
+      "stride": [
+        1
+      ],
+      "dtype": "torch.int32",
+      "device": "cuda:0",
+      "data_ptr": 30260334592
+    },
+    {
+      "shape": [
+        4,
+        192
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30260330496
+    },
+    {
+      "shape": [
+        4,
+        192
+      ],
+      "stride": [
+        256,
+        1
+      ],
+      "dtype": "torch.float16",
+      "device": "cuda:0",
+      "data_ptr": 30260332544
+    }
+  ]
+}

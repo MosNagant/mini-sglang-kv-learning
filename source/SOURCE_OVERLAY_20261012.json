@@ -1,0 +1,109 @@
+{
+  "overlay_date": "2026-10-12",
+  "evidence_through": "2026-10-10; accepted experiment35",
+  "base_snapshot_utc": "2026-10-06T13:14:51Z",
+  "base_upstream_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "base_export_manifest": "source/EXPORT_MANIFEST.json",
+  "base_snapshot_receipt": "source/SOURCE_SNAPSHOT.json",
+  "policy": "Only these seven verified learning sources overlay the October6 export. Other source files and historical evidence remain unchanged.",
+  "fresh_wsl_export": false,
+  "gpu_runs_during_sync": false,
+  "files": [
+    {
+      "destination": "source/experiments/triton_store_api.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/triton_store_api.py",
+      "sha256": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+      "bytes": 1531,
+      "git_blob_sha": "59148ad680b9c3ee5a169df4ae2583f60de39524",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/triton_store_mask.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/triton_store_mask.py",
+      "sha256": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+      "bytes": 1313,
+      "git_blob_sha": "b3a53a58dec67644b3a3fe59b2af5e36ff4068b3",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/kv_contract_support.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/kv_contract_support.py",
+      "sha256": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+      "bytes": 7336,
+      "git_blob_sha": "ad1f39fb17e7f2d0803a9b375951d68b1c70a66f",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/check_kv_targets.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/check_kv_targets.py",
+      "sha256": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+      "bytes": 473,
+      "git_blob_sha": "28349586de69efdbe70f0594a16a21f7ecb4a89b",
+      "published_sha256_before": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+      "action": "UNCHANGED_VERIFIED",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/triton_store_grouped.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/triton_store_grouped.py",
+      "sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+      "bytes": 2358,
+      "git_blob_sha": "d1f3da9ce6edbc886e62631728d22167b849348d",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/triton_store_full_groups.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/triton_store_full_groups.py",
+      "sha256": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+      "bytes": 2511,
+      "git_blob_sha": "7cb07943a29994b2ec5626cda05b32c1e76abb29",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/source_hashes.json",
+      "source_manifest_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+      "source_status": "COLLECTION_COMPLETE",
+      "source_status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37"
+    },
+    {
+      "destination": "source/experiments/triton_store_candidate.py",
+      "source": "learning-materials/outputs/kv-cache-performance/logs/m07-warps-results/run-20261010-115255-6bwgq_qo/triton_store_candidate.py",
+      "sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b",
+      "bytes": 1147,
+      "git_blob_sha": "77192681bba3b6d2cb318551e979ae38942152f3",
+      "published_sha256_before": null,
+      "action": "ADD",
+      "source_manifest": "learning-materials/outputs/kv-cache-performance/logs/m07-warps-results/run-20261010-115255-6bwgq_qo/source_hashes.json",
+      "source_manifest_sha256": "0b344736d464b5830fa8514b7d3c0523466e70dac8f5c3bc3342b08d6053240d",
+      "source_status": "PASS",
+      "source_status_sha256": "b81336f35df0f96fbd67cb3622cf9abed3d4a5dd0f2638fdbd5048c9a29d96bc"
+    }
+  ],
+  "limitations": [
+    "Candidates are archived experiments, not promoted default implementations.",
+    "Three optimization routes did not demonstrate stable wins over original CUDA under the recorded policies.",
+    "M08 model integration and end-to-end validation remain incomplete."
+  ]
+}

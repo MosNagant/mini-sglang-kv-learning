@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "negative_index",
+  "rejection": {
+    "type": "ValueError",
+    "message": "INDEX_RANGE: require 0<=indices[i]<C"
+  }
+}

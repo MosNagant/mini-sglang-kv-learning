@@ -1,0 +1,7351 @@
+{
+  "status": "PASS",
+  "lesson": "M07 full grouped correctness",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "plan": {
+    "configurations": 98,
+    "implementation_cases": 196,
+    "nonempty_calls": 168,
+    "empty_wrapper_returns": 28,
+    "matched_pairs": 98,
+    "invalid_rejections": 36,
+    "invalid_kinds": [
+      "indices_too_many",
+      "indices_too_few",
+      "v_shape",
+      "k_dtype",
+      "indices_dtype",
+      "cpu_k",
+      "cpu_indices",
+      "unsupported_width",
+      "column_stride",
+      "index_stride",
+      "unequal_source_stride",
+      "unsupported_source_stride",
+      "cache_overlap",
+      "source_cache_overlap",
+      "duplicate_indices",
+      "negative_index",
+      "out_of_range_index",
+      "empty_with_one_index"
+    ],
+    "arms": {
+      "frozen_v1": {
+        "num_warps": 4,
+        "rows_per_program": 1
+      },
+      "grouped": {
+        "num_warps": 4,
+        "rows_per_program": 4
+      }
+    },
+    "scope": "C32 FP16/int32 B0/1/2/3/4/5/17 D64/128/192; selected layouts/gaps/guards only",
+    "positive_checks": "independent expectation; complete cache and input/indices backings, including gaps/guards",
+    "invalid_checks": "contract rejection, zero KV submissions, five argument-view values unchanged; not all backing bytes",
+    "limitations": "B0 is a wrapper return; no timing, arbitrary-layout, model, hardware-counter or AMD result"
+  },
+  "configurations": [
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 0,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "interleaved",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": []
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31
+      ]
+    },
+    {
+      "batch": 2,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0
+      ]
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1
+      ]
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "capacity": 32,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        31,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "EMPTY_WRAPPER_PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "submissions": 0
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "frozen_v1",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    },
+    {
+      "status": "PASS",
+      "implementation": "grouped",
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "submissions": 1
+    }
+  ],
+  "pairs": [
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 64,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 128,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "interleaved",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 1,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 2,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 3,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 4,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    },
+    {
+      "config": {
+        "batch": 17,
+        "width": 192,
+        "capacity": 32,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          31,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      },
+      "status": "BOTH_MATCH_REFERENCE_AND_EACH_OTHER"
+    }
+  ],
+  "rejected": [
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_many",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_few",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "v_shape",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INPUT_SHAPE: K/V must have the same (B,D)"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "k_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: k"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: indices"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_k",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_width",
+      "rejection": {
+        "type": "ValueError",
+        "message": "WIDTH_SCOPE: D must be 64, 128, or 192"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "column_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "COLUMN_STRIDE: k"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "index_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_STRIDE: require contiguous rank-1 indices"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unequal_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "source_cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_CACHE_ALIAS: k_cache/k"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "duplicate_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_DUPLICATE: destinations must be unique"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "negative_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "out_of_range_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "empty_with_one_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "frozen_v1",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_many",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_few",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "v_shape",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INPUT_SHAPE: K/V must have the same (B,D)"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "k_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: k"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: indices"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_k",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_width",
+      "rejection": {
+        "type": "ValueError",
+        "message": "WIDTH_SCOPE: D must be 64, 128, or 192"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "column_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "COLUMN_STRIDE: k"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "index_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_STRIDE: require contiguous rank-1 indices"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unequal_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "source_cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_CACHE_ALIAS: k_cache/k"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "duplicate_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_DUPLICATE: destinations must be unique"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "negative_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "out_of_range_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "empty_with_one_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      },
+      "implementation": "grouped",
+      "submissions": 0
+    }
+  ],
+  "ownership": "coach demonstrated grouped rows/mask/grid; learner applied and ran accepted correctness; coach supplies this regression harness",
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "current_case": null
+}

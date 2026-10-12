@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "implementation": "candidate",
+  "config": {
+    "batch": 5,
+    "width": 64,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 0,
+    "guard": 0,
+    "rows": [
+      31,
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "submissions": 1
+}

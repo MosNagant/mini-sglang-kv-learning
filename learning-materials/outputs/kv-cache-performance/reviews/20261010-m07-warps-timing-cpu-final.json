@@ -1,0 +1,317 @@
+{
+  "status": "CPU_ORCHESTRATION_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "WSL": "NOT_RUN",
+  "source_sha256": {
+    "27-compare-kv-warps.py": "edb64af3a884ffbf7d727dae944fcd181bc9e975c886ce21f3057a27fab42aaa",
+    "27-compare-kv-warps.sh": "9d5a0b00684adfeb73e0d6b000b371e919949128ddd6f96cdf4d1a971fe32a00",
+    "27-warps-timing-cpu-test.py": "4764a00fdc580ae54cd5098516e6b5dbc6d357f79a6f2ef1fc4ca2859b1d63bf"
+  },
+  "plan": {
+    "cases": [
+      [
+        1,
+        64
+      ],
+      [
+        256,
+        128
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 1,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      }
+    ],
+    "capacity": 1024,
+    "dtype": "float16",
+    "layout": "interleaved",
+    "input_gap": 0,
+    "input_seed": 20261004,
+    "order_seed": 107,
+    "indices": "0..B-1, int32, unique",
+    "rounds": 3,
+    "fresh_processes": 6,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "num_warps": {
+      "frozen_v1": 4,
+      "candidate": 1
+    },
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "frozen_v1": "trusted raw kernel launcher with prevalidated fixed arguments",
+      "candidate": "trusted raw kernel launcher; NUM_WARPS from accepted candidate snapshot"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+    "accepted_correctness_run": "run-20261010-115255-6bwgq_qo",
+    "candidate_sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b",
+    "scope": "two-case NVIDIA FP16 microbenchmark; not all-six-case regression, model, DRAM, or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance"
+  },
+  "order_positions": {
+    "1": "each of six arm/policy items appears at each position exactly five times",
+    "2": "each of six arm/policy items appears at each position exactly five times",
+    "3": "each of six arm/policy items appears at each position exactly five times"
+  },
+  "synthetic_summary": [
+    {
+      "batch": 1,
+      "width": 64,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "candidate": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_candidate": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_candidate": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_candidate": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_candidate": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "candidate": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_candidate": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_candidate": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_candidate": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_candidate": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "graph": {
+        "original_cuda": {
+          "round_medians_us": [
+            8.0,
+            10.0,
+            12.0
+          ],
+          "representative_us": 10.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            6.0,
+            6.0,
+            6.0
+          ],
+          "representative_us": 6.0,
+          "round_span_pct": 0.0
+        },
+        "candidate": {
+          "round_medians_us": [
+            2.0,
+            4.0,
+            6.0
+          ],
+          "representative_us": 4.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_candidate": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_candidate": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_candidate": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_candidate": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      },
+      "eager": {
+        "original_cuda": {
+          "round_medians_us": [
+            16.0,
+            20.0,
+            24.0
+          ],
+          "representative_us": 20.0,
+          "round_span_pct": 40.0
+        },
+        "frozen_v1": {
+          "round_medians_us": [
+            12.0,
+            12.0,
+            12.0
+          ],
+          "representative_us": 12.0,
+          "round_span_pct": 0.0
+        },
+        "candidate": {
+          "round_medians_us": [
+            4.0,
+            8.0,
+            12.0
+          ],
+          "representative_us": 8.0,
+          "round_span_pct": 100.0
+        },
+        "speedup_original_over_candidate": 2.5,
+        "time_reduction_pct_vs_original": 60.0,
+        "paired_round_speedups_original_over_candidate": [
+          4.0,
+          2.5,
+          2.0
+        ],
+        "speedup_v1_over_candidate": 1.5,
+        "time_reduction_pct_vs_v1": 33.333333333333336,
+        "paired_round_speedups_v1_over_candidate": [
+          3.0,
+          1.5,
+          1.0
+        ]
+      }
+    }
+  ],
+  "negative_controls_rejected": [
+    "missing_worker",
+    "duplicate_worker",
+    "noncollected",
+    "unplanned_case",
+    "missing_correctness",
+    "short_samples",
+    "swapped_order",
+    "raw_sample_mismatch",
+    "invalid_value_nan",
+    "invalid_value_inf",
+    "invalid_value_0",
+    "invalid_value_-1",
+    "unplanned_B1_D128",
+    "unplanned_round",
+    "gate_nonpass",
+    "gate_candidate_hash",
+    "gate_launch_record",
+    "timer_99_calls",
+    "successful_run_export_failure_visible"
+  ],
+  "accepted_gate": {
+    "status": "ACCEPTED_SOURCE_AND_STATUS_GATE_PASS",
+    "source_run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m07-warps-results\\run-20261010-115255-6bwgq_qo",
+    "status_sha256": "b81336f35df0f96fbd67cb3622cf9abed3d4a5dd0f2638fdbd5048c9a29d96bc",
+    "source_hashes_sha256": "0b344736d464b5830fa8514b7d3c0523466e70dac8f5c3bc3342b08d6053240d",
+    "required_sources": {
+      "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+      "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+      "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+      "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+      "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+    },
+    "positive_cases": 196,
+    "invalid_rejections": 36,
+    "scope": "accepted records/source identity only; actual timing inputs checked again in every worker"
+  },
+  "event_timer": "exactly 100 calls; single elapsed interval divided by 100",
+  "graph_timer": "one replay; elapsed interval divided by 100; graph construction requires GPU validation",
+  "export_controls": "primary failure preserved on mkdir failure; successful-run export failure visible; existing export never overwritten",
+  "failed_array_capture": "actual check function preserves first CUDA/check exception if diagnostic array capture also fails",
+  "limitation": "CPU source/record/summary/timer mocks only; no new performance or GPU correctness result"
+}

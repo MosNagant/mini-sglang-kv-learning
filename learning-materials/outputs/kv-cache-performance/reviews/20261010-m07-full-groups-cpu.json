@@ -1,0 +1,389 @@
+{
+  "status": "CPU_FULL_GROUPS_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "WSL": "NOT_RUN",
+  "plan": {
+    "configurations": 23,
+    "implementation_cases": 46,
+    "matched_pairs": 23,
+    "nonempty_submissions": 42,
+    "empty_wrapper_returns": 4,
+    "arms": [
+      "accepted_grouped",
+      "full_groups"
+    ],
+    "capacity": 512,
+    "num_warps": 4,
+    "rows_per_program": 4,
+    "candidate_full_group_configurations": 9,
+    "candidate_tail_group_configurations": 12,
+    "retained_specializations": [
+      {
+        "batch": 256,
+        "width": 128,
+        "branch": "full"
+      },
+      {
+        "batch": 5,
+        "width": 192,
+        "branch": "tail"
+      }
+    ],
+    "scope": "FP16/int32; B1/3/4/5/8/17/256; three selected width/layout/gap/guard combinations and two B0 cases",
+    "limits": "no timing or hardware out-of-bounds detector; B0 is a public-wrapper return; no arbitrary-layout/model/AMD claim"
+  },
+  "coverage": [
+    {
+      "batch": 1,
+      "width": 64,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 3,
+      "width": 64,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 4,
+      "width": 64,
+      "full_condition": true,
+      "grid": [
+        1
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 5,
+      "width": 64,
+      "full_condition": false,
+      "grid": [
+        2
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 8,
+      "width": 64,
+      "full_condition": true,
+      "grid": [
+        2
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 17,
+      "width": 64,
+      "full_condition": false,
+      "grid": [
+        5
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 256,
+      "width": 64,
+      "full_condition": true,
+      "grid": [
+        64
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 1,
+      "width": 128,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 3,
+      "width": 128,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 4,
+      "width": 128,
+      "full_condition": true,
+      "grid": [
+        1
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 5,
+      "width": 128,
+      "full_condition": false,
+      "grid": [
+        2
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 8,
+      "width": 128,
+      "full_condition": true,
+      "grid": [
+        2
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 17,
+      "width": 128,
+      "full_condition": false,
+      "grid": [
+        5
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 256,
+      "width": 128,
+      "full_condition": true,
+      "grid": [
+        64
+      ],
+      "source_stride": 192,
+      "destination_stride": 128
+    },
+    {
+      "batch": 1,
+      "width": 192,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 3,
+      "width": 192,
+      "full_condition": false,
+      "grid": [
+        1
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 4,
+      "width": 192,
+      "full_condition": true,
+      "grid": [
+        1
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 5,
+      "width": 192,
+      "full_condition": false,
+      "grid": [
+        2
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 8,
+      "width": 192,
+      "full_condition": true,
+      "grid": [
+        2
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 17,
+      "width": 192,
+      "full_condition": false,
+      "grid": [
+        5
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 256,
+      "width": 192,
+      "full_condition": true,
+      "grid": [
+        64
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    },
+    {
+      "batch": 0,
+      "width": 64,
+      "full_condition": true,
+      "grid": [
+        0
+      ],
+      "source_stride": 64,
+      "destination_stride": 128
+    },
+    {
+      "batch": 0,
+      "width": 192,
+      "full_condition": true,
+      "grid": [
+        0
+      ],
+      "source_stride": 256,
+      "destination_stride": 256
+    }
+  ],
+  "negative_controls_rejected": [
+    "unfilled",
+    "always_true_tail_risk",
+    "always_false_not_specialized",
+    "inverted_full_condition",
+    "size_not_multiple",
+    "scalar_true_mask",
+    "wrong_full_shape",
+    "wrong_full_dtype",
+    "wrong_tail_predicate",
+    "index_mask_removed",
+    "combined_row_mask_removed",
+    "column_mask_removed",
+    "constexpr_removed",
+    "warps_changed",
+    "rows_per_program_changed",
+    "floor_grid",
+    "source_stride_changed",
+    "destination_stride_changed",
+    "B1-D64-grid",
+    "B1-D64-stride",
+    "B1-D64-warps",
+    "B3-D64-grid",
+    "B3-D64-stride",
+    "B3-D64-warps",
+    "B4-D64-grid",
+    "B4-D64-stride",
+    "B4-D64-warps",
+    "B5-D64-grid",
+    "B5-D64-stride",
+    "B5-D64-warps",
+    "B8-D64-grid",
+    "B8-D64-stride",
+    "B8-D64-warps",
+    "B17-D64-grid",
+    "B17-D64-stride",
+    "B17-D64-warps",
+    "B256-D64-grid",
+    "B256-D64-stride",
+    "B256-D64-warps",
+    "B1-D128-grid",
+    "B1-D128-stride",
+    "B1-D128-warps",
+    "B3-D128-grid",
+    "B3-D128-stride",
+    "B3-D128-warps",
+    "B4-D128-grid",
+    "B4-D128-stride",
+    "B4-D128-warps",
+    "B5-D128-grid",
+    "B5-D128-stride",
+    "B5-D128-warps",
+    "B8-D128-grid",
+    "B8-D128-stride",
+    "B8-D128-warps",
+    "B17-D128-grid",
+    "B17-D128-stride",
+    "B17-D128-warps",
+    "B256-D128-grid",
+    "B256-D128-stride",
+    "B256-D128-warps",
+    "B1-D192-grid",
+    "B1-D192-stride",
+    "B1-D192-warps",
+    "B3-D192-grid",
+    "B3-D192-stride",
+    "B3-D192-warps",
+    "B4-D192-grid",
+    "B4-D192-stride",
+    "B4-D192-warps",
+    "B5-D192-grid",
+    "B5-D192-stride",
+    "B5-D192-warps",
+    "B8-D192-grid",
+    "B8-D192-stride",
+    "B8-D192-warps",
+    "B17-D192-grid",
+    "B17-D192-stride",
+    "B17-D192-warps",
+    "B256-D192-grid",
+    "B256-D192-stride",
+    "B256-D192-warps",
+    "B0-D64-launch-blocked",
+    "B0-D64-grid",
+    "B0-D64-stride",
+    "B0-D64-warps",
+    "B0-D192-launch-blocked",
+    "B0-D192-grid",
+    "B0-D192-stride",
+    "B0-D192-warps",
+    "fixture-B5-D192-targetK",
+    "fixture-B5-D192-targetV",
+    "fixture-B5-D192-untouched",
+    "fixture-B5-D192-inputK",
+    "fixture-B5-D192-inputV",
+    "fixture-B5-D192-input_gap",
+    "fixture-B5-D192-indices",
+    "fixture-B5-D192-cache_guard",
+    "fixture-B5-D192-row-swap",
+    "fixture-B256-D128-targetK",
+    "fixture-B256-D128-targetV",
+    "fixture-B256-D128-untouched",
+    "fixture-B256-D128-inputK",
+    "fixture-B256-D128-inputV",
+    "fixture-B256-D128-input_gap",
+    "fixture-B256-D128-indices",
+    "fixture-B256-D128-row-swap",
+    "duplicate-indices-configuration",
+    "out-of-range-configuration",
+    "prepared-file-still-unfilled",
+    "candidate-snapshot-change",
+    "unfilled-source-stops-before-GPU",
+    "changed-baseline-blocks-prepare"
+  ],
+  "installation": "one unfilled condition created; existing completed candidate retained; accepted baseline unchanged",
+  "compiled_capture": "mock identity and reset checked; actual selected compiled exports await user GPU run",
+  "limitation": "CPU AST/address-mask/fixture/probe/file controls only; no actual compilation, hardware bounds check or GPU pass",
+  "source_sha256": {
+    "34-check-kv-full-groups.py": "1009ba8542c2a78047e822165fdab26b9a6c11ad89c794324e5d1450614dbe60",
+    "34-check-kv-full-groups.sh": "62b3e241993cbd8f21994cf8451fdb6514b80fa8b2ebefdacf1c0759f76fd2b1",
+    "34-full-groups-cpu-test.py": "f265d5514145a8543d2c5f33560299cbda0a4bffbfdb3fc8b331882252860e32"
+  }
+}

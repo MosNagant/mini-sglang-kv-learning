@@ -1,0 +1,33 @@
+{
+  "status": "CPU_COMPILE_HARNESS_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "WSL": "NOT_RUN",
+  "config": {
+    "batch": 256,
+    "width": 128,
+    "capacity": 1024,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0
+  },
+  "indices": "0..255",
+  "negative_controls_rejected": [
+    "wrong_mapping_swap_rows0_and8",
+    "target_K_last",
+    "target_V_last",
+    "untouched_cache",
+    "input_K_last",
+    "input_V_last",
+    "indices_last",
+    "wrong_warps_4",
+    "wrong_warps_1",
+    "changed_executed_helper",
+    "existing_compiler_export_not_overwritten"
+  ],
+  "compiler_export": "old retained bytes re-exported with identical hashes; original-line excerpts verified; missing fields/API marked unavailable",
+  "source_sha256": {
+    "28-compare-kv-warps-compile.py": "767c3c5adfe9ea353229c2df928af432fdfc48da28b731d386c05de549fbf055",
+    "28-compare-kv-warps-compile.sh": "c128383ba1b2b6f9249a0fb013f8d8ac6188c37245bafd394b144dbb4dfe42f2",
+    "28-warps-compile-cpu-test.py": "052be69af5af2671c164ef0f7c8343cb4cf4647787da2438bc3ec840ce446f0d"
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "status": "INDEPENDENT_CPU_GROUPED_COMPILER_EVIDENCE_AUDIT_PASS",
+  "run": "outputs/kv-cache-performance/logs/m07-grouped-compile-results/run-20261010-141355-0mkb5q_8",
+  "audit_mode": "CPU-only saved-artifact checks; no WSL/GPU calls",
+  "blocking_findings": [],
+  "counts": {
+    "source_manifest_hashes": 60,
+    "proposed_source_hashes": 31,
+    "accepted32_source_hash_links": 52,
+    "pinned_helper_hashes": 4,
+    "kernel_and_contract_pins": 5,
+    "current_windows_helper_hashes": 26,
+    "calls": 4,
+    "before_npz_files": 4,
+    "before_arrays": 20,
+    "before_elements": 1770496,
+    "after_npz_files": 4,
+    "after_arrays": 16,
+    "after_elements": 984064,
+    "compiler_artifact_hashes": 20,
+    "runtime_source_hashes": 8,
+    "excerpt_lines": 74,
+    "all_arrays": 36,
+    "all_elements": 2754560
+  },
+  "checks": {
+    "manifest_and_source_chain": true,
+    "accepted32_status_exact_copy": true,
+    "kernel_and_contract_pins": true,
+    "plan_actual_launches_metadata": true,
+    "independently_reconstructed_fixture_and_cache_reference": true,
+    "full_backing_inputs_indices_before_after": true,
+    "pairs_match": true,
+    "artifact_hashes_sizes_line_counts": true,
+    "excerpts_exact_original_lines": true,
+    "runtime_sources": true
+  },
+  "accepted32_gate": {
+    "status": "ACCEPTED32_SOURCE_AND_RECORD_GATE_PASS",
+    "run": "run-20261010-134931-4l7bljlh",
+    "status_sha256": "cb6adb2e80e33d1aabf024b71098767611039444102ea6f2cb96555ef8c53fb0",
+    "source_hashes_sha256": "bf16e87762c1b85bca6ef8173c53427d6deb46d43c7122782b80847f273c7eeb",
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "scope": "saved six-case timing source/plan/raw records/summary validated; no timing executed by33"
+  },
+  "kernel_source_pins": {
+    "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+    "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+    "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+    "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1"
+  },
+  "current_windows_helpers_verified": [
+    "22-check-kv-wrapper.py",
+    "26-check-kv-warps.sh",
+    "22-kv-contract-support.py",
+    "30-compare-kv-grouped.sh",
+    "30-compare-kv-grouped.py",
+    "15-check-kv-contract.py",
+    "31-check-kv-grouped-full.py",
+    "32-compare-kv-grouped-full.sh",
+    "24-inspect-triton-compile.py",
+    "26-triton-store-candidate.py",
+    "21-check-kv-mask.py",
+    "31-check-kv-grouped-full.sh",
+    "28-compare-kv-warps-compile.py",
+    "27-compare-kv-warps.py",
+    "26-check-kv-warps.py",
+    "33-inspect-kv-grouped-compile.sh",
+    "32-compare-kv-grouped-full.py",
+    "29-check-kv-grouped.sh",
+    "33-inspect-kv-grouped-compile.py",
+    "29-triton-store-grouped.py",
+    "14-check-kv-widths.py",
+    "29-check-kv-grouped.py",
+    "21-triton-store-mask.py",
+    "25-compare-kv-v1.py",
+    "23-check-kv-common.py",
+    "22-triton-store-api-template.py"
+  ],
+  "runtime_hashes": {
+    "compiler": "c37149275a03d063fc1c339cd76a19da1c17e3d555410372e6cad29eedef6202",
+    "jit": "ea831e03e08675654c94a21e2e6917ada4b772e97f266c2ce141e7a6645ee16d"
+  },
+  "observations": [
+    {
+      "case": "B256-D64-frozen_v1",
+      "launch": {
+        "grid": [
+          256
+        ],
+        "parameters": {
+          "WIDTH": 64,
+          "SRC_ROW_STRIDE": 64,
+          "DST_ROW_STRIDE": 128,
+          "BLOCK_SIZE": 64,
+          "num_warps": 4
+        }
+      },
+      "static_resources": {
+        "registers_per_thread": 14,
+        "shared_memory_bytes": 0,
+        "n_spills_raw": 0
+      },
+      "ttgir_layout": {
+        "line": 1,
+        "text": "#blocked = #ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>"
+      },
+      "ptx_global_loads": [
+        {
+          "line": 43,
+          "text": "\tld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 65,
+          "text": "\t@%p1 ld.global.b16 { %rs3 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 81,
+          "text": "\t@%p1 ld.global.b16 { %rs6 }, [ %rd4 + 0 ];"
+        }
+      ],
+      "ptx_global_stores": [
+        {
+          "line": 74,
+          "text": "\t@%p2 st.global.b16 [ %rd3 + 0 ], { %rs3 };"
+        },
+        {
+          "line": 87,
+          "text": "\t@%p2 st.global.b16 [ %rd5 + 0 ], { %rs6 };"
+        }
+      ],
+      "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted"
+    },
+    {
+      "case": "B256-D64-grouped",
+      "launch": {
+        "grid": [
+          64
+        ],
+        "parameters": {
+          "BATCH": 256,
+          "WIDTH": 64,
+          "SRC_ROW_STRIDE": 64,
+          "DST_ROW_STRIDE": 128,
+          "BLOCK_SIZE": 64,
+          "ROWS_PER_PROGRAM": 4,
+          "num_warps": 4
+        }
+      },
+      "static_resources": {
+        "registers_per_thread": 18,
+        "shared_memory_bytes": 0,
+        "n_spills_raw": 0
+      },
+      "ttgir_layout": {
+        "line": 1,
+        "text": "#blocked = #ttg.blocked<{sizePerThread = [1, 2], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>"
+      },
+      "ptx_global_loads": [
+        {
+          "line": 52,
+          "text": "\t@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 72,
+          "text": "\t@%p1 ld.global.b32 { %r4 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 86,
+          "text": "\t@%p1 ld.global.b32 { %r7 }, [ %rd4 + 0 ];"
+        }
+      ],
+      "ptx_global_stores": [
+        {
+          "line": 79,
+          "text": "\t@%p1 st.global.b32 [ %rd3 + 0 ], { %r4 };"
+        },
+        {
+          "line": 92,
+          "text": "\t@%p1 st.global.b32 [ %rd5 + 0 ], { %r7 };"
+        }
+      ],
+      "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted"
+    },
+    {
+      "case": "B256-D128-frozen_v1",
+      "launch": {
+        "grid": [
+          256
+        ],
+        "parameters": {
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "num_warps": 4
+        }
+      },
+      "static_resources": {
+        "registers_per_thread": 14,
+        "shared_memory_bytes": 0,
+        "n_spills_raw": 0
+      },
+      "ttgir_layout": {
+        "line": 1,
+        "text": "#blocked = #ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>"
+      },
+      "ptx_global_loads": [
+        {
+          "line": 43,
+          "text": "\tld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 65,
+          "text": "\t@%p1 ld.global.b16 { %rs3 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 79,
+          "text": "\t@%p1 ld.global.b16 { %rs6 }, [ %rd4 + 0 ];"
+        }
+      ],
+      "ptx_global_stores": [
+        {
+          "line": 72,
+          "text": "\t@%p1 st.global.b16 [ %rd3 + 0 ], { %rs3 };"
+        },
+        {
+          "line": 85,
+          "text": "\t@%p1 st.global.b16 [ %rd5 + 0 ], { %rs6 };"
+        }
+      ],
+      "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted"
+    },
+    {
+      "case": "B256-D128-grouped",
+      "launch": {
+        "grid": [
+          64
+        ],
+        "parameters": {
+          "BATCH": 256,
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "ROWS_PER_PROGRAM": 4,
+          "num_warps": 4
+        }
+      },
+      "static_resources": {
+        "registers_per_thread": 18,
+        "shared_memory_bytes": 0,
+        "n_spills_raw": 0
+      },
+      "ttgir_layout": {
+        "line": 1,
+        "text": "#blocked = #ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>"
+      },
+      "ptx_global_loads": [
+        {
+          "line": 52,
+          "text": "\t@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 73,
+          "text": "\t@%p1 ld.global.v2.b32 { %r6, %r7 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 88,
+          "text": "\t@%p1 ld.global.v2.b32 { %r12, %r13 }, [ %rd4 + 0 ];"
+        }
+      ],
+      "ptx_global_stores": [
+        {
+          "line": 80,
+          "text": "\t@%p1 st.global.v2.b32 [ %rd3 + 0 ], { %r6, %r7 };"
+        },
+        {
+          "line": 94,
+          "text": "\t@%p1 st.global.v2.b32 [ %rd5 + 0 ], { %r12, %r13 };"
+        }
+      ],
+      "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted"
+    }
+  ],
+  "limitations": [
+    "Four actual checked calls: B256, D64/128, C1024, FP16, contiguous inputs, interleaved cache, unique int32 destinations 0..255; both arms four warps.",
+    "Compiler observation fixture has seed20261010 and first-column row IDs; same configurations but deliberately different values from32 timing.",
+    "This run has no gap, cache guard, tail width or partial row group; full backing checks here cover unwritten slots and unchanged inputs/indices, not new gap/mask evidence.",
+    "No original CUDA compiler arm and no 1-warp candidate; distinguish both from earlier experiments.",
+    "No timing in33; no fresh-compilation proof, achieved occupancy, bandwidth, hardware counters or causal speedup inference.",
+    "n_spills_raw is preserved without inventing a unit; PTX is virtual ISA.",
+    "Runtime source hashes verify copied runtime files, not live WSL state at this offline audit.",
+    "Kernel ownership remains coach-demonstrated expressions applied/run by learner; passing evidence does not prove independent mastery."
+  ]
+}

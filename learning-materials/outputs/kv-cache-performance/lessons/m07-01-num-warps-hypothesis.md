@@ -1,5 +1,56 @@
 # M07-01：先写假设，再改变 num_warps
 
+**12:11新结果：** 26号正确性之后，27号两配置三方计时也已运行并核验，1-warp未稳定快于v1；后续先对照行分工和D128编译差异。见[首轮性能结果](../reviews/20261010-m07-warps-timing-review.md)，不重复下方准备或运行流程。
+
+**10-10当前断点：** 本人已改NUM_WARPS 4→1并运行26号，196结果及36非法拒绝经独立复核通过，见[审查](../reviews/20261010-m07-warps-correctness-review.md)。无需重复下方准备/运行步骤。下一步记录B1/D64与B256/D128的预测和否定条件，准备同场性能对照；尚无候选计时或提速结论。M07-04交付4分，总57/100，独立解释另记。
+
+## 10-10实作入口：做一次改动，再逆向复盘
+
+用户选择项目先行、分轮复习。沿用昨天“更快，因为一个warp工作量不算多”的初稿，先准备候选并做正确性，不要求先重学清单上所有知识。下方完整假设卡可逐步补；计时前只需留下两个重点配置的预测和判定口径，允许回答不确定。
+
+本轮候选只改变每个program的`num_warps`：4→1。仍是一次启动、`grid=(B,)`、一个program搬一条K和一条V，D、BLOCK_SIZE、indices、地址和mask保持相同。`num_warps`控制每个程序实例使用的warp数量；不决定总输入行数，也不让每行只搬32个元素。[Triton官方参数说明](https://triton-lang.org/main/python-api/generated/triton.Config.html)。本机3.5.1是否编译/执行通过以实际运行结果为准。
+
+第一轮只要能对应这三层即可：`B=5`→5个program；`num_warps=1`→每个program配置1个warp；`D=192`→每条K/V仍搬192个有效元素。减少warp可能减少某些资源开销，也可能降低并行度，目前只是待测方向，不能写成已证明提高occupancy。
+
+之后按产物复盘：
+
+1. 正确性输出：解释一次launch与多个program，为什么改warp后仍要检查mask尾部。
+2. 编译/地址：观察线程如何分担逻辑列，再补coalescing。`indices=[7,0,3]`决定不同program去哪个槽；是否合并访存要看同一warp同次访问的地址关系，不能仅凭槽不连续下结论。[NVIDIA访存说明](https://developer.nvidia.com/blog/unlock-gpu-performance-global-memory-access-in-cuda/)。
+3. 同场成绩：比较4-warp与1-warp的Graph时间及三轮变化，再复盘Event/Graph、有效带宽和判定口径。
+4. 面试串讲：从真实代码、一次失败/正确性反例和成绩说明“改了什么、如何判断、有哪些局限”。
+
+以下保留实验设计和面试提醒，均不是额外的动手门槛。
+
+### 本轮实际操作
+
+教练已准备26号入口与候选模板，完成CPU辅助检查及独立审查；没有运行GPU。原始清单和课堂约定已保存，本轮不自动发布GitHub。
+
+在Windows PowerShell依次执行。第一条只创建候选（已有文件保留），不运行GPU：
+
+```powershell
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec bash /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/26-check-kv-warps.sh --prepare
+```
+
+打开候选：
+
+```powershell
+notepad.exe '\\wsl$\CUDA-Ubuntu-24.04\home\weltlaw\projects\mini-sglang-kv\experiments\triton_store_candidate.py'
+```
+
+把`NUM_WARPS = 4`改成`NUM_WARPS = 1`，保存。模板中的公共检查与M06一致，真正的启动参数是`num_warps=NUM_WARPS`。第一次只改这一处；不改原来的mask内核、v1入口或逻辑列块。
+
+运行正确性：
+
+```powershell
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec bash /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/26-check-kv-warps.sh
+```
+
+这次比较`frozen_v1=4`与`candidate=1`，不调用原版CUDA，不计时。计划98配置×两组，196项=168次非空提交+28次空返回，另36项非法调用拒绝。检查完整目标、未写存储、输入/gap、缓存guard和indices，记录真实grid/num_warps、源码与失败。B0不启动。范围为FP16/int32、C32、B0/1/2/3/4/5/17、D64/128/192及M06选定布局；后续B256计时输入还要另行正确性检查。
+
+只有实际出现`WARPS_CORRECTNESS_PASS`且保存结果审查通过，才接受本轮正确性。通过不说明更快；下一步才是原版/v1/候选的同场测量。候选未改仍为4时，脚本在GPU导入前提示`LEARNER_CHANGE_PENDING`，不会冒认优化实验完成。
+
+准备记录：[CPU辅助检查](../reviews/20261010-m07-warps-scaffold-cpu.json)。源码：[候选模板](../26-triton-store-candidate.py)、[运行器](../26-check-kv-warps.py)。
+
 M06 已完成限定范围的正确性、编译观察与同场对照，v1 暂无已确认的稳定提速。证据与范围见 [M06 归档入口](../modules/M06/README.md)。本课把你的初步猜想补成一张**可检验的假设卡**，并准备一个只改变启动配置的候选；本页不代表候选已经实现或运行。
 
 ## 从已看到的分工开始

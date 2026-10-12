@@ -1,0 +1,238 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-full/run-20261010-133620-jeh8_est
+SCOPE=C32 FP16/int32 B0/1/2/3/4/5/17 D64/128/192; selected layouts/gaps/guards only
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=64 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=64 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=64 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=64 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=64 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=64 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=64 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=64 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=64 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=64 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=64 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=128 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=128 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=128 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=128 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=128 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=128 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=128 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=128 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=128 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=128 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=128 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=128 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=interleaved gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=interleaved gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=interleaved gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=interleaved gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=separate gap=0 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=separate gap=0 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=separate gap=64 guard=0 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=separate gap=64 guard=0 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=interleaved gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=interleaved gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=interleaved gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=grouped B=0 D=192 layout=separate gap=64 guard=64 submissions=0
+WARPS_CASE_PASS arm=frozen_v1 B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=1 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=2 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=2 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=3 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=4 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=5 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=frozen_v1 B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+WARPS_CASE_PASS arm=grouped B=17 D=192 layout=separate gap=64 guard=64 submissions=1
+EXPECTED_REJECTION indices_too_many: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION indices_too_few: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION v_shape: INPUT_SHAPE: K/V must have the same (B,D)
+EXPECTED_REJECTION k_dtype: TENSOR_DTYPE: k
+EXPECTED_REJECTION indices_dtype: TENSOR_DTYPE: indices
+EXPECTED_REJECTION cpu_k: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION cpu_indices: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION unsupported_width: WIDTH_SCOPE: D must be 64, 128, or 192
+EXPECTED_REJECTION column_stride: COLUMN_STRIDE: k
+EXPECTED_REJECTION index_stride: INDEX_STRIDE: require contiguous rank-1 indices
+EXPECTED_REJECTION unequal_source_stride: SHARED_SOURCE_STRIDE: K/V row strides must match
+EXPECTED_REJECTION unsupported_source_stride: SOURCE_LAYOUT_SCOPE: require D or D+64
+EXPECTED_REJECTION cache_overlap: CACHE_WRITE_ALIAS: K/V cache live regions overlap
+EXPECTED_REJECTION source_cache_overlap: SOURCE_CACHE_ALIAS: k_cache/k
+EXPECTED_REJECTION duplicate_indices: INDEX_DUPLICATE: destinations must be unique
+EXPECTED_REJECTION negative_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION out_of_range_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION empty_with_one_index: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION indices_too_many: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION indices_too_few: INDEX_COUNT: one destination is required per input row
+EXPECTED_REJECTION v_shape: INPUT_SHAPE: K/V must have the same (B,D)
+EXPECTED_REJECTION k_dtype: TENSOR_DTYPE: k
+EXPECTED_REJECTION indices_dtype: TENSOR_DTYPE: indices
+EXPECTED_REJECTION cpu_k: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION cpu_indices: CUDA_DEVICE: all five tensors must be CUDA tensors
+EXPECTED_REJECTION unsupported_width: WIDTH_SCOPE: D must be 64, 128, or 192
+EXPECTED_REJECTION column_stride: COLUMN_STRIDE: k
+EXPECTED_REJECTION index_stride: INDEX_STRIDE: require contiguous rank-1 indices
+EXPECTED_REJECTION unequal_source_stride: SHARED_SOURCE_STRIDE: K/V row strides must match
+EXPECTED_REJECTION unsupported_source_stride: SOURCE_LAYOUT_SCOPE: require D or D+64
+EXPECTED_REJECTION cache_overlap: CACHE_WRITE_ALIAS: K/V cache live regions overlap
+EXPECTED_REJECTION source_cache_overlap: SOURCE_CACHE_ALIAS: k_cache/k
+EXPECTED_REJECTION duplicate_indices: INDEX_DUPLICATE: destinations must be unique
+EXPECTED_REJECTION negative_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION out_of_range_index: INDEX_RANGE: require 0<=indices[i]<C
+EXPECTED_REJECTION empty_with_one_index: INDEX_COUNT: one destination is required per input row
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-grouped-full-results/run-20261010-133620-jeh8_est
+GROUPED_FULL_CORRECTNESS_PASS: 196/196 = 168 nonempty calls + 28 empty wrapper returns; 98 pairs; 36 invalid rejections with zero KV submissions
+LIMIT: scoped FP16/int32 common matrix; invalid checks compare five argument views; no timing, model or AMD result
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-grouped-full-20261010-133619-OEmbug.log

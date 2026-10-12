@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "cpu_k",
+  "rejection": {
+    "type": "ValueError",
+    "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+  }
+}

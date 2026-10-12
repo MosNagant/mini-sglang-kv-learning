@@ -1,0 +1,4 @@
+CREATED=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_grouped.py
+GROUPED_SOURCE=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_grouped.py
+PREPARE_COMPLETE: fill THREE expressions; existing file retained; GPU NOT_RUN
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-grouped-check-20261010-125419-YXRWiZ.log

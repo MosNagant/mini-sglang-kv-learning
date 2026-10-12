@@ -1,0 +1,71 @@
+{
+  "status": "CPU_FULL_GROUPED_BINDING_CONTROLS_PASS",
+  "GPU": "NOT_RUN",
+  "WSL": "NOT_RUN",
+  "plan": {
+    "configurations": 98,
+    "implementation_cases": 196,
+    "nonempty_calls": 168,
+    "empty_wrapper_returns": 28,
+    "matched_pairs": 98,
+    "invalid_rejections": 36,
+    "invalid_kinds": [
+      "indices_too_many",
+      "indices_too_few",
+      "v_shape",
+      "k_dtype",
+      "indices_dtype",
+      "cpu_k",
+      "cpu_indices",
+      "unsupported_width",
+      "column_stride",
+      "index_stride",
+      "unequal_source_stride",
+      "unsupported_source_stride",
+      "cache_overlap",
+      "source_cache_overlap",
+      "duplicate_indices",
+      "negative_index",
+      "out_of_range_index",
+      "empty_with_one_index"
+    ],
+    "arms": {
+      "frozen_v1": {
+        "num_warps": 4,
+        "rows_per_program": 1
+      },
+      "grouped": {
+        "num_warps": 4,
+        "rows_per_program": 4
+      }
+    },
+    "scope": "C32 FP16/int32 B0/1/2/3/4/5/17 D64/128/192; selected layouts/gaps/guards only",
+    "positive_checks": "independent expectation; complete cache and input/indices backings, including gaps/guards",
+    "invalid_checks": "contract rejection, zero KV submissions, five argument-view values unchanged; not all backing bytes",
+    "limitations": "B0 is a wrapper return; no timing, arbitrary-layout, model, hardware-counter or AMD result"
+  },
+  "source_sha256": {
+    "31-check-kv-grouped-full.py": "c966eee8eccb67488dd1c83411d641abee008eb0ef0458c769c3fb50d0b732eb",
+    "31-check-kv-grouped-full.sh": "81c9a9612137095fd6035af0eb628823cdb5da3a3a55a52ef494aa1f2dbaff4d",
+    "31-grouped-full-cpu-test.py": "00db4fd251b8db47c6661dbc35543bb42badce1f4066a1ee9f01a519eebcfd23"
+  },
+  "reused_fixture_oracle_positives": 98,
+  "mock_nonempty_forwards": 168,
+  "mock_empty_launches_blocked": 28,
+  "invalid_dispatches": 36,
+  "source_and_failure_controls": [
+    "source_change_triton_store_grouped.py",
+    "source_change_30-compare-kv-grouped.py",
+    "unexpected_invalid_RuntimeError_preserved"
+  ],
+  "accepted_gate": {
+    "status": "ACCEPTED_GROUPED_SOURCE_AND_STATUS_GATE_PASS",
+    "source_run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m07-grouped-results\\run-20261010-125938-pe9pljcg",
+    "status_sha256": "17a0dc7fd1d76f52b3f81697a858075f11e8a97216a4476ee0e156de4ea84645",
+    "source_hashes_sha256": "0bcb686c4955deb6541e64f17d7c194be19e135d9260f292ad151b252b48380e",
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "positive_and_empty_cases": 34,
+    "scope": "accepted C32 B<=17 source/status records; actual C1024 timing inputs must pass in every worker"
+  },
+  "limitation": "CPU probes/oracles and stub dispatcher only; invalid contract behavior and kernel execution still require user GPU run"
+}

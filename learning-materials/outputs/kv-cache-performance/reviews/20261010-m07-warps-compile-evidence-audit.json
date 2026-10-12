@@ -1,0 +1,92 @@
+{
+  "status": "INDEPENDENT_CPU_COMPILE_EVIDENCE_AUDIT_PASS",
+  "review_date": "2026-10-10",
+  "reviewer": "m07_result_audit",
+  "reviewed_run": "outputs/kv-cache-performance/logs/m07-warps-compile-results/run-20261010-123123-pgndtykl",
+  "new_gpu_runs": 0,
+  "method": "Read-only inspection of saved status, metadata, launch records, sources, compiler artifacts and full before/after arrays. Independently recomputed all expected cache contents; no WSL/GPU execution.",
+  "config": {
+    "batch": 256,
+    "width": 128,
+    "capacity": 1024,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0
+  },
+  "indices": "int32 0..255",
+  "counts": {
+    "checked_calls": 2,
+    "source_snapshot_hashes_matched": 47,
+    "compiler_artifact_hashes_matched": 10,
+    "runtime_source_hashes_matched": 4,
+    "example_lines_matched": 30,
+    "full_after_arrays_recomputed": 8,
+    "full_after_elements_recomputed": 655872
+  },
+  "gates": "Correctness26 and timing27 status/source-manifest hashes match original saved runs; accepted candidate and fixed kernel identities match.",
+  "array_review": "Both independent allocations match complete recomputed cache reference; all 768 untouched destination rows preserved; full K/V input arrays and indices unchanged; both arms have identical before and after values.",
+  "arms": {
+    "frozen_v1": {
+      "actual_launch": {
+        "grid": [
+          256
+        ],
+        "parameters": {
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "num_warps": 4
+        }
+      },
+      "metadata_num_warps": 4,
+      "registers_per_thread": 14,
+      "shared_memory_bytes": 0,
+      "n_spills_raw": 0,
+      "ttgir_size_per_thread": 1,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ],
+      "compiled_metadata_hash": "8edbf0fe504474b017fa003dcbb82ce2a621d77b97259e08b2c2037d27bfccf0"
+    },
+    "candidate": {
+      "actual_launch": {
+        "grid": [
+          256
+        ],
+        "parameters": {
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 128,
+          "DST_ROW_STRIDE": 256,
+          "BLOCK_SIZE": 128,
+          "num_warps": 1
+        }
+      },
+      "metadata_num_warps": 1,
+      "registers_per_thread": 14,
+      "shared_memory_bytes": 0,
+      "n_spills_raw": 0,
+      "ttgir_size_per_thread": 4,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ],
+      "compiled_metadata_hash": "580effef93360e07ab1b2de7c15798af3881fb288e1e9a19819a33093836b712"
+    }
+  },
+  "old_specialization_boundary": "This is B256 D128 C1024 with BLOCK_SIZE128, source stride128 and destination stride256. It is not the earlier B3 D192 separate/gap64/cache-guard64 observation. Current TTIR uses tensor<128x...>; current static registers=14 per thread for both arms, not the old 18-register observation.",
+  "limitations": [
+    "Fresh compilation not observed; cached specializations may be reused.",
+    "PTX is virtual ISA; no SASS, achieved occupancy, bandwidth, spill traffic or hardware-counter inference.",
+    "The two static resource records and compiler layouts do not establish why the candidate was slower in27.",
+    "This run has no timing and only the stated D128 configuration."
+  ],
+  "blocking_findings": []
+}

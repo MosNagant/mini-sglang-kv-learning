@@ -1,0 +1,2382 @@
+{
+  "status": "COLLECTED",
+  "batch": 5,
+  "width": 128,
+  "round": 2,
+  "capacity": 512,
+  "calls_per_interval": 100,
+  "seed": 20261011,
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.001093439981341362,
+        0.0011299200356006621,
+        0.0012303999811410903,
+        0.0009049600362777709,
+        0.001117120012640953,
+        0.0011049599945545197,
+        0.0009187199920415878,
+        0.0009123200178146363,
+        0.0009808000177145004,
+        0.0009881599992513656,
+        0.000984639972448349,
+        0.0009356799721717834,
+        0.0009084799885749817,
+        0.0009008000046014786,
+        0.0009206400066614151,
+        0.0009065599739551544,
+        0.0008937600255012512,
+        0.0012806400656700135,
+        0.0009302400052547455,
+        0.0011984000355005264,
+        0.0009123200178146363,
+        0.0009113600105047226,
+        0.000910400003194809,
+        0.0011203200370073318,
+        0.0009929600358009338,
+        0.000910400003194809,
+        0.0011225599795579911,
+        0.0009120000153779984,
+        0.0012703999876976014,
+        0.0012688000500202178
+      ],
+      "eager": [
+        0.008779839873313903,
+        0.008192639946937561,
+        0.013309119939804078,
+        0.0074559998512268065,
+        0.008501440286636353,
+        0.008409600257873535,
+        0.008560960292816161,
+        0.00900543987751007,
+        0.008197439908981323,
+        0.008279039859771728,
+        0.00983839988708496,
+        0.010101120471954345,
+        0.017192000150680543,
+        0.008736000061035157,
+        0.007823039889335632,
+        0.00786080002784729,
+        0.00987712025642395,
+        0.016156799793243408,
+        0.020824320316314697,
+        0.00833791971206665,
+        0.007934079766273498,
+        0.008650879859924316,
+        0.00809984028339386,
+        0.008346560001373292,
+        0.008624640107154847,
+        0.008679360151290894,
+        0.007989760041236877,
+        0.013065279722213744,
+        0.02064671993255615,
+        0.010731199979782105
+      ]
+    },
+    "accepted_grouped": {
+      "graph": [
+        0.001010880023241043,
+        0.0010070399940013885,
+        0.001589439958333969,
+        0.0009843199700117111,
+        0.0011644800007343291,
+        0.0011900799721479415,
+        0.0012387199699878692,
+        0.0009955199807882308,
+        0.0009971199929714202,
+        0.0009884800016880036,
+        0.0009913600236177444,
+        0.001002880036830902,
+        0.001403840035200119,
+        0.0014192000031471252,
+        0.0010080000013113022,
+        0.0010294400155544281,
+        0.0009836799651384354,
+        0.0013903999328613282,
+        0.0014364799857139586,
+        0.001141119971871376,
+        0.0009958399832248688,
+        0.0011939200013875962,
+        0.0011974400281906127,
+        0.0011955200135707856,
+        0.0009990400075912476,
+        0.0012060800194740296,
+        0.0009935999661684037,
+        0.0009987200051546096,
+        0.0013577599823474883,
+        0.001372160017490387
+      ],
+      "eager": [
+        0.049860482215881345,
+        0.01333888053894043,
+        0.021314239501953124,
+        0.012878079414367676,
+        0.013121600151062012,
+        0.01587231993675232,
+        0.01336735963821411,
+        0.013103040456771851,
+        0.013569600582122802,
+        0.01425920009613037,
+        0.016032320261001588,
+        0.015752320289611817,
+        0.0126256000995636,
+        0.012883520126342774,
+        0.012647039890289306,
+        0.01253600001335144,
+        0.015826239585876464,
+        0.015474560260772706,
+        0.03919872045516968,
+        0.013290879726409912,
+        0.013058240413665772,
+        0.033897600173950194,
+        0.013061439990997315,
+        0.012802239656448364,
+        0.012683199644088745,
+        0.013127679824829102,
+        0.012703360319137573,
+        0.036230080127716065,
+        0.03895488023757934,
+        0.03907423973083496
+      ]
+    },
+    "full_groups": {
+      "graph": [
+        0.0010102400183677673,
+        0.0010118400305509567,
+        0.0012457600235939025,
+        0.0010662399977445602,
+        0.0011433599889278411,
+        0.0011523199826478957,
+        0.001196480020880699,
+        0.0011510399729013443,
+        0.0009916800260543824,
+        0.0009855999797582626,
+        0.0010710400342941284,
+        0.0009808000177145004,
+        0.0013257600367069244,
+        0.0012163200229406356,
+        0.0012003199756145477,
+        0.0009974399954080582,
+        0.000992640033364296,
+        0.001324159950017929,
+        0.001395519971847534,
+        0.0011535999923944474,
+        0.0009935999661684037,
+        0.0011433599889278411,
+        0.001141439974308014,
+        0.0010422399640083312,
+        0.000992320030927658,
+        0.0010428799688816071,
+        0.0010700800269842147,
+        0.0013340799510478973,
+        0.001313280016183853,
+        0.0013407999277114868
+      ],
+      "eager": [
+        0.03071199893951416,
+        0.013107199668884278,
+        0.03875999927520752,
+        0.019660799503326415,
+        0.013231040239334106,
+        0.013019200563430786,
+        0.013271679878234863,
+        0.013050880432128906,
+        0.013428159952163697,
+        0.012940800189971924,
+        0.013479039669036866,
+        0.01582080006599426,
+        0.01468991994857788,
+        0.014630719423294067,
+        0.012830400466918945,
+        0.013169280290603637,
+        0.016173759698867796,
+        0.01593664050102234,
+        0.0363590407371521,
+        0.01283519983291626,
+        0.012630079984664916,
+        0.022455039024353026,
+        0.012834880352020264,
+        0.01333024024963379,
+        0.013629440069198608,
+        0.013169599771499634,
+        0.013264000415802002,
+        0.014937599897384643,
+        0.039267840385437014,
+        0.040601921081542966
+      ]
+    }
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001093439981341362
+    },
+    {
+      "sample": 0,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.03071199893951416
+    },
+    {
+      "sample": 0,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.049860482215881345
+    },
+    {
+      "sample": 0,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008779839873313903
+    },
+    {
+      "sample": 0,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010102400183677673
+    },
+    {
+      "sample": 0,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001010880023241043
+    },
+    {
+      "sample": 1,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0010070399940013885
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011299200356006621
+    },
+    {
+      "sample": 1,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013107199668884278
+    },
+    {
+      "sample": 1,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01333888053894043
+    },
+    {
+      "sample": 1,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008192639946937561
+    },
+    {
+      "sample": 1,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010118400305509567
+    },
+    {
+      "sample": 2,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0012457600235939025
+    },
+    {
+      "sample": 2,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001589439958333969
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012303999811410903
+    },
+    {
+      "sample": 2,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.03875999927520752
+    },
+    {
+      "sample": 2,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.021314239501953124
+    },
+    {
+      "sample": 2,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.013309119939804078
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0074559998512268065
+    },
+    {
+      "sample": 3,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010662399977445602
+    },
+    {
+      "sample": 3,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009843199700117111
+    },
+    {
+      "sample": 3,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009049600362777709
+    },
+    {
+      "sample": 3,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.019660799503326415
+    },
+    {
+      "sample": 3,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012878079414367676
+    },
+    {
+      "sample": 4,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013121600151062012
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008501440286636353
+    },
+    {
+      "sample": 4,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0011433599889278411
+    },
+    {
+      "sample": 4,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011644800007343291
+    },
+    {
+      "sample": 4,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001117120012640953
+    },
+    {
+      "sample": 4,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013231040239334106
+    },
+    {
+      "sample": 5,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013019200563430786
+    },
+    {
+      "sample": 5,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01587231993675232
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008409600257873535
+    },
+    {
+      "sample": 5,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0011523199826478957
+    },
+    {
+      "sample": 5,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011900799721479415
+    },
+    {
+      "sample": 5,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011049599945545197
+    },
+    {
+      "sample": 6,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0012387199699878692
+    },
+    {
+      "sample": 6,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.001196480020880699
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008560960292816161
+    },
+    {
+      "sample": 6,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01336735963821411
+    },
+    {
+      "sample": 6,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013271679878234863
+    },
+    {
+      "sample": 6,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009187199920415878
+    },
+    {
+      "sample": 7,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0011510399729013443
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00900543987751007
+    },
+    {
+      "sample": 7,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013103040456771851
+    },
+    {
+      "sample": 7,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013050880432128906
+    },
+    {
+      "sample": 7,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009123200178146363
+    },
+    {
+      "sample": 7,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009955199807882308
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008197439908981323
+    },
+    {
+      "sample": 8,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013569600582122802
+    },
+    {
+      "sample": 8,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013428159952163697
+    },
+    {
+      "sample": 8,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009808000177145004
+    },
+    {
+      "sample": 8,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009971199929714202
+    },
+    {
+      "sample": 8,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0009916800260543824
+    },
+    {
+      "sample": 9,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01425920009613037
+    },
+    {
+      "sample": 9,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.012940800189971924
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009881599992513656
+    },
+    {
+      "sample": 9,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009884800016880036
+    },
+    {
+      "sample": 9,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0009855999797582626
+    },
+    {
+      "sample": 9,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008279039859771728
+    },
+    {
+      "sample": 10,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013479039669036866
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000984639972448349
+    },
+    {
+      "sample": 10,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009913600236177444
+    },
+    {
+      "sample": 10,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010710400342941284
+    },
+    {
+      "sample": 10,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00983839988708496
+    },
+    {
+      "sample": 10,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.016032320261001588
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009356799721717834
+    },
+    {
+      "sample": 11,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001002880036830902
+    },
+    {
+      "sample": 11,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0009808000177145004
+    },
+    {
+      "sample": 11,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010101120471954345
+    },
+    {
+      "sample": 11,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.015752320289611817
+    },
+    {
+      "sample": 11,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.01582080006599426
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009084799885749817
+    },
+    {
+      "sample": 12,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.01468991994857788
+    },
+    {
+      "sample": 12,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.0126256000995636
+    },
+    {
+      "sample": 12,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.017192000150680543
+    },
+    {
+      "sample": 12,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0013257600367069244
+    },
+    {
+      "sample": 12,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001403840035200119
+    },
+    {
+      "sample": 13,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0014192000031471252
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009008000046014786
+    },
+    {
+      "sample": 13,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.014630719423294067
+    },
+    {
+      "sample": 13,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012883520126342774
+    },
+    {
+      "sample": 13,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008736000061035157
+    },
+    {
+      "sample": 13,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0012163200229406356
+    },
+    {
+      "sample": 14,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0012003199756145477
+    },
+    {
+      "sample": 14,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0010080000013113022
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009206400066614151
+    },
+    {
+      "sample": 14,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.012830400466918945
+    },
+    {
+      "sample": 14,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012647039890289306
+    },
+    {
+      "sample": 14,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007823039889335632
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00786080002784729
+    },
+    {
+      "sample": 15,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0009974399954080582
+    },
+    {
+      "sample": 15,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0010294400155544281
+    },
+    {
+      "sample": 15,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009065599739551544
+    },
+    {
+      "sample": 15,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013169280290603637
+    },
+    {
+      "sample": 15,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.01253600001335144
+    },
+    {
+      "sample": 16,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.015826239585876464
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00987712025642395
+    },
+    {
+      "sample": 16,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.000992640033364296
+    },
+    {
+      "sample": 16,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009836799651384354
+    },
+    {
+      "sample": 16,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008937600255012512
+    },
+    {
+      "sample": 16,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.016173759698867796
+    },
+    {
+      "sample": 17,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.01593664050102234
+    },
+    {
+      "sample": 17,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.015474560260772706
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.016156799793243408
+    },
+    {
+      "sample": 17,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.001324159950017929
+    },
+    {
+      "sample": 17,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013903999328613282
+    },
+    {
+      "sample": 17,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012806400656700135
+    },
+    {
+      "sample": 18,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0014364799857139586
+    },
+    {
+      "sample": 18,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.001395519971847534
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.020824320316314697
+    },
+    {
+      "sample": 18,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03919872045516968
+    },
+    {
+      "sample": 18,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.0363590407371521
+    },
+    {
+      "sample": 18,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009302400052547455
+    },
+    {
+      "sample": 19,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0011535999923944474
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00833791971206665
+    },
+    {
+      "sample": 19,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013290879726409912
+    },
+    {
+      "sample": 19,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.01283519983291626
+    },
+    {
+      "sample": 19,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011984000355005264
+    },
+    {
+      "sample": 19,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001141119971871376
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007934079766273498
+    },
+    {
+      "sample": 20,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013058240413665772
+    },
+    {
+      "sample": 20,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.012630079984664916
+    },
+    {
+      "sample": 20,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009123200178146363
+    },
+    {
+      "sample": 20,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009958399832248688
+    },
+    {
+      "sample": 20,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0009935999661684037
+    },
+    {
+      "sample": 21,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.033897600173950194
+    },
+    {
+      "sample": 21,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.022455039024353026
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009113600105047226
+    },
+    {
+      "sample": 21,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011939200013875962
+    },
+    {
+      "sample": 21,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0011433599889278411
+    },
+    {
+      "sample": 21,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008650879859924316
+    },
+    {
+      "sample": 22,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.012834880352020264
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000910400003194809
+    },
+    {
+      "sample": 22,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011974400281906127
+    },
+    {
+      "sample": 22,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.001141439974308014
+    },
+    {
+      "sample": 22,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00809984028339386
+    },
+    {
+      "sample": 22,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013061439990997315
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011203200370073318
+    },
+    {
+      "sample": 23,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0011955200135707856
+    },
+    {
+      "sample": 23,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010422399640083312
+    },
+    {
+      "sample": 23,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008346560001373292
+    },
+    {
+      "sample": 23,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012802239656448364
+    },
+    {
+      "sample": 23,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.01333024024963379
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009929600358009338
+    },
+    {
+      "sample": 24,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013629440069198608
+    },
+    {
+      "sample": 24,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012683199644088745
+    },
+    {
+      "sample": 24,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008624640107154847
+    },
+    {
+      "sample": 24,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.000992320030927658
+    },
+    {
+      "sample": 24,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009990400075912476
+    },
+    {
+      "sample": 25,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0012060800194740296
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000910400003194809
+    },
+    {
+      "sample": 25,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013169599771499634
+    },
+    {
+      "sample": 25,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.013127679824829102
+    },
+    {
+      "sample": 25,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008679360151290894
+    },
+    {
+      "sample": 25,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010428799688816071
+    },
+    {
+      "sample": 26,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0010700800269842147
+    },
+    {
+      "sample": 26,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009935999661684037
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011225599795579911
+    },
+    {
+      "sample": 26,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.013264000415802002
+    },
+    {
+      "sample": 26,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.012703360319137573
+    },
+    {
+      "sample": 26,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007989760041236877
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.013065279722213744
+    },
+    {
+      "sample": 27,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0013340799510478973
+    },
+    {
+      "sample": 27,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0009987200051546096
+    },
+    {
+      "sample": 27,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009120000153779984
+    },
+    {
+      "sample": 27,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.014937599897384643
+    },
+    {
+      "sample": 27,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.036230080127716065
+    },
+    {
+      "sample": 28,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03895488023757934
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02064671993255615
+    },
+    {
+      "sample": 28,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.001313280016183853
+    },
+    {
+      "sample": 28,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.0013577599823474883
+    },
+    {
+      "sample": 28,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012703999876976014
+    },
+    {
+      "sample": 28,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.039267840385437014
+    },
+    {
+      "sample": 29,
+      "implementation": "full_groups",
+      "policy": "eager",
+      "ms_per_call": 0.040601921081542966
+    },
+    {
+      "sample": 29,
+      "implementation": "accepted_grouped",
+      "policy": "eager",
+      "ms_per_call": 0.03907423973083496
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010731199979782105
+    },
+    {
+      "sample": 29,
+      "implementation": "full_groups",
+      "policy": "graph",
+      "ms_per_call": 0.0013407999277114868
+    },
+    {
+      "sample": 29,
+      "implementation": "accepted_grouped",
+      "policy": "graph",
+      "ms_per_call": 0.001372160017490387
+    },
+    {
+      "sample": 29,
+      "implementation": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012688000500202178
+    }
+  ],
+  "correctness_checks": 190,
+  "config": {
+    "batch": 5,
+    "width": 128,
+    "capacity": 512,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 0,
+    "rows": [
+      11,
+      48,
+      85,
+      122,
+      159
+    ]
+  },
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "torch": "2.9.1+cu128",
+  "cuda": "12.8",
+  "triton": "3.5.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "device_properties": "_CudaDeviceProperties(name='NVIDIA GeForce RTX 4070 Ti', major=8, minor=9, total_memory=12281MB, multi_processor_count=60, uuid=e77953c3-ff4f-6148-ce27-8b41e1c2745b, pci_bus_id=1, pci_device_id=0, pci_domain_id=0, L2_cache_size=48MB)",
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P0, 52, 2640, 10501, 0, 858\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "setup_order": [
+    "accepted_grouped",
+    "full_groups",
+    "original_cuda"
+  ],
+  "actual_launches": {
+    "accepted_grouped": [
+      {
+        "grid": [
+          2
+        ],
+        "parameters": {
+          "BATCH": 5,
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 192,
+          "DST_ROW_STRIDE": 128,
+          "BLOCK_SIZE": 128,
+          "ROWS_PER_PROGRAM": 4,
+          "num_warps": 4
+        }
+      }
+    ],
+    "full_groups": [
+      {
+        "grid": [
+          2
+        ],
+        "parameters": {
+          "BATCH": 5,
+          "WIDTH": 128,
+          "SRC_ROW_STRIDE": 192,
+          "DST_ROW_STRIDE": 128,
+          "BLOCK_SIZE": 128,
+          "ROWS_PER_PROGRAM": 4,
+          "num_warps": 4
+        }
+      }
+    ],
+    "original_cuda": {
+      "entry": "upstream store_cache",
+      "public_calls": 1
+    }
+  },
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 16, 1098\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "policy": {
+    "cases": [
+      [
+        5,
+        64
+      ],
+      [
+        5,
+        128
+      ],
+      [
+        5,
+        192
+      ],
+      [
+        256,
+        64
+      ],
+      [
+        256,
+        128
+      ],
+      [
+        256,
+        192
+      ]
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 5,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 5,
+        "width": 192
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 192
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 1,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 5,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 128
+      },
+      {
+        "round": 2,
+        "batch": 5,
+        "width": 192
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 192
+      },
+      {
+        "round": 2,
+        "batch": 5,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 5,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 192
+      },
+      {
+        "round": 3,
+        "batch": 5,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 5,
+        "width": 192
+      },
+      {
+        "round": 3,
+        "batch": 5,
+        "width": 64
+      },
+      {
+        "round": 3,
+        "batch": 256,
+        "width": 128
+      }
+    ],
+    "capacity": 512,
+    "dtype": "float16",
+    "input_seed": 20261011,
+    "order_seed": 107,
+    "indices": "(37*i+11)%512; exact34 unique int32 mapping",
+    "rounds": 3,
+    "fresh_processes": 18,
+    "intervals_per_impl_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 3240,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "timed_entries": {
+      "original_cuda": "upstream store_cache Python/JIT entry",
+      "accepted_grouped": "trusted raw accepted grouped launch; prevalidated metadata and indices",
+      "full_groups": "trusted raw full-group branch launch; same four rows/program and four warps"
+    },
+    "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+    "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+    "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+    "statistic": "median of 30 interval averages per process; median of three process medians",
+    "correctness": "each arm first call and reset Graph replay checked against independent34 full backing; reset copies original cache including -7 guards",
+    "accepted_correctness_run": "run-20261010-213028-jgwjfp1z",
+    "scope": "B5/256 x three exact34 layout/stride cases at C512; not a full model, DRAM, occupancy or AMD measurement",
+    "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance",
+    "observation": "same-session ratios only; tail groups are an unchanged-path control; no automatic speedup acceptance",
+    "configurations": [
+      {
+        "batch": 5,
+        "width": 64,
+        "capacity": 512,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159
+        ]
+      },
+      {
+        "batch": 5,
+        "width": 128,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159
+        ]
+      },
+      {
+        "batch": 5,
+        "width": 192,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159
+        ]
+      },
+      {
+        "batch": 256,
+        "width": 64,
+        "capacity": 512,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159,
+          196,
+          233,
+          270,
+          307,
+          344,
+          381,
+          418,
+          455,
+          492,
+          17,
+          54,
+          91,
+          128,
+          165,
+          202,
+          239,
+          276,
+          313,
+          350,
+          387,
+          424,
+          461,
+          498,
+          23,
+          60,
+          97,
+          134,
+          171,
+          208,
+          245,
+          282,
+          319,
+          356,
+          393,
+          430,
+          467,
+          504,
+          29,
+          66,
+          103,
+          140,
+          177,
+          214,
+          251,
+          288,
+          325,
+          362,
+          399,
+          436,
+          473,
+          510,
+          35,
+          72,
+          109,
+          146,
+          183,
+          220,
+          257,
+          294,
+          331,
+          368,
+          405,
+          442,
+          479,
+          4,
+          41,
+          78,
+          115,
+          152,
+          189,
+          226,
+          263,
+          300,
+          337,
+          374,
+          411,
+          448,
+          485,
+          10,
+          47,
+          84,
+          121,
+          158,
+          195,
+          232,
+          269,
+          306,
+          343,
+          380,
+          417,
+          454,
+          491,
+          16,
+          53,
+          90,
+          127,
+          164,
+          201,
+          238,
+          275,
+          312,
+          349,
+          386,
+          423,
+          460,
+          497,
+          22,
+          59,
+          96,
+          133,
+          170,
+          207,
+          244,
+          281,
+          318,
+          355,
+          392,
+          429,
+          466,
+          503,
+          28,
+          65,
+          102,
+          139,
+          176,
+          213,
+          250,
+          287,
+          324,
+          361,
+          398,
+          435,
+          472,
+          509,
+          34,
+          71,
+          108,
+          145,
+          182,
+          219,
+          256,
+          293,
+          330,
+          367,
+          404,
+          441,
+          478,
+          3,
+          40,
+          77,
+          114,
+          151,
+          188,
+          225,
+          262,
+          299,
+          336,
+          373,
+          410,
+          447,
+          484,
+          9,
+          46,
+          83,
+          120,
+          157,
+          194,
+          231,
+          268,
+          305,
+          342,
+          379,
+          416,
+          453,
+          490,
+          15,
+          52,
+          89,
+          126,
+          163,
+          200,
+          237,
+          274,
+          311,
+          348,
+          385,
+          422,
+          459,
+          496,
+          21,
+          58,
+          95,
+          132,
+          169,
+          206,
+          243,
+          280,
+          317,
+          354,
+          391,
+          428,
+          465,
+          502,
+          27,
+          64,
+          101,
+          138,
+          175,
+          212,
+          249,
+          286,
+          323,
+          360,
+          397,
+          434,
+          471,
+          508,
+          33,
+          70,
+          107,
+          144,
+          181,
+          218,
+          255,
+          292,
+          329,
+          366,
+          403,
+          440,
+          477,
+          2,
+          39,
+          76,
+          113,
+          150,
+          187,
+          224,
+          261,
+          298,
+          335,
+          372,
+          409,
+          446,
+          483,
+          8,
+          45,
+          82,
+          119,
+          156,
+          193,
+          230
+        ]
+      },
+      {
+        "batch": 256,
+        "width": 128,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159,
+          196,
+          233,
+          270,
+          307,
+          344,
+          381,
+          418,
+          455,
+          492,
+          17,
+          54,
+          91,
+          128,
+          165,
+          202,
+          239,
+          276,
+          313,
+          350,
+          387,
+          424,
+          461,
+          498,
+          23,
+          60,
+          97,
+          134,
+          171,
+          208,
+          245,
+          282,
+          319,
+          356,
+          393,
+          430,
+          467,
+          504,
+          29,
+          66,
+          103,
+          140,
+          177,
+          214,
+          251,
+          288,
+          325,
+          362,
+          399,
+          436,
+          473,
+          510,
+          35,
+          72,
+          109,
+          146,
+          183,
+          220,
+          257,
+          294,
+          331,
+          368,
+          405,
+          442,
+          479,
+          4,
+          41,
+          78,
+          115,
+          152,
+          189,
+          226,
+          263,
+          300,
+          337,
+          374,
+          411,
+          448,
+          485,
+          10,
+          47,
+          84,
+          121,
+          158,
+          195,
+          232,
+          269,
+          306,
+          343,
+          380,
+          417,
+          454,
+          491,
+          16,
+          53,
+          90,
+          127,
+          164,
+          201,
+          238,
+          275,
+          312,
+          349,
+          386,
+          423,
+          460,
+          497,
+          22,
+          59,
+          96,
+          133,
+          170,
+          207,
+          244,
+          281,
+          318,
+          355,
+          392,
+          429,
+          466,
+          503,
+          28,
+          65,
+          102,
+          139,
+          176,
+          213,
+          250,
+          287,
+          324,
+          361,
+          398,
+          435,
+          472,
+          509,
+          34,
+          71,
+          108,
+          145,
+          182,
+          219,
+          256,
+          293,
+          330,
+          367,
+          404,
+          441,
+          478,
+          3,
+          40,
+          77,
+          114,
+          151,
+          188,
+          225,
+          262,
+          299,
+          336,
+          373,
+          410,
+          447,
+          484,
+          9,
+          46,
+          83,
+          120,
+          157,
+          194,
+          231,
+          268,
+          305,
+          342,
+          379,
+          416,
+          453,
+          490,
+          15,
+          52,
+          89,
+          126,
+          163,
+          200,
+          237,
+          274,
+          311,
+          348,
+          385,
+          422,
+          459,
+          496,
+          21,
+          58,
+          95,
+          132,
+          169,
+          206,
+          243,
+          280,
+          317,
+          354,
+          391,
+          428,
+          465,
+          502,
+          27,
+          64,
+          101,
+          138,
+          175,
+          212,
+          249,
+          286,
+          323,
+          360,
+          397,
+          434,
+          471,
+          508,
+          33,
+          70,
+          107,
+          144,
+          181,
+          218,
+          255,
+          292,
+          329,
+          366,
+          403,
+          440,
+          477,
+          2,
+          39,
+          76,
+          113,
+          150,
+          187,
+          224,
+          261,
+          298,
+          335,
+          372,
+          409,
+          446,
+          483,
+          8,
+          45,
+          82,
+          119,
+          156,
+          193,
+          230
+        ]
+      },
+      {
+        "batch": 256,
+        "width": 192,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          11,
+          48,
+          85,
+          122,
+          159,
+          196,
+          233,
+          270,
+          307,
+          344,
+          381,
+          418,
+          455,
+          492,
+          17,
+          54,
+          91,
+          128,
+          165,
+          202,
+          239,
+          276,
+          313,
+          350,
+          387,
+          424,
+          461,
+          498,
+          23,
+          60,
+          97,
+          134,
+          171,
+          208,
+          245,
+          282,
+          319,
+          356,
+          393,
+          430,
+          467,
+          504,
+          29,
+          66,
+          103,
+          140,
+          177,
+          214,
+          251,
+          288,
+          325,
+          362,
+          399,
+          436,
+          473,
+          510,
+          35,
+          72,
+          109,
+          146,
+          183,
+          220,
+          257,
+          294,
+          331,
+          368,
+          405,
+          442,
+          479,
+          4,
+          41,
+          78,
+          115,
+          152,
+          189,
+          226,
+          263,
+          300,
+          337,
+          374,
+          411,
+          448,
+          485,
+          10,
+          47,
+          84,
+          121,
+          158,
+          195,
+          232,
+          269,
+          306,
+          343,
+          380,
+          417,
+          454,
+          491,
+          16,
+          53,
+          90,
+          127,
+          164,
+          201,
+          238,
+          275,
+          312,
+          349,
+          386,
+          423,
+          460,
+          497,
+          22,
+          59,
+          96,
+          133,
+          170,
+          207,
+          244,
+          281,
+          318,
+          355,
+          392,
+          429,
+          466,
+          503,
+          28,
+          65,
+          102,
+          139,
+          176,
+          213,
+          250,
+          287,
+          324,
+          361,
+          398,
+          435,
+          472,
+          509,
+          34,
+          71,
+          108,
+          145,
+          182,
+          219,
+          256,
+          293,
+          330,
+          367,
+          404,
+          441,
+          478,
+          3,
+          40,
+          77,
+          114,
+          151,
+          188,
+          225,
+          262,
+          299,
+          336,
+          373,
+          410,
+          447,
+          484,
+          9,
+          46,
+          83,
+          120,
+          157,
+          194,
+          231,
+          268,
+          305,
+          342,
+          379,
+          416,
+          453,
+          490,
+          15,
+          52,
+          89,
+          126,
+          163,
+          200,
+          237,
+          274,
+          311,
+          348,
+          385,
+          422,
+          459,
+          496,
+          21,
+          58,
+          95,
+          132,
+          169,
+          206,
+          243,
+          280,
+          317,
+          354,
+          391,
+          428,
+          465,
+          502,
+          27,
+          64,
+          101,
+          138,
+          175,
+          212,
+          249,
+          286,
+          323,
+          360,
+          397,
+          434,
+          471,
+          508,
+          33,
+          70,
+          107,
+          144,
+          181,
+          218,
+          255,
+          292,
+          329,
+          366,
+          403,
+          440,
+          477,
+          2,
+          39,
+          76,
+          113,
+          150,
+          187,
+          224,
+          261,
+          298,
+          335,
+          372,
+          409,
+          446,
+          483,
+          8,
+          45,
+          82,
+          119,
+          156,
+          193,
+          230
+        ]
+      }
+    ],
+    "num_warps": {
+      "accepted_grouped": 4,
+      "full_groups": 4
+    },
+    "rows_per_program": {
+      "accepted_grouped": 4,
+      "full_groups": 4
+    },
+    "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+    "full_groups_sha256": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156"
+  },
+  "scope": "actual inputs passed; timing collection requires review"
+}

@@ -1,0 +1,66 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups-timing/run-20261010-215026-gs6vimx3
+SCOPE=B5/256 x three exact34 configurations; Graph primary
+RUN round=1/3 B=5 D=64 three implementations
+COLLECTED graph original=0.897440 us grouped=0.994560 us full_groups=0.994560 us grouped/full_groups=1.0000x original/full_groups=0.9023x
+COLLECTED eager original=8.597280 us grouped=13.759680 us full_groups=13.633760 us grouped/full_groups=1.0092x original/full_groups=0.6306x
+RUN round=1/3 B=5 D=192 three implementations
+COLLECTED graph original=1.132480 us grouped=1.156320 us full_groups=1.176640 us grouped/full_groups=0.9827x original/full_groups=0.9625x
+COLLECTED eager original=10.144160 us grouped=14.052160 us full_groups=14.195040 us grouped/full_groups=0.9899x original/full_groups=0.7146x
+RUN round=1/3 B=256 D=192 three implementations
+COLLECTED graph original=1.017760 us grouped=1.080160 us full_groups=1.090400 us grouped/full_groups=0.9906x original/full_groups=0.9334x
+COLLECTED eager original=8.629120 us grouped=16.255840 us full_groups=14.028160 us grouped/full_groups=1.1588x original/full_groups=0.6151x
+RUN round=1/3 B=256 D=64 three implementations
+COLLECTED graph original=0.968160 us grouped=1.047680 us full_groups=1.029120 us grouped/full_groups=1.0180x original/full_groups=0.9408x
+COLLECTED eager original=8.433120 us grouped=13.691360 us full_groups=13.710400 us grouped/full_groups=0.9986x original/full_groups=0.6151x
+RUN round=1/3 B=256 D=128 three implementations
+COLLECTED graph original=1.012640 us grouped=1.100000 us full_groups=1.075360 us grouped/full_groups=1.0229x original/full_groups=0.9417x
+COLLECTED eager original=9.726400 us grouped=13.891680 us full_groups=15.136000 us grouped/full_groups=0.9178x original/full_groups=0.6426x
+RUN round=1/3 B=5 D=128 three implementations
+COLLECTED graph original=1.113600 us grouped=1.160000 us full_groups=1.152160 us grouped/full_groups=1.0068x original/full_groups=0.9665x
+COLLECTED eager original=8.872640 us grouped=13.495200 us full_groups=13.519840 us grouped/full_groups=0.9982x original/full_groups=0.6563x
+RUN round=2/3 B=256 D=128 three implementations
+COLLECTED graph original=1.150560 us grouped=1.064320 us full_groups=1.065440 us grouped/full_groups=0.9989x original/full_groups=1.0799x
+COLLECTED eager original=8.478560 us grouped=13.405920 us full_groups=13.434880 us grouped/full_groups=0.9978x original/full_groups=0.6311x
+RUN round=2/3 B=5 D=192 three implementations
+COLLECTED graph original=1.063200 us grouped=1.091200 us full_groups=1.107040 us grouped/full_groups=0.9857x original/full_groups=0.9604x
+COLLECTED eager original=8.681600 us grouped=13.686560 us full_groups=13.347200 us grouped/full_groups=1.0254x original/full_groups=0.6504x
+RUN round=2/3 B=256 D=192 three implementations
+COLLECTED graph original=1.015200 us grouped=1.080480 us full_groups=1.092320 us grouped/full_groups=0.9892x original/full_groups=0.9294x
+COLLECTED eager original=8.652640 us grouped=13.215840 us full_groups=13.177920 us grouped/full_groups=1.0029x original/full_groups=0.6566x
+RUN round=2/3 B=5 D=64 three implementations
+COLLECTED graph original=1.093920 us grouped=1.142080 us full_groups=1.167360 us grouped/full_groups=0.9783x original/full_groups=0.9371x
+COLLECTED eager original=9.154080 us grouped=15.396960 us full_groups=16.274560 us grouped/full_groups=0.9461x original/full_groups=0.5625x
+RUN round=2/3 B=256 D=64 three implementations
+COLLECTED graph original=1.166880 us grouped=1.132320 us full_groups=1.169440 us grouped/full_groups=0.9683x original/full_groups=0.9978x
+COLLECTED eager original=12.527840 us grouped=16.685440 us full_groups=19.959040 us grouped/full_groups=0.8360x original/full_groups=0.6277x
+RUN round=2/3 B=5 D=128 three implementations
+COLLECTED graph original=0.958240 us grouped=1.085280 us full_groups=1.142400 us grouped/full_groups=0.9500x original/full_groups=0.8388x
+COLLECTED eager original=8.637760 us grouped=13.353120 us full_groups=13.453600 us grouped/full_groups=0.9925x original/full_groups=0.6420x
+RUN round=3/3 B=256 D=64 three implementations
+COLLECTED graph original=1.163360 us grouped=1.145920 us full_groups=1.050880 us grouped/full_groups=1.0904x original/full_groups=1.1070x
+COLLECTED eager original=8.733760 us grouped=13.174880 us full_groups=13.267680 us grouped/full_groups=0.9930x original/full_groups=0.6583x
+RUN round=3/3 B=256 D=192 three implementations
+COLLECTED graph original=1.140480 us grouped=1.082720 us full_groups=1.100800 us grouped/full_groups=0.9836x original/full_groups=1.0360x
+COLLECTED eager original=8.755680 us grouped=13.669600 us full_groups=13.700160 us grouped/full_groups=0.9978x original/full_groups=0.6391x
+RUN round=3/3 B=5 D=128 three implementations
+COLLECTED graph original=0.984160 us grouped=1.000640 us full_groups=1.043840 us grouped/full_groups=0.9586x original/full_groups=0.9428x
+COLLECTED eager original=8.620960 us grouped=13.323200 us full_groups=13.466400 us grouped/full_groups=0.9894x original/full_groups=0.6402x
+RUN round=3/3 B=5 D=192 three implementations
+COLLECTED graph original=1.188160 us grouped=1.176480 us full_groups=1.204960 us grouped/full_groups=0.9764x original/full_groups=0.9861x
+COLLECTED eager original=9.005280 us grouped=14.988320 us full_groups=15.522240 us grouped/full_groups=0.9656x original/full_groups=0.5802x
+RUN round=3/3 B=5 D=64 three implementations
+COLLECTED graph original=1.104160 us grouped=1.176800 us full_groups=1.187840 us grouped/full_groups=0.9907x original/full_groups=0.9296x
+COLLECTED eager original=8.379520 us grouped=14.146560 us full_groups=15.841120 us grouped/full_groups=0.8930x original/full_groups=0.5290x
+RUN round=3/3 B=256 D=128 three implementations
+COLLECTED graph original=1.184000 us grouped=1.221120 us full_groups=1.259680 us grouped/full_groups=0.9694x original/full_groups=0.9399x
+COLLECTED eager original=12.085120 us grouped=29.231361 us full_groups=23.537760 us grouped/full_groups=1.2419x original/full_groups=0.5134x
+GRAPH_SUMMARY B=5 D=64 original=1.093920 us/call grouped=1.142080 us/call full_groups=1.167360 us/call grouped/full_groups=0.9783x original/full_groups=0.9371x
+GRAPH_SUMMARY B=5 D=128 original=0.984160 us/call grouped=1.085280 us/call full_groups=1.142400 us/call grouped/full_groups=0.9500x original/full_groups=0.8615x
+GRAPH_SUMMARY B=5 D=192 original=1.132480 us/call grouped=1.156320 us/call full_groups=1.176640 us/call grouped/full_groups=0.9827x original/full_groups=0.9625x
+GRAPH_SUMMARY B=256 D=64 original=1.163360 us/call grouped=1.132320 us/call full_groups=1.050880 us/call grouped/full_groups=1.0775x original/full_groups=1.1070x
+GRAPH_SUMMARY B=256 D=128 original=1.150560 us/call grouped=1.100000 us/call full_groups=1.075360 us/call grouped/full_groups=1.0229x original/full_groups=1.0699x
+GRAPH_SUMMARY B=256 D=192 original=1.017760 us/call grouped=1.080480 us/call full_groups=1.092320 us/call grouped/full_groups=0.9892x original/full_groups=0.9317x
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3
+FULL_GROUPS_TIMING_COLLECTION_COMPLETE: 18 processes; 3240 interval averages; review every paired round before a performance claim
+LIMIT: six scoped reused-address cases; Graph/Eager separate; no automatic speedup acceptance or model/AMD claim
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-full-groups-timing-20261010-215025-qa6F3Q.log

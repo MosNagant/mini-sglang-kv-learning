@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-10T21:23:32.7177381+08:00",
+  "reported_error": "Wsl/Service/CreateInstance/CreateVm/HCS/ERROR_PATH_NOT_FOUND",
+  "service_query": "SERVICE_NAME: storvsp \r\n        TYPE               : 1  KERNEL_DRIVER  \r\n        STATE              : 1  STOPPED \r\n        WIN32_EXIT_CODE    : 1077  (0x435)\r\n        SERVICE_EXIT_CODE  : 0  (0x0)\r\n        CHECKPOINT         : 0x0\r\n        WAIT_HINT          : 0x0",
+  "device_registration_exists": false,
+  "driver_exists": true,
+  "inf_exists": true,
+  "repair_executed": false
+}

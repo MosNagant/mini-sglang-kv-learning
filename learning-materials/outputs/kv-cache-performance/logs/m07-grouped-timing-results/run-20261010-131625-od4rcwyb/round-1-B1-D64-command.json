@@ -1,0 +1,17 @@
+[
+  "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "-B",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-timing/run-20261010-131625-od4rcwyb/30-compare-kv-grouped.py",
+  "--project",
+  "/home/weltlaw/projects/mini-sglang-kv",
+  "--snapshot",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-timing/run-20261010-131625-od4rcwyb",
+  "--worker-dir",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-timing/run-20261010-131625-od4rcwyb/round-1-B1-D64",
+  "--batch",
+  "1",
+  "--width",
+  "64",
+  "--round",
+  "1"
+]

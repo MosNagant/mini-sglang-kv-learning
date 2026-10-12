@@ -1,0 +1,3 @@
+FULL_GROUPS_SOURCE=/home/weltlaw/projects/mini-sglang-kv/experiments/triton_store_full_groups.py
+PREPARE_COMPLETE: one if-condition TODO; existing candidate retained; GPU NOT_RUN
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-full-groups-check-20261010-212552-tDw5i2.log
