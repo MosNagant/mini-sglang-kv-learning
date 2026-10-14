@@ -1,0 +1,34 @@
+{
+  "grouped": {
+    "status": "THREE_EXPRESSIONS_REVIEWED",
+    "rows_per_program": 4,
+    "num_warps": 4,
+    "row_index_load_mask": "row_mask",
+    "kv_load_store_mask": "row_mask[:,None] & col_mask[None,:]",
+    "scope": "narrow AST preflight, not a general proof or GPU memory-safety result",
+    "ownership": "learner fills row numbers, row predicate and grid; coach supplies 2-D address/mask scaffold"
+  },
+  "accepted_correctness_gate": {
+    "status": "ACCEPTED_SOURCE_AND_STATUS_GATE_PASS",
+    "source_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-warps/run-20261010-115255-6bwgq_qo",
+    "status_sha256": "b81336f35df0f96fbd67cb3622cf9abed3d4a5dd0f2638fdbd5048c9a29d96bc",
+    "source_hashes_sha256": "0b344736d464b5830fa8514b7d3c0523466e70dac8f5c3bc3342b08d6053240d",
+    "required_sources": {
+      "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+      "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+      "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+      "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+      "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+    },
+    "positive_cases": 196,
+    "invalid_rejections": 36,
+    "scope": "accepted records/source identity only; actual timing inputs checked again in every worker"
+  },
+  "frozen_sources": {
+    "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+    "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+    "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+    "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+  },
+  "protected_one_warp_candidate": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+}

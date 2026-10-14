@@ -1,0 +1,14 @@
+{
+  "status": "EMPTY_ADAPTER_PASS",
+  "implementation": "learner_triton",
+  "config": {
+    "batch": 0,
+    "width": 128,
+    "capacity": 32,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0,
+    "rows": []
+  },
+  "submissions": 0
+}

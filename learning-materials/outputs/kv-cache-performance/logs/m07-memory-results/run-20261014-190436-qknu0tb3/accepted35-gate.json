@@ -1,0 +1,7 @@
+{
+  "status": "ACCEPTED35_SOURCE_AND_SAVED_RECORDS_PASS",
+  "run": "run-20261010-215026-gs6vimx3",
+  "status_sha256": "56ed7dcaf0505796eb51bff17f5aedc8671f4b0032aef23eba28cdbdfb5eba37",
+  "source_hashes_sha256": "53d2703e3788718e57152a02b9078315e96b84fbc6ad447b4187f4164ca56605",
+  "limitation": "saved sources/statistics checked, not rerunning old GPU arrays; all36 actual input packets checked separately"
+}

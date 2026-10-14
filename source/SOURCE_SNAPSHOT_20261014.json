@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "snapshot_utc": "2026-10-14T10:53:20Z",
+  "source": "/home/weltlaw/projects/mini-sglang-kv",
+  "upstream_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "archive": "wsl-project-20261014T105320Z.zip",
+  "archive_sha256": "a973db75652b953e5fba7f274d393a8802058efbaead323b11f6045863c87093",
+  "archive_bytes": 55441657,
+  "export_manifest": "EXPORT_MANIFEST_20261014T105320Z.json",
+  "export_manifest_sha256": "f7e5033e933d8d83cbe24836ea2600efcb66ce71938876f626f8a35b2392f96e",
+  "exported_regular_files": 6457,
+  "exported_regular_file_bytes": 85646985,
+  "excluded": 29,
+  "symlinks": [
+    {
+      "path": ".dockerignore",
+      "target": ".gitignore"
+    }
+  ],
+  "policy": "Current exported files replace their source/ paths. Paths absent from this snapshot and old dated receipts remain as historical files. Original Unix modes are in the export manifest; Git keeps the executable bit. Post-export overlays are separately identified below.",
+  "retained_source_paths_absent_from_export": [
+    "source/EXPORT_MANIFEST.json",
+    "source/SOURCE_OVERLAY_20261012.json",
+    "source/SOURCE_SNAPSHOT.json"
+  ],
+  "post_export_overlays": [],
+  "source_snapshot_precedes_experiments_36_37": true,
+  "publishing_does_not_run_gpu": true
+}

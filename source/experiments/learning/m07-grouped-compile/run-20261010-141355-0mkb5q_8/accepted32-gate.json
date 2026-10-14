@@ -1,0 +1,8 @@
+{
+  "status": "ACCEPTED32_SOURCE_AND_RECORD_GATE_PASS",
+  "run": "run-20261010-134931-4l7bljlh",
+  "status_sha256": "cb6adb2e80e33d1aabf024b71098767611039444102ea6f2cb96555ef8c53fb0",
+  "source_hashes_sha256": "bf16e87762c1b85bca6ef8173c53427d6deb46d43c7122782b80847f273c7eeb",
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "scope": "saved six-case timing source/plan/raw records/summary validated; no timing executed by33"
+}

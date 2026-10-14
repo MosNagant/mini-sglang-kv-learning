@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "v_shape",
+  "rejection": {
+    "type": "ValueError",
+    "message": "INPUT_SHAPE: K/V must have the same (B,D)"
+  }
+}

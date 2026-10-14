@@ -1,0 +1,17 @@
+[
+  "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "-B",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-selector-validation/run-20261014-191004-v7b1lswv/37-validate-kv-selector.py",
+  "--project",
+  "/home/weltlaw/projects/mini-sglang-kv",
+  "--snapshot",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-selector-validation/run-20261014-191004-v7b1lswv",
+  "--worker-dir",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-selector-validation/run-20261014-191004-v7b1lswv/round-3-B257-D192",
+  "--batch",
+  "257",
+  "--width",
+  "192",
+  "--round",
+  "3"
+]

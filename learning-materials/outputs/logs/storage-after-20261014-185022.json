@@ -1,0 +1,7 @@
+﻿{
+    "Name":  "Microsoft Hyper-V 虚拟磁盘服务器",
+    "PNPDeviceID":  "ROOT\\STORVSP\\0000",
+    "Present":  true,
+    "ConfigManagerErrorCode":  0,
+    "Service":  "storvsp"
+}

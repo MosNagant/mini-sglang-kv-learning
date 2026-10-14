@@ -1,0 +1,517 @@
+{
+  "status": "EVIDENCE_COLLECTION_COMPLETE_REVIEW_REQUIRED",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x",
+  "old_pilot": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-original-pilot/run-d9gjhywx",
+  "steps": {
+    "reproduction": {
+      "command": [
+        "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+        "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/reproduction_runner.py",
+        "--batch",
+        "256",
+        "--width",
+        "128",
+        "--random-seed",
+        "20261004",
+        "--result-parent",
+        "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/reproduction"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "reproduction.log"
+    },
+    "nsys_version": {
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "nsys-version.log"
+    },
+    "nsys_config": {
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "-z"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "nsys-config-path.log"
+    },
+    "nsys_profile": {
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "profile",
+        "--trace=cuda,nvtx",
+        "--sample=none",
+        "--cpuctxsw=none",
+        "--output=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv",
+        "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+        "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/closeout.py",
+        "--trace-child",
+        "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/trace-workload.json"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "nsys-profile.log"
+    },
+    "nsys_stats": {
+      "command": [
+        "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+        "stats",
+        "--report",
+        "cuda_gpu_kern_sum",
+        "--format",
+        "csv",
+        "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m05-closeout/run-k84pq53x/original-kv.nsys-rep"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "nsys-kernels.csv"
+    }
+  },
+  "full_m05_acceptance": false,
+  "reproduction_comparison": {
+    "graph": {
+      "new_median_us": 1.0956799983978271,
+      "old_round_medians_us": [
+        1.1764800176024437,
+        1.1668800190091133,
+        0.9937600046396254
+      ],
+      "old_representative_us": 1.1668800190091133,
+      "difference_pct": -6.101743062816989,
+      "within_observed_old_range": true,
+      "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."
+    },
+    "eager": {
+      "new_median_us": 9.035679996013641,
+      "old_round_medians_us": [
+        12.352319955825806,
+        9.497439861297607,
+        8.471840023994446
+      ],
+      "old_representative_us": 9.497439861297607,
+      "difference_pct": -4.861940396860565,
+      "within_observed_old_range": true,
+      "interpretation": "A descriptive comparison, not a tolerance test or confidence interval."
+    }
+  },
+  "timestamp_note": "Configuration is recorded, never changed. CuptiUseRawGpuTimestamps=false has lower precision; trace is not baseline timing.",
+  "profile": {
+    "status": "KV_KERNEL_LOCATED",
+    "located_store_events": 41,
+    "all_kernel_events": 45,
+    "store_events": [
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1366745777,
+        "end_ns": 1366746833,
+        "duration_ns": 1056
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374614719,
+        "end_ns": 1374615711,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374643774,
+        "end_ns": 1374644766,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374668125,
+        "end_ns": 1374669117,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374693692,
+        "end_ns": 1374694684,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374716891,
+        "end_ns": 1374717883,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374736922,
+        "end_ns": 1374737914,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374761017,
+        "end_ns": 1374762041,
+        "duration_ns": 1024
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374780888,
+        "end_ns": 1374781880,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374804535,
+        "end_ns": 1374805527,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374827798,
+        "end_ns": 1374828790,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374847413,
+        "end_ns": 1374848405,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374870740,
+        "end_ns": 1374871732,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374894739,
+        "end_ns": 1374895731,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374913362,
+        "end_ns": 1374914354,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374936593,
+        "end_ns": 1374937585,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374964784,
+        "end_ns": 1374965776,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1374982351,
+        "end_ns": 1374983343,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375005678,
+        "end_ns": 1375006670,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375027245,
+        "end_ns": 1375028237,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375047788,
+        "end_ns": 1375048781,
+        "duration_ns": 993
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375494777,
+        "end_ns": 1375495801,
+        "duration_ns": 1024
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375497209,
+        "end_ns": 1375498201,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375499673,
+        "end_ns": 1375500665,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375644435,
+        "end_ns": 1375645459,
+        "duration_ns": 1024
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375646867,
+        "end_ns": 1375647859,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375649107,
+        "end_ns": 1375650131,
+        "duration_ns": 1024
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375651474,
+        "end_ns": 1375652467,
+        "duration_ns": 993
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375654259,
+        "end_ns": 1375655250,
+        "duration_ns": 991
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375656562,
+        "end_ns": 1375657554,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375658834,
+        "end_ns": 1375659858,
+        "duration_ns": 1024
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375661074,
+        "end_ns": 1375662066,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375663410,
+        "end_ns": 1375664402,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375665746,
+        "end_ns": 1375666738,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375668018,
+        "end_ns": 1375669010,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375670226,
+        "end_ns": 1375671218,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375692305,
+        "end_ns": 1375693297,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375694577,
+        "end_ns": 1375695569,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375696817,
+        "end_ns": 1375697809,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375712752,
+        "end_ns": 1375713744,
+        "duration_ns": 992
+      },
+      {
+        "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+        "name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)256, int>(<unnamed>::StoreKernelParams)",
+        "start_ns": 1375715120,
+        "end_ns": 1375716112,
+        "duration_ns": 992
+      }
+    ],
+    "diagnostics": [
+      {
+        "severity": 1,
+        "text": "Profiling has started."
+      },
+      {
+        "severity": 1,
+        "text": "Process was launched by the profiler, see /tmp/nvidia/nsight_systems/quadd_session_10437/streams/pid_450_stdout.log and stderr.log for program output"
+      },
+      {
+        "severity": 2,
+        "text": "No NVTX events collected. Does the process use NVTX?"
+      },
+      {
+        "severity": 1,
+        "text": "Number of NVTX events collected: \t1."
+      },
+      {
+        "severity": 2,
+        "text": "No NVTX events collected. Does the process use NVTX?"
+      },
+      {
+        "severity": 2,
+        "text": "No NVTX events collected. Does the process use NVTX?"
+      },
+      {
+        "severity": 2,
+        "text": "No NVTX events collected. Does the process use NVTX?"
+      },
+      {
+        "severity": 2,
+        "text": "CUDA profiling might have not been started correctly."
+      },
+      {
+        "severity": 2,
+        "text": "No CUDA events collected. Does the process use CUDA?"
+      },
+      {
+        "severity": 1,
+        "text": "Number of CUDA events collected: \t138."
+      },
+      {
+        "severity": 2,
+        "text": "CUDA profiling might have not been started correctly."
+      },
+      {
+        "severity": 2,
+        "text": "No CUDA events collected. Does the process use CUDA?"
+      },
+      {
+        "severity": 2,
+        "text": "CUDA profiling might have not been started correctly."
+      },
+      {
+        "severity": 2,
+        "text": "No CUDA events collected. Does the process use CUDA?"
+      },
+      {
+        "severity": 2,
+        "text": "CUDA profiling might have not been started correctly."
+      },
+      {
+        "severity": 2,
+        "text": "No CUDA events collected. Does the process use CUDA?"
+      },
+      {
+        "severity": 1,
+        "text": "Common injection library initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "Common injection library initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "Common injection library initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior."
+      },
+      {
+        "severity": 1,
+        "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2025.1.3/target-linux-x64/libcupti.so.12.9"
+      },
+      {
+        "severity": 1,
+        "text": "Enabling trace for device graph launch"
+      },
+      {
+        "severity": 1,
+        "text": "CUDA injection initialized successfully."
+      },
+      {
+        "severity": 3,
+        "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly."
+      },
+      {
+        "severity": 1,
+        "text": "Common injection library initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "Common injection library initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "NVTX injection initialized successfully."
+      },
+      {
+        "severity": 1,
+        "text": "Number of CUPTI events produced: \t191, CUPTI buffers: 50."
+      },
+      {
+        "severity": 1,
+        "text": "Profiling has stopped."
+      }
+    ],
+    "limit": "Kernel location evidence only. No profiled duration substitutes for unprofiled Event timings.",
+    "workload_correctness": "KV_TRACE_WORKLOAD_OK"
+  },
+  "script_sha256": "0407158b92b28cf07336c551ce77bcb7e17c86d5ee120230014f1133c755e5a6"
+}

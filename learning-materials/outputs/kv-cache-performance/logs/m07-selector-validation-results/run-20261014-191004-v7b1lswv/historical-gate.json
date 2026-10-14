@@ -1,0 +1,9 @@
+{
+  "status": "HISTORICAL_ONLY_GATE_PASS",
+  "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+  "sessions": 4,
+  "workers": 48,
+  "files_hashed": 60,
+  "screened_entries": 64,
+  "promoted": 0
+}

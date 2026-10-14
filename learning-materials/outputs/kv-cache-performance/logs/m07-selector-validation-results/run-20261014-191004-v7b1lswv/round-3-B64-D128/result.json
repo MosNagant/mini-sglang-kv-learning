@@ -1,0 +1,1650 @@
+{
+  "status": "COLLECTED",
+  "batch": 64,
+  "width": 128,
+  "round": 3,
+  "config": {
+    "batch": 64,
+    "width": 128,
+    "capacity": 512,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 0,
+    "rows": [
+      19,
+      72,
+      125,
+      178,
+      231,
+      284,
+      337,
+      390,
+      443,
+      496,
+      37,
+      90,
+      143,
+      196,
+      249,
+      302,
+      355,
+      408,
+      461,
+      2,
+      55,
+      108,
+      161,
+      214,
+      267,
+      320,
+      373,
+      426,
+      479,
+      20,
+      73,
+      126,
+      179,
+      232,
+      285,
+      338,
+      391,
+      444,
+      497,
+      38,
+      91,
+      144,
+      197,
+      250,
+      303,
+      356,
+      409,
+      462,
+      3,
+      56,
+      109,
+      162,
+      215,
+      268,
+      321,
+      374,
+      427,
+      480,
+      21,
+      74,
+      127,
+      180,
+      233,
+      286
+    ]
+  },
+  "calls_per_interval": 100,
+  "correctness_checks": 127,
+  "policy": {
+    "cases": [
+      [
+        7,
+        64
+      ],
+      [
+        64,
+        128
+      ],
+      [
+        257,
+        192
+      ]
+    ],
+    "configurations": [
+      {
+        "batch": 7,
+        "width": 64,
+        "capacity": 512,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337
+        ]
+      },
+      {
+        "batch": 64,
+        "width": 128,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286
+        ]
+      },
+      {
+        "batch": 257,
+        "width": 192,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286,
+          339,
+          392,
+          445,
+          498,
+          39,
+          92,
+          145,
+          198,
+          251,
+          304,
+          357,
+          410,
+          463,
+          4,
+          57,
+          110,
+          163,
+          216,
+          269,
+          322,
+          375,
+          428,
+          481,
+          22,
+          75,
+          128,
+          181,
+          234,
+          287,
+          340,
+          393,
+          446,
+          499,
+          40,
+          93,
+          146,
+          199,
+          252,
+          305,
+          358,
+          411,
+          464,
+          5,
+          58,
+          111,
+          164,
+          217,
+          270,
+          323,
+          376,
+          429,
+          482,
+          23,
+          76,
+          129,
+          182,
+          235,
+          288,
+          341,
+          394,
+          447,
+          500,
+          41,
+          94,
+          147,
+          200,
+          253,
+          306,
+          359,
+          412,
+          465,
+          6,
+          59,
+          112,
+          165,
+          218,
+          271,
+          324,
+          377,
+          430,
+          483,
+          24,
+          77,
+          130,
+          183,
+          236,
+          289,
+          342,
+          395,
+          448,
+          501,
+          42,
+          95,
+          148,
+          201,
+          254,
+          307,
+          360,
+          413,
+          466,
+          7,
+          60,
+          113,
+          166,
+          219,
+          272,
+          325,
+          378,
+          431,
+          484,
+          25,
+          78,
+          131,
+          184,
+          237,
+          290,
+          343,
+          396,
+          449,
+          502,
+          43,
+          96,
+          149,
+          202,
+          255,
+          308,
+          361,
+          414,
+          467,
+          8,
+          61,
+          114,
+          167,
+          220,
+          273,
+          326,
+          379,
+          432,
+          485,
+          26,
+          79,
+          132,
+          185,
+          238,
+          291,
+          344,
+          397,
+          450,
+          503,
+          44,
+          97,
+          150,
+          203,
+          256,
+          309,
+          362,
+          415,
+          468,
+          9,
+          62,
+          115,
+          168,
+          221,
+          274,
+          327,
+          380,
+          433,
+          486,
+          27,
+          80,
+          133,
+          186,
+          239,
+          292,
+          345,
+          398,
+          451,
+          504,
+          45,
+          98,
+          151,
+          204,
+          257,
+          310,
+          363,
+          416,
+          469,
+          10,
+          63,
+          116,
+          169,
+          222,
+          275
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 1,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 2,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 3,
+        "batch": 7,
+        "width": 64
+      }
+    ],
+    "capacity": 512,
+    "dtype": "float16",
+    "index_dtype": "int32",
+    "input_seed": 20261014,
+    "indices": "(53*i+19)%512; unique int32",
+    "rounds": 3,
+    "fresh_processes": 9,
+    "arms": [
+      "original_cuda",
+      "selected"
+    ],
+    "policies": [
+      "graph",
+      "eager"
+    ],
+    "intervals_per_arm_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "recorded_checks_per_worker": 127,
+    "saved_after_stages_per_worker": 5,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "order": "rotate four entries, reverse alternate four-sample blocks; each position appears7/8 times per worker",
+    "address_policy": "same shared buffers and repeated addresses; no flush",
+    "timed_entries": "both arms use the exact same upstream store_cache closure; selector and validation run before capture/timing",
+    "statistic": "median30 interval averages per process; median3 process medians; paired ratios also retained",
+    "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+    "selection": "frozen historical27/30/32/35 gate; auto original;36/37 cannot modify policy",
+    "scope": "independent B7/D64, B64/D128, B257/D192 cases; A/A default-entry validation, no candidate speedup or model claim"
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02345599889755249
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.01066912055015564
+    },
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001037760004401207
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009625600278377533
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008798720240592956
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011689600348472595
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009603200107812882
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007645440101623535
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009699200093746186
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009391999989748001
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007631999850273133
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0073043197393417355
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010089600086212159
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007316160202026367
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00907967984676361
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009974399954080582
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009520000219345093
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012803199887275697
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009104959964752198
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0075222402811050415
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008858559727668762
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009212800115346909
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008998399972915649
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0204748797416687
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009978240132331848
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009261119961738586
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0024700799584388734
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009696000069379806
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0019068799912929535
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008202559947967529
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008553280234336854
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001215360015630722
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.012124480009078979
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009065920114517212
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011747200042009354
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009404800087213516
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.010716160535812378
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011401599645614624
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009356799721717834
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008201280236244201
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0039452800154685976
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009756799787282944
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008083199858665466
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009346240162849427
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001204800009727478
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010104960203170777
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007993599772453308
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011628799885511397
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010425599664449692
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011398400366306304
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007947840094566345
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00758624017238617
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.01172096014022827
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011795199662446975
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011798399686813355
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0075411200523376465
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00785215973854065
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008737279772758485
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009276799857616425
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011843200027942657
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010761599987745285
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009418240189552307
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009104639887809754
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011766400188207627
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00792352020740509
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00794048011302948
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012617599964141846
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009520000219345093
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008863999843597412
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011590400338172913
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009679999947547912
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0080867201089859
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0036745598912239076
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.000968639999628067
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007854080200195313
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007572479844093323
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012278400361537933
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007726079821586609
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007542719841003418
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001170559972524643
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011919999867677689
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010976000130176545
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007691839933395386
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0075948798656463624
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010961600542068482
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009484799951314926
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001435520052909851
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007535359859466553
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009278079867362976
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007704640030860901
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011052799969911576
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009183999896049499
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012399999797344209
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0075913602113723755
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010640640258789063
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011795199662446975
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00798143982887268
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008208320140838624
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.002346879988908768
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009561599791049957
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008707839846611023
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012454400211572647
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009200000017881393
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008268479704856873
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0018643200397491454
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001184000000357628
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00963104009628296
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008949120044708252
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0027955201268196105
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009280319809913635
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00874239981174469
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010515200346708298
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010883200168609619
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001173119992017746
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009483519792556763
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.013002239465713501
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.01329759955406189
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001239359974861145
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001173439994454384
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00940608024597168
+    }
+  ],
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.001037760004401207,
+        0.0011689600348472595,
+        0.0009699200093746186,
+        0.0009974399954080582,
+        0.0012803199887275697,
+        0.0008998399972915649,
+        0.0009696000069379806,
+        0.0019068799912929535,
+        0.0011747200042009354,
+        0.0011401599645614624,
+        0.0039452800154685976,
+        0.0011628799885511397,
+        0.0011398400366306304,
+        0.0011798399686813355,
+        0.0011843200027942657,
+        0.0010761599987745285,
+        0.0012617599964141846,
+        0.0011590400338172913,
+        0.0036745598912239076,
+        0.001170559972524643,
+        0.0010976000130176545,
+        0.001435520052909851,
+        0.0009183999896049499,
+        0.0012399999797344209,
+        0.002346879988908768,
+        0.0012454400211572647,
+        0.0018643200397491454,
+        0.0010515200346708298,
+        0.001173119992017746,
+        0.001173439994454384
+      ],
+      "eager": [
+        0.02345599889755249,
+        0.007645440101623535,
+        0.007631999850273133,
+        0.007316160202026367,
+        0.0075222402811050415,
+        0.008858559727668762,
+        0.009261119961738586,
+        0.008553280234336854,
+        0.012124480009078979,
+        0.008201280236244201,
+        0.008083199858665466,
+        0.010104960203170777,
+        0.00758624017238617,
+        0.01172096014022827,
+        0.008737279772758485,
+        0.009104639887809754,
+        0.00792352020740509,
+        0.0080867201089859,
+        0.007854080200195313,
+        0.007726079821586609,
+        0.0075948798656463624,
+        0.010961600542068482,
+        0.007704640030860901,
+        0.010640640258789063,
+        0.00798143982887268,
+        0.008268479704856873,
+        0.00963104009628296,
+        0.009280319809913635,
+        0.013002239465713501,
+        0.01329759955406189
+      ]
+    },
+    "selected": {
+      "graph": [
+        0.0009625600278377533,
+        0.0009603200107812882,
+        0.0009391999989748001,
+        0.0010089600086212159,
+        0.0009520000219345093,
+        0.0009212800115346909,
+        0.0024700799584388734,
+        0.001215360015630722,
+        0.0009404800087213516,
+        0.0009356799721717834,
+        0.0009756799787282944,
+        0.001204800009727478,
+        0.0010425599664449692,
+        0.0011795199662446975,
+        0.0009276799857616425,
+        0.0011766400188207627,
+        0.0009520000219345093,
+        0.0009679999947547912,
+        0.000968639999628067,
+        0.0012278400361537933,
+        0.0011919999867677689,
+        0.0009484799951314926,
+        0.0011052799969911576,
+        0.0011795199662446975,
+        0.0009561599791049957,
+        0.0009200000017881393,
+        0.001184000000357628,
+        0.0027955201268196105,
+        0.0010883200168609619,
+        0.001239359974861145
+      ],
+      "eager": [
+        0.01066912055015564,
+        0.008798720240592956,
+        0.0073043197393417355,
+        0.00907967984676361,
+        0.009104959964752198,
+        0.0204748797416687,
+        0.009978240132331848,
+        0.008202559947967529,
+        0.009065920114517212,
+        0.010716160535812378,
+        0.009346240162849427,
+        0.007993599772453308,
+        0.007947840094566345,
+        0.0075411200523376465,
+        0.00785215973854065,
+        0.009418240189552307,
+        0.00794048011302948,
+        0.008863999843597412,
+        0.007572479844093323,
+        0.007542719841003418,
+        0.007691839933395386,
+        0.007535359859466553,
+        0.009278079867362976,
+        0.0075913602113723755,
+        0.008208320140838624,
+        0.008707839846611023,
+        0.008949120044708252,
+        0.00874239981174469,
+        0.009483519792556763,
+        0.00940608024597168
+      ]
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "triton": "3.5.1",
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+  },
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 5, 1018\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_contexts": {
+    "graph": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "graph",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 64,
+      "width": 128,
+      "capacity": 512,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "k_shape": [
+        64,
+        128
+      ],
+      "v_shape": [
+        64,
+        128
+      ],
+      "k_cache_shape": [
+        512,
+        128
+      ],
+      "v_cache_shape": [
+        512,
+        128
+      ],
+      "indices_shape": [
+        64
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        192,
+        1
+      ],
+      "v_stride": [
+        192,
+        1
+      ],
+      "k_cache_stride": [
+        128,
+        1
+      ],
+      "v_cache_stride": [
+        128,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    },
+    "eager": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "eager",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 64,
+      "width": 128,
+      "capacity": 512,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 0,
+      "k_shape": [
+        64,
+        128
+      ],
+      "v_shape": [
+        64,
+        128
+      ],
+      "k_cache_shape": [
+        512,
+        128
+      ],
+      "v_cache_shape": [
+        512,
+        128
+      ],
+      "indices_shape": [
+        64
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        192,
+        1
+      ],
+      "v_stride": [
+        192,
+        1
+      ],
+      "k_cache_stride": [
+        128,
+        1
+      ],
+      "v_cache_stride": [
+        128,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    }
+  },
+  "decisions": {
+    "graph": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "5ffe8401f6022ca73a2f4441f1be6f0ebc9c9f5193aed74e949e2dcad1716fec",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    },
+    "eager": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "fc4b691fe95b31d36ecb9d4d82c3a2791df4e732e53263203f83e4f4fc77f215",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    }
+  },
+  "setup_order": [
+    "original_cuda",
+    "selected"
+  ],
+  "actual_entries": {
+    "original_cuda": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1
+    },
+    "selected": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1,
+      "same_callable_as_original": true
+    }
+  },
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 15, 1062\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_validated": true,
+  "candidate_speedup_claim": false
+}

@@ -1,0 +1,1843 @@
+{
+  "status": "COLLECTED",
+  "batch": 257,
+  "width": 192,
+  "round": 1,
+  "config": {
+    "batch": 257,
+    "width": 192,
+    "capacity": 512,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 64,
+    "rows": [
+      19,
+      72,
+      125,
+      178,
+      231,
+      284,
+      337,
+      390,
+      443,
+      496,
+      37,
+      90,
+      143,
+      196,
+      249,
+      302,
+      355,
+      408,
+      461,
+      2,
+      55,
+      108,
+      161,
+      214,
+      267,
+      320,
+      373,
+      426,
+      479,
+      20,
+      73,
+      126,
+      179,
+      232,
+      285,
+      338,
+      391,
+      444,
+      497,
+      38,
+      91,
+      144,
+      197,
+      250,
+      303,
+      356,
+      409,
+      462,
+      3,
+      56,
+      109,
+      162,
+      215,
+      268,
+      321,
+      374,
+      427,
+      480,
+      21,
+      74,
+      127,
+      180,
+      233,
+      286,
+      339,
+      392,
+      445,
+      498,
+      39,
+      92,
+      145,
+      198,
+      251,
+      304,
+      357,
+      410,
+      463,
+      4,
+      57,
+      110,
+      163,
+      216,
+      269,
+      322,
+      375,
+      428,
+      481,
+      22,
+      75,
+      128,
+      181,
+      234,
+      287,
+      340,
+      393,
+      446,
+      499,
+      40,
+      93,
+      146,
+      199,
+      252,
+      305,
+      358,
+      411,
+      464,
+      5,
+      58,
+      111,
+      164,
+      217,
+      270,
+      323,
+      376,
+      429,
+      482,
+      23,
+      76,
+      129,
+      182,
+      235,
+      288,
+      341,
+      394,
+      447,
+      500,
+      41,
+      94,
+      147,
+      200,
+      253,
+      306,
+      359,
+      412,
+      465,
+      6,
+      59,
+      112,
+      165,
+      218,
+      271,
+      324,
+      377,
+      430,
+      483,
+      24,
+      77,
+      130,
+      183,
+      236,
+      289,
+      342,
+      395,
+      448,
+      501,
+      42,
+      95,
+      148,
+      201,
+      254,
+      307,
+      360,
+      413,
+      466,
+      7,
+      60,
+      113,
+      166,
+      219,
+      272,
+      325,
+      378,
+      431,
+      484,
+      25,
+      78,
+      131,
+      184,
+      237,
+      290,
+      343,
+      396,
+      449,
+      502,
+      43,
+      96,
+      149,
+      202,
+      255,
+      308,
+      361,
+      414,
+      467,
+      8,
+      61,
+      114,
+      167,
+      220,
+      273,
+      326,
+      379,
+      432,
+      485,
+      26,
+      79,
+      132,
+      185,
+      238,
+      291,
+      344,
+      397,
+      450,
+      503,
+      44,
+      97,
+      150,
+      203,
+      256,
+      309,
+      362,
+      415,
+      468,
+      9,
+      62,
+      115,
+      168,
+      221,
+      274,
+      327,
+      380,
+      433,
+      486,
+      27,
+      80,
+      133,
+      186,
+      239,
+      292,
+      345,
+      398,
+      451,
+      504,
+      45,
+      98,
+      151,
+      204,
+      257,
+      310,
+      363,
+      416,
+      469,
+      10,
+      63,
+      116,
+      169,
+      222,
+      275
+    ]
+  },
+  "calls_per_interval": 100,
+  "correctness_checks": 127,
+  "policy": {
+    "cases": [
+      [
+        7,
+        64
+      ],
+      [
+        64,
+        128
+      ],
+      [
+        257,
+        192
+      ]
+    ],
+    "configurations": [
+      {
+        "batch": 7,
+        "width": 64,
+        "capacity": 512,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337
+        ]
+      },
+      {
+        "batch": 64,
+        "width": 128,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286
+        ]
+      },
+      {
+        "batch": 257,
+        "width": 192,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286,
+          339,
+          392,
+          445,
+          498,
+          39,
+          92,
+          145,
+          198,
+          251,
+          304,
+          357,
+          410,
+          463,
+          4,
+          57,
+          110,
+          163,
+          216,
+          269,
+          322,
+          375,
+          428,
+          481,
+          22,
+          75,
+          128,
+          181,
+          234,
+          287,
+          340,
+          393,
+          446,
+          499,
+          40,
+          93,
+          146,
+          199,
+          252,
+          305,
+          358,
+          411,
+          464,
+          5,
+          58,
+          111,
+          164,
+          217,
+          270,
+          323,
+          376,
+          429,
+          482,
+          23,
+          76,
+          129,
+          182,
+          235,
+          288,
+          341,
+          394,
+          447,
+          500,
+          41,
+          94,
+          147,
+          200,
+          253,
+          306,
+          359,
+          412,
+          465,
+          6,
+          59,
+          112,
+          165,
+          218,
+          271,
+          324,
+          377,
+          430,
+          483,
+          24,
+          77,
+          130,
+          183,
+          236,
+          289,
+          342,
+          395,
+          448,
+          501,
+          42,
+          95,
+          148,
+          201,
+          254,
+          307,
+          360,
+          413,
+          466,
+          7,
+          60,
+          113,
+          166,
+          219,
+          272,
+          325,
+          378,
+          431,
+          484,
+          25,
+          78,
+          131,
+          184,
+          237,
+          290,
+          343,
+          396,
+          449,
+          502,
+          43,
+          96,
+          149,
+          202,
+          255,
+          308,
+          361,
+          414,
+          467,
+          8,
+          61,
+          114,
+          167,
+          220,
+          273,
+          326,
+          379,
+          432,
+          485,
+          26,
+          79,
+          132,
+          185,
+          238,
+          291,
+          344,
+          397,
+          450,
+          503,
+          44,
+          97,
+          150,
+          203,
+          256,
+          309,
+          362,
+          415,
+          468,
+          9,
+          62,
+          115,
+          168,
+          221,
+          274,
+          327,
+          380,
+          433,
+          486,
+          27,
+          80,
+          133,
+          186,
+          239,
+          292,
+          345,
+          398,
+          451,
+          504,
+          45,
+          98,
+          151,
+          204,
+          257,
+          310,
+          363,
+          416,
+          469,
+          10,
+          63,
+          116,
+          169,
+          222,
+          275
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 1,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 2,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 3,
+        "batch": 7,
+        "width": 64
+      }
+    ],
+    "capacity": 512,
+    "dtype": "float16",
+    "index_dtype": "int32",
+    "input_seed": 20261014,
+    "indices": "(53*i+19)%512; unique int32",
+    "rounds": 3,
+    "fresh_processes": 9,
+    "arms": [
+      "original_cuda",
+      "selected"
+    ],
+    "policies": [
+      "graph",
+      "eager"
+    ],
+    "intervals_per_arm_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "recorded_checks_per_worker": 127,
+    "saved_after_stages_per_worker": 5,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "order": "rotate four entries, reverse alternate four-sample blocks; each position appears7/8 times per worker",
+    "address_policy": "same shared buffers and repeated addresses; no flush",
+    "timed_entries": "both arms use the exact same upstream store_cache closure; selector and validation run before capture/timing",
+    "statistic": "median30 interval averages per process; median3 process medians; paired ratios also retained",
+    "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+    "selection": "frozen historical27/30/32/35 gate; auto original;36/37 cannot modify policy",
+    "scope": "independent B7/D64, B64/D128, B257/D192 cases; A/A default-entry validation, no candidate speedup or model claim"
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001313599944114685
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011999999731779098
+    },
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008794879913330078
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00918175995349884
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0017715199291706086
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009099199771881103
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0137772798538208
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0016592000424861908
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010822399854660034
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009665600061416625
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012604799866676331
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012624000012874603
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008299840092658996
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011763200163841248
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012678399682044983
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008639039993286133
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009184319972991944
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010908800363540649
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010659199953079223
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001196480020880699
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001130559965968132
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008882880210876465
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008953599929809571
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012723200023174285
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0013488000631332398
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012534399330615996
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00894815981388092
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.012438720464706421
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009565439820289613
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0013631999492645264
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.00104543998837471
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008946880102157592
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012723200023174285
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012230399996042251
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00893440008163452
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.023635199069976808
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0024323199689388277
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.024280319213867186
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.026827518939971925
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0018579199910163879
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.024683520793914795
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0262774395942688
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.003229759931564331
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012815999984741211
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008923199772834779
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010124800354242324
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011961600184440613
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010646079778671264
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009375039935112
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009204480051994323
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012975999712944032
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011952000111341476
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001013759970664978
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009098880290985108
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008704959750175476
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011711999773979186
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0015036800503730773
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001390720009803772
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.01589727997779846
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009772800207138062
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009811840057373046
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001297920048236847
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010883200168609619
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.018481279611587523
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0019072000682353973
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001666560024023056
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.0252838397026062
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.023494720458984375
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0019254399836063384
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.025470399856567384
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.024384639263153075
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0016105599701404572
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.022712640762329102
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.019196799993515014
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0013091200590133667
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010643199831247329
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00834111988544464
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001300799995660782
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012822400033473968
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008176959753036499
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009361600279808044
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010697920322418213
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001281919926404953
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012163200229406356
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0013273599743843078
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.010018240213394165
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010044800043106079
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012860800325870513
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0013174399733543395
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010262399911880494
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008963840007781982
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.01148959994316101
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00905023992061615
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.00130048006772995
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010390400141477585
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009240319728851318
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010499200224876404
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010425599664449692
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008810880184173584
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009010879993438721
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010729599744081497
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009220799803733826
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.01074560046195984
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012931199371814727
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.010177600383758544
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008525760173797607
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012406399846076966
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012111999839544297
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009642239809036255
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010435199737548828
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011804799735546112
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009022079706192017
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009451199769973755
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.011825599670410157
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010367999970912934
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010435199737548828
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001289599984884262
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009172800183296203
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008665919899940491
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010105600208044053
+    }
+  ],
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.001313599944114685,
+        0.0016592000424861908,
+        0.0012604799866676331,
+        0.0011763200163841248,
+        0.001196480020880699,
+        0.001130559965968132,
+        0.0012534399330615996,
+        0.00104543998837471,
+        0.0012723200023174285,
+        0.0018579199910163879,
+        0.003229759931564331,
+        0.0010124800354242324,
+        0.0011952000111341476,
+        0.001013759970664978,
+        0.001390720009803772,
+        0.0010883200168609619,
+        0.0019072000682353973,
+        0.0016105599701404572,
+        0.0013091200590133667,
+        0.001300799995660782,
+        0.0012163200229406356,
+        0.0013273599743843078,
+        0.0010262399911880494,
+        0.0010390400141477585,
+        0.0010499200224876404,
+        0.0012931199371814727,
+        0.0012406399846076966,
+        0.0010435199737548828,
+        0.0010435199737548828,
+        0.001289599984884262
+      ],
+      "eager": [
+        0.008794879913330078,
+        0.009099199771881103,
+        0.010822399854660034,
+        0.008639039993286133,
+        0.010908800363540649,
+        0.008953599929809571,
+        0.012438720464706421,
+        0.009565439820289613,
+        0.00893440008163452,
+        0.024280319213867186,
+        0.024683520793914795,
+        0.010646079778671264,
+        0.009204480051994323,
+        0.008704959750175476,
+        0.009772800207138062,
+        0.009811840057373046,
+        0.0252838397026062,
+        0.025470399856567384,
+        0.022712640762329102,
+        0.008176959753036499,
+        0.010697920322418213,
+        0.010044800043106079,
+        0.01148959994316101,
+        0.00905023992061615,
+        0.008810880184173584,
+        0.009220799803733826,
+        0.010177600383758544,
+        0.009022079706192017,
+        0.011825599670410157,
+        0.008665919899940491
+      ]
+    },
+    "selected": {
+      "graph": [
+        0.0011999999731779098,
+        0.0017715199291706086,
+        0.0012624000012874603,
+        0.0012678399682044983,
+        0.0010659199953079223,
+        0.0012723200023174285,
+        0.0013488000631332398,
+        0.0013631999492645264,
+        0.0012230399996042251,
+        0.0024323199689388277,
+        0.0012815999984741211,
+        0.0011961600184440613,
+        0.0012975999712944032,
+        0.0011711999773979186,
+        0.0015036800503730773,
+        0.001297920048236847,
+        0.001666560024023056,
+        0.0019254399836063384,
+        0.0010643199831247329,
+        0.0012822400033473968,
+        0.001281919926404953,
+        0.0012860800325870513,
+        0.0013174399733543395,
+        0.00130048006772995,
+        0.0010425599664449692,
+        0.0010729599744081497,
+        0.0012111999839544297,
+        0.0011804799735546112,
+        0.0010367999970912934,
+        0.0010105600208044053
+      ],
+      "eager": [
+        0.00918175995349884,
+        0.0137772798538208,
+        0.009665600061416625,
+        0.008299840092658996,
+        0.009184319972991944,
+        0.008882880210876465,
+        0.00894815981388092,
+        0.008946880102157592,
+        0.023635199069976808,
+        0.026827518939971925,
+        0.0262774395942688,
+        0.008923199772834779,
+        0.009375039935112,
+        0.009098880290985108,
+        0.01589727997779846,
+        0.018481279611587523,
+        0.023494720458984375,
+        0.024384639263153075,
+        0.019196799993515014,
+        0.00834111988544464,
+        0.009361600279808044,
+        0.010018240213394165,
+        0.008963840007781982,
+        0.009240319728851318,
+        0.009010879993438721,
+        0.01074560046195984,
+        0.008525760173797607,
+        0.009642239809036255,
+        0.009451199769973755,
+        0.009172800183296203
+      ]
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "triton": "3.5.1",
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+  },
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 5, 1019\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_contexts": {
+    "graph": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "graph",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 257,
+      "width": 192,
+      "capacity": 512,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "k_shape": [
+        257,
+        192
+      ],
+      "v_shape": [
+        257,
+        192
+      ],
+      "k_cache_shape": [
+        512,
+        192
+      ],
+      "v_cache_shape": [
+        512,
+        192
+      ],
+      "indices_shape": [
+        257
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        256,
+        1
+      ],
+      "v_stride": [
+        256,
+        1
+      ],
+      "k_cache_stride": [
+        256,
+        1
+      ],
+      "v_cache_stride": [
+        256,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    },
+    "eager": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "eager",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 257,
+      "width": 192,
+      "capacity": 512,
+      "layout": "separate",
+      "input_gap": 64,
+      "cache_guard": 64,
+      "k_shape": [
+        257,
+        192
+      ],
+      "v_shape": [
+        257,
+        192
+      ],
+      "k_cache_shape": [
+        512,
+        192
+      ],
+      "v_cache_shape": [
+        512,
+        192
+      ],
+      "indices_shape": [
+        257
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        256,
+        1
+      ],
+      "v_stride": [
+        256,
+        1
+      ],
+      "k_cache_stride": [
+        256,
+        1
+      ],
+      "v_cache_stride": [
+        256,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    }
+  },
+  "decisions": {
+    "graph": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "471294f9a2d231aba686e69ef855a0e706888047088afab70e053ec5526d6094",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    },
+    "eager": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "12e7a50759fdbc8d583344d9daab4217d4881c8d10a57d77a5a8d6c0d5d5b1d1",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    }
+  },
+  "setup_order": [
+    "original_cuda",
+    "selected"
+  ],
+  "actual_entries": {
+    "original_cuda": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1
+    },
+    "selected": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1,
+      "same_callable_as_original": true
+    }
+  },
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 20, 1065\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_validated": true,
+  "candidate_speedup_claim": false
+}

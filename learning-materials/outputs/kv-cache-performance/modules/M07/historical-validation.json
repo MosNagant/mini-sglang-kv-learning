@@ -1,0 +1,38 @@
+{
+  "status": "CPU_CHECKS_PASSED",
+  "negative_controls": [
+    "wrong capacity",
+    "wrong layout",
+    "wrong grid",
+    "wrong warp",
+    "wrong stride",
+    "missing arm",
+    "missing policy",
+    "short sample",
+    "NaN",
+    "Inf",
+    "zero",
+    "negative",
+    "raw/list mismatch",
+    "unbalanced order",
+    "missing worker",
+    "duplicate worker",
+    "changed archived ratio"
+  ],
+  "negative_control_count": 17,
+  "positive_controls": [
+    "all actual raw archives and saved summaries",
+    "ratio of medians differs from median of paired ratios",
+    "real32 representative>1 but one win",
+    "no torch/triton import"
+  ],
+  "scope": "No GPU rerun or revalidation of all correctness arrays; no statistical significance claim",
+  "counts": {
+    "sessions": 4,
+    "cases": 16,
+    "workers": 48,
+    "interval_averages": 8640,
+    "source_files_verified": 204
+  },
+  "generator_sha256": "da2472b24f729c75977071622d46a1fcfe89877c2500718acc4749f476f79b03"
+}

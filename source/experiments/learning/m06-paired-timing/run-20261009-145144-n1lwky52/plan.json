@@ -1,0 +1,145 @@
+{
+  "cases": [
+    [
+      1,
+      64
+    ],
+    [
+      1,
+      128
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      16,
+      128
+    ],
+    [
+      256,
+      64
+    ],
+    [
+      256,
+      128
+    ]
+  ],
+  "schedule": [
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 1,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 128
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 16,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 128
+    }
+  ],
+  "capacity": 1024,
+  "dtype": "float16",
+  "layout": "interleaved",
+  "input_gap": 0,
+  "input_seed": 20261004,
+  "order_seed": 104,
+  "indices": "0..B-1, int32, unique",
+  "rounds": 3,
+  "intervals_per_impl_policy": 30,
+  "calls_per_interval": 100,
+  "eager_warmup_calls": 20,
+  "graph_warmup_replays": 5,
+  "primary": "graph",
+  "reference": "eager",
+  "num_warps": 4,
+  "timed_entries": {
+    "original_cuda": "upstream store_cache Python/JIT entry",
+    "learner_triton": "trusted raw kernel launcher with prevalidated fixed arguments"
+  },
+  "excluded": "allocation, validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+  "order": "alternate forward/reverse four-measurement blocks; 15 each per process",
+  "address_policy": "same shared buffers for both implementations; repeated addresses, no cache flush",
+  "statistic": "median of 30 interval averages per process; median of three process medians",
+  "scope": "same-session six-case microbenchmark; not model/DRAM/AMD measurement",
+  "limits": "Eager includes distinct host submission paths; Graph comparison is primary; no automatic speedup acceptance"
+}

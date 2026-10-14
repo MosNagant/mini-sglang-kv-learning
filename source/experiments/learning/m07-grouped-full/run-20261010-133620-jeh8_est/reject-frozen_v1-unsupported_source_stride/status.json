@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "unsupported_source_stride",
+  "rejection": {
+    "type": "ValueError",
+    "message": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+  }
+}

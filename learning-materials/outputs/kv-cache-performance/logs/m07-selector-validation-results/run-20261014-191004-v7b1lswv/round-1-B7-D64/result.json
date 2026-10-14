@@ -1,0 +1,1593 @@
+{
+  "status": "COLLECTED",
+  "batch": 7,
+  "width": 64,
+  "round": 1,
+  "config": {
+    "batch": 7,
+    "width": 64,
+    "capacity": 512,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0,
+    "rows": [
+      19,
+      72,
+      125,
+      178,
+      231,
+      284,
+      337
+    ]
+  },
+  "calls_per_interval": 100,
+  "correctness_checks": 127,
+  "policy": {
+    "cases": [
+      [
+        7,
+        64
+      ],
+      [
+        64,
+        128
+      ],
+      [
+        257,
+        192
+      ]
+    ],
+    "configurations": [
+      {
+        "batch": 7,
+        "width": 64,
+        "capacity": 512,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337
+        ]
+      },
+      {
+        "batch": 64,
+        "width": 128,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 0,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286
+        ]
+      },
+      {
+        "batch": 257,
+        "width": 192,
+        "capacity": 512,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          19,
+          72,
+          125,
+          178,
+          231,
+          284,
+          337,
+          390,
+          443,
+          496,
+          37,
+          90,
+          143,
+          196,
+          249,
+          302,
+          355,
+          408,
+          461,
+          2,
+          55,
+          108,
+          161,
+          214,
+          267,
+          320,
+          373,
+          426,
+          479,
+          20,
+          73,
+          126,
+          179,
+          232,
+          285,
+          338,
+          391,
+          444,
+          497,
+          38,
+          91,
+          144,
+          197,
+          250,
+          303,
+          356,
+          409,
+          462,
+          3,
+          56,
+          109,
+          162,
+          215,
+          268,
+          321,
+          374,
+          427,
+          480,
+          21,
+          74,
+          127,
+          180,
+          233,
+          286,
+          339,
+          392,
+          445,
+          498,
+          39,
+          92,
+          145,
+          198,
+          251,
+          304,
+          357,
+          410,
+          463,
+          4,
+          57,
+          110,
+          163,
+          216,
+          269,
+          322,
+          375,
+          428,
+          481,
+          22,
+          75,
+          128,
+          181,
+          234,
+          287,
+          340,
+          393,
+          446,
+          499,
+          40,
+          93,
+          146,
+          199,
+          252,
+          305,
+          358,
+          411,
+          464,
+          5,
+          58,
+          111,
+          164,
+          217,
+          270,
+          323,
+          376,
+          429,
+          482,
+          23,
+          76,
+          129,
+          182,
+          235,
+          288,
+          341,
+          394,
+          447,
+          500,
+          41,
+          94,
+          147,
+          200,
+          253,
+          306,
+          359,
+          412,
+          465,
+          6,
+          59,
+          112,
+          165,
+          218,
+          271,
+          324,
+          377,
+          430,
+          483,
+          24,
+          77,
+          130,
+          183,
+          236,
+          289,
+          342,
+          395,
+          448,
+          501,
+          42,
+          95,
+          148,
+          201,
+          254,
+          307,
+          360,
+          413,
+          466,
+          7,
+          60,
+          113,
+          166,
+          219,
+          272,
+          325,
+          378,
+          431,
+          484,
+          25,
+          78,
+          131,
+          184,
+          237,
+          290,
+          343,
+          396,
+          449,
+          502,
+          43,
+          96,
+          149,
+          202,
+          255,
+          308,
+          361,
+          414,
+          467,
+          8,
+          61,
+          114,
+          167,
+          220,
+          273,
+          326,
+          379,
+          432,
+          485,
+          26,
+          79,
+          132,
+          185,
+          238,
+          291,
+          344,
+          397,
+          450,
+          503,
+          44,
+          97,
+          150,
+          203,
+          256,
+          309,
+          362,
+          415,
+          468,
+          9,
+          62,
+          115,
+          168,
+          221,
+          274,
+          327,
+          380,
+          433,
+          486,
+          27,
+          80,
+          133,
+          186,
+          239,
+          292,
+          345,
+          398,
+          451,
+          504,
+          45,
+          98,
+          151,
+          204,
+          257,
+          310,
+          363,
+          416,
+          469,
+          10,
+          63,
+          116,
+          169,
+          222,
+          275
+        ]
+      }
+    ],
+    "schedule": [
+      {
+        "round": 1,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 1,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 1,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 7,
+        "width": 64
+      },
+      {
+        "round": 2,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 2,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 64,
+        "width": 128
+      },
+      {
+        "round": 3,
+        "batch": 257,
+        "width": 192
+      },
+      {
+        "round": 3,
+        "batch": 7,
+        "width": 64
+      }
+    ],
+    "capacity": 512,
+    "dtype": "float16",
+    "index_dtype": "int32",
+    "input_seed": 20261014,
+    "indices": "(53*i+19)%512; unique int32",
+    "rounds": 3,
+    "fresh_processes": 9,
+    "arms": [
+      "original_cuda",
+      "selected"
+    ],
+    "policies": [
+      "graph",
+      "eager"
+    ],
+    "intervals_per_arm_policy": 30,
+    "calls_per_interval": 100,
+    "interval_averages": 1080,
+    "recorded_checks_per_worker": 127,
+    "saved_after_stages_per_worker": 5,
+    "eager_warmup_calls": 20,
+    "graph_warmup_replays": 5,
+    "primary": "graph",
+    "reference": "eager",
+    "order": "rotate four entries, reverse alternate four-sample blocks; each position appears7/8 times per worker",
+    "address_policy": "same shared buffers and repeated addresses; no flush",
+    "timed_entries": "both arms use the exact same upstream store_cache closure; selector and validation run before capture/timing",
+    "statistic": "median30 interval averages per process; median3 process medians; paired ratios also retained",
+    "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+    "selection": "frozen historical27/30/32/35 gate; auto original;36/37 cannot modify policy",
+    "scope": "independent B7/D64, B64/D128, B257/D192 cases; A/A default-entry validation, no candidate speedup or model claim"
+  },
+  "measurements": [
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009193599969148636
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0008963199704885483
+    },
+    {
+      "sample": 0,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008573439717292786
+    },
+    {
+      "sample": 0,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007895359992980957
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001621759980916977
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007878080010414124
+    },
+    {
+      "sample": 1,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009562240242958068
+    },
+    {
+      "sample": 1,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011875200271606445
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.02279520034790039
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009187200069427491
+    },
+    {
+      "sample": 2,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011660800129175185
+    },
+    {
+      "sample": 2,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011395200341939927
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.010042239427566529
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011363200098276139
+    },
+    {
+      "sample": 3,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009673599898815155
+    },
+    {
+      "sample": 3,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.021861119270324705
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.010076800584793091
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008832319974899291
+    },
+    {
+      "sample": 4,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.00118367999792099
+    },
+    {
+      "sample": 4,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009283199906349182
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0016208000481128693
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00917407989501953
+    },
+    {
+      "sample": 5,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009584320187568664
+    },
+    {
+      "sample": 5,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009302400052547455
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0015488000214099885
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.00115167997777462
+    },
+    {
+      "sample": 6,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008979520201683045
+    },
+    {
+      "sample": 6,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008917440176010132
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00963487982749939
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012095999717712403
+    },
+    {
+      "sample": 7,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011478400230407716
+    },
+    {
+      "sample": 7,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009186879992485046
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0012131199985742568
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001449279934167862
+    },
+    {
+      "sample": 8,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009802240133285522
+    },
+    {
+      "sample": 8,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.019885120391845704
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010620799660682678
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00863103985786438
+    },
+    {
+      "sample": 9,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.007383999824523926
+    },
+    {
+      "sample": 9,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009091199934482575
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008558719754219055
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00748416006565094
+    },
+    {
+      "sample": 10,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009913600236177444
+    },
+    {
+      "sample": 10,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009062399715185165
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00837279975414276
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010780800133943559
+    },
+    {
+      "sample": 11,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.000883840024471283
+    },
+    {
+      "sample": 11,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00797760009765625
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008075199723243713
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009090880155563355
+    },
+    {
+      "sample": 12,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001093439981341362
+    },
+    {
+      "sample": 12,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000947519987821579
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008812800049781799
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.014045759439468383
+    },
+    {
+      "sample": 13,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.014555840492248536
+    },
+    {
+      "sample": 13,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009987200051546096
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009945599734783172
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0020185600221157072
+    },
+    {
+      "sample": 14,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009269440174102783
+    },
+    {
+      "sample": 14,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008630719780921937
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007853440046310424
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011161600053310394
+    },
+    {
+      "sample": 15,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009219200164079666
+    },
+    {
+      "sample": 15,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0077532798051834105
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000883840024471283
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.001093759983778
+    },
+    {
+      "sample": 16,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00967199981212616
+    },
+    {
+      "sample": 16,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.0076143997907638546
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010384000092744827
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007560960054397583
+    },
+    {
+      "sample": 17,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.00925216019153595
+    },
+    {
+      "sample": 17,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.003263680040836334
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.012155840396881104
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008982080221176147
+    },
+    {
+      "sample": 18,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010793600231409073
+    },
+    {
+      "sample": 18,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009113600105047226
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.016463040113449096
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0011052799969911576
+    },
+    {
+      "sample": 19,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009251199662685394
+    },
+    {
+      "sample": 19,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.008886399865150451
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009274880290031434
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00841376006603241
+    },
+    {
+      "sample": 20,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011299200356006621
+    },
+    {
+      "sample": 20,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000902400016784668
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009836799651384354
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.012521599531173705
+    },
+    {
+      "sample": 21,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009032319784164428
+    },
+    {
+      "sample": 21,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011164800077676773
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0008995199948549271
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001103999987244606
+    },
+    {
+      "sample": 22,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.013042880296707153
+    },
+    {
+      "sample": 22,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009109439849853516
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009376639723777771
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0010089600086212159
+    },
+    {
+      "sample": 23,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009334400296211242
+    },
+    {
+      "sample": 23,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.01662719964981079
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009331200271844864
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011398400366306304
+    },
+    {
+      "sample": 24,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00911679983139038
+    },
+    {
+      "sample": 24,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008288959860801698
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0017651200294494628
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009549440145492553
+    },
+    {
+      "sample": 25,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.009115520119667053
+    },
+    {
+      "sample": 25,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0009136000275611878
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.00805408000946045
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008665279746055602
+    },
+    {
+      "sample": 26,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.000984639972448349
+    },
+    {
+      "sample": 26,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0009091199934482575
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.008494399785995484
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0008835200220346451
+    },
+    {
+      "sample": 27,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.000883840024471283
+    },
+    {
+      "sample": 27,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.007162240147590637
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.010635520219802857
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009128640294075013
+    },
+    {
+      "sample": 28,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0012105599790811538
+    },
+    {
+      "sample": 28,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.001093759983778
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "graph",
+      "ms_per_call": 0.0010438399761915206
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "eager",
+      "ms_per_call": 0.022320001125335692
+    },
+    {
+      "sample": 29,
+      "arm": "original_cuda",
+      "policy": "eager",
+      "ms_per_call": 0.009099839925765992
+    },
+    {
+      "sample": 29,
+      "arm": "selected",
+      "policy": "graph",
+      "ms_per_call": 0.0011481600254774093
+    }
+  ],
+  "samples_ms_per_call": {
+    "original_cuda": {
+      "graph": [
+        0.0009193599969148636,
+        0.0011875200271606445,
+        0.0011660800129175185,
+        0.0011363200098276139,
+        0.0009283199906349182,
+        0.0016208000481128693,
+        0.00115167997777462,
+        0.0011478400230407716,
+        0.0012131199985742568,
+        0.0009091199934482575,
+        0.0009913600236177444,
+        0.0010780800133943559,
+        0.000947519987821579,
+        0.0008812800049781799,
+        0.0020185600221157072,
+        0.0009219200164079666,
+        0.000883840024471283,
+        0.003263680040836334,
+        0.0010793600231409073,
+        0.0011052799969911576,
+        0.000902400016784668,
+        0.0009836799651384354,
+        0.001103999987244606,
+        0.0009334400296211242,
+        0.0009331200271844864,
+        0.0009136000275611878,
+        0.000984639972448349,
+        0.0008835200220346451,
+        0.001093759983778,
+        0.0010438399761915206
+      ],
+      "eager": [
+        0.008573439717292786,
+        0.007878080010414124,
+        0.02279520034790039,
+        0.021861119270324705,
+        0.008832319974899291,
+        0.009584320187568664,
+        0.008917440176010132,
+        0.00963487982749939,
+        0.009802240133285522,
+        0.00863103985786438,
+        0.008558719754219055,
+        0.00797760009765625,
+        0.009090880155563355,
+        0.014555840492248536,
+        0.008630719780921937,
+        0.007853440046310424,
+        0.00967199981212616,
+        0.007560960054397583,
+        0.012155840396881104,
+        0.008886399865150451,
+        0.00841376006603241,
+        0.009032319784164428,
+        0.009109439849853516,
+        0.009376639723777771,
+        0.00911679983139038,
+        0.009549440145492553,
+        0.00805408000946045,
+        0.007162240147590637,
+        0.009128640294075013,
+        0.009099839925765992
+      ]
+    },
+    "selected": {
+      "graph": [
+        0.0008963199704885483,
+        0.001621759980916977,
+        0.0011395200341939927,
+        0.0009673599898815155,
+        0.00118367999792099,
+        0.0009302400052547455,
+        0.0015488000214099885,
+        0.0012095999717712403,
+        0.001449279934167862,
+        0.0010620799660682678,
+        0.0009062399715185165,
+        0.000883840024471283,
+        0.001093439981341362,
+        0.0009987200051546096,
+        0.0009945599734783172,
+        0.0011161600053310394,
+        0.001093759983778,
+        0.0010384000092744827,
+        0.0009113600105047226,
+        0.0009251199662685394,
+        0.0011299200356006621,
+        0.0011164800077676773,
+        0.0008995199948549271,
+        0.0010089600086212159,
+        0.0011398400366306304,
+        0.0017651200294494628,
+        0.0009091199934482575,
+        0.000883840024471283,
+        0.0012105599790811538,
+        0.0011481600254774093
+      ],
+      "eager": [
+        0.007895359992980957,
+        0.009562240242958068,
+        0.009187200069427491,
+        0.010042239427566529,
+        0.010076800584793091,
+        0.00917407989501953,
+        0.008979520201683045,
+        0.009186879992485046,
+        0.019885120391845704,
+        0.007383999824523926,
+        0.00748416006565094,
+        0.00837279975414276,
+        0.008075199723243713,
+        0.014045759439468383,
+        0.009269440174102783,
+        0.0077532798051834105,
+        0.0076143997907638546,
+        0.00925216019153595,
+        0.008982080221176147,
+        0.016463040113449096,
+        0.009274880290031434,
+        0.012521599531173705,
+        0.013042880296707153,
+        0.01662719964981079,
+        0.008288959860801698,
+        0.009115520119667053,
+        0.008665279746055602,
+        0.008494399785995484,
+        0.010635520219802857,
+        0.022320001125335692
+      ]
+    }
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "triton": "3.5.1",
+    "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+  },
+  "telemetry_before": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 7, 1012\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_contexts": {
+    "graph": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "graph",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 7,
+      "width": 64,
+      "capacity": 512,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "k_shape": [
+        7,
+        64
+      ],
+      "v_shape": [
+        7,
+        64
+      ],
+      "k_cache_shape": [
+        512,
+        64
+      ],
+      "v_cache_shape": [
+        512,
+        64
+      ],
+      "indices_shape": [
+        7
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        64,
+        1
+      ],
+      "v_stride": [
+        64,
+        1
+      ],
+      "k_cache_stride": [
+        128,
+        1
+      ],
+      "v_cache_stride": [
+        128,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    },
+    "eager": {
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "commit": "9a91cfafe754aa85daee49998176275667eb58f2"
+      },
+      "execution_policy": "eager",
+      "address_policy": "reused_addresses_no_flush",
+      "dtype": "float16",
+      "index_dtype": "int32",
+      "device": "cuda:0",
+      "batch": 7,
+      "width": 64,
+      "capacity": 512,
+      "layout": "interleaved",
+      "input_gap": 0,
+      "cache_guard": 0,
+      "k_shape": [
+        7,
+        64
+      ],
+      "v_shape": [
+        7,
+        64
+      ],
+      "k_cache_shape": [
+        512,
+        64
+      ],
+      "v_cache_shape": [
+        512,
+        64
+      ],
+      "indices_shape": [
+        7
+      ],
+      "indices_stride": [
+        1
+      ],
+      "k_stride": [
+        64,
+        1
+      ],
+      "v_stride": [
+        64,
+        1
+      ],
+      "k_cache_stride": [
+        128,
+        1
+      ],
+      "v_cache_stride": [
+        128,
+        1
+      ],
+      "metadata_and_aliases_validated": true,
+      "unique_in_range_indices_validated": true,
+      "source_hashes": {
+        "triton_store_grouped.py": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "triton_store_full_groups.py": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "original_source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+        "original_source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+        "original_source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+        "original_source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "original_source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+        "original_source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+        "original_source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+        "original_source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+        "original_source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+        "original_source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+        "original_source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+        "original_source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+        "original_source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+        "original_source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "original_source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+        "original_source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+        "triton_store_candidate.py": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+      }
+    }
+  },
+  "decisions": {
+    "graph": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "6e58ae63b69cbd2444a79b7dbdde8f669053082c420abab9951eb55be9f65b1f",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    },
+    "eager": {
+      "policy_id": "m07-conservative-original-20261014",
+      "policy_fingerprint": "8a6f451a0abd47280e7139c3181bdb081504bad0e68ea28c2bb282f63c0028cd",
+      "context_fingerprint": "86277386ea1270f31f7027af8bb81001591e80efb46fe7ecfdfddc79d945e03d",
+      "request": "auto",
+      "selected": "original_cuda",
+      "reason": "no_historical_candidate_passed_frozen_gate",
+      "automatic_promotion": false,
+      "performance_claim": false,
+      "source": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    }
+  },
+  "setup_order": [
+    "original_cuda",
+    "selected"
+  ],
+  "actual_entries": {
+    "original_cuda": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1
+    },
+    "selected": {
+      "entry": "upstream store_cache",
+      "initial_calls": 1,
+      "same_callable_as_original": true
+    }
+  },
+  "telemetry_after": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,uuid,name,driver_version,pstate,temperature.gpu,clocks.sm,clocks.mem,utilization.gpu,memory.used",
+      "--format=csv,noheader,nounits"
+    ],
+    "returncode": 0,
+    "stdout": "0, GPU-e77953c3-ff4f-6148-ce27-8b41e1c2745b, NVIDIA GeForce RTX 4070 Ti, 576.52, P2, 52, 2640, 10251, 16, 1061\n",
+    "stderr": "",
+    "scope": "outside measurement, before/after snapshot; not continuous monitoring"
+  },
+  "selection_validated": true,
+  "candidate_speedup_claim": false
+}

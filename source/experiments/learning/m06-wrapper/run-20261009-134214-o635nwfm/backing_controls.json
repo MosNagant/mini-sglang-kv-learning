@@ -1,0 +1,92 @@
+[
+  {
+    "config": {
+      "batch": 3,
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        7,
+        0,
+        3
+      ]
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 4
+  },
+  {
+    "config": {
+      "batch": 5,
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        7,
+        0,
+        3,
+        5,
+        1
+      ]
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 4
+  },
+  {
+    "config": {
+      "batch": 5,
+      "width": 192,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": [
+        7,
+        0,
+        3,
+        5,
+        1
+      ]
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 4
+  },
+  {
+    "config": {
+      "batch": 1,
+      "width": 128,
+      "layout": "separate",
+      "gap": 0,
+      "guard": 0,
+      "rows": [
+        7
+      ]
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 4
+  },
+  {
+    "config": {
+      "batch": 0,
+      "width": 64,
+      "layout": "interleaved",
+      "gap": 0,
+      "guard": 0,
+      "rows": []
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 1
+  },
+  {
+    "config": {
+      "batch": 0,
+      "width": 192,
+      "layout": "separate",
+      "gap": 64,
+      "guard": 64,
+      "rows": []
+    },
+    "positive": "PASS",
+    "corruptions_rejected": 1
+  }
+]

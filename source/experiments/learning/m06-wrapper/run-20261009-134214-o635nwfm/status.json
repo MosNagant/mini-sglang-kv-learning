@@ -1,0 +1,256 @@
+{
+  "status": "PASS",
+  "lesson": "M06-04",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "passed": [
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 3,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3
+        ]
+      },
+      "kv_launches": 1
+    },
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 5,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "kv_launches": 1
+    },
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 5,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": [
+          7,
+          0,
+          3,
+          5,
+          1
+        ]
+      },
+      "kv_launches": 1
+    },
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 1,
+        "width": 128,
+        "layout": "separate",
+        "gap": 0,
+        "guard": 0,
+        "rows": [
+          7
+        ]
+      },
+      "kv_launches": 1
+    },
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 0,
+        "width": 64,
+        "layout": "interleaved",
+        "gap": 0,
+        "guard": 0,
+        "rows": []
+      },
+      "kv_launches": 0
+    },
+    {
+      "status": "PASS",
+      "config": {
+        "batch": 0,
+        "width": 192,
+        "layout": "separate",
+        "gap": 64,
+        "guard": 64,
+        "rows": []
+      },
+      "kv_launches": 0
+    }
+  ],
+  "rejected": [
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_many",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_too_few",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "v_shape",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INPUT_SHAPE: K/V must have the same (B,D)"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "k_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: k"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "indices_dtype",
+      "rejection": {
+        "type": "TypeError",
+        "message": "TENSOR_DTYPE: indices"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_k",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cpu_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CUDA_DEVICE: all five tensors must be CUDA tensors"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_width",
+      "rejection": {
+        "type": "ValueError",
+        "message": "WIDTH_SCOPE: D must be 64, 128, or 192"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "column_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "COLUMN_STRIDE: k"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "index_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_STRIDE: require contiguous rank-1 indices"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unequal_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SHARED_SOURCE_STRIDE: K/V row strides must match"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "unsupported_source_stride",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_LAYOUT_SCOPE: require D or D+64"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "source_cache_overlap",
+      "rejection": {
+        "type": "ValueError",
+        "message": "SOURCE_CACHE_ALIAS: k_cache/k"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "duplicate_indices",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_DUPLICATE: destinations must be unique"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "negative_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "out_of_range_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_RANGE: require 0<=indices[i]<C"
+      }
+    },
+    {
+      "status": "REJECTED_BEFORE_KV_LAUNCH",
+      "kind": "empty_with_one_index",
+      "rejection": {
+        "type": "ValueError",
+        "message": "INDEX_COUNT: one destination is required per input row"
+      }
+    }
+  ],
+  "scope": "4 nonempty KV calls, 2 empty no-op calls, 18 invalid public calls; no timing",
+  "ownership": "Learner fills three launch expressions; helper/fixtures/records by coach",
+  "source_review": {
+    "status": "THREE_EXPRESSIONS_REVIEWED",
+    "independent_mastery": "not inferred"
+  },
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "num_warps": 4,
+  "public_api_policy": "checks index VALUES on CPU before nonempty launch; may synchronize; not timed",
+  "current_case": null
+}

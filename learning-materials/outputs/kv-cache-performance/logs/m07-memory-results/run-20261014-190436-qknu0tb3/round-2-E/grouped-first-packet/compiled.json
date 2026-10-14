@@ -1,0 +1,274 @@
+{
+  "status": "ALL_REQUESTED_ARTIFACTS_RETAINED",
+  "artifacts": {
+    "ttir": {
+      "path": "compiled/kernel.ttir",
+      "bytes": 9566,
+      "sha256": "13841b72a08e95c5973caf2994329e21788a363494da877be1cac0a739303adb",
+      "lines": 108
+    },
+    "ttgir": {
+      "path": "compiled/kernel.ttgir",
+      "bytes": 10881,
+      "sha256": "079820cd7b5d096f2d02ebc9c80685f2e69298789231d90e992cd1edae711e75",
+      "lines": 109
+    },
+    "llir": {
+      "path": "compiled/kernel.llir",
+      "bytes": 6879,
+      "sha256": "a585faa367429efbcb1ea67edda7bf06ca210d0f4bad2870eb96c4eba434001a",
+      "lines": 106
+    },
+    "ptx": {
+      "path": "compiled/kernel.ptx",
+      "bytes": 7480,
+      "sha256": "ed7558770aebaf9d824fdb489886aa3b961b7ec4d1e424c4b5750f50953857b1",
+      "lines": 297
+    },
+    "cubin": {
+      "path": "compiled/kernel.cubin",
+      "bytes": 7272,
+      "sha256": "c06bdb29cd872398ec970a980918586566e73e6f0bb6e20ab4b9cd3bb0b4f1d4"
+    }
+  },
+  "unavailable": {},
+  "available_asm_keys": [
+    "source",
+    "ttir",
+    "ttgir",
+    "llir",
+    "ptx",
+    "cubin"
+  ],
+  "metadata": {
+    "status": "AVAILABLE",
+    "value": {
+      "allowed_dot_input_precisions": [
+        "tf32",
+        "tf32x3",
+        "ieee"
+      ],
+      "arch": "sm89",
+      "backend_name": "cuda",
+      "cluster_dims": [
+        1,
+        1,
+        1
+      ],
+      "debug": false,
+      "default_dot_input_precision": "tf32",
+      "deprecated_fp8_dot_operand_dtypes": [],
+      "enable_fp_fusion": true,
+      "extern_libs": [
+        [
+          "libdevice",
+          "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+        ]
+      ],
+      "global_scratch_align": 1,
+      "global_scratch_size": 0,
+      "hash": "38418153d48e254f958c823c17be42542df2b0ba9c9a6003cbbdf76255cc4b51",
+      "instrumentation_mode": "",
+      "ir_override": null,
+      "launch_cooperative_grid": false,
+      "launch_pdl": false,
+      "max_num_imprecise_acc_default": 0,
+      "maxnreg": null,
+      "name": "store_kv_grouped",
+      "num_ctas": 1,
+      "num_stages": 3,
+      "num_warps": 4,
+      "profile_scratch_align": 1,
+      "profile_scratch_size": 0,
+      "ptx_options": null,
+      "ptx_version": null,
+      "sanitize_overflow": true,
+      "shared": 0,
+      "supported_fp8_dtypes": [
+        "fp8e4b15",
+        "fp8e4nv",
+        "fp8e5"
+      ],
+      "target": {
+        "backend": "cuda",
+        "arch": 89,
+        "warp_size": 32
+      },
+      "tensordesc_meta": [],
+      "tmem_size": 0,
+      "triton_version": "3.5.1",
+      "warp_size": 32
+    },
+    "source": "compiled.metadata",
+    "units": "runtime metadata fields"
+  },
+  "static_resources": {
+    "registers_per_thread": {
+      "status": "AVAILABLE",
+      "value": 18,
+      "source": "compiled.n_regs",
+      "units": "registers per thread"
+    },
+    "shared_memory_bytes": {
+      "status": "AVAILABLE",
+      "value": 0,
+      "source": "compiled.metadata.shared",
+      "units": "bytes"
+    },
+    "n_spills_raw": {
+      "status": "AVAILABLE",
+      "value": 0,
+      "source": "compiled.n_spills",
+      "units": "runtime-reported raw field; unit not inferred"
+    },
+    "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"
+  },
+  "examples": {
+    "ttgir_layout": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ttgir",
+      "lines": [
+        {
+          "line": 1,
+          "text": "#blocked = #ttg.blocked<{sizePerThread = [1, 4], threadsPerWarp = [1, 32], warpsPerCTA = [4, 1], order = [1, 0]}>"
+        },
+        {
+          "line": 10,
+          "text": "    %cst = arith.constant dense<256> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)"
+        },
+        {
+          "line": 11,
+          "text": "    %cst_0 = arith.constant dense<0> : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc1)"
+        },
+        {
+          "line": 12,
+          "text": "    %cst_1 = arith.constant dense<128> : tensor<128xi32, #ttg.slice<{dim = 0, parent = #blocked}>> loc(#loc1)"
+        },
+        {
+          "line": 19,
+          "text": "    %rows_5 = tt.make_range {end = 4 : i32, start = 0 : i32} : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc37)"
+        },
+        {
+          "line": 20,
+          "text": "    %rows_6 = tt.splat %rows : i32 -> tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc38)"
+        },
+        {
+          "line": 21,
+          "text": "    %rows_7 = arith.addi %rows_6, %rows_5 : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc38)"
+        },
+        {
+          "line": 22,
+          "text": "    %row_mask = arith.cmpi slt, %rows_7, %cst : tensor<4xi32, #ttg.slice<{dim = 1, parent = #blocked}>> loc(#loc39)"
+        }
+      ]
+    },
+    "ttir_load_store": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ttir",
+      "lines": [
+        {
+          "line": 24,
+          "text": "    %positions_6 = tt.load %positions_5, %row_mask_3, %positions : tensor<4x!tt.ptr<i32>> loc(#loc38)"
+        },
+        {
+          "line": 44,
+          "text": "    %k_values_23 = tt.load %k_values_22, %valid_11, %cst : tensor<4x128x!tt.ptr<f16>> loc(#loc55)"
+        },
+        {
+          "line": 47,
+          "text": "    tt.store %1, %k_values_23, %valid_11 : tensor<4x128x!tt.ptr<f16>> loc(#loc24)"
+        },
+        {
+          "line": 50,
+          "text": "    %v_values_25 = tt.load %v_values_24, %valid_11, %cst : tensor<4x128x!tt.ptr<f16>> loc(#loc57)"
+        },
+        {
+          "line": 53,
+          "text": "    tt.store %3, %v_values_25, %valid_11 : tensor<4x128x!tt.ptr<f16>> loc(#loc28)"
+        }
+      ]
+    },
+    "ptx_header": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 5,
+          "text": ".version 8.7"
+        },
+        {
+          "line": 6,
+          "text": ".target sm_89"
+        },
+        {
+          "line": 7,
+          "text": ".address_size 64"
+        },
+        {
+          "line": 11,
+          "text": ".visible .entry store_kv_grouped("
+        }
+      ]
+    },
+    "ptx_global_load": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 53,
+          "text": "\t@%p1 ld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 76,
+          "text": "\t@%p1 ld.global.b16 { %rs1 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 80,
+          "text": "\t@%p1 ld.global.b16 { %rs3 }, [ %rd3 + 0 ];"
+        },
+        {
+          "line": 84,
+          "text": "\t@%p1 ld.global.b16 { %rs5 }, [ %rd4 + 0 ];"
+        },
+        {
+          "line": 88,
+          "text": "\t@%p1 ld.global.b16 { %rs7 }, [ %rd5 + 0 ];"
+        },
+        {
+          "line": 107,
+          "text": "\t@%p1 ld.global.b16 { %rs9 }, [ %rd7 + 0 ];"
+        },
+        {
+          "line": 111,
+          "text": "\t@%p1 ld.global.b16 { %rs11 }, [ %rd8 + 0 ];"
+        },
+        {
+          "line": 115,
+          "text": "\t@%p1 ld.global.b16 { %rs13 }, [ %rd9 + 0 ];"
+        }
+      ]
+    },
+    "ptx_global_store": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 97,
+          "text": "\t@%p1 st.global.v2.b32 [ %rd6 + 0 ], { %r2, %r3 };"
+        },
+        {
+          "line": 127,
+          "text": "\t@%p1 st.global.v2.b32 [ %rd11 + 0 ], { %r4, %r5 };"
+        }
+      ]
+    }
+  },
+  "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted",
+  "interpretation": "Static loaded-specialization data, not runtime occupancy/counters. PTX is virtual ISA; no one-to-one source mapping or performance cause inferred.",
+  "kernel_name": {
+    "status": "AVAILABLE",
+    "value": "store_kv_grouped",
+    "source": "compiled.name",
+    "units": "string"
+  }
+}

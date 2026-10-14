@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "empty_with_one_index",
+  "rejection": {
+    "type": "ValueError",
+    "message": "INDEX_COUNT: one destination is required per input row"
+  }
+}

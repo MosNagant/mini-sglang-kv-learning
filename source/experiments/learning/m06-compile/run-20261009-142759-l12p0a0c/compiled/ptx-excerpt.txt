@@ -1,0 +1,12 @@
+header:
+.version 8.7
+.target sm_89
+.address_size 64
+.visible .entry store_kv_v1(
+global_load_examples:
+	ld.global.b32 { %r1 }, [ %rd1 + 0 ];
+	@%p1 ld.global.b32 { %r4 }, [ %rd2 + 0 ];
+	@%p1 ld.global.b32 { %r7 }, [ %rd4 + 0 ];
+global_store_examples:
+	@%p1 st.global.b32 [ %rd3 + 0 ], { %r4 };
+	@%p1 st.global.b32 [ %rd5 + 0 ], { %r7 };

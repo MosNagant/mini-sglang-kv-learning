@@ -1,5 +1,7 @@
 # 环境问题与恢复手册
 
+**2026-10-14最新：本次已恢复并实际运行GPU。** 沙箱账户的WSL访问先报E_ACCESSDENIED；在已授权的Administrator执行入口中，发现实际CreateVm/HCS/ERROR_PATH_NOT_FOUND。只读检查确认storvsp设备注册缺失后，教练运行既有`Repair-WSL-Storage.ps1 -SkipSetup`，恢复设备Present/错误码0、驱动Running，见[18:50修复日志](../logs/repair-storage-20261014-185022.log)。随后验证原有Torch2.9.1+cu128/Triton3.5.1与固定上游，并成功完成36/37号GPU实验。无重装、无版本升级；本次删除设备的来源及长期稳定性仍未调查。下方恢复条目均为历史。
+
 **2026-10-10 21:30最新：本轮启动已恢复。** 21:23只读检查确认storvsp STOPPED/1077、设备注册缺失、驱动/INF存在；[记录](logs/wsl-recurrence-20261010-212332.json)已保存。用户运行既有-SkipSetup修复后，[21:25日志](../logs/repair-storage-20261010-212523.log)确认ROOT/STORVSP/0000 Present=True、错误码0、storvsp Running、STORAGE DEVICE OK；随后21:30实际运行34号GPU检查成功，见[结果](logs/m07-full-groups-results/run-20261010-213028-jgwjfp1z/status.json)。无需再修复或重新安装。最新移除来源及长期启动稳定性仍未调查；旧DevManView记录不代表本次原因。当前学习继续完整组特化复盘，以下恢复记录为历史。
 
 **2026-10-09最新恢复确认：** 用户执行既有-SkipSetup修复后返回STORAGE DEVICE OK，并实际运行echo得到WSL_OK；见[用户输出记录](logs/wsl-recovery-user-output-20261009.json)。本次WSL启动阻塞解除，localhost代理警告未阻止命令执行。此步骤未验证项目导入/GPU或长期重启稳定性，不重复修复。继续当前PowerShell运行22号--prepare并编辑M06-04外层入口。下方同日“恢复待确认”为修复前历史。

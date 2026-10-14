@@ -1,0 +1,5 @@
+{
+  "status": "SOURCE_SUPPORTED_PENDING_NEW_GPU_CALLS",
+  "basis": "Pinned CUDA matches dynamic L and shared source/cache row strides; grid is ceil(L/4) with warp_id<L guard. D64/128/192 FP16 byte widths previously passed35; these B7/64/257 cases are new.",
+  "scope": "Source review is not a new GPU pass; first and reset-Graph checks gate every measurement."
+}

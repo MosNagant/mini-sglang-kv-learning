@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "implementation": "frozen_v1",
+  "config": {
+    "batch": 1,
+    "width": 64,
+    "capacity": 32,
+    "layout": "separate",
+    "gap": 64,
+    "guard": 0,
+    "rows": [
+      31
+    ]
+  },
+  "submissions": 1
+}

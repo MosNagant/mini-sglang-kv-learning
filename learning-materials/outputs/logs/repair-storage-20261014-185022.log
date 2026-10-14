@@ -1,0 +1,46 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261014185022
+Username: WIN-EA73ICD80OS\Administrator
+RunAs User: WIN-EA73ICD80OS\Administrator
+Configuration Name: 
+Machine: WIN-EA73ICD80OS (Microsoft Windows NT 10.0.22621.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\Administrator\Documents\Codex\2026-09-27\cuda-wsl-wsl-2\outputs\Repair-WSL-Storage.ps1 -SkipSetup
+Process ID: 21608
+PSVersion: 5.1.22621.963
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.963
+BuildVersion: 10.0.22621.963
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Restoring Microsoft Hyper-V Virtual Disk Server using the existing Windows driver.
+Using Windows Driver Store package: C:\Windows\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_274327807fae3289\wstorvsp.inf
+
+Create missing device registration: True
+
+
+Name                   : Microsoft Hyper-V 虚拟磁盘服务器
+PNPDeviceID            : ROOT\STORVSP\0000
+Present                : True
+ConfigManagerErrorCode : 0
+Service                : storvsp
+
+
+
+
+
+Name      : storvsp
+State     : Running
+StartMode : Manual
+PathName  : C:\Windows\system32\drivers\storvsp.sys
+
+
+
+STORAGE DEVICE OK.
+**********************
+Windows PowerShell transcript end
+End time: 20261014185024
+**********************

@@ -1,0 +1,18 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-selector-validation/run-20261014-191004-v7b1lswv
+SCOPE=three independent configurations; default original A/A; no candidate promotion
+RUN round=1/3 B=64 D=128 original/selected(original)
+RUN round=1/3 B=257 D=192 original/selected(original)
+RUN round=1/3 B=7 D=64 original/selected(original)
+RUN round=2/3 B=7 D=64 original/selected(original)
+RUN round=2/3 B=257 D=192 original/selected(original)
+RUN round=2/3 B=64 D=128 original/selected(original)
+RUN round=3/3 B=64 D=128 original/selected(original)
+RUN round=3/3 B=257 D=192 original/selected(original)
+RUN round=3/3 B=7 D=64 original/selected(original)
+GRAPH_AA B=7 D=64 original=1.129920 us selected=1.157440 us selected_entry=original_cuda
+GRAPH_AA B=64 D=128 original=1.204960 us selected=1.205440 us selected_entry=original_cuda
+GRAPH_AA B=257 D=192 original=1.247040 us selected=1.236800 us selected_entry=original_cuda
+SHARED_ARTIFACTS=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv
+SELECTOR_VALIDATION_COLLECTION_COMPLETE: nine processes;1080 interval averages; review selection and full backing
+LIMIT: default original A/A; no candidate speedup, generalization, model or AMD claim; frozen policy unchanged
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/kv-selector-validation-20261014-191003-oloP4y.log

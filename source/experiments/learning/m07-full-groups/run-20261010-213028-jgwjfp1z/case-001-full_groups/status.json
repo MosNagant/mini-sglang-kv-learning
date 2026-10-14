@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "implementation": "full_groups",
+  "config": {
+    "batch": 3,
+    "width": 64,
+    "capacity": 512,
+    "layout": "interleaved",
+    "gap": 0,
+    "guard": 0,
+    "rows": [
+      11,
+      48,
+      85
+    ]
+  },
+  "submissions": 1
+}

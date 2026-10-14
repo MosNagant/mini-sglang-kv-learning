@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "unsupported_width",
+  "rejection": {
+    "type": "ValueError",
+    "message": "WIDTH_SCOPE: D must be 64, 128, or 192"
+  }
+}

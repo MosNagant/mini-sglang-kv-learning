@@ -1,0 +1,16 @@
+[
+  {
+    "grid": [
+      5
+    ],
+    "parameters": {
+      "BATCH": 17,
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 192,
+      "DST_ROW_STRIDE": 256,
+      "BLOCK_SIZE": 128,
+      "ROWS_PER_PROGRAM": 4,
+      "num_warps": 4
+    }
+  }
+]

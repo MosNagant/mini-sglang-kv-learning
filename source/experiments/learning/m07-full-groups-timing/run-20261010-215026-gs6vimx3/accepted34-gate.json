@@ -1,0 +1,13 @@
+{
+  "status": "ACCEPTED34_SOURCE_AND_CORRECTNESS_RECORD_GATE_PASS",
+  "source_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups/run-20261010-213028-jgwjfp1z",
+  "status_sha256": "b5e1936ebe52c48dc78cf23faee04336e882e94c100bfa4fbd596116700ab94f",
+  "source_hashes_sha256": "b858bc87de0e2d6341bfc5e1b8fd1b802ca68633f637b0ca2f3c954d95cac8f0",
+  "full_groups_sha256": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "cases": 46,
+  "nonempty_submissions": 42,
+  "empty_wrapper_returns": 4,
+  "pairs": 23,
+  "scope": "accepted34 sources/status/launch records checked; all three arms' actual timing inputs checked again per worker"
+}

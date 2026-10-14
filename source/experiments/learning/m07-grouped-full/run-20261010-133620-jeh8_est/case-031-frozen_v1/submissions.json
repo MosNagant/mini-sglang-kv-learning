@@ -1,0 +1,14 @@
+[
+  {
+    "grid": [
+      3
+    ],
+    "parameters": {
+      "WIDTH": 128,
+      "SRC_ROW_STRIDE": 128,
+      "DST_ROW_STRIDE": 256,
+      "BLOCK_SIZE": 128,
+      "num_warps": 4
+    }
+  }
+]

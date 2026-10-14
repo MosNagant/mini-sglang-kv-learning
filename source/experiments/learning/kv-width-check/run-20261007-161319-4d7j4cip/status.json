@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "M06-02: two implementations; FP16 B3 C8 indices=[7,0,3]; selected configurations=[{'width': 64, 'layout': 'interleaved', 'input_gap': 64}]; full backing checked; no timing",
+  "commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "passed_cases": [
+    "original_cuda-w64-interleaved-gap64-7-0-3",
+    "learner_triton-w64-interleaved-gap64-7-0-3"
+  ],
+  "configurations": [
+    {
+      "width": 64,
+      "layout": "interleaved",
+      "input_gap": 64
+    }
+  ],
+  "expected_cases": 2,
+  "torch": "2.9.1+cu128",
+  "triton": "3.5.1",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "triton_grid_rule": "(k.shape[0],)",
+  "triton_width_rule": "k.shape[1]",
+  "triton_num_warps": 4,
+  "triton_source_stride_rule": "k.stride(0), equal to v.stride(0)",
+  "triton_destination_stride_rule": "k_cache.stride(0), equal to v_cache.stride(0)",
+  "learner_file": "triton_store_v1.py",
+  "ownership": "coach harness; core source snapshot preserved; consult lesson review for actual authorship",
+  "current_case": null
+}

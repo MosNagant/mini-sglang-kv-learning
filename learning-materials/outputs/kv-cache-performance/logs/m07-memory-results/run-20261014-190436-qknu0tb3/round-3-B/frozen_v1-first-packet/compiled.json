@@ -1,0 +1,226 @@
+{
+  "status": "ALL_REQUESTED_ARTIFACTS_RETAINED",
+  "artifacts": {
+    "ttir": {
+      "path": "compiled/kernel.ttir",
+      "bytes": 5881,
+      "sha256": "fb8b80e747d2ae5777488c07bb722998293f41b6d7789f11c69f663477781cd1",
+      "lines": 70
+    },
+    "ttgir": {
+      "path": "compiled/kernel.ttgir",
+      "bytes": 6340,
+      "sha256": "08a9d0079bfa0f74b957f79d2fe1b88ab8932bff8d4add08a1f01860170e5a90",
+      "lines": 71
+    },
+    "llir": {
+      "path": "compiled/kernel.llir",
+      "bytes": 4089,
+      "sha256": "36afd6db85282e2e400229611b10124dd9fa439d56d1191469126296816c1f36",
+      "lines": 66
+    },
+    "ptx": {
+      "path": "compiled/kernel.ptx",
+      "bytes": 5873,
+      "sha256": "cd6faa8ccf4f22e07ba8b5f952b564bd499e2e52e22f316a896c58bcb1bb1198",
+      "lines": 248
+    },
+    "cubin": {
+      "path": "compiled/kernel.cubin",
+      "bytes": 5736,
+      "sha256": "26773a0a5b909b80a3ae5e6497a38457a4ee6e643a053ff0aae3175f3a94a50b"
+    }
+  },
+  "unavailable": {},
+  "available_asm_keys": [
+    "source",
+    "ttir",
+    "ttgir",
+    "llir",
+    "ptx",
+    "cubin"
+  ],
+  "metadata": {
+    "status": "AVAILABLE",
+    "value": {
+      "allowed_dot_input_precisions": [
+        "tf32",
+        "tf32x3",
+        "ieee"
+      ],
+      "arch": "sm89",
+      "backend_name": "cuda",
+      "cluster_dims": [
+        1,
+        1,
+        1
+      ],
+      "debug": false,
+      "default_dot_input_precision": "tf32",
+      "deprecated_fp8_dot_operand_dtypes": [],
+      "enable_fp_fusion": true,
+      "extern_libs": [
+        [
+          "libdevice",
+          "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+        ]
+      ],
+      "global_scratch_align": 1,
+      "global_scratch_size": 0,
+      "hash": "e5903828a19fc816b3d1f6fee1173a8f21e063d2a5fa4dcf232d5b04223fc738",
+      "instrumentation_mode": "",
+      "ir_override": null,
+      "launch_cooperative_grid": false,
+      "launch_pdl": false,
+      "max_num_imprecise_acc_default": 0,
+      "maxnreg": null,
+      "name": "store_kv_v1",
+      "num_ctas": 1,
+      "num_stages": 3,
+      "num_warps": 4,
+      "profile_scratch_align": 1,
+      "profile_scratch_size": 0,
+      "ptx_options": null,
+      "ptx_version": null,
+      "sanitize_overflow": true,
+      "shared": 0,
+      "supported_fp8_dtypes": [
+        "fp8e4b15",
+        "fp8e4nv",
+        "fp8e5"
+      ],
+      "target": {
+        "backend": "cuda",
+        "arch": 89,
+        "warp_size": 32
+      },
+      "tensordesc_meta": [],
+      "tmem_size": 0,
+      "triton_version": "3.5.1",
+      "warp_size": 32
+    },
+    "source": "compiled.metadata",
+    "units": "runtime metadata fields"
+  },
+  "static_resources": {
+    "registers_per_thread": {
+      "status": "AVAILABLE",
+      "value": 14,
+      "source": "compiled.n_regs",
+      "units": "registers per thread"
+    },
+    "shared_memory_bytes": {
+      "status": "AVAILABLE",
+      "value": 0,
+      "source": "compiled.metadata.shared",
+      "units": "bytes"
+    },
+    "n_spills_raw": {
+      "status": "AVAILABLE",
+      "value": 0,
+      "source": "compiled.n_spills",
+      "units": "runtime-reported raw field; unit not inferred"
+    },
+    "scope": "static loaded specialization; not achieved occupancy, spill traffic, bandwidth or runtime hardware counters"
+  },
+  "examples": {
+    "ttgir_layout": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ttgir",
+      "lines": [
+        {
+          "line": 1,
+          "text": "#blocked = #ttg.blocked<{sizePerThread = [1], threadsPerWarp = [32], warpsPerCTA = [4], order = [0]}>"
+        }
+      ]
+    },
+    "ttir_load_store": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ttir",
+      "lines": [
+        {
+          "line": 15,
+          "text": "    %pos_0 = tt.load %pos : !tt.ptr<i32> loc(#loc28)"
+        },
+        {
+          "line": 26,
+          "text": "    %k_values_7 = tt.load %k_values_6, %mask_1, %cst : tensor<128x!tt.ptr<f16>> loc(#loc35)"
+        },
+        {
+          "line": 29,
+          "text": "    tt.store %1, %k_values_7, %mask_1 : tensor<128x!tt.ptr<f16>> loc(#loc14)"
+        },
+        {
+          "line": 32,
+          "text": "    %v_values_9 = tt.load %v_values_8, %mask_1, %cst : tensor<128x!tt.ptr<f16>> loc(#loc37)"
+        },
+        {
+          "line": 35,
+          "text": "    tt.store %3, %v_values_9, %mask_1 : tensor<128x!tt.ptr<f16>> loc(#loc18)"
+        }
+      ]
+    },
+    "ptx_header": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 5,
+          "text": ".version 8.7"
+        },
+        {
+          "line": 6,
+          "text": ".target sm_89"
+        },
+        {
+          "line": 7,
+          "text": ".address_size 64"
+        },
+        {
+          "line": 11,
+          "text": ".visible .entry store_kv_v1("
+        }
+      ]
+    },
+    "ptx_global_load": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 43,
+          "text": "\tld.global.b32 { %r1 }, [ %rd1 + 0 ];"
+        },
+        {
+          "line": 63,
+          "text": "\t@%p1 ld.global.b16 { %rs3 }, [ %rd2 + 0 ];"
+        },
+        {
+          "line": 77,
+          "text": "\t@%p1 ld.global.b16 { %rs6 }, [ %rd4 + 0 ];"
+        }
+      ]
+    },
+    "ptx_global_store": {
+      "status": "AVAILABLE",
+      "artifact": "compiled/kernel.ptx",
+      "lines": [
+        {
+          "line": 70,
+          "text": "\t@%p1 st.global.b16 [ %rd3 + 0 ], { %rs3 };"
+        },
+        {
+          "line": 83,
+          "text": "\t@%p1 st.global.b16 [ %rd5 + 0 ], { %rs6 };"
+        }
+      ]
+    }
+  },
+  "fresh_compilation": "NOT_OBSERVED; runtime/cache reuse is possible; cache not deleted",
+  "interpretation": "Static loaded-specialization data, not runtime occupancy/counters. PTX is virtual ISA; no one-to-one source mapping or performance cause inferred.",
+  "kernel_name": {
+    "status": "AVAILABLE",
+    "value": "store_kv_v1",
+    "source": "compiled.name",
+    "units": "string"
+  }
+}

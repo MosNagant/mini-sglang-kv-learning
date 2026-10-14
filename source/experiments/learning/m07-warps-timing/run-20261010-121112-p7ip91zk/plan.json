@@ -1,0 +1,78 @@
+{
+  "cases": [
+    [
+      1,
+      64
+    ],
+    [
+      256,
+      128
+    ]
+  ],
+  "schedule": [
+    {
+      "round": 1,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 1,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 2,
+      "batch": 256,
+      "width": 128
+    },
+    {
+      "round": 3,
+      "batch": 1,
+      "width": 64
+    },
+    {
+      "round": 3,
+      "batch": 256,
+      "width": 128
+    }
+  ],
+  "capacity": 1024,
+  "dtype": "float16",
+  "layout": "interleaved",
+  "input_gap": 0,
+  "input_seed": 20261004,
+  "order_seed": 107,
+  "indices": "0..B-1, int32, unique",
+  "rounds": 3,
+  "fresh_processes": 6,
+  "intervals_per_impl_policy": 30,
+  "calls_per_interval": 100,
+  "interval_averages": 1080,
+  "eager_warmup_calls": 20,
+  "graph_warmup_replays": 5,
+  "primary": "graph",
+  "reference": "eager",
+  "num_warps": {
+    "frozen_v1": 4,
+    "candidate": 1
+  },
+  "timed_entries": {
+    "original_cuda": "upstream store_cache Python/JIT entry",
+    "frozen_v1": "trusted raw kernel launcher with prevalidated fixed arguments",
+    "candidate": "trusted raw kernel launcher; NUM_WARPS from accepted candidate snapshot"
+  },
+  "excluded": "allocation, public validation, first JIT/setup, warmup, checks, snapshots, telemetry",
+  "order": "rotate six arm/policy measurements; reverse alternate six-sample blocks; each item occupies each position five times per process",
+  "address_policy": "same shared buffers for all three implementations; repeated addresses, no cache flush",
+  "statistic": "median of 30 interval averages per process; median of three process medians",
+  "correctness": "each arm resets cache before initial call and before 100-call Graph replay; all backings checked",
+  "accepted_correctness_run": "run-20261010-115255-6bwgq_qo",
+  "candidate_sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b",
+  "scope": "two-case NVIDIA FP16 microbenchmark; not all-six-case regression, model, DRAM, or AMD measurement",
+  "limits": "Eager includes distinct host submission paths; Graph primary; no automatic speedup acceptance"
+}

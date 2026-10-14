@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "source_cache_overlap",
+  "rejection": {
+    "type": "ValueError",
+    "message": "SOURCE_CACHE_ALIAS: k_cache/k"
+  }
+}

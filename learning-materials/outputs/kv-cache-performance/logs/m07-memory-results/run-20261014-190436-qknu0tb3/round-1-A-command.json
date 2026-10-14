@@ -1,0 +1,15 @@
+[
+  "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "-B",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-memory/run-20261014-190436-qknu0tb3/36-compare-kv-memory.py",
+  "--project",
+  "/home/weltlaw/projects/mini-sglang-kv",
+  "--snapshot",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-memory/run-20261014-190436-qknu0tb3",
+  "--worker-dir",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-memory/run-20261014-190436-qknu0tb3/round-1-A",
+  "--condition",
+  "A",
+  "--round",
+  "1"
+]

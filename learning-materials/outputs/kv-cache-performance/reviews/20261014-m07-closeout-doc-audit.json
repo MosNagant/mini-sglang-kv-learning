@@ -1,0 +1,1422 @@
+{
+  "status": "CLOSEOUT_DOCUMENTATION_AUDIT_PASS",
+  "checked_at_utc": "2026-10-14T11:28:03.629706+00:00",
+  "scope": "Quick independent documentation, local-link and source-package review; no GPU/WSL/network execution and no repeat of complete raw-array audits.",
+  "checked_documents": [
+    {
+      "path": "modules/M07/IMPLEMENTATION.md",
+      "sha256": "159ae051522e4ef55fc9bf0bbe5ed95386cb36fbb2d1bea43e27acaabc936028",
+      "local_link_count": 8,
+      "local_links": [
+        {
+          "target": "source-manifest.json",
+          "exists": true
+        },
+        {
+          "target": "original_source/python/minisgl/kernel/store.py",
+          "exists": true
+        },
+        {
+          "target": "original_source/python/minisgl/kernel/csrc/jit/store.cu",
+          "exists": true
+        },
+        {
+          "target": "src/triton_store_mask.py",
+          "exists": true
+        },
+        {
+          "target": "src/triton_store_api.py",
+          "exists": true
+        },
+        {
+          "target": "src/triton_store_candidate.py",
+          "exists": true
+        },
+        {
+          "target": "src/triton_store_grouped.py",
+          "exists": true
+        },
+        {
+          "target": "src/triton_store_full_groups.py",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "modules/M07/INTERVIEW-REVIEW.md",
+      "sha256": "6c2c7761042d105b0db68270673d15b8587d93da5177036122a7744fddc2b54a",
+      "local_link_count": 0,
+      "local_links": []
+    },
+    {
+      "path": "modules/M07/README.md",
+      "sha256": "f4a49a242741872564f160d69adb444d00d57fc15a9a25479750cfc88c9ca6c3",
+      "local_link_count": 12,
+      "local_links": [
+        {
+          "target": "IMPLEMENTATION.md",
+          "exists": true
+        },
+        {
+          "target": "RESULTS-HISTORICAL.md",
+          "exists": true
+        },
+        {
+          "target": "RESULTS-MEMORY.md",
+          "exists": true
+        },
+        {
+          "target": "RESULTS-SELECTION.md",
+          "exists": true
+        },
+        {
+          "target": "INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "../../obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "../../LEARNING_LOG.md",
+          "exists": true
+        },
+        {
+          "target": "REPRODUCE.md",
+          "exists": true
+        },
+        {
+          "target": "source-manifest.json",
+          "exists": true
+        },
+        {
+          "target": "historical-validation.json",
+          "exists": true
+        },
+        {
+          "target": "memory-validation.json",
+          "exists": true
+        },
+        {
+          "target": "selection-validation.json",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "modules/M07/REPRODUCE.md",
+      "sha256": "0482dd211b0cb950b9fa1dbe28a97dbc90a298a708bd477e789288b6891127b3",
+      "local_link_count": 2,
+      "local_links": [
+        {
+          "target": "RESULTS-SELECTION.md",
+          "exists": true
+        },
+        {
+          "target": "../../ENVIRONMENT_RECOVERY.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "modules/M07/RESULTS-HISTORICAL.md",
+      "sha256": "4b625385f5f209764fbb0dd3837ccaea127721b1220762d86d22be11feaaca67",
+      "local_link_count": 20,
+      "local_links": [
+        {
+          "target": "../../logs/m07-warps-timing-results/run-20261010-121112-p7ip91zk/status.json",
+          "exists": true
+        },
+        {
+          "target": "../../reviews/20261010-m07-warps-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-grouped-timing-results/run-20261010-131625-od4rcwyb/status.json",
+          "exists": true
+        },
+        {
+          "target": "../../reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-grouped-six-timing-results/run-20261010-134931-4l7bljlh/status.json",
+          "exists": true
+        },
+        {
+          "target": "../../reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-full-groups-timing-results/run-20261010-215026-gs6vimx3/status.json",
+          "exists": true
+        },
+        {
+          "target": "../../reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "historical-results.json",
+          "exists": true
+        },
+        {
+          "target": "figures/graph-ratios.svg",
+          "exists": true
+        },
+        {
+          "target": "figures/graph-ratios.pdf",
+          "exists": true
+        },
+        {
+          "target": "figures/graph-latency.svg",
+          "exists": true
+        },
+        {
+          "target": "figures/graph-latency.pdf",
+          "exists": true
+        },
+        {
+          "target": "figures/eager-ratios.svg",
+          "exists": true
+        },
+        {
+          "target": "figures/eager-ratios.pdf",
+          "exists": true
+        },
+        {
+          "target": "figures/eager-latency.svg",
+          "exists": true
+        },
+        {
+          "target": "figures/eager-latency.pdf",
+          "exists": true
+        },
+        {
+          "target": "generate-historical-results.py",
+          "exists": true
+        },
+        {
+          "target": "historical-validation.json",
+          "exists": true
+        },
+        {
+          "target": "historical-artifact-manifest.json",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "modules/M07/RESULTS-MEMORY.md",
+      "sha256": "f556122eadddd12db96770abf20071567cf8eaabf9b07a91ed863c8b120e91b4",
+      "local_link_count": 7,
+      "local_links": [
+        {
+          "target": "../../logs/m07-memory-results/run-20261014-190436-qknu0tb3/status.json",
+          "exists": true
+        },
+        {
+          "target": "audit-memory-results.py",
+          "exists": true
+        },
+        {
+          "target": "memory-validation.json",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-memory-results/run-20261014-190436-qknu0tb3/round-1-A/grouped-first-packet/compiled/kernel.ttgir",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-memory-results/run-20261014-190436-qknu0tb3/round-1-E/grouped-first-packet/compiled/kernel.ttgir",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-memory-results/run-20261014-190436-qknu0tb3/round-1-A/grouped-first-packet/compiled/kernel.ptx",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-memory-results/run-20261014-190436-qknu0tb3/round-1-E/grouped-first-packet/compiled/kernel.ptx",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "modules/M07/RESULTS-SELECTION.md",
+      "sha256": "892de9bd6b177ac1b6b7684caf8f56a4e2f5b56dbb72cd9ba18d752db3cb4138",
+      "local_link_count": 6,
+      "local_links": [
+        {
+          "target": "../../37-kv-selection-policy.json",
+          "exists": true
+        },
+        {
+          "target": "../../37-kv-selector.py",
+          "exists": true
+        },
+        {
+          "target": "../../logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv/status.json",
+          "exists": true
+        },
+        {
+          "target": "selection-validation.json",
+          "exists": true
+        },
+        {
+          "target": "audit-selection-validation.py",
+          "exists": true
+        },
+        {
+          "target": "../../reviews/20261014-m07-selector-cpu.json",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "PROGRESS.md",
+      "sha256": "d53e798638f552063df0a5cd04078931b87e86a4962223042f9008e982e573b9",
+      "local_link_count": 45,
+      "local_links": [
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "WEEK2-REVIEW-20261012.md",
+          "exists": true
+        },
+        {
+          "target": "../github-upload/UPLOAD_RECEIPT-20261012-M07.json",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-review.md",
+          "exists": true
+        },
+        {
+          "target": "ROADMAP-TRITON-20261024.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-05-grouped-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-04-grouped-rows.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-02-warps-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-timing-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M06/README.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-05-common-correctness.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261009-m06-05-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261009-m06-04-wrapper-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-04-launch-wrapper.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-03-mask-review.md",
+          "exists": true
+        },
+        {
+          "target": "KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "ENVIRONMENT_RECOVERY.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "COACHING_GUIDE.md",
+          "exists": true
+        },
+        {
+          "target": "KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "LEARNING_LOG.md",
+          "exists": true
+        },
+        {
+          "target": "M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/学习笔记索引.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/14-width-parameter.md",
+          "exists": true
+        },
+        {
+          "target": "SESSION-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "ROADMAP-TRITON-20261024.md",
+          "exists": true
+        },
+        {
+          "target": "KNOWLEDGE_MAP.md",
+          "exists": true
+        },
+        {
+          "target": "LEARNING_LOG.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "LEARNING_LOG.md",
+      "sha256": "662cbc840cbbef1faf805592c6978c028aa26cac1ec0c09fd4cd3286400fbb78",
+      "local_link_count": 83,
+      "local_links": [
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "WEEK2-REVIEW-20261012.md",
+          "exists": true
+        },
+        {
+          "target": "../github-upload/UPLOAD_RECEIPT-20261012-M07.json",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-timing-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-10-full-groups-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-09-full-groups.md",
+          "exists": true
+        },
+        {
+          "target": "ROADMAP-TRITON-20261024.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-compile-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-08-grouped-compile.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-full-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-07-grouped-six-case-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-full-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-06-grouped-full-regression.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-evidence-audit.json",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-05-grouped-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-04-grouped-rows.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-03-warps-compile.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-compile-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-timing-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-02-warps-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-scaffold-cpu.json",
+          "exists": true
+        },
+        {
+          "target": "references/20261010-用户面试掌握清单V2原文.txt",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-09-开发日志-M06冻结与M07起步.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M06/README.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M06/RESULTS.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-05-common-correctness.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261009-m06-05-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261009-m06-04-wrapper-review.md",
+          "exists": true
+        },
+        {
+          "target": "logs/wsl-recovery-user-output-20261009.json",
+          "exists": true
+        },
+        {
+          "target": "logs/wsl-recurrence-20261009-20261009053622245.json",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-04-launch-wrapper.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261009-m06-04-wrapper-preparation.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-04-launch-wrapper.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-03-mask-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-02-matrix-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-02-separate-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-02-gap-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/14-layout-gap.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-02-harness-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-01-width-review.md",
+          "exists": true
+        },
+        {
+          "target": "logs/wsl-recurrence-20261007.json",
+          "exists": true
+        },
+        {
+          "target": "COACHING_GUIDE.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/学习笔记索引.md",
+          "exists": true
+        },
+        {
+          "target": "M05基线收尾与后续优化路线-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/14-width-parameter.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261004-original-pilot-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261004-event-graph-review.md",
+          "exists": true
+        },
+        {
+          "target": "本人手写补充清单-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "手写项目执行规则-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "...",
+          "exists": true
+        },
+        {
+          "target": "lessons/12-check-kv-indices.md",
+          "exists": true
+        },
+        {
+          "target": "logs/wsl-recovery-user-output-20261002.txt",
+          "exists": true
+        },
+        {
+          "target": "logs/wsl-recurrence-20261002.txt",
+          "exists": true
+        },
+        {
+          "target": "SESSION-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "KNOWLEDGE_MAP.md",
+          "exists": true
+        },
+        {
+          "target": "PROJECT-REMAINING-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "AMD三岗JD逐项分析-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "AMD-BOSS岗位复核与稳定方向-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "AMD-BOSS岗位复核与稳定方向-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/学习笔记索引.md",
+          "exists": true
+        },
+        {
+          "target": "M05原版基线-v0.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "KV算子项目任务表.md",
+      "sha256": "baeb60ab7e6c81d1098027b5fb1683790e340e863d6a97aa957fca5e3871ffff",
+      "local_link_count": 35,
+      "local_links": [
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "WEEK2-REVIEW-20261012.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-review.md",
+          "exists": true
+        },
+        {
+          "target": "ROADMAP-TRITON-20261024.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-05-grouped-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-04-grouped-rows.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-warps-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M06/README.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "M06-M07教学大纲-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "COACHING_GUIDE.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261007-m06-03-mask-review.md",
+          "exists": true
+        },
+        {
+          "target": "M05基线收尾与后续优化路线-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261004-original-pilot-review.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "手写项目执行规则-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "本人手写补充清单-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/学习笔记索引.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "外部项目报告参考评估-20261002.md",
+          "exists": true
+        },
+        {
+          "target": "手写项目执行规则-20261002.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "M06-M07教学大纲-20261006.md",
+      "sha256": "dcbad7747267cad580b7c9ee719bcfd02e9459cd8e14d7f1d76e1f44a915d1c3",
+      "local_link_count": 28,
+      "local_links": [
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-10-full-groups-timing.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-09-full-groups.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-full-groups-review.md",
+          "exists": true
+        },
+        {
+          "target": "ROADMAP-TRITON-20261024.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-05-grouped-timing.md",
+          "exists": true
+        },
+        {
+          "target": "COACHING_GUIDE.md",
+          "exists": true
+        },
+        {
+          "target": "KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-04-grouped-rows.md",
+          "exists": true
+        },
+        {
+          "target": "KNOWLEDGE_MAP.md",
+          "exists": true
+        },
+        {
+          "target": "reviews/20261010-m07-grouped-correctness-review.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M06/README.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/14-width-parameter.md",
+          "exists": true
+        },
+        {
+          "target": "AMD三岗JD逐项分析-20261001.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m07-01-num-warps-hypothesis.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/m06-03-mask-intro.md",
+          "exists": true
+        },
+        {
+          "target": "lessons/14-width-parameter.md",
+          "exists": true
+        },
+        {
+          "target": "M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "obsidian/2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "obsidian/学习笔记索引.md",
+      "sha256": "6c006744e96e97eec6ff96d64435e4cdf7a436d6be8584609c893942cea27843",
+      "local_link_count": 33,
+      "local_links": [
+        {
+          "target": "2026-10-14-开发日志-M07收尾.md",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "../KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "2026-09-30-CUDA学习日志.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-01-学习笔记-首个Triton算子与项目路线.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-03-KV-Cache面试笔记-纠正版.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-06-M05学习补记-计时与真实场景.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-09-开发日志-M06冻结与M07起步.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-warps-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-grouped-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../lessons/m07-06-grouped-full-regression.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-grouped-full-review.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-grouped-six-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "../lessons/m07-07-grouped-six-case-timing.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-grouped-compile-review.md",
+          "exists": true
+        },
+        {
+          "target": "../lessons/m07-08-grouped-compile.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-full-groups-review.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261010-m07-full-groups-timing-review.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "../M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "../M05基线收尾与后续优化路线-20261006.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-01-CUDA学习日志.md",
+          "exists": true
+        },
+        {
+          "target": "../M03-M04集中验收.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "../M05原版基线-v0.md",
+          "exists": true
+        },
+        {
+          "target": "../KV算子项目任务表.md",
+          "exists": true
+        },
+        {
+          "target": "../LEARNING_LOG.md",
+          "exists": true
+        },
+        {
+          "target": "../ENVIRONMENT_RECOVERY.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261006-wsl-storage-diagnosis.md",
+          "exists": true
+        },
+        {
+          "target": "2026-10-10-开发日志-M07三条优化路线与结果复盘.md",
+          "exists": true
+        },
+        {
+          "target": "../KNOWLEDGE_MAP.md",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "path": "obsidian/2026-10-14-开发日志-M07收尾.md",
+      "sha256": "5f90e07182955b77b0fc6051070a92b2c1631eb7dca27ddc799dea34f251f5b2",
+      "local_link_count": 9,
+      "local_links": [
+        {
+          "target": "../../logs/repair-storage-20261014-185022.log",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/RESULTS-HISTORICAL.md",
+          "exists": true
+        },
+        {
+          "target": "../reviews/20261014-m07-memory-experiment-design.md",
+          "exists": true
+        },
+        {
+          "target": "../logs/m07-memory-results/run-20261014-190436-qknu0tb3/status.json",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/RESULTS-MEMORY.md",
+          "exists": true
+        },
+        {
+          "target": "../logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv/status.json",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/RESULTS-SELECTION.md",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/README.md",
+          "exists": true
+        },
+        {
+          "target": "../modules/M07/INTERVIEW-REVIEW.md",
+          "exists": true
+        }
+      ]
+    }
+  ],
+  "links": {
+    "document_count": 13,
+    "local_targets_checked": 288,
+    "http_or_anchor_targets_skipped": 8,
+    "missing": []
+  },
+  "source_package": {
+    "manifest": "modules/M07/source-manifest.json",
+    "manifest_sha256": "704c872cc2543f269370f723dc366043ea524b34f6d9320cce9237540b93cc0e",
+    "files_verified": 10,
+    "upstream_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+    "files": [
+      {
+        "path": "src/triton_store_mask.py",
+        "exported_path": "experiments/triton_store_mask.py",
+        "bytes": 1313,
+        "sha256": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/triton_store_api.py",
+        "exported_path": "experiments/triton_store_api.py",
+        "bytes": 1531,
+        "sha256": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/triton_store_candidate.py",
+        "exported_path": "experiments/triton_store_candidate.py",
+        "bytes": 1147,
+        "sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/triton_store_grouped.py",
+        "exported_path": "experiments/triton_store_grouped.py",
+        "bytes": 2358,
+        "sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/triton_store_full_groups.py",
+        "exported_path": "experiments/triton_store_full_groups.py",
+        "bytes": 2511,
+        "sha256": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/kv_contract_support.py",
+        "exported_path": "experiments/kv_contract_support.py",
+        "bytes": 7336,
+        "sha256": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+        "status": "MATCH"
+      },
+      {
+        "path": "src/check_kv_targets.py",
+        "exported_path": "experiments/check_kv_targets.py",
+        "bytes": 473,
+        "sha256": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358",
+        "status": "MATCH"
+      },
+      {
+        "path": "original_source/python/minisgl/kernel/store.py",
+        "exported_path": "python/minisgl/kernel/store.py",
+        "bytes": 1080,
+        "sha256": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+        "status": "MATCH"
+      },
+      {
+        "path": "original_source/python/minisgl/kernel/csrc/jit/store.cu",
+        "exported_path": "python/minisgl/kernel/csrc/jit/store.cu",
+        "bytes": 4371,
+        "sha256": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+        "status": "MATCH"
+      },
+      {
+        "path": "original_source/LICENSE",
+        "exported_path": "LICENSE",
+        "bytes": 1068,
+        "sha256": "de93fca1c2ab406b177d405d0b05e0598ed22f082ce1b5acb5ee7991007f096c",
+        "status": "MATCH"
+      }
+    ],
+    "command": "python -B modules/M07/package_sources.py --verify",
+    "command_result": "SOURCE_PACKAGE_VERIFIED: 10 files; no GPU run"
+  },
+  "current_frozen_experiment_files": [
+    {
+      "path": "36-compare-kv-memory.py",
+      "sha256": "d0de1e650c4e615798d72b1f963b944ca7ebe4bb10ea8a855ea1cd4a44c25c2f",
+      "saved_run": "logs/m07-memory-results/run-20261014-190436-qknu0tb3",
+      "status": "MATCH"
+    },
+    {
+      "path": "36-compare-kv-memory.sh",
+      "sha256": "15d9dfa8a1cfd1ac18d773d8289f91eba1f1afb0473ee560e45c2308ad806a73",
+      "saved_run": "logs/m07-memory-results/run-20261014-190436-qknu0tb3",
+      "status": "MATCH"
+    },
+    {
+      "path": "36-memory-cpu-test.py",
+      "sha256": "7d35cf2f7d418aac2b3a258cf9b9eb9dd63da0deee29ed91f937df43d0d630e1",
+      "saved_run": "logs/m07-memory-results/run-20261014-190436-qknu0tb3",
+      "status": "MATCH"
+    },
+    {
+      "path": "37-validate-kv-selector.py",
+      "sha256": "ad5bdcc2a97d984a9964c64f4355642f217bf0d6b9b7cf711a48595ad352f255",
+      "saved_run": "logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv",
+      "status": "MATCH"
+    },
+    {
+      "path": "37-validate-kv-selector.sh",
+      "sha256": "58b1c93a10f4e7505ca9310f2b55a57b373b2600b7c95317a7caa80c6db20859",
+      "saved_run": "logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv",
+      "status": "MATCH"
+    },
+    {
+      "path": "37-kv-selector.py",
+      "sha256": "e90a0f1c4e76884bd01b2e5085b09f2d8841c3e1d3d2c8d235486095517aa1e9",
+      "saved_run": "logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv",
+      "status": "MATCH"
+    },
+    {
+      "path": "37-kv-selection-policy.json",
+      "sha256": "75e447b0754a0e4f4cd07bd2808781a12b6b97eec097b472cedfdb432ef8dae6",
+      "saved_run": "logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv",
+      "status": "MATCH"
+    },
+    {
+      "path": "37-selector-cpu-test.py",
+      "sha256": "cb580ef908929b3ce09797c8671941bf5305275a51044e2bc123970d337743b0",
+      "saved_run": "logs/m07-selector-validation-results/run-20261014-191004-v7b1lswv",
+      "status": "MATCH"
+    }
+  ],
+  "previous_evidence_reports_reviewed": [
+    {
+      "path": "modules/M07/historical-validation.json",
+      "sha256": "625a614c8f86ef9e2ccf76d2d608e371f0b9cc9ebcb007e086313752b081ac0b"
+    },
+    {
+      "path": "modules/M07/memory-validation.json",
+      "sha256": "1e4e8710c976d44dcca90b05812f7b4639d00abaa681702d850eb4d827e28044"
+    },
+    {
+      "path": "modules/M07/selection-validation.json",
+      "sha256": "2f159cc191c60e6fb92237adaf498e2e5008abf7ca05ea949d1ec910b28a19ed"
+    }
+  ],
+  "consistency_checks": [
+    "Historical 27/30/32/35 sessions remain distinct: 48 workers, 8640 interval averages; current review does not claim new historical GPU execution.",
+    "36:18 workers,3240 interval averages,216 NPZ/891 arrays/78755520 elements; all Graph condition/A comparisons fail pre-frozen three-round 3 percent signal criterion.",
+    "36:F/v1 is slower in all three rounds, but one is only about2.638 percent; no threshold change or promotion.",
+    "36:E/grouped actual input PTX scalarization is documented separately from unestablished stable Graph performance causality; Eager signals remain separate.",
+    "37:9 workers,1080 interval averages,54 NPZ/225 arrays/12466704 elements; two timed names bind the same original CUDA closure, selector runs outside timing; A/A variation is not acceleration.",
+    "Combined new36/37 totals27 workers and4320 interval averages; no model, AMD or runtime occupancy/counter claim.",
+    "Current scoreboard64/100 andM07 11/25 agree; only report itemM07-06 adds3 points; remaining14 points retain personal analysis/explanation requirements.",
+    "M07 engineering completion, authorized coach authorship, independent learner mastery, M08 dependencies and pending publication receipt remain distinct.",
+    "10-14 WSL source snapshot precedes36/37; later shared logs are explicitly separate; no future Git commit is fabricated."
+  ],
+  "documentation_fixes": [
+    {
+      "path": "KV算子项目任务表.md",
+      "change": "Updated stale middle current-status table61 to64; latest run35 to36/37; removed claims that M07 reports/memory experiment are still missing; addedM07-06 check and current36/37 support scope; acknowledged10-14 authorization in historical coaching note."
+    },
+    {
+      "path": "M06-M07教学大纲-20261006.md",
+      "change": "Marked old final first-lesson checklist as10-09 historical and added current10-14 M07 archive/personal-review/M08 next steps."
+    }
+  ],
+  "preserved": "No raw run, frozen source, selector policy, old failure evidence or score weighting was changed. Only two small current documentation sections and this review JSON were edited.",
+  "blocking_findings": []
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-14",
+  "source_export": "wsl-project-20261014T105320Z.zip",
+  "source_export_sha256": "a973db75652b953e5fba7f274d393a8802058efbaead323b11f6045863c87093",
+  "upstream_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+  "files": [
+    {
+      "path": "src/triton_store_mask.py",
+      "exported_path": "experiments/triton_store_mask.py",
+      "bytes": 1313,
+      "sha256": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d"
+    },
+    {
+      "path": "src/triton_store_api.py",
+      "exported_path": "experiments/triton_store_api.py",
+      "bytes": 1531,
+      "sha256": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f"
+    },
+    {
+      "path": "src/triton_store_candidate.py",
+      "exported_path": "experiments/triton_store_candidate.py",
+      "bytes": 1147,
+      "sha256": "f2320f7ede79b9e4c7164ae0d91b87a53a718b42757b0c64e9bfb64bf070092b"
+    },
+    {
+      "path": "src/triton_store_grouped.py",
+      "exported_path": "experiments/triton_store_grouped.py",
+      "bytes": 2358,
+      "sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1"
+    },
+    {
+      "path": "src/triton_store_full_groups.py",
+      "exported_path": "experiments/triton_store_full_groups.py",
+      "bytes": 2511,
+      "sha256": "6a53a5304566420c3ee0163f0b8c6ff157b4f9b16f99a83be20364b415a81156"
+    },
+    {
+      "path": "src/kv_contract_support.py",
+      "exported_path": "experiments/kv_contract_support.py",
+      "bytes": 7336,
+      "sha256": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881"
+    },
+    {
+      "path": "src/check_kv_targets.py",
+      "exported_path": "experiments/check_kv_targets.py",
+      "bytes": 473,
+      "sha256": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+    },
+    {
+      "path": "original_source/python/minisgl/kernel/store.py",
+      "exported_path": "python/minisgl/kernel/store.py",
+      "bytes": 1080,
+      "sha256": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01"
+    },
+    {
+      "path": "original_source/python/minisgl/kernel/csrc/jit/store.cu",
+      "exported_path": "python/minisgl/kernel/csrc/jit/store.cu",
+      "bytes": 4371,
+      "sha256": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e"
+    },
+    {
+      "path": "original_source/LICENSE",
+      "exported_path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "de93fca1c2ab406b177d405d0b05e0598ed22f082ce1b5acb5ee7991007f096c"
+    }
+  ],
+  "scope": "Selected actual WSL source snapshot, not a standalone install or new GPU result; helpers/runners and raw data remain in the parent lab.",
+  "ownership": "Historical learner/coaching code preserved byte-for-byte; October14 packaging by coach under explicit authorization."
+}

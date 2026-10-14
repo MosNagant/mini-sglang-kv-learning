@@ -1,0 +1,17 @@
+[
+  "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "-B",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups-timing/run-20261010-215026-gs6vimx3/35-compare-kv-full-groups.py",
+  "--project",
+  "/home/weltlaw/projects/mini-sglang-kv",
+  "--snapshot",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups-timing/run-20261010-215026-gs6vimx3",
+  "--worker-dir",
+  "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-full-groups-timing/run-20261010-215026-gs6vimx3/round-1-B5-D64",
+  "--batch",
+  "5",
+  "--width",
+  "64",
+  "--round",
+  "1"
+]

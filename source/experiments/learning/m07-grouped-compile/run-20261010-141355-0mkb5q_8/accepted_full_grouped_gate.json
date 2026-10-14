@@ -1,0 +1,14 @@
+{
+  "status": "ACCEPTED_31_FULL_EVIDENCE_GATE_PASS",
+  "source_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/learning/m07-grouped-full/run-20261010-133620-jeh8_est",
+  "status_sha256": "27db08f86e26a9f6b398d0709896a2d23bb76b13cd86ff2059078cdbff7cfa9a",
+  "source_hashes_sha256": "f88b192a9d1d6a8b2b5cba3664573bec44bec772edae61df4c77900d698d8900",
+  "grouped_sha256": "5b190ce52e0f6c25f99b739346c2787f194ed7e75c759144cf25fcb06c8a1bd1",
+  "positive_and_empty_cases": 196,
+  "matched_pairs": 98,
+  "nonempty_calls": 168,
+  "empty_returns": 28,
+  "invalid_rejections": 36,
+  "invalid_submissions": 0,
+  "scope": "31 saved source/status and NPZ full backings rechecked on CPU; invalid checks cover five argument views; actual C1024 timing inputs checked again per worker"
+}

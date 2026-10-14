@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "duplicate_indices",
+  "rejection": {
+    "type": "ValueError",
+    "message": "INDEX_DUPLICATE: destinations must be unique"
+  }
+}

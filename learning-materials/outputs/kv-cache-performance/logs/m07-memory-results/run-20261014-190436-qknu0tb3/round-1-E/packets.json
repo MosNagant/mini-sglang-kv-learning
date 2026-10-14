@@ -1,0 +1,138 @@
+[
+  {
+    "slot": 0,
+    "buffers": {
+      "cache": {
+        "shape": [
+          1024,
+          2,
+          128
+        ],
+        "stride": [
+          256,
+          128,
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30259806208,
+        "storage_offset": 0,
+        "bytes": 524288
+      },
+      "k": {
+        "shape": [
+          32900
+        ],
+        "stride": [
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30260330496,
+        "storage_offset": 0,
+        "bytes": 65800
+      },
+      "v": {
+        "shape": [
+          32900
+        ],
+        "stride": [
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30260396544,
+        "storage_offset": 0,
+        "bytes": 65800
+      },
+      "indices": {
+        "shape": [
+          256
+        ],
+        "stride": [
+          1
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0",
+        "data_ptr": 30260462592,
+        "storage_offset": 0,
+        "bytes": 1024
+      }
+    },
+    "views": [
+      {
+        "shape": [
+          1024,
+          128
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30259806208,
+        "storage_offset": 0,
+        "bytes": 262144
+      },
+      {
+        "shape": [
+          1024,
+          128
+        ],
+        "stride": [
+          256,
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30259806464,
+        "storage_offset": 128,
+        "bytes": 262144
+      },
+      {
+        "shape": [
+          256
+        ],
+        "stride": [
+          1
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0",
+        "data_ptr": 30260462592,
+        "storage_offset": 0,
+        "bytes": 1024
+      },
+      {
+        "shape": [
+          256,
+          128
+        ],
+        "stride": [
+          128,
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30260330632,
+        "storage_offset": 68,
+        "bytes": 65536
+      },
+      {
+        "shape": [
+          256,
+          128
+        ],
+        "stride": [
+          128,
+          1
+        ],
+        "dtype": "torch.float16",
+        "device": "cuda:0",
+        "data_ptr": 30260396680,
+        "storage_offset": 68,
+        "bytes": 65536
+      }
+    ]
+  }
+]

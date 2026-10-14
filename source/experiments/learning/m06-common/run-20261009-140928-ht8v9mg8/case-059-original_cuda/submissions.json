@@ -1,0 +1,9 @@
+[
+  {
+    "input_rows": 3,
+    "width": 192,
+    "src_stride": 192,
+    "dst_stride": 384,
+    "meaning": "one original public operator call; not a measured kernel count"
+  }
+]

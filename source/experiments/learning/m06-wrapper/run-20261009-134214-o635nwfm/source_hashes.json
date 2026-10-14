@@ -1,0 +1,13 @@
+{
+  "coach_runner.py": "600f831894ed350e76c673ccc71a90eb99f58ef152b33f1652156d7afff3d8f2",
+  "coach_entry.sh": "16aa18397a8b1bb5233b35cd764b13de9614dbcb8eb9d3bbcef2439dd6c748e4",
+  "coach_template.py": "c025efbd95fc02551c7c409f7e36e5ab1a1ad242165e27472fca49221ac7a275",
+  "coach_contract.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+  "mask_helpers.py": "990ded9495ced25f4d145450a728741d7b2da663ab50fa16909b4683e81fe285",
+  "layout_helpers.py": "aadd183f448b0a634caf243a2ae036e73a94969c9a877276804f755e3e7aa514",
+  "coach_mask_reference.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+  "triton_store_api.py": "05eff6e46b214fc19e4a11152030665916e798cfdc17bd8cf0725f79f84cc35f",
+  "kv_contract_support.py": "0566a788f2a4984952815d99c0c7aa82e3af43829d2c71630c1be707f582a881",
+  "triton_store_mask.py": "6e76ef9eb319f4e57e4a55923fcb5655fa5fb26f29c8c7af00c49f0c125bb19d",
+  "check_kv_targets.py": "df82392fe0463edf8084ded9dc0be576b93f0e4c00a96dca87d492495a434358"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "REJECTED_BEFORE_KV_LAUNCH",
+  "kind": "cache_overlap",
+  "rejection": {
+    "type": "ValueError",
+    "message": "CACHE_WRITE_ALIAS: K/V cache live regions overlap"
+  }
+}
