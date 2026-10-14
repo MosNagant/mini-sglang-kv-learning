@@ -1,0 +1,26 @@
+{
+  "status": "FAILED",
+  "timing_run": "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd",
+  "policy": "decode_graph",
+  "backend": "original",
+  "command": [
+    "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+    "profile",
+    "--trace=cuda,nvtx",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--cuda-event-trace=false",
+    "--cuda-graph-trace=node",
+    "--capture-range=cudaProfilerApi",
+    "--capture-range-end=stop",
+    "--output=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-rv7o7fmk/original-model",
+    "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+    "-B",
+    "-u",
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-rv7o7fmk/profile.py",
+    "--child",
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-rv7o7fmk"
+  ],
+  "profile_returncode": 1,
+  "error": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/43-m08-model-profile.py\", line 121, in main\n    raise RuntimeError('Nsight profile failed; log preserved')\nRuntimeError: Nsight profile failed; log preserved\n"
+}

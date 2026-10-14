@@ -1,0 +1,7 @@
+{
+  "status": "SMOKE_EVIDENCE_AUDIT_PASS",
+  "source_files_verified": 102,
+  "completed_original_calls": 224,
+  "raw_tokens": 8,
+  "scope": "Artifact integrity and recorded call metadata; no independent logits/reference correctness or timing claim."
+}

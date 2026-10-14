@@ -1,5 +1,21 @@
 # 同步范围与来源
 
+## 2026-10-14：M08 真实模型材料增量
+
+当前结论：M08 首轮真实模型接入、精确正确性与固定工作负载性能对照完成，候选没有稳定优势，默认保留原版 CUDA。按任务表 M08 工程验收 9/10、累计 73/100；M08 个人复盘 1 分和 M07 个人复盘 14 分待验收。教练完成本轮实现、执行和归档；工程分不代表学员独立掌握。
+
+本次完整更新 `learning-materials/outputs/kv-cache-performance/`，覆盖 M08 的 39～43 号运行器、40 号适配器、所有成功与失败 run、正常路径下的原始数组/SQLite/编译产物、哈希清单、独立审查及教学文档。除可再生缓存外不折叠或替换成大型 ZIP，旧 manifest 全树保留且不删除历史路径。相同内容复用已有 Git blob SHA，并保留每个原始路径；这只是对象去重，不改变文件内容。
+
+入口：[M08 模块](learning-materials/outputs/kv-cache-performance/modules/M08/README.md)、[结果及支持范围](learning-materials/outputs/kv-cache-performance/modules/M08/RESULTS.md)、[复现与核验](learning-materials/outputs/kv-cache-performance/modules/M08/REPRODUCE.md)、[开发日志](learning-materials/outputs/kv-cache-performance/obsidian/2026-10-14-开发日志-M08真实模型接入.md)。41 号三臂各 896 次 KV 写入并逐字节核验保存结果；42 号 12 进程/60 次测量在 Eager/Graph 分开报告；43 号 0.781551% 仅是 KV kernel 对所有 kernel 的累计时长比例，不能冒称 wall-clock 收益或关键路径占比。失败的 43 号 `run-rv7o7fmk` 原样保留。
+
+**本轮没有最新全 WSL 源码导出。** `source/` 逐文件模式与内容沿用提交 `73aa7ae5887bbabdd6884dca9537811d77ff24cd`；其既有 10:53:20 UTC 快照、历史保留和单项 overlay 边界仍以下方旧说明及来源清单为准。M08 各次运行的实际源码快照在新增日志路径单独归档，不冒称 `source/` 已更新至 M08。模型权重在 WSL 的模型目录外部加载，仓库只收录固定 revision、校验值和运行元数据，不收录权重、虚拟环境或整机镜像。
+
+本次 staged 全树基于上次已发布 manifest；所有新文件先在独立 M08 stage 和 transport 中准备。旧发布 manifest/receipt 不由准备脚本修改。只有远端 main 更新并读回与预期树匹配后，才由发布流程保留 dated-M08 回执并替换 current 回执；本节本身不是上传完成证明。
+
+## 以下为 M07 发布时的历史来源记录
+
+以下内容按当时日期理解；其中“M08 未完成”等历史状态不覆盖上述 M08 新结果。
+
 ## 2026-10-14：M07工程收尾与本次来源边界
 
 当前工程结论：M07研究材料和选版决定收尾，默认保留原版CUDA，Triton v1及三条候选均保留研究用途。按旧任务表仅新增M07-06报告3分，工程总分64/100、M07为11/25；14分个人复盘待验收。工程权重不是知识掌握百分比。M08真实模型接入和端到端验证独立未完成。

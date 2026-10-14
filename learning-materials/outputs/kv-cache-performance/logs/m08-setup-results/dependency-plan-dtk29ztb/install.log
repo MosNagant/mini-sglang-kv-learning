@@ -1,0 +1,14 @@
+Resolved 46 packages in 3.34s
+Would download 11 packages
+Would install 11 packages
+ + click==8.5.0
+ + cuda-bindings==12.9.4
+ + cuda-pathfinder==1.8.3
+ + cuda-python==12.9.4
+ + einops==0.8.2
+ + flashinfer-python==0.5.3
+ + ninja==1.13.2
+ + nvidia-cudnn-frontend==1.13.0
+ + nvidia-cutlass-dsl==4.2.1
+ + nvidia-ml-py==13.615.71
+ + tabulate==0.10.0

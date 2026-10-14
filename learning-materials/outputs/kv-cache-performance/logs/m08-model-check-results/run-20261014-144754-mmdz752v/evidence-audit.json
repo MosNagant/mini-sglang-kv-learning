@@ -1,0 +1,746 @@
+{
+  "status": "INDEPENDENT_CPU_EVIDENCE_AUDIT_PASS",
+  "gpu_run": false,
+  "audited_at_utc": "2026-10-14T14:52:57.171728+00:00",
+  "audit_script_sha256": "35d601036bc54dd935587ba1dd98b46b8aa67eb240f7703b98bbde771aaaee7b",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "run": "run-20261014-144754-mmdz752v",
+  "source_manifest_entries_verified": 102,
+  "extra_source_hashes_verified": {
+    "39-m08-model-smoke.py": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+    "runner.py": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+    "40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+    "41-m08-model-check.py": "b619f095d4e7df31b6e3ecbb4e4ee98e2996bebc95febf393d9175340977a025"
+  },
+  "request_sha256": "469fc6358eca01f816f98da924ba3cd69bf70c471f9268a728dbead6f98332ac",
+  "result_sha256": "7062a0b435e29cda2caf7ca02568d36522e93cc2931bc3f481043ec2b581422d",
+  "scope": "Independent CPU reload/hash/byte-comparison; 41 eager diagnostic only",
+  "arms": {
+    "original_repeat": {
+      "artifact_hashes_verified": {
+        "final-cache.npz": {
+          "sha256": "836fba526fe2c26d673ef40972c8a9cbc738e148a01acedf968f9de46cc1098a",
+          "bytes": 16836574
+        },
+        "layer0-decode.npz": {
+          "sha256": "b92a7f3b8f160942777f199f89f7e6b3f90707dd9b065b06135a48aa1983920b",
+          "bytes": 762155
+        },
+        "layer0-prefill.npz": {
+          "sha256": "18940715db1591759d3fabdb5c835b0b0ea7771d66c4e1ab35d2d964c843422e",
+          "bytes": 753740
+        },
+        "sampled-logits.npz": {
+          "sha256": "ffaa4e663c3d7e1cfcdbe498330d514144c6cc32336519c7ca847b677a8e198c",
+          "bytes": 809883
+        },
+        "store-checks.jsonl": {
+          "sha256": "fc393c1d866a1449c9ccde81c11dc1044598f20102d0222493fbf3ac2c733f17",
+          "bytes": 2903196
+        }
+      },
+      "auxiliary_json_sha256": {
+        "result.json": "0ea4f57411556a593b8fe27814da00a03a89030ec28ff3132563194fba7de8e7",
+        "outputs.json": "4fbb27c4fdf0b61e32f87297fef4c1b8bdfe040857024d7c4c55447dbbfd0fd6",
+        "raw-output-tokens.json": "b06477d1310d80714212ad9764e22f4bb0d3d8a46f046892613c47cd621032c2",
+        "initialization.json": "b141a331dd6b72fa3247655fa5d79ed42d5a24ca433b85537c30cb7fc2f3940f"
+      },
+      "jsonl_lines": 1792,
+      "successful_calls": 896,
+      "phase_counts": {
+        "prefill": 28,
+        "decode": 868
+      },
+      "original_calls": 896,
+      "compiled_kernel_hash_counts": {},
+      "saved_samples_independently_reconstructed": [
+        {
+          "phase": "prefill",
+          "rows": 128,
+          "full_layer_expected_bytes": 2101248
+        },
+        {
+          "phase": "decode",
+          "rows": 1,
+          "full_layer_expected_bytes": 2101248
+        }
+      ],
+      "final_untouched_sentinel_elements_checked": 20299776,
+      "saved_logits_checks": {
+        "first_prefill": {
+          "argmax": 9471,
+          "top1_top2_gap": 9.1015625
+        },
+        "first_decode": {
+          "argmax": 13,
+          "top1_top2_gap": 1.5625
+        },
+        "last_decode": {
+          "argmax": 22932,
+          "top1_top2_gap": 7.3125
+        }
+      },
+      "raw_steps": 32,
+      "returned_tokens": 32
+    },
+    "original": {
+      "artifact_hashes_verified": {
+        "final-cache.npz": {
+          "sha256": "836fba526fe2c26d673ef40972c8a9cbc738e148a01acedf968f9de46cc1098a",
+          "bytes": 16836574
+        },
+        "layer0-decode.npz": {
+          "sha256": "b92a7f3b8f160942777f199f89f7e6b3f90707dd9b065b06135a48aa1983920b",
+          "bytes": 762155
+        },
+        "layer0-prefill.npz": {
+          "sha256": "18940715db1591759d3fabdb5c835b0b0ea7771d66c4e1ab35d2d964c843422e",
+          "bytes": 753740
+        },
+        "sampled-logits.npz": {
+          "sha256": "ffaa4e663c3d7e1cfcdbe498330d514144c6cc32336519c7ca847b677a8e198c",
+          "bytes": 809883
+        },
+        "store-checks.jsonl": {
+          "sha256": "fc393c1d866a1449c9ccde81c11dc1044598f20102d0222493fbf3ac2c733f17",
+          "bytes": 2903196
+        }
+      },
+      "auxiliary_json_sha256": {
+        "result.json": "7bd32945edaf1ff6d9d77e078a6719abdbb5593182e99bf60586bfa647130747",
+        "outputs.json": "4fbb27c4fdf0b61e32f87297fef4c1b8bdfe040857024d7c4c55447dbbfd0fd6",
+        "raw-output-tokens.json": "b06477d1310d80714212ad9764e22f4bb0d3d8a46f046892613c47cd621032c2",
+        "initialization.json": "e34436b909a38d70ba80722242cc442efc4b4c24782cac40c40ab1427cdac0b5"
+      },
+      "jsonl_lines": 1792,
+      "successful_calls": 896,
+      "phase_counts": {
+        "prefill": 28,
+        "decode": 868
+      },
+      "original_calls": 896,
+      "compiled_kernel_hash_counts": {},
+      "saved_samples_independently_reconstructed": [
+        {
+          "phase": "prefill",
+          "rows": 128,
+          "full_layer_expected_bytes": 2101248
+        },
+        {
+          "phase": "decode",
+          "rows": 1,
+          "full_layer_expected_bytes": 2101248
+        }
+      ],
+      "final_untouched_sentinel_elements_checked": 20299776,
+      "saved_logits_checks": {
+        "first_prefill": {
+          "argmax": 9471,
+          "top1_top2_gap": 9.1015625
+        },
+        "first_decode": {
+          "argmax": 13,
+          "top1_top2_gap": 1.5625
+        },
+        "last_decode": {
+          "argmax": 22932,
+          "top1_top2_gap": 7.3125
+        }
+      },
+      "raw_steps": 32,
+      "returned_tokens": 32
+    },
+    "triton": {
+      "artifact_hashes_verified": {
+        "final-cache.npz": {
+          "sha256": "836fba526fe2c26d673ef40972c8a9cbc738e148a01acedf968f9de46cc1098a",
+          "bytes": 16836574
+        },
+        "layer0-decode.npz": {
+          "sha256": "b92a7f3b8f160942777f199f89f7e6b3f90707dd9b065b06135a48aa1983920b",
+          "bytes": 762155
+        },
+        "layer0-prefill.npz": {
+          "sha256": "18940715db1591759d3fabdb5c835b0b0ea7771d66c4e1ab35d2d964c843422e",
+          "bytes": 753740
+        },
+        "sampled-logits.npz": {
+          "sha256": "ffaa4e663c3d7e1cfcdbe498330d514144c6cc32336519c7ca847b677a8e198c",
+          "bytes": 809883
+        },
+        "store-checks.jsonl": {
+          "sha256": "3a129d2194fc224d55df6506ea0fe399419694e1af475590637c47e025e7ed22",
+          "bytes": 3017940
+        }
+      },
+      "auxiliary_json_sha256": {
+        "result.json": "72360a6f3addc62484c63535dd17c060be7cf6c1b9b48f4a1c8a135bf6f75101",
+        "outputs.json": "4fbb27c4fdf0b61e32f87297fef4c1b8bdfe040857024d7c4c55447dbbfd0fd6",
+        "raw-output-tokens.json": "b06477d1310d80714212ad9764e22f4bb0d3d8a46f046892613c47cd621032c2",
+        "initialization.json": "503bea88dafbbb2621696d9c13fe998681c28cded13cdda048219b9fd9ec8c78"
+      },
+      "jsonl_lines": 1792,
+      "successful_calls": 896,
+      "phase_counts": {
+        "prefill": 28,
+        "decode": 868
+      },
+      "original_calls": 0,
+      "compiled_kernel_hash_counts": {
+        "84131c05b49bcf678c2ed277c8ffda3cfb9211012e81d73bf63227f2edd48cec": 896
+      },
+      "saved_samples_independently_reconstructed": [
+        {
+          "phase": "prefill",
+          "rows": 128,
+          "full_layer_expected_bytes": 2101248
+        },
+        {
+          "phase": "decode",
+          "rows": 1,
+          "full_layer_expected_bytes": 2101248
+        }
+      ],
+      "final_untouched_sentinel_elements_checked": 20299776,
+      "saved_logits_checks": {
+        "first_prefill": {
+          "argmax": 9471,
+          "top1_top2_gap": 9.1015625
+        },
+        "first_decode": {
+          "argmax": 13,
+          "top1_top2_gap": 1.5625
+        },
+        "last_decode": {
+          "argmax": 22932,
+          "top1_top2_gap": 7.3125
+        }
+      },
+      "raw_steps": 32,
+      "returned_tokens": 32
+    }
+  },
+  "pairs": [
+    {
+      "left": "original_repeat",
+      "right": "original",
+      "returned_output_and_raw_tokens_equal": true,
+      "arrays": [
+        {
+          "file": "final-cache.npz",
+          "name": "cache",
+          "shape": [
+            2,
+            28,
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 58834944
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "k",
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 2048
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "v",
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 2048
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "indices",
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "bytes_per_side": 4
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "before_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "before_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "expected_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "expected_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "after_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "after_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "k",
+          "shape": [
+            128,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 262144
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "v",
+          "shape": [
+            128,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 262144
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "indices",
+          "shape": [
+            128
+          ],
+          "dtype": "int32",
+          "bytes_per_side": 512
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "before_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "before_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "expected_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "expected_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "after_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "after_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "first_prefill",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "first_decode",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "last_decode",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        }
+      ]
+    },
+    {
+      "left": "original",
+      "right": "triton",
+      "returned_output_and_raw_tokens_equal": true,
+      "arrays": [
+        {
+          "file": "final-cache.npz",
+          "name": "cache",
+          "shape": [
+            2,
+            28,
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 58834944
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "k",
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 2048
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "v",
+          "shape": [
+            1,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 2048
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "indices",
+          "shape": [
+            1
+          ],
+          "dtype": "int32",
+          "bytes_per_side": 4
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "before_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "before_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "expected_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "expected_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "after_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-decode.npz",
+          "name": "after_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "k",
+          "shape": [
+            128,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 262144
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "v",
+          "shape": [
+            128,
+            1024
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 262144
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "indices",
+          "shape": [
+            128
+          ],
+          "dtype": "int32",
+          "bytes_per_side": 512
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "before_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "before_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "expected_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "expected_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "after_k",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "layer0-prefill.npz",
+          "name": "after_v",
+          "shape": [
+            513,
+            1,
+            8,
+            128
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 1050624
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "first_prefill",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "first_decode",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        },
+        {
+          "file": "sampled-logits.npz",
+          "name": "last_decode",
+          "shape": [
+            1,
+            151936
+          ],
+          "dtype": "float16",
+          "bytes_per_side": 303872
+        }
+      ]
+    }
+  ],
+  "total_successful_runtime_records": 2688,
+  "paired_arrays_compared": 44,
+  "paired_bytes_compared_per_side": 145765896,
+  "paired_elements_compared_per_side": 72882690,
+  "source_hash_entries_verified": 106,
+  "artifact_hash_entries_verified": 15,
+  "limitations": [
+    "Eager-only evidence; no CUDA Graph capture/replay is covered by run 41.",
+    "All 2688 runtime success records and launch metadata were audited. Only the six saved layer0 samples can be independently reconstructed from archived per-call K/V values.",
+    "Final complete cache and three saved logits tensors per arm are byte-compared; intermediate all-layer K/V and all-step logits were not archived.",
+    "Readonly backing checks are source-and-runtime-log evidence, not an offline rerun of each backing allocation.",
+    "CompiledKernel type/hash and real launch counters are retained; this run does not archive PTX/cubin or a kernel profiler trace.",
+    "Checkpoint SHA is recorded by the GPU run; this host CPU audit does not reopen/re-hash the WSL checkpoint.",
+    "No GPU rerun, performance inference, model-quality assessment or independent learner mastery claim."
+  ]
+}

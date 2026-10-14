@@ -1,0 +1,719 @@
+{
+  "schema": 1,
+  "status": "PASS_CPU_EVIDENCE_AUDIT",
+  "created_utc": "2026-10-14T14:59:27.114874+00:00",
+  "run": "run-o_ltqzpd",
+  "method": "CPU hashes and independent arithmetic over saved evidence; no experiment runner imported, no Torch/Triton/GPU/WSL or new timing.",
+  "counts": {
+    "source_files": 102,
+    "fresh_workers": 12,
+    "elapsed_samples": 60,
+    "raw_generated_token_ids_checked": 1920,
+    "triton_workers": 6,
+    "saved_compiler_artifacts": 12,
+    "audited_artifact_files": 147
+  },
+  "source_bindings": {
+    "runner_sha256": "020e8b0c92030b5cdf6602eba733f67356f12c06d29ba272f90614bd506dbc92",
+    "helper_sha256": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+    "adapter_sha256": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+    "plan_sha256": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+    "accepted_result_sha256": "7062a0b435e29cda2caf7ca02568d36522e93cc2931bc3f481043ec2b581422d",
+    "accepted_run": "run-20261014-144754-mmdz752v",
+    "model_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "model_weights": [
+      {
+        "name": "model.safetensors",
+        "bytes": 1503300328,
+        "mtime_ns": 1791988410028673114,
+        "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+        "tensor_count": 311
+      }
+    ],
+    "model_metadata_sha256": {
+      "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "m08-model-manifest.json": "7b16a895a089a80524daec4f62aed1147c08e1a762aa4546c71771abb3d8dbee",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "workload": {
+    "input_tokens": 128,
+    "generated_steps": 32,
+    "requests": 1,
+    "tp": 1,
+    "dtype": "FP16",
+    "usable_pages": 512,
+    "physical_cache_rows": 513,
+    "page_size": 1,
+    "cache_type": "naive",
+    "overlap": false
+  },
+  "workers": [
+    {
+      "worker": "decode_graph-round1-original",
+      "policy": "decode_graph",
+      "round": 1,
+      "arm": "original",
+      "sample_seconds": [
+        0.1338448939999921,
+        0.1325374309999745,
+        0.12921955999999568,
+        0.1348452830000042,
+        0.130651988000011
+      ],
+      "recomputed_median_seconds": 0.1325374309999745,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "decode_graph-round1-triton",
+      "policy": "decode_graph",
+      "round": 1,
+      "arm": "triton",
+      "sample_seconds": [
+        0.13819657100000882,
+        0.13022229999998558,
+        0.13671522000001346,
+        0.14077898399997935,
+        0.13380144899997504
+      ],
+      "recomputed_median_seconds": 0.13671522000001346,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          128
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    },
+    {
+      "worker": "eager-round1-original",
+      "policy": "eager",
+      "round": 1,
+      "arm": "original",
+      "sample_seconds": [
+        0.24859869499999832,
+        0.23487735599999837,
+        0.2368701639999813,
+        0.2138712640000051,
+        0.20401963899999487
+      ],
+      "recomputed_median_seconds": 0.23487735599999837,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "eager-round1-triton",
+      "policy": "eager",
+      "round": 1,
+      "arm": "triton",
+      "sample_seconds": [
+        0.27966341999999145,
+        0.2837004600000057,
+        0.30544839699999216,
+        0.2527105919999997,
+        0.2688350429999957
+      ],
+      "recomputed_median_seconds": 0.27966341999999145,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          1
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    },
+    {
+      "worker": "eager-round2-triton",
+      "policy": "eager",
+      "round": 2,
+      "arm": "triton",
+      "sample_seconds": [
+        0.2751214250000089,
+        0.2797255130000167,
+        0.27804341399999544,
+        0.25916896299997916,
+        0.2594600109999874
+      ],
+      "recomputed_median_seconds": 0.2751214250000089,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          1
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    },
+    {
+      "worker": "eager-round2-original",
+      "policy": "eager",
+      "round": 2,
+      "arm": "original",
+      "sample_seconds": [
+        0.2178947209999933,
+        0.2438954780000131,
+        0.25083521100000894,
+        0.2649967239999853,
+        0.24113787000001707
+      ],
+      "recomputed_median_seconds": 0.2438954780000131,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "decode_graph-round2-triton",
+      "policy": "decode_graph",
+      "round": 2,
+      "arm": "triton",
+      "sample_seconds": [
+        0.14521871300001976,
+        0.1394544369999835,
+        0.13974056400002155,
+        0.14021532499998557,
+        0.13501692100001605
+      ],
+      "recomputed_median_seconds": 0.13974056400002155,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          128
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    },
+    {
+      "worker": "decode_graph-round2-original",
+      "policy": "decode_graph",
+      "round": 2,
+      "arm": "original",
+      "sample_seconds": [
+        0.13147700599998302,
+        0.1365238310000052,
+        0.1491215679999982,
+        0.14611304300001393,
+        0.13794782299999042
+      ],
+      "recomputed_median_seconds": 0.13794782299999042,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "decode_graph-round3-original",
+      "policy": "decode_graph",
+      "round": 3,
+      "arm": "original",
+      "sample_seconds": [
+        0.1377464249999889,
+        0.13572268299998314,
+        0.1383455460000107,
+        0.13190222199997947,
+        0.13369380500000716
+      ],
+      "recomputed_median_seconds": 0.13572268299998314,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "decode_graph-round3-triton",
+      "policy": "decode_graph",
+      "round": 3,
+      "arm": "triton",
+      "sample_seconds": [
+        0.13150218299998073,
+        0.1391655470000046,
+        0.1345876350000026,
+        0.1324760269999956,
+        0.1356665939999857
+      ],
+      "recomputed_median_seconds": 0.1345876350000026,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 112,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 128,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          128
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    },
+    {
+      "worker": "eager-round3-original",
+      "policy": "eager",
+      "round": 3,
+      "arm": "original",
+      "sample_seconds": [
+        0.21514327299999536,
+        0.2266831530000104,
+        0.2618991730000175,
+        0.21515984199999139,
+        0.24138177999998334
+      ],
+      "recomputed_median_seconds": 0.2266831530000104,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "original",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": null,
+        "BLOCK_D": null,
+        "num_warps": null,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": null
+    },
+    {
+      "worker": "eager-round3-triton",
+      "policy": "eager",
+      "round": 3,
+      "arm": "triton",
+      "sample_seconds": [
+        0.27733545500001355,
+        0.2788709200000028,
+        0.2712265469999977,
+        0.27908405499999844,
+        0.27974846700001876
+      ],
+      "recomputed_median_seconds": 0.2788709200000028,
+      "raw_tokens_checked": 160,
+      "python_warmup_capture_dispatches": 1792,
+      "actual_last_launch": {
+        "backend": "triton",
+        "B": 1,
+        "C": 513,
+        "D": 1024,
+        "input_k_stride": 4096,
+        "input_v_stride": 4096,
+        "cache_k_stride": 1024,
+        "cache_v_stride": 1024,
+        "grid": [
+          1
+        ],
+        "BLOCK_D": 1024,
+        "num_warps": 4,
+        "counter_scope": "Python calls including capture; excludes Graph replay"
+      },
+      "triton_kernel_name": "m08_store_rows"
+    }
+  ],
+  "recomputed_comparisons": {
+    "eager": {
+      "pairs": [
+        {
+          "round": 1,
+          "original_ms": 234.87735599999837,
+          "triton_ms": 279.66341999999145,
+          "original_over_triton": 0.8398572684264733,
+          "candidate_time_change_pct": 19.067850882991632
+        },
+        {
+          "round": 2,
+          "original_ms": 243.8954780000131,
+          "triton_ms": 275.1214250000089,
+          "original_over_triton": 0.8865012166900677,
+          "candidate_time_change_pct": 12.803003670282953
+        },
+        {
+          "round": 3,
+          "original_ms": 226.6831530000104,
+          "triton_ms": 278.8709200000028,
+          "original_over_triton": 0.8128604911548617,
+          "candidate_time_change_pct": 23.022340350096513
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false,
+      "faster_rounds": 0,
+      "slower_rounds": 3
+    },
+    "decode_graph": {
+      "pairs": [
+        {
+          "round": 1,
+          "original_ms": 132.5374309999745,
+          "triton_ms": 136.71522000001346,
+          "original_over_triton": 0.9694416686010633,
+          "candidate_time_change_pct": 3.1521578232792002
+        },
+        {
+          "round": 2,
+          "original_ms": 137.94782299999042,
+          "triton_ms": 139.74056400002155,
+          "original_over_triton": 0.9871709334160778,
+          "candidate_time_change_pct": 1.2995790444849886
+        },
+        {
+          "round": 3,
+          "original_ms": 135.72268299998314,
+          "triton_ms": 134.5876350000026,
+          "original_over_triton": 1.0084335236292734,
+          "candidate_time_change_pct": -0.8362994120744593
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false,
+      "faster_rounds": 1,
+      "slower_rounds": 2
+    }
+  },
+  "compiled_artifacts": [
+    {
+      "path": "decode_graph-round1-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "decode_graph-round1-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    },
+    {
+      "path": "eager-round1-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "eager-round1-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    },
+    {
+      "path": "eager-round2-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "eager-round2-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    },
+    {
+      "path": "decode_graph-round2-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "decode_graph-round2-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    },
+    {
+      "path": "decode_graph-round3-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "decode_graph-round3-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    },
+    {
+      "path": "eager-round3-triton/warmup-kernel.ptx",
+      "sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "bytes": 6570
+    },
+    {
+      "path": "eager-round3-triton/warmup-kernel.ttgir",
+      "sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "bytes": 6929
+    }
+  ],
+  "conclusion": "No stable advantage under the declared all-three-pairs at least 3% faster rule. Keep original default. Eager slower in all three pairs; decode-Graph mixed.",
+  "limits": [
+    "Elapsed fields are recorded perf_counter durations, not independently remeasured timestamps; this audit recomputes medians and derived values.",
+    "Windows CPU audit did not reopen WSL weights; recorded full hashes match41. Frozen42 controller hashes checkpoint bytes before collection.",
+    "Warmup counters are Python submissions only: Graph112=two28-layer initialization/capture forwards+two28-layer prefill warmups; Eager1792=2*32*28. Not Graph replay kernel counts.",
+    "TTGIR retains accepted41 source location via compilation-cache reuse; identical adapter bytes, no fresh-compilation claim.",
+    "End-to-end time includes scheduler/sampling/D2H/detokenize. Candidate Eager includes adapter metadata and JIT dispatch; timings do not isolate KV GPU cost.",
+    "Three paired fresh processes per policy; five repeated requests within each process are not independent process replicates. Odd three rounds alternate but cannot perfectly balance arm order."
+  ],
+  "artifact_sha256": {
+    "39-m08-model-smoke.sh": "d3585502d1885779e6406848e2f51299fed07e717e753f692c167860b83fd0f3",
+    "accepted-request.json": "469fc6358eca01f816f98da924ba3cd69bf70c471f9268a728dbead6f98332ac",
+    "accepted-result.json": "7062a0b435e29cda2caf7ca02568d36522e93cc2931bc3f481043ec2b581422d",
+    "adapter.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+    "decode_graph-round1-original/result.json": "53c0e4bb35a847714f781bb7dd8f7e343847bde0b7dc0e523f9b7e47c9c36f8e",
+    "decode_graph-round1-original.log": "1c5fcac680c6bf8a0d746eb7e8bffc3be72264ed2d823f4530f6eefe6ca9c591",
+    "decode_graph-round1-triton/result.json": "884bbfaa2ef81cd2471d84377cf409934a45980736ddd087ad687abaf2c72db6",
+    "decode_graph-round1-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "decode_graph-round1-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "decode_graph-round1-triton.log": "f9ed7abcd921472ab4607991bcf5cd4a9b233dcd5db38226459f3d73d945081b",
+    "decode_graph-round2-original/result.json": "bc89bab120d4cbbbec2f3e2f760fcbb916b2b14ee080c31edfa218d41d5ab05d",
+    "decode_graph-round2-original.log": "1704e2f6c9962f3fa911bba480835c3489ab892cf34e1e2f12e306dd6d963a7b",
+    "decode_graph-round2-triton/result.json": "a9e2c8a3887c6063768dd3bb5e086346cbcfb180ab813919cf1ad7a6cad3c41e",
+    "decode_graph-round2-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "decode_graph-round2-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "decode_graph-round2-triton.log": "63032b99d658ed4ebcc440563cf76c99dfd06e3b3595e753e00eeb7b5f5765d4",
+    "decode_graph-round3-original/result.json": "e811cdd874072c0e1926dfae39d709e339dfb7d464e673a5aab88f32fb6fad6e",
+    "decode_graph-round3-original.log": "7be7abcaeb014c58ce48672f685ed014bc4413d45a45c64d04901d553eac17e0",
+    "decode_graph-round3-triton/result.json": "19761939158dc17f2fd1069677fe6e51b4db7f939cdd3e47dc0b29f211c1a661",
+    "decode_graph-round3-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "decode_graph-round3-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "decode_graph-round3-triton.log": "2a97f0918fc073ea109808902f5c74aa17ba2545ccc954d0deab36f7d8a0573a",
+    "eager-round1-original/result.json": "a08aceb9f155f7061e096f7631388e83573d09562f4830daea28620f63cce451",
+    "eager-round1-original.log": "169d9deed1e9d2ea7d09429c79f31553bef4c87d4972ba2d8434334771517998",
+    "eager-round1-triton/result.json": "7d44cf25b33b71d76a6983ff4c9b74d881f280d558d696c1e442cb936a230333",
+    "eager-round1-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "eager-round1-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "eager-round1-triton.log": "5bdcb63130876c4eaf57e4d170739d0de27ce7bedbc73eaef4ef27202b2c0c78",
+    "eager-round2-original/result.json": "af609a6d2982ad8cd7f2002e1ad63a81efd86cd3fe91b3bf1908744b02076aba",
+    "eager-round2-original.log": "b46850aa197e9a8d8f7b04fdfe958c54011e038cc85d25f8e2fa7484bb8156fe",
+    "eager-round2-triton/result.json": "569c00fb2a8a82bec92af74297cd21c687b9de57df102a9ce6dae3c45a287996",
+    "eager-round2-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "eager-round2-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "eager-round2-triton.log": "99e7daa931eadcfb57d5ca612b2001999bb155b1aefda7e088842cb5c4c2c703",
+    "eager-round3-original/result.json": "381866680087afd5b6e974c0aaeebcf18e23bfabf948d84d3f41dc5713a43a80",
+    "eager-round3-original.log": "560b1ba8a1605cfc942c72ab66e320d9b0c7ca429389836958698152a442db85",
+    "eager-round3-triton/result.json": "91b8ea37311ebc98bc197e853df82f000288b66e400680384b9aef38eded5d11",
+    "eager-round3-triton/warmup-kernel.ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+    "eager-round3-triton/warmup-kernel.ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+    "eager-round3-triton.log": "843c08a591dd2d71e3b9a6ed8c4a39fcd281775c5047fa6e038a0b376d8f6c0d",
+    "plan.json": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+    "runner.py": "020e8b0c92030b5cdf6602eba733f67356f12c06d29ba272f90614bd506dbc92",
+    "smoke-helper.py": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+    "source/benchmark/offline/bench.py": "d453a143e6801cf3cd848060ab4fdfe436d41b14a5325e460387459c270b5476",
+    "source/pyproject.toml": "d1666030ef63f08b36fd87260477c8ae797cd4129643ea6a9dd35f4f7a59adaf",
+    "source/python/minisgl/__main__.py": "4dc0f059094c970d00098e2300453c6bdef30e18fc14c6c7e3bd68d4db3c78ae",
+    "source/python/minisgl/attention/__init__.py": "968cf56a0f723a9dc56cd709f9cc7e833dc79c504f703a8edfe19d4f943d404e",
+    "source/python/minisgl/attention/base.py": "a592d76147e2af8c0902910842e896beb72ffa73db0252780ce3136ccde9eb67",
+    "source/python/minisgl/attention/fa.py": "9b1e37766789b2e3a52a09feeb9320b740e5e510fb07b45903d01f84cf6309d1",
+    "source/python/minisgl/attention/fi.py": "2708806defcd919bd6c5fbe9fd3e7a0deb726dcbf109737424f5116c7a352de4",
+    "source/python/minisgl/attention/trtllm.py": "ec53837ff4bd6bdc546dc3fd439b15e631d35a872d9ce26691eb444576e14a33",
+    "source/python/minisgl/attention/utils.py": "bd282a3a1e27e0a2aac832ebefe6e5be2576ac5f5f3aa5a51094244d3e4a7aa8",
+    "source/python/minisgl/benchmark/client.py": "56ed36afe704051f7660252c045c38c0bc80c51eb2cc051b35e69590b9bc67ac",
+    "source/python/minisgl/benchmark/perf.py": "c67dee0b80e2dcdd17e4d31f9aae60d45a35bbc04f5b75e232ea02f45c584232",
+    "source/python/minisgl/core.py": "76697c4f0026c860d77b7154ac3ff9e26606a77f6a3f30570cb348d506de1edd",
+    "source/python/minisgl/distributed/__init__.py": "19d2eb2b39777ab554a4e49b42ad570aebcf2556759565df8a2089aa1897dfbe",
+    "source/python/minisgl/distributed/impl.py": "b193046c439069d268f54d028ea4910e58258a1bf4d38b06505a60391927ae7b",
+    "source/python/minisgl/distributed/info.py": "0294dcd80e9d425418baf2dc7825822cbd027bfc0dc53ad2e26fb76224037e73",
+    "source/python/minisgl/engine/__init__.py": "ebfed9c2537757652b8a00eae9b5396566be1aadb13a09856f65a4b3f997986a",
+    "source/python/minisgl/engine/config.py": "cf3e96ffbe2019aba85d0349661e62bc89d4edd0c87a484b99fbec4d5e59d014",
+    "source/python/minisgl/engine/engine.py": "82bd58030c78dbfe249eaef857fbd48db9cb403e179dc1f64ade89cb3f8c699f",
+    "source/python/minisgl/engine/graph.py": "2fc80c2d4debf56ccec70850dcc1060afa52da631f90f8172d6c87d5ca4b4115",
+    "source/python/minisgl/engine/sample.py": "6bb15e116a299929af9436df2c3d2e8331a0aa0adc63320cfe86e0993370ed0b",
+    "source/python/minisgl/env.py": "f1c00819d82b6b0d3802ca93ec516e14061c717b83e74efc19234577acd8ad6e",
+    "source/python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+    "source/python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+    "source/python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+    "source/python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+    "source/python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+    "source/python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+    "source/python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+    "source/python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+    "source/python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+    "source/python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+    "source/python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+    "source/python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+    "source/python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+    "source/python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+    "source/python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+    "source/python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+    "source/python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+    "source/python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+    "source/python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+    "source/python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+    "source/python/minisgl/kvcache/__init__.py": "7c41ed4405c6680820bd4a3d1592f81712e8bb2de3b3132cffae4d330f7f45dd",
+    "source/python/minisgl/kvcache/base.py": "1431987bd1cd5c1a3fc04dfd08957928b9c33ccfc04ba0a13b9a140a4029ad8b",
+    "source/python/minisgl/kvcache/mha_pool.py": "c22ce82ac132be5dc18a26b8fbb58239cff9baa6f1053aee896376059cb9c4fe",
+    "source/python/minisgl/kvcache/naive_cache.py": "6081459a29dffb4f8d602a563287b537a2268fe0f06bb1d509de9e0a24746dce",
+    "source/python/minisgl/kvcache/radix_cache.py": "eb6b456d8c8aa15f8cc65881192ffc54750f3193a791440b924bcf50c88e2192",
+    "source/python/minisgl/layers/__init__.py": "e74f09b241ec56b362d258a0822741293e98d4f9c7927424a1456fe9d9b39e12",
+    "source/python/minisgl/layers/activation.py": "df886804f5969679f1f903e1eebe29f5c8c82524e10ee883ecc63eee1dfd8484",
+    "source/python/minisgl/layers/attention.py": "fc155cea18ce71f0753b110f8c37a961754d0f8471ccb402b5607685a8510811",
+    "source/python/minisgl/layers/base.py": "0dd25b738580e600bcc6e5f84e8753b54d50520e41ac2ed05c112a6055fc7030",
+    "source/python/minisgl/layers/embedding.py": "693f4d3cd99d18d8b35e0a7d2a67edaa93e7ed9551ac2b791bcd9fbcaa99e72b",
+    "source/python/minisgl/layers/linear.py": "660188f6fe302a47955c434763ded6014ebed17236d89f7720997337778b538c",
+    "source/python/minisgl/layers/moe.py": "98cdfe61305fb9ee3244d799ec86f5cdb6193a2b571bd4d6f0f4b0cc0e611981",
+    "source/python/minisgl/layers/norm.py": "8e91304741899fd99a2176f905a4c615bf8ad169ca46d90445864880d8774e0d",
+    "source/python/minisgl/layers/rotary.py": "f3ab653703e90d1f06b09ad875058f2a1af098ffa15a23b97018accc5825c57d",
+    "source/python/minisgl/llm/__init__.py": "a81f5e3d9c25c5f4f5c48ae16ff5a8886f1b51cebde9b970c4d4099f650197a9",
+    "source/python/minisgl/llm/llm.py": "cafaa39d456d77f328867d44a2055e5f171d3bedc3b2b256fa1e3809fb4e7fce",
+    "source/python/minisgl/message/__init__.py": "b0bfdede41c3fab6347e88eebf439edf3d59d136d77b50e62cc374e4590b6e92",
+    "source/python/minisgl/message/backend.py": "d1dc7d5db0c34d22658405e51f29094e2d25d9be489f68ff77b5b26cd245d8fb",
+    "source/python/minisgl/message/frontend.py": "805f1e819a0d35087d9374bf12d6b772c513dbb14140df7e44d2ec097c23fb6e",
+    "source/python/minisgl/message/tokenizer.py": "b3a94335abeab09adaa2e29427df160f360c765ea010ebdfd5facc5866841649",
+    "source/python/minisgl/message/utils.py": "8d2af6a03a03d4b9b1ab96d81aeb05ebad0dedba82f619a1039609b819aa73c6",
+    "source/python/minisgl/models/__init__.py": "873c3e9ea52db5a42f8e79e9aa4ef31e39903227a3ae2200f23da633673c0dd8",
+    "source/python/minisgl/models/base.py": "38edcf4247ced693838e534aa3ab1353f57a5656cdf4dfd6d6cf3daf1832e44d",
+    "source/python/minisgl/models/config.py": "c62acf2a9a3fd255867c12cd2f5c2a3f394ac05f0a2dff8f505b13b4e5e4aea3",
+    "source/python/minisgl/models/llama.py": "1d6eefd238e68c0ff5aa176258f8f1d2851c78f467e88a7f89f095dc15355d27",
+    "source/python/minisgl/models/mistral.py": "b59bc67f9bc8668a22545342d4ced6cc6c4853d66c18b8f19e6ffd7670df6927",
+    "source/python/minisgl/models/qwen2.py": "98d2bb01f04cd4490166abf2c6b06e96afc142c16af529613d2c9605de49bfd3",
+    "source/python/minisgl/models/qwen3.py": "c67e112b7cef51b5bf06d4927cae0715c34c3f2d0127aaac7c3520d3407766c1",
+    "source/python/minisgl/models/qwen3_moe.py": "6e42959a0c14588b9de6932cde81c25096bdf15afdfa7f0c274370ecee144fa8",
+    "source/python/minisgl/models/register.py": "16c46455acbd543ca9e428a91672adea0f55dc85d949224817483de9470e9d87",
+    "source/python/minisgl/models/utils.py": "2d5f6758b51d6e4750ba412e0645d6d0fcf046cf508930fa5de8021f3662d83c",
+    "source/python/minisgl/models/weight.py": "3aa99676949f0666dc8fa537fbf610d9665d1149e996b37c91a0b039fabfde74",
+    "source/python/minisgl/moe/__init__.py": "255fe9fa01c604c20f4906625ef8b4a5881b2a6a2b7919d0b90832d7531892d8",
+    "source/python/minisgl/moe/base.py": "d616a807b49b370a44a80a8d158ac7b3702303c4b97def6bb00170a000331ad8",
+    "source/python/minisgl/moe/fused.py": "588ac3f7807ce78a1c82a7b5fc5f033f8cee890380bc546ec5ad02817d90b5a2",
+    "source/python/minisgl/scheduler/__init__.py": "364738450d9900453838d6db60aaed1744e73e5909ac578f21eb047caa79c72c",
+    "source/python/minisgl/scheduler/cache.py": "09a267c1dad7a0d01eb5bc38b56442c1239ac10849faaa5c8f1fe809cf94c6d2",
+    "source/python/minisgl/scheduler/config.py": "da14b80ee038d1013f379bba3d46a1339f9aa5b1e7fc71e5152b336057b241af",
+    "source/python/minisgl/scheduler/decode.py": "a4f43f9b193610ee37b1c1647ea21e73eefb272bf03b8d5059226ca1ce8f8aef",
+    "source/python/minisgl/scheduler/io.py": "14610c8163ce40007a448d4623cf191a94fb7b003651a4d54449cadda4dfdbde",
+    "source/python/minisgl/scheduler/prefill.py": "0ceeac8455cabc62e578197a44592e102c15d86d2b3f0170c5f88bd612bebdee",
+    "source/python/minisgl/scheduler/scheduler.py": "decc817459aec97e8d6f3984add4b8bb80d9cc4c7f19e05469ead588d9e27b92",
+    "source/python/minisgl/scheduler/table.py": "9d688250aabbba7b0ac6193fdfadc735b95e3aebbdb664494d71b3ee75fc380a",
+    "source/python/minisgl/scheduler/utils.py": "168b356354cfd26db11c18a6451650761e887f17eb1edc4e59cce717853731b8",
+    "source/python/minisgl/server/__init__.py": "63facaa587eff97dfed4f7757a82d2312d275a9d9519e978ad2238f78c4f9125",
+    "source/python/minisgl/server/api_server.py": "f5002be5d0ebd0fdfd3fa8dc76eb0820be186d8c6e04d2c06d49e08d1906352e",
+    "source/python/minisgl/server/args.py": "794bab8d4cb824615d5a5face24620bce2f9fe905c24a1fb8f140720e1bef8a2",
+    "source/python/minisgl/server/launch.py": "818e16f24bd01415a428833cdd745de0f7a5d90ad01b5163c5f1fc4794339094",
+    "source/python/minisgl/shell.py": "00f4e860942eabd6b8cb44e102a87e4186db00c9818ffc728c2f626b70e2de13",
+    "source/python/minisgl/tokenizer/__init__.py": "911e50423dc15d36ddac78bf0bbcd476e1765a92fc725ab6036563326320ebda",
+    "source/python/minisgl/tokenizer/detokenize.py": "70e62ff24d39231fdd81cae0d8ce4fc92e1310f4fc9469311f3ad39f905a0a5d",
+    "source/python/minisgl/tokenizer/server.py": "d2635c44541efbeac6d0b942ecd733a1a4d3befb405ac4d1f3f7816aa6efa090",
+    "source/python/minisgl/tokenizer/tokenize.py": "d8cbadcb05da0aa5ea2bd3501cc1ce9732de3b14e4a771e15594887f5ce8cf6a",
+    "source/python/minisgl/utils/__init__.py": "d3648ec9f8c910db6a9a6ecc8c661ebedb902e4ca735c9e299535c869763b9c5",
+    "source/python/minisgl/utils/arch.py": "efcf2c2c3b7298c5997121e825d1e97913b9c4d8f629b61085e9838200576601",
+    "source/python/minisgl/utils/hf.py": "96f97df803acd921a3fb4cdbe03994fab7a99e9dbd2f6c4908541902a3f8ff6b",
+    "source/python/minisgl/utils/logger.py": "c8df6e04bc4ceba871dfa6c24570364b23572378138acce2552ea7fbb34be9b9",
+    "source/python/minisgl/utils/misc.py": "a78a1398f3612db6fad4a1873f2c52b759dd1c230a2f34373ef591709b161c3d",
+    "source/python/minisgl/utils/mp.py": "af217f6f0853949879e3e4f10936a78c2a06a4c94f8ae879ecee6b3171f910bd",
+    "source/python/minisgl/utils/registry.py": "73bef69132925cdfcdac333312a7f2e30a98e223574566b1a524e149800ebff5",
+    "source/python/minisgl/utils/torch_utils.py": "d308c8528ac2387e8f8aae88f8a9e6d040be5923ce3527f18cded29b01bbf9cc",
+    "source-manifest.json": "e747921ece46dbfbd477d7b32c4809f8b6838d106c1f41ef13cd2c0a597bafa6",
+    "summary.json": "1b5d97afbe31197d93bb4439067432d46917f6f131ca2824f4cdc27f04a56699"
+  }
+}

@@ -1,5 +1,24 @@
 # mini-sglang KV Cache 学习项目
 
+**2026-10-14 M08：真实模型接入与固定工作负载验证完成，默认仍保留原版 CUDA。** 本轮 Triton 研究实现没有稳定性能优势：Graph 三轮相对耗时为 +3.152%、+1.300%、-0.836%，Eager 三轮均更慢。结果只适用于本次设备、模型和工作负载，不能推成 CUDA/Triton 的普遍排名。
+
+按原任务表新增 M08-01～05 的 9/10 分，工程验收累计 **73/100**；M08-06 的 1 分个人复盘仍待验收，M07 的 14 分个人复盘也保留待验收。这是工程权重，不是知识掌握百分比。本轮适配、执行、审查与报告由教练完成，学员历史贡献按原记录保留。
+
+| M08 入口 | 已归档内容 |
+| --- | --- |
+| [模块总览](learning-materials/outputs/kv-cache-performance/modules/M08/README.md) | 接入路径、实现归属、任务验收与支持范围 |
+| [真实模型结果](learning-materials/outputs/kv-cache-performance/modules/M08/RESULTS.md) | 41 号精确正确性、42 号 Eager/Graph 对照、43 号独立跟踪 |
+| [复现与离线核验](learning-materials/outputs/kv-cache-performance/modules/M08/REPRODUCE.md) | 冻结代码、运行参数、证据链与复现限制 |
+| [M08 开发日志](learning-materials/outputs/kv-cache-performance/obsidian/2026-10-14-开发日志-M08真实模型接入.md) | 实际执行节点、失败记录与独立审查 |
+
+实测为 RTX 4070 Ti 上 Qwen3-0.6B 固定 revision `c1899de289a04d12100db370d81485cdf75e47ca`、FP16、TP1，单请求 128 输入/32 生成 token，FlashInfer，512 可用槽加 1 dummy 槽；prefill 为 Eager，decode Graph size=1。41 号三臂各 896 次 KV 写入，通过已保存缓存、logits、token 的精确核验；42 号 12 个独立进程产生 60 次正式测量，Graph 验证范围是返回 token。43 号原版跟踪的 KV 累计 0.812245 ms，占全部 GPU kernel **累计时长** 103.927254 ms 的 0.781551%，不能解读为端到端 wall-clock 占比。
+
+完整正常路径保留原始数据、源码快照、NPZ、编译产物、SQLite、审查和失败 run，模型权重不上传。`source/` 沿用上次发布内容；本轮没有重新导出整个 WSL 工程，M08 的实际运行快照在对应 learning-materials 日志中。[来源边界](SYNC_STATUS.md)与远端发布回执分别记录，不能从本地 staging 推断上传完成。
+
+## 以下为 M07 发布时的历史说明
+
+下面的“当前”“本轮”及“M08 未完成”等表述仅指 M07 发布时点；当前 M08 状态以上述新节和 M08 模块为准。
+
 **2026-10-14：M07工程收尾，默认保留原版CUDA。** Triton v1、1-warp、grouped和full_groups保留为研究版本；已有证据未支持候选晋升为稳定更快的通用默认。36号访存实验与37号独立配置验证已经实际运行，完整数据和报告分别归档。M08真实模型接入与端到端验证仍未完成。
 
 按原任务表，本次仅验收M07-06报告的3分：工程总分**64/100，M07为11/25**；其余14分个人复盘待验收。这些是工程验收权重，不是知识掌握百分比，也不表示学员独立完成了本轮实现和分析。

@@ -1,0 +1,103 @@
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1m[2026-10-14|22:35:08|core|rank=0][0m [32mINFO    [0m Free memory before loading model: 10.77 GiB
+Loading weights:   0%|          | 0/1 [00:00<?, ?it/s]Loading weights: 100%|██████████| 1/1 [-00:09<00:00, -0.11it/s]
+[1m[2026-10-14|22:35:09|core|rank=0][0m [32mINFO    [0m Allocating 256 tokens for KV cache, K + V = 0.03 GiB
+[1m[2026-10-14|22:35:09|core|rank=0][0m [32mINFO    [0m Free memory after initialization: 9.39 GiB
+[1m[2026-10-14|22:35:09|core|rank=0][0m [32mINFO    [0m CUDA graph is disabled.
+{
+  "status": "MODEL_SMOKE_AND_KV_TRACE_COMPLETE",
+  "scope": "real model original-KV diagnostic; no timing or optimized arm",
+  "cuda_graph": false,
+  "overlap_scheduling": false,
+  "tp": 1,
+  "dtype": "torch.float16",
+  "original_store_file": "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-smoke-results/run-20261014-143514-x0uhkeqq/source/python/minisgl/kernel/store.py",
+  "materialized_model": {
+    "tensor_count": 226,
+    "parameters": 596049920
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "executable": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+    "torch": "2.9.1+cu128",
+    "torch_cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "capability": [
+      8,
+      9
+    ],
+    "free_total_bytes": [
+      10076815360,
+      12878086144
+    ],
+    "nvidia_smi": {
+      "args": [
+        "nvidia-smi",
+        "--query-gpu=name,driver_version,memory.total,memory.used",
+        "--format=csv,noheader"
+      ],
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 4070 Ti, 576.52, 12282 MiB, 2493 MiB\n",
+      "stderr": ""
+    }
+  },
+  "cache_allocation": {
+    "shape": [
+      2,
+      28,
+      257,
+      1,
+      8,
+      128
+    ],
+    "stride": [
+      7368704,
+      263168,
+      1024,
+      1024,
+      128,
+      1
+    ],
+    "dtype": "torch.float16",
+    "device": "cuda:0",
+    "storage_offset": 0,
+    "element_size": 2,
+    "contiguous": true,
+    "data_ptr": 30454841344,
+    "storage_ptr": 30454841344,
+    "storage_nbytes": 29474816
+  },
+  "usable_cache_tokens": 256,
+  "dummy_cache_page": 1,
+  "phase_store_counts": {
+    "prefill": 28,
+    "decode": 196
+  },
+  "store_calls": 224,
+  "raw_generated_token_ids": [
+    12095,
+    13,
+    576,
+    6722,
+    315,
+    15344,
+    374,
+    21718
+  ],
+  "outputs": [
+    {
+      "text": " Paris. The capital of Italy is Rome",
+      "token_ids": [
+        12095,
+        13,
+        576,
+        6722,
+        315,
+        15344,
+        374,
+        21718
+      ]
+    }
+  ],
+  "interpretation": "Real weights and generated tokens; all layers observed in prefill/decode, original calls returned and CUDA synchronized. This is not an independent model-quality/numerical-reference test or a performance measurement."
+}

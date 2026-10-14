@@ -1,0 +1,16 @@
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1m[2026-10-14|22:53:44|core|rank=0][0m [32mINFO    [0m Free memory before loading model: 10.76 GiB
+Loading weights:   0%|          | 0/1 [00:00<?, ?it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  1.33it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  1.33it/s]
+[1m[2026-10-14|22:53:45|core|rank=0][0m [32mINFO    [0m Allocating 512 tokens for KV cache, K + V = 0.05 GiB
+[1m[2026-10-14|22:53:45|core|rank=0][0m [32mINFO    [0m Free memory after initialization: 9.35 GiB
+[1m[2026-10-14|22:53:45|core|rank=0][0m [32mINFO    [0m Start capturing CUDA graphs with sizes: [1]
+[1m[2026-10-14|22:53:45|core|rank=0][0m [32mINFO    [0m Free GPU memory before capturing CUDA graphs: 9.35 GiB
+Preparing for capturing CUDA graphs...:   0%|          | 0/1 [00:00<?, ?batch/s]Capturing graphs: bs = 1   | avail_mem = 9.35 GiB:   0%|          | 0/1 [00:00<?, ?batch/s]Capturing graphs: bs = 1   | avail_mem = 9.35 GiB: 100%|██████████| 1/1 [00:08<00:00,  8.63s/batch]Capturing graphs: bs = 1   | avail_mem = 9.35 GiB: 100%|██████████| 1/1 [00:08<00:00,  8.63s/batch]
+[1m[2026-10-14|22:53:54|core|rank=0][0m [32mINFO    [0m Free GPU memory after capturing CUDA graphs: 9.33 GiB
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-f641.qdstrm'
+[1/1] [0%                          ] original-model.nsys-repProcessing events...
+[1/1] [0%                          ] original-model.nsys-rep[1/1] [=============60%            ] original-model.nsys-rep[1/1] [==============61%           ] original-model.nsys-rep[1/1] [========================100%] original-model.nsys-rep[1/1] [========================100%] original-model.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-uml9cxd9/original-model.nsys-rep

@@ -1,0 +1,82 @@
+{
+  "scope": "actual environment/dependency/model-cache preflight; no model run",
+  "python": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "commit": {
+    "args": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "returncode": 0,
+    "stdout": "9a91cfafe754aa85daee49998176275667eb58f2\n",
+    "stderr": ""
+  },
+  "tracked_status": {
+    "args": [
+      "git",
+      "status",
+      "--porcelain",
+      "--untracked-files=no"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "packages": {
+    "torch": "2.9.1+cu128",
+    "triton": "3.5.1",
+    "transformers": "4.57.3",
+    "accelerate": null,
+    "modelscope": null,
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "flashinfer-python": null,
+    "sgl-kernel": null,
+    "apache-tvm-ffi": "0.1.4",
+    "quack-kernels": null,
+    "pyzmq": "27.2.0",
+    "msgpack": "1.2.3",
+    "fastapi": null,
+    "uvicorn": null,
+    "openai": null
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4070 Ti",
+    "torch_cuda": "12.8",
+    "free_total_bytes": [
+      11574181888,
+      12878086144
+    ],
+    "capability": [
+      8,
+      9
+    ]
+  },
+  "nvidia_smi": {
+    "args": [
+      "nvidia-smi",
+      "--query-gpu=name,driver_version,memory.total,memory.used",
+      "--format=csv,noheader"
+    ],
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 4070 Ti, 576.52, 12282 MiB, 1083 MiB\n",
+    "stderr": ""
+  },
+  "engine_import": {
+    "args": [
+      "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+      "-B",
+      "-c",
+      "from minisgl.engine import Engine, EngineConfig; print(\"ENGINE_IMPORT_OK\")"
+    ],
+    "returncode": 0,
+    "stdout": "ENGINE_IMPORT_OK\n",
+    "stderr": ""
+  },
+  "model_cache": [],
+  "offline_flags": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "status": "PREFLIGHT_RECORDED"
+}

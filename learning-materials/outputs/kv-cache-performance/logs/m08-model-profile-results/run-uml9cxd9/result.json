@@ -1,0 +1,142 @@
+{
+  "status": "REAL_MODEL_KV_SHARE_RECORDED",
+  "timing_run": "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd",
+  "policy": "decode_graph",
+  "backend": "original",
+  "command": [
+    "/opt/nvidia/nsight-systems/2025.1.3/bin/nsys",
+    "profile",
+    "--trace=cuda,nvtx",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--cuda-event-trace=false",
+    "--cuda-graph-trace=node",
+    "--capture-range=cudaProfilerApi",
+    "--capture-range-end=stop",
+    "--output=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-uml9cxd9/original-model",
+    "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+    "-B",
+    "-u",
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-uml9cxd9/m08_profile_worker.py",
+    "--child",
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-profile-results/run-uml9cxd9"
+  ],
+  "profile_returncode": 0,
+  "kv_kernels": {
+    "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, int>(<unnamed>::StoreKernelParams)": {
+      "count": 896,
+      "total_ns": 812245
+    }
+  },
+  "kv_count": 896,
+  "kv_total_ns": 812245,
+  "all_kernel_total_ns": 103927254,
+  "kv_kernel_duration_share_pct": 0.7815514879282772,
+  "kernels": {
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_put_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIterator &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 64,
+      "total_ns": 125570
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(long) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 33,
+      "total_ns": 40066
+    },
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 64,
+      "total_ns": 117446
+    },
+    "void <unnamed>::index_kernel<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, (unsigned long)4, int>(<unnamed>::IndexKernelParams)": {
+      "count": 32,
+      "total_ns": 34628
+    },
+    "void flashinfer::norm::RMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 32,
+      "total_ns": 42275
+    },
+    "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_64x3_tn": {
+      "count": 28,
+      "total_ns": 787340
+    },
+    "void flashinfer::norm::QKRMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 1792,
+      "total_ns": 2147839
+    },
+    "void flashinfer::BatchQKApplyRotaryPosIdsCosSinCacheHeadParallelismKernel<(bool)0, (unsigned int)128, (unsigned int)8, (unsigned int)16, __half, int>(T5 *, T5 *, T5 *, T5 *, float *, T6 *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)": {
+      "count": 896,
+      "total_ns": 942626
+    },
+    "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, int>(<unnamed>::StoreKernelParams)": {
+      "count": 896,
+      "total_ns": 812245
+    },
+    "void flashinfer::BatchPrefillWithPagedKVCacheKernel<flashinfer::KernelTraits<(flashinfer::MaskMode)1, (unsigned int)128, (unsigned int)2, (unsigned int)2, (unsigned int)8, (unsigned int)8, (unsigned int)4, (unsigned int)1, (flashinfer::PosEncodingMode)0, __half, __half, __half, float, int, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>>, PagedParams>(T2)": {
+      "count": 28,
+      "total_ns": 288292
+    },
+    "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_tn": {
+      "count": 28,
+      "total_ns": 425192
+    },
+    "void flashinfer::norm::FusedAddRMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 1792,
+      "total_ns": 2588559
+    },
+    "ampere_fp16_s1688gemm_fp16_128x128_ldg8_f2f_stages_32x1_tn": {
+      "count": 28,
+      "total_ns": 1002062
+    },
+    "void flashinfer::activation::act_and_mul_kernel<__half, &silu>(T1 *, const T1 *, int)": {
+      "count": 896,
+      "total_ns": 952504
+    },
+    "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn": {
+      "count": 28,
+      "total_ns": 554661
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 1,
+      "total_ns": 992
+    },
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)2>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 1,
+      "total_ns": 3008
+    },
+    "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+      "count": 32,
+      "total_ns": 21642346
+    },
+    "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::Half, at::native::ArgMaxOps<float>, unsigned int, long, (int)4, (int)4>>(T3)": {
+      "count": 1,
+      "total_ns": 5471
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(int) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 32,
+      "total_ns": 35618
+    },
+    "void at::native::<unnamed>::CatArrayBatchedCopy<at::native::<unnamed>::OpaqueType<(unsigned int)4>, unsigned int, (int)1, (int)64, (int)64>(T1 *, at::native::<unnamed>::CatArrInputTensorMetadata<T1, T2, T4, T5>, at::native::<unnamed>::TensorSizeStride<T2, (unsigned int)4>, int, T2)": {
+      "count": 2,
+      "total_ns": 3104
+    },
+    "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+      "count": 3472,
+      "total_ns": 64975756
+    },
+    "void flashinfer::BatchDecodeWithPagedKVCacheKernel<(flashinfer::PosEncodingMode)0, (unsigned int)2, (unsigned int)1, (unsigned int)8, (unsigned int)16, (unsigned int)2, (unsigned int)4, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>, Params>(T9)": {
+      "count": 868,
+      "total_ns": 4634928
+    },
+    "void flashinfer::PersistentVariableLengthMergeStatesKernel<(unsigned int)8, (unsigned int)16, (unsigned int)8, (unsigned int)4, __half, __half, int>(T5 *, float *, T7 *, T6 *, float *, unsigned int, unsigned int *, unsigned int)": {
+      "count": 868,
+      "total_ns": 1540143
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 31,
+      "total_ns": 65318
+    },
+    "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, (int)4, (int)4>>(T3)": {
+      "count": 31,
+      "total_ns": 159265
+    }
+  },
+  "limit": "Separate instrumented single workload; summed GPU kernel durations, not wall-clock critical-path fraction, bandwidth, confidence interval or pure unprofiled kernel timing. Graph node tracing and WSL timestamp settings affect accuracy."
+}

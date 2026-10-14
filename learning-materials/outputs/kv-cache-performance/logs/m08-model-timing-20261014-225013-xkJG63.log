@@ -1,0 +1,81 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-model-timing-results/run-o_ltqzpd
+RUN decode_graph-round1-original
+COLLECTED decode_graph-round1-original median_ms=132.537431
+RUN decode_graph-round1-triton
+COLLECTED decode_graph-round1-triton median_ms=136.715220
+RUN eager-round1-original
+COLLECTED eager-round1-original median_ms=234.877356
+RUN eager-round1-triton
+COLLECTED eager-round1-triton median_ms=279.663420
+RUN eager-round2-triton
+COLLECTED eager-round2-triton median_ms=275.121425
+RUN eager-round2-original
+COLLECTED eager-round2-original median_ms=243.895478
+RUN decode_graph-round2-triton
+COLLECTED decode_graph-round2-triton median_ms=139.740564
+RUN decode_graph-round2-original
+COLLECTED decode_graph-round2-original median_ms=137.947823
+RUN decode_graph-round3-original
+COLLECTED decode_graph-round3-original median_ms=135.722683
+RUN decode_graph-round3-triton
+COLLECTED decode_graph-round3-triton median_ms=134.587635
+RUN eager-round3-original
+COLLECTED eager-round3-original median_ms=226.683153
+RUN eager-round3-triton
+COLLECTED eager-round3-triton median_ms=278.870920
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd
+{
+  "eager": {
+    "pairs": [
+      {
+        "round": 1,
+        "original_ms": 234.87735599999837,
+        "triton_ms": 279.66341999999145,
+        "original_over_triton": 0.8398572684264733,
+        "candidate_time_change_pct": 19.067850882991632
+      },
+      {
+        "round": 2,
+        "original_ms": 243.8954780000131,
+        "triton_ms": 275.1214250000089,
+        "original_over_triton": 0.8865012166900677,
+        "candidate_time_change_pct": 12.803003670282953
+      },
+      {
+        "round": 3,
+        "original_ms": 226.6831530000104,
+        "triton_ms": 278.8709200000028,
+        "original_over_triton": 0.8128604911548617,
+        "candidate_time_change_pct": 23.022340350096513
+      }
+    ],
+    "all_rounds_at_least_3pct_faster": false
+  },
+  "decode_graph": {
+    "pairs": [
+      {
+        "round": 1,
+        "original_ms": 132.5374309999745,
+        "triton_ms": 136.71522000001346,
+        "original_over_triton": 0.9694416686010633,
+        "candidate_time_change_pct": 3.1521578232792002
+      },
+      {
+        "round": 2,
+        "original_ms": 137.94782299999042,
+        "triton_ms": 139.74056400002155,
+        "original_over_triton": 0.9871709334160778,
+        "candidate_time_change_pct": 1.2995790444849886
+      },
+      {
+        "round": 3,
+        "original_ms": 135.72268299998314,
+        "triton_ms": 134.5876350000026,
+        "original_over_triton": 1.0084335236292734,
+        "candidate_time_change_pct": -0.8362994120744593
+      }
+    ],
+    "all_rounds_at_least_3pct_faster": false
+  }
+}
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-20261014-225013-xkJG63.log
