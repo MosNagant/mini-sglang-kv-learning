@@ -1,0 +1,6 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-stable-runtime-check/run-20261015-052859-ufwymynd
+RUN eager
+RUN decode_graph
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd
+STATUS=STABLE_RUNTIME_CORRECTNESS_PASS
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-stable-runtime-20261015-132859-4Igz18.log

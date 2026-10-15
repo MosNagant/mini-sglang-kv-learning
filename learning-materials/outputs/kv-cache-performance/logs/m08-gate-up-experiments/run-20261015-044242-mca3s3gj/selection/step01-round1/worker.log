@@ -1,0 +1,5 @@
+TIMING_SECTION step=1 round=1 hot_l0 graph
+TIMING_SECTION step=1 round=1 hot_l0 eager
+TIMING_SECTION step=1 round=1 rotate28 graph
+TIMING_SECTION step=1 round=1 rotate28 eager
+PRIMARY_MEDIANS={'original': 31.143712997436523, 'gemv_direct_r4_w4': 31.208229064941406, 'gemv_direct_r8_w4': 31.14394290106637, 'gemv_direct_r8_w8': 31.80799995149885, 'gemv_splitk4_r4_w4': 33.71685573032924, 'swiglu_fused_r4_w4': 29.330056054251536, 'swiglu_fused_r8_w4': 30.47131470271519, 'swiglu_packed_r4_w4': 29.549714497157506}

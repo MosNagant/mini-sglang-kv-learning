@@ -1,0 +1,318 @@
+{
+  "status": "INDEPENDENT_CPU_HOST_MODEL_AUDIT_PASS",
+  "mode": "timing",
+  "gpu_run": false,
+  "run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m08-host-path-timing-results\\run-20261015-033254-kxw4qv2v",
+  "audited_at_utc": "2026-10-15T03:37:02.534018+00:00",
+  "audit_script_sha256": "df1c024dfd85562afe6e25bc7dcd7b5578469d685ab7a122245ee902b543a17b",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "result_sha256": "ea4ff67f4aac26d8a243afad36282d8d90807e69daab950761655d112af47cca",
+  "experiment_sha256": "6df80c22e9aa0cdd625bcff8dba1b168268b64e2119dbea11ca50a400af2ab19",
+  "hash_checks": {
+    "frozen_files": {
+      "39-m08-model-smoke.py": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+      "40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "41-m08-model-check.py": "b619f095d4e7df31b6e3ecbb4e4ee98e2996bebc95febf393d9175340977a025",
+      "42-m08-model-timing.py": "020e8b0c92030b5cdf6602eba733f67356f12c06d29ba272f90614bd506dbc92",
+      "44-m08-kv-cached-metadata.py": "1efe2013e8d18381701c11f90daa54b3d227e9ab32803ca07dca24fa4ff85356",
+      "runner.py": "7c533b1c666fcaf070c619eb3f44b3379359181707cbe3ebfd0af12055d00ac1",
+      "snapshot-helper.py": "b176e1dc214597bed43862f76bffd5bbe6f9d27a2f680d38e5e4ee9749af655e",
+      "source-manifest.json": "e747921ece46dbfbd477d7b32c4809f8b6838d106c1f41ef13cd2c0a597bafa6",
+      "accepted-request.json": "469fc6358eca01f816f98da924ba3cd69bf70c471f9268a728dbead6f98332ac",
+      "accepted-result.json": "7062a0b435e29cda2caf7ca02568d36522e93cc2931bc3f481043ec2b581422d",
+      "accepted-timing-plan.json": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+      "42-derived-timing-worker.py": "e837a13564df2f95a273fa6d37ceb0954b2a55924c5be26a12d61f520cc17d9b",
+      "42-derived-timing-worker.diff": "ad41b566cfcfd06129b7710fac98b356133d3159a6b969702d7ab62debe0a71b",
+      "accepted-new-result.json": "8070a9e7638eccda5fcb70fde0bfe8ef14407f30a5c918461b4995b5905fad8e",
+      "accepted-new-experiment.json": "db2e809d93a0c864f01236d46e8cadec3ba4bd9e9c9a60cc6fc643561fa1f503",
+      "backends/original/adapter.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "backends/original/40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "backends/original/plan.json": "b69efdcf29c97e305dad878b28fba8b92cda2385e0ea0369550c8a5b69e29703",
+      "backends/checked_triton/adapter.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "backends/checked_triton/40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "backends/checked_triton/plan.json": "e1ce8561512ea95777610030adf28b91e2bcfae393116046f5d2970d16701af7",
+      "backends/cached_triton/adapter.py": "1efe2013e8d18381701c11f90daa54b3d227e9ab32803ca07dca24fa4ff85356",
+      "backends/cached_triton/40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+      "backends/cached_triton/plan.json": "8ad4a29d1ddd50b430841bca8c460feb95dcdedb42adddb5b98032522a6df651"
+    },
+    "source_entries": 102,
+    "accepted_reference_hashes": {
+      "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-check-results/run-20261014-144754-mmdz752v/request.json": "469fc6358eca01f816f98da924ba3cd69bf70c471f9268a728dbead6f98332ac",
+      "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-check-results/run-20261014-144754-mmdz752v/result.json": "7062a0b435e29cda2caf7ca02568d36522e93cc2931bc3f481043ec2b581422d",
+      "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd/plan.json": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+      "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd/summary.json": "1b5d97afbe31197d93bb4439067432d46917f6f131ca2824f4cdc27f04a56699"
+    }
+  },
+  "details": {
+    "workers_verified": 18,
+    "samples_verified": 90,
+    "output_tokens_verified": 2880,
+    "comparisons": {
+      "eager": {
+        "original": {
+          "pairs": [
+            {
+              "round": 1,
+              "comparator_ms": 239.53453000000025,
+              "cached_triton_ms": 257.3738700000092,
+              "comparator_over_cached": 0.9306870584803021,
+              "cached_time_change_pct": 7.447502454034072
+            },
+            {
+              "round": 2,
+              "comparator_ms": 225.57641800000283,
+              "cached_triton_ms": 252.98944600000084,
+              "comparator_over_cached": 0.8916435905393543,
+              "cached_time_change_pct": 12.152435189390086
+            },
+            {
+              "round": 3,
+              "comparator_ms": 228.6550219999981,
+              "cached_triton_ms": 268.15847099999246,
+              "comparator_over_cached": 0.8526861789870681,
+              "cached_time_change_pct": 17.27644057605464
+            }
+          ],
+          "all_rounds_at_least_3pct_faster": false
+        },
+        "checked_triton": {
+          "pairs": [
+            {
+              "round": 1,
+              "comparator_ms": 254.88512699999433,
+              "cached_triton_ms": 257.3738700000092,
+              "comparator_over_cached": 0.9903302421492329,
+              "cached_time_change_pct": 0.9764175059202129
+            },
+            {
+              "round": 2,
+              "comparator_ms": 268.3946519999978,
+              "cached_triton_ms": 252.98944600000084,
+              "comparator_over_cached": 1.060892682455998,
+              "cached_time_change_pct": -5.739758927833282
+            },
+            {
+              "round": 3,
+              "comparator_ms": 268.1063080000001,
+              "cached_triton_ms": 268.15847099999246,
+              "comparator_over_cached": 0.9998054769636856,
+              "cached_time_change_pct": 0.01945608828879397
+            }
+          ],
+          "all_rounds_at_least_3pct_faster": false
+        }
+      },
+      "decode_graph": {
+        "original": {
+          "pairs": [
+            {
+              "round": 1,
+              "comparator_ms": 129.68589099999406,
+              "cached_triton_ms": 135.0005839999966,
+              "comparator_over_cached": 0.9606320740064156,
+              "cached_time_change_pct": 4.098127374552085
+            },
+            {
+              "round": 2,
+              "comparator_ms": 131.41565200001537,
+              "cached_triton_ms": 134.0781299999776,
+              "comparator_over_cached": 0.9801423393959726,
+              "cached_time_change_pct": 2.0259976337992924
+            },
+            {
+              "round": 3,
+              "comparator_ms": 133.10113900001852,
+              "cached_triton_ms": 130.52777199999355,
+              "comparator_over_cached": 1.0197150917432736,
+              "cached_time_change_pct": -1.9333921703138968
+            }
+          ],
+          "all_rounds_at_least_3pct_faster": false
+        },
+        "checked_triton": {
+          "pairs": [
+            {
+              "round": 1,
+              "comparator_ms": 132.3033589999909,
+              "cached_triton_ms": 135.0005839999966,
+              "comparator_over_cached": 0.9800206419847357,
+              "cached_time_change_pct": 2.03866706060416
+            },
+            {
+              "round": 2,
+              "comparator_ms": 131.66167899998982,
+              "cached_triton_ms": 134.0781299999776,
+              "comparator_over_cached": 0.9819772918969845,
+              "cached_time_change_pct": 1.8353487653669953
+            },
+            {
+              "round": 3,
+              "comparator_ms": 136.37936400002104,
+              "cached_triton_ms": 130.52777199999355,
+              "comparator_over_cached": 1.044830245015044,
+              "cached_time_change_pct": -4.290672597671441
+            }
+          ],
+          "all_rounds_at_least_3pct_faster": false
+        }
+      }
+    },
+    "cache_observations": [
+      {
+        "policy": "decode_graph",
+        "round": 1,
+        "metadata_cache": {
+          "entries": 1,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      },
+      {
+        "policy": "eager",
+        "round": 1,
+        "metadata_cache": {
+          "entries": 2,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      },
+      {
+        "policy": "eager",
+        "round": 2,
+        "metadata_cache": {
+          "entries": 2,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      },
+      {
+        "policy": "decode_graph",
+        "round": 2,
+        "metadata_cache": {
+          "entries": 1,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      },
+      {
+        "policy": "decode_graph",
+        "round": 3,
+        "metadata_cache": {
+          "entries": 1,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      },
+      {
+        "policy": "eager",
+        "round": 3,
+        "metadata_cache": {
+          "entries": 2,
+          "max_entries": 64,
+          "eviction": "FIFO",
+          "custom_hit_miss_counters": false,
+          "scope": "validated tensor metadata only; no tensor/pointer/stream caching"
+        }
+      }
+    ],
+    "ptx_pairs_verified": [
+      {
+        "policy": "eager",
+        "round": 1,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      },
+      {
+        "policy": "eager",
+        "round": 2,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      },
+      {
+        "policy": "eager",
+        "round": 3,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      },
+      {
+        "policy": "decode_graph",
+        "round": 1,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      },
+      {
+        "policy": "decode_graph",
+        "round": 2,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      },
+      {
+        "policy": "decode_graph",
+        "round": 3,
+        "raw_sha256": [
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+          "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+        ],
+        "normalized_sha256": [
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+          "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+        ],
+        "executable_ptx_equal": true,
+        "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+      }
+    ],
+    "derived42_exact_single_insertion_verified": true,
+    "limit": "All model sample outputs checked; timings include the existing generate boundary, not pure GPU kernels. PTX equality covers last observed warmup specialization only. The all-round >=3% rule is engineering evidence, not statistical significance or general speedup."
+  },
+  "global_limit": "No GPU/model rerun, no checkpoint reread from WSL, no learner-mastery credit. Hashes of model weights are the recorded experiment evidence."
+}

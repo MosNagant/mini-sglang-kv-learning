@@ -1,0 +1,10 @@
+[
+  {
+    "arm": "original_graph",
+    "round": 0
+  },
+  {
+    "arm": "graph_greedy",
+    "round": 0
+  }
+]

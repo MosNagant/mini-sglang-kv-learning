@@ -1,0 +1,72 @@
+{
+  "status": "GRAPH_GREEDY_INDEPENDENT_AUDIT_PASS",
+  "gpu_execution": false,
+  "evidence": {
+    "mode": "timing",
+    "frozen_files_verified": 109,
+    "fresh_workers_verified": 6,
+    "raw_samples_verified": 30,
+    "strict_check_recomputed": {
+      "mode": "check",
+      "frozen_files_verified": 108,
+      "saved_logit_arrays_verified": 192,
+      "logit_elements_compared_between_arms": 14585856,
+      "bit_differences": 0,
+      "generated_tokens_per_arm": 96,
+      "replays_per_arm": 93,
+      "candidate_sample_hits": 93,
+      "A_B_A_repeat_checks": [
+        {
+          "arm": "original_graph",
+          "A_before_after_B_bitwise_equal": true,
+          "A_before_after_B_tokens_equal": true
+        },
+        {
+          "arm": "graph_greedy",
+          "A_before_after_B_bitwise_equal": true,
+          "A_before_after_B_tokens_equal": true
+        }
+      ],
+      "changed_input_observations": [
+        {
+          "arm": "original_graph",
+          "A_vs_B_bit_differences": 4860789,
+          "A_vs_B_tokens_differ": true
+        },
+        {
+          "arm": "graph_greedy",
+          "A_vs_B_bit_differences": 4860789,
+          "A_vs_B_tokens_differ": true
+        }
+      ]
+    },
+    "pairs": [
+      {
+        "round": 1,
+        "original_graph_ms": 130.00155699999993,
+        "graph_greedy_ms": 131.72323699999922,
+        "original_over_candidate": 0.986929565054651,
+        "latency_reduction_pct": -1.3243533690902476
+      },
+      {
+        "round": 2,
+        "original_graph_ms": 135.59281799999923,
+        "graph_greedy_ms": 130.22434399999838,
+        "original_over_candidate": 1.0412248112380655,
+        "latency_reduction_pct": 3.959261323118801
+      },
+      {
+        "round": 3,
+        "original_graph_ms": 133.88823399999694,
+        "graph_greedy_ms": 131.73945900000206,
+        "original_over_candidate": 1.0163107926532085,
+        "latency_reduction_pct": 1.6049020409029668
+      }
+    ],
+    "predeclared_signal_met": false
+  },
+  "audit_source_sha256": "3b82938b678370af2c1ff2bf15c7f8406ef84111135d36e3a5f82974df12ea3b",
+  "result_sha256": "bf956e7a7fa9214f031252beeaaf08a55d31eedfa3e4c843a303a5047652821b",
+  "plan_sha256": "e896291dffdc952ddd8756682d11f88a2ff8483579ade44f273f81d15f1219ad",
+  "limit": "CPU audit of saved fixed B1/TP1/FP16 Qwen3-0.6B/RTX4070Ti evidence. Candidate retains original math and captures original sampling; not kernel fusion, Triton/AMD gain or general model-quality proof. No automatic promotion."
+}

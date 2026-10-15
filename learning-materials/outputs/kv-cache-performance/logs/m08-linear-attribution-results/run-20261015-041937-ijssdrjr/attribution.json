@@ -1,0 +1,352 @@
+{
+  "status": "LINEAR_KERNEL_ATTRIBUTION_COMPLETE",
+  "policy": "eager",
+  "method": "Kernel (globalPid,correlationId) -> CPU API (globalTid high bits,correlationId) -> same-thread containing NVTX -> actual linear metadata",
+  "source_hashes": {
+    "original-model.sqlite": "1620f0ccb40a280ca10bbe887378e2be6e10720fdb9b8ee814616da175929c98",
+    "linear-calls.json": "df225417e193aa5e7e6631c06a1be14caa405ca189fa37875cc52865a2c449c6",
+    "workload.json": "71a18fa57848ec57def52161e15008011e0c24f07d8edbd1a58d0a8e7033c852",
+    "plan.json": "5e0f6470723bf9e53dd00150447bbcc70a3c5d1fef4ca90ab2028bb5eee04575"
+  },
+  "analyzer_sha256": "18768f10fab6d21b4c584033eff2ad20feecb28045fd20a8585022f36b15fd97",
+  "linear_calls": 3616,
+  "linear_nvtx_ranges": 3616,
+  "cpu_api_records": 13711,
+  "kernel_count": 11945,
+  "matched_linear_kernels": 3616,
+  "unmatched_other_kernels": 8329,
+  "all_kernel_total_ns": 103501109,
+  "linear_kernel_total_ns": 88978321,
+  "kv_kernel_count": 896,
+  "kv_kernel_total_ns": 870507,
+  "per_call_kernel_count_histogram": {
+    "1": 3616
+  },
+  "groups": [
+    {
+      "phase": "decode",
+      "role": "gate_up_proj",
+      "input_shape": [
+        1,
+        1024
+      ],
+      "weight_shape": [
+        6144,
+        1024
+      ],
+      "call_count": 868,
+      "kernel_count": 868,
+      "total_ns": 24357800,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 868,
+          "total_ns": 24357800
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 23.53385411551484
+    },
+    {
+      "phase": "decode",
+      "role": "lm_head",
+      "input_shape": [
+        1,
+        1024
+      ],
+      "weight_shape": [
+        151936,
+        1024
+      ],
+      "call_count": 31,
+      "kernel_count": 31,
+      "total_ns": 21709375,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 31,
+          "total_ns": 21709375
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 20.97501679909536
+    },
+    {
+      "phase": "decode",
+      "role": "qkv_proj",
+      "input_shape": [
+        1,
+        1024
+      ],
+      "weight_shape": [
+        4096,
+        1024
+      ],
+      "call_count": 868,
+      "kernel_count": 868,
+      "total_ns": 16737100,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 868,
+          "total_ns": 16737100
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 16.17093783990276
+    },
+    {
+      "phase": "decode",
+      "role": "down_proj",
+      "input_shape": [
+        1,
+        3072
+      ],
+      "weight_shape": [
+        1024,
+        3072
+      ],
+      "call_count": 868,
+      "kernel_count": 868,
+      "total_ns": 13368121,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 868,
+          "total_ns": 13368121
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 12.915920543421423
+    },
+    {
+      "phase": "decode",
+      "role": "o_proj",
+      "input_shape": [
+        1,
+        2048
+      ],
+      "weight_shape": [
+        1024,
+        2048
+      ],
+      "call_count": 868,
+      "kernel_count": 868,
+      "total_ns": 9323264,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 868,
+          "total_ns": 9323264
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 9.00788802176023
+    },
+    {
+      "phase": "prefill",
+      "role": "gate_up_proj",
+      "input_shape": [
+        128,
+        1024
+      ],
+      "weight_shape": [
+        6144,
+        1024
+      ],
+      "call_count": 28,
+      "kernel_count": 28,
+      "total_ns": 1024650,
+      "kernel_names": {
+        "ampere_fp16_s1688gemm_fp16_128x128_ldg8_f2f_stages_32x1_tn": {
+          "count": 28,
+          "total_ns": 1024650
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 0.9899893922875744
+    },
+    {
+      "phase": "prefill",
+      "role": "qkv_proj",
+      "input_shape": [
+        128,
+        1024
+      ],
+      "weight_shape": [
+        4096,
+        1024
+      ],
+      "call_count": 28,
+      "kernel_count": 28,
+      "total_ns": 792425,
+      "kernel_names": {
+        "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_64x3_tn": {
+          "count": 28,
+          "total_ns": 792425
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 0.7656198157258393
+    },
+    {
+      "phase": "prefill",
+      "role": "lm_head",
+      "input_shape": [
+        1,
+        1024
+      ],
+      "weight_shape": [
+        151936,
+        1024
+      ],
+      "call_count": 1,
+      "kernel_count": 1,
+      "total_ns": 665895,
+      "kernel_names": {
+        "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+          "count": 1,
+          "total_ns": 665895
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 0.6433699179010729
+    },
+    {
+      "phase": "prefill",
+      "role": "down_proj",
+      "input_shape": [
+        128,
+        3072
+      ],
+      "weight_shape": [
+        1024,
+        3072
+      ],
+      "call_count": 28,
+      "kernel_count": 28,
+      "total_ns": 574087,
+      "kernel_names": {
+        "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn": {
+          "count": 28,
+          "total_ns": 574087
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 0.5546674867029686
+    },
+    {
+      "phase": "prefill",
+      "role": "o_proj",
+      "input_shape": [
+        128,
+        2048
+      ],
+      "weight_shape": [
+        1024,
+        2048
+      ],
+      "call_count": 28,
+      "kernel_count": 28,
+      "total_ns": 425604,
+      "kernel_names": {
+        "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_tn": {
+          "count": 28,
+          "total_ns": 425604
+        }
+      },
+      "share_of_all_kernel_duration_sum_pct": 0.4112071881278103
+    }
+  ],
+  "kernels": {
+    "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_64x3_tn": {
+      "count": 28,
+      "total_ns": 792425
+    },
+    "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_tn": {
+      "count": 28,
+      "total_ns": 425604
+    },
+    "ampere_fp16_s1688gemm_fp16_128x128_ldg8_f2f_stages_32x1_tn": {
+      "count": 28,
+      "total_ns": 1024650
+    },
+    "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn": {
+      "count": 28,
+      "total_ns": 574087
+    },
+    "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+      "count": 32,
+      "total_ns": 22375270
+    },
+    "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)": {
+      "count": 3472,
+      "total_ns": 63786285
+    },
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_put_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIterator &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 64,
+      "total_ns": 126656
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(long) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 33,
+      "total_ns": 40284
+    },
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 64,
+      "total_ns": 122653
+    },
+    "void <unnamed>::index_kernel<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, (unsigned long)4, int>(<unnamed>::IndexKernelParams)": {
+      "count": 32,
+      "total_ns": 38207
+    },
+    "void flashinfer::norm::RMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 32,
+      "total_ns": 45344
+    },
+    "void flashinfer::norm::QKRMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 1792,
+      "total_ns": 2390749
+    },
+    "void flashinfer::BatchQKApplyRotaryPosIdsCosSinCacheHeadParallelismKernel<(bool)0, (unsigned int)128, (unsigned int)8, (unsigned int)16, __half, int>(T5 *, T5 *, T5 *, T5 *, float *, T6 *, unsigned int, unsigned int, unsigned int, unsigned int, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)": {
+      "count": 896,
+      "total_ns": 985506
+    },
+    "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, int>(<unnamed>::StoreKernelParams)": {
+      "count": 896,
+      "total_ns": 870507
+    },
+    "void flashinfer::BatchPrefillWithPagedKVCacheKernel<flashinfer::KernelTraits<(flashinfer::MaskMode)1, (unsigned int)128, (unsigned int)2, (unsigned int)2, (unsigned int)8, (unsigned int)8, (unsigned int)4, (unsigned int)1, (flashinfer::PosEncodingMode)0, __half, __half, __half, float, int, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>>, PagedParams>(T2)": {
+      "count": 28,
+      "total_ns": 290629
+    },
+    "void flashinfer::norm::FusedAddRMSNormKernel<(unsigned int)8, __half>(T2 *, T2 *, T2 *, unsigned int, unsigned int, unsigned int, float, float)": {
+      "count": 1792,
+      "total_ns": 2645666
+    },
+    "void flashinfer::activation::act_and_mul_kernel<__half, &silu>(T1 *, const T1 *, int)": {
+      "count": 896,
+      "total_ns": 1040241
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 1,
+      "total_ns": 960
+    },
+    "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)2>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)": {
+      "count": 1,
+      "total_ns": 3040
+    },
+    "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::Half, at::native::ArgMaxOps<float>, unsigned int, long, (int)4, (int)4>>(T3)": {
+      "count": 32,
+      "total_ns": 167040
+    },
+    "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(int) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)": {
+      "count": 32,
+      "total_ns": 38209
+    },
+    "void at::native::<unnamed>::CatArrayBatchedCopy<at::native::<unnamed>::OpaqueType<(unsigned int)4>, unsigned int, (int)1, (int)64, (int)64>(T1 *, at::native::<unnamed>::CatArrInputTensorMetadata<T1, T2, T4, T5>, at::native::<unnamed>::TensorSizeStride<T2, (unsigned int)4>, int, T2)": {
+      "count": 2,
+      "total_ns": 3264
+    },
+    "void flashinfer::BatchDecodeWithPagedKVCacheKernel<(flashinfer::PosEncodingMode)0, (unsigned int)2, (unsigned int)1, (unsigned int)8, (unsigned int)16, (unsigned int)2, (unsigned int)4, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>, Params>(T9)": {
+      "count": 868,
+      "total_ns": 4351792
+    },
+    "void flashinfer::PersistentVariableLengthMergeStatesKernel<(unsigned int)8, (unsigned int)16, (unsigned int)8, (unsigned int)4, __half, __half, int>(T5 *, float *, T7 *, T6 *, float *, unsigned int, unsigned int *, unsigned int)": {
+      "count": 868,
+      "total_ns": 1362041
+    }
+  },
+  "limits": [
+    "One separate original-backend instrumented Eager workload; not formal timing or a speedup experiment.",
+    "Summed GPU kernel durations are not generate wall time or critical-path fractions.",
+    "This joins this run only; old 43 Graph nodes are not thereby individually attributed.",
+    "All labelled linear calls have associated kernels; unlabelled known gemv/gemm/cutlass names are rejected, other unlabelled kernels remain explicitly saved.",
+    "No occupancy, cache/bandwidth counters, bank conflicts, or AMD results measured."
+  ]
+}

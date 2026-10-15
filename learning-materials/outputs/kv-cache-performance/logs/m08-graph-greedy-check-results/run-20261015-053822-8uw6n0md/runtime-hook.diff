@@ -1,0 +1,10 @@
+--- original53
++++ 55-controlled-runtime
+@@ -402,6 +402,7 @@
+         import minisgl.kernel as kernel_api
+         from minisgl.kernel.store import store_cache
+         require(kernel_api.store_cache is store_cache, 'Original KV entry has been replaced')
++        _EXPERIMENT_INSTALL_HOOK()  # 55: after source guards, before Engine
+         self.raw_token_ids = []
+         raw = self.raw_token_ids
+ 

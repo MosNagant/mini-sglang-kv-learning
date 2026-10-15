@@ -1,0 +1,134 @@
+{
+  "status": "SOURCES_ARCHIVED",
+  "utc": "2026-10-15T04:42:06.516530+00:00",
+  "python": "/home/weltlaw/projects/mini-sglang-kv/.venv/bin/python",
+  "flashinfer_module_origin": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer/__init__.py",
+  "flashinfer_package_roots": [
+    "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer"
+  ],
+  "distributions": [
+    {
+      "name": "flashinfer-python",
+      "version": "0.5.3",
+      "installation_root": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages"
+    }
+  ],
+  "files": [
+    {
+      "original_path": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer/activation.py",
+      "archived_path": "sources/00-activation.py",
+      "bytes": 7040,
+      "sha256": "be03a299239b2766dd69e4ac43b9832a3a6d6710f5ff2c4ff1432901a09cc2e8",
+      "activation_math_lines": [
+        {
+          "line": 69,
+          "text": "def silu_and_mul("
+        },
+        {
+          "line": 72,
+          "text": "r\"\"\"Fused SiLU and Mul operation."
+        },
+        {
+          "line": 74,
+          "text": "``silu(input[..., :hidden_size]) * input[..., hidden_size:]``"
+        },
+        {
+          "line": 105,
+          "text": "get_act_and_mul_module(\"silu\").silu_and_mul("
+        },
+        {
+          "line": 193,
+          "text": "def silu_and_mul_scaled_nvfp4_experts_quantize("
+        },
+        {
+          "line": 199,
+          "text": "Silu and multiply and quantize batched input tensor to NVFP4 format with mask."
+        },
+        {
+          "line": 214,
+          "text": ").silu_and_mul_scaled_nvfp4_experts_quantize_sm100("
+        }
+      ]
+    },
+    {
+      "original_path": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer/data/include/flashinfer/activation.cuh",
+      "archived_path": "sources/01-activation.cuh",
+      "bytes": 2356,
+      "sha256": "8b400ad65615c08953d79964488654a750b817231bda98a4c48487ee4f4586fd",
+      "activation_math_lines": []
+    },
+    {
+      "original_path": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer/data/include/flashinfer/math.cuh",
+      "archived_path": "sources/02-math.cuh",
+      "bytes": 4466,
+      "sha256": "d8a5bc796dfe4f3b3593163ab0a078c63554d73b1c05886983eec8ae36640051",
+      "activation_math_lines": [
+        {
+          "line": 39,
+          "text": "* \\brief Wrapper of PTX ex2.approx instruction, which computes 2^x"
+        },
+        {
+          "line": 42,
+          "text": "__forceinline__ __device__ float ptx_exp2(float x) {"
+        },
+        {
+          "line": 44,
+          "text": "asm volatile(\"ex2.approx.ftz.f32 %0, %1;\" : \"=f\"(y) : \"f\"(x));"
+        },
+        {
+          "line": 59,
+          "text": "* \\brief Wrapper of PTX ex2.approx.f16x2 instruction, which computes 2^x"
+        },
+        {
+          "line": 62,
+          "text": "__forceinline__ __device__ half2 ptx_exp2(half2 x) {"
+        },
+        {
+          "line": 65,
+          "text": "asm volatile(\"ex2.approx.f16x2 %0, %1;\" : \"=r\"(y_u32) : \"r\"(x_u32));"
+        },
+        {
+          "line": 70,
+          "text": "* \\brief Wrapper of PTX ex2.approx.f16 instruction, which computes 2^x"
+        },
+        {
+          "line": 73,
+          "text": "__forceinline__ __device__ half ptx_exp2(half x) {"
+        },
+        {
+          "line": 75,
+          "text": "asm volatile(\"ex2.approx.f16 %0, %1;\" : \"=h\"(y_u16) : \"h\"(__half_as_ushort(x)));"
+        }
+      ]
+    },
+    {
+      "original_path": "/home/weltlaw/projects/mini-sglang-kv/.venv/lib/python3.12/site-packages/flashinfer/jit/activation.py",
+      "archived_path": "sources/03-activation.py",
+      "bytes": 3550,
+      "sha256": "c5380ee45b57b35ede39328b051809d6a5151ed25ad7ac39e18c79987ed208e0",
+      "activation_math_lines": [
+        {
+          "line": 77,
+          "text": "silu_def_cu_str = r\"\"\""
+        },
+        {
+          "line": 78,
+          "text": "__device__ __forceinline__ float silu(const float& val) {"
+        },
+        {
+          "line": 79,
+          "text": "return val / (1.0f + __expf(-val));"
+        },
+        {
+          "line": 99,
+          "text": "\"silu\": silu_def_cu_str,"
+        }
+      ]
+    }
+  ],
+  "missing_required_basenames": [],
+  "dotted_submodule_imports": false,
+  "gpu_execution": false,
+  "limit": "Installed source evidence only; no compiled-kernel, compiler-flags or numerical-equivalence claim.",
+  "script_sha256": "55507f7870112bc4a6933c568b479975abb5df4628d722e571420cada51a16c4"
+}

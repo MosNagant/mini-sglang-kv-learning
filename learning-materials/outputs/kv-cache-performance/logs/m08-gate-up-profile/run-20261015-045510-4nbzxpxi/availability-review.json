@@ -1,0 +1,42 @@
+{
+  "status": "AVAILABILITY_REVIEW_PASS_COUNTER_ACCESS_BLOCKED",
+  "review_scope": "Independent CPU-only review of retained query/version/result and frozen source; no environment changes or new profiler invocation.",
+  "ncu_version": "2025.1.1.0 (build 35528883)",
+  "top_level_collection_status": "REQUESTED_METRICS_UNAVAILABLE",
+  "specific_cause": "GPU_COUNTER_PERMISSION_DENIED",
+  "query_returncode": 1,
+  "error_evidence": "==ERROR== ERR_NVGPUCTRPERM - The user does not have permission to access NVIDIA GPU Performance Counters on the target device. For instructions on enabling permissions and to get more information see https://developer.nvidia.com/ERR_NVGPUCTRPERM",
+  "interpretation": "Metric query was blocked by explicit GPU performance-counter access denial. This does not establish that the requested metric names are unsupported.",
+  "requested_metrics": [
+    "dram__bytes_read.sum",
+    "lts__t_bytes.sum",
+    "sm__warps_active.avg.pct_of_peak_sustained_active",
+    "gpu__time_duration.sum"
+  ],
+  "readable_hardware_metric_values": 0,
+  "profile_workers_started": 0,
+  "profile_workload_gpu_runs": 0,
+  "counter_reports_found": [],
+  "frozen_source_hash_checks": {
+    "runner.py": true,
+    "micro_runner.py": true,
+    "52-m08-gate-up-profile.sh": true
+  },
+  "evidence_sha256": {
+    "result.json": "df5b2856209ed666fdd8d16946f9cdd8d914d8d42592260448420fcbac6f042a",
+    "plan.json": "3eb91635f412fbf72346cf4ce22bab17b1092823d85ed6f388efaf04b66772b3",
+    "metric-query.log": "bbb4d0186ec6ca25e30ac0aa064cbeaba7ad89d3e5424b88049cb8ef53b6a283",
+    "metric-query-command.json": "a90635535b3a7a1056339515b3abaf638a5a270e23959d6048d61dacada58151",
+    "ncu-version.log": "51568705db6a9090604111731ae421e10b2a73658b59489a8b8ed7b0d5a7460b",
+    "ncu-version-command.json": "536f129bea661c7e405412602fc1685a5b9478b00bedbe4016864d43817b9da1"
+  },
+  "claims_not_supported": [
+    "Measured DRAM read traffic",
+    "Measured L2 traffic",
+    "Measured achieved occupancy",
+    "NCU kernel duration",
+    "Hot versus rotate28 cache behavior",
+    "Hardware-counter explanation of performance changes"
+  ],
+  "limit": "The ncu discovery/query command ran and may interact with the driver. No selected/original profile workload was launched. Existing original files remain unchanged."
+}

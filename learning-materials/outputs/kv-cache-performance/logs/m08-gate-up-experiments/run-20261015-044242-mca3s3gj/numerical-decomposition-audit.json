@@ -1,0 +1,56 @@
+{
+  "status": "DECOMPOSITION_EVIDENCE_AUDIT_PASS",
+  "candidate_npz_files_verified": 588,
+  "original_sample_files_verified": 84,
+  "bit_comparison": "float16 uint16 bit patterns, including signed zero",
+  "all_seven_candidate_y_cross_differences": 0,
+  "same_r8w4_unfused_vs_fused_y_differences": 0,
+  "per_candidate": {
+    "gemv_direct_r4_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": 490,
+      "max_y_abs": 0.001953125
+    },
+    "gemv_direct_r8_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": 490,
+      "max_y_abs": 0.001953125
+    },
+    "gemv_direct_r8_w8": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": 490,
+      "max_y_abs": 0.001953125
+    },
+    "gemv_splitk4_r4_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": 490,
+      "max_y_abs": 0.001953125
+    },
+    "swiglu_fused_r4_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": null,
+      "max_y_abs": 0.001953125
+    },
+    "swiglu_fused_r8_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": null,
+      "max_y_abs": 0.001953125
+    },
+    "swiglu_packed_r4_w4": {
+      "y_bitwise_differences": 384,
+      "y_elements": 258048,
+      "z_bitwise_differences": null,
+      "max_y_abs": 0.001953125
+    }
+  },
+  "interpretation": "On these 84 original-model fixture inputs, activation fusion adds no observed Y difference relative to matching Triton GEMV plus original FlashInfer activation. Raw GEMV differs from original FP16 F.linear on 490 Z elements. Reduction/rounding differences are a plausible investigation direction; this does not isolate full-model logit divergence causality.",
+  "source_sha256": "ef80cd310ee2ce632f5278646894be3358cee43b1df222f4ee7f6fdbf2403340",
+  "decomposition_sha256": "bce7adbe8f3675de019b19f256ea0feb6302831d158905d3a776522da6e682c9",
+  "limit": "Offline comparison of existing arrays only; no new GPU execution, retimed sample, relaxed acceptance gate or broad equivalence claim."
+}

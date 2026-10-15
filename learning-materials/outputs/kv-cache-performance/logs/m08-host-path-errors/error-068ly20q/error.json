@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py",
+    "--mode",
+    "check",
+    "--accepted-check",
+    "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-check-results/run-20261014-144754-mmdz752v",
+    "--accepted-timing",
+    "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-model-timing-results/run-o_ltqzpd",
+    "--candidate-sha256",
+    "1efe2013e8d18381701c11f90daa54b3d227e9ab32803ca07dca24fa4ff85356"
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py\", line 400, in <module>\n    main()\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py\", line 376, in main\n    (run_check if args.mode == 'check' else run_timing)(args, run, plan, summary)\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py\", line 202, in run_check\n    run_process([sys.executable, '-B', '-u', str(run / 'runner.py'), '--worker-check', str(run), '--arm', arm],\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py\", line 179, in run_process\n    require(proc.returncode == 0, f'Worker failed ({proc.returncode}); retained log: {log}')\n  File \"/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py\", line 60, in require\n    raise RuntimeError(reason)\nRuntimeError: Worker failed (1); retained log: /home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/original.log\n",
+  "runner_sha256": "d414b04be387e83aadfcae5be8f11677ce0ab6dcff16ad2a2789dc8daf844bc9"
+}

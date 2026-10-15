@@ -1,0 +1,10 @@
+[
+  {
+    "policy": "eager",
+    "round": 0
+  },
+  {
+    "policy": "decode_graph",
+    "round": 0
+  }
+]

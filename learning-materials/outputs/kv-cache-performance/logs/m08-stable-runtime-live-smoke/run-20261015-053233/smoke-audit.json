@@ -1,0 +1,14 @@
+{
+  "status": "LIVE_ENTRY_SMOKE_AUDIT_PASS",
+  "result_sha256": "8db456583697fb11ad7167b9f4167dc0bf7c0a7cd8c003f2dcfe8b3d72b98804",
+  "console_sha256": "84d7bb49082f89f848b9b9fdf5392be7a14aeda050ab5eb4615afd1786e51a4e",
+  "invocation_sha256": "28156ab3a5e8b3a3e582fa1321a4891b8e6b8aaa9a2860a325942faa32d99d29",
+  "release_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "fresh_process_exit_code": 0,
+  "live_project": "/home/weltlaw/projects/mini-sglang-kv",
+  "exact_32_tokens": true,
+  "graph_batch_sizes": [
+    1
+  ],
+  "limit": "Actual live source entry invocation, no timing claim."
+}

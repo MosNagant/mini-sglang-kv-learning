@@ -1,0 +1,17 @@
+{
+  "status": "CPU_FAKE_METADATA_CHECK_PASS",
+  "checks": [
+    "first miss, repeat hit, new-object hit, current launch arguments and observation",
+    "same-object stride change, B/shape change, 3-D trailing layout and independent strides",
+    "dtype/device/device-index/layout/column-stride/index-count/V-shape/type rejection; failures revalidated",
+    "empty validated input returns without a launch",
+    "64-entry bound, FIFO eviction, observe=False has no custom dispatch counters",
+    "same base kernel object, tensors, grid/parameters and observation for D64/128/192/1024",
+    "original backend delegates unchanged"
+  ],
+  "source_sha256": {
+    "40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+    "44-m08-kv-cached-metadata.py": "1efe2013e8d18381701c11f90daa54b3d227e9ab32803ca07dca24fa4ff85356"
+  },
+  "limit": "Fake tensor metadata/launcher only; no GPU, kernel, Graph, model or speedup validation"
+}

@@ -1,0 +1,564 @@
+{
+  "status": "OFFLINE_HOST_DIAGNOSTIC_EVIDENCE_AUDIT_PASS",
+  "run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m08-host-diagnostic-results\\run-bqojhqoc",
+  "audit_script_sha256": "7aadcfcd2d3080b9f870e3a38cbe633deaeb47d0639a4e2efd5cc175b66c15bb",
+  "plan_sha256": "1664ca0bb01d1013a3e168091cfc520df51a880399d365e28e52be19c744103f",
+  "summary_sha256": "c7fc474a4481f2496adea0b949190b04412d3160c5dc0136bd86d78e6077e3b7",
+  "method": "Local saved JSON, source, compiler text and NPZ only; no GPU run or current-source identity assumption.",
+  "frozen_source_hashes_checked": 105,
+  "frozen_adapter_runner_hashes": {
+    "40-m08-kv-backends.py": "cc4305af9cf89985f494b90f990070c5c042a328722866aad4d67a5353f81c15",
+    "44-m08-kv-cached-metadata.py": "1efe2013e8d18381701c11f90daa54b3d227e9ab32803ca07dca24fa4ff85356",
+    "45-m08-host-path-diagnostic.py": "bc740ce7dca7be7a90195704ef37322ac410157d6494fe54234eccd85715b12f"
+  },
+  "worker_results_checked": 3,
+  "case_results_checked": 6,
+  "host_interval_averages_checked": 360,
+  "calls_represented_by_host_intervals": 72000,
+  "runtime_reported_eager_checks": 18,
+  "runtime_reported_changed_value_graph_checks": 18,
+  "runtime_reported_replacement_checks": 6,
+  "persisted_graph_snapshots_independently_rebuilt": 18,
+  "persisted_replacement_snapshots_independently_rebuilt": 6,
+  "npz_files_checked": 24,
+  "stored_arrays_checked": 144,
+  "stored_array_elements_checked": 63114264,
+  "stored_array_bytes_checked": 126234720,
+  "compiled_text_files_checked": 24,
+  "old_cached_ptx_and_ttgir_identical_within_each_case": true,
+  "recomputed_host_statistics": [
+    {
+      "round": 1,
+      "B": 1,
+      "host_medians_us": {
+        "old": 6.61836,
+        "cached": 2.676015
+      },
+      "host_change_pct": -59.56679600384385,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    },
+    {
+      "round": 1,
+      "B": 128,
+      "host_medians_us": {
+        "old": 6.6129575,
+        "cached": 2.63916
+      },
+      "host_change_pct": -60.09107876468283,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    },
+    {
+      "round": 2,
+      "B": 1,
+      "host_medians_us": {
+        "old": 6.809957499999999,
+        "cached": 2.6671500000000004
+      },
+      "host_change_pct": -60.83455733754579,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    },
+    {
+      "round": 2,
+      "B": 128,
+      "host_medians_us": {
+        "old": 6.6584924999999995,
+        "cached": 2.6665425000000003
+      },
+      "host_change_pct": -59.95275957733676,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    },
+    {
+      "round": 3,
+      "B": 1,
+      "host_medians_us": {
+        "old": 6.695805,
+        "cached": 2.694755
+      },
+      "host_change_pct": -59.754577679606854,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    },
+    {
+      "round": 3,
+      "B": 128,
+      "host_medians_us": {
+        "old": 6.59532,
+        "cached": 2.635985
+      },
+      "host_change_pct": -60.03249273727431,
+      "intervals_per_arm": 30,
+      "calls_per_interval": 200
+    }
+  ],
+  "snapshots": [
+    {
+      "file": "B1-original.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B1-old.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B1-cached.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B1-replacement.npz",
+      "sha256": "612be619c44f047729dbf7f5d4a7005bb5d98c0c3958eed2190ce4c5b9376a30",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 1,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-original.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B128-old.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B128-cached.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-replacement.npz",
+      "sha256": "219d111067b1ef67d7f4d61d647080e3ac9c512b667e1915ea9d58fac245b47d",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 1,
+      "batch": 128,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    },
+    {
+      "file": "B1-original.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B1-old.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B1-cached.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B1-replacement.npz",
+      "sha256": "612be619c44f047729dbf7f5d4a7005bb5d98c0c3958eed2190ce4c5b9376a30",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 1,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-original.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B128-old.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B128-cached.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-replacement.npz",
+      "sha256": "219d111067b1ef67d7f4d61d647080e3ac9c512b667e1915ea9d58fac245b47d",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 2,
+      "batch": 128,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    },
+    {
+      "file": "B1-original.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B1-old.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B1-cached.npz",
+      "sha256": "4f28c7a532c710a749d2dd33e4d5695c1b2b0f6c01036745c442019ae1b5c005",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 1,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B1-replacement.npz",
+      "sha256": "612be619c44f047729dbf7f5d4a7005bb5d98c0c3958eed2190ce4c5b9376a30",
+      "stored_arrays": 6,
+      "stored_array_elements": 2109442,
+      "stored_array_bytes": 4218888,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 1,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-original.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "original"
+    },
+    {
+      "file": "B128-old.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "old"
+    },
+    {
+      "file": "B128-cached.npz",
+      "sha256": "d93006b9014159480c77a6beffffd2a74bada251a59b9f0df43891843cb83488",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 128,
+      "kind": "changed-value Graph replay",
+      "arm": "cached"
+    },
+    {
+      "file": "B128-replacement.npz",
+      "sha256": "219d111067b1ef67d7f4d61d647080e3ac9c512b667e1915ea9d58fac245b47d",
+      "stored_arrays": 6,
+      "stored_array_elements": 3150080,
+      "stored_array_bytes": 6300672,
+      "input_values_and_destinations_rebuilt_from_fixture_recipe": true,
+      "independent_full_cache_reconstruction": true,
+      "readonly_qkv_and_indices_byte_exact": true,
+      "round": 3,
+      "batch": 128,
+      "kind": "replacement tensor objects",
+      "arm": "cached"
+    }
+  ],
+  "compiled_files": [
+    {
+      "file": "round-1/B1-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-1/B1-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-1/B1-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-1/B1-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-1/B128-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-1/B128-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-1/B128-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-1/B128-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-2/B1-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-2/B1-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-2/B1-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-2/B1-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-2/B128-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-2/B128-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-2/B128-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-2/B128-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-3/B1-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-3/B1-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-3/B1-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-3/B1-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-3/B128-old.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-3/B128-old.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    },
+    {
+      "file": "round-3/B128-cached.ptx",
+      "file_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "compiler_text_sha256": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    },
+    {
+      "file": "round-3/B128-cached.ttgir",
+      "file_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a",
+      "compiler_text_sha256": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+    }
+  ],
+  "limits": [
+    "Host timings replace only launch with a no-op; not GPU kernel times or model speedup.",
+    "Runtime Eager checks are reported, not reconstructed from separate Eager NPZ snapshots.",
+    "Only persisted replacement snapshots are independently reconstructed; other replacement checks are runtime reports.",
+    "Graph snapshots validate isolated KV replay with changed values, not full-model Graph logits.",
+    "Matching compiler artifacts support unchanged device specialization; not a hardware-counter or causal bottleneck claim."
+  ]
+}

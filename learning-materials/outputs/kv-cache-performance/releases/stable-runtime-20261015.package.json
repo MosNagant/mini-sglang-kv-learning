@@ -1,0 +1,11 @@
+{
+  "status": "LOCAL_ZIP_VERIFIED",
+  "archive": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\releases\\stable-runtime-20261015.zip",
+  "sha256": "7dc817ee448abde827c764ea181d124ae2ea6d54adb2e89e7f481f8e4c1b58e5",
+  "bytes": 69544,
+  "files": 27,
+  "source_entry_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "recommended_execution": "decode_graph",
+  "publication_status": "local-only",
+  "omits_graph_greedy": true
+}

@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "gpu_execution": false,
+  "candidate_controls": {
+    "status": "PASS",
+    "candidate_results": [
+      {
+        "name": "gemv_direct_r4_w4",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "gemv_direct_r8_w4",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "gemv_direct_r8_w8",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "gemv_splitk4_r4_w4",
+        "launches": 2,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "swiglu_fused_r4_w4",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "swiglu_fused_r8_w4",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": false
+      },
+      {
+        "name": "swiglu_packed_r4_w4",
+        "launches": 1,
+        "invalid_current_inputs_rejected": 7,
+        "packed_roundtrip_checked": true
+      }
+    ],
+    "prepare_rejection_controls": 9,
+    "source_sha256": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+    "gpu_math_tested": false,
+    "limit": "NumPy fakes prove Python dispatch, lifetime and metadata conditions only, not Triton compilation or arithmetic."
+  },
+  "archiver_controls": {
+    "status": "PASS",
+    "source_sha256": "0a1a5f104a170a2f95df4f1e123824c222f49c290776c7f74f237ab7a100ffc1",
+    "package_initializer_not_executed": true,
+    "source_hash_roundtrip": true,
+    "existing_evidence_preserved": true,
+    "stdout": "{\"status\": \"SOURCES_ARCHIVED\", \"files\": 4, \"manifest\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\Local\\\\Temp\\\\flashinfer-source-cpu-o1gmtme5\\\\archive\\\\manifest.json\", \"missing\": []}"
+  },
+  "numerical_controls": {
+    "status": "PASS",
+    "source_sha256": "864eb23a76bc4010762ec97eb0be8df0728019981685236e57836618cdecfbf8",
+    "controls": [
+      "zero_oracle_exact_zero",
+      "zero_oracle_nonzero_error",
+      "zero_oracle_equal_baseline",
+      "exact_reference",
+      "nrmse_improvement",
+      "nrmse_within_10_percent",
+      "nrmse_over_10_percent_despite_allclose",
+      "nrmse_absolute_floor_allows_small_error",
+      "nrmse_absolute_floor_rejects_large_error",
+      "allclose_inclusive_absolute_boundary",
+      "allclose_just_outside_absolute_boundary",
+      "one_element_failure_despite_nrmse_acceptance",
+      "actual_nan_rejected",
+      "actual_positive_inf_rejected",
+      "actual_negative_inf_rejected",
+      "reference_nan_rejected",
+      "reference_positive_inf_rejected",
+      "reference_negative_inf_rejected",
+      "oracle_nan_rejected",
+      "oracle_positive_inf_rejected",
+      "oracle_negative_inf_rejected",
+      "actual_shape_mismatch",
+      "oracle_shape_mismatch",
+      "rank_mismatch_not_broadcast",
+      "empty_fixed_scope_rejected"
+    ],
+    "control_count": 25,
+    "zero_denominator_guard": "actual helper uses max(norm(oracle), 1e-12)",
+    "dtype_scope": "helper converts to float64; actual runner must separately require FP16 outputs",
+    "gpu_execution": false
+  },
+  "test_sha256": "0f8ba3bd1a9905487293d674617596542bd8a0255ef2ff9532cf1ee705e167e7"
+}

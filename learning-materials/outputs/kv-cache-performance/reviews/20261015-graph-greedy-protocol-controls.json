@@ -1,0 +1,40 @@
+{
+  "status": "CPU_PROTOCOL_CONTROLS_PASS",
+  "count": 8,
+  "controls": [
+    {
+      "name": "one_controlled_hook_only",
+      "pass": true
+    },
+    {
+      "name": "runtime_ast_compiles",
+      "pass": true
+    },
+    {
+      "name": "missing_hook_anchor_rejected",
+      "pass": true
+    },
+    {
+      "name": "all96_matching_steps_accepted",
+      "pass": true
+    },
+    {
+      "name": "one_signed_zero_bit_difference_rejected",
+      "pass": true
+    },
+    {
+      "name": "B_tokens_different_rejected",
+      "pass": true
+    },
+    {
+      "name": "nonfinite_logits_rejected",
+      "pass": true
+    },
+    {
+      "name": "same_cross_arm_but_changed_repeated_A_rejected",
+      "pass": true
+    }
+  ],
+  "runner_sha256": "725a8f864be200b5ae7e0f45c3518098d141d798dc44e8a151afc9dfb1fabbc1",
+  "limit": "Synthetic in-memory arrays/mock file hashes test comparator logic only; actual evidence hashes/Graph execution require real run."
+}

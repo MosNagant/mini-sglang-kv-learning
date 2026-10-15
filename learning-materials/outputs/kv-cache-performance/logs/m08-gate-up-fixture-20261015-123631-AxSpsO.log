@@ -1,0 +1,4 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-gate-up-fixture-results/run-20261015-043631-di2tue9u
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-gate-up-fixture-results/run-20261015-043631-di2tue9u
+STATUS=GATE_UP_FIXTURE_CAPTURE_PASS
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-gate-up-fixture-20261015-123631-AxSpsO.log

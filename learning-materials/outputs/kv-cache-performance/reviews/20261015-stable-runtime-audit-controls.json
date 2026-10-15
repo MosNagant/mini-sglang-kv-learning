@@ -1,0 +1,50 @@
+{
+  "status": "STABLE_AUDIT_CPU_CONTROLS_PASS",
+  "gpu_execution": false,
+  "controls": [
+    {
+      "name": "changed_plan_hash",
+      "rejected": true,
+      "reason": "Plan hash changed"
+    },
+    {
+      "name": "changed_frozen_original_source_hash",
+      "rejected": true,
+      "reason": "Original source changed: python/minisgl/__main__.py"
+    },
+    {
+      "name": "changed_saved_logits_hash",
+      "rejected": true,
+      "reason": "Saved logits hash changed"
+    },
+    {
+      "name": "invented_logit_summary",
+      "rejected": true,
+      "reason": "Saved per-step comparison differs"
+    },
+    {
+      "name": "unequal_timing_warmup_policy",
+      "rejected": true,
+      "reason": "Timing policy changed"
+    },
+    {
+      "name": "nonfinite_raw_time_even_when_controller_matches",
+      "rejected": true,
+      "reason": "Worker not retained exactly"
+    },
+    {
+      "name": "invented_worker_medians_even_when_controller_matches",
+      "rejected": true,
+      "reason": "Worker median differs"
+    },
+    {
+      "name": "wrong_timed_tokens_even_when_controller_matches",
+      "rejected": true,
+      "reason": "Timed tokens/index differs"
+    }
+  ],
+  "count": 8,
+  "audit_source_sha256": "b6693f4a54fe781155dc2d7ecf0649c8a4dcbf013da194365bbe93299efe4b2e",
+  "controls_source_sha256": "42558ed08842573580c3bb5e122f5962b61ab1494cc0f53ef7a3ea1c6c582715",
+  "limit": "In-memory corruption controls for saved-evidence auditing; no GPU or model execution."
+}

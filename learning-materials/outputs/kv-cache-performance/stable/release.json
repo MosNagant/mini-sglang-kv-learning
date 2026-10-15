@@ -1,0 +1,57 @@
+{
+  "release": "original-decode-graph-20261015",
+  "status": "FIXED_WORKLOAD_VALIDATED",
+  "entry": "stable_infer.py",
+  "entry_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "canonical": "../53-m08-stable-runtime.py",
+  "canonical_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "verification_runner": "../54-verify-stable-runtime.py",
+  "verification_runner_sha256": "efedb7404442fc8566af96e4167c9e856aa4b1496976ef1761ac3f6578fdb52c",
+  "method": "Enable upstream whole-decode CUDA Graph[1]; original model math and KV backend unchanged",
+  "baseline": "Original Eager through identical persistent runtime API",
+  "hardware": "NVIDIA GeForce RTX 4070 Ti",
+  "workload": {
+    "model": "Qwen3-0.6B FP16 TP1",
+    "requests": 1,
+    "input_tokens": 128,
+    "generated_tokens": 32,
+    "sampling": "greedy ignore_eos"
+  },
+  "correctness_run": "../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd",
+  "correctness_result_sha256": "9d482bade8fd5113cc1ce699ddd62e2994b4d448edc61825248093a30d42814d",
+  "all_logits_elements_compared": 4861952,
+  "logit_violations": 0,
+  "all32_logits_bitwise_equal_in_common_fp32": true,
+  "timing_run": "../logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei",
+  "timing_result_sha256": "a6e813eeaaa166a1042e24a52e7a51a65ecdffe54d78958acdb08b820922001a",
+  "timing_sample_count": 30,
+  "paired_process_results": [
+    {
+      "round": 1,
+      "eager_ms": 223.2934990000075,
+      "graph_ms": 133.47115499999518,
+      "eager_over_graph": 1.6729719541275834,
+      "graph_latency_change_pct": -40.22613484148471
+    },
+    {
+      "round": 2,
+      "eager_ms": 231.26492899999107,
+      "graph_ms": 129.42888800000674,
+      "eager_over_graph": 1.7868107543346816,
+      "graph_latency_change_pct": -44.0343641555734
+    },
+    {
+      "round": 3,
+      "eager_ms": 227.79449899999804,
+      "graph_ms": 134.78515799999968,
+      "eager_over_graph": 1.6900562523360219,
+      "graph_latency_change_pct": -40.83037185195555
+    }
+  ],
+  "live_entry_smoke": "../logs/m08-stable-runtime-live-smoke/run-20261015-053233",
+  "live_entry_smoke_result_sha256": "8db456583697fb11ad7167b9f4167dc0bf7c0a7cd8c003f2dcfe8b3d72b98804",
+  "limits": "Fixed workload validation; no arbitrary model/shape/concurrency/AMD promise, no new Triton kernel speedup or superiority over original Graph claim.",
+  "recommended_execution": "decode_graph",
+  "publication_status": "local-only; not synced to GitHub",
+  "unaccepted_experiments_not_enabled": true
+}

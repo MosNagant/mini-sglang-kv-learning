@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "meaning": "All holdout correctness/timing collection completed; performance acceptance is separate",
+  "per_step_ratios": {
+    "16": [
+      0.9834739985642849,
+      0.9931560316617,
+      0.9736978307150924
+    ],
+    "31": [
+      0.974298105490707,
+      1.0392835583437705,
+      0.9611293130080582
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "reviewer": "m08_overhead_review",
+  "scope": "Read-only source review and CPU recomputation of saved evidence; no GPU executed by reviewer",
+  "stable_runtime_review": {
+    "status": "NO_BLOCKING_ISSUE_FOUND",
+    "runtime_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+    "runner_sha256": "efedb7404442fc8566af96e4167c9e856aa4b1496976ef1761ac3f6578fdb52c",
+    "numerical_gate": "All 32 steps x 151936 logits with atol=0.002, rtol=0.002 and exact 32 output tokens",
+    "dtype_handling": "Eager FP16 and upstream Graph FP32 buffer snapshots are converted only on CPU to a common FP32 representation; FP16 values are exactly representable. GPU model arithmetic is unchanged.",
+    "correctness": "105 frozen/source files and 64 arrays checked; 4861952 compared values all have equal FP32 bit patterns; maximum absolute difference 0; actual Graph replay count 31",
+    "timing": "106 frozen/source files, 6 fresh processes and all 30 samples checked; two warmups and five samples per worker; perf_counter interval includes actual GPU completion and output handling",
+    "paired_latency_change_pct": [-40.22613484148471, -44.0343641555734, -40.83037185195555],
+    "correctness_audit": "../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd/independent-evidence-audit.json",
+    "timing_audit": "../logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei/independent-evidence-audit.json",
+    "audit_negative_controls": "20261015-stable-runtime-audit-controls.json",
+    "baseline_interpretation": "Original Eager versus original whole-decode Graph through the same persistent runtime interface. This does not establish a new Triton kernel win or superiority over upstream Graph.",
+    "lifecycle_limit": "Sequential requests only. close() must not be called concurrently with generate(); README now explicitly states this limit."
+  },
+  "graph_greedy_static_review": {
+    "status": "NO_STATIC_BLOCKING_ISSUE_FOUND_GPU_ACCEPTANCE_PENDING",
+    "candidate_sha256": "80893d3151df924bdb3b3d366aaeea22ade2e5048a64a1aedcc9d253e44dca31",
+    "operation": "Captures the same torch.argmax(dim=-1) and Engine int32 conversion after the existing original FP32 logits buffer assignment; no changed model/KV math or extra token/logits copy",
+    "lifetime": "Runner holds the captured token tensor; each actual replay rewrites that stable storage and issues one ticket; each sample attempt consumes the ticket, including mismatches",
+    "guards": "Pinned original graph/engine/sample source, one engine, TP1, explicit Graph[1], disabled overlap, B1 decode, greedy temperature semantics, logits shape/stride/dtype/device/pointer/storage-offset, token metadata/storage and stream checks",
+    "ordering_evidence": "Pinned Engine.forward_batch runs on engine stream; disabled-overlap scheduler copies next_tokens_gpu to token_pool and CPU, synchronizes completion while processing the request, then advances to the next replay. The persistent token buffer is safe under this sequential contract.",
+    "fallback": "Nonmatching sample calls delegate to original sampling; assert_usage must reject missing expected hits before any speed claim",
+    "baseline_requirement": "Uninstall restores Python methods but cannot remove nodes from existing captured graphs. Original and candidate comparisons require fresh Engine/process construction.",
+    "unverified": "No Graph capture, token equivalence, novel-candidate timing or promotion is claimed by this static review."
+  }
+}

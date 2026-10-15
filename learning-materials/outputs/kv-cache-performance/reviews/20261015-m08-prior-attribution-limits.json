@@ -1,0 +1,487 @@
+{
+  "status": "PRIOR_PROFILE_READ_ONLY_ATTRIBUTION_ANALYSIS_COMPLETE",
+  "created_utc": "2026-10-15T04:15:33.161018+00:00",
+  "new_gpu_runs": 0,
+  "source_sqlite": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m08-model-profile-results\\run-uml9cxd9\\original-model.sqlite",
+  "sqlite_open_mode": "read-only",
+  "source_sha256": {
+    "original-model.sqlite": "f0179cb1a4fe53f714ec5683dcfb70f485e03acbc0323e651851f20004b1726d",
+    "result.json": "d3d8de5b7745bb135d0303cf35a0a85d5fe64dfd59238f8eef61471c8f2b5a60",
+    "plan.json": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+    "m08_profile_worker.py": "70c4a057e182ad27fa2298daac9ba6cd49f14905b1b52b1d8893294728a90df3"
+  },
+  "method": "Kernel correlationId joins uniquely to CUDA runtime. Host NVTX containment uses runtime start/end and globalTid, not GPU timestamps inside CPU ranges. Graph creation timestamps are separately tested for enclosing NVTX.",
+  "schemas": {
+    "StringIds": "CREATE TABLE StringIds (\n    -- Consolidation of repetitive string values.\n\n    id                          INTEGER   NOT NULL   PRIMARY KEY,      -- ID reference value.\n    value                       TEXT      NOT NULL                     -- String value.\n)",
+    "CUPTI_ACTIVITY_KIND_RUNTIME": "CREATE TABLE CUPTI_ACTIVITY_KIND_RUNTIME (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER   NOT NULL,                    -- Event end timestamp (ns).\n    eventClass                  INTEGER   NOT NULL,                    -- REFERENCES ENUM_NSYS_EVENT_CLASS(id)\n    globalTid                   INTEGER,                               -- Serialized GlobalId.\n    correlationId               INTEGER,                               -- ID used to identify events that this function call has triggered.\n    nameId                      INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Function name\n    returnValue                 INTEGER   NOT NULL,                    -- Return value of the function call.\n    callchainId                 INTEGER                                -- REFERENCES CUDA_CALLCHAINS(id)\n)",
+    "CUPTI_ACTIVITY_KIND_KERNEL": "CREATE TABLE CUPTI_ACTIVITY_KIND_KERNEL (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER   NOT NULL,                    -- Event end timestamp (ns).\n    deviceId                    INTEGER   NOT NULL,                    -- Device ID.\n    contextId                   INTEGER   NOT NULL,                    -- Context ID.\n    greenContextId              INTEGER,                               -- Green context ID.\n    streamId                    INTEGER   NOT NULL,                    -- Stream ID.\n    correlationId               INTEGER,                               -- REFERENCES CUPTI_ACTIVITY_KIND_RUNTIME(correlationId)\n    globalPid                   INTEGER,                               -- Serialized GlobalId.\n    demangledName               INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Kernel function name w/ templates\n    shortName                   INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Base kernel function name\n    mangledName                 INTEGER,                               -- REFERENCES StringIds(id) -- Raw C++ mangled kernel function name\n    launchType                  INTEGER,                               -- REFERENCES ENUM_CUDA_KERNEL_LAUNCH_TYPE(id)\n    cacheConfig                 INTEGER,                               -- REFERENCES ENUM_CUDA_FUNC_CACHE_CONFIG(id)\n    registersPerThread          INTEGER   NOT NULL,                    -- Number of registers required for each thread executing the kernel.\n    gridX                       INTEGER   NOT NULL,                    -- X-dimension grid size.\n    gridY                       INTEGER   NOT NULL,                    -- Y-dimension grid size.\n    gridZ                       INTEGER   NOT NULL,                    -- Z-dimension grid size.\n    blockX                      INTEGER   NOT NULL,                    -- X-dimension block size.\n    blockY                      INTEGER   NOT NULL,                    -- Y-dimension block size.\n    blockZ                      INTEGER   NOT NULL,                    -- Z-dimension block size.\n    staticSharedMemory          INTEGER   NOT NULL,                    -- Static shared memory allocated for the kernel (B).\n    dynamicSharedMemory         INTEGER   NOT NULL,                    -- Dynamic shared memory reserved for the kernel (B).\n    localMemoryPerThread        INTEGER   NOT NULL,                    -- Amount of local memory reserved for each thread (B).\n    localMemoryTotal            INTEGER   NOT NULL,                    -- Total amount of local memory reserved for the kernel (B).\n    gridId                      INTEGER   NOT NULL,                    -- Unique grid ID of the kernel assigned at runtime.\n    sharedMemoryExecuted        INTEGER,                               -- Shared memory size set by the driver.\n    graphNodeId                 INTEGER,                               -- REFERENCES CUDA_GRAPH_NODE_EVENTS(graphNodeId)\n    sharedMemoryLimitConfig     INTEGER                                -- REFERENCES ENUM_CUDA_SHARED_MEM_LIMIT_CONFIG(id)\n)",
+    "CUDA_GRAPH_NODE_EVENTS": "CREATE TABLE CUDA_GRAPH_NODE_EVENTS (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER   NOT NULL,                    -- Event end timestamp (ns).\n    eventClass                  INTEGER   NOT NULL,                    -- REFERENCES ENUM_NSYS_EVENT_CLASS(id)\n    globalTid                   INTEGER,                               -- Serialized GlobalId.\n    nameId                      INTEGER   NOT NULL,                    -- REFERENCES StringIds(id) -- Function name\n    graphNodeId                 INTEGER   NOT NULL,                    -- Graph node ID.\n    originalGraphNodeId         INTEGER                                -- Reference to the original graph node ID, if cloned node.\n)",
+    "NVTX_EVENTS": "CREATE TABLE NVTX_EVENTS (\n    start                       INTEGER   NOT NULL,                    -- Event start timestamp (ns).\n    end                         INTEGER,                               -- Event end timestamp (ns).\n    eventType                   INTEGER   NOT NULL,                    -- REFERENCES ENUM_NSYS_EVENT_TYPE(id)\n    rangeId                     INTEGER,                               -- Correlation ID returned from a nvtxRangeStart call.\n    category                    INTEGER,                               -- User-controlled ID that can be used to group events.\n    color                       INTEGER,                               -- Encoded ARGB color value.\n    text                        TEXT,                                  -- Explicit name/text (non-registered string)\n    globalTid                   INTEGER,                               -- Serialized GlobalId.\n    endGlobalTid                INTEGER,                               -- Serialized GlobalId.\n    textId                      INTEGER,                               -- REFERENCES StringIds(id) -- Registered NVTX domain/string\n    domainId                    INTEGER,                               -- User-controlled ID that can be used to group events.\n    uint64Value                 INTEGER,                               -- One of possible payload value union members.\n    int64Value                  INTEGER,                               -- One of possible payload value union members.\n    doubleValue                 REAL,                                  -- One of possible payload value union members.\n    uint32Value                 INTEGER,                               -- One of possible payload value union members.\n    int32Value                  INTEGER,                               -- One of possible payload value union members.\n    floatValue                  REAL,                                  -- One of possible payload value union members.\n    jsonTextId                  INTEGER,                               -- One of possible payload value union members.\n    jsonText                    TEXT,                                  -- One of possible payload value union members.\n    binaryData                  TEXT                                   -- Binary payload. See docs for format.\n)"
+  },
+  "queries_and_results": {
+    "nvtx_names": {
+      "sql": "SELECT COALESCE(n.text,s.value) AS range_name, COUNT(*) AS ranges, SUM(n.end IS NOT NULL) AS completed, MIN(n.start) AS first_start_ns, MAX(n.end) AS last_end_ns FROM NVTX_EVENTS n LEFT JOIN StringIds s ON n.textId=s.id GROUP BY 1 ORDER BY COUNT(*) DESC",
+      "rows": [
+        {
+          "range_name": "Sampler",
+          "ranges": 64,
+          "completed": 64,
+          "first_start_ns": 15233660,
+          "last_end_ns": 138469712
+        },
+        {
+          "range_name": "MLP",
+          "ranges": 28,
+          "completed": 28,
+          "first_start_ns": 8922198,
+          "last_end_ns": 15076790
+        },
+        {
+          "range_name": "MHA",
+          "ranges": 28,
+          "completed": 28,
+          "first_start_ns": 8267621,
+          "last_end_ns": 15010506
+        },
+        {
+          "range_name": "M08_ORIGINAL_GENERATE",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 6727523,
+          "last_end_ns": 141659872
+        },
+        {
+          "range_name": "Layer_9",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 10894757,
+          "last_end_ns": 11087293
+        },
+        {
+          "range_name": "Layer_8",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 10664371,
+          "last_end_ns": 10890733
+        },
+        {
+          "range_name": "Layer_7",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 10437299,
+          "last_end_ns": 10659761
+        },
+        {
+          "range_name": "Layer_6",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 10221350,
+          "last_end_ns": 10433569
+        },
+        {
+          "range_name": "Layer_5",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 10004269,
+          "last_end_ns": 10217391
+        },
+        {
+          "range_name": "Layer_4",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 9786199,
+          "last_end_ns": 10000530
+        },
+        {
+          "range_name": "Layer_3",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 9546579,
+          "last_end_ns": 9781752
+        },
+        {
+          "range_name": "Layer_27",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 14873469,
+          "last_end_ns": 15078505
+        },
+        {
+          "range_name": "Layer_26",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 14663694,
+          "last_end_ns": 14869691
+        },
+        {
+          "range_name": "Layer_25",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 14451268,
+          "last_end_ns": 14660258
+        },
+        {
+          "range_name": "Layer_24",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 14236220,
+          "last_end_ns": 14447534
+        },
+        {
+          "range_name": "Layer_23",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 14014693,
+          "last_end_ns": 14232218
+        },
+        {
+          "range_name": "Layer_22",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 13733158,
+          "last_end_ns": 14010351
+        },
+        {
+          "range_name": "Layer_21",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 13521304,
+          "last_end_ns": 13729408
+        },
+        {
+          "range_name": "Layer_20",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 13291610,
+          "last_end_ns": 13517317
+        },
+        {
+          "range_name": "Layer_2",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 9309711,
+          "last_end_ns": 9542345
+        },
+        {
+          "range_name": "Layer_19",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 13066735,
+          "last_end_ns": 13287655
+        },
+        {
+          "range_name": "Layer_18",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 12847012,
+          "last_end_ns": 13062800
+        },
+        {
+          "range_name": "Layer_17",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 12636452,
+          "last_end_ns": 12843258
+        },
+        {
+          "range_name": "Layer_16",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 12428256,
+          "last_end_ns": 12633047
+        },
+        {
+          "range_name": "Layer_15",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 12215376,
+          "last_end_ns": 12424439
+        },
+        {
+          "range_name": "Layer_14",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 12006813,
+          "last_end_ns": 12211611
+        },
+        {
+          "range_name": "Layer_13",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 11796074,
+          "last_end_ns": 12003048
+        },
+        {
+          "range_name": "Layer_12",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 11581196,
+          "last_end_ns": 11792278
+        },
+        {
+          "range_name": "Layer_11",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 11362885,
+          "last_end_ns": 11577288
+        },
+        {
+          "range_name": "Layer_10",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 11091289,
+          "last_end_ns": 11358527
+        },
+        {
+          "range_name": "Layer_1",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 9031586,
+          "last_end_ns": 9305207
+        },
+        {
+          "range_name": "Layer_0",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 8233521,
+          "last_end_ns": 9026535
+        },
+        {
+          "range_name": "LMHead",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 15094201,
+          "last_end_ns": 15222852
+        },
+        {
+          "range_name": "Embedding",
+          "ranges": 1,
+          "completed": 1,
+          "first_start_ns": 8182476,
+          "last_end_ns": 8226085
+        }
+      ]
+    },
+    "kernel_identity_totals": {
+      "sql": "SELECT COUNT(*) AS kernels,COUNT(DISTINCT globalPid) AS processes,COUNT(DISTINCT deviceId) AS devices,COUNT(DISTINCT contextId) AS contexts,COUNT(DISTINCT streamId) AS streams,SUM(end-start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL",
+      "rows": [
+        {
+          "kernels": 11976,
+          "processes": 1,
+          "devices": 1,
+          "contexts": 1,
+          "streams": 1,
+          "cumulative_kernel_ns": 103927254
+        }
+      ]
+    },
+    "runtime_identity": {
+      "sql": "SELECT COUNT(*) AS runtime_events,SUM(callchainId IS NOT NULL) AS available_callchains,COUNT(DISTINCT globalTid) AS threads FROM CUPTI_ACTIVITY_KIND_RUNTIME",
+      "rows": [
+        {
+          "runtime_events": 2490,
+          "available_callchains": 0,
+          "threads": 1
+        }
+      ]
+    },
+    "runtime_duplicate_correlations": {
+      "sql": "SELECT COUNT(*) AS duplicated_correlation_ids FROM (SELECT correlationId FROM CUPTI_ACTIVITY_KIND_RUNTIME GROUP BY correlationId HAVING COUNT(*)>1)",
+      "rows": [
+        {
+          "duplicated_correlation_ids": 0
+        }
+      ]
+    },
+    "kernel_runtime_join_coverage": {
+      "sql": "SELECT SUM(EXISTS(SELECT 1 FROM CUPTI_ACTIVITY_KIND_RUNTIME r WHERE r.correlationId=k.correlationId)) AS kernels_with_runtime,COUNT(*) AS kernels FROM CUPTI_ACTIVITY_KIND_KERNEL k",
+      "rows": [
+        {
+          "kernels_with_runtime": 11976,
+          "kernels": 11976
+        }
+      ]
+    },
+    "kernel_runtime_functions": {
+      "sql": "SELECT s.value AS runtime_name,COUNT(*) AS kernels,COUNT(DISTINCT k.correlationId) AS correlations,SUM(k.end-k.start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL k JOIN CUPTI_ACTIVITY_KIND_RUNTIME r ON k.correlationId=r.correlationId JOIN StringIds s ON r.nameId=s.id GROUP BY 1",
+      "rows": [
+        {
+          "runtime_name": "cudaGraphLaunch_v10000",
+          "kernels": 11408,
+          "correlations": 31,
+          "cumulative_kernel_ns": 99382088
+        },
+        {
+          "runtime_name": "cudaLaunchKernelExC_v11060",
+          "kernels": 170,
+          "correlations": 170,
+          "cumulative_kernel_ns": 280780
+        },
+        {
+          "runtime_name": "cudaLaunchKernel_v7000",
+          "kernels": 398,
+          "correlations": 398,
+          "cumulative_kernel_ns": 4264386
+        }
+      ]
+    },
+    "kernel_graph_split": {
+      "sql": "SELECT graphNodeId IS NOT NULL AS in_graph,COUNT(*) AS kernels,COUNT(DISTINCT correlationId) AS correlations,SUM(end-start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL GROUP BY 1",
+      "rows": [
+        {
+          "in_graph": 0,
+          "kernels": 568,
+          "correlations": 568,
+          "cumulative_kernel_ns": 4545166
+        },
+        {
+          "in_graph": 1,
+          "kernels": 11408,
+          "correlations": 31,
+          "cumulative_kernel_ns": 99382088
+        }
+      ]
+    },
+    "graph_creation_metadata": {
+      "sql": "SELECT COUNT(*) AS creation_events,COUNT(DISTINCT graphNodeId) AS distinct_node_ids,SUM(originalGraphNodeId IS NOT NULL) AS clone_records,MIN(start) AS earliest_ns,MAX(end) AS latest_ns,MIN(end-start) AS min_duration_ns,MAX(end-start) AS max_duration_ns FROM CUDA_GRAPH_NODE_EVENTS",
+      "rows": [
+        {
+          "creation_events": 1127,
+          "distinct_node_ids": 759,
+          "clone_records": 368,
+          "earliest_ns": -672712167,
+          "latest_ns": -668558675,
+          "min_duration_ns": 0,
+          "max_duration_ns": 0
+        }
+      ]
+    },
+    "graph_node_nvtx_coverage": {
+      "sql": "SELECT COUNT(*) AS graph_kernels,SUM(EXISTS(SELECT 1 FROM CUDA_GRAPH_NODE_EVENTS n WHERE n.graphNodeId=k.graphNodeId)) AS with_creation_event,SUM(EXISTS(SELECT 1 FROM CUDA_GRAPH_NODE_EVENTS g JOIN NVTX_EVENTS n ON n.globalTid=g.globalTid AND n.start<=g.start AND n.end>=g.end WHERE g.graphNodeId=k.graphNodeId)) AS with_creation_time_nvtx FROM CUPTI_ACTIVITY_KIND_KERNEL k WHERE k.graphNodeId IS NOT NULL",
+      "rows": [
+        {
+          "graph_kernels": 11408,
+          "with_creation_event": 11408,
+          "with_creation_time_nvtx": 0
+        }
+      ]
+    },
+    "graph_runtime_nvtx_parents": {
+      "sql": "SELECT COALESCE(n.text,s.value) AS range_name,COUNT(*) AS graph_runtime_calls FROM CUPTI_ACTIVITY_KIND_RUNTIME r JOIN StringIds rn ON rn.id=r.nameId JOIN NVTX_EVENTS n ON n.globalTid=r.globalTid AND n.start<=r.start AND n.end>=r.end LEFT JOIN StringIds s ON n.textId=s.id WHERE rn.value LIKE '%GraphLaunch%' GROUP BY 1",
+      "rows": [
+        {
+          "range_name": "M08_ORIGINAL_GENERATE",
+          "graph_runtime_calls": 31
+        }
+      ]
+    },
+    "gemv_kv_totals": {
+      "sql": "SELECT s.value AS kernel_name,COUNT(*) AS kernels,SUM(k.end-k.start) AS cumulative_kernel_ns,SUM(k.graphNodeId IS NOT NULL) AS graph_kernels,COUNT(DISTINCT k.correlationId) AS correlations,COUNT(DISTINCT k.graphNodeId) AS graph_node_ids FROM CUPTI_ACTIVITY_KIND_KERNEL k JOIN StringIds s ON k.demangledName=s.id WHERE s.value LIKE '%gemv%' OR s.value LIKE '%store_kv%' GROUP BY 1",
+      "rows": [
+        {
+          "kernel_name": "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)",
+          "kernels": 3472,
+          "cumulative_kernel_ns": 64975756,
+          "graph_kernels": 3472,
+          "correlations": 31,
+          "graph_node_ids": 112
+        },
+        {
+          "kernel_name": "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)",
+          "kernels": 32,
+          "cumulative_kernel_ns": 21642346,
+          "graph_kernels": 31,
+          "correlations": 32,
+          "graph_node_ids": 1
+        },
+        {
+          "kernel_name": "void <unnamed>::store_kv_cache<(unsigned long)128, (unsigned long)1, (bool)0, (unsigned long)2048, int>(<unnamed>::StoreKernelParams)",
+          "kernels": 896,
+          "cumulative_kernel_ns": 812245,
+          "graph_kernels": 868,
+          "correlations": 59,
+          "graph_node_ids": 28
+        }
+      ]
+    },
+    "module_runtime_nvtx_attribution": {
+      "sql": "SELECT n.text AS range_name,COUNT(*) AS kernels,SUM(k.end-k.start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL k JOIN CUPTI_ACTIVITY_KIND_RUNTIME r ON r.correlationId=k.correlationId JOIN NVTX_EVENTS n ON n.globalTid=r.globalTid AND n.start<=r.start AND n.end>=r.end WHERE n.text IN ('MHA','MLP','LMHead','Embedding','Sampler') GROUP BY 1 ORDER BY SUM(k.end-k.start) DESC",
+      "rows": [
+        {
+          "range_name": "MHA",
+          "kernels": 196,
+          "cumulative_kernel_ns": 1689051
+        },
+        {
+          "range_name": "MLP",
+          "kernels": 84,
+          "cumulative_kernel_ns": 1608309
+        },
+        {
+          "range_name": "LMHead",
+          "kernels": 4,
+          "cumulative_kernel_ns": 661898
+        },
+        {
+          "range_name": "Sampler",
+          "kernels": 64,
+          "cumulative_kernel_ns": 329472
+        },
+        {
+          "range_name": "Embedding",
+          "kernels": 1,
+          "cumulative_kernel_ns": 1377
+        }
+      ]
+    },
+    "non_graph_gemv_nvtx": {
+      "sql": "SELECT ks.value AS kernel_name,COALESCE(n.text,ns.value) AS range_name,COUNT(*) AS kernels,SUM(k.end-k.start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL k JOIN StringIds ks ON k.demangledName=ks.id JOIN CUPTI_ACTIVITY_KIND_RUNTIME r ON r.correlationId=k.correlationId JOIN NVTX_EVENTS n ON n.globalTid=r.globalTid AND n.start<=r.start AND n.end>=r.end LEFT JOIN StringIds ns ON ns.id=n.textId WHERE ks.value LIKE '%gemvx%' AND k.graphNodeId IS NULL GROUP BY 1,2",
+      "rows": [
+        {
+          "kernel_name": "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)",
+          "range_name": "LMHead",
+          "kernels": 1,
+          "cumulative_kernel_ns": 656458
+        },
+        {
+          "kernel_name": "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, __half, __half, __half, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<const __half>, cublasGemvTensorStridedBatched<__half>, float>>(T13)",
+          "range_name": "M08_ORIGINAL_GENERATE",
+          "kernels": 1,
+          "cumulative_kernel_ns": 656458
+        }
+      ]
+    },
+    "kv_nvtx": {
+      "sql": "SELECT n.text AS range_name,COUNT(*) AS kernels,SUM(k.end-k.start) AS cumulative_kernel_ns FROM CUPTI_ACTIVITY_KIND_KERNEL k JOIN CUPTI_ACTIVITY_KIND_RUNTIME r ON r.correlationId=k.correlationId JOIN StringIds ks ON k.demangledName=ks.id JOIN NVTX_EVENTS n ON n.globalTid=r.globalTid AND n.start<=r.start AND n.end>=r.end WHERE ks.value LIKE '%store_kv%' AND n.text IN ('MHA','M08_ORIGINAL_GENERATE') GROUP BY 1",
+      "rows": [
+        {
+          "range_name": "M08_ORIGINAL_GENERATE",
+          "kernels": 896,
+          "cumulative_kernel_ns": 812245
+        },
+        {
+          "range_name": "MHA",
+          "kernels": 28,
+          "cumulative_kernel_ns": 35969
+        }
+      ]
+    }
+  },
+  "confirmed_findings": [
+    "All 11976 kernels join to a unique CUDA runtime correlation in this single-process, single-device, single-context, single-stream trace.",
+    "11408 Graph kernels share 31 cudaGraphLaunch correlations; those runtime events are enclosed only by M08_ORIGINAL_GENERATE.",
+    "Graph node creation events are retained, but their negative timestamps precede all retained NVTX ranges. No Graph kernel can be assigned a captured module through creation-time NVTX in this export.",
+    "The one non-Graph gemvx int7 occurrence is directly associated with LMHead: 656458 ns. This does not independently assign the other 31 Graph int7 occurrences to that module.",
+    "The 3472 gemvx int6 occurrences are all Graph nodes; their 112 node IDs and 31 repeats alone do not establish each model linear role or tensor shape.",
+    "28 non-Graph KV kernels join to MHA, totaling 35969 ns; 868 other KV kernels are Graph nodes."
+  ],
+  "limits": [
+    "The 43 workload uses decode Graph; these durations must not be copied into any new Eager profile as equivalent measurements.",
+    "Existing MHA/MLP/Layer NVTX does not label individual linear operator shape; tensor shape cannot be recovered from these generic template names alone.",
+    "NVTX is host range duration and kernel durations are GPU activities; nested ranges are not disjoint buckets and must not be summed without a stated assignment rule.",
+    "No CUDA runtime callchain is saved, so missing module context cannot be recovered using that field.",
+    "Cumulative kernel time is not generate wall-clock critical-path time or an Amdahl bound.",
+    "No new performance measurements, hardware-counter observations, or speedup claim are created by this read-only analysis."
+  ],
+  "next_observation": "A separate observational Eager profile with explicit linear-operation labels and shape metadata can map runtime correlations to exact calls. Record it as a new policy/run, not as decomposition of the old Graph timing."
+}

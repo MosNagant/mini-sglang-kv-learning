@@ -1,0 +1,7 @@
+{
+  "status": "INDEPENDENT_CPU_HOST_MODEL_AUDIT_FAILED",
+  "gpu_run": false,
+  "error": "Traceback (most recent call last):\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\20261015-m08-host-model-audit.py\", line 354, in <module>\n    report = audit(args.run)\n             ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\20261015-m08-host-model-audit.py\", line 336, in audit\n    details = (audit_check if plan['mode'] == 'check' else audit_timing)(run, plan, result)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\reviews\\20261015-m08-host-model-audit.py\", line 293, in audit_timing\n    require(cache['max_entries'] == 64 and cache['counters'] is False, 'Cached metadata policy differs')\n                                           ~~~~~^^^^^^^^^^^^\nKeyError: 'counters'\n",
+  "run": "outputs\\kv-cache-performance\\logs\\m08-host-path-timing-results\\run-20261015-033254-kxw4qv2v",
+  "audit_script_sha256": "4ba3f5d1307bbe6e2f82d6d5b67cebc3b798961fc1a3c227d3b994a0b3e54447"
+}

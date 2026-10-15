@@ -1,0 +1,118 @@
+{
+  "status": "EXACT_ROUNDING_CPU_CONTROLS_PASS",
+  "gpu_execution": false,
+  "controls": [
+    {
+      "x": [
+        1,
+        1
+      ],
+      "w": [
+        1,
+        0.00048828125
+      ],
+      "expected_fp16_bits": 15360,
+      "actual_fp16_bits": 15360,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        1,
+        1
+      ],
+      "w": [
+        1,
+        0.00146484375
+      ],
+      "expected_fp16_bits": 15362,
+      "actual_fp16_bits": 15362,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        1,
+        1
+      ],
+      "w": [
+        -1,
+        -0.00048828125
+      ],
+      "expected_fp16_bits": 48128,
+      "actual_fp16_bits": 48128,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        1,
+        1
+      ],
+      "w": [
+        -1,
+        -0.00146484375
+      ],
+      "expected_fp16_bits": 48130,
+      "actual_fp16_bits": 48130,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        5.960464477539063e-08
+      ],
+      "w": [
+        0.5
+      ],
+      "expected_fp16_bits": 0,
+      "actual_fp16_bits": 0,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        -5.960464477539063e-08
+      ],
+      "w": [
+        0.5
+      ],
+      "expected_fp16_bits": 32768,
+      "actual_fp16_bits": 32768,
+      "exact_dot_matches_fraction": true,
+      "midpoint": true
+    },
+    {
+      "x": [
+        65504,
+        65504
+      ],
+      "w": [
+        1,
+        -1
+      ],
+      "expected_fp16_bits": 0,
+      "actual_fp16_bits": 0,
+      "exact_dot_matches_fraction": true,
+      "midpoint": false
+    },
+    {
+      "x": [
+        0.25,
+        0.5,
+        1
+      ],
+      "w": [
+        -0.125,
+        0.25,
+        -0.5
+      ],
+      "expected_fp16_bits": 46720,
+      "actual_fp16_bits": 46720,
+      "exact_dot_matches_fraction": true,
+      "midpoint": false
+    }
+  ],
+  "analysis_source_sha256": "61e0813ad415ce688dbaaefbf3ff18617ee565571226259019addcd8255d557d",
+  "limit": "Finite-output audit cases including positive/negative midpoints, signed zero and cancellation; not GPU implementation tests."
+}

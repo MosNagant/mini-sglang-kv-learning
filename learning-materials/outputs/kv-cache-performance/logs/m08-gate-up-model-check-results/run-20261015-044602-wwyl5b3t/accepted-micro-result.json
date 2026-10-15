@@ -1,0 +1,81 @@
+{
+  "status": "GATE_UP_CAMPAIGN_COMPLETE",
+  "candidate_source_sha256": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+  "fixture_sha256": "a32b943dba7a5f341b6eb73913555d2eb5c63b12e598e0423428dbc04d1d88ee",
+  "plan_sha256": "e908ac4bc86e371c11db12d6c9a1b3ac6d2b617b5c0d0f16ee3550fbb80b8d59",
+  "selected_candidate": "swiglu_fused_r8_w4",
+  "numerical_eligible": [
+    "gemv_direct_r4_w4",
+    "gemv_direct_r8_w4",
+    "gemv_direct_r8_w8",
+    "gemv_splitk4_r4_w4",
+    "swiglu_fused_r4_w4",
+    "swiglu_fused_r8_w4",
+    "swiglu_packed_r4_w4"
+  ],
+  "selection": {
+    "primary": "rotate28_graph_step1",
+    "selected_candidate": "swiglu_fused_r8_w4",
+    "ratios_all": {
+      "gemv_direct_r4_w4": [
+        0.9979327225722859,
+        0.9597187168884963,
+        0.983521731634378
+      ],
+      "gemv_direct_r8_w4": [
+        0.999992618030717,
+        0.9902839113760143,
+        0.9905379091620213
+      ],
+      "gemv_direct_r8_w8": [
+        0.9791157270159948,
+        0.9542970379113704,
+        0.9513602733753262
+      ],
+      "gemv_splitk4_r4_w4": [
+        0.9236837873177448,
+        0.9126410480237893,
+        0.9015403699938781
+      ],
+      "swiglu_fused_r4_w4": [
+        1.061836122639189,
+        1.0074851750997231,
+        1.0143938623843844
+      ],
+      "swiglu_fused_r8_w4": [
+        1.022066599399514,
+        1.0257760280798904,
+        1.0319920186539366
+      ],
+      "swiglu_packed_r4_w4": [
+        1.0539429408169865,
+        0.9997408733970101,
+        1.0101347320542784
+      ]
+    },
+    "per_round_speedups": [
+      1.022066599399514,
+      1.0257760280798904,
+      1.0319920186539366
+    ],
+    "representative_speedup": 1.0257760280798904,
+    "strong_local_gain": false
+  },
+  "selection_sha256": "e67d1fe0b1ed598afa18a57bb8281a535b6e8ffcb76519cdbcc6f4b12acd4d36",
+  "holdout": {
+    "status": "PASS",
+    "meaning": "All holdout correctness/timing collection completed; performance acceptance is separate",
+    "per_step_ratios": {
+      "16": [
+        0.9834739985642849,
+        0.9931560316617,
+        0.9736978307150924
+      ],
+      "31": [
+        0.974298105490707,
+        1.0392835583437705,
+        0.9611293130080582
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "status": "GRAPH_GREEDY_INDEPENDENT_AUDIT_PASS",
+  "gpu_execution": false,
+  "evidence": {
+    "mode": "check",
+    "frozen_files_verified": 108,
+    "saved_logit_arrays_verified": 192,
+    "logit_elements_compared_between_arms": 14585856,
+    "bit_differences": 0,
+    "generated_tokens_per_arm": 96,
+    "replays_per_arm": 93,
+    "candidate_sample_hits": 93,
+    "A_B_A_repeat_checks": [
+      {
+        "arm": "original_graph",
+        "A_before_after_B_bitwise_equal": true,
+        "A_before_after_B_tokens_equal": true
+      },
+      {
+        "arm": "graph_greedy",
+        "A_before_after_B_bitwise_equal": true,
+        "A_before_after_B_tokens_equal": true
+      }
+    ],
+    "changed_input_observations": [
+      {
+        "arm": "original_graph",
+        "A_vs_B_bit_differences": 4860789,
+        "A_vs_B_tokens_differ": true
+      },
+      {
+        "arm": "graph_greedy",
+        "A_vs_B_bit_differences": 4860789,
+        "A_vs_B_tokens_differ": true
+      }
+    ]
+  },
+  "audit_source_sha256": "3b82938b678370af2c1ff2bf15c7f8406ef84111135d36e3a5f82974df12ea3b",
+  "result_sha256": "8a6c1548f5ab8bf258b055371bb0ca8ae4f7fafddcd6a7f44446af00df1b843e",
+  "plan_sha256": "087491289339ac514277e6e9c3f6653dfd3643e5466571df8c8cb7d4e172b140",
+  "limit": "CPU audit of saved fixed B1/TP1/FP16 Qwen3-0.6B/RTX4070Ti evidence. Candidate retains original math and captures original sampling; not kernel fusion, Triton/AMD gain or general model-quality proof. No automatic promotion."
+}

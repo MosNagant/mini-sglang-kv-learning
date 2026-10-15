@@ -1,0 +1,14 @@
+{
+  "status": "CPU_CONTROLS_PASS",
+  "runner_sha256": "f1ce20d7204acb5e3a9d0746c3ff5e078d46a3bb6ff931a5e6eeb8b953e9de44",
+  "checks": [
+    "all_32_steps_4861952_elements_exact_pass",
+    "within_declared_tolerance_pass",
+    "one_logit_violation_rejected",
+    "nonfinite_logit_rejected",
+    "token_mismatch_rejected_despite_equal_logits",
+    "gemv_prefill_current_input_capture_order_weight_identity_restore_pass",
+    "swiglu_prefill_current_input_capture_order_weight_identity_restore_pass"
+  ],
+  "limit": "Synthetic CPU arrays and fake model objects only; no GPU execution or model numerical/performance acceptance."
+}

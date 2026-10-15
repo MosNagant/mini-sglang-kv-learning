@@ -1,0 +1,5 @@
+TIMING_SECTION step=31 round=1 hot_l0 graph
+TIMING_SECTION step=31 round=1 hot_l0 eager
+TIMING_SECTION step=31 round=1 rotate28 graph
+TIMING_SECTION step=31 round=1 rotate28 eager
+PRIMARY_MEDIANS={'original': 30.014170919145855, 'swiglu_fused_r8_w4': 30.80594199044364}

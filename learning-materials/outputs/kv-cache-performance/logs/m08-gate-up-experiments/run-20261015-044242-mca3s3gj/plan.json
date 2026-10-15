@@ -1,0 +1,85 @@
+{
+  "fixture_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-gate-up-fixture-results/run-20261015-043631-di2tue9u",
+  "fixture_sha256": "a32b943dba7a5f341b6eb73913555d2eb5c63b12e598e0423428dbc04d1d88ee",
+  "candidate_source_sha256": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+  "candidates": [
+    {
+      "name": "gemv_direct_r4_w4",
+      "kind": "gemv",
+      "family": "direct",
+      "row_tile": 4,
+      "num_warps": 4,
+      "description": "Direct FP32 dot reduction; four output rows per program, four warps."
+    },
+    {
+      "name": "gemv_direct_r8_w4",
+      "kind": "gemv",
+      "family": "direct",
+      "row_tile": 8,
+      "num_warps": 4,
+      "description": "Direct FP32 dot reduction; eight output rows per program, four warps."
+    },
+    {
+      "name": "gemv_direct_r8_w8",
+      "kind": "gemv",
+      "family": "direct",
+      "row_tile": 8,
+      "num_warps": 8,
+      "description": "Direct FP32 dot reduction; eight output rows per program, eight warps."
+    },
+    {
+      "name": "gemv_splitk4_r4_w4",
+      "kind": "gemv",
+      "family": "split_k",
+      "row_tile": 4,
+      "num_warps": 4,
+      "description": "Four K partitions with FP32 partial storage and a fixed second reduction; no atomics."
+    },
+    {
+      "name": "swiglu_fused_r4_w4",
+      "kind": "swiglu",
+      "family": "fused",
+      "row_tile": 4,
+      "num_warps": 4,
+      "description": "Four gate/up pairs per program, explicit FP16 intermediate rounding, fused SiLU multiply."
+    },
+    {
+      "name": "swiglu_fused_r8_w4",
+      "kind": "swiglu",
+      "family": "fused",
+      "row_tile": 8,
+      "num_warps": 4,
+      "description": "Eight gate/up pairs per program, explicit FP16 intermediate rounding, fused SiLU multiply."
+    },
+    {
+      "name": "swiglu_packed_r4_w4",
+      "kind": "swiglu",
+      "family": "packed_fused",
+      "row_tile": 4,
+      "num_warps": 4,
+      "description": "Four pairs per program with an actual contiguous [3072,2,1024] gate/up weight copy."
+    }
+  ],
+  "frozen_files": {
+    "runner.py": "864eb23a76bc4010762ec97eb0be8df0728019981685236e57836618cdecfbf8",
+    "candidates.py": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a"
+  },
+  "numerical_rule": {
+    "all_elements_atol": 0.002,
+    "rtol": 0.002,
+    "nrmse_multiplier": 1.1,
+    "nrmse_floor": 1e-06,
+    "oracle": "FP64 dot; Y uses FP16-rounded dot then FP64 SiLU/product before final output rounding"
+  },
+  "primary": "rotate28_graph_step1_full_GateUp_plus_SwiGLU",
+  "timing": {
+    "fresh_process_rounds": 3,
+    "interval_samples": 30,
+    "hot_replays": 100,
+    "rotate28_replays": 10
+  },
+  "selection_rule": "Best median of paired per-round original/candidate ratios among candidates passing all84 numeric cases; no timing on failed candidates. Freeze once before holdout step16/31 timing.",
+  "strong_local_gain_rule": "Median paired latency reduction >=10%, every one of three process rounds reduction >=5%. Engineering threshold, not statistical confidence.",
+  "model_rule": "Selected candidate may undergo investigative model check even without strong local gain; exact32 greedy tokens and all32 full logits finite and abs_error<=0.002+0.002*abs(original) required before model timing. No automatic promotion.",
+  "author": "coach; independent learner mastery not assessed"
+}

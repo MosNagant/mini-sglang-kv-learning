@@ -1,0 +1,276 @@
+{
+  "status": "STABLE_RUNTIME_INDEPENDENT_AUDIT_PASS",
+  "gpu_execution": false,
+  "evidence": {
+    "mode": "check",
+    "frozen_files_verified": 105,
+    "logit_arrays_verified": 64,
+    "logit_elements_compared": 4861952,
+    "all32_logits_bitwise_equal_after_value_preserving_cpu_conversion": true,
+    "max_abs_logit_difference": 0.0,
+    "actual_graph_replays": 31,
+    "exact_generated_tokens_per_policy": 32,
+    "steps": [
+      {
+        "step": 0,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 1,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 2,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 3,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 4,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 5,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 6,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 7,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 8,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 9,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 10,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 11,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 12,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 13,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 14,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 15,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 16,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 17,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 18,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 19,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 20,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 21,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 22,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 23,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 24,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 25,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 26,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 27,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 28,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 29,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 30,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 31,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      }
+    ]
+  },
+  "audit_source_sha256": "b6693f4a54fe781155dc2d7ecf0649c8a4dcbf013da194365bbe93299efe4b2e",
+  "result_sha256": "9d482bade8fd5113cc1ce699ddd62e2994b4d448edc61825248093a30d42814d",
+  "plan_sha256": "ae7eaba6a2b193968c40df08e149a5f0c749a10ab41c8edc760496316fb496c3",
+  "limit": "CPU recomputation of saved fixed128/32 evidence. Fair comparison is original Eager versus upstream original Graph through identical API; not a new Triton/kernel/AMD speedup or broad model-quality proof."
+}

@@ -1,0 +1,9 @@
+{
+  "source": "53-m08-stable-runtime.py",
+  "source_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "release": "stable/stable_infer.py",
+  "release_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "project": "/home/weltlaw/projects/mini-sglang-kv",
+  "execution": "decode_graph default",
+  "scope": "Fresh CLI process against live original project; source/model/packages checked by stable runtime beforeEngine, no performance measurement"
+}

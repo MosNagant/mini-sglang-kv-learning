@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/41-m08-model-check.py", line 280, in worker
+    llm = ObservedLLM(request["model"]["path"], dtype=torch.float16, **ENGINE_OPTIONS)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/llm/llm.py", line 37, in __init__
+    super().__init__(config)
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/scheduler/scheduler.py", line 49, in __init__
+    self.engine = Engine(config)
+                  ^^^^^^^^^^^^^^
+  File "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/engine/engine.py", line 31, in __init__
+    assert not torch.cuda.is_initialized()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

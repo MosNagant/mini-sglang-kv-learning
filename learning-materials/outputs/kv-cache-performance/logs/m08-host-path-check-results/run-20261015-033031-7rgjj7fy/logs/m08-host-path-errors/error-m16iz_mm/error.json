@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/runner.py",
+    "--worker-check",
+    "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy",
+    "--arm",
+    "original"
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/runner.py\", line 400, in <module>\n    main()\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/runner.py\", line 358, in main\n    check_worker(args.worker_check.resolve(), args.arm)\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/runner.py\", line 190, in check_worker\n    module.worker(run, arm)\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/41-m08-model-check.py\", line 280, in worker\n    llm = ObservedLLM(request[\"model\"][\"path\"], dtype=torch.float16, **ENGINE_OPTIONS)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/llm/llm.py\", line 37, in __init__\n    super().__init__(config)\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/scheduler/scheduler.py\", line 49, in __init__\n    self.engine = Engine(config)\n                  ^^^^^^^^^^^^^^\n  File \"/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/source/python/minisgl/engine/engine.py\", line 31, in __init__\n    assert not torch.cuda.is_initialized()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "runner_sha256": "d414b04be387e83aadfcae5be8f11677ce0ab6dcff16ad2a2789dc8daf844bc9"
+}

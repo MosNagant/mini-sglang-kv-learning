@@ -1,0 +1,9 @@
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1m[2026-10-15|13:41:26|core|rank=0][0m [32mINFO    [0m Free memory before loading model: 10.77 GiB
+Loading weights:   0%|          | 0/1 [00:00<?, ?it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  2.10it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  2.10it/s]
+[1m[2026-10-15|13:41:27|core|rank=0][0m [32mINFO    [0m Allocating 512 tokens for KV cache, K + V = 0.05 GiB
+[1m[2026-10-15|13:41:27|core|rank=0][0m [32mINFO    [0m Free memory after initialization: 9.36 GiB
+[1m[2026-10-15|13:41:27|core|rank=0][0m [32mINFO    [0m Start capturing CUDA graphs with sizes: [1]
+[1m[2026-10-15|13:41:27|core|rank=0][0m [32mINFO    [0m Free GPU memory before capturing CUDA graphs: 9.36 GiB
+Preparing for capturing CUDA graphs...:   0%|          | 0/1 [00:00<?, ?batch/s]Capturing graphs: bs = 1   | avail_mem = 9.36 GiB:   0%|          | 0/1 [00:00<?, ?batch/s]Capturing graphs: bs = 1   | avail_mem = 9.36 GiB: 100%|██████████| 1/1 [00:00<00:00,  1.85batch/s]Capturing graphs: bs = 1   | avail_mem = 9.36 GiB: 100%|██████████| 1/1 [00:00<00:00,  1.85batch/s]
+[1m[2026-10-15|13:41:27|core|rank=0][0m [32mINFO    [0m Free GPU memory after capturing CUDA graphs: 9.34 GiB

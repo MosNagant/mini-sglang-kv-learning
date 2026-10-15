@@ -1,0 +1,30 @@
+[
+  {
+    "kernel_index": 0,
+    "name": "_gemv_splitk_partials",
+    "n_regs": 22,
+    "n_spills_raw": 0,
+    "shared_bytes": 512,
+    "files": {
+      "kernel0.ttir": "251ac083b8871b7bb0ea97cf7d48eb1f43da9492e23e1950be175c4184107fcb",
+      "kernel0.ttgir": "7dec03eacf295129354d5fd7193ed63e34153daec95567d609b04b31759b7a8f",
+      "kernel0.llir": "6b05f9abbf295bf410524340485cddcb6bfa52b7c108ed6a22f7745b17ea0707",
+      "kernel0.ptx": "59c722600e36244ed538bcea4af5a4db41c654f9d158fe6407351763748b2564",
+      "kernel0.cubin": "8da719025dc44013f6310650e80ecd5ce7c99efa5dcdff0523829282cf48fbb5"
+    }
+  },
+  {
+    "kernel_index": 1,
+    "name": "_gemv_splitk_reduce",
+    "n_regs": 20,
+    "n_spills_raw": 0,
+    "shared_bytes": 2048,
+    "files": {
+      "kernel1.ttir": "47fb4ba84065163213dbebe4ac58a920a8ebaa2006de41d802d3c5b715e6a040",
+      "kernel1.ttgir": "46b01bc25a195444581fc4d546d8ee099e79a4462a9bbc3e743e513bea4b13dd",
+      "kernel1.llir": "380a3a2b2ce009d6362c680f6911ae7481f5bb30f3db6f7198a3a8c8f118c43f",
+      "kernel1.ptx": "29490a637a3730d733c45cd4a4874fcd98180c4aa6cd28cdcf7a4a47f79be30e",
+      "kernel1.cubin": "8fa6b908c05cc3b2f62b5c32efa1c5d3c21d66483a2734aa1c8a57b2b6c36c7e"
+    }
+  }
+]

@@ -1,0 +1,150 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-timing/run-20261015-033254-kxw4qv2v
+RUN decode_graph-round1-original
+COLLECTED decode_graph-round1-original median_ms=129.685891
+RUN decode_graph-round1-checked_triton
+COLLECTED decode_graph-round1-checked_triton median_ms=132.303359
+RUN decode_graph-round1-cached_triton
+COLLECTED decode_graph-round1-cached_triton median_ms=135.000584
+RUN eager-round1-original
+COLLECTED eager-round1-original median_ms=239.534530
+RUN eager-round1-checked_triton
+COLLECTED eager-round1-checked_triton median_ms=254.885127
+RUN eager-round1-cached_triton
+COLLECTED eager-round1-cached_triton median_ms=257.373870
+RUN eager-round2-checked_triton
+COLLECTED eager-round2-checked_triton median_ms=268.394652
+RUN eager-round2-cached_triton
+COLLECTED eager-round2-cached_triton median_ms=252.989446
+RUN eager-round2-original
+COLLECTED eager-round2-original median_ms=225.576418
+RUN decode_graph-round2-checked_triton
+COLLECTED decode_graph-round2-checked_triton median_ms=131.661679
+RUN decode_graph-round2-cached_triton
+COLLECTED decode_graph-round2-cached_triton median_ms=134.078130
+RUN decode_graph-round2-original
+COLLECTED decode_graph-round2-original median_ms=131.415652
+RUN decode_graph-round3-cached_triton
+COLLECTED decode_graph-round3-cached_triton median_ms=130.527772
+RUN decode_graph-round3-original
+COLLECTED decode_graph-round3-original median_ms=133.101139
+RUN decode_graph-round3-checked_triton
+COLLECTED decode_graph-round3-checked_triton median_ms=136.379364
+RUN eager-round3-cached_triton
+COLLECTED eager-round3-cached_triton median_ms=268.158471
+RUN eager-round3-original
+COLLECTED eager-round3-original median_ms=228.655022
+RUN eager-round3-checked_triton
+COLLECTED eager-round3-checked_triton median_ms=268.106308
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-path-timing-results/run-20261015-033254-kxw4qv2v
+STATUS=HOST_PATH_MODEL_TIMING_COLLECTION_COMPLETE
+{
+  "eager": {
+    "original": {
+      "pairs": [
+        {
+          "round": 1,
+          "comparator_ms": 239.53453000000025,
+          "cached_triton_ms": 257.3738700000092,
+          "comparator_over_cached": 0.9306870584803021,
+          "cached_time_change_pct": 7.447502454034072
+        },
+        {
+          "round": 2,
+          "comparator_ms": 225.57641800000283,
+          "cached_triton_ms": 252.98944600000084,
+          "comparator_over_cached": 0.8916435905393543,
+          "cached_time_change_pct": 12.152435189390086
+        },
+        {
+          "round": 3,
+          "comparator_ms": 228.6550219999981,
+          "cached_triton_ms": 268.15847099999246,
+          "comparator_over_cached": 0.8526861789870681,
+          "cached_time_change_pct": 17.27644057605464
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false
+    },
+    "checked_triton": {
+      "pairs": [
+        {
+          "round": 1,
+          "comparator_ms": 254.88512699999433,
+          "cached_triton_ms": 257.3738700000092,
+          "comparator_over_cached": 0.9903302421492329,
+          "cached_time_change_pct": 0.9764175059202129
+        },
+        {
+          "round": 2,
+          "comparator_ms": 268.3946519999978,
+          "cached_triton_ms": 252.98944600000084,
+          "comparator_over_cached": 1.060892682455998,
+          "cached_time_change_pct": -5.739758927833282
+        },
+        {
+          "round": 3,
+          "comparator_ms": 268.1063080000001,
+          "cached_triton_ms": 268.15847099999246,
+          "comparator_over_cached": 0.9998054769636856,
+          "cached_time_change_pct": 0.01945608828879397
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false
+    }
+  },
+  "decode_graph": {
+    "original": {
+      "pairs": [
+        {
+          "round": 1,
+          "comparator_ms": 129.68589099999406,
+          "cached_triton_ms": 135.0005839999966,
+          "comparator_over_cached": 0.9606320740064156,
+          "cached_time_change_pct": 4.098127374552085
+        },
+        {
+          "round": 2,
+          "comparator_ms": 131.41565200001537,
+          "cached_triton_ms": 134.0781299999776,
+          "comparator_over_cached": 0.9801423393959726,
+          "cached_time_change_pct": 2.0259976337992924
+        },
+        {
+          "round": 3,
+          "comparator_ms": 133.10113900001852,
+          "cached_triton_ms": 130.52777199999355,
+          "comparator_over_cached": 1.0197150917432736,
+          "cached_time_change_pct": -1.9333921703138968
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false
+    },
+    "checked_triton": {
+      "pairs": [
+        {
+          "round": 1,
+          "comparator_ms": 132.3033589999909,
+          "cached_triton_ms": 135.0005839999966,
+          "comparator_over_cached": 0.9800206419847357,
+          "cached_time_change_pct": 2.03866706060416
+        },
+        {
+          "round": 2,
+          "comparator_ms": 131.66167899998982,
+          "cached_triton_ms": 134.0781299999776,
+          "comparator_over_cached": 0.9819772918969845,
+          "cached_time_change_pct": 1.8353487653669953
+        },
+        {
+          "round": 3,
+          "comparator_ms": 136.37936400002104,
+          "cached_triton_ms": 130.52777199999355,
+          "comparator_over_cached": 1.044830245015044,
+          "cached_time_change_pct": -4.290672597671441
+        }
+      ],
+      "all_rounds_at_least_3pct_faster": false
+    }
+  }
+}
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-model-20261015-113254-w2ukg0.log

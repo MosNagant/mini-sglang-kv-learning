@@ -1,0 +1,12 @@
+{
+  "status": "STABLE_RUNTIME_CPU_CONTROLS_PASS",
+  "checks": [
+    "fixed_scope_input_guards",
+    "persistent_generate_reset_exclusive_access_explicit_execution_and_post_engine_device_query",
+    "engine_failure_does_not_retry_or_fallback",
+    "all32logits_comparator_pass_single_violation_and_nonfinite_controls"
+  ],
+  "runtime_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "runner_sha256": "efedb7404442fc8566af96e4167c9e856aa4b1496976ef1761ac3f6578fdb52c",
+  "limit": "CPU synthetic/fake-object controls only; no real Engine, CUDA run, speed or numerical model acceptance."
+}

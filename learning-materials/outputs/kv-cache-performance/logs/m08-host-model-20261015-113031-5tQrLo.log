@@ -1,0 +1,16 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy
+RUN strict-check original
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-path-check-results/run-20261015-033031-7rgjj7fy
+Traceback (most recent call last):
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py", line 400, in <module>
+    main()
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py", line 376, in main
+    (run_check if args.mode == 'check' else run_timing)(args, run, plan, summary)
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py", line 202, in run_check
+    run_process([sys.executable, '-B', '-u', str(run / 'runner.py'), '--worker-check', str(run), '--arm', arm],
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py", line 179, in run_process
+    require(proc.returncode == 0, f'Worker failed ({proc.returncode}); retained log: {log}')
+  File "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/46-m08-host-path-model.py", line 60, in require
+    raise RuntimeError(reason)
+RuntimeError: Worker failed (1); retained log: /home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-path-check/run-20261015-033031-7rgjj7fy/original.log
+HOST_MODEL_STOPPED: first error preserved. Log: /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-model-20261015-113031-5tQrLo.log

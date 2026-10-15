@@ -1,0 +1,686 @@
+{
+  "status": "HOST_DIAGNOSTIC_COMPLETE",
+  "rounds": [
+    {
+      "status": "HOST_DIAGNOSTIC_AND_GPU_CORRECTNESS_PASS",
+      "round": 1,
+      "cases": [
+        {
+          "B": 1,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              7.69119,
+              7.120550000000001,
+              6.533035,
+              7.640899999999999,
+              6.704375,
+              6.694945,
+              6.470175,
+              6.59715,
+              6.638835,
+              6.569805000000001,
+              6.606585,
+              6.54652,
+              6.753885,
+              6.663005,
+              6.866734999999999,
+              7.419165,
+              7.16144,
+              6.476945,
+              6.593255,
+              6.524495,
+              6.44263,
+              6.45658,
+              6.5288900000000005,
+              6.516814999999999,
+              7.068885,
+              6.67963,
+              6.743045,
+              6.55684,
+              6.630135,
+              6.562930000000001
+            ],
+            "cached": [
+              2.92624,
+              2.653775,
+              2.641455,
+              2.616605,
+              2.6267750000000003,
+              2.848745,
+              2.6478099999999998,
+              2.6375900000000003,
+              2.630735,
+              2.60945,
+              2.627485,
+              2.6135450000000002,
+              3.388515,
+              2.754515,
+              2.809105,
+              2.70351,
+              2.66494,
+              2.73104,
+              2.62325,
+              2.68541,
+              2.735975,
+              2.62161,
+              2.900895,
+              2.803085,
+              2.63914,
+              3.435505,
+              2.67715,
+              2.7773049999999997,
+              2.67488,
+              2.844795
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.61836,
+            "cached": 2.676015
+          },
+          "host_change_pct": -59.56679600384385
+        },
+        {
+          "B": 128,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              6.607945,
+              6.78287,
+              7.23387,
+              6.34947,
+              6.866255,
+              6.42276,
+              6.498455,
+              6.436484999999999,
+              6.474135,
+              6.506165,
+              6.609484999999999,
+              8.0734,
+              7.4543,
+              17.46584,
+              16.25614,
+              6.720875,
+              6.58301,
+              6.529305,
+              6.71084,
+              6.446065,
+              6.7345299999999995,
+              7.799300000000001,
+              6.83644,
+              6.61643,
+              7.26941,
+              6.938395000000001,
+              6.3877299999999995,
+              6.433935,
+              6.39117,
+              6.559465
+            ],
+            "cached": [
+              2.62452,
+              2.8694450000000002,
+              2.60154,
+              2.569355,
+              2.62094,
+              2.59166,
+              2.642545,
+              2.602535,
+              2.643045,
+              2.80266,
+              2.64022,
+              2.620635,
+              2.6381,
+              2.68609,
+              5.744885,
+              3.6555,
+              2.6403649999999996,
+              2.600375,
+              2.623945,
+              2.66319,
+              2.64627,
+              2.818955,
+              2.641065,
+              2.621395,
+              2.81184,
+              2.613625,
+              2.6663200000000002,
+              2.589775,
+              2.59954,
+              2.611245
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.6129575,
+            "cached": 2.63916
+          },
+          "host_change_pct": -60.09107876468283
+        }
+      ],
+      "environment": {
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "limit": "CPU wrapper timings with no-op launch; not GPU kernel time or model speedup. Graph test is isolated KV, not full-model Graph logits coverage."
+    },
+    {
+      "status": "HOST_DIAGNOSTIC_AND_GPU_CORRECTNESS_PASS",
+      "round": 2,
+      "cases": [
+        {
+          "B": 1,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              6.95843,
+              7.16029,
+              6.833475,
+              6.989765,
+              6.763655,
+              6.91993,
+              6.639725,
+              6.908615,
+              6.706155,
+              7.117604999999999,
+              7.3118,
+              7.055255,
+              6.848604999999999,
+              6.6423950000000005,
+              6.4969399999999995,
+              6.8971800000000005,
+              6.93893,
+              7.86187,
+              6.756895,
+              6.64224,
+              6.55696,
+              6.672020000000001,
+              7.83536,
+              7.88108,
+              6.624435,
+              6.78644,
+              6.566355,
+              6.485265,
+              6.60702,
+              6.63057
+            ],
+            "cached": [
+              2.7645999999999997,
+              2.85664,
+              2.77889,
+              2.6384600000000002,
+              2.693745,
+              2.72097,
+              2.7186500000000002,
+              2.75556,
+              2.656085,
+              2.8184899999999997,
+              2.635785,
+              2.6645,
+              2.627755,
+              2.6698000000000004,
+              2.64007,
+              2.648905,
+              2.6110900000000004,
+              2.658135,
+              2.630885,
+              3.12256,
+              3.45064,
+              2.615785,
+              2.6078249999999996,
+              2.6384000000000003,
+              2.6019099999999997,
+              3.266375,
+              2.8954250000000004,
+              2.6839899999999997,
+              2.6337550000000003,
+              2.67372
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.809957499999999,
+            "cached": 2.6671500000000004
+          },
+          "host_change_pct": -60.83455733754579
+        },
+        {
+          "B": 128,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              6.689255,
+              6.6894350000000005,
+              6.671335,
+              6.699225,
+              6.56637,
+              6.91346,
+              6.7721350000000005,
+              6.541155,
+              7.27135,
+              6.47759,
+              6.64565,
+              6.982145,
+              6.527354999999999,
+              6.529985,
+              6.608435,
+              6.42833,
+              7.12405,
+              7.505555,
+              6.794854999999999,
+              6.868635,
+              6.580885,
+              6.472505,
+              6.569255,
+              6.568005,
+              6.52215,
+              6.4977849999999995,
+              7.598415,
+              6.488989999999999,
+              6.73536,
+              6.921995
+            ],
+            "cached": [
+              2.607335,
+              2.667645,
+              2.758245,
+              2.657305,
+              2.6654400000000003,
+              2.9386300000000003,
+              2.712155,
+              2.62352,
+              2.918765,
+              2.634045,
+              2.7761750000000003,
+              2.664115,
+              2.6957199999999997,
+              2.624005,
+              2.6161950000000003,
+              2.701695,
+              2.60196,
+              2.85996,
+              3.076045,
+              2.7317649999999998,
+              2.611415,
+              2.6096500000000002,
+              2.6063,
+              2.699395,
+              2.6102600000000002,
+              2.612595,
+              3.070245,
+              2.62398,
+              2.705955,
+              3.94583
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.6584924999999995,
+            "cached": 2.6665425000000003
+          },
+          "host_change_pct": -59.95275957733676
+        }
+      ],
+      "environment": {
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "limit": "CPU wrapper timings with no-op launch; not GPU kernel time or model speedup. Graph test is isolated KV, not full-model Graph logits coverage."
+    },
+    {
+      "status": "HOST_DIAGNOSTIC_AND_GPU_CORRECTNESS_PASS",
+      "round": 3,
+      "cases": [
+        {
+          "B": 1,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              6.579445,
+              8.50508,
+              6.608965,
+              6.648725000000001,
+              8.36782,
+              6.49604,
+              7.429335,
+              6.53165,
+              6.7057150000000005,
+              6.532,
+              6.74717,
+              6.5281199999999995,
+              6.7671149999999995,
+              8.774655000000001,
+              6.84861,
+              6.66521,
+              7.38417,
+              6.58687,
+              6.685895,
+              6.863729999999999,
+              6.709765,
+              6.70697,
+              6.59968,
+              6.93309,
+              6.43768,
+              7.732905,
+              6.875625,
+              6.51282,
+              6.59911,
+              6.54936
+            ],
+            "cached": [
+              2.6737550000000003,
+              2.77482,
+              2.7288249999999996,
+              2.68306,
+              2.95862,
+              2.67142,
+              2.6925149999999998,
+              2.67411,
+              2.7206300000000003,
+              2.66196,
+              2.855915,
+              2.6862,
+              2.66854,
+              2.6652750000000003,
+              2.68641,
+              2.660805,
+              3.1777100000000003,
+              2.696995,
+              2.70138,
+              2.684985,
+              2.7044,
+              2.686815,
+              2.82048,
+              2.699805,
+              2.860695,
+              2.665035,
+              2.951485,
+              2.668355,
+              3.23263,
+              3.5865
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.695805,
+            "cached": 2.694755
+          },
+          "host_change_pct": -59.754577679606854
+        },
+        {
+          "B": 128,
+          "D": 1024,
+          "C": 513,
+          "gpu_checks": [
+            {
+              "arm": "original",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "old",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            },
+            {
+              "arm": "cached",
+              "eager_full_backing": true,
+              "graph_changed_values_full_backing": true,
+              "readonly_inputs": true
+            }
+          ],
+          "host_samples_us": {
+            "old": [
+              7.785220000000001,
+              7.0492550000000005,
+              6.39708,
+              6.8348450000000005,
+              6.43173,
+              6.5833450000000004,
+              6.54171,
+              6.720325,
+              6.57606,
+              7.230675,
+              6.83165,
+              6.63195,
+              6.7656350000000005,
+              6.49856,
+              6.501755,
+              6.905939999999999,
+              6.447970000000001,
+              6.4807,
+              6.510515000000001,
+              6.576165,
+              6.6538699999999995,
+              7.19478,
+              6.68523,
+              6.810865,
+              6.416545,
+              6.522390000000001,
+              6.484694999999999,
+              6.489715,
+              6.607295,
+              6.73804
+            ],
+            "cached": [
+              2.6430749999999996,
+              2.617675,
+              2.63783,
+              2.633725,
+              2.63175,
+              2.61742,
+              2.644685,
+              2.60377,
+              2.606155,
+              2.6005100000000003,
+              2.8411399999999998,
+              2.707805,
+              2.63201,
+              2.62925,
+              2.613645,
+              2.60579,
+              2.6301300000000003,
+              2.621605,
+              3.282235,
+              2.88077,
+              2.770515,
+              2.67313,
+              2.6542600000000003,
+              2.761835,
+              2.653855,
+              2.6945300000000003,
+              2.65519,
+              2.7266399999999997,
+              2.63414,
+              2.611525
+            ]
+          },
+          "kernel_hashes": {
+            "old": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            },
+            "cached": {
+              "ptx": "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+              "ttgir": "54948e48928c8972ed2799e0ce52efdeb98d330c9fe4e19e5403e583037a450a"
+            }
+          },
+          "replacement_objects_checked": true,
+          "host_medians_us": {
+            "old": 6.59532,
+            "cached": 2.635985
+          },
+          "host_change_pct": -60.03249273727431
+        }
+      ],
+      "environment": {
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "triton": "3.5.1",
+        "gpu": "NVIDIA GeForce RTX 4070 Ti"
+      },
+      "limit": "CPU wrapper timings with no-op launch; not GPU kernel time or model speedup. Graph test is isolated KV, not full-model Graph logits coverage."
+    }
+  ]
+}

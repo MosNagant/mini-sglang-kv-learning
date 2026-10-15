@@ -1,0 +1,9 @@
+[
+  "/usr/local/cuda-12.8/bin/ncu",
+  "--query-metrics",
+  "--query-metrics-mode",
+  "suffix",
+  "--metrics",
+  "dram__bytes_read.sum,lts__t_bytes.sum,sm__warps_active.avg.pct_of_peak_sustained_active,gpu__time_duration.sum",
+  "--csv"
+]

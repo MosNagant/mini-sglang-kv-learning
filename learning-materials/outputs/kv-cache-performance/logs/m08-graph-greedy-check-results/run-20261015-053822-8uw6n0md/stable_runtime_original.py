@@ -1,0 +1,504 @@
+"""Stable original mini-sglang inference entry: whole-decode CUDA Graph by default.
+
+This deployment artifact enables the upstream Graph feature. It does not replace
+the KV kernel, Gate/Up projection, activation or any model arithmetic. Scope:
+Qwen3-0.6B FP16 / TP1 / one request / exactly128 input IDs and32 greedy steps.
+The accepted workload is embedded for reproducible self-checking. No automatic
+fallback, installation, model download, approximate kernel or speed guarantee.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import importlib.metadata
+import json
+import os
+from pathlib import Path
+import sys
+import threading
+
+CONTRACT = json.loads(r'''{
+  "source_manifest": {
+    "python/minisgl/__main__.py": "4dc0f059094c970d00098e2300453c6bdef30e18fc14c6c7e3bd68d4db3c78ae",
+    "python/minisgl/attention/__init__.py": "968cf56a0f723a9dc56cd709f9cc7e833dc79c504f703a8edfe19d4f943d404e",
+    "python/minisgl/attention/base.py": "a592d76147e2af8c0902910842e896beb72ffa73db0252780ce3136ccde9eb67",
+    "python/minisgl/attention/fa.py": "9b1e37766789b2e3a52a09feeb9320b740e5e510fb07b45903d01f84cf6309d1",
+    "python/minisgl/attention/fi.py": "2708806defcd919bd6c5fbe9fd3e7a0deb726dcbf109737424f5116c7a352de4",
+    "python/minisgl/attention/trtllm.py": "ec53837ff4bd6bdc546dc3fd439b15e631d35a872d9ce26691eb444576e14a33",
+    "python/minisgl/attention/utils.py": "bd282a3a1e27e0a2aac832ebefe6e5be2576ac5f5f3aa5a51094244d3e4a7aa8",
+    "python/minisgl/benchmark/client.py": "56ed36afe704051f7660252c045c38c0bc80c51eb2cc051b35e69590b9bc67ac",
+    "python/minisgl/benchmark/perf.py": "c67dee0b80e2dcdd17e4d31f9aae60d45a35bbc04f5b75e232ea02f45c584232",
+    "python/minisgl/core.py": "76697c4f0026c860d77b7154ac3ff9e26606a77f6a3f30570cb348d506de1edd",
+    "python/minisgl/distributed/__init__.py": "19d2eb2b39777ab554a4e49b42ad570aebcf2556759565df8a2089aa1897dfbe",
+    "python/minisgl/distributed/impl.py": "b193046c439069d268f54d028ea4910e58258a1bf4d38b06505a60391927ae7b",
+    "python/minisgl/distributed/info.py": "0294dcd80e9d425418baf2dc7825822cbd027bfc0dc53ad2e26fb76224037e73",
+    "python/minisgl/engine/__init__.py": "ebfed9c2537757652b8a00eae9b5396566be1aadb13a09856f65a4b3f997986a",
+    "python/minisgl/engine/config.py": "cf3e96ffbe2019aba85d0349661e62bc89d4edd0c87a484b99fbec4d5e59d014",
+    "python/minisgl/engine/engine.py": "82bd58030c78dbfe249eaef857fbd48db9cb403e179dc1f64ade89cb3f8c699f",
+    "python/minisgl/engine/graph.py": "2fc80c2d4debf56ccec70850dcc1060afa52da631f90f8172d6c87d5ca4b4115",
+    "python/minisgl/engine/sample.py": "6bb15e116a299929af9436df2c3d2e8331a0aa0adc63320cfe86e0993370ed0b",
+    "python/minisgl/env.py": "f1c00819d82b6b0d3802ca93ec516e14061c717b83e74efc19234577acd8ad6e",
+    "python/minisgl/kernel/__init__.py": "b8b3ea3224049dbb57571de9621502370b8a53cebb93635182d71dba419b3052",
+    "python/minisgl/kernel/__main__.py": "19e97632e33853630ad45e2f196649c722db82de1ca63c97550b5ac0b6f1e809",
+    "python/minisgl/kernel/csrc/include/minisgl/nccl227.h": "a816d195c5fa87b3aa0698faee2ff9951178a2289d994aa1ec59d58c053b27f5",
+    "python/minisgl/kernel/csrc/include/minisgl/tensor.h": "34ba569b5a49aab08a5d467adb3ce0bf78b44aaa96ab5751fe9773e5ebc95cb2",
+    "python/minisgl/kernel/csrc/include/minisgl/utils.cuh": "c46d57862fac0b486fb3a323876206c45ff459be4eda3a68e657f0034d645440",
+    "python/minisgl/kernel/csrc/include/minisgl/utils.h": "73d42fbfe4f64ad0c4c7d11a7f6b869b7dd817c51fc41635aa9e4a07d627800c",
+    "python/minisgl/kernel/csrc/include/minisgl/warp.cuh": "ebd7e93012be03ebfa8cdafc3ec1836ac32e17ad29a060991ed604dd25d4a410",
+    "python/minisgl/kernel/csrc/jit/index.cu": "75348e6848579becedab7b128a20e248ee2f3a0a32ec2dab70285402f2e3d834",
+    "python/minisgl/kernel/csrc/jit/store.cu": "8207607fb922e63236ee5c24f09e2cf45088c045d05ca8a92f6215af04f8e25e",
+    "python/minisgl/kernel/csrc/src/pynccl.cu": "a1181ddeae8dfc3a499e149cdfecc9a55260e2cf9d91c5ff8269ef949d7f858b",
+    "python/minisgl/kernel/csrc/src/radix.cpp": "c713f011614b6c6225ea3bd2bd1dcfd035fbeda19def870c0aa4fa0b1aa57b6c",
+    "python/minisgl/kernel/csrc/src/tensor.cpp": "d4c8692d2cdd814ec7c946881c559855f7d59a735ff45856069b1a801eb29dfb",
+    "python/minisgl/kernel/index.py": "5098547d455932cb80b209cdf8480ffbdc2ee77410c02d4f1fdc5355ba197963",
+    "python/minisgl/kernel/moe_impl.py": "ff43b80ba5582d54decffaf5accad9dc11bb5b530d1f81a8704d3e0d0fd106fb",
+    "python/minisgl/kernel/pynccl.py": "9999ab66c6727894ccb7b9f58235dd7d4f0cc9a417a1525e03135a102330dba0",
+    "python/minisgl/kernel/radix.py": "d4b7d0d204031382ffda5bad468d77520b2541937fa5b8217dc23b232f182700",
+    "python/minisgl/kernel/store.py": "39e21e21d1de0cc2f14faa37384ea94e427c0aabc997a56c049884ed46fc0c01",
+    "python/minisgl/kernel/tensor.py": "ba478a77ece2d9ce28648977f3f40ea5e54724dde14fe6374f206bb9cad5f88e",
+    "python/minisgl/kernel/triton/fused_moe.py": "00f5859fa826d43120132202f1220f7ad679f1d2acb5adf9a717582cb4c66aee",
+    "python/minisgl/kernel/utils.py": "7e272c52bbaf847ad0da2f592cb5234403930cf9e425c60fffb570f5112fe9e7",
+    "python/minisgl/kvcache/__init__.py": "7c41ed4405c6680820bd4a3d1592f81712e8bb2de3b3132cffae4d330f7f45dd",
+    "python/minisgl/kvcache/base.py": "1431987bd1cd5c1a3fc04dfd08957928b9c33ccfc04ba0a13b9a140a4029ad8b",
+    "python/minisgl/kvcache/mha_pool.py": "c22ce82ac132be5dc18a26b8fbb58239cff9baa6f1053aee896376059cb9c4fe",
+    "python/minisgl/kvcache/naive_cache.py": "6081459a29dffb4f8d602a563287b537a2268fe0f06bb1d509de9e0a24746dce",
+    "python/minisgl/kvcache/radix_cache.py": "eb6b456d8c8aa15f8cc65881192ffc54750f3193a791440b924bcf50c88e2192",
+    "python/minisgl/layers/__init__.py": "e74f09b241ec56b362d258a0822741293e98d4f9c7927424a1456fe9d9b39e12",
+    "python/minisgl/layers/activation.py": "df886804f5969679f1f903e1eebe29f5c8c82524e10ee883ecc63eee1dfd8484",
+    "python/minisgl/layers/attention.py": "fc155cea18ce71f0753b110f8c37a961754d0f8471ccb402b5607685a8510811",
+    "python/minisgl/layers/base.py": "0dd25b738580e600bcc6e5f84e8753b54d50520e41ac2ed05c112a6055fc7030",
+    "python/minisgl/layers/embedding.py": "693f4d3cd99d18d8b35e0a7d2a67edaa93e7ed9551ac2b791bcd9fbcaa99e72b",
+    "python/minisgl/layers/linear.py": "660188f6fe302a47955c434763ded6014ebed17236d89f7720997337778b538c",
+    "python/minisgl/layers/moe.py": "98cdfe61305fb9ee3244d799ec86f5cdb6193a2b571bd4d6f0f4b0cc0e611981",
+    "python/minisgl/layers/norm.py": "8e91304741899fd99a2176f905a4c615bf8ad169ca46d90445864880d8774e0d",
+    "python/minisgl/layers/rotary.py": "f3ab653703e90d1f06b09ad875058f2a1af098ffa15a23b97018accc5825c57d",
+    "python/minisgl/llm/__init__.py": "a81f5e3d9c25c5f4f5c48ae16ff5a8886f1b51cebde9b970c4d4099f650197a9",
+    "python/minisgl/llm/llm.py": "cafaa39d456d77f328867d44a2055e5f171d3bedc3b2b256fa1e3809fb4e7fce",
+    "python/minisgl/message/__init__.py": "b0bfdede41c3fab6347e88eebf439edf3d59d136d77b50e62cc374e4590b6e92",
+    "python/minisgl/message/backend.py": "d1dc7d5db0c34d22658405e51f29094e2d25d9be489f68ff77b5b26cd245d8fb",
+    "python/minisgl/message/frontend.py": "805f1e819a0d35087d9374bf12d6b772c513dbb14140df7e44d2ec097c23fb6e",
+    "python/minisgl/message/tokenizer.py": "b3a94335abeab09adaa2e29427df160f360c765ea010ebdfd5facc5866841649",
+    "python/minisgl/message/utils.py": "8d2af6a03a03d4b9b1ab96d81aeb05ebad0dedba82f619a1039609b819aa73c6",
+    "python/minisgl/models/__init__.py": "873c3e9ea52db5a42f8e79e9aa4ef31e39903227a3ae2200f23da633673c0dd8",
+    "python/minisgl/models/base.py": "38edcf4247ced693838e534aa3ab1353f57a5656cdf4dfd6d6cf3daf1832e44d",
+    "python/minisgl/models/config.py": "c62acf2a9a3fd255867c12cd2f5c2a3f394ac05f0a2dff8f505b13b4e5e4aea3",
+    "python/minisgl/models/llama.py": "1d6eefd238e68c0ff5aa176258f8f1d2851c78f467e88a7f89f095dc15355d27",
+    "python/minisgl/models/mistral.py": "b59bc67f9bc8668a22545342d4ced6cc6c4853d66c18b8f19e6ffd7670df6927",
+    "python/minisgl/models/qwen2.py": "98d2bb01f04cd4490166abf2c6b06e96afc142c16af529613d2c9605de49bfd3",
+    "python/minisgl/models/qwen3.py": "c67e112b7cef51b5bf06d4927cae0715c34c3f2d0127aaac7c3520d3407766c1",
+    "python/minisgl/models/qwen3_moe.py": "6e42959a0c14588b9de6932cde81c25096bdf15afdfa7f0c274370ecee144fa8",
+    "python/minisgl/models/register.py": "16c46455acbd543ca9e428a91672adea0f55dc85d949224817483de9470e9d87",
+    "python/minisgl/models/utils.py": "2d5f6758b51d6e4750ba412e0645d6d0fcf046cf508930fa5de8021f3662d83c",
+    "python/minisgl/models/weight.py": "3aa99676949f0666dc8fa537fbf610d9665d1149e996b37c91a0b039fabfde74",
+    "python/minisgl/moe/__init__.py": "255fe9fa01c604c20f4906625ef8b4a5881b2a6a2b7919d0b90832d7531892d8",
+    "python/minisgl/moe/base.py": "d616a807b49b370a44a80a8d158ac7b3702303c4b97def6bb00170a000331ad8",
+    "python/minisgl/moe/fused.py": "588ac3f7807ce78a1c82a7b5fc5f033f8cee890380bc546ec5ad02817d90b5a2",
+    "python/minisgl/scheduler/__init__.py": "364738450d9900453838d6db60aaed1744e73e5909ac578f21eb047caa79c72c",
+    "python/minisgl/scheduler/cache.py": "09a267c1dad7a0d01eb5bc38b56442c1239ac10849faaa5c8f1fe809cf94c6d2",
+    "python/minisgl/scheduler/config.py": "da14b80ee038d1013f379bba3d46a1339f9aa5b1e7fc71e5152b336057b241af",
+    "python/minisgl/scheduler/decode.py": "a4f43f9b193610ee37b1c1647ea21e73eefb272bf03b8d5059226ca1ce8f8aef",
+    "python/minisgl/scheduler/io.py": "14610c8163ce40007a448d4623cf191a94fb7b003651a4d54449cadda4dfdbde",
+    "python/minisgl/scheduler/prefill.py": "0ceeac8455cabc62e578197a44592e102c15d86d2b3f0170c5f88bd612bebdee",
+    "python/minisgl/scheduler/scheduler.py": "decc817459aec97e8d6f3984add4b8bb80d9cc4c7f19e05469ead588d9e27b92",
+    "python/minisgl/scheduler/table.py": "9d688250aabbba7b0ac6193fdfadc735b95e3aebbdb664494d71b3ee75fc380a",
+    "python/minisgl/scheduler/utils.py": "168b356354cfd26db11c18a6451650761e887f17eb1edc4e59cce717853731b8",
+    "python/minisgl/server/__init__.py": "63facaa587eff97dfed4f7757a82d2312d275a9d9519e978ad2238f78c4f9125",
+    "python/minisgl/server/api_server.py": "f5002be5d0ebd0fdfd3fa8dc76eb0820be186d8c6e04d2c06d49e08d1906352e",
+    "python/minisgl/server/args.py": "794bab8d4cb824615d5a5face24620bce2f9fe905c24a1fb8f140720e1bef8a2",
+    "python/minisgl/server/launch.py": "818e16f24bd01415a428833cdd745de0f7a5d90ad01b5163c5f1fc4794339094",
+    "python/minisgl/shell.py": "00f4e860942eabd6b8cb44e102a87e4186db00c9818ffc728c2f626b70e2de13",
+    "python/minisgl/tokenizer/__init__.py": "911e50423dc15d36ddac78bf0bbcd476e1765a92fc725ab6036563326320ebda",
+    "python/minisgl/tokenizer/detokenize.py": "70e62ff24d39231fdd81cae0d8ce4fc92e1310f4fc9469311f3ad39f905a0a5d",
+    "python/minisgl/tokenizer/server.py": "d2635c44541efbeac6d0b942ecd733a1a4d3befb405ac4d1f3f7816aa6efa090",
+    "python/minisgl/tokenizer/tokenize.py": "d8cbadcb05da0aa5ea2bd3501cc1ce9732de3b14e4a771e15594887f5ce8cf6a",
+    "python/minisgl/utils/__init__.py": "d3648ec9f8c910db6a9a6ecc8c661ebedb902e4ca735c9e299535c869763b9c5",
+    "python/minisgl/utils/arch.py": "efcf2c2c3b7298c5997121e825d1e97913b9c4d8f629b61085e9838200576601",
+    "python/minisgl/utils/hf.py": "96f97df803acd921a3fb4cdbe03994fab7a99e9dbd2f6c4908541902a3f8ff6b",
+    "python/minisgl/utils/logger.py": "c8df6e04bc4ceba871dfa6c24570364b23572378138acce2552ea7fbb34be9b9",
+    "python/minisgl/utils/misc.py": "a78a1398f3612db6fad4a1873f2c52b759dd1c230a2f34373ef591709b161c3d",
+    "python/minisgl/utils/mp.py": "af217f6f0853949879e3e4f10936a78c2a06a4c94f8ae879ecee6b3171f910bd",
+    "python/minisgl/utils/registry.py": "73bef69132925cdfcdac333312a7f2e30a98e223574566b1a524e149800ebff5",
+    "python/minisgl/utils/torch_utils.py": "d308c8528ac2387e8f8aae88f8a9e6d040be5923ce3527f18cded29b01bbf9cc",
+    "pyproject.toml": "d1666030ef63f08b36fd87260477c8ae797cd4129643ea6a9dd35f4f7a59adaf",
+    "benchmark/offline/bench.py": "d453a143e6801cf3cd848060ab4fdfe436d41b14a5325e460387459c270b5476"
+  },
+  "input_token_ids": [
+    1986,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614
+  ],
+  "raw_expected_token_ids": [
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932
+  ],
+  "max_new_tokens": 32,
+  "engine_options": {
+    "max_running_req": 1,
+    "attention_backend": "fi",
+    "page_size": 1,
+    "num_page_override": 512,
+    "max_seq_len_override": 256,
+    "max_extend_tokens": 256,
+    "cuda_graph_bs": [],
+    "memory_ratio": 0.3,
+    "use_dummy_weight": false,
+    "use_pynccl": false,
+    "cache_type": "naive"
+  },
+  "timing_packages": {
+    "torch": "2.9.1+cu128",
+    "triton": "3.5.1",
+    "flashinfer-python": "0.5.3",
+    "transformers": "4.57.3",
+    "safetensors": "0.8.0",
+    "apache-tvm-ffi": "0.1.4"
+  },
+  "model": {
+    "path": "/home/weltlaw/models/Qwen3-0.6B/c1899de289a04d12100db370d81485cdf75e47ca",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "metadata_sha256": {
+      "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "m08-model-manifest.json": "7b16a895a089a80524daec4f62aed1147c08e1a762aa4546c71771abb3d8dbee",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "weights": [
+      {
+        "name": "model.safetensors",
+        "bytes": 1503300328,
+        "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+      }
+    ]
+  },
+  "accepted_device": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8"
+  },
+  "provenance": {
+    "original_commit": "9a91cfafe754aa85daee49998176275667eb58f2",
+    "accepted_timing_run": "run-o_ltqzpd",
+    "plan_sha256": "88aedca2fac6845a29f770e1db82e83b4ecdfa483545c2a63b5a8f19cd8190d6",
+    "summary_sha256": "1b5d97afbe31197d93bb4439067432d46917f6f131ca2824f4cdc27f04a56699"
+  }
+}''')
+PROJECT = Path('/home/weltlaw/projects/mini-sglang-kv')
+
+
+def require(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+
+def sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as handle:
+        for chunk in iter(lambda: handle.read(8 << 20), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def validate_inputs(input_token_ids, max_new_tokens=32):
+    if not isinstance(input_token_ids, list) or len(input_token_ids) != 128:
+        raise ValueError('Stable validated scope: exactly128 input token IDs in one request')
+    if any(type(token) is not int or not 0 <= token < 151936 for token in input_token_ids):
+        raise ValueError('Token IDs must be integers in [0,151936)')
+    if max_new_tokens != 32:
+        raise ValueError('Stable validated scope: exactly32 greedy output steps')
+
+
+def verify_environment(project=PROJECT, model_path=None):
+    """Hash original source/model and check packages before creating the engine."""
+    project = Path(project).resolve(strict=True)
+    model_path = Path(model_path or CONTRACT['model']['path']).resolve(strict=True)
+    for relative, expected in CONTRACT['source_manifest'].items():
+        require(sha(project/relative) == expected, 'Original mini-sglang source changed: '+relative)
+    packages = {name: importlib.metadata.version(name) for name in CONTRACT['timing_packages']}
+    require(packages == CONTRACT['timing_packages'], 'Package versions differ from the validated environment')
+    for name, expected in CONTRACT['model']['metadata_sha256'].items():
+        require(sha(model_path/name) == expected, 'Model/tokenizer metadata differs: '+name)
+    for item in CONTRACT['model']['weights']:
+        path = model_path/item['name']
+        require(path.stat().st_size == item['bytes'] and sha(path) == item['sha256'],
+                'Model weight bytes differ: '+item['name'])
+    return {'project': str(project), 'model_path': str(model_path), 'packages': packages,
+            'source_files_verified': len(CONTRACT['source_manifest']),
+            'model_weight_files_verified': len(CONTRACT['model']['weights'])}
+
+
+class StableRuntime:
+    """Persistent single-request runtime; reuse one instance for repeated requests."""
+
+    def __init__(self, *, execution='decode_graph', project=PROJECT, model_path=None):
+        if execution not in ('eager', 'decode_graph'):
+            raise ValueError('execution must be eager or decode_graph')
+        self.validation = verify_environment(project, model_path)
+        require(not any(name == 'minisgl' or name.startswith('minisgl.') for name in sys.modules),
+                'Create StableRuntime in a fresh process before importing minisgl')
+        os.environ.update(HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1',
+                          MINISGL_DISABLE_OVERLAP_SCHEDULING='1')
+        sys.path.insert(0, str(Path(self.validation['project'])/'python'))
+        import torch
+        from minisgl.llm import LLM
+        from minisgl.core import SamplingParams
+        import minisgl.kernel as kernel_api
+        from minisgl.kernel.store import store_cache
+        require(kernel_api.store_cache is store_cache, 'Original KV entry has been replaced')
+        self.raw_token_ids = []
+        raw = self.raw_token_ids
+
+        class RecordedLLM(LLM):
+            def offline_send_result(self, reply):
+                raw.extend(int(message.next_token) for message in reply)
+                return super().offline_send_result(reply)
+
+        options = dict(CONTRACT['engine_options'])
+        options['cuda_graph_bs'] = [1] if execution == 'decode_graph' else []
+        self._model = None
+        self._lock = threading.Lock()
+        self.execution = execution
+        self._torch = torch
+        self._params = SamplingParams(temperature=0., ignore_eos=True, max_tokens=32)
+        try:
+            # Engine must own first CUDA initialization. No device queries above.
+            self._model = RecordedLLM(self.validation['model_path'], dtype=torch.float16, **options)
+            require(self._model.engine.graph_runner.graph_bs_list == options['cuda_graph_bs'],
+                    'Actual CUDA Graph policy differs from requested policy')
+            self.environment = {'gpu': torch.cuda.get_device_name(0),
+                'torch': torch.__version__, 'cuda': torch.version.cuda, 'packages': self.validation['packages'],
+                'engine_options': options}
+            require(all(self.environment[key] == value for key, value in CONTRACT['accepted_device'].items()),
+                    'GPU environment differs from the validated environment')
+        except BaseException:
+            # Never instantiate another engine as an implicit post-CUDA fallback.
+            if self._model is not None:
+                self._model.shutdown()
+                self._model = None
+            raise
+
+    @property
+    def model(self):
+        require(self._model is not None, 'Runtime is closed')
+        return self._model
+
+    def generate(self, input_token_ids=None):
+        tokens = list(CONTRACT['input_token_ids']) if input_token_ids is None else input_token_ids
+        validate_inputs(tokens)
+        require(self._lock.acquire(blocking=False), 'Concurrent requests are outside this runtime scope')
+        try:
+            self.raw_token_ids.clear()
+            output = self.model.generate([tokens], self._params)
+            require(len(self.raw_token_ids) == 32, 'Original runtime did not emit32 raw generation steps')
+            return output
+        finally:
+            self._lock.release()
+
+    def synchronize(self):
+        self._torch.cuda.synchronize()
+
+    def close(self):
+        if self._model is not None:
+            model, self._model = self._model, None
+            model.shutdown()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        self.close()
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--execution', choices=('eager', 'decode_graph'), default='decode_graph')
+    parser.add_argument('--project', type=Path, default=PROJECT)
+    parser.add_argument('--model-path', type=Path)
+    parser.add_argument('--input-json', type=Path, help='JSON list of exactly128 token IDs; omit for accepted workload')
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--verify-only', action='store_true', help='Read-only source/model/package check; no engine/GPU')
+    args = parser.parse_args()
+    if args.verify_only:
+        result = {'status': 'STATIC_ENVIRONMENT_VERIFIED', **verify_environment(args.project, args.model_path),
+                  'limit': 'No engine created; GPU availability/output/performance not tested'}
+    else:
+        tokens = json.loads(args.input_json.read_text(encoding='utf-8')) if args.input_json else None
+        if tokens is not None:
+            validate_inputs(tokens)
+        with StableRuntime(execution=args.execution, project=args.project, model_path=args.model_path) as runtime:
+            output = runtime.generate(tokens)
+            runtime.synchronize()
+            raw = list(runtime.raw_token_ids)
+            if tokens is None:
+                require(raw == CONTRACT['raw_expected_token_ids'], 'Accepted fixed workload tokens differ')
+            result = {'status': 'STABLE_ORIGINAL_INFERENCE_COMPLETE', 'execution': args.execution,
+                      'environment': runtime.environment, 'raw_generated_token_ids': raw, 'output': output,
+                      'accepted_workload_exact_tokens_checked': tokens is None,
+                      'method': 'upstream whole-decode CUDA Graph; prefill remains original Eager',
+                      'limit': 'Original math/KV only; one128/32 request. This command does not measure speed or establish broad model quality.'}
+    text = json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False)+'\n'
+    if args.output:
+        args.output.write_text(text, encoding='utf-8')
+    print(text, end='')
+
+
+if __name__ == '__main__':
+    main()
+

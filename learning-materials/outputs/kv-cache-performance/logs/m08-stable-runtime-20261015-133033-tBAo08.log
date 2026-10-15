@@ -1,0 +1,16 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-stable-runtime-timing/run-20261015-053033-nlwp0fei
+RUN decode_graph-round1
+COLLECTED decode_graph-round1 median_ms=133.471155
+RUN eager-round1
+COLLECTED eager-round1 median_ms=223.293499
+RUN eager-round2
+COLLECTED eager-round2 median_ms=231.264929
+RUN decode_graph-round2
+COLLECTED decode_graph-round2 median_ms=129.428888
+RUN decode_graph-round3
+COLLECTED decode_graph-round3 median_ms=134.785158
+RUN eager-round3
+COLLECTED eager-round3 median_ms=227.794499
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei
+STATUS=STABLE_RUNTIME_TIMING_COLLECTION_COMPLETE
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-stable-runtime-20261015-133033-tBAo08.log

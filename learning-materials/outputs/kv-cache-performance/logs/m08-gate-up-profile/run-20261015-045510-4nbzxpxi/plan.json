@@ -1,0 +1,21 @@
+{
+  "micro_run": "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-gate-up-experiments/run-20261015-044242-mca3s3gj",
+  "micro_result_sha256": "69a5d3303742b72a4f9b522c41825008dbf8c457d2429d080e1222aecf1153b4",
+  "micro_plan_sha256": "e908ac4bc86e371c11db12d6c9a1b3ac6d2b617b5c0d0f16ee3550fbb80b8d59",
+  "selected_candidate": "swiglu_fused_r8_w4",
+  "candidate_source_sha256": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+  "metrics": [
+    "dram__bytes_read.sum",
+    "lts__t_bytes.sum",
+    "sm__warps_active.avg.pct_of_peak_sustained_active",
+    "gpu__time_duration.sum"
+  ],
+  "frozen_files": {
+    "runner.py": "4d9da36a6476e8e8fd2da204c266640c9b4629495bea876404f13adc13111cc1",
+    "micro_runner.py": "864eb23a76bc4010762ec97eb0be8df0728019981685236e57836618cdecfbf8",
+    "52-m08-gate-up-profile.sh": "66984bc008948fb1b8f1ff2781a03a5024cce8b68608daf4fe63c67439ce2f62"
+  },
+  "policy": "kernel replay; cache-control none; clock-control none; same fixed step1 fixtures; 10 warmups outside NVTX; one profiled sequence",
+  "limit": "Profile cache state can differ across replay passes. No hit-rate, bandwidth or cause claim without interpreting actual metric units/replay overhead.",
+  "documentation": "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html"
+}

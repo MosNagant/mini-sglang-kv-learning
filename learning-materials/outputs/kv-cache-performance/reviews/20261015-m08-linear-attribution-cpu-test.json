@@ -1,0 +1,153 @@
+{
+  "status": "SYNTHETIC_SQLITE_CONTROLS_PASS",
+  "analyzer_path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\47-analyze-linear-attribution.py",
+  "analyzer_sha256": "18768f10fab6d21b4c584033eff2ad20feecb28045fd20a8585022f36b15fd97",
+  "test_sha256": "aa29017ab85b30b060eb184948edc5ad81172a1225a41cd851862790aea06259",
+  "new_gpu_runs": 0,
+  "positive_cases": 6,
+  "negative_cases": 14,
+  "passed_cases": 20,
+  "cases": [
+    {
+      "case": "gpu_time_outside_cpu_range",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "registered_nvtx_string",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "driver_only",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "nested_runtime_driver",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "same_correlation_other_process",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "multiple_kernels_one_linear",
+      "expected": "accept",
+      "actual": "accept",
+      "passed": true,
+      "counts_and_durations_match": true
+    },
+    {
+      "case": "wrong_cpu_thread",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Incomplete linear attribution: 1 calls, 1 named matrix kernels"
+    },
+    {
+      "case": "wrong_kernel_process",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Incomplete linear attribution: 1 calls, 1 named matrix kernels"
+    },
+    {
+      "case": "missing_nvtx_range",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "NVTX/call record mismatch 0/1"
+    },
+    {
+      "case": "api_crosses_nvtx_end",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Incomplete linear attribution: 1 calls, 1 named matrix kernels"
+    },
+    {
+      "case": "cross_thread_range_end",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Cross-thread range is outside this push/pop scope"
+    },
+    {
+      "case": "duplicate_label_range",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Duplicate or unfinished labelled NVTX range: M08_LINEAR_1"
+    },
+    {
+      "case": "overlapping_linear_ranges",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Linear call ranges overlap/nest; refuse ambiguous attribution"
+    },
+    {
+      "case": "different_labels_one_correlation",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "A kernel correlation maps to different labelled calls"
+    },
+    {
+      "case": "graph_node_in_eager",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Graph node found in Eager attribution; direct API containment is insufficient"
+    },
+    {
+      "case": "labelled_and_unlabelled_api_collision",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Ambiguous CPU API correlation; refuse linear attribution"
+    },
+    {
+      "case": "duplicate_runtime_correlation",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Ambiguous CPU API correlation; refuse linear attribution"
+    },
+    {
+      "case": "non_nested_runtime_driver",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Ambiguous CPU API correlation; refuse linear attribution"
+    },
+    {
+      "case": "unmatched_gemm_despite_matched_copy",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Incomplete linear attribution: 0 calls, 1 named matrix kernels"
+    },
+    {
+      "case": "nonpositive_kernel_duration",
+      "expected": "reject",
+      "actual": "reject",
+      "passed": true,
+      "message": "Nonpositive kernel duration"
+    }
+  ],
+  "limits": "Synthetic CPU fixtures test attribution rules; not real model attribution or performance evidence."
+}

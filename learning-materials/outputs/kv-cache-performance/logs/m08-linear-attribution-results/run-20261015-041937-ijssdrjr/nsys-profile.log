@@ -1,0 +1,13 @@
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1m[2026-10-15|12:19:42|core|rank=0][0m [32mINFO    [0m Free memory before loading model: 10.74 GiB
+Loading weights:   0%|          | 0/1 [00:00<?, ?it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  1.94it/s]Loading weights: 100%|██████████| 1/1 [00:00<00:00,  1.94it/s]
+[1m[2026-10-15|12:19:43|core|rank=0][0m [32mINFO    [0m Allocating 512 tokens for KV cache, K + V = 0.05 GiB
+[1m[2026-10-15|12:19:43|core|rank=0][0m [32mINFO    [0m Free memory after initialization: 9.33 GiB
+[1m[2026-10-15|12:19:43|core|rank=0][0m [32mINFO    [0m CUDA graph is disabled.
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-report-a3bf.qdstrm'
+[1/1] [0%                          ] original-model.nsys-repProcessing events...
+[1/1] [0%                          ] original-model.nsys-rep[1/1] [====25%                     ] original-model.nsys-rep[1/1] [=============60%            ] original-model.nsys-rep[1/1] [===============67%          ] original-model.nsys-rep[1/1] [==================75%       ] original-model.nsys-rep[1/1] [========================100%] original-model.nsys-rep[1/1] [========================100%] original-model.nsys-rep
+Generated:
+	/home/weltlaw/projects/mini-sglang-kv/experiments/m08-linear-attribution-results/run-20261015-041937-ijssdrjr/original-model.nsys-rep

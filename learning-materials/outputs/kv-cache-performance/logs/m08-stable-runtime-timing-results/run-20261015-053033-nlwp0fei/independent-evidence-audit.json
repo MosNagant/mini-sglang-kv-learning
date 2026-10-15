@@ -1,0 +1,306 @@
+{
+  "status": "STABLE_RUNTIME_INDEPENDENT_AUDIT_PASS",
+  "gpu_execution": false,
+  "evidence": {
+    "mode": "timing",
+    "frozen_files_verified": 106,
+    "raw_samples_verified": 30,
+    "fresh_workers_verified": 6,
+    "strict_check_recomputed": {
+      "mode": "check",
+      "frozen_files_verified": 105,
+      "logit_arrays_verified": 64,
+      "logit_elements_compared": 4861952,
+      "all32_logits_bitwise_equal_after_value_preserving_cpu_conversion": true,
+      "max_abs_logit_difference": 0.0,
+      "actual_graph_replays": 31,
+      "exact_generated_tokens_per_policy": 32,
+      "steps": [
+        {
+          "step": 0,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 1,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 2,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 3,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 4,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 5,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 6,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 7,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 8,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 9,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 10,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 11,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 12,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 13,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 14,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 15,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 16,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 17,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 18,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 19,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 20,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 21,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 22,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 23,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 24,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 25,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 26,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 27,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 28,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 29,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 30,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        },
+        {
+          "step": 31,
+          "elements": 151936,
+          "finite": true,
+          "violations": 0,
+          "max_abs_error": 0.0,
+          "equal_fp32_bit_patterns": true
+        }
+      ]
+    },
+    "pairs": [
+      {
+        "round": 1,
+        "eager_ms": 223.2934990000075,
+        "graph_ms": 133.47115499999518,
+        "eager_over_graph": 1.6729719541275834,
+        "graph_latency_change_pct": -40.22613484148471
+      },
+      {
+        "round": 2,
+        "eager_ms": 231.26492899999107,
+        "graph_ms": 129.42888800000674,
+        "eager_over_graph": 1.7868107543346816,
+        "graph_latency_change_pct": -44.0343641555734
+      },
+      {
+        "round": 3,
+        "eager_ms": 227.79449899999804,
+        "graph_ms": 134.78515799999968,
+        "eager_over_graph": 1.6900562523360219,
+        "graph_latency_change_pct": -40.83037185195555
+      }
+    ],
+    "all_rounds_at_least3pct_faster": true
+  },
+  "audit_source_sha256": "b6693f4a54fe781155dc2d7ecf0649c8a4dcbf013da194365bbe93299efe4b2e",
+  "result_sha256": "a6e813eeaaa166a1042e24a52e7a51a65ecdffe54d78958acdb08b820922001a",
+  "plan_sha256": "104a70aff4d7e709496fa0eaf7a1f6b871f5850df07f52e6cb5bb6dafaeafd04",
+  "limit": "CPU recomputation of saved fixed128/32 evidence. Fair comparison is original Eager versus upstream original Graph through identical API; not a new Triton/kernel/AMD speedup or broad model-quality proof."
+}

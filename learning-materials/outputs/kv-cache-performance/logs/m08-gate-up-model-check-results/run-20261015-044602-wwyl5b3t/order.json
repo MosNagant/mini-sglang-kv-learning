@@ -1,0 +1,12 @@
+[
+  {
+    "arm": "original",
+    "policy": "eager",
+    "round": 0
+  },
+  {
+    "arm": "candidate",
+    "policy": "eager",
+    "round": 0
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "status": "CPU_CONTROLS_PASS",
+  "gpu_execution": false,
+  "source_sha256": "4d9da36a6476e8e8fd2da204c266640c9b4629495bea876404f13adc13111cc1",
+  "shell_sha256": "66984bc008948fb1b8f1ff2781a03a5024cce8b68608daf4fe63c67439ce2f62",
+  "positive_metric_rows": 8,
+  "negative_controls": [
+    "missing_header",
+    "missing_metric",
+    "nan",
+    "negative"
+  ],
+  "classification_controls": 4,
+  "limit": "Parser/control-flow only. Does not verify ncu installation, supported metric names, CUDA execution, counters or replay behavior."
+}

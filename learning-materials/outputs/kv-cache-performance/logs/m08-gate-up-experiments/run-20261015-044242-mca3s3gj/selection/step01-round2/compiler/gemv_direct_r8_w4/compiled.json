@@ -1,0 +1,16 @@
+[
+  {
+    "kernel_index": 0,
+    "name": "_gemv_direct",
+    "n_regs": 42,
+    "n_spills_raw": 0,
+    "shared_bytes": 128,
+    "files": {
+      "kernel0.ttir": "ec6b7ca8e8ea256e1b0e9b7973eebb96f5a173ea61c6c9beeffe63ba403e4783",
+      "kernel0.ttgir": "33518646c4206536bd754ed84e483f0fbeddc55025f77633ce2f4f45ff74347f",
+      "kernel0.llir": "58d5260ba0e3a4a7beab51d15fda1fa23dde0e4b6d925687ac9f0e442a2a9357",
+      "kernel0.ptx": "dcc71cedd5e71effad076035cc59e3348dfc1bf9e7f4b4c2a9035e89c93a4db3",
+      "kernel0.cubin": "69a8493ddee9d6e4629bde826bbd9b6bf02f8a18a3110bc14145d1cd51e7ba47"
+    }
+  }
+]

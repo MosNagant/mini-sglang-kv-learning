@@ -1,0 +1,33 @@
+{
+  "reviewer": "m08_overhead_review",
+  "gpu_execution_by_reviewer": false,
+  "verdict": "CORRECTNESS_ACCEPTED_WITHIN_TESTED_SCOPE_PERFORMANCE_SIGNAL_NOT_MET_DO_NOT_PROMOTE",
+  "strict_audit": "../logs/m08-graph-greedy-check-results/run-20261015-053822-8uw6n0md/independent-evidence-audit.json",
+  "timing_audit": "../logs/m08-graph-greedy-timing-results/run-20261015-054044-oru9f4py/independent-evidence-audit.json",
+  "verified": {
+    "strict_source_files": 108,
+    "timing_source_files": 109,
+    "strict_saved_arrays": 192,
+    "cross_arm_logit_elements": 14585856,
+    "bit_differences": 0,
+    "candidate_strict_replay_hits": 93,
+    "strict_tokens_per_arm": 96,
+    "timing_fresh_workers": 6,
+    "timing_samples": 30,
+    "latency_reduction_pct": [-1.3243533690902476, 3.959261323118801, 1.6049020409029668],
+    "predeclared_rule": "At least 3% lower median latency in every one of the three paired rounds",
+    "rule_met": false,
+    "A_B_A": "Both arms return exactly to A logits/tokens after B. A/B actually differ in 4860789 logit bit patterns and in generated tokens, so this checks a changed-input path."
+  },
+  "attribution_limit": {
+    "finding": "The candidate hit path returns captured tokens without calling the original Sampler.sample method, so it also bypasses two original nested CPU NVTX ranges.",
+    "source_evidence": [
+      "Frozen source python/minisgl/engine/sample.py: Sampler.sample is decorated with @nvtx_annotate('Sampler') and contains with torch.cuda.nvtx.range('Sampler').",
+      "Frozen source python/minisgl/utils/torch_utils.py: nvtx_annotate wrapper unconditionally enters nvtx.range(display_name).",
+      "Frozen graph_greedy.py: sample returns the captured token on _take_token success; originals[2] is called only on fallback."
+    ],
+    "interpretation": "Timing is a valid complete-implementation comparison between original Graph and this candidate, including its metadata guards and routing counters. It is not an isolated estimate of moving argmax/cast CPU submission alone, because NVTX wrapping also differs. Neither the performance magnitude nor the missed signal is attributed to one CPU factor.",
+    "action": "Retain all actual results, do not change frozen evidence, do not claim a pure launch-overhead effect, and keep the accepted original Graph runtime as the recommended path. No new GPU run is required for this negative selection decision."
+  },
+  "scope": "Qwen3-0.6B FP16 TP1, NVIDIA RTX4070Ti, sequential B1 greedy, fixed 128 input/32 output steps. A/B/A strict validation and fixed-A timing do not establish broad model-quality, concurrency, arbitrary-shape, Triton or AMD performance."
+}

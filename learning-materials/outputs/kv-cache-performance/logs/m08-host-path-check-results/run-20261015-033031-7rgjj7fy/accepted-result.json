@@ -1,0 +1,529 @@
+{
+  "status": "MODEL_AB_CORRECTNESS_PASS",
+  "arms_paths": {
+    "original_repeat": "original_repeat",
+    "original": "original",
+    "triton": "triton"
+  },
+  "diagnostic_not_timing": true,
+  "comparison_policy": "exact bytes, no tolerance",
+  "comparisons": [
+    {
+      "left": "original_repeat",
+      "right": "original",
+      "comparison": "dtype + shape + exact C-order bytes",
+      "tokens_equal": true,
+      "arrays": {
+        "layer0-prefill.npz": [
+          {
+            "name": "after_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "after_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "indices",
+            "shape": [
+              128
+            ],
+            "dtype": "int32",
+            "bytes": 512
+          },
+          {
+            "name": "k",
+            "shape": [
+              128,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 262144
+          },
+          {
+            "name": "v",
+            "shape": [
+              128,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 262144
+          }
+        ],
+        "layer0-decode.npz": [
+          {
+            "name": "after_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "after_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "indices",
+            "shape": [
+              1
+            ],
+            "dtype": "int32",
+            "bytes": 4
+          },
+          {
+            "name": "k",
+            "shape": [
+              1,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 2048
+          },
+          {
+            "name": "v",
+            "shape": [
+              1,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 2048
+          }
+        ],
+        "sampled-logits.npz": [
+          {
+            "name": "first_decode",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          },
+          {
+            "name": "first_prefill",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          },
+          {
+            "name": "last_decode",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          }
+        ],
+        "final-cache.npz": [
+          {
+            "name": "cache",
+            "shape": [
+              2,
+              28,
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 58834944
+          }
+        ]
+      }
+    },
+    {
+      "left": "original",
+      "right": "triton",
+      "comparison": "dtype + shape + exact C-order bytes",
+      "tokens_equal": true,
+      "arrays": {
+        "layer0-prefill.npz": [
+          {
+            "name": "after_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "after_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "indices",
+            "shape": [
+              128
+            ],
+            "dtype": "int32",
+            "bytes": 512
+          },
+          {
+            "name": "k",
+            "shape": [
+              128,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 262144
+          },
+          {
+            "name": "v",
+            "shape": [
+              128,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 262144
+          }
+        ],
+        "layer0-decode.npz": [
+          {
+            "name": "after_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "after_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "before_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_k",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "expected_v",
+            "shape": [
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 1050624
+          },
+          {
+            "name": "indices",
+            "shape": [
+              1
+            ],
+            "dtype": "int32",
+            "bytes": 4
+          },
+          {
+            "name": "k",
+            "shape": [
+              1,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 2048
+          },
+          {
+            "name": "v",
+            "shape": [
+              1,
+              1024
+            ],
+            "dtype": "float16",
+            "bytes": 2048
+          }
+        ],
+        "sampled-logits.npz": [
+          {
+            "name": "first_decode",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          },
+          {
+            "name": "first_prefill",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          },
+          {
+            "name": "last_decode",
+            "shape": [
+              1,
+              151936
+            ],
+            "dtype": "float16",
+            "bytes": 303872
+          }
+        ],
+        "final-cache.npz": [
+          {
+            "name": "cache",
+            "shape": [
+              2,
+              28,
+              513,
+              1,
+              8,
+              128
+            ],
+            "dtype": "float16",
+            "bytes": 58834944
+          }
+        ]
+      }
+    }
+  ],
+  "raw_expected_token_ids": [
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932
+  ],
+  "total_store_checks": 2688,
+  "fresh_workers": 3,
+  "limitations": "One fixed real-model workload. Diagnostic byte equality, not quality evaluation or a performance measurement."
+}

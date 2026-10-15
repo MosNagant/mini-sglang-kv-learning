@@ -1,0 +1,2624 @@
+{
+  "status": "INDEPENDENT_GATE_UP_EVIDENCE_AUDIT_PASS",
+  "run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m08-gate-up-experiments\\run-20261015-044242-mca3s3gj",
+  "fixture_run": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-27\\cuda-wsl-wsl-2\\outputs\\kv-cache-performance\\logs\\m08-gate-up-fixture-results\\run-20261015-043631-di2tue9u",
+  "created_utc": "2026-10-15T04:47:57.265267+00:00",
+  "auditor_sha256": "d5272ae624abd21199c0d1a807715a5fd17e602d5dd9f94babaa499b96322296",
+  "sources": {
+    "plan": "e908ac4bc86e371c11db12d6c9a1b3ac6d2b617b5c0d0f16ee3550fbb80b8d59",
+    "runner": "864eb23a76bc4010762ec97eb0be8df0728019981685236e57836618cdecfbf8",
+    "candidates": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+    "artifact_manifest": "b409b4b144d503849137ce812162190b34e16141c479a9407b45bdff8ce6c7b7",
+    "fixture_manifest": "a32b943dba7a5f341b6eb73913555d2eb5c63b12e598e0423428dbc04d1d88ee"
+  },
+  "verified_artifact_hashes": 951,
+  "fixture_weights": 28,
+  "fixture_samples": 84,
+  "numerical_cases": 588,
+  "numerical_saved_arrays": 924,
+  "numerical_saved_elements": 3870720,
+  "independent_fp64_oracle_arrays": 168,
+  "oracle_max_abs_difference": {
+    "z64": 0.0,
+    "y64": 2.842170943040401e-14
+  },
+  "eligible": [
+    "gemv_direct_r4_w4",
+    "gemv_direct_r8_w4",
+    "gemv_direct_r8_w8",
+    "gemv_splitk4_r4_w4",
+    "swiglu_fused_r4_w4",
+    "swiglu_fused_r8_w4",
+    "swiglu_packed_r4_w4"
+  ],
+  "fresh_timing_process_results": 9,
+  "interval_averages": 4320,
+  "post_timing_reported_checks": 2016,
+  "selected_candidate": "swiglu_fused_r8_w4",
+  "selection_ratios_all": {
+    "gemv_direct_r4_w4": [
+      0.9979327225722859,
+      0.9597187168884963,
+      0.983521731634378
+    ],
+    "gemv_direct_r8_w4": [
+      0.999992618030717,
+      0.9902839113760143,
+      0.9905379091620213
+    ],
+    "gemv_direct_r8_w8": [
+      0.9791157270159948,
+      0.9542970379113704,
+      0.9513602733753262
+    ],
+    "gemv_splitk4_r4_w4": [
+      0.9236837873177448,
+      0.9126410480237893,
+      0.9015403699938781
+    ],
+    "swiglu_fused_r4_w4": [
+      1.061836122639189,
+      1.0074851750997231,
+      1.0143938623843844
+    ],
+    "swiglu_fused_r8_w4": [
+      1.022066599399514,
+      1.0257760280798904,
+      1.0319920186539366
+    ],
+    "swiglu_packed_r4_w4": [
+      1.0539429408169865,
+      0.9997408733970101,
+      1.0101347320542784
+    ]
+  },
+  "selection_latency_reductions": [
+    0.021590177599462246,
+    0.02512831980304664,
+    0.031000257827250355
+  ],
+  "strong_local_gain": false,
+  "holdout_ratios": {
+    "16": [
+      0.9834739985642849,
+      0.9931560316617,
+      0.9736978307150924
+    ],
+    "31": [
+      0.974298105490707,
+      1.0392835583437705,
+      0.9611293130080582
+    ]
+  },
+  "all_settings_performance_table": [
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r4_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        10.173440277576447,
+        8.212480247020721,
+        8.26367974281311
+      ],
+      "paired_original_over_arm": [
+        1.4036077792735093,
+        1.535536120664913,
+        1.5295268647477516
+      ],
+      "paired_latency_reduction_percent": [
+        28.755025815147008,
+        34.876165624356446,
+        34.620304942148294
+      ],
+      "median_paired_speedup": 1.5295268647477516,
+      "median_paired_latency_reduction_percent": 34.620304942148294,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r4_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        26.8995201587677,
+        30.88831901550293,
+        29.0175998210907
+      ],
+      "paired_original_over_arm": [
+        0.9318708973158508,
+        0.8026024468372506,
+        0.8675452238865385
+      ],
+      "paired_latency_reduction_percent": [
+        -7.311002294458113,
+        -24.594686191229265,
+        -15.267766159794395
+      ],
+      "median_paired_speedup": 0.8675452238865385,
+      "median_paired_latency_reduction_percent": -15.267766159794395,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r4_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        31.208229064941406,
+        31.471543652670725,
+        30.946515287671772
+      ],
+      "paired_original_over_arm": [
+        0.9979327225722859,
+        0.9597187168884963,
+        0.983521731634378
+      ],
+      "paired_latency_reduction_percent": [
+        -0.2071559916770216,
+        -4.1971967830428,
+        -1.6754351058658523
+      ],
+      "median_paired_speedup": 0.983521731634378,
+      "median_paired_latency_reduction_percent": -1.6754351058658523,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r4_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        34.81577123914446,
+        35.10279996054513,
+        35.24022953850883
+      ],
+      "paired_original_over_arm": [
+        0.9706471022421838,
+        0.9733207894605855,
+        0.9811967755711273
+      ],
+      "paired_latency_reduction_percent": [
+        -3.024054539493437,
+        -2.7410501068409365,
+        -1.9163561170416399
+      ],
+      "median_paired_speedup": 0.9733207894605855,
+      "median_paired_latency_reduction_percent": -2.7410501068409365,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        11.325120329856873,
+        8.765439987182617,
+        9.103359878063202
+      ],
+      "paired_original_over_arm": [
+        1.2608713638066231,
+        1.43866823319621,
+        1.3884456220128674
+      ],
+      "paired_latency_reduction_percent": [
+        20.689768305867595,
+        30.49127123782005,
+        27.977013709022845
+      ],
+      "median_paired_speedup": 1.3884456220128674,
+      "median_paired_latency_reduction_percent": 27.977013709022845,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        29.4758403301239,
+        27.25376009941101,
+        30.238720178604126
+      ],
+      "paired_original_over_arm": [
+        0.8504212163918757,
+        0.9096374346183518,
+        0.8325114285508162
+      ],
+      "paired_latency_reduction_percent": [
+        -17.588787853006504,
+        -9.933910142952818,
+        -20.118471135073477
+      ],
+      "median_paired_speedup": 0.8504212163918757,
+      "median_paired_latency_reduction_percent": -17.588787853006504,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        31.14394290106637,
+        30.500171865735734,
+        30.727314949035645
+      ],
+      "paired_original_over_arm": [
+        0.999992618030717,
+        0.9902839113760143,
+        0.9905379091620213
+      ],
+      "paired_latency_reduction_percent": [
+        -0.0007382023776925095,
+        -0.9811417223253738,
+        -0.9552477245402313
+      ],
+      "median_paired_speedup": 0.9905379091620213,
+      "median_paired_latency_reduction_percent": -0.9552477245402313,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        33.817085197993684,
+        34.95679923466274,
+        34.29668460573469
+      ],
+      "paired_original_over_arm": [
+        0.9993122490523598,
+        0.9773859654746628,
+        1.0081907330421551
+      ],
+      "paired_latency_reduction_percent": [
+        -0.06882242745371858,
+        -2.31372613523817,
+        0.8124189970919682
+      ],
+      "median_paired_speedup": 0.9993122490523598,
+      "median_paired_latency_reduction_percent": -0.06882242745371858,
+      "rounds_faster_than_original": 1,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w8",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        12.827680110931396,
+        9.162240028381348,
+        10.173439979553223
+      ],
+      "paired_original_over_arm": [
+        1.1131802315067192,
+        1.3763621145576206,
+        1.2424037684114317
+      ],
+      "paired_latency_reduction_percent": [
+        10.167287228369727,
+        27.344701701455055,
+        19.51086873483773
+      ],
+      "median_paired_speedup": 1.2424037684114317,
+      "median_paired_latency_reduction_percent": 19.51086873483773,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w8",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        27.408640384674072,
+        28.05216073989868,
+        29.02959942817688
+      ],
+      "paired_original_over_arm": [
+        0.9145612345562816,
+        0.8837479811411406,
+        0.8671866174289508
+      ],
+      "paired_latency_reduction_percent": [
+        -9.342049740952652,
+        -13.154431052702243,
+        -15.315432676396302
+      ],
+      "median_paired_speedup": 0.8837479811411406,
+      "median_paired_latency_reduction_percent": -13.154431052702243,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w8",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        31.80799995149885,
+        31.650343963078093,
+        31.992685794830322
+      ],
+      "paired_original_over_arm": [
+        0.9791157270159948,
+        0.9542970379113704,
+        0.9513602733753262
+      ],
+      "paired_latency_reduction_percent": [
+        -2.132972886428175,
+        -4.789175725480366,
+        -5.112650589466505
+      ],
+      "median_paired_speedup": 0.9542970379113704,
+      "median_paired_latency_reduction_percent": -4.789175725480366,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w8",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        34.667885303497314,
+        35.65120015825544,
+        35.20182882036482
+      ],
+      "paired_original_over_arm": [
+        0.9747876794259843,
+        0.9583488022341711,
+        0.9822671364610343
+      ],
+      "paired_latency_reduction_percent": [
+        -2.586442269034661,
+        -4.346141787700741,
+        -1.8052994832805425
+      ],
+      "median_paired_speedup": 0.9747876794259843,
+      "median_paired_latency_reduction_percent": -2.586442269034661,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_splitk4_r4_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        13.783040046691895,
+        11.084800362586975,
+        10.930399894714355
+      ],
+      "paired_original_over_arm": [
+        1.036021071346159,
+        1.1376443099607043,
+        1.1563639290467838
+      ],
+      "paired_latency_reduction_percent": [
+        3.476866672157042,
+        12.099063719262016,
+        13.522034466751132
+      ],
+      "median_paired_speedup": 1.1376443099607043,
+      "median_paired_latency_reduction_percent": 12.099063719262016,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_splitk4_r4_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        41.96352005004883,
+        41.502718925476074,
+        43.97247791290283
+      ],
+      "paired_original_over_arm": [
+        0.5973493157347153,
+        0.5973353327777874,
+        0.5724962824087584
+      ],
+      "paired_latency_reduction_percent": [
+        -67.40623512224848,
+        -67.41015391634409,
+        -74.67362334520924
+      ],
+      "median_paired_speedup": 0.5973353327777874,
+      "median_paired_latency_reduction_percent": -67.41015391634409,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_splitk4_r4_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        33.71685573032924,
+        33.09497152056012,
+        33.76062938145229
+      ],
+      "paired_original_over_arm": [
+        0.9236837873177448,
+        0.9126410480237893,
+        0.9015403699938781
+      ],
+      "paired_latency_reduction_percent": [
+        -8.262157865070607,
+        -9.572104187662344,
+        -10.921266898651517
+      ],
+      "median_paired_speedup": 0.9126410480237893,
+      "median_paired_latency_reduction_percent": -9.572104187662344,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_splitk4_r4_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        41.98754174368722,
+        46.330514975956504,
+        45.22542783192226
+      ],
+      "paired_original_over_arm": [
+        0.8048536795008534,
+        0.737446691184106,
+        0.7645610279703035
+      ],
+      "paired_latency_reduction_percent": [
+        -24.24618604218478,
+        -35.60302215124411,
+        -30.794006418914833
+      ],
+      "median_paired_speedup": 0.7645610279703035,
+      "median_paired_latency_reduction_percent": -30.794006418914833,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r4_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        9.53711986541748,
+        7.664639949798584,
+        7.516160011291504
+      ],
+      "paired_original_over_arm": [
+        1.497257045846689,
+        1.645290599707663,
+        1.6816459667324979
+      ],
+      "paired_latency_reduction_percent": [
+        33.21120092412011,
+        39.220463535275705,
+        40.534451377834415
+      ],
+      "median_paired_speedup": 1.645290599707663,
+      "median_paired_latency_reduction_percent": 39.220463535275705,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r4_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        14.86847996711731,
+        13.88543963432312,
+        13.793280124664307
+      ],
+      "paired_original_over_arm": [
+        1.6859073720483766,
+        1.7853983073932918,
+        1.8250974319316076
+      ],
+      "paired_latency_reduction_percent": [
+        40.684760231815076,
+        43.99008916615279,
+        45.208404630669975
+      ],
+      "median_paired_speedup": 1.7853983073932918,
+      "median_paired_latency_reduction_percent": 43.99008916615279,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r4_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        29.330056054251536,
+        29.979428223201207,
+        30.004686968667166
+      ],
+      "paired_original_over_arm": [
+        1.061836122639189,
+        1.0074851750997231,
+        1.0143938623843844
+      ],
+      "paired_latency_reduction_percent": [
+        5.823509044455532,
+        0.742956351589219,
+        1.4189618961761852
+      ],
+      "median_paired_speedup": 1.0143938623843844,
+      "median_paired_latency_reduction_percent": 1.4189618961761852,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r4_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        31.566286087036133,
+        31.767542021615164,
+        31.743999889918737
+      ],
+      "paired_original_over_arm": [
+        1.0705671035364854,
+        1.075509239796629,
+        1.0892641038772313
+      ],
+      "paired_latency_reduction_percent": [
+        6.591562855179822,
+        7.0207895016231925,
+        8.194899984264236
+      ],
+      "median_paired_speedup": 1.075509239796629,
+      "median_paired_latency_reduction_percent": 7.0207895016231925,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        10.935840010643005,
+        7.987200021743774,
+        7.828480005264282
+      ],
+      "paired_original_over_arm": [
+        1.3057542814894512,
+        1.578846157003374,
+        1.6145561028200832
+      ],
+      "paired_latency_reduction_percent": [
+        23.41591261264582,
+        36.66260670400055,
+        38.06347154779333
+      ],
+      "median_paired_speedup": 1.578846157003374,
+      "median_paired_latency_reduction_percent": 36.66260670400055,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        13.525919914245605,
+        13.2505601644516,
+        14.222400188446045
+      ],
+      "paired_original_over_arm": [
+        1.8532477012019004,
+        1.8709428214998225,
+        1.7700303605497587
+      ],
+      "paired_latency_reduction_percent": [
+        46.040672309942025,
+        46.55101222182941,
+        43.503793929873204
+      ],
+      "median_paired_speedup": 1.8532477012019004,
+      "median_paired_latency_reduction_percent": 46.040672309942025,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        30.47131470271519,
+        29.444858006068635,
+        29.493028776986257
+      ],
+      "paired_original_over_arm": [
+        1.022066599399514,
+        1.0257760280798904,
+        1.0319920186539366
+      ],
+      "paired_latency_reduction_percent": [
+        2.1590177599462135,
+        2.512831980304675,
+        3.1000257827250355
+      ],
+      "median_paired_speedup": 1.0257760280798904,
+      "median_paired_latency_reduction_percent": 2.512831980304675,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        32.09628547940936,
+        31.995885712759836,
+        33.14274208886283
+      ],
+      "paired_original_over_arm": [
+        1.05288904808882,
+        1.067833698263568,
+        1.0432932646568973
+      ],
+      "paired_latency_reduction_percent": [
+        5.023230907836195,
+        6.35245903682139,
+        4.149673550431176
+      ],
+      "median_paired_speedup": 1.05288904808882,
+      "median_paired_latency_reduction_percent": 5.023230907836195,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_packed_r4_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        14.27951991558075,
+        12.610560059547424,
+        12.639520168304443
+      ],
+      "arm_process_medians_us": [
+        10.250399708747864,
+        8.145920038223267,
+        8.149920105934143
+      ],
+      "paired_original_over_arm": [
+        1.393069570096312,
+        1.5480829667336085,
+        1.5508765735140544
+      ],
+      "paired_latency_reduction_percent": [
+        28.216076105167996,
+        35.40397888945456,
+        35.52033623577474
+      ],
+      "median_paired_speedup": 1.5480829667336085,
+      "median_paired_latency_reduction_percent": 35.40397888945456,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_packed_r4_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        25.066879987716675,
+        24.791040420532227,
+        25.17408013343811
+      ],
+      "arm_process_medians_us": [
+        14.105600118637085,
+        14.58687961101532,
+        14.929920434951782
+      ],
+      "paired_original_over_arm": [
+        1.777087098520321,
+        1.6995437736944925,
+        1.6861496511732357
+      ],
+      "paired_latency_reduction_percent": [
+        43.72813798307112,
+        41.16067997317976,
+        40.69328310780763
+      ],
+      "median_paired_speedup": 1.6995437736944925,
+      "median_paired_latency_reduction_percent": 41.16067997317976,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_packed_r4_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        31.143712997436523,
+        30.20382949284145,
+        30.43657030378069
+      ],
+      "arm_process_medians_us": [
+        29.549714497157506,
+        30.211658137185232,
+        30.13119867869786
+      ],
+      "paired_original_over_arm": [
+        1.0539429408169865,
+        0.9997408733970101,
+        1.0101347320542784
+      ],
+      "paired_latency_reduction_percent": [
+        5.118203151981982,
+        -0.025919376699024,
+        1.0033049783040093
+      ],
+      "median_paired_speedup": 1.0101347320542784,
+      "median_paired_latency_reduction_percent": 1.0033049783040093,
+      "rounds_faster_than_original": 2,
+      "is_selection_primary": true,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_packed_r4_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.793827465602334,
+        34.166284969874795,
+        34.57759959357126
+      ],
+      "arm_process_medians_us": [
+        31.83114358357021,
+        32.212114334106445,
+        31.869828701019287
+      ],
+      "paired_original_over_arm": [
+        1.0616592324708425,
+        1.0606657053150732,
+        1.084963459262816
+      ],
+      "paired_latency_reduction_percent": [
+        5.807817667382831,
+        5.71958770902774,
+        7.830997305710619
+      ],
+      "median_paired_speedup": 1.0616592324708425,
+      "median_paired_latency_reduction_percent": 5.807817667382831,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        17.82095968723297,
+        12.917760014533997,
+        13.521919846534729
+      ],
+      "arm_process_medians_us": [
+        17.82095968723297,
+        12.917760014533997,
+        13.521919846534729
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        21.966240406036377,
+        22.543200254440308,
+        24.156159162521362
+      ],
+      "arm_process_medians_us": [
+        21.966240406036377,
+        22.543200254440308,
+        24.156159162521362
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        30.034228733607698,
+        31.054569993700298,
+        30.013484614236013
+      ],
+      "arm_process_medians_us": [
+        30.034228733607698,
+        31.054569993700298,
+        30.013484614236013
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.58485698699951,
+        34.80497087751117,
+        34.498114245278494
+      ],
+      "arm_process_medians_us": [
+        33.58485698699951,
+        34.80497087751117,
+        34.498114245278494
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        17.82095968723297,
+        12.917760014533997,
+        13.521919846534729
+      ],
+      "arm_process_medians_us": [
+        15.048159956932068,
+        8.212479948997498,
+        8.436000049114227
+      ],
+      "paired_original_over_arm": [
+        1.1842617129427568,
+        1.572942654929815,
+        1.6028828553592196
+      ],
+      "paired_latency_reduction_percent": [
+        15.55920544664804,
+        36.424891469128596,
+        37.61240900066327
+      ],
+      "median_paired_speedup": 1.572942654929815,
+      "median_paired_latency_reduction_percent": 36.424891469128596,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        21.966240406036377,
+        22.543200254440308,
+        24.156159162521362
+      ],
+      "arm_process_medians_us": [
+        14.001759886741638,
+        13.472319841384888,
+        13.777920007705688
+      ],
+      "paired_original_over_arm": [
+        1.5688199614704406,
+        1.6732975849631386,
+        1.7532515175738683
+      ],
+      "paired_latency_reduction_percent": [
+        36.257822786579716,
+        40.23776709018383,
+        42.96311795675558
+      ],
+      "median_paired_speedup": 1.6732975849631386,
+      "median_paired_latency_reduction_percent": 40.23776709018383,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        30.034228733607698,
+        31.054569993700298,
+        30.013484614236013
+      ],
+      "arm_process_medians_us": [
+        30.53891488483974,
+        31.268571104322163,
+        30.82422869546073
+      ],
+      "paired_original_over_arm": [
+        0.9834739985642849,
+        0.9931560316617,
+        0.9736978307150924
+      ],
+      "paired_latency_reduction_percent": [
+        -1.6803699396059635,
+        -0.6891131020821728,
+        -2.7012660863782623
+      ],
+      "median_paired_speedup": 0.9834739985642849,
+      "median_paired_latency_reduction_percent": -1.6803699396059635,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.58485698699951,
+        34.80497087751117,
+        34.498114245278494
+      ],
+      "arm_process_medians_us": [
+        32.169829096112935,
+        32.74788515908378,
+        32.555486474718364
+      ],
+      "paired_original_over_arm": [
+        1.0439861799283712,
+        1.0628158340129266,
+        1.0596712868065639
+      ],
+      "paired_latency_reduction_percent": [
+        4.2132913992586785,
+        5.910321619480364,
+        5.631112926197124
+      ],
+      "median_paired_speedup": 1.0596712868065639,
+      "median_paired_latency_reduction_percent": 5.631112926197124,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        12.778560519218445,
+        12.82975971698761,
+        14.360799789428711
+      ],
+      "arm_process_medians_us": [
+        12.778560519218445,
+        12.82975971698761,
+        14.360799789428711
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "original",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        23.888959884643555,
+        24.587199687957764,
+        28.272640705108643
+      ],
+      "arm_process_medians_us": [
+        23.888959884643555,
+        24.587199687957764,
+        28.272640705108643
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        30.014170919145855,
+        31.87868595123291,
+        30.067200320107595
+      ],
+      "arm_process_medians_us": [
+        30.014170919145855,
+        31.87868595123291,
+        30.067200320107595
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "original",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.83439949580601,
+        34.38754252025059,
+        34.32731458118984
+      ],
+      "arm_process_medians_us": [
+        33.83439949580601,
+        34.38754252025059,
+        34.32731458118984
+      ],
+      "paired_original_over_arm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "paired_latency_reduction_percent": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_paired_speedup": 1.0,
+      "median_paired_latency_reduction_percent": 0.0,
+      "rounds_faster_than_original": 0,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "graph",
+      "original_process_medians_us": [
+        12.778560519218445,
+        12.82975971698761,
+        14.360799789428711
+      ],
+      "arm_process_medians_us": [
+        9.275200068950653,
+        8.724479973316193,
+        10.127359628677368
+      ],
+      "paired_original_over_arm": [
+        1.3777126557081527,
+        1.4705472138428202,
+        1.4180201272564297
+      ],
+      "paired_latency_reduction_percent": [
+        27.415924078450605,
+        31.998103115179187,
+        29.47913920412475
+      ],
+      "median_paired_speedup": 1.4180201272564297,
+      "median_paired_latency_reduction_percent": 29.47913920412475,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "hot_l0",
+      "policy": "eager",
+      "original_process_medians_us": [
+        23.888959884643555,
+        24.587199687957764,
+        28.272640705108643
+      ],
+      "arm_process_medians_us": [
+        15.011679530143738,
+        14.339359998703003,
+        19.940800666809082
+      ],
+      "paired_original_over_arm": [
+        1.5913582378756534,
+        1.7146650680491793,
+        1.4178287611172846
+      ],
+      "paired_latency_reduction_percent": [
+        37.16059802254665,
+        41.67957237632846,
+        29.46962091444845
+      ],
+      "median_paired_speedup": 1.5913582378756534,
+      "median_paired_latency_reduction_percent": 37.16059802254665,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "graph",
+      "original_process_medians_us": [
+        30.014170919145855,
+        31.87868595123291,
+        30.067200320107595
+      ],
+      "arm_process_medians_us": [
+        30.80594199044364,
+        30.67371334348406,
+        31.283199787139893
+      ],
+      "paired_original_over_arm": [
+        0.974298105490707,
+        1.0392835583437705,
+        0.9611293130080582
+      ],
+      "paired_latency_reduction_percent": [
+        -2.6379908125089058,
+        3.779869125070534,
+        -4.04427234357132
+      ],
+      "median_paired_speedup": 0.974298105490707,
+      "median_paired_latency_reduction_percent": -2.6379908125089058,
+      "rounds_faster_than_original": 1,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "swiglu_fused_r8_w4",
+      "setting": "rotate28",
+      "policy": "eager",
+      "original_process_medians_us": [
+        33.83439949580601,
+        34.38754252025059,
+        34.32731458118984
+      ],
+      "arm_process_medians_us": [
+        32.22822802407401,
+        32.22817012241909,
+        32.30857167925153
+      ],
+      "paired_original_over_arm": [
+        1.0498374118034728,
+        1.0670026374326902,
+        1.0624831986378012
+      ],
+      "paired_latency_reduction_percent": [
+        4.747155249293233,
+        6.279519382810983,
+        5.880864630886418
+      ],
+      "median_paired_speedup": 1.0624831986378012,
+      "median_paired_latency_reduction_percent": 5.880864630886418,
+      "rounds_faster_than_original": 3,
+      "is_selection_primary": false,
+      "limit": "hot_l0 is diagnostic and cannot replace the predeclared rotate28 primary; Eager allocation policies differ"
+    }
+  ],
+  "setup_memory_and_time_table": [
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "original",
+      "per_round_setup": [
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r4_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.0001392620000046918,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00015749700000355915,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0001362990000473019,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.00013698000000061938,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0001422810000022423,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0001418960000023617,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_direct_r8_w8",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.00014022200000596285,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00013711000001137563,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0001391229999683219,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "gemv_splitk4_r4_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.0006121140000132641,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 2752512,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0006274320000017042,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 2752512,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.0007614670000322121,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 2752512,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r4_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.0001843069999907243,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00014206399996652408,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00014351700004056056,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_fused_r8_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.00014207399998866777,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00024089100000423969,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00014144400002180646,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "selection",
+      "step": 1,
+      "arm": "swiglu_packed_r4_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.021610864999985324,
+          "prepack_bytes_sum": 352321536,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.02178995199999889,
+          "prepack_bytes_sum": 352321536,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.021657274000020266,
+          "prepack_bytes_sum": 352321536,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "original",
+      "per_round_setup": [
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        }
+      ]
+    },
+    {
+      "stage": "holdout",
+      "step": 16,
+      "arm": "swiglu_fused_r8_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.00013510600003030504,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00016258400000879192,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00016387499996994848,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "original",
+      "per_round_setup": [
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        },
+        {
+          "kind": "original F.linear + FlashInfer activation",
+          "allocation_policy": "original allocating APIs"
+        }
+      ]
+    },
+    {
+      "stage": "holdout",
+      "step": 31,
+      "arm": "swiglu_fused_r8_w4",
+      "per_round_setup": [
+        {
+          "setup_seconds_sum": 0.00018182900001306734,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00013837999993882022,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        },
+        {
+          "setup_seconds_sum": 0.00021105400003307295,
+          "prepack_bytes_sum": 0,
+          "workspace_bytes_sum": 0,
+          "allocation_policy": "reused candidate output/workspace; gemv arms use original allocating activation"
+        }
+      ]
+    }
+  ],
+  "numerical_summary": {
+    "gemv_direct_r4_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        },
+        "z": {
+          "max_abs_vs_original": 0.00390625,
+          "max_candidate_nrmse": 0.00021828531057332091,
+          "max_original_nrmse": 0.00021828531060090524,
+          "violations_total": 0
+        }
+      }
+    },
+    "gemv_direct_r8_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        },
+        "z": {
+          "max_abs_vs_original": 0.00390625,
+          "max_candidate_nrmse": 0.00021828531057332091,
+          "max_original_nrmse": 0.00021828531060090524,
+          "violations_total": 0
+        }
+      }
+    },
+    "gemv_direct_r8_w8": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        },
+        "z": {
+          "max_abs_vs_original": 0.00390625,
+          "max_candidate_nrmse": 0.00021828531057332091,
+          "max_original_nrmse": 0.00021828531060090524,
+          "violations_total": 0
+        }
+      }
+    },
+    "gemv_splitk4_r4_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        },
+        "z": {
+          "max_abs_vs_original": 0.00390625,
+          "max_candidate_nrmse": 0.00021828531057332091,
+          "max_original_nrmse": 0.00021828531060090524,
+          "violations_total": 0
+        }
+      }
+    },
+    "swiglu_fused_r4_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        }
+      }
+    },
+    "swiglu_fused_r8_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        }
+      }
+    },
+    "swiglu_packed_r4_w4": {
+      "cases": 84,
+      "passed": 84,
+      "output_metrics": {
+        "y": {
+          "max_abs_vs_original": 0.001953125,
+          "max_candidate_nrmse": 0.0002455232286444761,
+          "max_original_nrmse": 0.00024555412611862177,
+          "violations_total": 0
+        }
+      }
+    }
+  },
+  "changed_input_control_non_degeneracy": [
+    {
+      "step": 1,
+      "alternate": 16,
+      "stale_y_rejected_elements": 3015
+    },
+    {
+      "step": 16,
+      "alternate": 1,
+      "stale_y_rejected_elements": 3015
+    },
+    {
+      "step": 31,
+      "alternate": 1,
+      "stale_y_rejected_elements": 2991
+    }
+  ],
+  "compiled_static_resources": [
+    {
+      "record": "holdout/step16-round1/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "holdout/step16-round2/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "holdout/step16-round3/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "holdout/step31-round1/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "holdout/step31-round2/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "holdout/step31-round3/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/gemv_direct_r4_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/gemv_direct_r8_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/gemv_direct_r8_w8/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/gemv_splitk4_r4_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_splitk_partials",
+      "registers_per_thread": 22,
+      "shared_memory_bytes": 512,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/gemv_splitk4_r4_w4/compiler/compiled.json",
+      "kernel_index": 1,
+      "name": "_gemv_splitk_reduce",
+      "registers_per_thread": 20,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/swiglu_fused_r4_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 41,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/swiglu_fused_r8_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "numerical/swiglu_packed_r4_w4/compiler/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/gemv_direct_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/gemv_direct_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/gemv_direct_r8_w8/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_splitk_partials",
+      "registers_per_thread": 22,
+      "shared_memory_bytes": 512,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 1,
+      "name": "_gemv_splitk_reduce",
+      "registers_per_thread": 20,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/swiglu_fused_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 41,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round1/compiler/swiglu_packed_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/gemv_direct_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/gemv_direct_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/gemv_direct_r8_w8/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_splitk_partials",
+      "registers_per_thread": 22,
+      "shared_memory_bytes": 512,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 1,
+      "name": "_gemv_splitk_reduce",
+      "registers_per_thread": 20,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/swiglu_fused_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 41,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round2/compiler/swiglu_packed_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/gemv_direct_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/gemv_direct_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/gemv_direct_r8_w8/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_direct",
+      "registers_per_thread": 38,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_gemv_splitk_partials",
+      "registers_per_thread": 22,
+      "shared_memory_bytes": 512,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/gemv_splitk4_r4_w4/compiled.json",
+      "kernel_index": 1,
+      "name": "_gemv_splitk_reduce",
+      "registers_per_thread": 20,
+      "shared_memory_bytes": 2048,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/swiglu_fused_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 41,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/swiglu_fused_r8_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 47,
+      "shared_memory_bytes": 128,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    },
+    {
+      "record": "selection/step01-round3/compiler/swiglu_packed_r4_w4/compiled.json",
+      "kernel_index": 0,
+      "name": "_swiglu_fused",
+      "registers_per_thread": 42,
+      "shared_memory_bytes": 64,
+      "n_spills_raw": 0,
+      "artifact_kinds": [
+        "ttir",
+        "ttgir",
+        "llir",
+        "ptx",
+        "cubin"
+      ]
+    }
+  ],
+  "limitations": [
+    "CPU reanalysis only; no GPU execution, new speedup measurements or hardware-counter evidence.",
+    "Saved 588 candidate output files and 84 original fixture/oracle pairs were directly rechecked elementwise.",
+    "Read-only GPU comparisons, packing roundtrip, Graph sentinel/replay controls and post-timing outputs are runtime-reported; no saved final GPU arrays exist. Their recorded metrics/counts agree with audited fixture metrics.",
+    "Selection/holdout contents and hashes are checked; chronological freeze-before-holdout is supported by frozen controller source, not an externally signed timestamp.",
+    "NRMSE and tolerances are the frozen scoped engineering contract, not evidence of general model quality.",
+    "Timing is the full GateUp plus activation pipeline. Eager allocating baseline versus reused candidate outputs remains an implementation-policy difference.",
+    "Static compiler resources are not achieved occupancy, bandwidth or a demonstrated performance cause.",
+    "Holdout PASS means collection completed; performance acceptance and whole-model evidence are separate."
+  ]
+}

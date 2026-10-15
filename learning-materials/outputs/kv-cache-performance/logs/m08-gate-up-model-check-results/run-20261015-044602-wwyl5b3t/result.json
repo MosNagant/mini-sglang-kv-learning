@@ -1,0 +1,1311 @@
+{
+  "status": "GATE_UP_MODEL_CORRECTNESS_REJECTED",
+  "mode": "check",
+  "workers": [
+    {
+      "status": "MODEL_ALL_LOGITS_COLLECTED",
+      "arm": "original",
+      "mode": "check",
+      "policy": "eager",
+      "round": 0,
+      "samples": [],
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "engine_options": {
+          "max_running_req": 1,
+          "attention_backend": "fi",
+          "page_size": 1,
+          "num_page_override": 512,
+          "max_seq_len_override": 256,
+          "max_extend_tokens": 256,
+          "cuda_graph_bs": [],
+          "memory_ratio": 0.3,
+          "use_dummy_weight": false,
+          "use_pynccl": false,
+          "cache_type": "naive"
+        }
+      },
+      "raw_generated_token_ids": [
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932
+      ],
+      "output": [
+        {
+          "text": " generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises",
+          "token_ids": [
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932
+          ]
+        }
+      ],
+      "logits_sha256": "f1cf190f058a3165e5eb08f48c9ed1a082686a8d56562c3e30360ff2e772089c",
+      "logits_count": 32,
+      "all_logits_finite": true,
+      "input_token_ids": [
+        1986,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614
+      ],
+      "numerical_contract": {
+        "atol": 0.002,
+        "rtol": 0.002,
+        "every_element": true
+      },
+      "limit": "All 32 logits saved in an Eager diagnostic; candidate acceptance is a later cross-process comparison, not assumed here."
+    },
+    {
+      "status": "MODEL_ALL_LOGITS_COLLECTED",
+      "arm": "candidate",
+      "mode": "check",
+      "policy": "eager",
+      "round": 0,
+      "samples": [],
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "engine_options": {
+          "max_running_req": 1,
+          "attention_backend": "fi",
+          "page_size": 1,
+          "num_page_override": 512,
+          "max_seq_len_override": 256,
+          "max_extend_tokens": 256,
+          "cuda_graph_bs": [],
+          "memory_ratio": 0.3,
+          "use_dummy_weight": false,
+          "use_pynccl": false,
+          "cache_type": "naive"
+        }
+      },
+      "candidate_evidence": {
+        "counters": {
+          "decode_python_calls": 868,
+          "capture_python_calls": 0,
+          "prefill_original_python_calls": 28,
+          "original_decode_fallback_calls": 0,
+          "current_input_calls": 868
+        },
+        "layers": [
+          {
+            "layer": 0,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.5856999997510002e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 1,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.6220999999205787e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 2,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.1169000000421647e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 3,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.654999999497704e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 4,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.25899999870694e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 5,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.5513000001021737e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 6,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.2109000000037895e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 7,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.792000000174994e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 8,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.422999998065507e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 9,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 8.93600000040351e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 10,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.300000002099296e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 11,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.103000000010297e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 12,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 8.915000002218676e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 13,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.18599999977232e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 14,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.366000000454733e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 15,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.233000000108404e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 16,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.232000000025664e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 17,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 9.586000000894046e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 18,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 1.0297000002879031e-05,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 19,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 8.261000001397178e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 20,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 7.707999998274317e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 21,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 6.7920000006438386e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 22,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 6.918000000410984e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 23,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 8.06499999939092e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 24,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 8.519999997957939e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 25,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 6.855999998833795e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 26,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 7.418999999231346e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          },
+          {
+            "layer": 27,
+            "candidate": "swiglu_fused_r8_w4",
+            "kind": "swiglu",
+            "workspace_bytes": 0,
+            "prepack_bytes": 0,
+            "setup_seconds": 6.932999998099376e-06,
+            "kernel_launches_per_call": 1,
+            "kernel_hashes": [
+              "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+            ],
+            "input_policy": "call_with_input(current x)",
+            "weight_shape": [
+              6144,
+              1024
+            ]
+          }
+        ],
+        "compiled_artifacts": {
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759": {
+            "name": "_swiglu_fused",
+            "hash": "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759",
+            "files": {
+              "ptx": {
+                "path": "compiled/72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759.ptx",
+                "sha256": "1e38bb8b4ea38cb1788882a18c8804db10a9f24767cf5984742d3fc79c709534"
+              },
+              "ttgir": {
+                "path": "compiled/72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759.ttgir",
+                "sha256": "7cbe166a06dff50d213b3d743e9a26ded914017330690a9c85844f46e4f02e2a"
+              }
+            }
+          }
+        },
+        "scope": "Python observations including capture/warmup; not Graph replay node counts or hardware counters. Counter observation is disabled before timing samples."
+      },
+      "raw_generated_token_ids": [
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932
+      ],
+      "output": [
+        {
+          "text": " generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises",
+          "token_ids": [
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932
+          ]
+        }
+      ],
+      "logits_sha256": "b3e9628f83032ca2b8323c7fa4f71d7c85818fc8645503baaebca656005aa30d",
+      "logits_count": 32,
+      "all_logits_finite": true,
+      "input_token_ids": [
+        1986,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614
+      ],
+      "numerical_contract": {
+        "atol": 0.002,
+        "rtol": 0.002,
+        "every_element": true
+      },
+      "limit": "All 32 logits saved in an Eager diagnostic; candidate acceptance is a later cross-process comparison, not assumed here."
+    }
+  ],
+  "plan_sha256": "d0243624121cef203b6e4a5af96b8e9d4315d71e374209d4a4146333f3b424c7",
+  "order_sha256": "c5f5fb1c4974cdc07ecc72a383533af43fa01bba775310b439244bcd245da48f",
+  "comparison": {
+    "atol": 0.002,
+    "rtol": 0.002,
+    "comparison": "abs(candidate-reference) <= atol + rtol*abs(reference), every saved FP16 logit element",
+    "steps": [
+      {
+        "step": 0,
+        "finite": true,
+        "elements": 151936,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "max_allowed_error_ratio": 0.0
+      },
+      {
+        "step": 1,
+        "finite": true,
+        "elements": 151936,
+        "violations": 37333,
+        "max_abs_error": 0.017578125,
+        "max_allowed_error_ratio": 7.097405433654785
+      },
+      {
+        "step": 2,
+        "finite": true,
+        "elements": 151936,
+        "violations": 47490,
+        "max_abs_error": 0.01953125,
+        "max_allowed_error_ratio": 7.813639163970947
+      },
+      {
+        "step": 3,
+        "finite": true,
+        "elements": 151936,
+        "violations": 17224,
+        "max_abs_error": 0.017578125,
+        "max_allowed_error_ratio": 6.140200614929199
+      },
+      {
+        "step": 4,
+        "finite": true,
+        "elements": 151936,
+        "violations": 13831,
+        "max_abs_error": 0.01953125,
+        "max_allowed_error_ratio": 6.52976655960083
+      },
+      {
+        "step": 5,
+        "finite": true,
+        "elements": 151936,
+        "violations": 18939,
+        "max_abs_error": 0.017578125,
+        "max_allowed_error_ratio": 7.0969624519348145
+      },
+      {
+        "step": 6,
+        "finite": true,
+        "elements": 151936,
+        "violations": 33035,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 8.079264640808105
+      },
+      {
+        "step": 7,
+        "finite": true,
+        "elements": 151936,
+        "violations": 17410,
+        "max_abs_error": 0.015625,
+        "max_allowed_error_ratio": 6.972784996032715
+      },
+      {
+        "step": 8,
+        "finite": true,
+        "elements": 151936,
+        "violations": 18552,
+        "max_abs_error": 0.03125,
+        "max_allowed_error_ratio": 12.831382751464844
+      },
+      {
+        "step": 9,
+        "finite": true,
+        "elements": 151936,
+        "violations": 15540,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 8.05202865600586
+      },
+      {
+        "step": 10,
+        "finite": true,
+        "elements": 151936,
+        "violations": 29484,
+        "max_abs_error": 0.02734375,
+        "max_allowed_error_ratio": 8.788899421691895
+      },
+      {
+        "step": 11,
+        "finite": true,
+        "elements": 151936,
+        "violations": 24889,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 6.739586353302002
+      },
+      {
+        "step": 12,
+        "finite": true,
+        "elements": 151936,
+        "violations": 22342,
+        "max_abs_error": 0.03125,
+        "max_allowed_error_ratio": 7.635313987731934
+      },
+      {
+        "step": 13,
+        "finite": true,
+        "elements": 151936,
+        "violations": 30521,
+        "max_abs_error": 0.03125,
+        "max_allowed_error_ratio": 8.216747283935547
+      },
+      {
+        "step": 14,
+        "finite": true,
+        "elements": 151936,
+        "violations": 73347,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 9.203396797180176
+      },
+      {
+        "step": 15,
+        "finite": true,
+        "elements": 151936,
+        "violations": 40413,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 8.35879135131836
+      },
+      {
+        "step": 16,
+        "finite": true,
+        "elements": 151936,
+        "violations": 44511,
+        "max_abs_error": 0.02734375,
+        "max_allowed_error_ratio": 9.460683822631836
+      },
+      {
+        "step": 17,
+        "finite": true,
+        "elements": 151936,
+        "violations": 13636,
+        "max_abs_error": 0.01953125,
+        "max_allowed_error_ratio": 6.443024158477783
+      },
+      {
+        "step": 18,
+        "finite": true,
+        "elements": 151936,
+        "violations": 36123,
+        "max_abs_error": 0.02490234375,
+        "max_allowed_error_ratio": 9.990279197692871
+      },
+      {
+        "step": 19,
+        "finite": true,
+        "elements": 151936,
+        "violations": 52624,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 9.447378158569336
+      },
+      {
+        "step": 20,
+        "finite": true,
+        "elements": 151936,
+        "violations": 19877,
+        "max_abs_error": 0.01953125,
+        "max_allowed_error_ratio": 7.545853137969971
+      },
+      {
+        "step": 21,
+        "finite": true,
+        "elements": 151936,
+        "violations": 23870,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 6.446951389312744
+      },
+      {
+        "step": 22,
+        "finite": true,
+        "elements": 151936,
+        "violations": 51598,
+        "max_abs_error": 0.046875,
+        "max_allowed_error_ratio": 7.590501308441162
+      },
+      {
+        "step": 23,
+        "finite": true,
+        "elements": 151936,
+        "violations": 16546,
+        "max_abs_error": 0.01953125,
+        "max_allowed_error_ratio": 6.7333855628967285
+      },
+      {
+        "step": 24,
+        "finite": true,
+        "elements": 151936,
+        "violations": 39744,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 9.46058464050293
+      },
+      {
+        "step": 25,
+        "finite": true,
+        "elements": 151936,
+        "violations": 35590,
+        "max_abs_error": 0.03515625,
+        "max_allowed_error_ratio": 12.907869338989258
+      },
+      {
+        "step": 26,
+        "finite": true,
+        "elements": 151936,
+        "violations": 16016,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 6.955809593200684
+      },
+      {
+        "step": 27,
+        "finite": true,
+        "elements": 151936,
+        "violations": 57392,
+        "max_abs_error": 0.02197265625,
+        "max_allowed_error_ratio": 8.956612586975098
+      },
+      {
+        "step": 28,
+        "finite": true,
+        "elements": 151936,
+        "violations": 56059,
+        "max_abs_error": 0.025390625,
+        "max_allowed_error_ratio": 9.773911476135254
+      },
+      {
+        "step": 29,
+        "finite": true,
+        "elements": 151936,
+        "violations": 42291,
+        "max_abs_error": 0.03125,
+        "max_allowed_error_ratio": 11.30584716796875
+      },
+      {
+        "step": 30,
+        "finite": true,
+        "elements": 151936,
+        "violations": 13613,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 6.606224536895752
+      },
+      {
+        "step": 31,
+        "finite": true,
+        "elements": 151936,
+        "violations": 29696,
+        "max_abs_error": 0.0234375,
+        "max_allowed_error_ratio": 8.712080955505371
+      }
+    ],
+    "all_logits_finite_and_within_tolerance": false,
+    "exact_32_tokens_equal": true,
+    "elements_checked": 4861952,
+    "violations": 989536,
+    "pass": false,
+    "limit": "One fixed autoregressive workload; exact tokens plus elementwise logits tolerance do not establish model quality or broad numerical equivalence."
+  },
+  "fresh_workers": 2,
+  "raw_expected_token_ids": [
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932
+  ],
+  "candidate_name": "swiglu_fused_r8_w4",
+  "candidate_source_sha256": "6b025f71f574da66e5620af83d779c0b1f4b0eb929fae59613f3b68665e8450a",
+  "limit": "Original KV unchanged. Fixed real-model workload only. Full logits checks are Eager; timed Graph replays check exact generated tokens. No general model-quality, service or AMD claim."
+}

@@ -1,0 +1,599 @@
+{
+  "status": "STABLE_RUNTIME_CORRECTNESS_PASS",
+  "mode": "check",
+  "workers": [
+    {
+      "status": "STABLE_RUNTIME_LOGITS_COLLECTED",
+      "mode": "check",
+      "policy": "eager",
+      "round": 0,
+      "samples": [],
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "engine_options": {
+          "max_running_req": 1,
+          "attention_backend": "fi",
+          "page_size": 1,
+          "num_page_override": 512,
+          "max_seq_len_override": 256,
+          "max_extend_tokens": 256,
+          "cuda_graph_bs": [],
+          "memory_ratio": 0.3,
+          "use_dummy_weight": false,
+          "use_pynccl": false,
+          "cache_type": "naive"
+        }
+      },
+      "source_validation": {
+        "project": "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-stable-runtime-check/run-20261015-052859-ufwymynd/source",
+        "model_path": "/home/weltlaw/models/Qwen3-0.6B/c1899de289a04d12100db370d81485cdf75e47ca",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "source_files_verified": 102,
+        "model_weight_files_verified": 1
+      },
+      "output": [
+        {
+          "text": " generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises",
+          "token_ids": [
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932
+          ]
+        }
+      ],
+      "raw_generated_token_ids": [
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932
+      ],
+      "logits_count": 32,
+      "logits_source_dtypes": [
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16",
+        "torch.float16"
+      ],
+      "saved_logit_dtype": "float32",
+      "logits_sha256": "993973a50876eaf53dab472338cb7920fd94b6a17ba34fe23d56a69b7df47adf",
+      "graph_replays_observed": 0,
+      "limit": "All32 sampled logits from one fixed request; observer only in strict diagnostic, never timing."
+    },
+    {
+      "status": "STABLE_RUNTIME_LOGITS_COLLECTED",
+      "mode": "check",
+      "policy": "decode_graph",
+      "round": 0,
+      "samples": [],
+      "environment": {
+        "gpu": "NVIDIA GeForce RTX 4070 Ti",
+        "torch": "2.9.1+cu128",
+        "cuda": "12.8",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "engine_options": {
+          "max_running_req": 1,
+          "attention_backend": "fi",
+          "page_size": 1,
+          "num_page_override": 512,
+          "max_seq_len_override": 256,
+          "max_extend_tokens": 256,
+          "cuda_graph_bs": [
+            1
+          ],
+          "memory_ratio": 0.3,
+          "use_dummy_weight": false,
+          "use_pynccl": false,
+          "cache_type": "naive"
+        }
+      },
+      "source_validation": {
+        "project": "/home/weltlaw/projects/mini-sglang-kv/experiments/m08-stable-runtime-check/run-20261015-052859-ufwymynd/source",
+        "model_path": "/home/weltlaw/models/Qwen3-0.6B/c1899de289a04d12100db370d81485cdf75e47ca",
+        "packages": {
+          "torch": "2.9.1+cu128",
+          "triton": "3.5.1",
+          "flashinfer-python": "0.5.3",
+          "transformers": "4.57.3",
+          "safetensors": "0.8.0",
+          "apache-tvm-ffi": "0.1.4"
+        },
+        "source_files_verified": 102,
+        "model_weight_files_verified": 1
+      },
+      "output": [
+        {
+          "text": " generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises",
+          "token_ids": [
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932,
+            279,
+            1376,
+            897,
+            6500,
+            2337,
+            4128,
+            1614,
+            9471,
+            13,
+            1096,
+            15089,
+            9934,
+            22932
+          ]
+        }
+      ],
+      "raw_generated_token_ids": [
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932
+      ],
+      "logits_count": 32,
+      "logits_source_dtypes": [
+        "torch.float16",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32",
+        "torch.float32"
+      ],
+      "saved_logit_dtype": "float32",
+      "logits_sha256": "993973a50876eaf53dab472338cb7920fd94b6a17ba34fe23d56a69b7df47adf",
+      "graph_replays_observed": 31,
+      "limit": "All32 sampled logits from one fixed request; observer only in strict diagnostic, never timing."
+    }
+  ],
+  "plan_sha256": "ae7eaba6a2b193968c40df08e149a5f0c749a10ab41c8edc760496316fb496c3",
+  "order_sha256": "ae61ad120dc56e772896018674dc3db58c010a0193a37718992fd5a6937acdde",
+  "comparison": {
+    "atol": 0.002,
+    "rtol": 0.002,
+    "steps": [
+      {
+        "step": 0,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 1,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 2,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 3,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 4,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 5,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 6,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 7,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 8,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 9,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 10,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 11,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 12,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 13,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 14,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 15,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 16,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 17,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 18,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 19,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 20,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 21,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 22,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 23,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 24,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 25,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 26,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 27,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 28,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 29,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 30,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      },
+      {
+        "step": 31,
+        "elements": 151936,
+        "finite": true,
+        "violations": 0,
+        "max_abs_error": 0.0,
+        "equal_fp32_bit_patterns": true
+      }
+    ],
+    "elements_compared": 4861952,
+    "violations": 0,
+    "exact_32_tokens_equal": true,
+    "all_logits_within_tolerance": true,
+    "pass": true,
+    "scope": "Original Eager versus original whole-decode Graph, unchanged model math/KV. One fixed workload, no broad quality claim."
+  },
+  "fresh_workers": 2,
+  "method": "enable upstream whole-decode Graph[1]; prefill remains Eager; no new kernel/math/KV replacement",
+  "limit": "Performance comparison is against original Eager, not against original Graph or CUDA generally. Fixed128/32 workload, no service/AMD/broad quality claim."
+}

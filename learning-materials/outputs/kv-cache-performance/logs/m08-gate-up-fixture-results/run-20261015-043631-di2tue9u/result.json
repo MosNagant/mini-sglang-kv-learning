@@ -1,0 +1,11 @@
+{
+  "status": "GATE_UP_FIXTURE_CAPTURE_PASS",
+  "plan_sha256": "bb8581e2168dc2f38c85641f2065e7a0f8c60720a64f4f13deba75496dd753c0",
+  "accepted_attribution": "/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-linear-attribution-results/run-20261015-041937-ijssdrjr",
+  "worker_returncode": 0,
+  "fixture_sha256": "a32b943dba7a5f341b6eb73913555d2eb5c63b12e598e0423428dbc04d1d88ee",
+  "samples": 84,
+  "weights": 28,
+  "weight_array_bytes": 352321536,
+  "limit": "Original Eager data capture only; no optimized candidate, timing, improvement or numerical acceptance claim."
+}

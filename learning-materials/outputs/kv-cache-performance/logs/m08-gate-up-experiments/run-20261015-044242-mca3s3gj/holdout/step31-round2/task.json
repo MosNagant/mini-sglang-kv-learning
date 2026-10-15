@@ -1,0 +1,9 @@
+{
+  "arms": [
+    "original",
+    "swiglu_fused_r8_w4"
+  ],
+  "round": 2,
+  "step": 31,
+  "stage": "holdout"
+}

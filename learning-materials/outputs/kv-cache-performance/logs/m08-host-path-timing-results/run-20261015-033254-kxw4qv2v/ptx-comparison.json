@@ -1,0 +1,86 @@
+[
+  {
+    "policy": "eager",
+    "round": 1,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  },
+  {
+    "policy": "eager",
+    "round": 2,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  },
+  {
+    "policy": "eager",
+    "round": 3,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  },
+  {
+    "policy": "decode_graph",
+    "round": 1,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  },
+  {
+    "policy": "decode_graph",
+    "round": 2,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  },
+  {
+    "policy": "decode_graph",
+    "round": 3,
+    "raw_sha256": [
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68",
+      "38404af4913e5ce39c4a38c819580f7c4b427abc2afb95c60e50dd214561df68"
+    ],
+    "normalized_sha256": [
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e",
+      "7ad3579fdfd0fe6d03fe8075e410465f89a088f99dd9c77ca3722e5ffb0b251e"
+    ],
+    "executable_ptx_equal": true,
+    "scope": "last observed warmup specialization only; removed .file/.loc and trailing .debug sections, no instruction rewriting"
+  }
+]

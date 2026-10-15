@@ -1,0 +1,4 @@
+[
+  "/usr/local/cuda-12.8/bin/ncu",
+  "--version"
+]

@@ -1,0 +1,117 @@
+{
+  "status": "CPU_CONTROLS_PASS",
+  "controls": [
+    {
+      "name": "source_sha256_graph.py",
+      "pass": true
+    },
+    {
+      "name": "source_sha256_engine.py",
+      "pass": true
+    },
+    {
+      "name": "source_sha256_sample.py",
+      "pass": true
+    },
+    {
+      "name": "exact_two_capture_insertions",
+      "pass": true
+    },
+    {
+      "name": "all_original_capture_operations_unchanged",
+      "pass": true
+    },
+    {
+      "name": "changed_capture_structure_rejected",
+      "pass": true
+    },
+    {
+      "name": "ENV_import_exists",
+      "pass": true
+    },
+    {
+      "name": "TP_size_exists",
+      "pass": true
+    },
+    {
+      "name": "matching_new_view_accepted",
+      "pass": true
+    },
+    {
+      "name": "top_k_top_p_ignored_for_greedy_like_original",
+      "pass": true
+    },
+    {
+      "name": "changed_pointer_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_shape_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_stride_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_dtype_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_device_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_storage_offset_rejected",
+      "pass": true
+    },
+    {
+      "name": "non_greedy_rejected",
+      "pass": true
+    },
+    {
+      "name": "missing_ticket_rejected",
+      "pass": true
+    },
+    {
+      "name": "wrong_stream_rejected",
+      "pass": true
+    },
+    {
+      "name": "sampler_device_rejected",
+      "pass": true
+    },
+    {
+      "name": "sampler_vocab_rejected",
+      "pass": true
+    },
+    {
+      "name": "changed_token_storage_rejected",
+      "pass": true
+    },
+    {
+      "name": "one_ticket_hit_returns_same_persistent_tokens",
+      "pass": true
+    },
+    {
+      "name": "second_sample_cannot_reuse_stale_tokens",
+      "pass": true
+    },
+    {
+      "name": "mismatch_also_consumes_ticket",
+      "pass": true
+    },
+    {
+      "name": "counts_record_all_paths",
+      "pass": true
+    }
+  ],
+  "count": 26,
+  "module_sha256": "80893d3151df924bdb3b3d366aaeea22ade2e5048a64a1aedcc9d253e44dca31",
+  "source_sha256": {
+    "graph.py": "2fc80c2d4debf56ccec70850dcc1060afa52da631f90f8172d6c87d5ca4b4115",
+    "engine.py": "82bd58030c78dbfe249eaef857fbd48db9cb403e179dc1f64ade89cb3f8c699f",
+    "sample.py": "6bb15e116a299929af9436df2c3d2e8331a0aa0adc63320cfe86e0993370ed0b"
+  },
+  "limit": "Metadata/AST/source checks only. No CUDA execution, captured-operation equivalence or speed validation."
+}

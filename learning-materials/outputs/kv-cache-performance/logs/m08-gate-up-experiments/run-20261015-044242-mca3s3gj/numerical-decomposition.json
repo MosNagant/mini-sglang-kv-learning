@@ -1,0 +1,45 @@
+{
+  "gemv_direct_r4_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": 490,
+    "max_y_abs": 0.001953125
+  },
+  "gemv_direct_r8_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": 490,
+    "max_y_abs": 0.001953125
+  },
+  "gemv_direct_r8_w8": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": 490,
+    "max_y_abs": 0.001953125
+  },
+  "gemv_splitk4_r4_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": 490,
+    "max_y_abs": 0.001953125
+  },
+  "swiglu_fused_r4_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": null,
+    "max_y_abs": 0.001953125
+  },
+  "swiglu_fused_r8_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": null,
+    "max_y_abs": 0.001953125
+  },
+  "swiglu_packed_r4_w4": {
+    "y_bitwise_differences": 384,
+    "y_elements": 258048,
+    "z_bitwise_differences": null,
+    "max_y_abs": 0.001953125
+  },
+  "same_r8w4_unfused_vs_fused_y_differences": 0
+}

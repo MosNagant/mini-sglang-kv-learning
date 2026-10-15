@@ -1,0 +1,15 @@
+{
+  "arms": [
+    "original",
+    "gemv_direct_r4_w4",
+    "gemv_direct_r8_w4",
+    "gemv_direct_r8_w8",
+    "gemv_splitk4_r4_w4",
+    "swiglu_fused_r4_w4",
+    "swiglu_fused_r8_w4",
+    "swiglu_packed_r4_w4"
+  ],
+  "round": 1,
+  "step": 1,
+  "stage": "selection"
+}

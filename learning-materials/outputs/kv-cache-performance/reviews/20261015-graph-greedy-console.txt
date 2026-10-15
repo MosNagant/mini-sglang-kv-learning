@@ -1,0 +1,30 @@
+55 experiment controller stdout excerpt, preserved from actual tool sessions.
+WSL localized startup/proxy warnings omitted. Full worker stdout/stderr remain
+in each run's original_graph*.log and graph_greedy*.log. This is an excerpt,
+not a recreated claim of the complete terminal byte stream.
+
+COMMAND:
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec bash /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/55-verify-graph-greedy.sh --mode check
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-graph-greedy-check/run-20261015-053822-8uw6n0md
+RUN original_graph
+RUN graph_greedy
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-graph-greedy-check-results/run-20261015-053822-8uw6n0md
+STATUS=GRAPH_GREEDY_CORRECTNESS_PASS
+
+COMMAND:
+wsl -d CUDA-Ubuntu-24.04 -u weltlaw --exec bash /mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/55-verify-graph-greedy.sh --mode timing --accepted-check /home/weltlaw/projects/mini-sglang-kv/experiments/m08-graph-greedy-check/run-20261015-053822-8uw6n0md
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-graph-greedy-timing/run-20261015-054044-oru9f4py
+RUN graph_greedy-round1
+COLLECTED graph_greedy-round1 median_ms=131.723237
+RUN original_graph-round1
+COLLECTED original_graph-round1 median_ms=130.001557
+RUN original_graph-round2
+COLLECTED original_graph-round2 median_ms=135.592818
+RUN graph_greedy-round2
+COLLECTED graph_greedy-round2 median_ms=130.224344
+RUN graph_greedy-round3
+COLLECTED graph_greedy-round3 median_ms=131.739459
+RUN original_graph-round3
+COLLECTED original_graph-round3 median_ms=133.888234
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-graph-greedy-timing-results/run-20261015-054044-oru9f4py
+STATUS=GRAPH_GREEDY_TIMING_COLLECTION_COMPLETE

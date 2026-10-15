@@ -1,0 +1,750 @@
+{
+  "status": "MODEL_ALL_LOGITS_COLLECTED",
+  "arm": "candidate",
+  "mode": "check",
+  "policy": "eager",
+  "round": 0,
+  "samples": [],
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "torch": "2.9.1+cu128",
+    "cuda": "12.8",
+    "packages": {
+      "torch": "2.9.1+cu128",
+      "triton": "3.5.1",
+      "flashinfer-python": "0.5.3",
+      "transformers": "4.57.3",
+      "safetensors": "0.8.0",
+      "apache-tvm-ffi": "0.1.4"
+    },
+    "engine_options": {
+      "max_running_req": 1,
+      "attention_backend": "fi",
+      "page_size": 1,
+      "num_page_override": 512,
+      "max_seq_len_override": 256,
+      "max_extend_tokens": 256,
+      "cuda_graph_bs": [],
+      "memory_ratio": 0.3,
+      "use_dummy_weight": false,
+      "use_pynccl": false,
+      "cache_type": "naive"
+    }
+  },
+  "candidate_evidence": {
+    "counters": {
+      "decode_python_calls": 868,
+      "capture_python_calls": 0,
+      "prefill_original_python_calls": 28,
+      "original_decode_fallback_calls": 0,
+      "current_input_calls": 868
+    },
+    "layers": [
+      {
+        "layer": 0,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.5856999997510002e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 1,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.6220999999205787e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 2,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.1169000000421647e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 3,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.654999999497704e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 4,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.25899999870694e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 5,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.5513000001021737e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 6,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.2109000000037895e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 7,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.792000000174994e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 8,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.422999998065507e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 9,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 8.93600000040351e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 10,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.300000002099296e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 11,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.103000000010297e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 12,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 8.915000002218676e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 13,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.18599999977232e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 14,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.366000000454733e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 15,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.233000000108404e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 16,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.232000000025664e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 17,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 9.586000000894046e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 18,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 1.0297000002879031e-05,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 19,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 8.261000001397178e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 20,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 7.707999998274317e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 21,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 6.7920000006438386e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 22,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 6.918000000410984e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 23,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 8.06499999939092e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 24,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 8.519999997957939e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 25,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 6.855999998833795e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 26,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 7.418999999231346e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      },
+      {
+        "layer": 27,
+        "candidate": "swiglu_fused_r8_w4",
+        "kind": "swiglu",
+        "workspace_bytes": 0,
+        "prepack_bytes": 0,
+        "setup_seconds": 6.932999998099376e-06,
+        "kernel_launches_per_call": 1,
+        "kernel_hashes": [
+          "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759"
+        ],
+        "input_policy": "call_with_input(current x)",
+        "weight_shape": [
+          6144,
+          1024
+        ]
+      }
+    ],
+    "compiled_artifacts": {
+      "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759": {
+        "name": "_swiglu_fused",
+        "hash": "72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759",
+        "files": {
+          "ptx": {
+            "path": "compiled/72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759.ptx",
+            "sha256": "1e38bb8b4ea38cb1788882a18c8804db10a9f24767cf5984742d3fc79c709534"
+          },
+          "ttgir": {
+            "path": "compiled/72f47d16f3f1d2cffbf69168ebcd9d20741889483fdf4d16f1d1d62098602759.ttgir",
+            "sha256": "7cbe166a06dff50d213b3d743e9a26ded914017330690a9c85844f46e4f02e2a"
+          }
+        }
+      }
+    },
+    "scope": "Python observations including capture/warmup; not Graph replay node counts or hardware counters. Counter observation is disabled before timing samples."
+  },
+  "raw_generated_token_ids": [
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932
+  ],
+  "output": [
+    {
+      "text": " generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises the key value cache during language model generation. This diagnostic prompt exercises",
+      "token_ids": [
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932,
+        279,
+        1376,
+        897,
+        6500,
+        2337,
+        4128,
+        1614,
+        9471,
+        13,
+        1096,
+        15089,
+        9934,
+        22932
+      ]
+    }
+  ],
+  "logits_sha256": "b3e9628f83032ca2b8323c7fa4f71d7c85818fc8645503baaebca656005aa30d",
+  "logits_count": 32,
+  "all_logits_finite": true,
+  "input_token_ids": [
+    1986,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614,
+    9471,
+    13,
+    1096,
+    15089,
+    9934,
+    22932,
+    279,
+    1376,
+    897,
+    6500,
+    2337,
+    4128,
+    1614
+  ],
+  "numerical_contract": {
+    "atol": 0.002,
+    "rtol": 0.002,
+    "every_element": true
+  },
+  "limit": "All 32 logits saved in an Eager diagnostic; candidate acceptance is a later cross-process comparison, not assumed here."
+}

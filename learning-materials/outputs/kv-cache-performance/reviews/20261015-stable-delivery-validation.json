@@ -1,0 +1,112 @@
+{
+  "status": "RELEASE_AND_DOCUMENT_LINKS_VERIFIED",
+  "entry_sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+  "package_sha256": "7dc817ee448abde827c764ea181d124ae2ea6d54adb2e89e7f481f8e4c1b58e5",
+  "zip_files": 27,
+  "markdown_links_checked": 25,
+  "links": [
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../stable/stable_infer.py"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../stable/README.md"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../reviews/20261015-gate-up-rounding-conclusion.md"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd/result.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd/result.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd/independent-evidence-audit.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei/result.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei/independent-evidence-audit.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-stable-runtime-live-smoke/run-20261015-053233/"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../stable/graph_greedy.py"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../55-verify-graph-greedy.py"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-graph-greedy-check-results/run-20261015-053822-8uw6n0md/result.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-graph-greedy-check-results/run-20261015-053822-8uw6n0md/independent-evidence-audit.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-graph-greedy-timing-results/run-20261015-054044-oru9f4py/result.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../logs/m08-graph-greedy-timing-results/run-20261015-054044-oru9f4py/independent-evidence-audit.json"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../releases/stable-runtime-20261015.zip"
+    },
+    {
+      "document": "modules\\M08\\RESULTS-STABLE-RUNTIME-20261015.md",
+      "target": "../../stable/stable_infer.py"
+    },
+    {
+      "document": "obsidian\\2026-10-15-开发日志-M08稳定运行版.md",
+      "target": "../reviews/20261015-gate-up-rounding-conclusion.md"
+    },
+    {
+      "document": "obsidian\\2026-10-15-开发日志-M08稳定运行版.md",
+      "target": "../stable/stable_infer.py"
+    },
+    {
+      "document": "obsidian\\2026-10-15-开发日志-M08稳定运行版.md",
+      "target": "../releases/stable-runtime-20261015.zip"
+    },
+    {
+      "document": "obsidian\\2026-10-15-开发日志-M08稳定运行版.md",
+      "target": "../modules/M08/RESULTS-STABLE-RUNTIME-20261015.md"
+    },
+    {
+      "document": "stable\\README.md",
+      "target": "../logs/m08-stable-runtime-check-results/run-20261015-052859-ufwymynd/result.json"
+    },
+    {
+      "document": "stable\\README.md",
+      "target": "../logs/m08-stable-runtime-timing-results/run-20261015-053033-nlwp0fei/result.json"
+    },
+    {
+      "document": "stable\\README.md",
+      "target": "../logs/m08-stable-runtime-live-smoke/run-20261015-053233/result.json"
+    },
+    {
+      "document": "stable\\README.md",
+      "target": "release.json"
+    }
+  ],
+  "default": "decode_graph with original model math/KV",
+  "graph_greedy_promoted": false,
+  "limit": "Packaging/link/static syntax verification only; GPU results are the separate54/55 retained runs."
+}

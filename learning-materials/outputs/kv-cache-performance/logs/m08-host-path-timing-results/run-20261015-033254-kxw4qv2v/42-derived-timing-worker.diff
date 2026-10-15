@@ -1,0 +1,18 @@
+--- 42-m08-model-timing.py
++++ 42-derived-timing-worker.py
+@@ -104,6 +104,15 @@
+         # Initialization/capture uses the same device kernel as measured. The
+         # observer is removed before measuring Python-dispatched prefill/Eager.
+         kernel_api.store_cache=measured
++        # 46 controlled change: warm the measured callable's own metadata cache.
++        # Match this extra request for every arm; it is outside every timer.
++        generate()
++        torch.cuda.synchronize()
++        if raw!=expected:
++            raise RuntimeError('Measured-path warmup differs from accepted original')
++        result['extra_measured_path_warmups']=1
++        result['measured_metadata_cache_before_samples']=(measured.metadata_cache_info()
++            if hasattr(measured,'metadata_cache_info') else None)
+         result['environment']={'gpu':torch.cuda.get_device_name(0),'torch':torch.__version__,
+              'cuda':torch.version.cuda,'model_dtype':'torch.float16','engine_options':opts,
+               'model_stream':int(llm.engine.stream.cuda_stream)}

@@ -1,0 +1,16 @@
+[
+  {
+    "kernel_index": 0,
+    "name": "_swiglu_fused",
+    "n_regs": 47,
+    "n_spills_raw": 0,
+    "shared_bytes": 128,
+    "files": {
+      "kernel0.ttir": "f346bcc3ed1237d43fed7a29f9eab68434ed55369f2b79bedf310241d4e5568d",
+      "kernel0.ttgir": "7cbe166a06dff50d213b3d743e9a26ded914017330690a9c85844f46e4f02e2a",
+      "kernel0.llir": "7e6f333282f2941e9bfe96debbc52c3c5f8c4029e0a5d8d478ef294b06497375",
+      "kernel0.ptx": "1e38bb8b4ea38cb1788882a18c8804db10a9f24767cf5984742d3fc79c709534",
+      "kernel0.cubin": "b377ef6188f67e44daecdc5d0ec5805b9f7253ca29a407d97403c46414bfe054"
+    }
+  }
+]

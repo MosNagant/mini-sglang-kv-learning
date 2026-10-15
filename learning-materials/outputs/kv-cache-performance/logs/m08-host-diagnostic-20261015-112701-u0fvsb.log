@@ -1,0 +1,6 @@
+RUN_DIRECTORY=/home/weltlaw/projects/mini-sglang-kv/experiments/m08-host-diagnostic-results/run-bqojhqoc
+ROUND 1 [{"B": 1, "host_medians_us": {"old": 6.61836, "cached": 2.676015}, "change_pct": -59.56679600384385}, {"B": 128, "host_medians_us": {"old": 6.6129575, "cached": 2.63916}, "change_pct": -60.09107876468283}]
+ROUND 2 [{"B": 1, "host_medians_us": {"old": 6.809957499999999, "cached": 2.6671500000000004}, "change_pct": -60.83455733754579}, {"B": 128, "host_medians_us": {"old": 6.6584924999999995, "cached": 2.6665425000000003}, "change_pct": -59.95275957733676}]
+ROUND 3 [{"B": 1, "host_medians_us": {"old": 6.695805, "cached": 2.694755}, "change_pct": -59.754577679606854}, {"B": 128, "host_medians_us": {"old": 6.59532, "cached": 2.635985}, "change_pct": -60.03249273727431}]
+SHARED_RUN_DIRECTORY=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-diagnostic-results/run-bqojhqoc
+SHARED_CONSOLE_LOG=/mnt/c/Users/Administrator/Documents/Codex/2026-09-27/cuda-wsl-wsl-2/outputs/kv-cache-performance/logs/m08-host-diagnostic-20261015-112701-u0fvsb.log

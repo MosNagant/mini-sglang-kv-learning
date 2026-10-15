@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "comparisons": [
+    {
+      "run": "run-20261015-053822-8uw6n0md",
+      "live": "55-verify-graph-greedy.py",
+      "saved": "runner.py",
+      "sha256": "725a8f864be200b5ae7e0f45c3518098d141d798dc44e8a151afc9dfb1fabbc1",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-053822-8uw6n0md",
+      "live": "55-verify-graph-greedy.sh",
+      "saved": "55-verify-graph-greedy.sh",
+      "sha256": "47e3298e05f0cd114ecab158bddb7c7d2acb649d3fe7a7c9076a68c95ebfbce1",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-053822-8uw6n0md",
+      "live": "stable/graph_greedy.py",
+      "saved": "graph_greedy.py",
+      "sha256": "80893d3151df924bdb3b3d366aaeea22ade2e5048a64a1aedcc9d253e44dca31",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-053822-8uw6n0md",
+      "live": "53-m08-stable-runtime.py",
+      "saved": "stable_runtime_original.py",
+      "sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-054044-oru9f4py",
+      "live": "55-verify-graph-greedy.py",
+      "saved": "runner.py",
+      "sha256": "725a8f864be200b5ae7e0f45c3518098d141d798dc44e8a151afc9dfb1fabbc1",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-054044-oru9f4py",
+      "live": "55-verify-graph-greedy.sh",
+      "saved": "55-verify-graph-greedy.sh",
+      "sha256": "47e3298e05f0cd114ecab158bddb7c7d2acb649d3fe7a7c9076a68c95ebfbce1",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-054044-oru9f4py",
+      "live": "stable/graph_greedy.py",
+      "saved": "graph_greedy.py",
+      "sha256": "80893d3151df924bdb3b3d366aaeea22ade2e5048a64a1aedcc9d253e44dca31",
+      "equal": true
+    },
+    {
+      "run": "run-20261015-054044-oru9f4py",
+      "live": "53-m08-stable-runtime.py",
+      "saved": "stable_runtime_original.py",
+      "sha256": "342ea0cda6f8a5e71effe3af36fcb52fb965598201216c76782d0596148cc163",
+      "equal": true
+    }
+  ],
+  "CPU_controls_match_current_source": true
+}

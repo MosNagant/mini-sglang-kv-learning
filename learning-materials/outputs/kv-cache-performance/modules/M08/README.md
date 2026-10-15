@@ -1,5 +1,22 @@
 # M08：真实模型接入与同条件对照
 
+**10-15当前可使用版本：** [稳定入口与单行命令](../../stable/README.md)和[完整验收](RESULTS-STABLE-RUNTIME-20261015.md)。53/54保留原版数学/KV，默认整段decode Graph；全部32步logits逐位一致，三轮完整请求比原版Eager耗时降低40%～44%，真实项目入口已运行。不是自写算子超原版Graph的结论。55额外采样捕获数值通过，性能三轮一慢两快、未达逐轮门槛，推荐入口不变。[本次独立日志](../../obsidian/2026-10-15-开发日志-M08稳定运行版.md)。
+
+**2026-10-15最新：48–52号Gate/Up七路线实验已完成。** 先读[完整结果与面试拆解](RESULTS-GATE-UP-20261015.md)和[独立开发日志](../../obsidian/2026-10-15-开发日志-M08-GateUp优化实验.md)。588局部数值检查通过、9计时进程4320区间保留；单层权重复用Graph融合版耗时下降33%～41%，但28层轮换留出多数退化。真实模型token相同、完整logits数值门拒绝，因此无模型计时或默认替换；计数器查询权限失败。工程完成与可晋升候选、本人掌握分开；新增资料当前未同步GitHub。
+
+**2026-10-15最新节点：47号线性层归因通过。** [完整报告](RESULTS-LINEAR-ATTRIBUTION-20261015.md)将3616次实际调用对应到模型层、shape和GPU内核；原版32token一致。主要成本为decode Gate/Up和LMHead，本次Eager内核时长和占比23.534%/20.975%，KV0.841%。下一项据此建立Gate/Up GEMV对照；本次没有修改数学计算或新增提速结论。报告包含所有原始数据、独立审计、面试题与单行复现。默认后端与验收分保持。
+
+**2026-10-15更新：调用层优化已完成一轮验证。** 元信息缓存让CPU封装消融约降60%，真实模型没有稳定改善，默认原版保持。先读[本轮完整结果](RESULTS-HOST-PATH-20261015.md)、[整个项目的性能诊断与面试拆解](PERFORMANCE-DIAGNOSIS-20261015.md)，然后按[本轮复现入口](REPRODUCE-HOST-PATH-20261015.md)查原始证据。新增工作由教练完成，73/100和个人掌握状态不变；本次新增资料尚未同步GitHub。
+
+| 新节点 | 产物 | 实际验收 |
+| --- | --- | --- |
+| 44 完整元信息缓存 | [新适配器](../../44-m08-kv-cached-metadata.py)、[CPU契约检查](../../reviews/20261015-m08-metadata-cache-cpu-check.json) | 同一40号GPU内核；完整签名、64项FIFO、不缓存旧指针 |
+| 45 CPU消融与GPU检查 | [360区间均值](../../logs/m08-host-diagnostic-results/run-bqojhqoc/summary.json)、[独立审计](../../logs/m08-host-diagnostic-results/run-bqojhqoc/evidence-audit.json) | CPU路径六组约降60%；完整Graph与替换对象检查通过，不是模型或GPU加速 |
+| 46 真实模型检查 | [结果](../../logs/m08-host-path-check-results/run-20261015-033200-qh26bon6/result.json)、[独立审计](../../logs/m08-host-path-check-results/run-20261015-033200-qh26bon6/host-path-evidence-audit-v2.json) | 两臂1792次KV检查；完整缓存、保存logits和token一致 |
+| 46 三臂模型计时 | [90样本](../../logs/m08-host-path-timing-results/run-20261015-033254-kxw4qv2v/result.json)、[独立审计](../../logs/m08-host-path-timing-results/run-20261015-033254-kxw4qv2v/host-path-evidence-audit-v2.json) | 18新进程；Eager/Graph均未稳定改善；候选不晋升 |
+
+下方38–43号为10-14已验收的历史基础，原始数据与范围保留。
+
 2026-10-14：**真实模型接入和固定负载对照已完成，尚未证明稳定性能优势。默认原版CUDA保持。** M08-01～05工程9/10分，M08-06本人独立解释1分待复习；工程完成与掌握分开。新增实现、执行和报告由教练完成。
 
 先读[完整结果](RESULTS.md)，再读[今日独立开发日志](../../obsidian/2026-10-14-开发日志-M08真实模型接入.md)。[复现与资料入口](REPRODUCE.md)记录文件和单行命令；已有结果无需重跑。

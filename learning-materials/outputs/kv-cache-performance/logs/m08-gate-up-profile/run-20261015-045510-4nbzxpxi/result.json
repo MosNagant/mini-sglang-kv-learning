@@ -1,0 +1,10 @@
+{
+  "status": "REQUESTED_METRICS_UNAVAILABLE",
+  "gpu_counter_claim": false,
+  "profiles": [],
+  "metric_query": {
+    "returncode": 1,
+    "classification": "GPU_COUNTER_PERMISSION_DENIED",
+    "log": "metric-query.log"
+  }
+}
